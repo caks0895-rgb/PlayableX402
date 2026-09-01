@@ -1,0 +1,1 @@
+[`orderbook`,`cascade`,`flashloan`,`marketblitz`,`coinpump`,`dilemma`,`debate`,`target`].join(`, `);var e=`https://playablex420.grok.me`,t=12e4;function n(e){return e.players.length===0?e.createdAt:Math.max(e.createdAt,...e.players.map(e=>e.joinedAt))}export{e as n,n as r,t};

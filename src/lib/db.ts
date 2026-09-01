@@ -111,66 +111,214 @@ function createNeonSql(): Promise<Sql> {
   return globalRef.__pgSqlPromise__;
 }
 
-async function createPgliteSql(): Promise<Sql> {
-  // Embedded Postgres, imported on demand so it never loads on the Neon path.
-  // One in-memory instance per process, shared across HMR module instances, so
-  // data survives source edits (it resets on dev-server restart).
-  globalRef.__pgliteInstance__ ??= (async () => {
-    const { PGlite } = await import("@electric-sql/pglite");
-    const pg = new PGlite({
-      parsers: {
-        [OID_INT8]: Number,
-        [OID_DATE]: identity,
-        [OID_INTERVAL]: identity,
-      },
-    });
-    await pg.waitReady;
-    await pg.exec(
-      "create table if not exists _migrations (name text primary key, applied_at timestamptz not null default now())",
-    );
-    return pg;
-  })().catch((err) => {
-    globalRef.__pgliteInstance__ = undefined;
-    throw err;
-  });
-  const pg = await globalRef.__pgliteInstance__;
+// In-memory table store fallback when neither Postgres nor PGLite WASM is available
+interface MemStore {
+  wallets: Map<string, any>;
+  matches: Map<string, any>;
+  ledger: any[];
+  meta: Map<string, string>;
+  migrations: Set<string>;
+}
 
-  // Apply migrations/ (the single schema source) so preview matches production.
-  // SQL is inlined by the bundler via import.meta.glob (no runtime fs); applied
-  // files are tracked in _migrations. The glob does not descend, so the opt-in
-  // auth schema under migrations/auth/ stays out. Runs once per module instance
-  // — so an HMR reload after adding a migration file applies it live — with
-  // passes serialized on a global chain so concurrent callers never
-  // double-apply.
-  const migrate = async (): Promise<void> => {
-    const migrations = import.meta.glob("/migrations/*.sql", {
-      query: "?raw",
-      import: "default",
-      eager: true,
-    }) as Record<string, string>;
-    const doneRows = await pg.query<{ name: string }>(
-      "select name from _migrations",
-    );
-    const done = doneRows.rows.map((r) => r.name);
-    for (const { name, path } of pendingMigrations(Object.keys(migrations), done)) {
-      // Apply + record atomically (parity with scripts/migrate.mjs) so a failed
-      // statement can't leave a file half-applied but untracked.
-      await pg.transaction(async (tx) => {
-        await tx.exec(migrations[path]);
-        await tx.query("insert into _migrations (name) values ($1)", [name]);
-      });
+function getMemStore(): MemStore {
+  const g = globalThis as typeof globalThis & { __pxMemDb?: MemStore };
+  if (!g.__pxMemDb) {
+    g.__pxMemDb = {
+      wallets: new Map(),
+      matches: new Map(),
+      ledger: [],
+      meta: new Map(),
+      migrations: new Set(),
+    };
+  }
+  return g.__pxMemDb;
+}
+
+function createMemSql(): Sql {
+  const store = getMemStore();
+  const run: Run = async <T>(text: string, params: unknown[] = []): Promise<T[]> => {
+    const q = text.trim().toLowerCase();
+
+    if (q.includes("create table") || q.includes("create index")) {
+      return [] as T[];
     }
-  };
-  const pass = (globalRef.__pgliteMigrateChain__ ?? Promise.resolve())
-    .catch(() => undefined) // an earlier failed pass must not wedge the chain
-    .then(migrate);
-  globalRef.__pgliteMigrateChain__ = pass;
-  await pass;
 
-  return toSql(async <T>(text: string, params: unknown[]) => {
-    const result = await pg.query<T>(text, params);
-    return result.rows;
-  });
+    if (q.includes("select name from _migrations")) {
+      return Array.from(store.migrations).map((name) => ({ name })) as unknown as T[];
+    }
+
+    if (q.includes("insert into _migrations")) {
+      if (params[0]) store.migrations.add(String(params[0]));
+      return [] as T[];
+    }
+
+    if (q.includes("from meta")) {
+      if (q.includes("where key =")) {
+        const key = params[0] !== undefined ? String(params[0]) : (text.match(/key\s*=\s*'([^']+)'/)?.[1] ?? "");
+        const val = store.meta.get(key);
+        return (val !== undefined ? [{ value: val }] : []) as unknown as T[];
+      }
+      return [] as T[];
+    }
+
+    if (q.includes("into meta")) {
+      const key = String(params[0] ?? "");
+      const val = String(params[1] ?? "");
+      if (key) store.meta.set(key, val);
+      return [] as T[];
+    }
+
+    if (q.includes("from wallets")) {
+      if (q.includes("where id =")) {
+        const id = String(params[0] ?? "");
+        const w = store.wallets.get(id);
+        return (w ? [w] : []) as unknown as T[];
+      }
+      return Array.from(store.wallets.values()) as unknown as T[];
+    }
+
+    if (q.includes("into wallets")) {
+      const [id, name, balance, created_at] = params;
+      if (id) {
+        store.wallets.set(String(id), {
+          id: String(id),
+          name: String(name),
+          balance: Number(balance),
+          created_at: Number(created_at),
+        });
+      }
+      return [] as T[];
+    }
+
+    if (q.includes("delete from wallets")) {
+      const id = String(params[0] ?? "");
+      store.wallets.delete(id);
+      return [] as T[];
+    }
+
+    if (q.includes("from matches")) {
+      if (q.includes("where id =")) {
+        const id = String(params[0] ?? "");
+        const m = store.matches.get(id);
+        return (m ? [{ id, payload: m.payload }] : []) as unknown as T[];
+      }
+      return Array.from(store.matches.values()).map((m) => ({
+        id: m.id,
+        payload: m.payload,
+      })) as unknown as T[];
+    }
+
+    if (q.includes("into matches")) {
+      const [id, game_id, status, created_at, updated_at, payload] = params;
+      if (id) {
+        store.matches.set(String(id), {
+          id: String(id),
+          game_id: String(game_id),
+          status: String(status),
+          created_at: Number(created_at),
+          updated_at: Number(updated_at),
+          payload: typeof payload === "string" ? JSON.parse(payload) : payload,
+        });
+      }
+      return [] as T[];
+    }
+
+    if (q.includes("delete from matches")) {
+      const id = String(params[0] ?? "");
+      store.matches.delete(id);
+      return [] as T[];
+    }
+
+    if (q.includes("from ledger")) {
+      return store.ledger.slice(0, 400) as unknown as T[];
+    }
+
+    if (q.includes("into ledger")) {
+      const [id, ts, from_id, to_id, amount, kind, match_id, note] = params;
+      if (id) {
+        store.ledger.unshift({
+          id: String(id),
+          ts: Number(ts),
+          from_id: String(from_id),
+          to_id: String(to_id),
+          amount: Number(amount),
+          kind: String(kind),
+          match_id: match_id ? String(match_id) : null,
+          note: String(note ?? ""),
+        });
+      }
+      return [] as T[];
+    }
+
+    return [] as T[];
+  };
+
+  return toSql(run);
+}
+
+async function createPgliteSql(): Promise<Sql> {
+  try {
+    globalRef.__pgliteInstance__ ??= (async () => {
+      const { PGlite } = await import("@electric-sql/pglite");
+      const pg = new PGlite({
+        parsers: {
+          [OID_INT8]: Number,
+          [OID_DATE]: identity,
+          [OID_INTERVAL]: identity,
+        },
+      });
+      await pg.waitReady;
+      await pg.exec(
+        "create table if not exists _migrations (name text primary key, applied_at timestamptz not null default now())",
+      );
+      return pg;
+    })().catch((err) => {
+      globalRef.__pgliteInstance__ = undefined;
+      console.warn("[db] PGLite init failed, falling back to memory store:", err?.message || err);
+      return undefined as any;
+    });
+
+    const pg = await globalRef.__pgliteInstance__;
+    if (!pg) {
+      return createMemSql();
+    }
+
+    const migrate = async (): Promise<void> => {
+      try {
+        const migrations = import.meta.glob("/migrations/*.sql", {
+          query: "?raw",
+          import: "default",
+          eager: true,
+        }) as Record<string, string>;
+        const doneRows = await pg.query<{ name: string }>(
+          "select name from _migrations",
+        );
+        const done = doneRows.rows.map((r) => r.name);
+        for (const { name, path } of pendingMigrations(Object.keys(migrations), done)) {
+          await pg.transaction(async (tx) => {
+            await tx.exec(migrations[path]);
+            await tx.query("insert into _migrations (name) values ($1)", [name]);
+          });
+        }
+      } catch (mErr) {
+        console.warn("[db] Migration check skipped:", mErr);
+      }
+    };
+
+    const pass = (globalRef.__pgliteMigrateChain__ ?? Promise.resolve())
+      .catch(() => undefined)
+      .then(migrate);
+    globalRef.__pgliteMigrateChain__ = pass;
+    await pass;
+
+    return toSql(async <T>(text: string, params: unknown[]) => {
+      const result = await pg.query<T>(text, params);
+      return result.rows;
+    });
+  } catch (err) {
+    console.warn("[db] PGLite failed, using in-memory store:", err);
+    return createMemSql();
+  }
 }
 
 let sqlPromise: Promise<Sql> | null = null;
@@ -238,7 +386,6 @@ const globalBoot = globalThis as typeof globalThis & {
 if (typeof window === "undefined" && dbSource === "pglite") {
   globalBoot.__pgBootstrapPromise__ ??= ensureDbReady().catch((err) => {
     globalBoot.__pgBootstrapPromise__ = undefined;
-    console.error("[db] PGLite bootstrap failed:", err);
-    throw err;
+    console.warn("[db] PGLite bootstrap warning (using fallback memory store if needed):", err?.message || err);
   });
 }

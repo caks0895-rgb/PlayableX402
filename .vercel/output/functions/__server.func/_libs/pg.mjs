@@ -3898,7 +3898,7 @@ var __vite_optional_peer_dep_pg_native_pg_exports = /* @__PURE__ */ __exportAll(
 var __vite_optional_peer_dep_pg_native_pg_default;
 var init___vite_optional_peer_dep_pg_native_pg = __esmMin((() => {
 	__vite_optional_peer_dep_pg_native_pg_default = {};
-	throw new Error(`Could not resolve "pg-native" imported by "pg". Is it installed?`);
+	throw new Error(`Could not resolve "pg-native" imported by "pg".`);
 }));
 //#endregion
 //#region node_modules/pg/lib/native/query.js

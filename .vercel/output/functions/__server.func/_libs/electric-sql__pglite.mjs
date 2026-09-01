@@ -18,7 +18,7 @@ var _$2 = (t, e, o) => e in t ? i(t, e, {
 	value: o
 }) : t[e] = o;
 var d$1 = (t, e) => () => (t && (e = t(t = 0)), e);
-var D$3 = (t, e) => () => (e || t((e = { exports: {} }).exports, e), e.exports);
+var D$4 = (t, e) => () => (e || t((e = { exports: {} }).exports, e), e.exports);
 var F$2 = (t, e) => {
 	for (var o in e) i(t, o, {
 		get: e[o],
@@ -32,7 +32,7 @@ var g$2 = (t, e, o, m) => {
 	});
 	return t;
 };
-var L$3 = (t, e, o) => (o = t != null ? p$3(l(t)) : {}, g$2(e || !t || !t.__esModule ? i(o, "default", {
+var L$2 = (t, e, o) => (o = t != null ? p$3(l(t)) : {}, g$2(e || !t || !t.__esModule ? i(o, "default", {
 	value: t,
 	enumerable: !0
 }) : o, t));
@@ -40,11 +40,11 @@ var P$3 = (t, e, o) => _$2(t, typeof e != "symbol" ? e + "" : e, o);
 var n$1 = (t, e, o) => e.has(t) || a$1("Cannot " + o);
 var h$1 = (t, e, o) => (n$1(t, e, "read from private field"), o ? o.call(t) : e.get(t));
 var R$1 = (t, e, o) => e.has(t) ? a$1("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(t) : e.set(t, o);
-var x$2 = (t, e, o, m) => (n$1(t, e, "write to private field"), m ? m.call(t, o) : e.set(t, o), o);
+var x$3 = (t, e, o, m) => (n$1(t, e, "write to private field"), m ? m.call(t, o) : e.set(t, o), o);
 var T$2 = (t, e, o) => (n$1(t, e, "access private method"), o);
-var U$2 = (t, e, o, m) => ({
+var U$1 = (t, e, o, m) => ({
 	set _(r) {
-		x$2(t, e, r, o);
+		x$3(t, e, r, o);
 	},
 	get _() {
 		return h$1(t, e, m);
@@ -54,7 +54,7 @@ var u$1 = d$1(() => {
 	"use strict";
 });
 //#endregion
-//#region node_modules/@electric-sql/pglite/dist/chunk-VVBUWNGP.js
+//#region node_modules/@electric-sql/pglite/dist/chunk-NNS5RQRF.js
 u$1();
 var d = Object.defineProperty;
 var f$2 = (t, e) => {
@@ -73,7 +73,7 @@ f$2(p$2, {
 	rmdirRecursive: () => u,
 	startArtifactDownload: () => c$1,
 	toPostgresName: () => v$3,
-	uuid: () => S$3
+	uuid: () => S$2
 });
 function h() {
 	let t = process.type;
@@ -81,12 +81,12 @@ function h() {
 }
 var s$2 = typeof process == "object" && typeof process.versions == "object" && typeof process.versions.node == "string" && !h();
 var m$3 = "/pglite";
+var y$3 = globalThis && typeof globalThis.process < "u" ? globalThis.process : { exitCode: void 0 };
 var a = /* @__PURE__ */ new Map();
 async function c$1(t) {
 	s$2 || a.has(t.toString()) || a.set(t.toString(), fetch(t));
 }
 var o$3 = /* @__PURE__ */ new Map();
-var y$3 = globalThis && typeof globalThis.process < "u" ? globalThis.process : { exitCode: void 0 };
 async function b$2(t, e, r) {
 	if (r || o$3.has(e.toString())) {
 		let i = r || o$3.get(e.toString());
@@ -113,7 +113,7 @@ async function b$2(t, e, r) {
 async function w$2(t) {
 	return s$2 ? (await (await import("fs/promises")).readFile(t)).buffer : (c$1(t), (await a.get(t.toString())).clone().arrayBuffer());
 }
-var S$3 = () => {
+var S$2 = () => {
 	if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
 	let t = /* @__PURE__ */ new Uint8Array(16);
 	if (globalThis.crypto?.getRandomValues) globalThis.crypto.getRandomValues(t);
@@ -147,8 +147,8 @@ function u(t, e) {
 	}
 }
 //#endregion
-//#region node_modules/@electric-sql/pglite/dist/chunk-TDKVRJ2S.js
-var W$3 = D$3((Xr, M) => {
+//#region node_modules/@electric-sql/pglite/dist/chunk-DDJLRBDX.js
+var Y$1 = D$4((Xr, M) => {
 	"use strict";
 	u$1();
 	var me = 9007199254740991, pe = function(e) {
@@ -216,7 +216,7 @@ var W$3 = D$3((Xr, M) => {
 	M.exports.extend = rr;
 	M.exports.toUint8Array = ge;
 });
-var G$2 = D$3(($r, ve) => {
+var W$3 = D$4(($r, ve) => {
 	"use strict";
 	u$1();
 	var ne = "\0";
@@ -248,10 +248,10 @@ var G$2 = D$3(($r, ve) => {
 		TPERMMASK: parseInt("0777", 8)
 	};
 });
-var ie$2 = D$3((Jr, P) => {
+var ie$2 = D$4((Jr, P) => {
 	"use strict";
 	u$1();
-	var ye = W$3(), T = G$2(), tr = 512, oe = T.TPERMALL, Fe = 0, he = 0, ae = [
+	var ye = Y$1(), T = W$3(), tr = 512, oe = T.TPERMALL, Fe = 0, he = 0, ae = [
 		[
 			"name",
 			100,
@@ -508,10 +508,10 @@ var ie$2 = D$3((Jr, P) => {
 	P.exports.parseTarNumber = x;
 	P.exports.parseTarDateTime = J;
 });
-var Me$2 = D$3((Zr, Te) => {
+var Me$2 = D$4((Zr, Te) => {
 	"use strict";
 	u$1();
-	var ar = G$2(), Q = W$3(), H = ie$2();
+	var ar = W$3(), Q = Y$1(), H = ie$2();
 	function Ae(e) {
 		return H.recordSize;
 	}
@@ -555,10 +555,10 @@ var Me$2 = D$3((Zr, Te) => {
 	}
 	Te.exports.tar = ur;
 });
-var ke$2 = D$3((rt, Pe) => {
+var ke$1 = D$4((rt, Pe) => {
 	"use strict";
 	u$1();
-	var dr = G$2(), le = W$3(), N = ie$2(), cr = {
+	var dr = W$3(), le = Y$1(), N = ie$2(), cr = {
 		extractData: !0,
 		checkHeader: !0,
 		checkChecksum: !0,
@@ -636,15 +636,15 @@ var ke$2 = D$3((rt, Pe) => {
 	}
 	Pe.exports.untar = vr;
 });
-var Re$2 = D$3((nt, Oe) => {
+var Re$2 = D$4((nt, Oe) => {
 	"use strict";
 	u$1();
-	var yr = W$3(), Fr = G$2(), hr = Me$2(), wr = ke$2();
+	var yr = Y$1(), Fr = W$3(), hr = Me$2(), wr = ke$1();
 	yr.extend(Oe.exports, hr, wr, Fr);
 });
 u$1();
 u$1();
-var D$2 = L$3(Re$2(), 1);
+var D$3 = L$2(Re$2(), 1);
 async function ue$2(e, r, t = "pgdata", n = "auto") {
 	let [a, s] = await Mr(Tr(e, r), n), l = t + (s ? ".tar.gz" : ".tar"), u = s ? "application/x-gzip" : "application/x-tar";
 	return typeof File < "u" ? new File([a], l, { type: u }) : new Blob([a], { type: u });
@@ -660,9 +660,9 @@ async function at$2(e, r, t) {
 	(Ar.includes(r.type) || o?.endsWith(".tgz") || o?.endsWith(".tar.gz")) && (n = await De$1(n));
 	let s;
 	try {
-		s = (0, D$2.untar)(n);
+		s = (0, D$3.untar)(n);
 	} catch (l) {
-		if (l instanceof Error && l.message.includes("File is corrupted")) n = await De$1(n), s = (0, D$2.untar)(n);
+		if (l instanceof Error && l.message.includes("File is corrupted")) n = await De$1(n), s = (0, D$3.untar)(n);
 		else throw l;
 	}
 	for (let l of s) {
@@ -671,7 +671,7 @@ async function at$2(e, r, t) {
 			let p = d.slice(0, c).join("/");
 			e.analyzePath(p).exists || e.mkdir(p);
 		}
-		l.type === D$2.REGTYPE ? (e.writeFile(u, l.data), e.utime(u, Ne$1(l.modifyTime), Ne$1(l.modifyTime))) : l.type === D$2.DIRTYPE && (e.analyzePath(u).exists || e.mkdir(u));
+		l.type === D$3.REGTYPE ? (e.writeFile(u, l.data), e.utime(u, Ne$1(l.modifyTime), Ne$1(l.modifyTime))) : l.type === D$3.DIRTYPE && (e.analyzePath(u).exists || e.mkdir(u));
 	}
 }
 function br(e, r) {
@@ -683,7 +683,7 @@ function br(e, r) {
 				name: l.substring(r.length),
 				mode: u.mode,
 				size: u.size,
-				type: e.isFile(u.mode) ? D$2.REGTYPE : D$2.DIRTYPE,
+				type: e.isFile(u.mode) ? D$3.REGTYPE : D$3.DIRTYPE,
 				modifyTime: u.mtime,
 				data: d
 			}), e.isDir(u.mode) && n(l);
@@ -693,7 +693,7 @@ function br(e, r) {
 }
 function Tr(e, r) {
 	let t = br(e, r);
-	return (0, D$2.tar)(t);
+	return (0, D$3.tar)(t);
 }
 async function Mr(e, r = "auto") {
 	if (r === "none") return [e, !1];
@@ -1039,7 +1039,7 @@ var Dr = (() => {
 			init() {
 				newDSO("__main__", 0, wasmImports);
 			}
-		}, ___heap_base = 205888, alignMemory = (e, r) => Math.ceil(e / r) * r, getMemory = (e) => {
+		}, ___heap_base = 205904, alignMemory = (e, r) => Math.ceil(e / r) * r, getMemory = (e) => {
 			if (runtimeInitialized) return _calloc(e, 1);
 			var r = ___heap_base, t = r + alignMemory(e, 16);
 			return ___heap_base = t, GOT.__heap_base.value = t, r;
@@ -1333,7 +1333,7 @@ var Dr = (() => {
 		}, 1024), ___stack_pointer = new WebAssembly.Global({
 			value: "i32",
 			mutable: !0
-		}, 205888), PATH = {
+		}, 205904), PATH = {
 			isAbs: (e) => e.charAt(0) === "/",
 			splitPath: (e) => {
 				return /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/.exec(e).slice(1);
@@ -3343,6 +3343,14 @@ var Dr = (() => {
 		__tzset_js.sig = "vpppp";
 		var _emscripten_date_now = () => Date.now();
 		_emscripten_date_now.sig = "d";
+		var runtimeKeepalivePush = () => {
+			runtimeKeepaliveCounter += 1;
+		};
+		runtimeKeepalivePush.sig = "v";
+		var _emscripten_exit_with_live_runtime = () => {
+			throw runtimeKeepalivePush(), "unwind";
+		};
+		_emscripten_exit_with_live_runtime.sig = "v";
 		var getHeapMax = () => 2147483648, growMemory = (e) => {
 			var t = (e - wasmMemory.buffer.byteLength + 65535) / 65536 | 0;
 			try {
@@ -3651,6 +3659,7 @@ var Dr = (() => {
 			_setitimer_js: __setitimer_js,
 			_tzset_js: __tzset_js,
 			emscripten_date_now: _emscripten_date_now,
+			emscripten_exit_with_live_runtime: _emscripten_exit_with_live_runtime,
 			emscripten_get_now: _emscripten_get_now,
 			emscripten_resize_heap: _emscripten_resize_heap,
 			environ_get: _environ_get,
@@ -3670,7 +3679,7 @@ var Dr = (() => {
 			proc_exit: _proc_exit
 		}, wasmExports;
 		createWasm();
-		var ___wasm_call_ctors = () => (___wasm_call_ctors = wasmExports.__wasm_call_ctors)(), _pgl_exit = Module._pgl_exit = (e) => (_pgl_exit = Module._pgl_exit = wasmExports.pgl_exit)(e), ___errno_location = Module.___errno_location = () => (___errno_location = Module.___errno_location = wasmExports.__errno_location)(), _fflush = Module._fflush = (e) => (_fflush = Module._fflush = wasmExports.fflush)(e), _fopen = Module._fopen = (e, r) => (_fopen = Module._fopen = wasmExports.fopen)(e, r), _fclose = Module._fclose = (e) => (_fclose = Module._fclose = wasmExports.fclose)(e), _pgl_popen = Module._pgl_popen = (e, r) => (_pgl_popen = Module._pgl_popen = wasmExports.pgl_popen)(e, r), _fputs = Module._fputs = (e, r) => (_fputs = Module._fputs = wasmExports.fputs)(e, r), _main = Module._main = (e, r) => (_main = Module._main = wasmExports.__main_argc_argv)(e, r), _pgl_atexit = Module._pgl_atexit = (e) => (_pgl_atexit = Module._pgl_atexit = wasmExports.pgl_atexit)(e), _pgl_geteuid = Module._pgl_geteuid = () => (_pgl_geteuid = Module._pgl_geteuid = wasmExports.pgl_geteuid)(), _pgl_system = Module._pgl_system = (e) => (_pgl_system = Module._pgl_system = wasmExports.pgl_system)(e), _malloc = (e) => (_malloc = wasmExports.malloc)(e), _calloc = (e, r) => (_calloc = wasmExports.calloc)(e, r), _pgl_setsockopt = Module._pgl_setsockopt = (e, r, t, n, o) => (_pgl_setsockopt = Module._pgl_setsockopt = wasmExports.pgl_setsockopt)(e, r, t, n, o), _pgl_connect = Module._pgl_connect = (e, r, t) => (_pgl_connect = Module._pgl_connect = wasmExports.pgl_connect)(e, r, t), _pgl_send = Module._pgl_send = (e, r, t, n) => (_pgl_send = Module._pgl_send = wasmExports.pgl_send)(e, r, t, n), _pgl_recv = Module._pgl_recv = (e, r, t, n) => (_pgl_recv = Module._pgl_recv = wasmExports.pgl_recv)(e, r, t, n), _fgets = Module._fgets = (e, r, t) => (_fgets = Module._fgets = wasmExports.fgets)(e, r, t), _pgl_getsockopt = Module._pgl_getsockopt = (e, r, t, n, o) => (_pgl_getsockopt = Module._pgl_getsockopt = wasmExports.pgl_getsockopt)(e, r, t, n, o), _pgl_getsockname = Module._pgl_getsockname = (e, r, t) => (_pgl_getsockname = Module._pgl_getsockname = wasmExports.pgl_getsockname)(e, r, t), _pgl_poll = Module._pgl_poll = (e, r, t) => (_pgl_poll = Module._pgl_poll = wasmExports.pgl_poll)(e, r, t), _clear_setitimer = Module._clear_setitimer = () => (_clear_setitimer = Module._clear_setitimer = wasmExports.clear_setitimer)(), _pgl_longjmp = Module._pgl_longjmp = (e, r) => (_pgl_longjmp = Module._pgl_longjmp = wasmExports.pgl_longjmp)(e, r), _pgl_siglongjmp = Module._pgl_siglongjmp = (e, r) => (_pgl_siglongjmp = Module._pgl_siglongjmp = wasmExports.pgl_siglongjmp)(e, r), _pgl_set_system_fn = Module._pgl_set_system_fn = (e) => (_pgl_set_system_fn = Module._pgl_set_system_fn = wasmExports.pgl_set_system_fn)(e), _pgl_set_popen_fn = Module._pgl_set_popen_fn = (e) => (_pgl_set_popen_fn = Module._pgl_set_popen_fn = wasmExports.pgl_set_popen_fn)(e), _pgl_set_pclose_fn = Module._pgl_set_pclose_fn = (e) => (_pgl_set_pclose_fn = Module._pgl_set_pclose_fn = wasmExports.pgl_set_pclose_fn)(e), _pgl_pclose = Module._pgl_pclose = (e) => (_pgl_pclose = Module._pgl_pclose = wasmExports.pgl_pclose)(e), _pclose = Module._pclose = (e) => (_pclose = Module._pclose = wasmExports.pclose)(e), _pgl_getuid = Module._pgl_getuid = () => (_pgl_getuid = Module._pgl_getuid = wasmExports.pgl_getuid)(), _pgl_getpwuid = Module._pgl_getpwuid = (e) => (_pgl_getpwuid = Module._pgl_getpwuid = wasmExports.pgl_getpwuid)(e), _pgl_run_atexit_funcs = Module._pgl_run_atexit_funcs = () => (_pgl_run_atexit_funcs = Module._pgl_run_atexit_funcs = wasmExports.pgl_run_atexit_funcs)(), _pgl_freopen = Module._pgl_freopen = (e, r, t) => (_pgl_freopen = Module._pgl_freopen = wasmExports.pgl_freopen)(e, r, t), _pgl_shmget = Module._pgl_shmget = (e, r, t) => (_pgl_shmget = Module._pgl_shmget = wasmExports.pgl_shmget)(e, r, t), _pgl_shmat = Module._pgl_shmat = (e, r, t) => (_pgl_shmat = Module._pgl_shmat = wasmExports.pgl_shmat)(e, r, t), _pgl_shmdt = Module._pgl_shmdt = (e) => (_pgl_shmdt = Module._pgl_shmdt = wasmExports.pgl_shmdt)(e), _pgl_shmctl = Module._pgl_shmctl = (e, r, t) => (_pgl_shmctl = Module._pgl_shmctl = wasmExports.pgl_shmctl)(e, r, t), _pgl_munmap = Module._pgl_munmap = (e, r) => (_pgl_munmap = Module._pgl_munmap = wasmExports.pgl_munmap)(e, r), _pgl_set_rw_cbs = Module._pgl_set_rw_cbs = (e, r) => (_pgl_set_rw_cbs = Module._pgl_set_rw_cbs = wasmExports.pgl_set_rw_cbs)(e, r), _pgl_fcntl = Module._pgl_fcntl = (e, r, t) => (_pgl_fcntl = Module._pgl_fcntl = wasmExports.pgl_fcntl)(e, r, t), _strerror = Module._strerror = (e) => (_strerror = Module._strerror = wasmExports.strerror)(e), ___funcs_on_exit = () => (___funcs_on_exit = wasmExports.__funcs_on_exit)(), ___dl_seterr = (e, r) => (___dl_seterr = wasmExports.__dl_seterr)(e, r), _htonl = (e) => (_htonl = wasmExports.htonl)(e), _htons = (e) => (_htons = wasmExports.htons)(e), _emscripten_builtin_memalign = (e, r) => (_emscripten_builtin_memalign = wasmExports.emscripten_builtin_memalign)(e, r), _ntohs = (e) => (_ntohs = wasmExports.ntohs)(e), __emscripten_timeout = (e, r) => (__emscripten_timeout = wasmExports._emscripten_timeout)(e, r), _setThrew = (e, r) => (_setThrew = wasmExports.setThrew)(e, r), __emscripten_stack_restore = (e) => (__emscripten_stack_restore = wasmExports._emscripten_stack_restore)(e), __emscripten_stack_alloc = (e) => (__emscripten_stack_alloc = wasmExports._emscripten_stack_alloc)(e), _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports.emscripten_stack_get_current)(), ___wasm_apply_data_relocs = () => (___wasm_apply_data_relocs = wasmExports.__wasm_apply_data_relocs)();
+		var ___wasm_call_ctors = () => (___wasm_call_ctors = wasmExports.__wasm_call_ctors)(), _pgl_exit = Module._pgl_exit = (e) => (_pgl_exit = Module._pgl_exit = wasmExports.pgl_exit)(e), ___errno_location = Module.___errno_location = () => (___errno_location = Module.___errno_location = wasmExports.__errno_location)(), _fflush = Module._fflush = (e) => (_fflush = Module._fflush = wasmExports.fflush)(e), _fopen = Module._fopen = (e, r) => (_fopen = Module._fopen = wasmExports.fopen)(e, r), _fclose = Module._fclose = (e) => (_fclose = Module._fclose = wasmExports.fclose)(e), _pgl_popen = Module._pgl_popen = (e, r) => (_pgl_popen = Module._pgl_popen = wasmExports.pgl_popen)(e, r), _fputs = Module._fputs = (e, r) => (_fputs = Module._fputs = wasmExports.fputs)(e, r), _main = Module._main = (e, r) => (_main = Module._main = wasmExports.__main_argc_argv)(e, r), _pgl_atexit = Module._pgl_atexit = (e) => (_pgl_atexit = Module._pgl_atexit = wasmExports.pgl_atexit)(e), _pgl_geteuid = Module._pgl_geteuid = () => (_pgl_geteuid = Module._pgl_geteuid = wasmExports.pgl_geteuid)(), _pgl_system = Module._pgl_system = (e) => (_pgl_system = Module._pgl_system = wasmExports.pgl_system)(e), _malloc = (e) => (_malloc = wasmExports.malloc)(e), _calloc = (e, r) => (_calloc = wasmExports.calloc)(e, r), _pgl_setsockopt = Module._pgl_setsockopt = (e, r, t, n, o) => (_pgl_setsockopt = Module._pgl_setsockopt = wasmExports.pgl_setsockopt)(e, r, t, n, o), _pgl_connect = Module._pgl_connect = (e, r, t) => (_pgl_connect = Module._pgl_connect = wasmExports.pgl_connect)(e, r, t), _pgl_send = Module._pgl_send = (e, r, t, n) => (_pgl_send = Module._pgl_send = wasmExports.pgl_send)(e, r, t, n), _pgl_recv = Module._pgl_recv = (e, r, t, n) => (_pgl_recv = Module._pgl_recv = wasmExports.pgl_recv)(e, r, t, n), _fgets = Module._fgets = (e, r, t) => (_fgets = Module._fgets = wasmExports.fgets)(e, r, t), _pgl_getsockopt = Module._pgl_getsockopt = (e, r, t, n, o) => (_pgl_getsockopt = Module._pgl_getsockopt = wasmExports.pgl_getsockopt)(e, r, t, n, o), _pgl_getsockname = Module._pgl_getsockname = (e, r, t) => (_pgl_getsockname = Module._pgl_getsockname = wasmExports.pgl_getsockname)(e, r, t), _pgl_poll = Module._pgl_poll = (e, r, t) => (_pgl_poll = Module._pgl_poll = wasmExports.pgl_poll)(e, r, t), _clear_setitimer = Module._clear_setitimer = () => (_clear_setitimer = Module._clear_setitimer = wasmExports.clear_setitimer)(), _pgl_getPGliteExitStatus = Module._pgl_getPGliteExitStatus = () => (_pgl_getPGliteExitStatus = Module._pgl_getPGliteExitStatus = wasmExports.pgl_getPGliteExitStatus)(), _pgl_setPGliteExitStatus = Module._pgl_setPGliteExitStatus = (e) => (_pgl_setPGliteExitStatus = Module._pgl_setPGliteExitStatus = wasmExports.pgl_setPGliteExitStatus)(e), _pgl_longjmp = Module._pgl_longjmp = (e, r) => (_pgl_longjmp = Module._pgl_longjmp = wasmExports.pgl_longjmp)(e, r), _pgl_siglongjmp = Module._pgl_siglongjmp = (e, r) => (_pgl_siglongjmp = Module._pgl_siglongjmp = wasmExports.pgl_siglongjmp)(e, r), _pgl_set_system_fn = Module._pgl_set_system_fn = (e) => (_pgl_set_system_fn = Module._pgl_set_system_fn = wasmExports.pgl_set_system_fn)(e), _pgl_set_popen_fn = Module._pgl_set_popen_fn = (e) => (_pgl_set_popen_fn = Module._pgl_set_popen_fn = wasmExports.pgl_set_popen_fn)(e), _pgl_set_pclose_fn = Module._pgl_set_pclose_fn = (e) => (_pgl_set_pclose_fn = Module._pgl_set_pclose_fn = wasmExports.pgl_set_pclose_fn)(e), _pgl_pclose = Module._pgl_pclose = (e) => (_pgl_pclose = Module._pgl_pclose = wasmExports.pgl_pclose)(e), _pclose = Module._pclose = (e) => (_pclose = Module._pclose = wasmExports.pclose)(e), _pgl_getuid = Module._pgl_getuid = () => (_pgl_getuid = Module._pgl_getuid = wasmExports.pgl_getuid)(), _pgl_getpwuid = Module._pgl_getpwuid = (e) => (_pgl_getpwuid = Module._pgl_getpwuid = wasmExports.pgl_getpwuid)(e), _pgl_run_atexit_funcs = Module._pgl_run_atexit_funcs = () => (_pgl_run_atexit_funcs = Module._pgl_run_atexit_funcs = wasmExports.pgl_run_atexit_funcs)(), _pgl_freopen = Module._pgl_freopen = (e, r, t) => (_pgl_freopen = Module._pgl_freopen = wasmExports.pgl_freopen)(e, r, t), _pgl_shmget = Module._pgl_shmget = (e, r, t) => (_pgl_shmget = Module._pgl_shmget = wasmExports.pgl_shmget)(e, r, t), _pgl_shmat = Module._pgl_shmat = (e, r, t) => (_pgl_shmat = Module._pgl_shmat = wasmExports.pgl_shmat)(e, r, t), _pgl_shmdt = Module._pgl_shmdt = (e) => (_pgl_shmdt = Module._pgl_shmdt = wasmExports.pgl_shmdt)(e), _pgl_shmctl = Module._pgl_shmctl = (e, r, t) => (_pgl_shmctl = Module._pgl_shmctl = wasmExports.pgl_shmctl)(e, r, t), _pgl_munmap = Module._pgl_munmap = (e, r) => (_pgl_munmap = Module._pgl_munmap = wasmExports.pgl_munmap)(e, r), _pgl_set_rw_cbs = Module._pgl_set_rw_cbs = (e, r) => (_pgl_set_rw_cbs = Module._pgl_set_rw_cbs = wasmExports.pgl_set_rw_cbs)(e, r), _pgl_fcntl = Module._pgl_fcntl = (e, r, t) => (_pgl_fcntl = Module._pgl_fcntl = wasmExports.pgl_fcntl)(e, r, t), _strerror = Module._strerror = (e) => (_strerror = Module._strerror = wasmExports.strerror)(e), ___funcs_on_exit = () => (___funcs_on_exit = wasmExports.__funcs_on_exit)(), ___dl_seterr = (e, r) => (___dl_seterr = wasmExports.__dl_seterr)(e, r), _htonl = (e) => (_htonl = wasmExports.htonl)(e), _htons = (e) => (_htons = wasmExports.htons)(e), _emscripten_builtin_memalign = (e, r) => (_emscripten_builtin_memalign = wasmExports.emscripten_builtin_memalign)(e, r), _ntohs = (e) => (_ntohs = wasmExports.ntohs)(e), __emscripten_timeout = (e, r) => (__emscripten_timeout = wasmExports._emscripten_timeout)(e, r), _setThrew = (e, r) => (_setThrew = wasmExports.setThrew)(e, r), __emscripten_stack_restore = (e) => (__emscripten_stack_restore = wasmExports._emscripten_stack_restore)(e), __emscripten_stack_alloc = (e) => (__emscripten_stack_alloc = wasmExports._emscripten_stack_alloc)(e), _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports.emscripten_stack_get_current)(), ___wasm_apply_data_relocs = () => (___wasm_apply_data_relocs = wasmExports.__wasm_apply_data_relocs)();
 		function invoke_iiii(e, r, t, n) {
 			var o = stackSave();
 			try {
@@ -3730,13 +3739,15 @@ var Dr = (() => {
 		}
 		if (Module.preInit) for (typeof Module.preInit == "function" && (Module.preInit = [Module.preInit]); Module.preInit.length > 0;) Module.preInit.pop()();
 		var shouldRunNow = !1;
-		return Module.noInitialRun && (shouldRunNow = !1), run(), moduleRtn = readyPromise, moduleRtn;
+		return Module.noInitialRun && (shouldRunNow = !1), run(), quit_ = (e, r) => {
+			throw r;
+		}, moduleRtn = readyPromise, moduleRtn;
 	};
 })();
 var xe$2 = Dr;
 var Ie$2 = xe$2;
 u$1();
-var Be$1 = "(?:" + [
+var Be$2 = "(?:" + [
 	"\\|\\|",
 	"\\&\\&",
 	";;",
@@ -3748,7 +3759,7 @@ var Be$1 = "(?:" + [
 	"<\\&",
 	"[&;()|<>]"
 ].join("|") + ")";
-var Ue$2 = new RegExp("^" + Be$1 + "$");
+var Ue$2 = new RegExp("^" + Be$2 + "$");
 var He$2 = "|&;()<> \\t";
 var Nr = "\"((\\\\\"|[^\"])*?)\"";
 var xr = "'((\\\\'|[^'])*?)'";
@@ -3771,7 +3782,7 @@ function Cr(e, r, t) {
 }
 function Br(e, r, t) {
 	t || (t = {});
-	let n = t.escape || "\\", o = "(\\" + n + `['"` + He$2 + `]|[^\\s'"` + He$2 + "])+", s = Lr(e, new RegExp(["(" + Be$1 + ")", "(" + o + "|" + Nr + "|" + xr + ")+"].join("|"), "g"));
+	let n = t.escape || "\\", o = "(\\" + n + `['"` + He$2 + `]|[^\\s'"` + He$2 + "])+", s = Lr(e, new RegExp(["(" + Be$2 + ")", "(" + o + "|" + Nr + "|" + xr + ")+"].join("|"), "g"));
 	if (s.length === 0) return [];
 	r || (r = {});
 	let l = !1;
@@ -3830,31 +3841,31 @@ function zr(e, r) {
 	if (!e) throw new Error(r ?? "Assertion failed");
 }
 var I$2 = "/pglite";
-var B$2 = I$2 + "/data";
+var B$1 = I$2 + "/data";
 var jr = I$2 + "/icu";
-var Yr = I$2 + "/bin/initdb";
+var Gr = I$2 + "/bin/initdb";
 var wt$2 = I$2 + "/bin/postgres";
 var ze$1 = I$2 + "/pgstdout";
 var je$2 = I$2 + "/pgstdin";
-function Y$1(e, ...r) {
+function G$3(e, ...r) {
 	e && e > 0 && console.log("initdb: ", ...r);
 }
-async function Wr({ pg: e, debug: r, args: t, wasmModule: n }) {
+async function Yr({ pg: e, debug: r, args: t, wasmModule: n }) {
 	let o, a, s, l = !1, u = [], d = 0, c = -1, p = -1, f = "", m = "", _ = (S) => {
 		let v = S.shift();
-		Y$1(r, "initdb: firstArg", v), zr(v === "/pglite/bin/postgres", `trying to execute ${v}`), e.Module.HEAPU8.set(g), Y$1(r, "executing pg main with", S);
+		G$3(r, "initdb: firstArg", v), zr(v === "/pglite/bin/postgres", `trying to execute ${v}`), e.Module.HEAPU8.set(g), G$3(r, "executing pg main with", S);
 		let h = e.callMain(S);
-		return Y$1(r, h), u = [], h;
+		return G$3(r, h), u = [], h;
 	}, g = e.Module.HEAPU8.slice(), y = await Ie$2({
 		arguments: t,
 		noExitRuntime: !1,
-		thisProgram: Yr,
+		thisProgram: Gr,
 		stdin: () => null,
 		print: (S) => {
-			m += S, Y$1(r, "initdbout", S);
+			m += S, G$3(r, "initdbout", S);
 		},
 		printErr: (S) => {
-			f += S, Y$1(r, "initdberr", S);
+			f += S, G$3(r, "initdberr", S);
 		},
 		instantiateWasm: (S, v) => {
 			let h = new URL("./initdb.wasm", import.meta.url);
@@ -3864,13 +3875,13 @@ async function Wr({ pg: e, debug: r, args: t, wasmModule: n }) {
 		},
 		preRun: [
 			(S) => {
-				S.ENV.PGDATA = B$2, S.ENV.HOME = "/home/postgres", S.ENV.USER = "postgres", S.ENV.LOGNAME = "postgres", S.ENV.ICU_DATA = jr;
+				S.ENV.PGDATA = B$1, S.ENV.HOME = "/home/postgres", S.ENV.USER = "postgres", S.ENV.LOGNAME = "postgres", S.ENV.ICU_DATA = jr;
 			},
 			(S) => {
 				S.onRuntimeInitialized = () => {
-					o = S.addFunction((v) => (u = Ye$2(S.UTF8ToString(v)), _(u)), "pi"), S._pgl_set_system_fn(o), a = S.addFunction((v, h) => {
+					o = S.addFunction((v) => (u = Ge$1(S.UTF8ToString(v)), _(u)), "pi"), S._pgl_set_system_fn(o), a = S.addFunction((v, h) => {
 						let b = S.UTF8ToString(h);
-						if (u = Ye$2(S.UTF8ToString(v)), b === "r") return d = _(u), c;
+						if (u = Ge$1(S.UTF8ToString(v)), b === "r") return d = _(u), c;
 						if (b === "w") return l = !0, p;
 						throw `Unexpected popen mode value ${b}`;
 					}, "ppi"), S._pgl_set_popen_fn(a), s = S.addFunction((v) => v === c || v === p ? (l && (l = !1, d = _(u)), d) : S._pclose(v), "pi"), S._pgl_set_pclose_fn(s);
@@ -3896,14 +3907,14 @@ async function Wr({ pg: e, debug: r, args: t, wasmModule: n }) {
 			}
 		]
 	});
-	return Y$1(r, "calling initdb.main with", t), {
+	return G$3(r, "calling initdb.main with", t), {
 		exitCode: y.callMain(t),
 		stderr: f,
 		stdout: m,
-		dataFolder: B$2
+		dataFolder: B$1
 	};
 }
-function Ye$2(e) {
+function Ge$1(e) {
 	let r = [], t = ce$2(e);
 	for (let n = 0; n < t.length; n++) {
 		let o = t[n];
@@ -3913,7 +3924,7 @@ function Ye$2(e) {
 	return r;
 }
 async function At$1({ pg: e, debug: r, args: t, wasmModule: n }) {
-	return await Wr({
+	return await Yr({
 		pg: e,
 		debug: r,
 		args: [
@@ -3928,7 +3939,7 @@ async function At$1({ pg: e, debug: r, args: t, wasmModule: n }) {
 		wasmModule: n
 	});
 }
-var We$2 = class {
+var Ye$2 = class {
 	constructor(r) {
 		this.dataDir = r;
 	}
@@ -3939,10 +3950,10 @@ var We$2 = class {
 	async initialSyncFs() {}
 	async closeFs() {}
 	async dumpTar(r, t) {
-		return ue$2(this.pg.Module.FS, B$2, r, t);
+		return ue$2(this.pg.Module.FS, B$1, r, t);
 	}
 };
-var Ge$2 = class {
+var We$2 = class {
 	constructor(r, { debug: t = !1 } = {}) {
 		this.dataDir = r, this.debug = t;
 	}
@@ -3950,14 +3961,14 @@ var Ge$2 = class {
 	async initialSyncFs() {}
 	async closeFs() {}
 	async dumpTar(r, t) {
-		return ue$2(this.pg.Module.FS, B$2, r, t);
+		return ue$2(this.pg.Module.FS, B$1, r, t);
 	}
 	async init(r, t) {
 		return this.pg = r, { emscriptenOpts: {
 			...t,
 			preRun: [...t.preRun || [], (o) => {
-				let a = Gr(o, this);
-				o.FS.mkdir(B$2), o.FS.mount(a, {}, B$2);
+				let a = Wr(o, this);
+				o.FS.mkdir(B$1), o.FS.mount(a, {}, B$1);
 			}]
 		} };
 	}
@@ -3973,7 +3984,7 @@ var Ve$2 = {
 	ENOTDIR: 54,
 	ENOTEMPTY: 55
 };
-var Gr = (e, r) => {
+var Wr = (e, r) => {
 	let t = e.FS, n = r.debug ? console.log : null, o = {
 		tryFSOperation(a) {
 			try {
@@ -4117,7 +4128,7 @@ var Gr = (e, r) => {
 //#region node_modules/@electric-sql/pglite/dist/fs/nodefs.js
 var nodefs_exports = /* @__PURE__ */ __exportAll({ NodeFS: () => m$2 });
 u$1();
-var m$2 = class extends We$2 {
+var m$2 = class extends Ye$2 {
 	constructor(t) {
 		super(t), this.rootDir = o$2.resolve(t), s$1.existsSync(o$2.join(this.rootDir)) || s$1.mkdirSync(this.rootDir);
 	}
@@ -4126,7 +4137,7 @@ var m$2 = class extends We$2 {
 			...e,
 			preRun: [...e.preRun || [], (r) => {
 				let c = r.FS.filesystems.NODEFS;
-				r.FS.mkdir(B$2), r.FS.mount(c, { root: this.rootDir }, B$2);
+				r.FS.mkdir(B$1), r.FS.mount(c, { root: this.rootDir }, B$1);
 			}]
 		} };
 	}
@@ -4136,25 +4147,25 @@ var m$2 = class extends We$2 {
 };
 //#endregion
 //#region node_modules/@electric-sql/pglite/dist/fs/opfs-ahp.js
-var opfs_ahp_exports = /* @__PURE__ */ __exportAll({ OpfsAhpFS: () => L$2 });
+var opfs_ahp_exports = /* @__PURE__ */ __exportAll({ OpfsAhpFS: () => L$1 });
 u$1();
 var $$2 = "state.txt";
-var G$1 = "data";
+var G$2 = "data";
 var T$1 = {
 	DIR: 16384,
 	FILE: 32768
 };
-var H$1;
+var H$2;
 var v$2;
 var F$1;
 var M;
 var y$2;
 var b$1;
 var m$1;
-var x$1;
+var x$2;
 var P$2;
-var D$1;
-var S$2;
+var D$2;
+var S$1;
 var n;
 var C;
 var O$2;
@@ -4164,24 +4175,24 @@ var f$1;
 var I$1;
 var W$2;
 var j$1;
-var L$2 = class extends Ge$2 {
+var L$1 = class extends We$2 {
 	constructor(e, { initialPoolSize: t = 1e3, maintainedPoolSize: o = 100, debug: i = !1 } = {}) {
 		super(e, { debug: i });
 		R$1(this, n);
-		R$1(this, H$1);
+		R$1(this, H$2);
 		R$1(this, v$2);
 		R$1(this, F$1);
 		R$1(this, M);
 		R$1(this, y$2);
 		R$1(this, b$1, /* @__PURE__ */ new Map());
 		R$1(this, m$1, /* @__PURE__ */ new Map());
-		R$1(this, x$1, 0);
+		R$1(this, x$2, 0);
 		R$1(this, P$2, /* @__PURE__ */ new Map());
-		R$1(this, D$1, /* @__PURE__ */ new Map());
+		R$1(this, D$2, /* @__PURE__ */ new Map());
 		this.lastCheckpoint = 0;
 		this.checkpointInterval = 6e4;
 		this.poolCounter = 0;
-		R$1(this, S$2, /* @__PURE__ */ new Set());
+		R$1(this, S$1, /* @__PURE__ */ new Set());
 		this.initialPoolSize = t, this.maintainedPoolSize = o;
 	}
 	async init(e, t) {
@@ -4231,10 +4242,10 @@ var L$2 = class extends Ge$2 {
 		h$1(this, y$2).truncate(0), h$1(this, y$2).write(e, { at: 0 }), h$1(this, y$2).flush(), this.lastCheckpoint = Date.now();
 	}
 	flush() {
-		for (let e of h$1(this, S$2)) try {
+		for (let e of h$1(this, S$1)) try {
 			e.flush();
 		} catch {}
-		h$1(this, S$2).clear();
+		h$1(this, S$1).clear();
 	}
 	chmod(e, t) {
 		T$2(this, n, O$2).call(this, {
@@ -4250,7 +4261,7 @@ var L$2 = class extends Ge$2 {
 	}
 	close(e) {
 		let t = T$2(this, n, I$1).call(this, e);
-		h$1(this, P$2).delete(e), h$1(this, D$1).delete(t);
+		h$1(this, P$2).delete(e), h$1(this, D$2).delete(t);
 	}
 	fstat(e) {
 		let t = T$2(this, n, I$1).call(this, e);
@@ -4302,7 +4313,7 @@ var L$2 = class extends Ge$2 {
 	open(e, t, o) {
 		if (T$2(this, n, f$1).call(this, e).type !== "file") throw new p$1("EISDIR", "Is a directory");
 		let c = T$2(this, n, W$2).call(this);
-		return h$1(this, P$2).set(c, e), h$1(this, D$1).set(e, c), c;
+		return h$1(this, P$2).set(c, e), h$1(this, D$2).set(e, c), c;
 	}
 	readdir(e) {
 		let t = T$2(this, n, f$1).call(this, e);
@@ -4353,7 +4364,7 @@ var L$2 = class extends Ge$2 {
 		if (o.type !== "file") throw new p$1("EISDIR", "Is a directory");
 		let i = h$1(this, m$1).get(o.backingFilename);
 		if (!i) throw new p$1("ENOENT", "No such file or directory");
-		i.truncate(t), h$1(this, S$2).add(i);
+		i.truncate(t), h$1(this, S$1).add(i);
 	}
 	unlink(e) {
 		T$2(this, n, O$2).call(this, {
@@ -4370,7 +4381,7 @@ var L$2 = class extends Ge$2 {
 		if (a.type !== "file") throw new p$1("EISDIR", "Is a directory");
 		if (delete c.children[i], t) {
 			let h = h$1(this, m$1).get(a.backingFilename);
-			h?.truncate(0), h$1(this, S$2).add(h), h$1(this, D$1).has(e) && (h$1(this, P$2).delete(h$1(this, D$1).get(e)), h$1(this, D$1).delete(e));
+			h?.truncate(0), h$1(this, S$1).add(h), h$1(this, D$2).has(e) && (h$1(this, P$2).delete(h$1(this, D$2).get(e)), h$1(this, D$2).delete(e));
 		}
 		this.state.pool.push(a.backingFilename);
 	}
@@ -4412,7 +4423,7 @@ var L$2 = class extends Ge$2 {
 			});
 		}
 		let h = a.children[c], d = h$1(this, m$1).get(h.backingFilename);
-		t.length > 0 && (d.write(typeof t == "string" ? new TextEncoder().encode(t) : new Uint8Array(t), { at: 0 }), e.startsWith("/pg_wal") && h$1(this, S$2).add(d));
+		t.length > 0 && (d.write(typeof t == "string" ? new TextEncoder().encode(t) : new Uint8Array(t), { at: 0 }), e.startsWith("/pg_wal") && h$1(this, S$1).add(d));
 	}
 	_createFileNodeState(e, t) {
 		let o = T$2(this, n, w$1).call(this, e), i = o.pop(), c = T$2(this, n, f$1).call(this, o.join("/"));
@@ -4430,14 +4441,14 @@ var L$2 = class extends Ge$2 {
 		let d = h$1(this, m$1).get(h.backingFilename);
 		if (!d) throw new p$1("EBADF", "Bad file descriptor");
 		let l = d.write(new Uint8Array(t, o, i), { at: c });
-		return a.startsWith("/pg_wal") && h$1(this, S$2).add(d), l;
+		return a.startsWith("/pg_wal") && h$1(this, S$1).add(d), l;
 	}
 };
-H$1 = /* @__PURE__ */ new WeakMap(), v$2 = /* @__PURE__ */ new WeakMap(), F$1 = /* @__PURE__ */ new WeakMap(), M = /* @__PURE__ */ new WeakMap(), y$2 = /* @__PURE__ */ new WeakMap(), b$1 = /* @__PURE__ */ new WeakMap(), m$1 = /* @__PURE__ */ new WeakMap(), x$1 = /* @__PURE__ */ new WeakMap(), P$2 = /* @__PURE__ */ new WeakMap(), D$1 = /* @__PURE__ */ new WeakMap(), S$2 = /* @__PURE__ */ new WeakMap(), n = /* @__PURE__ */ new WeakSet(), C = async function() {
-	x$2(this, H$1, await navigator.storage.getDirectory()), x$2(this, v$2, await T$2(this, n, j$1).call(this, this.dataDir, { create: !0 })), x$2(this, F$1, await T$2(this, n, j$1).call(this, G$1, {
+H$2 = /* @__PURE__ */ new WeakMap(), v$2 = /* @__PURE__ */ new WeakMap(), F$1 = /* @__PURE__ */ new WeakMap(), M = /* @__PURE__ */ new WeakMap(), y$2 = /* @__PURE__ */ new WeakMap(), b$1 = /* @__PURE__ */ new WeakMap(), m$1 = /* @__PURE__ */ new WeakMap(), x$2 = /* @__PURE__ */ new WeakMap(), P$2 = /* @__PURE__ */ new WeakMap(), D$2 = /* @__PURE__ */ new WeakMap(), S$1 = /* @__PURE__ */ new WeakMap(), n = /* @__PURE__ */ new WeakSet(), C = async function() {
+	x$3(this, H$2, await navigator.storage.getDirectory()), x$3(this, v$2, await T$2(this, n, j$1).call(this, this.dataDir, { create: !0 })), x$3(this, F$1, await T$2(this, n, j$1).call(this, G$2, {
 		from: h$1(this, v$2),
 		create: !0
-	})), x$2(this, M, await h$1(this, v$2).getFileHandle($$2, { create: !0 })), x$2(this, y$2, await h$1(this, M).createSyncAccessHandle());
+	})), x$3(this, M, await h$1(this, v$2).getFileHandle($$2, { create: !0 })), x$3(this, y$2, await h$1(this, M).createSyncAccessHandle());
 	let e = new ArrayBuffer(h$1(this, y$2).getSize());
 	h$1(this, y$2).read(e, { at: 0 });
 	let t, o = new TextDecoder().decode(e).split(`
@@ -4492,7 +4503,7 @@ H$1 = /* @__PURE__ */ new WeakMap(), v$2 = /* @__PURE__ */ new WeakMap(), F$1 = 
 }, k$1 = function(e) {
 	let t = JSON.stringify(e), o = new TextEncoder().encode(`
 ${t}`), i = h$1(this, y$2).getSize();
-	return h$1(this, y$2).write(o, { at: i }), h$1(this, S$2).add(h$1(this, y$2)), i;
+	return h$1(this, y$2).write(o, { at: i }), h$1(this, S$1).add(h$1(this, y$2)), i;
 }, w$1 = function(e) {
 	return e.split("/").filter(Boolean);
 }, f$1 = function(e, t) {
@@ -4508,11 +4519,11 @@ ${t}`), i = h$1(this, y$2).getSize();
 	if (!t) throw new p$1("EBADF", "Bad file descriptor");
 	return t;
 }, W$2 = function() {
-	let e = ++U$2(this, x$1)._;
-	for (; h$1(this, P$2).has(e);) U$2(this, x$1)._++;
+	let e = ++U$1(this, x$2)._;
+	for (; h$1(this, P$2).has(e);) U$1(this, x$2)._++;
 	return e;
 }, j$1 = async function(e, t) {
-	let o = T$2(this, n, w$1).call(this, e), i = t?.from || h$1(this, H$1);
+	let o = T$2(this, n, w$1).call(this, e), i = t?.from || h$1(this, H$2);
 	for (let c of o) i = await i.getDirectoryHandle(c, { create: t?.create });
 	return i;
 };
@@ -4541,7 +4552,7 @@ F$2(yn, {
 	GTSVECTOR: () => nn,
 	INET: () => Ot,
 	INT2: () => Ve$1,
-	INT4: () => Fe,
+	INT4: () => Fe$1,
 	INT8: () => be,
 	INTERVAL: () => Ft,
 	JSON: () => we$1,
@@ -4550,7 +4561,7 @@ F$2(yn, {
 	MACADDR8: () => Pt,
 	MONEY: () => Lt,
 	NUMERIC: () => vt$1,
-	OID: () => Ge$1,
+	OID: () => Ge,
 	PATH: () => xt$1,
 	PG_DEPENDENCIES: () => Zt,
 	PG_LSN: () => $t,
@@ -4600,10 +4611,10 @@ var he$1 = 17;
 var bt = 18;
 var be = 20;
 var Ve$1 = 21;
-var Fe = 23;
+var Fe$1 = 23;
 var gt$1 = 24;
 var ge$1 = 25;
-var Ge$1 = 26;
+var Ge = 26;
 var wt$1 = 27;
 var At = 28;
 var St = 29;
@@ -4670,8 +4681,8 @@ var je$1 = {
 		to: 0,
 		from: [
 			Ve$1,
-			Fe,
-			Ge$1,
+			Fe$1,
+			Ge,
 			Qe$1,
 			_e$1
 		],
@@ -4879,17 +4890,17 @@ function bn(e) {
 var Te$1 = {};
 F$2(Te$1, {
 	AuthenticationCleartextPassword: () => F,
-	AuthenticationMD5Password: () => G,
-	AuthenticationOk: () => V$1,
+	AuthenticationMD5Password: () => G$1,
+	AuthenticationOk: () => V,
 	AuthenticationSASL: () => Q,
 	AuthenticationSASLContinue: () => _$1,
 	AuthenticationSASLFinal: () => v$1,
 	BackendKeyDataMessage: () => K,
 	CommandCompleteMessage: () => X,
-	CopyDataMessage: () => H,
+	CopyDataMessage: () => H$1,
 	CopyResponse: () => z$2,
 	DataRowMessage: () => Z,
-	DatabaseError: () => N,
+	DatabaseError: () => N$1,
 	Field: () => q,
 	NoticeMessage: () => ee$1,
 	NotificationResponseMessage: () => J$1,
@@ -4902,12 +4913,12 @@ F$2(Te$1, {
 	copyDone: () => Ce$1,
 	emptyQuery: () => Ee$1,
 	noData: () => xe$1,
-	parseComplete: () => Be,
+	parseComplete: () => Be$1,
 	portalSuspended: () => Me$1,
 	replicationStart: () => Re$1
 });
 u$1();
-var Be = {
+var Be$1 = {
 	name: "parseComplete",
 	length: 5
 };
@@ -4939,7 +4950,7 @@ var Ce$1 = {
 	name: "copyDone",
 	length: 4
 };
-var V$1 = class {
+var V = class {
 	constructor(t) {
 		this.length = t;
 		this.name = "authenticationOk";
@@ -4951,7 +4962,7 @@ var F = class {
 		this.name = "authenticationCleartextPassword";
 	}
 };
-var G = class {
+var G$1 = class {
 	constructor(t, n) {
 		this.length = t;
 		this.salt = n;
@@ -4979,14 +4990,14 @@ var v$1 = class {
 		this.name = "authenticationSASLFinal";
 	}
 };
-var N = class extends Error {
+var N$1 = class extends Error {
 	constructor(n, s, i) {
 		super(n);
 		this.length = s;
 		this.name = i;
 	}
 };
-var H = class {
+var H$1 = class {
 	constructor(t, n) {
 		this.length = t;
 		this.chunk = n;
@@ -5105,48 +5116,48 @@ var g$1;
 var k;
 var ae$1;
 var O$1;
-var S$1;
+var S;
 var ie$1;
-var L$1;
+var L;
 var Je$1;
 var T = class {
 	constructor(t = 256) {
 		this.size = t;
-		R$1(this, S$1);
+		R$1(this, S);
 		R$1(this, b);
 		R$1(this, g$1, 5);
 		R$1(this, k, !1);
 		R$1(this, ae$1, new TextEncoder());
 		R$1(this, O$1, 0);
-		x$2(this, b, T$2(this, S$1, ie$1).call(this, t));
+		x$3(this, b, T$2(this, S, ie$1).call(this, t));
 	}
 	addInt32(t) {
-		return T$2(this, S$1, L$1).call(this, 4), h$1(this, b).setInt32(h$1(this, g$1), t, h$1(this, k)), x$2(this, g$1, h$1(this, g$1) + 4), this;
+		return T$2(this, S, L).call(this, 4), h$1(this, b).setInt32(h$1(this, g$1), t, h$1(this, k)), x$3(this, g$1, h$1(this, g$1) + 4), this;
 	}
 	addInt16(t) {
-		return T$2(this, S$1, L$1).call(this, 2), h$1(this, b).setInt16(h$1(this, g$1), t, h$1(this, k)), x$2(this, g$1, h$1(this, g$1) + 2), this;
+		return T$2(this, S, L).call(this, 2), h$1(this, b).setInt16(h$1(this, g$1), t, h$1(this, k)), x$3(this, g$1, h$1(this, g$1) + 2), this;
 	}
 	addCString(t) {
-		return t && this.addString(t), T$2(this, S$1, L$1).call(this, 1), h$1(this, b).setUint8(h$1(this, g$1), 0), U$2(this, g$1)._++, this;
+		return t && this.addString(t), T$2(this, S, L).call(this, 1), h$1(this, b).setUint8(h$1(this, g$1), 0), U$1(this, g$1)._++, this;
 	}
 	addString(t = "") {
 		let n = P$1(t);
-		return T$2(this, S$1, L$1).call(this, n), h$1(this, ae$1).encodeInto(t, new Uint8Array(h$1(this, b).buffer, h$1(this, g$1))), x$2(this, g$1, h$1(this, g$1) + n), this;
+		return T$2(this, S, L).call(this, n), h$1(this, ae$1).encodeInto(t, new Uint8Array(h$1(this, b).buffer, h$1(this, g$1))), x$3(this, g$1, h$1(this, g$1) + n), this;
 	}
 	add(t) {
-		return T$2(this, S$1, L$1).call(this, t.byteLength), new Uint8Array(h$1(this, b).buffer).set(new Uint8Array(t), h$1(this, g$1)), x$2(this, g$1, h$1(this, g$1) + t.byteLength), this;
+		return T$2(this, S, L).call(this, t.byteLength), new Uint8Array(h$1(this, b).buffer).set(new Uint8Array(t), h$1(this, g$1)), x$3(this, g$1, h$1(this, g$1) + t.byteLength), this;
 	}
 	flush(t) {
-		let n = T$2(this, S$1, Je$1).call(this, t);
-		return x$2(this, g$1, 5), x$2(this, b, T$2(this, S$1, ie$1).call(this, this.size)), new Uint8Array(n);
+		let n = T$2(this, S, Je$1).call(this, t);
+		return x$3(this, g$1, 5), x$3(this, b, T$2(this, S, ie$1).call(this, this.size)), new Uint8Array(n);
 	}
 };
-b = /* @__PURE__ */ new WeakMap(), g$1 = /* @__PURE__ */ new WeakMap(), k = /* @__PURE__ */ new WeakMap(), ae$1 = /* @__PURE__ */ new WeakMap(), O$1 = /* @__PURE__ */ new WeakMap(), S$1 = /* @__PURE__ */ new WeakSet(), ie$1 = function(t) {
+b = /* @__PURE__ */ new WeakMap(), g$1 = /* @__PURE__ */ new WeakMap(), k = /* @__PURE__ */ new WeakMap(), ae$1 = /* @__PURE__ */ new WeakMap(), O$1 = /* @__PURE__ */ new WeakMap(), S = /* @__PURE__ */ new WeakSet(), ie$1 = function(t) {
 	return new DataView(new ArrayBuffer(t));
-}, L$1 = function(t) {
+}, L = function(t) {
 	if (h$1(this, b).byteLength - h$1(this, g$1) < t) {
 		let s = h$1(this, b).buffer, i = s.byteLength + (s.byteLength >> 1) + t;
-		x$2(this, b, T$2(this, S$1, ie$1).call(this, i)), new Uint8Array(h$1(this, b).buffer).set(new Uint8Array(s));
+		x$3(this, b, T$2(this, S, ie$1).call(this, i)), new Uint8Array(h$1(this, b).buffer).set(new Uint8Array(s));
 	}
 }, Je$1 = function(t) {
 	if (t) {
@@ -5179,20 +5190,20 @@ var Mn = (e) => {
 	let n = f.addCString(t).addCString(e.text).addInt16(e.types?.length ?? 0);
 	return e.types?.forEach((s) => n.addInt32(s)), f.flush(80);
 };
-var U$1 = new T();
+var U = new T();
 var Rn = (e, t) => {
 	for (let n = 0; n < e.length; n++) {
 		let s = t ? t(e[n], n) : e[n];
-		if (s === null) f.addInt16(0), U$1.addInt32(-1);
+		if (s === null) f.addInt16(0), U.addInt32(-1);
 		else if (s instanceof ArrayBuffer || ArrayBuffer.isView(s)) {
 			let i = ArrayBuffer.isView(s) ? s.buffer.slice(s.byteOffset, s.byteOffset + s.byteLength) : s;
-			f.addInt16(1), U$1.addInt32(i.byteLength), U$1.add(i);
-		} else f.addInt16(0), U$1.addInt32(P$1(s)), U$1.addString(s);
+			f.addInt16(1), U.addInt32(i.byteLength), U.add(i);
+		} else f.addInt16(0), U.addInt32(P$1(s)), U.addString(s);
 	}
 };
 var En = (e = {}) => {
 	let t = e.portal ?? "", n = e.statement ?? "", s = e.binary ?? !1, i = e.values ?? xn, a = i.length;
-	return f.addCString(t).addCString(n), f.addInt16(a), Rn(i, e.valueMapper), f.addInt16(a), f.add(U$1.flush()), f.addInt16(s ? 1 : 0), f.flush(66);
+	return f.addCString(t).addCString(n), f.addInt16(a), Rn(i, e.valueMapper), f.addInt16(a), f.add(U.flush()), f.addInt16(s ? 1 : 0), f.flush(66);
 };
 var Cn = new Uint8Array([
 	69,
@@ -5278,22 +5289,22 @@ var ue$1 = class {
 		R$1(this, ce$1, "utf-8");
 		R$1(this, le$1, new TextDecoder(h$1(this, ce$1)));
 		R$1(this, te, !1);
-		x$2(this, w, t);
+		x$3(this, w, t);
 	}
 	setBuffer(t, n) {
-		x$2(this, w, t), x$2(this, R, new DataView(n));
+		x$3(this, w, t), x$3(this, R, new DataView(n));
 	}
 	int16() {
 		let t = h$1(this, R).getInt16(h$1(this, w), h$1(this, te));
-		return x$2(this, w, h$1(this, w) + 2), t;
+		return x$3(this, w, h$1(this, w) + 2), t;
 	}
 	byte() {
 		let t = h$1(this, R).getUint8(h$1(this, w));
-		return U$2(this, w)._++, t;
+		return U$1(this, w)._++, t;
 	}
 	int32() {
 		let t = h$1(this, R).getInt32(h$1(this, w), h$1(this, te));
-		return x$2(this, w, h$1(this, w) + 4), t;
+		return x$3(this, w, h$1(this, w) + 4), t;
 	}
 	string(t) {
 		return h$1(this, le$1).decode(this.bytes(t));
@@ -5302,11 +5313,11 @@ var ue$1 = class {
 		let t = h$1(this, w), n = t;
 		for (; h$1(this, R).getUint8(n++) !== 0;);
 		let s = this.string(n - t - 1);
-		return x$2(this, w, n), s;
+		return x$3(this, w, n), s;
 	}
 	bytes(t) {
 		let n = h$1(this, R).buffer.slice(h$1(this, w), h$1(this, w) + t);
-		return x$2(this, w, h$1(this, w) + t), new Uint8Array(n);
+		return x$3(this, w, h$1(this, w) + t), new Uint8Array(n);
 	}
 };
 R = /* @__PURE__ */ new WeakMap(), w = /* @__PURE__ */ new WeakMap(), ce$1 = /* @__PURE__ */ new WeakMap(), le$1 = /* @__PURE__ */ new WeakMap(), te = /* @__PURE__ */ new WeakMap();
@@ -5314,11 +5325,11 @@ var Le = 1;
 var Xe$1 = Le + 4;
 var Ze$1 = /* @__PURE__ */ new ArrayBuffer(0);
 var A;
-var B$1;
-var D;
+var B;
+var D$1;
 var o$1;
 var c;
-var ke$1;
+var ke;
 var et$1;
 var tt$1;
 var nt;
@@ -5340,13 +5351,13 @@ var pe$1 = class {
 	constructor() {
 		R$1(this, c);
 		R$1(this, A, new DataView(Ze$1));
-		R$1(this, B$1, 0);
-		R$1(this, D, 0);
+		R$1(this, B, 0);
+		R$1(this, D$1, 0);
 		R$1(this, o$1, new ue$1());
 	}
 	parse(t, n) {
 		T$2(this, c, et$1).call(this, ArrayBuffer.isView(t) ? t.buffer.slice(t.byteOffset, t.byteOffset + t.byteLength) : t);
-		let s = h$1(this, D) + h$1(this, B$1), i = h$1(this, D);
+		let s = h$1(this, D$1) + h$1(this, B), i = h$1(this, D$1);
 		for (; i + Xe$1 <= s;) {
 			let a = h$1(this, A).getUint8(i), u = h$1(this, A).getUint32(i + Le, !1), m = Le + u;
 			if (m + i <= s && u > 0) {
@@ -5354,35 +5365,35 @@ var pe$1 = class {
 				try {
 					l = T$2(this, c, tt$1).call(this, i + Xe$1, a, u, h$1(this, A).buffer);
 				} catch (E) {
-					throw T$2(this, c, ke$1).call(this), E;
+					throw T$2(this, c, ke).call(this), E;
 				}
 				n(l), i += m;
 			} else break;
 		}
-		i === s ? T$2(this, c, ke$1).call(this) : (x$2(this, B$1, s - i), x$2(this, D, i));
+		i === s ? T$2(this, c, ke).call(this) : (x$3(this, B, s - i), x$3(this, D$1, i));
 	}
 };
-A = /* @__PURE__ */ new WeakMap(), B$1 = /* @__PURE__ */ new WeakMap(), D = /* @__PURE__ */ new WeakMap(), o$1 = /* @__PURE__ */ new WeakMap(), c = /* @__PURE__ */ new WeakSet(), ke$1 = function() {
-	x$2(this, A, new DataView(Ze$1)), x$2(this, B$1, 0), x$2(this, D, 0);
+A = /* @__PURE__ */ new WeakMap(), B = /* @__PURE__ */ new WeakMap(), D$1 = /* @__PURE__ */ new WeakMap(), o$1 = /* @__PURE__ */ new WeakMap(), c = /* @__PURE__ */ new WeakSet(), ke = function() {
+	x$3(this, A, new DataView(Ze$1)), x$3(this, B, 0), x$3(this, D$1, 0);
 }, et$1 = function(t) {
-	if (h$1(this, B$1) > 0) {
-		let n = h$1(this, B$1) + t.byteLength;
-		if (n + h$1(this, D) > h$1(this, A).byteLength) {
+	if (h$1(this, B) > 0) {
+		let n = h$1(this, B) + t.byteLength;
+		if (n + h$1(this, D$1) > h$1(this, A).byteLength) {
 			let i;
-			if (n <= h$1(this, A).byteLength && h$1(this, D) >= h$1(this, B$1)) i = h$1(this, A).buffer;
+			if (n <= h$1(this, A).byteLength && h$1(this, D$1) >= h$1(this, B)) i = h$1(this, A).buffer;
 			else {
 				let a = h$1(this, A).byteLength * 2;
 				for (; n >= a;) a *= 2;
 				i = new ArrayBuffer(a);
 			}
-			new Uint8Array(i).set(new Uint8Array(h$1(this, A).buffer, h$1(this, D), h$1(this, B$1))), x$2(this, A, new DataView(i)), x$2(this, D, 0);
+			new Uint8Array(i).set(new Uint8Array(h$1(this, A).buffer, h$1(this, D$1), h$1(this, B))), x$3(this, A, new DataView(i)), x$3(this, D$1, 0);
 		}
-		new Uint8Array(h$1(this, A).buffer).set(new Uint8Array(t), h$1(this, D) + h$1(this, B$1)), x$2(this, B$1, n);
-	} else x$2(this, A, new DataView(t)), x$2(this, D, 0), x$2(this, B$1, t.byteLength);
+		new Uint8Array(h$1(this, A).buffer).set(new Uint8Array(t), h$1(this, D$1) + h$1(this, B)), x$3(this, B, n);
+	} else x$3(this, A, new DataView(t)), x$3(this, D$1, 0), x$3(this, B, t.byteLength);
 }, tt$1 = function(t, n, s, i) {
 	switch (n) {
 		case 50: return De;
-		case 49: return Be;
+		case 49: return Be$1;
 		case 51: return Ie$1;
 		case 110: return xe$1;
 		case 115: return Me$1;
@@ -5403,7 +5414,7 @@ A = /* @__PURE__ */ new WeakMap(), B$1 = /* @__PURE__ */ new WeakMap(), D = /* @
 		case 71: return T$2(this, c, it).call(this, t, s, i);
 		case 72: return T$2(this, c, at$1).call(this, t, s, i);
 		case 100: return T$2(this, c, st$1).call(this, t, s, i);
-		default: return new N("received invalid response: " + n.toString(16), s, "error");
+		default: return new N$1("received invalid response: " + n.toString(16), s, "error");
 	}
 }, nt = function(t, n, s) {
 	h$1(this, o$1).setBuffer(t, s);
@@ -5413,7 +5424,7 @@ A = /* @__PURE__ */ new WeakMap(), B$1 = /* @__PURE__ */ new WeakMap(), D = /* @
 	return new X(n, h$1(this, o$1).cstring());
 }, st$1 = function(t, n, s) {
 	let i = s.slice(t, t + (n - 4));
-	return new H(n, new Uint8Array(i));
+	return new H$1(n, new Uint8Array(i));
 }, it = function(t, n, s) {
 	return T$2(this, c, Oe).call(this, t, n, s, "copyInResponse");
 }, at$1 = function(t, n, s) {
@@ -5456,9 +5467,9 @@ A = /* @__PURE__ */ new WeakMap(), B$1 = /* @__PURE__ */ new WeakMap(), D = /* @
 	h$1(this, o$1).setBuffer(t, s);
 	let i = h$1(this, o$1).int32();
 	switch (i) {
-		case 0: return new V$1(n);
+		case 0: return new V(n);
 		case 3: return new F(n);
-		case 5: return new G(n, h$1(this, o$1).bytes(4));
+		case 5: return new G$1(n, h$1(this, o$1).bytes(4));
 		case 10: {
 			let a = [];
 			for (;;) {
@@ -5475,7 +5486,7 @@ A = /* @__PURE__ */ new WeakMap(), B$1 = /* @__PURE__ */ new WeakMap(), D = /* @
 	h$1(this, o$1).setBuffer(t, s);
 	let a = {}, u = h$1(this, o$1).string(1);
 	for (; u !== "\0";) a[u] = h$1(this, o$1).cstring(), u = h$1(this, o$1).string(1);
-	let m = a.M, l = i === "notice" ? new ee$1(n, m) : new N(m, n, i);
+	let m = a.M, l = i === "notice" ? new ee$1(n, m) : new N$1(m, n, i);
 	return l.severity = a.S, l.code = a.C, l.detail = a.D, l.hint = a.H, l.position = a.P, l.internalPosition = a.p, l.internalQuery = a.q, l.where = a.W, l.schema = a.s, l.table = a.t, l.column = a.c, l.dataType = a.d, l.constraint = a.n, l.file = a.F, l.line = a.L, l.routine = a.R, l;
 };
 //#endregion
@@ -5536,7 +5547,7 @@ var P;
 var p;
 var t;
 var y;
-var x;
+var x$1;
 var m;
 var _;
 var z$1 = class {
@@ -5549,7 +5560,7 @@ var z$1 = class {
 	}
 	async _initArrayTypes({ force: s = !1 } = {}) {
 		if (h$1(this, P) && !s) return;
-		x$2(this, P, !0);
+		x$3(this, P, !0);
 		let e = await this.query(`
       SELECT b.oid, b.typarray
       FROM pg_catalog.pg_type a
@@ -5564,7 +5575,7 @@ var z$1 = class {
 		await this._initArrayTypes({ force: !0 });
 	}
 	async query(s, e, r) {
-		return await this._checkReady(), await this._runExclusiveTransaction(async () => await T$2(this, t, x).call(this, s, e, r));
+		return await this._checkReady(), await this._runExclusiveTransaction(async () => await T$2(this, t, x$1).call(this, s, e, r));
 	}
 	async sql(s, ...e) {
 		let { query: r, params: o } = g(s, ...e);
@@ -5581,7 +5592,7 @@ var z$1 = class {
 				types: e?.paramTypes
 			}), e), r = await T$2(this, t, y).call(this, $e$1.describe({ type: "S" }), e);
 		} catch (n) {
-			throw n instanceof N ? E({
+			throw n instanceof N$1 ? E({
 				e: n,
 				options: e,
 				params: void 0,
@@ -5605,15 +5616,15 @@ var z$1 = class {
 	}
 	async transaction(s) {
 		return await this._checkReady(), await this._runExclusiveTransaction(async () => {
-			await T$2(this, t, m).call(this, "BEGIN"), x$2(this, p, !0);
+			await T$2(this, t, m).call(this, "BEGIN"), x$3(this, p, !0);
 			let e = !1, r = () => {
 				if (e) throw new Error("Transaction is closed");
 			}, o = {
-				query: async (i, c, u) => (r(), await T$2(this, t, x).call(this, i, c, u)),
+				query: async (i, c, u) => (r(), await T$2(this, t, x$1).call(this, i, c, u)),
 				sql: async (i, ...c) => {
 					r();
 					let { query: u, params: n } = g(i, ...c);
-					return await T$2(this, t, x).call(this, u, n);
+					return await T$2(this, t, x$1).call(this, u, n);
 				},
 				exec: async (i, c) => (r(), await T$2(this, t, m).call(this, i, c)),
 				rollback: async () => {
@@ -5626,9 +5637,9 @@ var z$1 = class {
 			};
 			try {
 				let i = await s(o);
-				return e || (e = !0, await T$2(this, t, m).call(this, "COMMIT")), x$2(this, p, !1), i;
+				return e || (e = !0, await T$2(this, t, m).call(this, "COMMIT")), x$3(this, p, !1), i;
 			} catch (i) {
-				throw e || (e = !0, await T$2(this, t, m).call(this, "ROLLBACK")), x$2(this, p, !1), i;
+				throw e || (e = !0, await T$2(this, t, m).call(this, "ROLLBACK")), x$3(this, p, !1), i;
 			}
 		});
 	}
@@ -5641,7 +5652,7 @@ P = /* @__PURE__ */ new WeakMap(), p = /* @__PURE__ */ new WeakMap(), t = /* @__
 		...e,
 		syncToFs: !1
 	});
-}, x = async function(s, e = [], r) {
+}, x$1 = async function(s, e = [], r) {
 	return await this._runExclusiveQuery(async () => {
 		T$2(this, t, _).call(this, "runQuery", s, e, r), await this._handleBlob(r?.blob);
 		let o = [];
@@ -5662,7 +5673,7 @@ P = /* @__PURE__ */ new WeakMap(), p = /* @__PURE__ */ new WeakMap(), t = /* @__
 				...await T$2(this, t, y).call(this, $e$1.execute({}), r)
 			];
 		} catch (c) {
-			throw c instanceof N ? E({
+			throw c instanceof N$1 ? E({
 				e: c,
 				options: r,
 				params: e,
@@ -5682,7 +5693,7 @@ P = /* @__PURE__ */ new WeakMap(), p = /* @__PURE__ */ new WeakMap(), t = /* @__
 		try {
 			r = await T$2(this, t, y).call(this, $e$1.query(s), e);
 		} catch (i) {
-			throw i instanceof N ? E({
+			throw i instanceof N$1 ? E({
 				e: i,
 				options: e,
 				params: void 0,
@@ -5739,22 +5750,22 @@ var ft = function(e, t, r, a) {
 		});
 	}
 	return new (r || (r = Promise))(function(_, s) {
-		function n(u) {
+		function n(p) {
 			try {
-				d(a.next(u));
-			} catch (c) {
-				s(c);
+				d(a.next(p));
+			} catch (m) {
+				s(m);
 			}
 		}
-		function l(u) {
+		function l(p) {
 			try {
-				d(a.throw(u));
-			} catch (c) {
-				s(c);
+				d(a.throw(p));
+			} catch (m) {
+				s(m);
 			}
 		}
-		function d(u) {
-			u.done ? _(u.value) : o(u.value).then(n, l);
+		function d(p) {
+			p.done ? _(p.value) : o(p.value).then(n, l);
 		}
 		d((a = a.apply(e, t || [])).next());
 	});
@@ -5831,22 +5842,22 @@ var vt = function(e, t, r, a) {
 		});
 	}
 	return new (r || (r = Promise))(function(_, s) {
-		function n(u) {
+		function n(p) {
 			try {
-				d(a.next(u));
-			} catch (c) {
-				s(c);
+				d(a.next(p));
+			} catch (m) {
+				s(m);
 			}
 		}
-		function l(u) {
+		function l(p) {
 			try {
-				d(a.throw(u));
-			} catch (c) {
-				s(c);
+				d(a.throw(p));
+			} catch (m) {
+				s(m);
 			}
 		}
-		function d(u) {
-			u.done ? _(u.value) : o(u.value).then(n, l);
+		function d(p) {
+			p.done ? _(p.value) : o(p.value).then(n, l);
 		}
 		d((a = a.apply(e, t || [])).next());
 	});
@@ -5878,7 +5889,7 @@ var J = class {
 	}
 };
 u$1();
-var Ge = L$3(Re$2(), 1);
+var Be = L$2(Re$2(), 1);
 async function Re(e) {
 	if (p$2.IN_NODE) {
 		let t = await import("fs"), r = await import("zlib"), { Writable: a } = await import("stream"), { pipeline: o } = await import("stream/promises");
@@ -5916,7 +5927,7 @@ async function Ue(e, t) {
 }
 function Et(e, t, r, a) {
 	let o = [];
-	return Ge.default.untar(r).sort((s, n) => s.name > n.name ? 1 : s.name < n.name ? -1 : 0).forEach((s) => {
+	return Be.default.untar(r).sort((s, n) => s.name > n.name ? 1 : s.name < n.name ? -1 : 0).forEach((s) => {
 		if (s.name.endsWith("/")) {
 			let n = `${e.WASM_PREFIX}/${s.name}`;
 			e.FS.analyzePath(n).exists === !1 && e.FS.mkdirTree(n);
@@ -5924,15 +5935,15 @@ function Et(e, t, r, a) {
 			let n = e.WASM_PREFIX + "/" + s.name;
 			if (s.name.endsWith(".so")) {
 				a(`pgfs:ext preloading ${n}`);
-				let l = s.name.split("/").pop(), d = Mt(n), u = new Promise((c, f) => {
-					let g = (...p) => {
-						a("pgfs:ext OK", n, p), c();
-					}, m = (...p) => {
-						a("pgfs:ext FAIL", n, p), fe(e.FS, n, s.data), c();
+				let l = s.name.split("/").pop(), d = Mt(n), p = new Promise((m, g) => {
+					let u = (...c) => {
+						a("pgfs:ext OK", n, c), m();
+					}, f = (...c) => {
+						a("pgfs:ext FAIL", n, c), fe(e.FS, n, s.data), m();
 					};
-					e.FS.createPreloadedFile(d, l, s.data, !0, !0, g, m, !1);
+					e.FS.createPreloadedFile(d, l, s.data, !0, !0, u, f, !1);
 				});
-				o.push(u);
+				o.push(p);
 			} else fe(e.FS, n, s.data);
 		}
 	}), o;
@@ -5951,13 +5962,13 @@ function Mt(e) {
 }
 u$1();
 u$1();
-var ve = class extends We$2 {
+var ve = class extends Ye$2 {
 	async init(t, r) {
 		return this.pg = t, { emscriptenOpts: {
 			...r,
 			preRun: [...r.preRun || [], (o) => {
 				let _ = o.FS.filesystems.IDBFS;
-				o.FS.analyzePath("/pglite").exists || o.FS.mkdir("/pglite"), o.FS.analyzePath(`/pglite/${this.dataDir}`).exists || o.FS.mkdir(`/pglite/${this.dataDir}`), o.FS.mount(_, {}, `${I$2}/${this.dataDir}`), o.FS.symlink(`${I$2}/${this.dataDir}`, B$2);
+				o.FS.analyzePath("/pglite").exists || o.FS.mkdir("/pglite"), o.FS.analyzePath(`/pglite/${this.dataDir}`).exists || o.FS.mkdir(`/pglite/${this.dataDir}`), o.FS.mount(_, {}, `${I$2}/${this.dataDir}`), o.FS.symlink(`${I$2}/${this.dataDir}`, B$1);
 			}]
 		} };
 	}
@@ -5981,7 +5992,7 @@ var ve = class extends We$2 {
 	}
 };
 u$1();
-var Ee = class extends We$2 {
+var Ee = class extends Ye$2 {
 	async closeFs() {
 		this.pg.Module.FS.quit();
 	}
@@ -6029,75 +6040,75 @@ var ht = (() => {
 				var _ = "";
 				typeof window == "object" ? window.encodeURIComponent(window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/")) + "/") : typeof process > "u" && typeof location < "u" && encodeURIComponent(location.pathname.substring(0, location.pathname.lastIndexOf("/")) + "/");
 				var s = "pglite.data", n = "pglite.data", l = Module.locateFile ? Module.locateFile(n, "") : n, d = o.remote_package_size;
-				function u(p, h, x, b) {
+				function p(c, w, S, k) {
 					if (r) {
-						require("fs").readFile(p, (M, y) => {
-							M ? b(M) : x(y.buffer);
+						require("fs").readFile(c, (E, y) => {
+							E ? k(E) : S(y.buffer);
 						});
 						return;
 					}
-					Module.dataFileDownloads ?? (Module.dataFileDownloads = {}), fetch(p).catch((M) => Promise.reject(new Error(`Network Error: ${p}`, { cause: M }))).then((M) => {
-						if (!M.ok) return Promise.reject(/* @__PURE__ */ new Error(`${M.status}: ${M.url}`));
-						if (!M.body && M.arrayBuffer) return M.arrayBuffer().then(x);
-						let y = M.body.getReader(), E = () => y.read().then(te).catch((H) => Promise.reject(new Error(`Unexpected error while handling : ${M.url} ${H}`, { cause: H }))), F = [], k = M.headers, q = Number(k.get("Content-Length") ?? h), D = 0, te = ({ done: H, value: X }) => {
-							if (H) {
-								let R = new Uint8Array(F.map((N) => N.length).reduce((N, nt) => N + nt, 0)), G = 0;
-								for (let N of F) R.set(N, G), G += N.length;
-								x(R.buffer);
+					Module.dataFileDownloads ?? (Module.dataFileDownloads = {}), fetch(c).catch((E) => Promise.reject(new Error(`Network Error: ${c}`, { cause: E }))).then((E) => {
+						if (!E.ok) return Promise.reject(/* @__PURE__ */ new Error(`${E.status}: ${E.url}`));
+						if (!E.body && E.arrayBuffer) return E.arrayBuffer().then(S);
+						let y = E.body.getReader(), M = () => y.read().then(te).catch((j) => Promise.reject(new Error(`Unexpected error while handling : ${E.url} ${j}`, { cause: j }))), b = [], F = E.headers, A = Number(F.get("Content-Length") ?? w), V = 0, te = ({ done: j, value: X }) => {
+							if (j) {
+								let R = new Uint8Array(b.map((q) => q.length).reduce((q, nt) => q + nt, 0)), L = 0;
+								for (let q of b) R.set(q, L), L += q.length;
+								S(R.buffer);
 							} else {
-								F.push(X), D += X.length, Module.dataFileDownloads[p] = {
-									loaded: D,
-									total: q
+								b.push(X), V += X.length, Module.dataFileDownloads[c] = {
+									loaded: V,
+									total: A
 								};
-								let R = 0, G = 0;
-								for (let N of Object.values(Module.dataFileDownloads)) R += N.loaded, G += N.total;
-								return Module.setStatus?.(`Downloading data... (${R}/${G})`), E();
+								let R = 0, L = 0;
+								for (let q of Object.values(Module.dataFileDownloads)) R += q.loaded, L += q.total;
+								return Module.setStatus?.(`Downloading data... (${R}/${L})`), M();
 							}
 						};
-						return Module.setStatus?.("Downloading data..."), E();
+						return Module.setStatus?.("Downloading data..."), M();
 					});
 				}
-				function c(p) {
-					console.error("package error:", p);
+				function m(c) {
+					console.error("package error:", c);
 				}
-				var f = null, g = Module.getPreloadedPackage ? Module.getPreloadedPackage(l, d) : null;
-				g || u(l, d, (p) => {
-					f ? (f(p), f = null) : g = p;
-				}, c);
-				function m(p) {
-					function h(E, F) {
-						if (!E) throw F + (/* @__PURE__ */ new Error()).stack;
+				var g = null, u = Module.getPreloadedPackage ? Module.getPreloadedPackage(l, d) : null;
+				u || p(l, d, (c) => {
+					g ? (g(c), g = null) : u = c;
+				}, m);
+				function f(c) {
+					function w(M, b) {
+						if (!M) throw b + (/* @__PURE__ */ new Error()).stack;
 					}
-					p.FS_createPath("/", "home", !0, !0), p.FS_createPath("/home", "postgres", !0, !0), p.FS_createPath("/", "pglite", !0, !0), p.FS_createPath("/pglite", "bin", !0, !0), p.FS_createPath("/pglite", "icu", !0, !0), p.FS_createPath("/pglite/icu", "icudt76l", !0, !0), p.FS_createPath("/pglite/icu/icudt76l", "coll", !0, !0), p.FS_createPath("/pglite", "lib", !0, !0), p.FS_createPath("/pglite/lib", "postgresql", !0, !0), p.FS_createPath("/pglite/lib/postgresql", "pgxs", !0, !0), p.FS_createPath("/pglite/lib/postgresql/pgxs", "config", !0, !0), p.FS_createPath("/pglite/lib/postgresql/pgxs", "src", !0, !0), p.FS_createPath("/pglite/lib/postgresql/pgxs/src", "makefiles", !0, !0), p.FS_createPath("/pglite/lib/postgresql/pgxs/src", "test", !0, !0), p.FS_createPath("/pglite/lib/postgresql/pgxs/src/test", "isolation", !0, !0), p.FS_createPath("/pglite/lib/postgresql/pgxs/src/test", "regress", !0, !0), p.FS_createPath("/pglite", "share", !0, !0), p.FS_createPath("/pglite/share", "postgresql", !0, !0), p.FS_createPath("/pglite/share/postgresql", "extension", !0, !0), p.FS_createPath("/pglite/share/postgresql", "timezone", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Africa", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "America", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone/America", "Argentina", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone/America", "Indiana", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone/America", "Kentucky", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone/America", "North_Dakota", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Antarctica", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Arctic", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Asia", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Atlantic", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Australia", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Brazil", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Canada", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Chile", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Etc", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Europe", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Indian", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Mexico", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "Pacific", !0, !0), p.FS_createPath("/pglite/share/postgresql/timezone", "US", !0, !0), p.FS_createPath("/pglite/share/postgresql", "timezonesets", !0, !0), p.FS_createPath("/pglite/share/postgresql", "tsearch_data", !0, !0);
-					function x(E, F, k) {
-						this.start = E, this.end = F, this.audio = k;
+					c.FS_createPath("/", "home", !0, !0), c.FS_createPath("/home", "postgres", !0, !0), c.FS_createPath("/", "pglite", !0, !0), c.FS_createPath("/pglite", "bin", !0, !0), c.FS_createPath("/pglite", "icu", !0, !0), c.FS_createPath("/pglite/icu", "icudt76l", !0, !0), c.FS_createPath("/pglite/icu/icudt76l", "coll", !0, !0), c.FS_createPath("/pglite", "lib", !0, !0), c.FS_createPath("/pglite/lib", "postgresql", !0, !0), c.FS_createPath("/pglite/lib/postgresql", "pgxs", !0, !0), c.FS_createPath("/pglite/lib/postgresql/pgxs", "config", !0, !0), c.FS_createPath("/pglite/lib/postgresql/pgxs", "src", !0, !0), c.FS_createPath("/pglite/lib/postgresql/pgxs/src", "makefiles", !0, !0), c.FS_createPath("/pglite/lib/postgresql/pgxs/src", "test", !0, !0), c.FS_createPath("/pglite/lib/postgresql/pgxs/src/test", "isolation", !0, !0), c.FS_createPath("/pglite/lib/postgresql/pgxs/src/test", "regress", !0, !0), c.FS_createPath("/pglite", "share", !0, !0), c.FS_createPath("/pglite/share", "postgresql", !0, !0), c.FS_createPath("/pglite/share/postgresql", "extension", !0, !0), c.FS_createPath("/pglite/share/postgresql", "timezone", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Africa", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "America", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone/America", "Argentina", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone/America", "Indiana", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone/America", "Kentucky", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone/America", "North_Dakota", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Antarctica", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Arctic", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Asia", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Atlantic", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Australia", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Brazil", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Canada", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Chile", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Etc", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Europe", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Indian", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Mexico", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "Pacific", !0, !0), c.FS_createPath("/pglite/share/postgresql/timezone", "US", !0, !0), c.FS_createPath("/pglite/share/postgresql", "timezonesets", !0, !0), c.FS_createPath("/pglite/share/postgresql", "tsearch_data", !0, !0);
+					function S(M, b, F) {
+						this.start = M, this.end = b, this.audio = F;
 					}
-					x.prototype = {
+					S.prototype = {
 						requests: {},
-						open: function(E, F) {
-							this.name = F, this.requests[F] = this, p.addRunDependency(`fp ${this.name}`);
+						open: function(M, b) {
+							this.name = b, this.requests[b] = this, c.addRunDependency(`fp ${this.name}`);
 						},
 						send: function() {},
 						onload: function() {
-							var E = this.byteArray.subarray(this.start, this.end);
-							this.finish(E);
+							var M = this.byteArray.subarray(this.start, this.end);
+							this.finish(M);
 						},
-						finish: function(E) {
-							var F = this;
-							p.FS_createDataFile(this.name, null, E, !0, !0, !0), p.removeRunDependency(`fp ${F.name}`), this.requests[this.name] = null;
+						finish: function(M) {
+							var b = this;
+							c.FS_createDataFile(this.name, null, M, !0, !0, !0), c.removeRunDependency(`fp ${b.name}`), this.requests[this.name] = null;
 						}
 					};
-					for (var b = o.files, M = 0; M < b.length; ++M) new x(b[M].start, b[M].end, b[M].audio || 0).open("GET", b[M].filename);
-					function y(E) {
-						h(E, "Loading data file failed."), h(E.constructor.name === ArrayBuffer.name, "bad input to processPackageData");
-						var F = new Uint8Array(E);
-						x.prototype.byteArray = F;
-						for (var k = o.files, q = 0; q < k.length; ++q) x.prototype.requests[k[q].filename].onload();
-						p.removeRunDependency("datafile_pglite.data");
+					for (var k = o.files, E = 0; E < k.length; ++E) new S(k[E].start, k[E].end, k[E].audio || 0).open("GET", k[E].filename);
+					function y(M) {
+						w(M, "Loading data file failed."), w(M.constructor.name === ArrayBuffer.name, "bad input to processPackageData");
+						var b = new Uint8Array(M);
+						S.prototype.byteArray = b;
+						for (var F = o.files, A = 0; A < F.length; ++A) S.prototype.requests[F[A].filename].onload();
+						c.removeRunDependency("datafile_pglite.data");
 					}
-					p.addRunDependency("datafile_pglite.data"), p.preloadResults ?? (p.preloadResults = {}), p.preloadResults[s] = { fromCache: !1 }, g ? (y(g), g = null) : f = y;
+					c.addRunDependency("datafile_pglite.data"), c.preloadResults ?? (c.preloadResults = {}), c.preloadResults[s] = { fromCache: !1 }, u ? (y(u), u = null) : g = y;
 				}
-				Module.calledRun ? m(Module) : (Module.preRun ?? (Module.preRun = [])).push(m);
+				Module.calledRun ? f(Module) : (Module.preRun ?? (Module.preRun = [])).push(f);
 			}
 			a({
 				files: [
@@ -6204,3400 +6215,3400 @@ var ht = (() => {
 					{
 						filename: "/pglite/lib/postgresql/pgxs/src/Makefile.global",
 						start: 1716227,
-						end: 1754133
+						end: 1754229
 					},
 					{
 						filename: "/pglite/lib/postgresql/pgxs/src/Makefile.port",
-						start: 1754133,
-						end: 1754979
+						start: 1754229,
+						end: 1755075
 					},
 					{
 						filename: "/pglite/lib/postgresql/pgxs/src/Makefile.shlib",
-						start: 1754979,
-						end: 1769807
+						start: 1755075,
+						end: 1769903
 					},
 					{
 						filename: "/pglite/lib/postgresql/pgxs/src/makefiles/pgxs.mk",
-						start: 1769807,
-						end: 1785954
+						start: 1769903,
+						end: 1786050
 					},
 					{
 						filename: "/pglite/lib/postgresql/pgxs/src/nls-global.mk",
-						start: 1785954,
-						end: 1793018
+						start: 1786050,
+						end: 1793114
 					},
 					{
 						filename: "/pglite/lib/postgresql/pgxs/src/test/isolation/isolationtester.js",
-						start: 1793018,
-						end: 1908551
+						start: 1793114,
+						end: 1909312
 					},
 					{
 						filename: "/pglite/lib/postgresql/pgxs/src/test/isolation/pg_isolation_regress.js",
-						start: 1908551,
-						end: 2026521
+						start: 1909312,
+						end: 2027947
 					},
 					{
 						filename: "/pglite/lib/postgresql/pgxs/src/test/regress/pg_regress.js",
-						start: 2026521,
-						end: 2143977
+						start: 2027947,
+						end: 2146068
 					},
 					{
 						filename: "/pglite/lib/postgresql/plpgsql.so",
-						start: 2143977,
-						end: 2299447
+						start: 2146068,
+						end: 2301538
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_big5.so",
-						start: 2299447,
-						end: 2414259
+						start: 2301538,
+						end: 2416350
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_cyrillic.so",
-						start: 2414259,
-						end: 2420292
+						start: 2416350,
+						end: 2422383
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_euc2004.so",
-						start: 2420292,
-						end: 2625288
+						start: 2422383,
+						end: 2627379
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_euc_cn.so",
-						start: 2625288,
-						end: 2700532
+						start: 2627379,
+						end: 2702623
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_euc_jp.so",
-						start: 2700532,
-						end: 2851824
+						start: 2702623,
+						end: 2853915
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_euc_kr.so",
-						start: 2851824,
-						end: 2954744
+						start: 2853915,
+						end: 2956835
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_euc_tw.so",
-						start: 2954744,
-						end: 3154364
+						start: 2956835,
+						end: 3156455
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_gb18030.so",
-						start: 3154364,
-						end: 3416805
+						start: 3156455,
+						end: 3418896
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_gbk.so",
-						start: 3416805,
-						end: 3563401
+						start: 3418896,
+						end: 3565492
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_iso8859.so",
-						start: 3563401,
-						end: 3586992
+						start: 3565492,
+						end: 3589083
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_iso8859_1.so",
-						start: 3586992,
-						end: 3588047
+						start: 3589083,
+						end: 3590138
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_johab.so",
-						start: 3588047,
-						end: 3749815
+						start: 3590138,
+						end: 3751906
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_sjis.so",
-						start: 3749815,
-						end: 3831539
+						start: 3751906,
+						end: 3833630
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_sjis2004.so",
-						start: 3831539,
-						end: 3958235
+						start: 3833630,
+						end: 3960326
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_uhc.so",
-						start: 3958235,
-						end: 4125571
+						start: 3960326,
+						end: 4127662
 					},
 					{
 						filename: "/pglite/lib/postgresql/utf8_and_win.so",
-						start: 4125571,
-						end: 4152089
+						start: 4127662,
+						end: 4154180
 					},
 					{
 						filename: "/pglite/locale-a",
-						start: 4152089,
-						end: 4152114
+						start: 4154180,
+						end: 4154205
 					},
 					{
 						filename: "/pglite/password",
-						start: 4152114,
-						end: 4152122
+						start: 4154205,
+						end: 4154213
 					},
 					{
 						filename: "/pglite/pgstdin",
-						start: 4152122,
-						end: 4152141
+						start: 4154213,
+						end: 4154232
 					},
 					{
 						filename: "/pglite/pgstdout",
-						start: 4152141,
-						end: 4152160
+						start: 4154232,
+						end: 4154251
 					},
 					{
 						filename: "/pglite/share/postgresql/errcodes.txt",
-						start: 4152160,
-						end: 4185899
+						start: 4154251,
+						end: 4187990
 					},
 					{
 						filename: "/pglite/share/postgresql/extension/plpgsql--1.0.sql",
-						start: 4185899,
-						end: 4186557
+						start: 4187990,
+						end: 4188648
 					},
 					{
 						filename: "/pglite/share/postgresql/extension/plpgsql.control",
-						start: 4186557,
-						end: 4186750
+						start: 4188648,
+						end: 4188841
 					},
 					{
 						filename: "/pglite/share/postgresql/information_schema.sql",
-						start: 4186750,
-						end: 4300747
+						start: 4188841,
+						end: 4302838
 					},
 					{
 						filename: "/pglite/share/postgresql/pg_hba.conf.sample",
-						start: 4300747,
-						end: 4306382
+						start: 4302838,
+						end: 4308473
 					},
 					{
 						filename: "/pglite/share/postgresql/pg_ident.conf.sample",
-						start: 4306382,
-						end: 4309063
+						start: 4308473,
+						end: 4311154
 					},
 					{
 						filename: "/pglite/share/postgresql/pg_service.conf.sample",
-						start: 4309063,
-						end: 4309667
+						start: 4311154,
+						end: 4311758
 					},
 					{
 						filename: "/pglite/share/postgresql/postgres.bki",
-						start: 4309667,
-						end: 5283436
+						start: 4311758,
+						end: 5285527
 					},
 					{
 						filename: "/pglite/share/postgresql/postgresql.conf.sample",
-						start: 5283436,
-						end: 5315988
+						start: 5285527,
+						end: 5318079
 					},
 					{
 						filename: "/pglite/share/postgresql/psqlrc.sample",
-						start: 5315988,
-						end: 5316266
+						start: 5318079,
+						end: 5318357
 					},
 					{
 						filename: "/pglite/share/postgresql/snowball_create.sql",
-						start: 5316266,
-						end: 5361976
+						start: 5318357,
+						end: 5364067
 					},
 					{
 						filename: "/pglite/share/postgresql/sql_features.txt",
-						start: 5361976,
-						end: 5397737
+						start: 5364067,
+						end: 5399828
 					},
 					{
 						filename: "/pglite/share/postgresql/system_constraints.sql",
-						start: 5397737,
-						end: 5406632
+						start: 5399828,
+						end: 5408723
 					},
 					{
 						filename: "/pglite/share/postgresql/system_functions.sql",
-						start: 5406632,
-						end: 5431511
+						start: 5408723,
+						end: 5433602
 					},
 					{
 						filename: "/pglite/share/postgresql/system_views.sql",
-						start: 5431511,
-						end: 5484875
+						start: 5433602,
+						end: 5486966
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Abidjan",
-						start: 5484875,
-						end: 5485023
+						start: 5486966,
+						end: 5487114
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Accra",
-						start: 5485023,
-						end: 5485171
+						start: 5487114,
+						end: 5487262
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Addis_Ababa",
-						start: 5485171,
-						end: 5485436
+						start: 5487262,
+						end: 5487527
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Algiers",
-						start: 5485436,
-						end: 5486171
+						start: 5487527,
+						end: 5488262
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Asmara",
-						start: 5486171,
-						end: 5486436
+						start: 5488262,
+						end: 5488527
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Asmera",
-						start: 5486436,
-						end: 5486701
+						start: 5488527,
+						end: 5488792
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Bamako",
-						start: 5486701,
-						end: 5486849
+						start: 5488792,
+						end: 5488940
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Bangui",
-						start: 5486849,
-						end: 5487084
+						start: 5488940,
+						end: 5489175
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Banjul",
-						start: 5487084,
-						end: 5487232
+						start: 5489175,
+						end: 5489323
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Bissau",
-						start: 5487232,
-						end: 5487426
+						start: 5489323,
+						end: 5489517
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Blantyre",
-						start: 5487426,
-						end: 5487575
+						start: 5489517,
+						end: 5489666
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Brazzaville",
-						start: 5487575,
-						end: 5487810
+						start: 5489666,
+						end: 5489901
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Bujumbura",
-						start: 5487810,
-						end: 5487959
+						start: 5489901,
+						end: 5490050
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Cairo",
-						start: 5487959,
-						end: 5490358
+						start: 5490050,
+						end: 5492449
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Casablanca",
-						start: 5490358,
-						end: 5492787
+						start: 5492449,
+						end: 5494878
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Ceuta",
-						start: 5492787,
-						end: 5494839
+						start: 5494878,
+						end: 5496930
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Conakry",
-						start: 5494839,
-						end: 5494987
+						start: 5496930,
+						end: 5497078
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Dakar",
-						start: 5494987,
-						end: 5495135
+						start: 5497078,
+						end: 5497226
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Dar_es_Salaam",
-						start: 5495135,
-						end: 5495400
+						start: 5497226,
+						end: 5497491
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Djibouti",
-						start: 5495400,
-						end: 5495665
+						start: 5497491,
+						end: 5497756
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Douala",
-						start: 5495665,
-						end: 5495900
+						start: 5497756,
+						end: 5497991
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/El_Aaiun",
-						start: 5495900,
-						end: 5498195
+						start: 5497991,
+						end: 5500286
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Freetown",
-						start: 5498195,
-						end: 5498343
+						start: 5500286,
+						end: 5500434
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Gaborone",
-						start: 5498343,
-						end: 5498492
+						start: 5500434,
+						end: 5500583
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Harare",
-						start: 5498492,
-						end: 5498641
+						start: 5500583,
+						end: 5500732
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Johannesburg",
-						start: 5498641,
-						end: 5498887
+						start: 5500732,
+						end: 5500978
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Juba",
-						start: 5498887,
-						end: 5499566
+						start: 5500978,
+						end: 5501657
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Kampala",
-						start: 5499566,
-						end: 5499831
+						start: 5501657,
+						end: 5501922
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Khartoum",
-						start: 5499831,
-						end: 5500510
+						start: 5501922,
+						end: 5502601
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Kigali",
-						start: 5500510,
-						end: 5500659
+						start: 5502601,
+						end: 5502750
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Kinshasa",
-						start: 5500659,
-						end: 5500894
+						start: 5502750,
+						end: 5502985
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Lagos",
-						start: 5500894,
-						end: 5501129
+						start: 5502985,
+						end: 5503220
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Libreville",
-						start: 5501129,
-						end: 5501364
+						start: 5503220,
+						end: 5503455
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Lome",
-						start: 5501364,
-						end: 5501512
+						start: 5503455,
+						end: 5503603
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Luanda",
-						start: 5501512,
-						end: 5501747
+						start: 5503603,
+						end: 5503838
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Lubumbashi",
-						start: 5501747,
-						end: 5501896
+						start: 5503838,
+						end: 5503987
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Lusaka",
-						start: 5501896,
-						end: 5502045
+						start: 5503987,
+						end: 5504136
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Malabo",
-						start: 5502045,
-						end: 5502280
+						start: 5504136,
+						end: 5504371
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Maputo",
-						start: 5502280,
-						end: 5502429
+						start: 5504371,
+						end: 5504520
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Maseru",
-						start: 5502429,
-						end: 5502675
+						start: 5504520,
+						end: 5504766
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Mbabane",
-						start: 5502675,
-						end: 5502921
+						start: 5504766,
+						end: 5505012
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Mogadishu",
-						start: 5502921,
-						end: 5503186
+						start: 5505012,
+						end: 5505277
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Monrovia",
-						start: 5503186,
-						end: 5503394
+						start: 5505277,
+						end: 5505485
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Nairobi",
-						start: 5503394,
-						end: 5503659
+						start: 5505485,
+						end: 5505750
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Ndjamena",
-						start: 5503659,
-						end: 5503858
+						start: 5505750,
+						end: 5505949
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Niamey",
-						start: 5503858,
-						end: 5504093
+						start: 5505949,
+						end: 5506184
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Nouakchott",
-						start: 5504093,
-						end: 5504241
+						start: 5506184,
+						end: 5506332
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Ouagadougou",
-						start: 5504241,
-						end: 5504389
+						start: 5506332,
+						end: 5506480
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Porto-Novo",
-						start: 5504389,
-						end: 5504624
+						start: 5506480,
+						end: 5506715
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Sao_Tome",
-						start: 5504624,
-						end: 5504878
+						start: 5506715,
+						end: 5506969
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Timbuktu",
-						start: 5504878,
-						end: 5505026
+						start: 5506969,
+						end: 5507117
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Tripoli",
-						start: 5505026,
-						end: 5505651
+						start: 5507117,
+						end: 5507742
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Tunis",
-						start: 5505651,
-						end: 5506340
+						start: 5507742,
+						end: 5508431
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Africa/Windhoek",
-						start: 5506340,
-						end: 5507295
+						start: 5508431,
+						end: 5509386
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Adak",
-						start: 5507295,
-						end: 5509651
+						start: 5509386,
+						end: 5511742
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Anchorage",
-						start: 5509651,
-						end: 5512022
+						start: 5511742,
+						end: 5514113
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Anguilla",
-						start: 5512022,
-						end: 5512268
+						start: 5514113,
+						end: 5514359
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Antigua",
-						start: 5512268,
-						end: 5512514
+						start: 5514359,
+						end: 5514605
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Araguaina",
-						start: 5512514,
-						end: 5513398
+						start: 5514605,
+						end: 5515489
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/Buenos_Aires",
-						start: 5513398,
-						end: 5514474
+						start: 5515489,
+						end: 5516565
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/Catamarca",
-						start: 5514474,
-						end: 5515550
+						start: 5516565,
+						end: 5517641
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/ComodRivadavia",
-						start: 5515550,
-						end: 5516626
+						start: 5517641,
+						end: 5518717
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/Cordoba",
-						start: 5516626,
-						end: 5517702
+						start: 5518717,
+						end: 5519793
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/Jujuy",
-						start: 5517702,
-						end: 5518750
+						start: 5519793,
+						end: 5520841
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/La_Rioja",
-						start: 5518750,
-						end: 5519840
+						start: 5520841,
+						end: 5521931
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/Mendoza",
-						start: 5519840,
-						end: 5520916
+						start: 5521931,
+						end: 5523007
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/Rio_Gallegos",
-						start: 5520916,
-						end: 5521992
+						start: 5523007,
+						end: 5524083
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/Salta",
-						start: 5521992,
-						end: 5523040
+						start: 5524083,
+						end: 5525131
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/San_Juan",
-						start: 5523040,
-						end: 5524130
+						start: 5525131,
+						end: 5526221
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/San_Luis",
-						start: 5524130,
-						end: 5525232
+						start: 5526221,
+						end: 5527323
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/Tucuman",
-						start: 5525232,
-						end: 5526336
+						start: 5527323,
+						end: 5528427
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Argentina/Ushuaia",
-						start: 5526336,
-						end: 5527412
+						start: 5528427,
+						end: 5529503
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Aruba",
-						start: 5527412,
-						end: 5527658
+						start: 5529503,
+						end: 5529749
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Asuncion",
-						start: 5527658,
-						end: 5529316
+						start: 5529749,
+						end: 5531407
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Atikokan",
-						start: 5529316,
-						end: 5529498
+						start: 5531407,
+						end: 5531589
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Atka",
-						start: 5529498,
-						end: 5531854
+						start: 5531589,
+						end: 5533945
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Bahia",
-						start: 5531854,
-						end: 5532878
+						start: 5533945,
+						end: 5534969
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Bahia_Banderas",
-						start: 5532878,
-						end: 5533978
+						start: 5534969,
+						end: 5536069
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Barbados",
-						start: 5533978,
-						end: 5534414
+						start: 5536069,
+						end: 5536505
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Belem",
-						start: 5534414,
-						end: 5534990
+						start: 5536505,
+						end: 5537081
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Belize",
-						start: 5534990,
-						end: 5536604
+						start: 5537081,
+						end: 5538695
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Blanc-Sablon",
-						start: 5536604,
-						end: 5536850
+						start: 5538695,
+						end: 5538941
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Boa_Vista",
-						start: 5536850,
-						end: 5537482
+						start: 5538941,
+						end: 5539573
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Bogota",
-						start: 5537482,
-						end: 5537728
+						start: 5539573,
+						end: 5539819
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Boise",
-						start: 5537728,
-						end: 5540138
+						start: 5539819,
+						end: 5542229
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Buenos_Aires",
-						start: 5540138,
-						end: 5541214
+						start: 5542229,
+						end: 5543305
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Cambridge_Bay",
-						start: 5541214,
-						end: 5543468
+						start: 5543305,
+						end: 5545559
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Campo_Grande",
-						start: 5543468,
-						end: 5544912
+						start: 5545559,
+						end: 5547003
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Cancun",
-						start: 5544912,
-						end: 5545776
+						start: 5547003,
+						end: 5547867
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Caracas",
-						start: 5545776,
-						end: 5546040
+						start: 5547867,
+						end: 5548131
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Catamarca",
-						start: 5546040,
-						end: 5547116
+						start: 5548131,
+						end: 5549207
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Cayenne",
-						start: 5547116,
-						end: 5547314
+						start: 5549207,
+						end: 5549405
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Cayman",
-						start: 5547314,
-						end: 5547496
+						start: 5549405,
+						end: 5549587
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Chicago",
-						start: 5547496,
-						end: 5551088
+						start: 5549587,
+						end: 5553179
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Chihuahua",
-						start: 5551088,
-						end: 5552190
+						start: 5553179,
+						end: 5554281
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Ciudad_Juarez",
-						start: 5552190,
-						end: 5553728
+						start: 5554281,
+						end: 5555819
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Coral_Harbour",
-						start: 5553728,
-						end: 5553910
+						start: 5555819,
+						end: 5556001
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Cordoba",
-						start: 5553910,
-						end: 5554986
+						start: 5556001,
+						end: 5557077
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Costa_Rica",
-						start: 5554986,
-						end: 5555302
+						start: 5557077,
+						end: 5557393
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Coyhaique",
-						start: 5555302,
-						end: 5557442
+						start: 5557393,
+						end: 5559533
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Creston",
-						start: 5557442,
-						end: 5557802
+						start: 5559533,
+						end: 5559893
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Cuiaba",
-						start: 5557802,
-						end: 5559218
+						start: 5559893,
+						end: 5561309
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Curacao",
-						start: 5559218,
-						end: 5559464
+						start: 5561309,
+						end: 5561555
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Danmarkshavn",
-						start: 5559464,
-						end: 5560162
+						start: 5561555,
+						end: 5562253
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Dawson",
-						start: 5560162,
-						end: 5561776
+						start: 5562253,
+						end: 5563867
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Dawson_Creek",
-						start: 5561776,
-						end: 5562826
+						start: 5563867,
+						end: 5564917
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Denver",
-						start: 5562826,
-						end: 5565286
+						start: 5564917,
+						end: 5567377
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Detroit",
-						start: 5565286,
-						end: 5567516
+						start: 5567377,
+						end: 5569607
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Dominica",
-						start: 5567516,
-						end: 5567762
+						start: 5569607,
+						end: 5569853
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Edmonton",
-						start: 5567762,
-						end: 5570094
+						start: 5569853,
+						end: 5572185
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Eirunepe",
-						start: 5570094,
-						end: 5570750
+						start: 5572185,
+						end: 5572841
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/El_Salvador",
-						start: 5570750,
-						end: 5570974
+						start: 5572841,
+						end: 5573065
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Ensenada",
-						start: 5570974,
-						end: 5573880
+						start: 5573065,
+						end: 5575971
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Fort_Nelson",
-						start: 5573880,
-						end: 5576120
+						start: 5575971,
+						end: 5578211
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Fort_Wayne",
-						start: 5576120,
-						end: 5577802
+						start: 5578211,
+						end: 5579893
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Fortaleza",
-						start: 5577802,
-						end: 5578518
+						start: 5579893,
+						end: 5580609
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Glace_Bay",
-						start: 5578518,
-						end: 5580710
+						start: 5580609,
+						end: 5582801
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Godthab",
-						start: 5580710,
-						end: 5582613
+						start: 5582801,
+						end: 5584704
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Goose_Bay",
-						start: 5582613,
-						end: 5585823
+						start: 5584704,
+						end: 5587914
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Grand_Turk",
-						start: 5585823,
-						end: 5587657
+						start: 5587914,
+						end: 5589748
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Grenada",
-						start: 5587657,
-						end: 5587903
+						start: 5589748,
+						end: 5589994
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Guadeloupe",
-						start: 5587903,
-						end: 5588149
+						start: 5589994,
+						end: 5590240
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Guatemala",
-						start: 5588149,
-						end: 5588429
+						start: 5590240,
+						end: 5590520
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Guayaquil",
-						start: 5588429,
-						end: 5588675
+						start: 5590520,
+						end: 5590766
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Guyana",
-						start: 5588675,
-						end: 5588937
+						start: 5590766,
+						end: 5591028
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Halifax",
-						start: 5588937,
-						end: 5592361
+						start: 5591028,
+						end: 5594452
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Havana",
-						start: 5592361,
-						end: 5594777
+						start: 5594452,
+						end: 5596868
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Hermosillo",
-						start: 5594777,
-						end: 5595165
+						start: 5596868,
+						end: 5597256
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Indiana/Indianapolis",
-						start: 5595165,
-						end: 5596847
+						start: 5597256,
+						end: 5598938
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Indiana/Knox",
-						start: 5596847,
-						end: 5599291
+						start: 5598938,
+						end: 5601382
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Indiana/Marengo",
-						start: 5599291,
-						end: 5601029
+						start: 5601382,
+						end: 5603120
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Indiana/Petersburg",
-						start: 5601029,
-						end: 5602949
+						start: 5603120,
+						end: 5605040
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Indiana/Tell_City",
-						start: 5602949,
-						end: 5604649
+						start: 5605040,
+						end: 5606740
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Indiana/Vevay",
-						start: 5604649,
-						end: 5606079
+						start: 5606740,
+						end: 5608170
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Indiana/Vincennes",
-						start: 5606079,
-						end: 5607789
+						start: 5608170,
+						end: 5609880
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Indiana/Winamac",
-						start: 5607789,
-						end: 5609583
+						start: 5609880,
+						end: 5611674
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Indianapolis",
-						start: 5609583,
-						end: 5611265
+						start: 5611674,
+						end: 5613356
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Inuvik",
-						start: 5611265,
-						end: 5613339
+						start: 5613356,
+						end: 5615430
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Iqaluit",
-						start: 5613339,
-						end: 5615541
+						start: 5615430,
+						end: 5617632
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Jamaica",
-						start: 5615541,
-						end: 5616023
+						start: 5617632,
+						end: 5618114
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Jujuy",
-						start: 5616023,
-						end: 5617071
+						start: 5618114,
+						end: 5619162
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Juneau",
-						start: 5617071,
-						end: 5619424
+						start: 5619162,
+						end: 5621515
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Kentucky/Louisville",
-						start: 5619424,
-						end: 5622212
+						start: 5621515,
+						end: 5624303
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Kentucky/Monticello",
-						start: 5622212,
-						end: 5624580
+						start: 5624303,
+						end: 5626671
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Knox_IN",
-						start: 5624580,
-						end: 5627024
+						start: 5626671,
+						end: 5629115
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Kralendijk",
-						start: 5627024,
-						end: 5627270
+						start: 5629115,
+						end: 5629361
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/La_Paz",
-						start: 5627270,
-						end: 5627502
+						start: 5629361,
+						end: 5629593
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Lima",
-						start: 5627502,
-						end: 5627908
+						start: 5629593,
+						end: 5629999
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Los_Angeles",
-						start: 5627908,
-						end: 5630760
+						start: 5629999,
+						end: 5632851
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Louisville",
-						start: 5630760,
-						end: 5633548
+						start: 5632851,
+						end: 5635639
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Lower_Princes",
-						start: 5633548,
-						end: 5633794
+						start: 5635639,
+						end: 5635885
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Maceio",
-						start: 5633794,
-						end: 5634538
+						start: 5635885,
+						end: 5636629
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Managua",
-						start: 5634538,
-						end: 5634968
+						start: 5636629,
+						end: 5637059
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Manaus",
-						start: 5634968,
-						end: 5635572
+						start: 5637059,
+						end: 5637663
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Marigot",
-						start: 5635572,
-						end: 5635818
+						start: 5637663,
+						end: 5637909
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Martinique",
-						start: 5635818,
-						end: 5636050
+						start: 5637909,
+						end: 5638141
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Matamoros",
-						start: 5636050,
-						end: 5637468
+						start: 5638141,
+						end: 5639559
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Mazatlan",
-						start: 5637468,
-						end: 5638528
+						start: 5639559,
+						end: 5640619
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Mendoza",
-						start: 5638528,
-						end: 5639604
+						start: 5640619,
+						end: 5641695
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Menominee",
-						start: 5639604,
-						end: 5641878
+						start: 5641695,
+						end: 5643969
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Merida",
-						start: 5641878,
-						end: 5642882
+						start: 5643969,
+						end: 5644973
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Metlakatla",
-						start: 5642882,
-						end: 5644305
+						start: 5644973,
+						end: 5646396
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Mexico_City",
-						start: 5644305,
-						end: 5645527
+						start: 5646396,
+						end: 5647618
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Miquelon",
-						start: 5645527,
-						end: 5647193
+						start: 5647618,
+						end: 5649284
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Moncton",
-						start: 5647193,
-						end: 5650347
+						start: 5649284,
+						end: 5652438
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Monterrey",
-						start: 5650347,
-						end: 5651461
+						start: 5652438,
+						end: 5653552
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Montevideo",
-						start: 5651461,
-						end: 5652971
+						start: 5653552,
+						end: 5655062
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Montreal",
-						start: 5652971,
-						end: 5656465
+						start: 5655062,
+						end: 5658556
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Montserrat",
-						start: 5656465,
-						end: 5656711
+						start: 5658556,
+						end: 5658802
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Nassau",
-						start: 5656711,
-						end: 5660205
+						start: 5658802,
+						end: 5662296
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/New_York",
-						start: 5660205,
-						end: 5663757
+						start: 5662296,
+						end: 5665848
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Nipigon",
-						start: 5663757,
-						end: 5667251
+						start: 5665848,
+						end: 5669342
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Nome",
-						start: 5667251,
-						end: 5669618
+						start: 5669342,
+						end: 5671709
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Noronha",
-						start: 5669618,
-						end: 5670334
+						start: 5671709,
+						end: 5672425
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/North_Dakota/Beulah",
-						start: 5670334,
-						end: 5672730
+						start: 5672425,
+						end: 5674821
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/North_Dakota/Center",
-						start: 5672730,
-						end: 5675126
+						start: 5674821,
+						end: 5677217
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/North_Dakota/New_Salem",
-						start: 5675126,
-						end: 5677522
+						start: 5677217,
+						end: 5679613
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Nuuk",
-						start: 5677522,
-						end: 5679425
+						start: 5679613,
+						end: 5681516
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Ojinaga",
-						start: 5679425,
-						end: 5680949
+						start: 5681516,
+						end: 5683040
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Panama",
-						start: 5680949,
-						end: 5681131
+						start: 5683040,
+						end: 5683222
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Pangnirtung",
-						start: 5681131,
-						end: 5683333
+						start: 5683222,
+						end: 5685424
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Paramaribo",
-						start: 5683333,
-						end: 5683595
+						start: 5685424,
+						end: 5685686
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Phoenix",
-						start: 5683595,
-						end: 5683955
+						start: 5685686,
+						end: 5686046
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Port-au-Prince",
-						start: 5683955,
-						end: 5685389
+						start: 5686046,
+						end: 5687480
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Port_of_Spain",
-						start: 5685389,
-						end: 5685635
+						start: 5687480,
+						end: 5687726
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Porto_Acre",
-						start: 5685635,
-						end: 5686263
+						start: 5687726,
+						end: 5688354
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Porto_Velho",
-						start: 5686263,
-						end: 5686839
+						start: 5688354,
+						end: 5688930
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Puerto_Rico",
-						start: 5686839,
-						end: 5687085
+						start: 5688930,
+						end: 5689176
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Punta_Arenas",
-						start: 5687085,
-						end: 5689001
+						start: 5689176,
+						end: 5691092
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Rainy_River",
-						start: 5689001,
-						end: 5691869
+						start: 5691092,
+						end: 5693960
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Rankin_Inlet",
-						start: 5691869,
-						end: 5693935
+						start: 5693960,
+						end: 5696026
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Recife",
-						start: 5693935,
-						end: 5694651
+						start: 5696026,
+						end: 5696742
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Regina",
-						start: 5694651,
-						end: 5695631
+						start: 5696742,
+						end: 5697722
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Resolute",
-						start: 5695631,
-						end: 5697697
+						start: 5697722,
+						end: 5699788
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Rio_Branco",
-						start: 5697697,
-						end: 5698325
+						start: 5699788,
+						end: 5700416
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Rosario",
-						start: 5698325,
-						end: 5699401
+						start: 5700416,
+						end: 5701492
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Santa_Isabel",
-						start: 5699401,
-						end: 5702307
+						start: 5701492,
+						end: 5704398
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Santarem",
-						start: 5702307,
-						end: 5702909
+						start: 5704398,
+						end: 5705e3
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Santiago",
-						start: 5702909,
-						end: 5705438
+						start: 5705e3,
+						end: 5707529
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Santo_Domingo",
-						start: 5705438,
-						end: 5705896
+						start: 5707529,
+						end: 5707987
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Sao_Paulo",
-						start: 5705896,
-						end: 5707340
+						start: 5707987,
+						end: 5709431
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Scoresbysund",
-						start: 5707340,
-						end: 5709289
+						start: 5709431,
+						end: 5711380
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Shiprock",
-						start: 5709289,
-						end: 5711749
+						start: 5711380,
+						end: 5713840
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Sitka",
-						start: 5711749,
-						end: 5714078
+						start: 5713840,
+						end: 5716169
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/St_Barthelemy",
-						start: 5714078,
-						end: 5714324
+						start: 5716169,
+						end: 5716415
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/St_Johns",
-						start: 5714324,
-						end: 5717979
+						start: 5716415,
+						end: 5720070
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/St_Kitts",
-						start: 5717979,
-						end: 5718225
+						start: 5720070,
+						end: 5720316
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/St_Lucia",
-						start: 5718225,
-						end: 5718471
+						start: 5720316,
+						end: 5720562
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/St_Thomas",
-						start: 5718471,
-						end: 5718717
+						start: 5720562,
+						end: 5720808
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/St_Vincent",
-						start: 5718717,
-						end: 5718963
+						start: 5720808,
+						end: 5721054
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Swift_Current",
-						start: 5718963,
-						end: 5719523
+						start: 5721054,
+						end: 5721614
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Tegucigalpa",
-						start: 5719523,
-						end: 5719775
+						start: 5721614,
+						end: 5721866
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Thule",
-						start: 5719775,
-						end: 5721277
+						start: 5721866,
+						end: 5723368
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Thunder_Bay",
-						start: 5721277,
-						end: 5724771
+						start: 5723368,
+						end: 5726862
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Tijuana",
-						start: 5724771,
-						end: 5727677
+						start: 5726862,
+						end: 5729768
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Toronto",
-						start: 5727677,
-						end: 5731171
+						start: 5729768,
+						end: 5733262
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Tortola",
-						start: 5731171,
-						end: 5731417
+						start: 5733262,
+						end: 5733508
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Vancouver",
-						start: 5731417,
-						end: 5734309
+						start: 5733508,
+						end: 5736400
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Virgin",
-						start: 5734309,
-						end: 5734555
+						start: 5736400,
+						end: 5736646
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Whitehorse",
-						start: 5734555,
-						end: 5736169
+						start: 5736646,
+						end: 5738260
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Winnipeg",
-						start: 5736169,
-						end: 5739037
+						start: 5738260,
+						end: 5741128
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Yakutat",
-						start: 5739037,
-						end: 5741342
+						start: 5741128,
+						end: 5743433
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/America/Yellowknife",
-						start: 5741342,
-						end: 5743674
+						start: 5743433,
+						end: 5745765
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/Casey",
-						start: 5743674,
-						end: 5744111
+						start: 5745765,
+						end: 5746202
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/Davis",
-						start: 5744111,
-						end: 5744408
+						start: 5746202,
+						end: 5746499
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/DumontDUrville",
-						start: 5744408,
-						end: 5744594
+						start: 5746499,
+						end: 5746685
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/Macquarie",
-						start: 5744594,
-						end: 5746854
+						start: 5746685,
+						end: 5748945
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/Mawson",
-						start: 5746854,
-						end: 5747053
+						start: 5748945,
+						end: 5749144
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/McMurdo",
-						start: 5747053,
-						end: 5749490
+						start: 5749144,
+						end: 5751581
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/Palmer",
-						start: 5749490,
-						end: 5750908
+						start: 5751581,
+						end: 5752999
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/Rothera",
-						start: 5750908,
-						end: 5751072
+						start: 5752999,
+						end: 5753163
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/South_Pole",
-						start: 5751072,
-						end: 5753509
+						start: 5753163,
+						end: 5755600
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/Syowa",
-						start: 5753509,
-						end: 5753674
+						start: 5755600,
+						end: 5755765
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/Troll",
-						start: 5753674,
-						end: 5754836
+						start: 5755765,
+						end: 5756927
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Antarctica/Vostok",
-						start: 5754836,
-						end: 5755063
+						start: 5756927,
+						end: 5757154
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Arctic/Longyearbyen",
-						start: 5755063,
-						end: 5757361
+						start: 5757154,
+						end: 5759452
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Aden",
-						start: 5757361,
-						end: 5757526
+						start: 5759452,
+						end: 5759617
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Almaty",
-						start: 5757526,
-						end: 5758523
+						start: 5759617,
+						end: 5760614
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Amman",
-						start: 5758523,
-						end: 5759970
+						start: 5760614,
+						end: 5762061
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Anadyr",
-						start: 5759970,
-						end: 5761158
+						start: 5762061,
+						end: 5763249
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Aqtau",
-						start: 5761158,
-						end: 5762141
+						start: 5763249,
+						end: 5764232
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Aqtobe",
-						start: 5762141,
-						end: 5763152
+						start: 5764232,
+						end: 5765243
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Ashgabat",
-						start: 5763152,
-						end: 5763771
+						start: 5765243,
+						end: 5765862
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Ashkhabad",
-						start: 5763771,
-						end: 5764390
+						start: 5765862,
+						end: 5766481
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Atyrau",
-						start: 5764390,
-						end: 5765381
+						start: 5766481,
+						end: 5767472
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Baghdad",
-						start: 5765381,
-						end: 5766364
+						start: 5767472,
+						end: 5768455
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Bahrain",
-						start: 5766364,
-						end: 5766563
+						start: 5768455,
+						end: 5768654
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Baku",
-						start: 5766563,
-						end: 5767790
+						start: 5768654,
+						end: 5769881
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Bangkok",
-						start: 5767790,
-						end: 5767989
+						start: 5769881,
+						end: 5770080
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Barnaul",
-						start: 5767989,
-						end: 5769210
+						start: 5770080,
+						end: 5771301
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Beirut",
-						start: 5769210,
-						end: 5771364
+						start: 5771301,
+						end: 5773455
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Bishkek",
-						start: 5771364,
-						end: 5772347
+						start: 5773455,
+						end: 5774438
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Brunei",
-						start: 5772347,
-						end: 5772830
+						start: 5774438,
+						end: 5774921
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Calcutta",
-						start: 5772830,
-						end: 5773115
+						start: 5774921,
+						end: 5775206
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Chita",
-						start: 5773115,
-						end: 5774336
+						start: 5775206,
+						end: 5776427
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Choibalsan",
-						start: 5774336,
-						end: 5775227
+						start: 5776427,
+						end: 5777318
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Chongqing",
-						start: 5775227,
-						end: 5775788
+						start: 5777318,
+						end: 5777879
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Chungking",
-						start: 5775788,
-						end: 5776349
+						start: 5777879,
+						end: 5778440
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Colombo",
-						start: 5776349,
-						end: 5776721
+						start: 5778440,
+						end: 5778812
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Dacca",
-						start: 5776721,
-						end: 5777058
+						start: 5778812,
+						end: 5779149
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Damascus",
-						start: 5777058,
-						end: 5778945
+						start: 5779149,
+						end: 5781036
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Dhaka",
-						start: 5778945,
-						end: 5779282
+						start: 5781036,
+						end: 5781373
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Dili",
-						start: 5779282,
-						end: 5779553
+						start: 5781373,
+						end: 5781644
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Dubai",
-						start: 5779553,
-						end: 5779718
+						start: 5781644,
+						end: 5781809
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Dushanbe",
-						start: 5779718,
-						end: 5780309
+						start: 5781809,
+						end: 5782400
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Famagusta",
-						start: 5780309,
-						end: 5782337
+						start: 5782400,
+						end: 5784428
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Gaza",
-						start: 5782337,
-						end: 5786181
+						start: 5784428,
+						end: 5788272
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Harbin",
-						start: 5786181,
-						end: 5786742
+						start: 5788272,
+						end: 5788833
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Hebron",
-						start: 5786742,
-						end: 5790614
+						start: 5788833,
+						end: 5792705
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Ho_Chi_Minh",
-						start: 5790614,
-						end: 5790965
+						start: 5792705,
+						end: 5793056
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Hong_Kong",
-						start: 5790965,
-						end: 5792198
+						start: 5793056,
+						end: 5794289
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Hovd",
-						start: 5792198,
-						end: 5793089
+						start: 5794289,
+						end: 5795180
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Irkutsk",
-						start: 5793089,
-						end: 5794332
+						start: 5795180,
+						end: 5796423
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Istanbul",
-						start: 5794332,
-						end: 5796279
+						start: 5796423,
+						end: 5798370
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Jakarta",
-						start: 5796279,
-						end: 5796662
+						start: 5798370,
+						end: 5798753
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Jayapura",
-						start: 5796662,
-						end: 5796883
+						start: 5798753,
+						end: 5798974
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Jerusalem",
-						start: 5796883,
-						end: 5799271
+						start: 5798974,
+						end: 5801362
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Kabul",
-						start: 5799271,
-						end: 5799479
+						start: 5801362,
+						end: 5801570
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Kamchatka",
-						start: 5799479,
-						end: 5800645
+						start: 5801570,
+						end: 5802736
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Karachi",
-						start: 5800645,
-						end: 5801024
+						start: 5802736,
+						end: 5803115
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Kashgar",
-						start: 5801024,
-						end: 5801189
+						start: 5803115,
+						end: 5803280
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Kathmandu",
-						start: 5801189,
-						end: 5801401
+						start: 5803280,
+						end: 5803492
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Katmandu",
-						start: 5801401,
-						end: 5801613
+						start: 5803492,
+						end: 5803704
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Khandyga",
-						start: 5801613,
-						end: 5802884
+						start: 5803704,
+						end: 5804975
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Kolkata",
-						start: 5802884,
-						end: 5803169
+						start: 5804975,
+						end: 5805260
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Krasnoyarsk",
-						start: 5803169,
-						end: 5804376
+						start: 5805260,
+						end: 5806467
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Kuala_Lumpur",
-						start: 5804376,
-						end: 5804791
+						start: 5806467,
+						end: 5806882
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Kuching",
-						start: 5804791,
-						end: 5805274
+						start: 5806882,
+						end: 5807365
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Kuwait",
-						start: 5805274,
-						end: 5805439
+						start: 5807365,
+						end: 5807530
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Macao",
-						start: 5805439,
-						end: 5806666
+						start: 5807530,
+						end: 5808757
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Macau",
-						start: 5806666,
-						end: 5807893
+						start: 5808757,
+						end: 5809984
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Magadan",
-						start: 5807893,
-						end: 5809115
+						start: 5809984,
+						end: 5811206
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Makassar",
-						start: 5809115,
-						end: 5809369
+						start: 5811206,
+						end: 5811460
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Manila",
-						start: 5809369,
-						end: 5809791
+						start: 5811460,
+						end: 5811882
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Muscat",
-						start: 5809791,
-						end: 5809956
+						start: 5811882,
+						end: 5812047
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Nicosia",
-						start: 5809956,
-						end: 5811958
+						start: 5812047,
+						end: 5814049
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Novokuznetsk",
-						start: 5811958,
-						end: 5813123
+						start: 5814049,
+						end: 5815214
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Novosibirsk",
-						start: 5813123,
-						end: 5814344
+						start: 5815214,
+						end: 5816435
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Omsk",
-						start: 5814344,
-						end: 5815551
+						start: 5816435,
+						end: 5817642
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Oral",
-						start: 5815551,
-						end: 5816556
+						start: 5817642,
+						end: 5818647
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Phnom_Penh",
-						start: 5816556,
-						end: 5816755
+						start: 5818647,
+						end: 5818846
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Pontianak",
-						start: 5816755,
-						end: 5817108
+						start: 5818846,
+						end: 5819199
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Pyongyang",
-						start: 5817108,
-						end: 5817345
+						start: 5819199,
+						end: 5819436
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Qatar",
-						start: 5817345,
-						end: 5817544
+						start: 5819436,
+						end: 5819635
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Qostanay",
-						start: 5817544,
-						end: 5818583
+						start: 5819635,
+						end: 5820674
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Qyzylorda",
-						start: 5818583,
-						end: 5819608
+						start: 5820674,
+						end: 5821699
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Rangoon",
-						start: 5819608,
-						end: 5819876
+						start: 5821699,
+						end: 5821967
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Riyadh",
-						start: 5819876,
-						end: 5820041
+						start: 5821967,
+						end: 5822132
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Saigon",
-						start: 5820041,
-						end: 5820392
+						start: 5822132,
+						end: 5822483
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Sakhalin",
-						start: 5820392,
-						end: 5821594
+						start: 5822483,
+						end: 5823685
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Samarkand",
-						start: 5821594,
-						end: 5822171
+						start: 5823685,
+						end: 5824262
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Seoul",
-						start: 5822171,
-						end: 5822788
+						start: 5824262,
+						end: 5824879
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Shanghai",
-						start: 5822788,
-						end: 5823349
+						start: 5824879,
+						end: 5825440
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Singapore",
-						start: 5823349,
-						end: 5823764
+						start: 5825440,
+						end: 5825855
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Srednekolymsk",
-						start: 5823764,
-						end: 5824972
+						start: 5825855,
+						end: 5827063
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Taipei",
-						start: 5824972,
-						end: 5825733
+						start: 5827063,
+						end: 5827824
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Tashkent",
-						start: 5825733,
-						end: 5826324
+						start: 5827824,
+						end: 5828415
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Tbilisi",
-						start: 5826324,
-						end: 5827359
+						start: 5828415,
+						end: 5829450
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Tehran",
-						start: 5827359,
-						end: 5828621
+						start: 5829450,
+						end: 5830712
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Tel_Aviv",
-						start: 5828621,
-						end: 5831009
+						start: 5830712,
+						end: 5833100
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Thimbu",
-						start: 5831009,
-						end: 5831212
+						start: 5833100,
+						end: 5833303
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Thimphu",
-						start: 5831212,
-						end: 5831415
+						start: 5833303,
+						end: 5833506
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Tokyo",
-						start: 5831415,
-						end: 5831724
+						start: 5833506,
+						end: 5833815
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Tomsk",
-						start: 5831724,
-						end: 5832945
+						start: 5833815,
+						end: 5835036
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Ujung_Pandang",
-						start: 5832945,
-						end: 5833199
+						start: 5835036,
+						end: 5835290
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Ulaanbaatar",
-						start: 5833199,
-						end: 5834090
+						start: 5835290,
+						end: 5836181
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Ulan_Bator",
-						start: 5834090,
-						end: 5834981
+						start: 5836181,
+						end: 5837072
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Urumqi",
-						start: 5834981,
-						end: 5835146
+						start: 5837072,
+						end: 5837237
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Ust-Nera",
-						start: 5835146,
-						end: 5836398
+						start: 5837237,
+						end: 5838489
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Vientiane",
-						start: 5836398,
-						end: 5836597
+						start: 5838489,
+						end: 5838688
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Vladivostok",
-						start: 5836597,
-						end: 5837805
+						start: 5838688,
+						end: 5839896
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Yakutsk",
-						start: 5837805,
-						end: 5839012
+						start: 5839896,
+						end: 5841103
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Yangon",
-						start: 5839012,
-						end: 5839280
+						start: 5841103,
+						end: 5841371
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Yekaterinburg",
-						start: 5839280,
-						end: 5840523
+						start: 5841371,
+						end: 5842614
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Asia/Yerevan",
-						start: 5840523,
-						end: 5841674
+						start: 5842614,
+						end: 5843765
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/Azores",
-						start: 5841674,
-						end: 5845130
+						start: 5843765,
+						end: 5847221
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/Bermuda",
-						start: 5845130,
-						end: 5847526
+						start: 5847221,
+						end: 5849617
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/Canary",
-						start: 5847526,
-						end: 5849423
+						start: 5849617,
+						end: 5851514
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/Cape_Verde",
-						start: 5849423,
-						end: 5849693
+						start: 5851514,
+						end: 5851784
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/Faeroe",
-						start: 5849693,
-						end: 5851508
+						start: 5851784,
+						end: 5853599
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/Faroe",
-						start: 5851508,
-						end: 5853323
+						start: 5853599,
+						end: 5855414
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/Jan_Mayen",
-						start: 5853323,
-						end: 5855621
+						start: 5855414,
+						end: 5857712
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/Madeira",
-						start: 5855621,
-						end: 5858998
+						start: 5857712,
+						end: 5861089
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/Reykjavik",
-						start: 5858998,
-						end: 5859146
+						start: 5861089,
+						end: 5861237
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/South_Georgia",
-						start: 5859146,
-						end: 5859310
+						start: 5861237,
+						end: 5861401
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/St_Helena",
-						start: 5859310,
-						end: 5859458
+						start: 5861401,
+						end: 5861549
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Atlantic/Stanley",
-						start: 5859458,
-						end: 5860672
+						start: 5861549,
+						end: 5862763
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/ACT",
-						start: 5860672,
-						end: 5862862
+						start: 5862763,
+						end: 5864953
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Adelaide",
-						start: 5862862,
-						end: 5865070
+						start: 5864953,
+						end: 5867161
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Brisbane",
-						start: 5865070,
-						end: 5865489
+						start: 5867161,
+						end: 5867580
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Broken_Hill",
-						start: 5865489,
-						end: 5867718
+						start: 5867580,
+						end: 5869809
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Canberra",
-						start: 5867718,
-						end: 5869908
+						start: 5869809,
+						end: 5871999
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Currie",
-						start: 5869908,
-						end: 5872266
+						start: 5871999,
+						end: 5874357
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Darwin",
-						start: 5872266,
-						end: 5872591
+						start: 5874357,
+						end: 5874682
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Eucla",
-						start: 5872591,
-						end: 5873061
+						start: 5874682,
+						end: 5875152
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Hobart",
-						start: 5873061,
-						end: 5875419
+						start: 5875152,
+						end: 5877510
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/LHI",
-						start: 5875419,
-						end: 5877279
+						start: 5877510,
+						end: 5879370
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Lindeman",
-						start: 5877279,
-						end: 5877754
+						start: 5879370,
+						end: 5879845
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Lord_Howe",
-						start: 5877754,
-						end: 5879614
+						start: 5879845,
+						end: 5881705
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Melbourne",
-						start: 5879614,
-						end: 5881804
+						start: 5881705,
+						end: 5883895
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/NSW",
-						start: 5881804,
-						end: 5883994
+						start: 5883895,
+						end: 5886085
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/North",
-						start: 5883994,
-						end: 5884319
+						start: 5886085,
+						end: 5886410
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Perth",
-						start: 5884319,
-						end: 5884765
+						start: 5886410,
+						end: 5886856
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Queensland",
-						start: 5884765,
-						end: 5885184
+						start: 5886856,
+						end: 5887275
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/South",
-						start: 5885184,
-						end: 5887392
+						start: 5887275,
+						end: 5889483
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Sydney",
-						start: 5887392,
-						end: 5889582
+						start: 5889483,
+						end: 5891673
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Tasmania",
-						start: 5889582,
-						end: 5891940
+						start: 5891673,
+						end: 5894031
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Victoria",
-						start: 5891940,
-						end: 5894130
+						start: 5894031,
+						end: 5896221
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/West",
-						start: 5894130,
-						end: 5894576
+						start: 5896221,
+						end: 5896667
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Australia/Yancowinna",
-						start: 5894576,
-						end: 5896805
+						start: 5896667,
+						end: 5898896
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Brazil/Acre",
-						start: 5896805,
-						end: 5897433
+						start: 5898896,
+						end: 5899524
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Brazil/DeNoronha",
-						start: 5897433,
-						end: 5898149
+						start: 5899524,
+						end: 5900240
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Brazil/East",
-						start: 5898149,
-						end: 5899593
+						start: 5900240,
+						end: 5901684
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Brazil/West",
-						start: 5899593,
-						end: 5900197
+						start: 5901684,
+						end: 5902288
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/CET",
-						start: 5900197,
-						end: 5903130
+						start: 5902288,
+						end: 5905221
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/CST6CDT",
-						start: 5903130,
-						end: 5906722
+						start: 5905221,
+						end: 5908813
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Canada/Atlantic",
-						start: 5906722,
-						end: 5910146
+						start: 5908813,
+						end: 5912237
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Canada/Central",
-						start: 5910146,
-						end: 5913014
+						start: 5912237,
+						end: 5915105
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Canada/Eastern",
-						start: 5913014,
-						end: 5916508
+						start: 5915105,
+						end: 5918599
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Canada/Mountain",
-						start: 5916508,
-						end: 5918840
+						start: 5918599,
+						end: 5920931
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Canada/Newfoundland",
-						start: 5918840,
-						end: 5922495
+						start: 5920931,
+						end: 5924586
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Canada/Pacific",
-						start: 5922495,
-						end: 5925387
+						start: 5924586,
+						end: 5927478
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Canada/Saskatchewan",
-						start: 5925387,
-						end: 5926367
+						start: 5927478,
+						end: 5928458
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Canada/Yukon",
-						start: 5926367,
-						end: 5927981
+						start: 5928458,
+						end: 5930072
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Chile/Continental",
-						start: 5927981,
-						end: 5930510
+						start: 5930072,
+						end: 5932601
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Chile/EasterIsland",
-						start: 5930510,
-						end: 5932743
+						start: 5932601,
+						end: 5934834
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Cuba",
-						start: 5932743,
-						end: 5935159
+						start: 5934834,
+						end: 5937250
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/EET",
-						start: 5935159,
-						end: 5937421
+						start: 5937250,
+						end: 5939512
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/EST",
-						start: 5937421,
-						end: 5937603
+						start: 5939512,
+						end: 5939694
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/EST5EDT",
-						start: 5937603,
-						end: 5941155
+						start: 5939694,
+						end: 5943246
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Egypt",
-						start: 5941155,
-						end: 5943554
+						start: 5943246,
+						end: 5945645
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Eire",
-						start: 5943554,
-						end: 5947046
+						start: 5945645,
+						end: 5949137
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT",
-						start: 5947046,
-						end: 5947160
+						start: 5949137,
+						end: 5949251
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+0",
-						start: 5947160,
-						end: 5947274
+						start: 5949251,
+						end: 5949365
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+1",
-						start: 5947274,
-						end: 5947390
+						start: 5949365,
+						end: 5949481
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+10",
-						start: 5947390,
-						end: 5947507
+						start: 5949481,
+						end: 5949598
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+11",
-						start: 5947507,
-						end: 5947624
+						start: 5949598,
+						end: 5949715
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+12",
-						start: 5947624,
-						end: 5947741
+						start: 5949715,
+						end: 5949832
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+2",
-						start: 5947741,
-						end: 5947857
+						start: 5949832,
+						end: 5949948
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+3",
-						start: 5947857,
-						end: 5947973
+						start: 5949948,
+						end: 5950064
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+4",
-						start: 5947973,
-						end: 5948089
+						start: 5950064,
+						end: 5950180
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+5",
-						start: 5948089,
-						end: 5948205
+						start: 5950180,
+						end: 5950296
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+6",
-						start: 5948205,
-						end: 5948321
+						start: 5950296,
+						end: 5950412
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+7",
-						start: 5948321,
-						end: 5948437
+						start: 5950412,
+						end: 5950528
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+8",
-						start: 5948437,
-						end: 5948553
+						start: 5950528,
+						end: 5950644
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT+9",
-						start: 5948553,
-						end: 5948669
+						start: 5950644,
+						end: 5950760
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-0",
-						start: 5948669,
-						end: 5948783
+						start: 5950760,
+						end: 5950874
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-1",
-						start: 5948783,
-						end: 5948900
+						start: 5950874,
+						end: 5950991
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-10",
-						start: 5948900,
-						end: 5949018
+						start: 5950991,
+						end: 5951109
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-11",
-						start: 5949018,
-						end: 5949136
+						start: 5951109,
+						end: 5951227
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-12",
-						start: 5949136,
-						end: 5949254
+						start: 5951227,
+						end: 5951345
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-13",
-						start: 5949254,
-						end: 5949372
+						start: 5951345,
+						end: 5951463
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-14",
-						start: 5949372,
-						end: 5949490
+						start: 5951463,
+						end: 5951581
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-2",
-						start: 5949490,
-						end: 5949607
+						start: 5951581,
+						end: 5951698
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-3",
-						start: 5949607,
-						end: 5949724
+						start: 5951698,
+						end: 5951815
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-4",
-						start: 5949724,
-						end: 5949841
+						start: 5951815,
+						end: 5951932
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-5",
-						start: 5949841,
-						end: 5949958
+						start: 5951932,
+						end: 5952049
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-6",
-						start: 5949958,
-						end: 5950075
+						start: 5952049,
+						end: 5952166
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-7",
-						start: 5950075,
-						end: 5950192
+						start: 5952166,
+						end: 5952283
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-8",
-						start: 5950192,
-						end: 5950309
+						start: 5952283,
+						end: 5952400
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT-9",
-						start: 5950309,
-						end: 5950426
+						start: 5952400,
+						end: 5952517
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/GMT0",
-						start: 5950426,
-						end: 5950540
+						start: 5952517,
+						end: 5952631
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/Greenwich",
-						start: 5950540,
-						end: 5950654
+						start: 5952631,
+						end: 5952745
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/UCT",
-						start: 5950654,
-						end: 5950768
+						start: 5952745,
+						end: 5952859
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/UTC",
-						start: 5950768,
-						end: 5950882
+						start: 5952859,
+						end: 5952973
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/Universal",
-						start: 5950882,
-						end: 5950996
+						start: 5952973,
+						end: 5953087
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Etc/Zulu",
-						start: 5950996,
-						end: 5951110
+						start: 5953087,
+						end: 5953201
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Amsterdam",
-						start: 5951110,
-						end: 5954043
+						start: 5953201,
+						end: 5956134
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Andorra",
-						start: 5954043,
-						end: 5955785
+						start: 5956134,
+						end: 5957876
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Astrakhan",
-						start: 5955785,
-						end: 5956950
+						start: 5957876,
+						end: 5959041
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Athens",
-						start: 5956950,
-						end: 5959212
+						start: 5959041,
+						end: 5961303
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Belfast",
-						start: 5959212,
-						end: 5962876
+						start: 5961303,
+						end: 5964967
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Belgrade",
-						start: 5962876,
-						end: 5964796
+						start: 5964967,
+						end: 5966887
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Berlin",
-						start: 5964796,
-						end: 5967094
+						start: 5966887,
+						end: 5969185
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Bratislava",
-						start: 5967094,
-						end: 5969395
+						start: 5969185,
+						end: 5971486
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Brussels",
-						start: 5969395,
-						end: 5972328
+						start: 5971486,
+						end: 5974419
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Bucharest",
-						start: 5972328,
-						end: 5974512
+						start: 5974419,
+						end: 5976603
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Budapest",
-						start: 5974512,
-						end: 5976880
+						start: 5976603,
+						end: 5978971
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Busingen",
-						start: 5976880,
-						end: 5978789
+						start: 5978971,
+						end: 5980880
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Chisinau",
-						start: 5978789,
-						end: 5981179
+						start: 5980880,
+						end: 5983270
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Copenhagen",
-						start: 5981179,
-						end: 5983477
+						start: 5983270,
+						end: 5985568
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Dublin",
-						start: 5983477,
-						end: 5986969
+						start: 5985568,
+						end: 5989060
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Gibraltar",
-						start: 5986969,
-						end: 5990037
+						start: 5989060,
+						end: 5992128
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Guernsey",
-						start: 5990037,
-						end: 5993701
+						start: 5992128,
+						end: 5995792
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Helsinki",
-						start: 5993701,
-						end: 5995601
+						start: 5995792,
+						end: 5997692
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Isle_of_Man",
-						start: 5995601,
-						end: 5999265
+						start: 5997692,
+						end: 6001356
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Istanbul",
-						start: 5999265,
-						end: 6001212
+						start: 6001356,
+						end: 6003303
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Jersey",
-						start: 6001212,
-						end: 6004876
+						start: 6003303,
+						end: 6006967
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Kaliningrad",
-						start: 6004876,
-						end: 6006369
+						start: 6006967,
+						end: 6008460
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Kiev",
-						start: 6006369,
-						end: 6008489
+						start: 6008460,
+						end: 6010580
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Kirov",
-						start: 6008489,
-						end: 6009674
+						start: 6010580,
+						end: 6011765
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Kyiv",
-						start: 6009674,
-						end: 6011794
+						start: 6011765,
+						end: 6013885
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Lisbon",
-						start: 6011794,
-						end: 6015321
+						start: 6013885,
+						end: 6017412
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Ljubljana",
-						start: 6015321,
-						end: 6017241
+						start: 6017412,
+						end: 6019332
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/London",
-						start: 6017241,
-						end: 6020905
+						start: 6019332,
+						end: 6022996
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Luxembourg",
-						start: 6020905,
-						end: 6023838
+						start: 6022996,
+						end: 6025929
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Madrid",
-						start: 6023838,
-						end: 6026452
+						start: 6025929,
+						end: 6028543
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Malta",
-						start: 6026452,
-						end: 6029072
+						start: 6028543,
+						end: 6031163
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Mariehamn",
-						start: 6029072,
-						end: 6030972
+						start: 6031163,
+						end: 6033063
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Minsk",
-						start: 6030972,
-						end: 6032293
+						start: 6033063,
+						end: 6034384
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Monaco",
-						start: 6032293,
-						end: 6035255
+						start: 6034384,
+						end: 6037346
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Moscow",
-						start: 6035255,
-						end: 6036790
+						start: 6037346,
+						end: 6038881
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Nicosia",
-						start: 6036790,
-						end: 6038792
+						start: 6038881,
+						end: 6040883
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Oslo",
-						start: 6038792,
-						end: 6041090
+						start: 6040883,
+						end: 6043181
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Paris",
-						start: 6041090,
-						end: 6044052
+						start: 6043181,
+						end: 6046143
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Podgorica",
-						start: 6044052,
-						end: 6045972
+						start: 6046143,
+						end: 6048063
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Prague",
-						start: 6045972,
-						end: 6048273
+						start: 6048063,
+						end: 6050364
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Riga",
-						start: 6048273,
-						end: 6050471
+						start: 6050364,
+						end: 6052562
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Rome",
-						start: 6050471,
-						end: 6053112
+						start: 6052562,
+						end: 6055203
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Samara",
-						start: 6053112,
-						end: 6054327
+						start: 6055203,
+						end: 6056418
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/San_Marino",
-						start: 6054327,
-						end: 6056968
+						start: 6056418,
+						end: 6059059
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Sarajevo",
-						start: 6056968,
-						end: 6058888
+						start: 6059059,
+						end: 6060979
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Saratov",
-						start: 6058888,
-						end: 6060071
+						start: 6060979,
+						end: 6062162
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Simferopol",
-						start: 6060071,
-						end: 6061540
+						start: 6062162,
+						end: 6063631
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Skopje",
-						start: 6061540,
-						end: 6063460
+						start: 6063631,
+						end: 6065551
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Sofia",
-						start: 6063460,
-						end: 6065537
+						start: 6065551,
+						end: 6067628
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Stockholm",
-						start: 6065537,
-						end: 6067835
+						start: 6067628,
+						end: 6069926
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Tallinn",
-						start: 6067835,
-						end: 6069983
+						start: 6069926,
+						end: 6072074
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Tirane",
-						start: 6069983,
-						end: 6072067
+						start: 6072074,
+						end: 6074158
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Tiraspol",
-						start: 6072067,
-						end: 6074457
+						start: 6074158,
+						end: 6076548
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Ulyanovsk",
-						start: 6074457,
-						end: 6075724
+						start: 6076548,
+						end: 6077815
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Uzhgorod",
-						start: 6075724,
-						end: 6077844
+						start: 6077815,
+						end: 6079935
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Vaduz",
-						start: 6077844,
-						end: 6079753
+						start: 6079935,
+						end: 6081844
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Vatican",
-						start: 6079753,
-						end: 6082394
+						start: 6081844,
+						end: 6084485
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Vienna",
-						start: 6082394,
-						end: 6084594
+						start: 6084485,
+						end: 6086685
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Vilnius",
-						start: 6084594,
-						end: 6086756
+						start: 6086685,
+						end: 6088847
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Volgograd",
-						start: 6086756,
-						end: 6087949
+						start: 6088847,
+						end: 6090040
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Warsaw",
-						start: 6087949,
-						end: 6090603
+						start: 6090040,
+						end: 6092694
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Zagreb",
-						start: 6090603,
-						end: 6092523
+						start: 6092694,
+						end: 6094614
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Zaporozhye",
-						start: 6092523,
-						end: 6094643
+						start: 6094614,
+						end: 6096734
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Europe/Zurich",
-						start: 6094643,
-						end: 6096552
+						start: 6096734,
+						end: 6098643
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Factory",
-						start: 6096552,
-						end: 6096668
+						start: 6098643,
+						end: 6098759
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/GB",
-						start: 6096668,
-						end: 6100332
+						start: 6098759,
+						end: 6102423
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/GB-Eire",
-						start: 6100332,
-						end: 6103996
+						start: 6102423,
+						end: 6106087
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/GMT",
-						start: 6103996,
-						end: 6104110
+						start: 6106087,
+						end: 6106201
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/GMT+0",
-						start: 6104110,
-						end: 6104224
+						start: 6106201,
+						end: 6106315
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/GMT-0",
-						start: 6104224,
-						end: 6104338
+						start: 6106315,
+						end: 6106429
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/GMT0",
-						start: 6104338,
-						end: 6104452
+						start: 6106429,
+						end: 6106543
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Greenwich",
-						start: 6104452,
-						end: 6104566
+						start: 6106543,
+						end: 6106657
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/HST",
-						start: 6104566,
-						end: 6104895
+						start: 6106657,
+						end: 6106986
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Hongkong",
-						start: 6104895,
-						end: 6106128
+						start: 6106986,
+						end: 6108219
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Iceland",
-						start: 6106128,
-						end: 6106276
+						start: 6108219,
+						end: 6108367
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Antananarivo",
-						start: 6106276,
-						end: 6106541
+						start: 6108367,
+						end: 6108632
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Chagos",
-						start: 6106541,
-						end: 6106740
+						start: 6108632,
+						end: 6108831
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Christmas",
-						start: 6106740,
-						end: 6106939
+						start: 6108831,
+						end: 6109030
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Cocos",
-						start: 6106939,
-						end: 6107207
+						start: 6109030,
+						end: 6109298
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Comoro",
-						start: 6107207,
-						end: 6107472
+						start: 6109298,
+						end: 6109563
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Kerguelen",
-						start: 6107472,
-						end: 6107671
+						start: 6109563,
+						end: 6109762
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Mahe",
-						start: 6107671,
-						end: 6107836
+						start: 6109762,
+						end: 6109927
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Maldives",
-						start: 6107836,
-						end: 6108035
+						start: 6109927,
+						end: 6110126
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Mauritius",
-						start: 6108035,
-						end: 6108276
+						start: 6110126,
+						end: 6110367
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Mayotte",
-						start: 6108276,
-						end: 6108541
+						start: 6110367,
+						end: 6110632
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Indian/Reunion",
-						start: 6108541,
-						end: 6108706
+						start: 6110632,
+						end: 6110797
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Iran",
-						start: 6108706,
-						end: 6109968
+						start: 6110797,
+						end: 6112059
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Israel",
-						start: 6109968,
-						end: 6112356
+						start: 6112059,
+						end: 6114447
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Jamaica",
-						start: 6112356,
-						end: 6112838
+						start: 6114447,
+						end: 6114929
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Japan",
-						start: 6112838,
-						end: 6113147
+						start: 6114929,
+						end: 6115238
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Kwajalein",
-						start: 6113147,
-						end: 6113463
+						start: 6115238,
+						end: 6115554
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Libya",
-						start: 6113463,
-						end: 6114088
+						start: 6115554,
+						end: 6116179
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/MET",
-						start: 6114088,
-						end: 6117021
+						start: 6116179,
+						end: 6119112
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/MST",
-						start: 6117021,
-						end: 6117381
+						start: 6119112,
+						end: 6119472
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/MST7MDT",
-						start: 6117381,
-						end: 6119841
+						start: 6119472,
+						end: 6121932
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Mexico/BajaNorte",
-						start: 6119841,
-						end: 6122747
+						start: 6121932,
+						end: 6124838
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Mexico/BajaSur",
-						start: 6122747,
-						end: 6123807
+						start: 6124838,
+						end: 6125898
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Mexico/General",
-						start: 6123807,
-						end: 6125029
+						start: 6125898,
+						end: 6127120
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/NZ",
-						start: 6125029,
-						end: 6127466
+						start: 6127120,
+						end: 6129557
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/NZ-CHAT",
-						start: 6127466,
-						end: 6129534
+						start: 6129557,
+						end: 6131625
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Navajo",
-						start: 6129534,
-						end: 6131994
+						start: 6131625,
+						end: 6134085
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/PRC",
-						start: 6131994,
-						end: 6132555
+						start: 6134085,
+						end: 6134646
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/PST8PDT",
-						start: 6132555,
-						end: 6135407
+						start: 6134646,
+						end: 6137498
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Apia",
-						start: 6135407,
-						end: 6136019
+						start: 6137498,
+						end: 6138110
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Auckland",
-						start: 6136019,
-						end: 6138456
+						start: 6138110,
+						end: 6140547
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Bougainville",
-						start: 6138456,
-						end: 6138724
+						start: 6140547,
+						end: 6140815
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Chatham",
-						start: 6138724,
-						end: 6140792
+						start: 6140815,
+						end: 6142883
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Chuuk",
-						start: 6140792,
-						end: 6140978
+						start: 6142883,
+						end: 6143069
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Easter",
-						start: 6140978,
-						end: 6143211
+						start: 6143069,
+						end: 6145302
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Efate",
-						start: 6143211,
-						end: 6143749
+						start: 6145302,
+						end: 6145840
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Enderbury",
-						start: 6143749,
-						end: 6143983
+						start: 6145840,
+						end: 6146074
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Fakaofo",
-						start: 6143983,
-						end: 6144183
+						start: 6146074,
+						end: 6146274
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Fiji",
-						start: 6144183,
-						end: 6144761
+						start: 6146274,
+						end: 6146852
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Funafuti",
-						start: 6144761,
-						end: 6144927
+						start: 6146852,
+						end: 6147018
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Galapagos",
-						start: 6144927,
-						end: 6145165
+						start: 6147018,
+						end: 6147256
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Gambier",
-						start: 6145165,
-						end: 6145329
+						start: 6147256,
+						end: 6147420
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Guadalcanal",
-						start: 6145329,
-						end: 6145495
+						start: 6147420,
+						end: 6147586
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Guam",
-						start: 6145495,
-						end: 6145989
+						start: 6147586,
+						end: 6148080
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Honolulu",
-						start: 6145989,
-						end: 6146318
+						start: 6148080,
+						end: 6148409
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Johnston",
-						start: 6146318,
-						end: 6146647
+						start: 6148409,
+						end: 6148738
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Kanton",
-						start: 6146647,
-						end: 6146881
+						start: 6148738,
+						end: 6148972
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Kiritimati",
-						start: 6146881,
-						end: 6147119
+						start: 6148972,
+						end: 6149210
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Kosrae",
-						start: 6147119,
-						end: 6147470
+						start: 6149210,
+						end: 6149561
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Kwajalein",
-						start: 6147470,
-						end: 6147786
+						start: 6149561,
+						end: 6149877
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Majuro",
-						start: 6147786,
-						end: 6147952
+						start: 6149877,
+						end: 6150043
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Marquesas",
-						start: 6147952,
-						end: 6148125
+						start: 6150043,
+						end: 6150216
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Midway",
-						start: 6148125,
-						end: 6148300
+						start: 6150216,
+						end: 6150391
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Nauru",
-						start: 6148300,
-						end: 6148552
+						start: 6150391,
+						end: 6150643
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Niue",
-						start: 6148552,
-						end: 6148755
+						start: 6150643,
+						end: 6150846
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Norfolk",
-						start: 6148755,
-						end: 6149635
+						start: 6150846,
+						end: 6151726
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Noumea",
-						start: 6149635,
-						end: 6149939
+						start: 6151726,
+						end: 6152030
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Pago_Pago",
-						start: 6149939,
-						end: 6150114
+						start: 6152030,
+						end: 6152205
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Palau",
-						start: 6150114,
-						end: 6150294
+						start: 6152205,
+						end: 6152385
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Pitcairn",
-						start: 6150294,
-						end: 6150496
+						start: 6152385,
+						end: 6152587
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Pohnpei",
-						start: 6150496,
-						end: 6150662
+						start: 6152587,
+						end: 6152753
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Ponape",
-						start: 6150662,
-						end: 6150828
+						start: 6152753,
+						end: 6152919
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Port_Moresby",
-						start: 6150828,
-						end: 6151014
+						start: 6152919,
+						end: 6153105
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Rarotonga",
-						start: 6151014,
-						end: 6151617
+						start: 6153105,
+						end: 6153708
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Saipan",
-						start: 6151617,
-						end: 6152111
+						start: 6153708,
+						end: 6154202
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Samoa",
-						start: 6152111,
-						end: 6152286
+						start: 6154202,
+						end: 6154377
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Tahiti",
-						start: 6152286,
-						end: 6152451
+						start: 6154377,
+						end: 6154542
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Tarawa",
-						start: 6152451,
-						end: 6152617
+						start: 6154542,
+						end: 6154708
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Tongatapu",
-						start: 6152617,
-						end: 6152989
+						start: 6154708,
+						end: 6155080
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Truk",
-						start: 6152989,
-						end: 6153175
+						start: 6155080,
+						end: 6155266
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Wake",
-						start: 6153175,
-						end: 6153341
+						start: 6155266,
+						end: 6155432
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Wallis",
-						start: 6153341,
-						end: 6153507
+						start: 6155432,
+						end: 6155598
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Pacific/Yap",
-						start: 6153507,
-						end: 6153693
+						start: 6155598,
+						end: 6155784
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Poland",
-						start: 6153693,
-						end: 6156347
+						start: 6155784,
+						end: 6158438
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Portugal",
-						start: 6156347,
-						end: 6159874
+						start: 6158438,
+						end: 6161965
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/ROC",
-						start: 6159874,
-						end: 6160635
+						start: 6161965,
+						end: 6162726
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/ROK",
-						start: 6160635,
-						end: 6161252
+						start: 6162726,
+						end: 6163343
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Singapore",
-						start: 6161252,
-						end: 6161667
+						start: 6163343,
+						end: 6163758
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Turkey",
-						start: 6161667,
-						end: 6163614
+						start: 6163758,
+						end: 6165705
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/UCT",
-						start: 6163614,
-						end: 6163728
+						start: 6165705,
+						end: 6165819
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Alaska",
-						start: 6163728,
-						end: 6166099
+						start: 6165819,
+						end: 6168190
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Aleutian",
-						start: 6166099,
-						end: 6168455
+						start: 6168190,
+						end: 6170546
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Arizona",
-						start: 6168455,
-						end: 6168815
+						start: 6170546,
+						end: 6170906
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Central",
-						start: 6168815,
-						end: 6172407
+						start: 6170906,
+						end: 6174498
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/East-Indiana",
-						start: 6172407,
-						end: 6174089
+						start: 6174498,
+						end: 6176180
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Eastern",
-						start: 6174089,
-						end: 6177641
+						start: 6176180,
+						end: 6179732
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Hawaii",
-						start: 6177641,
-						end: 6177970
+						start: 6179732,
+						end: 6180061
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Indiana-Starke",
-						start: 6177970,
-						end: 6180414
+						start: 6180061,
+						end: 6182505
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Michigan",
-						start: 6180414,
-						end: 6182644
+						start: 6182505,
+						end: 6184735
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Mountain",
-						start: 6182644,
-						end: 6185104
+						start: 6184735,
+						end: 6187195
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Pacific",
-						start: 6185104,
-						end: 6187956
+						start: 6187195,
+						end: 6190047
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/US/Samoa",
-						start: 6187956,
-						end: 6188131
+						start: 6190047,
+						end: 6190222
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/UTC",
-						start: 6188131,
-						end: 6188245
+						start: 6190222,
+						end: 6190336
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Universal",
-						start: 6188245,
-						end: 6188359
+						start: 6190336,
+						end: 6190450
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/W-SU",
-						start: 6188359,
-						end: 6189894
+						start: 6190450,
+						end: 6191985
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/WET",
-						start: 6189894,
-						end: 6193421
+						start: 6191985,
+						end: 6195512
 					},
 					{
 						filename: "/pglite/share/postgresql/timezone/Zulu",
-						start: 6193421,
-						end: 6193535
+						start: 6195512,
+						end: 6195626
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Africa.txt",
-						start: 6193535,
-						end: 6200508
+						start: 6195626,
+						end: 6202599
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/America.txt",
-						start: 6200508,
-						end: 6211515
+						start: 6202599,
+						end: 6213606
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Antarctica.txt",
-						start: 6211515,
-						end: 6212649
+						start: 6213606,
+						end: 6214740
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Asia.txt",
-						start: 6212649,
-						end: 6220960
+						start: 6214740,
+						end: 6223051
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Atlantic.txt",
-						start: 6220960,
-						end: 6224493
+						start: 6223051,
+						end: 6226584
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Australia",
-						start: 6224493,
-						end: 6225628
+						start: 6226584,
+						end: 6227719
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Australia.txt",
-						start: 6225628,
-						end: 6229012
+						start: 6227719,
+						end: 6231103
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Default",
-						start: 6229012,
-						end: 6256226
+						start: 6231103,
+						end: 6258317
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Etc.txt",
-						start: 6256226,
-						end: 6257476
+						start: 6258317,
+						end: 6259567
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Europe.txt",
-						start: 6257476,
-						end: 6266222
+						start: 6259567,
+						end: 6268313
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/India",
-						start: 6266222,
-						end: 6266815
+						start: 6268313,
+						end: 6268906
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Indian.txt",
-						start: 6266815,
-						end: 6268076
+						start: 6268906,
+						end: 6270167
 					},
 					{
 						filename: "/pglite/share/postgresql/timezonesets/Pacific.txt",
-						start: 6268076,
-						end: 6271844
+						start: 6270167,
+						end: 6273935
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/danish.stop",
-						start: 6271844,
-						end: 6272268
+						start: 6273935,
+						end: 6274359
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/dutch.stop",
-						start: 6272268,
-						end: 6272721
+						start: 6274359,
+						end: 6274812
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/english.stop",
-						start: 6272721,
-						end: 6273343
+						start: 6274812,
+						end: 6275434
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/finnish.stop",
-						start: 6273343,
-						end: 6274922
+						start: 6275434,
+						end: 6277013
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/french.stop",
-						start: 6274922,
-						end: 6275727
+						start: 6277013,
+						end: 6277818
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/german.stop",
-						start: 6275727,
-						end: 6277076
+						start: 6277818,
+						end: 6279167
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/hungarian.stop",
-						start: 6277076,
-						end: 6278303
+						start: 6279167,
+						end: 6280394
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/hunspell_sample.affix",
-						start: 6278303,
-						end: 6278546
+						start: 6280394,
+						end: 6280637
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/hunspell_sample_long.affix",
-						start: 6278546,
-						end: 6279179
+						start: 6280637,
+						end: 6281270
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/hunspell_sample_long.dict",
-						start: 6279179,
-						end: 6279277
+						start: 6281270,
+						end: 6281368
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/hunspell_sample_num.affix",
-						start: 6279277,
-						end: 6279739
+						start: 6281368,
+						end: 6281830
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/hunspell_sample_num.dict",
-						start: 6279739,
-						end: 6279868
+						start: 6281830,
+						end: 6281959
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/ispell_sample.affix",
-						start: 6279868,
-						end: 6280333
+						start: 6281959,
+						end: 6282424
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/ispell_sample.dict",
-						start: 6280333,
-						end: 6280414
+						start: 6282424,
+						end: 6282505
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/italian.stop",
-						start: 6280414,
-						end: 6282068
+						start: 6282505,
+						end: 6284159
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/nepali.stop",
-						start: 6282068,
-						end: 6286329
+						start: 6284159,
+						end: 6288420
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/norwegian.stop",
-						start: 6286329,
-						end: 6287180
+						start: 6288420,
+						end: 6289271
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/portuguese.stop",
-						start: 6287180,
-						end: 6288447
+						start: 6289271,
+						end: 6290538
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/russian.stop",
-						start: 6288447,
-						end: 6289682
+						start: 6290538,
+						end: 6291773
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/spanish.stop",
-						start: 6289682,
-						end: 6291860
+						start: 6291773,
+						end: 6293951
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/swedish.stop",
-						start: 6291860,
-						end: 6292419
+						start: 6293951,
+						end: 6294510
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/synonym_sample.syn",
-						start: 6292419,
-						end: 6292492
+						start: 6294510,
+						end: 6294583
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/thesaurus_sample.ths",
-						start: 6292492,
-						end: 6292965
+						start: 6294583,
+						end: 6295056
 					},
 					{
 						filename: "/pglite/share/postgresql/tsearch_data/turkish.stop",
-						start: 6292965,
-						end: 6293225
+						start: 6295056,
+						end: 6295316
 					}
 				],
-				remote_package_size: 6293225
+				remote_package_size: 6295316
 			});
 		})();
 		var moduleOverrides = Object.assign({}, Module), arguments_ = [], thisProgram = "./this.program", quit_ = (e, t) => {
@@ -9814,9 +9825,9 @@ var ht = (() => {
 				return e[t++];
 			}
 			function o() {
-				for (var R = 0, G = 1;;) {
-					var N = e[t++];
-					if (R += (N & 127) * G, G *= 128, !(N & 128)) break;
+				for (var R = 0, L = 1;;) {
+					var q = e[t++];
+					if (R += (q & 127) * L, L *= 128, !(q & 128)) break;
 				}
 				return R;
 			}
@@ -9824,8 +9835,8 @@ var ht = (() => {
 				var R = o();
 				return t += R, UTF8ArrayToString(e, t - R, R);
 			}
-			function s(R, G) {
-				if (R) throw new Error(G);
+			function s(R, L) {
+				if (R) throw new Error(L);
 			}
 			var n = "dylink.0";
 			if (e instanceof WebAssembly.Module) {
@@ -9833,38 +9844,38 @@ var ht = (() => {
 				l.length === 0 && (n = "dylink", l = WebAssembly.Module.customSections(e, n)), s(l.length === 0, "need dylink section"), e = new Uint8Array(l[0]), r = e.length;
 			} else {
 				s(!(new Uint32Array(new Uint8Array(e.subarray(0, 24)).buffer)[0] == 1836278016), "need to see wasm magic number"), s(e[8] !== 0, "need the dylink section to be first"), t = 9;
-				var c = o();
-				r = t + c, n = _();
+				var m = o();
+				r = t + m, n = _();
 			}
-			var f = {
+			var g = {
 				neededDynlibs: [],
 				tlsExports: /* @__PURE__ */ new Set(),
 				weakImports: /* @__PURE__ */ new Set()
 			};
 			if (n == "dylink") {
-				f.memorySize = o(), f.memoryAlign = o(), f.tableSize = o(), f.tableAlign = o();
-				for (var g = o(), m = 0; m < g; ++m) {
-					var p = _();
-					f.neededDynlibs.push(p);
+				g.memorySize = o(), g.memoryAlign = o(), g.tableSize = o(), g.tableAlign = o();
+				for (var u = o(), f = 0; f < u; ++f) {
+					var c = _();
+					g.neededDynlibs.push(c);
 				}
 			} else {
 				s(n !== "dylink.0");
-				for (var h = 1, x = 2, b = 3, M = 4, y = 256, E = 3, F = 1; t < r;) {
-					var k = a(), q = o();
-					if (k === h) f.memorySize = o(), f.memoryAlign = o(), f.tableSize = o(), f.tableAlign = o();
-					else if (k === x) for (var g = o(), m = 0; m < g; ++m) p = _(), f.neededDynlibs.push(p);
-					else if (k === b) for (var D = o(); D--;) {
-						var te = _(), H = o();
-						H & y && f.tlsExports.add(te);
+				for (var w = 1, S = 2, k = 3, E = 4, y = 256, M = 3, b = 1; t < r;) {
+					var F = a(), A = o();
+					if (F === w) g.memorySize = o(), g.memoryAlign = o(), g.tableSize = o(), g.tableAlign = o();
+					else if (F === S) for (var u = o(), f = 0; f < u; ++f) c = _(), g.neededDynlibs.push(c);
+					else if (F === k) for (var V = o(); V--;) {
+						var te = _(), j = o();
+						j & y && g.tlsExports.add(te);
 					}
-					else if (k === M) for (var D = o(); D--;) {
-						var X = _(), te = _(), H = o();
-						(H & E) == F && f.weakImports.add(te);
+					else if (F === E) for (var V = o(); V--;) {
+						var X = _(), te = _(), j = o();
+						(j & M) == b && g.weakImports.add(te);
 					}
-					else t += q;
+					else t += A;
 				}
 			}
-			return f;
+			return g;
 		};
 		function getValue(e, t = "i8") {
 			switch (t.endsWith("*") && (t = "*"), t) {
@@ -10140,14 +10151,14 @@ var ht = (() => {
 				if (a) {
 					var l = HEAPU32[a + 28 >> 2], d = HEAPU32[a + 32 >> 2];
 					if (l && d) {
-						var u = HEAP8.slice(l, l + d);
-						return t.loadAsync ? Promise.resolve(u) : u;
+						var p = HEAP8.slice(l, l + d);
+						return t.loadAsync ? Promise.resolve(p) : p;
 					}
 				}
-				var c = locateFile(e);
-				if (t.loadAsync) return asyncLoad(c);
-				if (!readBinary) throw new Error(`${c}: file not found, and synchronous loading of external files is not available`);
-				return readBinary(c);
+				var m = locateFile(e);
+				if (t.loadAsync) return asyncLoad(m);
+				if (!readBinary) throw new Error(`${m}: file not found, and synchronous loading of external files is not available`);
+				return readBinary(m);
 			}
 			function s() {
 				var l = preloadedWasm[e];
@@ -10278,9 +10289,9 @@ var ht = (() => {
 			relative: (e, t) => {
 				e = PATH_FS.resolve(e).substr(1), t = PATH_FS.resolve(t).substr(1);
 				function r(d) {
-					for (var u = 0; u < d.length && d[u] === ""; u++);
-					for (var c = d.length - 1; c >= 0 && d[c] === ""; c--);
-					return u > c ? [] : d.slice(u, c - u + 1);
+					for (var p = 0; p < d.length && d[p] === ""; p++);
+					for (var m = d.length - 1; m >= 0 && d[m] === ""; m--);
+					return p > m ? [] : d.slice(p, m - p + 1);
 				}
 				for (var a = r(e.split("/")), o = r(t.split("/")), _ = Math.min(a.length, o.length), s = _, n = 0; n < _; n++) if (a[n] !== o[n]) {
 					s = n;
@@ -10644,16 +10655,16 @@ var ht = (() => {
 				o || _.canHandle(t) && (_.handle(e, t, r, a), o = !0);
 			}), o;
 		}, FS_createPreloadedFile = (e, t, r, a, o, _, s, n, l, d) => {
-			var u = t ? PATH_FS.resolve(PATH.join2(e, t)) : e, c = `cp ${u}`;
-			function f(g) {
-				function m(p) {
-					d?.(), n || FS_createDataFile(e, t, p, a, o, l), _?.(), removeRunDependency(c);
+			var p = t ? PATH_FS.resolve(PATH.join2(e, t)) : e, m = `cp ${p}`;
+			function g(u) {
+				function f(c) {
+					d?.(), n || FS_createDataFile(e, t, c, a, o, l), _?.(), removeRunDependency(m);
 				}
-				FS_handledByPreloadPlugin(g, u, m, () => {
-					s?.(), removeRunDependency(c);
-				}) || m(g);
+				FS_handledByPreloadPlugin(u, p, f, () => {
+					s?.(), removeRunDependency(m);
+				}) || f(u);
 			}
-			addRunDependency(c), typeof r == "string" ? asyncLoad(r).then(f, s) : f(r);
+			addRunDependency(m), typeof r == "string" ? asyncLoad(r).then(g, s) : g(r);
 		}, FS_modeStringToFlags = (e) => {
 			var r = {
 				r: 0,
@@ -10693,7 +10704,7 @@ var ht = (() => {
 					var r = t.node_ops;
 					t.node_ops = Object.assign({}, t.node_ops), t.node_ops.mknod = (a, o, _, s) => {
 						var n = r.mknod(a, o, _, s);
-						return n.node_ops = t.node_ops, n.idbfs_mount = t.mount, n.memfs_stream_ops = n.stream_ops, n.stream_ops = Object.assign({}, n.stream_ops), n.stream_ops.write = (l, d, u, c, f, g) => (l.node.isModified = !0, n.memfs_stream_ops.write(l, d, u, c, f, g)), n.stream_ops.close = (l) => {
+						return n.node_ops = t.node_ops, n.idbfs_mount = t.mount, n.memfs_stream_ops = n.stream_ops, n.stream_ops = Object.assign({}, n.stream_ops), n.stream_ops.write = (l, d, p, m, g, u) => (l.node.isModified = !0, n.memfs_stream_ops.write(l, d, p, m, g, u)), n.stream_ops.close = (l) => {
 							var d = l.node;
 							if (d.isModified && (IDBFS.queuePersist(d.idbfs_mount), d.isModified = !1), d.memfs_stream_ops.close) return d.memfs_stream_ops.close(l);
 						}, n;
@@ -10840,32 +10851,32 @@ var ht = (() => {
 			},
 			reconcile: (e, t, r) => {
 				var a = 0, o = [];
-				Object.keys(e.entries).forEach((c) => {
-					var f = e.entries[c], g = t.entries[c];
-					(!g || f.timestamp.getTime() != g.timestamp.getTime()) && (o.push(c), a++);
+				Object.keys(e.entries).forEach((m) => {
+					var g = e.entries[m], u = t.entries[m];
+					(!u || g.timestamp.getTime() != u.timestamp.getTime()) && (o.push(m), a++);
 				});
 				var _ = [];
-				if (Object.keys(t.entries).forEach((c) => {
-					e.entries[c] || (_.push(c), a++);
+				if (Object.keys(t.entries).forEach((m) => {
+					e.entries[m] || (_.push(m), a++);
 				}), !a) return r(null);
 				var s = !1, l = (e.type === "remote" ? e.db : t.db).transaction([IDBFS.DB_STORE_NAME], "readwrite"), d = l.objectStore(IDBFS.DB_STORE_NAME);
-				function u(c) {
-					if (c && !s) return s = !0, r(c);
+				function p(m) {
+					if (m && !s) return s = !0, r(m);
 				}
-				l.onerror = l.onabort = (c) => {
-					u(c.target.error), c.preventDefault();
-				}, l.oncomplete = (c) => {
+				l.onerror = l.onabort = (m) => {
+					p(m.target.error), m.preventDefault();
+				}, l.oncomplete = (m) => {
 					s || r(null);
-				}, o.sort().forEach((c) => {
-					t.type === "local" ? IDBFS.loadRemoteEntry(d, c, (f, g) => {
-						if (f) return u(f);
-						IDBFS.storeLocalEntry(c, g, u);
-					}) : IDBFS.loadLocalEntry(c, (f, g) => {
-						if (f) return u(f);
-						IDBFS.storeRemoteEntry(d, c, g, u);
+				}, o.sort().forEach((m) => {
+					t.type === "local" ? IDBFS.loadRemoteEntry(d, m, (g, u) => {
+						if (g) return p(g);
+						IDBFS.storeLocalEntry(m, u, p);
+					}) : IDBFS.loadLocalEntry(m, (g, u) => {
+						if (g) return p(g);
+						IDBFS.storeRemoteEntry(d, m, u, p);
 					});
-				}), _.sort().reverse().forEach((c) => {
-					t.type === "local" ? IDBFS.removeLocalEntry(c, u) : IDBFS.removeRemoteEntry(d, c, u);
+				}), _.sort().reverse().forEach((m) => {
+					t.type === "local" ? IDBFS.removeLocalEntry(m, p) : IDBFS.removeRemoteEntry(d, m, p);
 				});
 			}
 		}, ERRNO_CODES = {
@@ -11688,25 +11699,25 @@ var ht = (() => {
 				var r = PATH.dirname(e), a = PATH.dirname(t), o = PATH.basename(e), _ = PATH.basename(t), s, n, l;
 				if (s = FS.lookupPath(e, { parent: !0 }), n = s.node, s = FS.lookupPath(t, { parent: !0 }), l = s.node, !n || !l) throw new FS.ErrnoError(44);
 				if (n.mount !== l.mount) throw new FS.ErrnoError(75);
-				var d = FS.lookupNode(n, o), u = PATH_FS.relative(e, a);
-				if (u.charAt(0) !== ".") throw new FS.ErrnoError(28);
-				if (u = PATH_FS.relative(t, r), u.charAt(0) !== ".") throw new FS.ErrnoError(55);
-				var c;
+				var d = FS.lookupNode(n, o), p = PATH_FS.relative(e, a);
+				if (p.charAt(0) !== ".") throw new FS.ErrnoError(28);
+				if (p = PATH_FS.relative(t, r), p.charAt(0) !== ".") throw new FS.ErrnoError(55);
+				var m;
 				try {
-					c = FS.lookupNode(l, _);
+					m = FS.lookupNode(l, _);
 				} catch {}
-				if (d !== c) {
-					var f = FS.isDir(d.mode), g = FS.mayDelete(n, o, f);
-					if (g) throw new FS.ErrnoError(g);
-					if (g = c ? FS.mayDelete(l, _, f) : FS.mayCreate(l, _), g) throw new FS.ErrnoError(g);
+				if (d !== m) {
+					var g = FS.isDir(d.mode), u = FS.mayDelete(n, o, g);
+					if (u) throw new FS.ErrnoError(u);
+					if (u = m ? FS.mayDelete(l, _, g) : FS.mayCreate(l, _), u) throw new FS.ErrnoError(u);
 					if (!n.node_ops.rename) throw new FS.ErrnoError(63);
-					if (FS.isMountpoint(d) || c && FS.isMountpoint(c)) throw new FS.ErrnoError(10);
-					if (l !== n && (g = FS.nodePermissions(n, "w"), g)) throw new FS.ErrnoError(g);
+					if (FS.isMountpoint(d) || m && FS.isMountpoint(m)) throw new FS.ErrnoError(10);
+					if (l !== n && (u = FS.nodePermissions(n, "w"), u)) throw new FS.ErrnoError(u);
 					FS.hashRemoveNode(d);
 					try {
 						n.node_ops.rename(d, l, _), d.parent = l;
-					} catch (m) {
-						throw m;
+					} catch (f) {
+						throw f;
 					} finally {
 						FS.hashAddNode(d);
 					}
@@ -12040,12 +12051,12 @@ var ht = (() => {
 				var n = FS_getMode(a, o), l = FS.create(s, n);
 				if (r) {
 					if (typeof r == "string") {
-						for (var d = new Array(r.length), u = 0, c = r.length; u < c; ++u) d[u] = r.charCodeAt(u);
+						for (var d = new Array(r.length), p = 0, m = r.length; p < m; ++p) d[p] = r.charCodeAt(p);
 						r = d;
 					}
 					FS.chmod(l, n | 146);
-					var f = FS.open(l, 577);
-					FS.write(f, r, 0, r.length, 0, _), FS.close(f), FS.chmod(l, n);
+					var g = FS.open(l, 577);
+					FS.write(g, r, 0, r.length, 0, _), FS.close(g), FS.chmod(l, n);
 				}
 			},
 			createDevice(e, t, r, a) {
@@ -12060,27 +12071,27 @@ var ht = (() => {
 					close(l) {
 						a?.buffer?.length && a(10);
 					},
-					read(l, d, u, c, f) {
-						for (var g = 0, m = 0; m < c; m++) {
-							var p;
+					read(l, d, p, m, g) {
+						for (var u = 0, f = 0; f < m; f++) {
+							var c;
 							try {
-								p = r();
+								c = r();
 							} catch {
 								throw new FS.ErrnoError(29);
 							}
-							if (p === void 0 && g === 0) throw new FS.ErrnoError(6);
-							if (p == null) break;
-							g++, d[u + m] = p;
+							if (c === void 0 && u === 0) throw new FS.ErrnoError(6);
+							if (c == null) break;
+							u++, d[p + f] = c;
 						}
-						return g && (l.node.atime = Date.now()), g;
+						return u && (l.node.atime = Date.now()), u;
 					},
-					write(l, d, u, c, f) {
-						for (var g = 0; g < c; g++) try {
-							a(d[u + g]);
+					write(l, d, p, m, g) {
+						for (var u = 0; u < m; u++) try {
+							a(d[p + u]);
 						} catch {
 							throw new FS.ErrnoError(29);
 						}
-						return c && (l.node.mtime = l.node.ctime = Date.now()), g;
+						return m && (l.node.mtime = l.node.ctime = Date.now()), u;
 					}
 				}), FS.mkdev(o, _, s);
 			},
@@ -12099,32 +12110,32 @@ var ht = (() => {
 						P$3(this, "lengthKnown", !1);
 						P$3(this, "chunks", []);
 					}
-					get(g) {
-						if (!(g > this.length - 1 || g < 0)) {
-							var m = g % this.chunkSize, p = g / this.chunkSize | 0;
-							return this.getter(p)[m];
+					get(u) {
+						if (!(u > this.length - 1 || u < 0)) {
+							var f = u % this.chunkSize, c = u / this.chunkSize | 0;
+							return this.getter(c)[f];
 						}
 					}
-					setDataGetter(g) {
-						this.getter = g;
+					setDataGetter(u) {
+						this.getter = u;
 					}
 					cacheLength() {
-						var g = new XMLHttpRequest();
-						if (g.open("HEAD", r, !1), g.send(null), !(g.status >= 200 && g.status < 300 || g.status === 304)) throw new Error("Couldn't load " + r + ". Status: " + g.status);
-						var m = Number(g.getResponseHeader("Content-length")), p, h = (p = g.getResponseHeader("Accept-Ranges")) && p === "bytes", x = (p = g.getResponseHeader("Content-Encoding")) && p === "gzip", b = 1048576;
-						h || (b = m);
-						var M = (E, F) => {
-							if (E > F) throw new Error("invalid range (" + E + ", " + F + ") or no bytes requested!");
-							if (F > m - 1) throw new Error("only " + m + " bytes available! programmer error!");
-							var k = new XMLHttpRequest();
-							if (k.open("GET", r, !1), m !== b && k.setRequestHeader("Range", "bytes=" + E + "-" + F), k.responseType = "arraybuffer", k.overrideMimeType && k.overrideMimeType("text/plain; charset=x-user-defined"), k.send(null), !(k.status >= 200 && k.status < 300 || k.status === 304)) throw new Error("Couldn't load " + r + ". Status: " + k.status);
-							return k.response !== void 0 ? new Uint8Array(k.response || []) : intArrayFromString(k.responseText || "", !0);
+						var u = new XMLHttpRequest();
+						if (u.open("HEAD", r, !1), u.send(null), !(u.status >= 200 && u.status < 300 || u.status === 304)) throw new Error("Couldn't load " + r + ". Status: " + u.status);
+						var f = Number(u.getResponseHeader("Content-length")), c, w = (c = u.getResponseHeader("Accept-Ranges")) && c === "bytes", S = (c = u.getResponseHeader("Content-Encoding")) && c === "gzip", k = 1048576;
+						w || (k = f);
+						var E = (M, b) => {
+							if (M > b) throw new Error("invalid range (" + M + ", " + b + ") or no bytes requested!");
+							if (b > f - 1) throw new Error("only " + f + " bytes available! programmer error!");
+							var F = new XMLHttpRequest();
+							if (F.open("GET", r, !1), f !== k && F.setRequestHeader("Range", "bytes=" + M + "-" + b), F.responseType = "arraybuffer", F.overrideMimeType && F.overrideMimeType("text/plain; charset=x-user-defined"), F.send(null), !(F.status >= 200 && F.status < 300 || F.status === 304)) throw new Error("Couldn't load " + r + ". Status: " + F.status);
+							return F.response !== void 0 ? new Uint8Array(F.response || []) : intArrayFromString(F.responseText || "", !0);
 						}, y = this;
-						y.setDataGetter((E) => {
-							var F = E * b, k = (E + 1) * b - 1;
-							if (k = Math.min(k, m - 1), typeof y.chunks[E] > "u" && (y.chunks[E] = M(F, k)), typeof y.chunks[E] > "u") throw new Error("doXHR failed!");
-							return y.chunks[E];
-						}), (x || !m) && (b = m = 1, m = this.getter(0).length, b = m, out("LazyFiles on gzip forces download of the whole file when length is accessed")), this._length = m, this._chunkSize = b, this.lengthKnown = !0;
+						y.setDataGetter((M) => {
+							var b = M * k, F = (M + 1) * k - 1;
+							if (F = Math.min(F, f - 1), typeof y.chunks[M] > "u" && (y.chunks[M] = E(b, F)), typeof y.chunks[M] > "u") throw new Error("doXHR failed!");
+							return y.chunks[M];
+						}), (S || !f) && (k = f = 1, f = this.getter(0).length, k = f, out("LazyFiles on gzip forces download of the whole file when length is accessed")), this._length = f, this._chunkSize = k, this.lengthKnown = !0;
 					}
 					get length() {
 						return this.lengthKnown || this.cacheLength(), this._length;
@@ -12148,24 +12159,24 @@ var ht = (() => {
 					return this.contents.length;
 				} } });
 				var d = {};
-				Object.keys(l.stream_ops).forEach((f) => {
-					var g = l.stream_ops[f];
-					d[f] = (...m) => (FS.forceLoadFile(l), g(...m));
+				Object.keys(l.stream_ops).forEach((g) => {
+					var u = l.stream_ops[g];
+					d[g] = (...f) => (FS.forceLoadFile(l), u(...f));
 				});
-				function c(f, g, m, p, h) {
-					var x = f.node.contents;
-					if (h >= x.length) return 0;
-					var b = Math.min(x.length - h, p);
-					if (x.slice) for (var M = 0; M < b; M++) g[m + M] = x[h + M];
-					else for (var M = 0; M < b; M++) g[m + M] = x.get(h + M);
-					return b;
+				function m(g, u, f, c, w) {
+					var S = g.node.contents;
+					if (w >= S.length) return 0;
+					var k = Math.min(S.length - w, c);
+					if (S.slice) for (var E = 0; E < k; E++) u[f + E] = S[w + E];
+					else for (var E = 0; E < k; E++) u[f + E] = S.get(w + E);
+					return k;
 				}
-				return d.read = (f, g, m, p, h) => (FS.forceLoadFile(l), c(f, g, m, p, h)), d.mmap = (f, g, m, p, h) => {
+				return d.read = (g, u, f, c, w) => (FS.forceLoadFile(l), m(g, u, f, c, w)), d.mmap = (g, u, f, c, w) => {
 					FS.forceLoadFile(l);
-					var x = mmapAlloc(g);
-					if (!x) throw new FS.ErrnoError(48);
-					return c(f, HEAP8, x, g, m), {
-						ptr: x,
+					var S = mmapAlloc(u);
+					if (!S) throw new FS.ErrnoError(48);
+					return m(g, HEAP8, S, u, f), {
+						ptr: S,
 						allocated: !0
 					};
 				}, l.stream_ops = d, l;
@@ -12204,19 +12215,19 @@ var ht = (() => {
 			}
 		}, ___syscall__newselect = function(e, t, r, a, o) {
 			try {
-				for (var _ = 0, s = t ? HEAP32[t >> 2] : 0, n = t ? HEAP32[t + 4 >> 2] : 0, l = r ? HEAP32[r >> 2] : 0, d = r ? HEAP32[r + 4 >> 2] : 0, u = a ? HEAP32[a >> 2] : 0, c = a ? HEAP32[a + 4 >> 2] : 0, f = 0, g = 0, m = 0, p = 0, h = 0, x = 0, b = (t ? HEAP32[t >> 2] : 0) | (r ? HEAP32[r >> 2] : 0) | (a ? HEAP32[a >> 2] : 0), M = (t ? HEAP32[t + 4 >> 2] : 0) | (r ? HEAP32[r + 4 >> 2] : 0) | (a ? HEAP32[a + 4 >> 2] : 0), y = (X, R, G, N) => X < 32 ? R & N : G & N, E = 0; E < e; E++) {
-					var F = 1 << E % 32;
-					if (y(E, b, M, F)) {
-						var k = SYSCALLS.getStreamFromFD(E), q = SYSCALLS.DEFAULT_POLLMASK;
-						if (k.stream_ops.poll) {
-							var D = -1;
-							if (o) D = ((t ? HEAP32[o >> 2] : 0) + (t ? HEAP32[o + 4 >> 2] : 0) / 1e6) * 1e3;
-							q = k.stream_ops.poll(k, D);
+				for (var _ = 0, s = t ? HEAP32[t >> 2] : 0, n = t ? HEAP32[t + 4 >> 2] : 0, l = r ? HEAP32[r >> 2] : 0, d = r ? HEAP32[r + 4 >> 2] : 0, p = a ? HEAP32[a >> 2] : 0, m = a ? HEAP32[a + 4 >> 2] : 0, g = 0, u = 0, f = 0, c = 0, w = 0, S = 0, k = (t ? HEAP32[t >> 2] : 0) | (r ? HEAP32[r >> 2] : 0) | (a ? HEAP32[a >> 2] : 0), E = (t ? HEAP32[t + 4 >> 2] : 0) | (r ? HEAP32[r + 4 >> 2] : 0) | (a ? HEAP32[a + 4 >> 2] : 0), y = (X, R, L, q) => X < 32 ? R & q : L & q, M = 0; M < e; M++) {
+					var b = 1 << M % 32;
+					if (y(M, k, E, b)) {
+						var F = SYSCALLS.getStreamFromFD(M), A = SYSCALLS.DEFAULT_POLLMASK;
+						if (F.stream_ops.poll) {
+							var V = -1;
+							if (o) V = ((t ? HEAP32[o >> 2] : 0) + (t ? HEAP32[o + 4 >> 2] : 0) / 1e6) * 1e3;
+							A = F.stream_ops.poll(F, V);
 						}
-						q & 1 && y(E, s, n, F) && (E < 32 ? f = f | F : g = g | F, _++), q & 4 && y(E, l, d, F) && (E < 32 ? m = m | F : p = p | F, _++), q & 2 && y(E, u, c, F) && (E < 32 ? h = h | F : x = x | F, _++);
+						A & 1 && y(M, s, n, b) && (M < 32 ? g = g | b : u = u | b, _++), A & 4 && y(M, l, d, b) && (M < 32 ? f = f | b : c = c | b, _++), A & 2 && y(M, p, m, b) && (M < 32 ? w = w | b : S = S | b, _++);
 					}
 				}
-				return t && (HEAP32[t >> 2] = f, HEAP32[t + 4 >> 2] = g), r && (HEAP32[r >> 2] = m, HEAP32[r + 4 >> 2] = p), a && (HEAP32[a >> 2] = h, HEAP32[a + 4 >> 2] = x), _;
+				return t && (HEAP32[t >> 2] = g, HEAP32[t + 4 >> 2] = u), r && (HEAP32[r >> 2] = f, HEAP32[r + 4 >> 2] = c), a && (HEAP32[a >> 2] = w, HEAP32[a + 4 >> 2] = S), _;
 			} catch (X) {
 				if (typeof FS > "u" || X.name !== "ErrnoError") throw X;
 				return -X.errno;
@@ -12308,13 +12319,13 @@ var ht = (() => {
 					} catch {
 						throw new FS.ErrnoError(23);
 					}
-					var u = {
+					var p = {
 						addr: t,
 						port: r,
 						socket: a,
 						msg_send_queue: []
 					};
-					return SOCKFS.websocket_sock_ops.addPeer(e, u), SOCKFS.websocket_sock_ops.handlePeerEvents(e, u), e.type === 2 && typeof e.sport < "u" && u.msg_send_queue.push(new Uint8Array([
+					return SOCKFS.websocket_sock_ops.addPeer(e, p), SOCKFS.websocket_sock_ops.handlePeerEvents(e, p), e.type === 2 && typeof e.sport < "u" && p.msg_send_queue.push(new Uint8Array([
 						255,
 						255,
 						255,
@@ -12325,7 +12336,7 @@ var ht = (() => {
 						116,
 						(e.sport & 65280) >> 8,
 						e.sport & 255
-					])), u;
+					])), p;
 				},
 				getPeer(e, t, r) {
 					return e.peers[t + ":" + r];
@@ -12599,14 +12610,14 @@ var ht = (() => {
 				e[2] >> 16,
 				e[3] & 65535,
 				e[3] >> 16
-			], d = !0, u = "";
+			], d = !0, p = "";
 			for (n = 0; n < 5; n++) if (l[n] !== 0) {
 				d = !1;
 				break;
 			}
 			if (d) {
-				if (u = inetNtop4(l[6] | l[7] << 16), l[5] === -1) return t = "::ffff:", t += u, t;
-				if (l[5] === 0) return t = "::", u === "0.0.0.0" && (u = ""), u === "0.0.0.1" && (u = "1"), t += u, t;
+				if (p = inetNtop4(l[6] | l[7] << 16), l[5] === -1) return t = "::ffff:", t += p, t;
+				if (l[5] === 0) return t = "::", p === "0.0.0.0" && (p = ""), p === "0.0.0.1" && (p = "1"), t += p, t;
 			}
 			for (r = 0; r < 8; r++) l[r] === 0 && (r - o > 1 && (s = 0), o = r, s++), s > a && (a = s, _ = r - a + 1);
 			for (r = 0; r < 8; r++) {
@@ -12854,25 +12865,25 @@ var ht = (() => {
 				var a = SYSCALLS.getStreamFromFD(e);
 				a.getdents || (a.getdents = FS.readdir(a.path));
 				for (var o = 280, _ = 0, s = FS.llseek(a, 0, 1), n = Math.floor(s / o), l = Math.min(a.getdents.length, n + Math.floor(r / o)), d = n; d < l; d++) {
-					var u, c, f = a.getdents[d];
-					if (f === ".") u = a.node.id, c = 4;
-					else if (f === "..") u = FS.lookupPath(a.path, { parent: !0 }).node.id, c = 4;
+					var p, m, g = a.getdents[d];
+					if (g === ".") p = a.node.id, m = 4;
+					else if (g === "..") p = FS.lookupPath(a.path, { parent: !0 }).node.id, m = 4;
 					else {
-						var m;
+						var f;
 						try {
-							m = FS.lookupNode(a.node, f);
-						} catch (p) {
-							if (p?.errno === 28) continue;
-							throw p;
+							f = FS.lookupNode(a.node, g);
+						} catch (c) {
+							if (c?.errno === 28) continue;
+							throw c;
 						}
-						u = m.id, c = FS.isChrdev(m.mode) ? 2 : FS.isDir(m.mode) ? 4 : FS.isLink(m.mode) ? 10 : 8;
+						p = f.id, m = FS.isChrdev(f.mode) ? 2 : FS.isDir(f.mode) ? 4 : FS.isLink(f.mode) ? 10 : 8;
 					}
-					HEAP64[t + _ >> 3] = BigInt(u), HEAP64[t + _ + 8 >> 3] = BigInt((d + 1) * o), HEAP16[t + _ + 16 >> 1] = 280, HEAP8[t + _ + 18] = c, stringToUTF8(f, t + _ + 19, 256), _ += o;
+					HEAP64[t + _ >> 3] = BigInt(p), HEAP64[t + _ + 8 >> 3] = BigInt((d + 1) * o), HEAP16[t + _ + 16 >> 1] = 280, HEAP8[t + _ + 18] = m, stringToUTF8(g, t + _ + 19, 256), _ += o;
 				}
 				return FS.llseek(a, d * o, 0), _;
-			} catch (p) {
-				if (typeof FS > "u" || p.name !== "ErrnoError") throw p;
-				return -p.errno;
+			} catch (c) {
+				if (typeof FS > "u" || c.name !== "ErrnoError") throw c;
+				return -c.errno;
 			}
 		}
 		___syscall_getdents64.sig = "iipp";
@@ -12899,13 +12910,13 @@ var ht = (() => {
 					case 21508:
 						if (!a.tty) return -59;
 						if (a.tty.ops.ioctl_tcsets) {
-							for (var _ = syscallGetVarargP(), n = HEAP32[_ >> 2], l = HEAP32[_ + 4 >> 2], d = HEAP32[_ + 8 >> 2], u = HEAP32[_ + 12 >> 2], c = [], s = 0; s < 32; s++) c.push(HEAP8[_ + s + 17]);
+							for (var _ = syscallGetVarargP(), n = HEAP32[_ >> 2], l = HEAP32[_ + 4 >> 2], d = HEAP32[_ + 8 >> 2], p = HEAP32[_ + 12 >> 2], m = [], s = 0; s < 32; s++) m.push(HEAP8[_ + s + 17]);
 							return a.tty.ops.ioctl_tcsets(a.tty, t, {
 								c_iflag: n,
 								c_oflag: l,
 								c_cflag: d,
-								c_lflag: u,
-								c_cc: c
+								c_lflag: p,
+								c_cc: m
 							});
 						}
 						return 0;
@@ -12920,17 +12931,17 @@ var ht = (() => {
 					case 21523:
 						if (!a.tty) return -59;
 						if (a.tty.ops.ioctl_tiocgwinsz) {
-							var f = a.tty.ops.ioctl_tiocgwinsz(a.tty), _ = syscallGetVarargP();
-							HEAP16[_ >> 1] = f[0], HEAP16[_ + 2 >> 1] = f[1];
+							var g = a.tty.ops.ioctl_tiocgwinsz(a.tty), _ = syscallGetVarargP();
+							HEAP16[_ >> 1] = g[0], HEAP16[_ + 2 >> 1] = g[1];
 						}
 						return 0;
 					case 21524: return a.tty ? 0 : -59;
 					case 21515: return a.tty ? 0 : -59;
 					default: return -28;
 				}
-			} catch (g) {
-				if (typeof FS > "u" || g.name !== "ErrnoError") throw g;
-				return -g.errno;
+			} catch (u) {
+				if (typeof FS > "u" || u.name !== "ErrnoError") throw u;
+				return -u.errno;
 			}
 		}
 		___syscall_ioctl.sig = "iiip";
@@ -13046,18 +13057,18 @@ var ht = (() => {
 					var d = t.subarray(r, r + a);
 					if (a <= 0) return 0;
 					if (s == 0) throw new FS.ErrnoError(6);
-					for (var u = Math.min(s, a), c = u, f = 0, n = 0; n < _.buckets.length; n++) {
-						var g = _.buckets[n], m = g.offset - g.roffset;
-						if (u <= m) {
-							var p = g.buffer.subarray(g.roffset, g.offset);
-							u < m ? (p = p.subarray(0, u), g.roffset += u) : f++, d.set(p);
+					for (var p = Math.min(s, a), m = p, g = 0, n = 0; n < _.buckets.length; n++) {
+						var u = _.buckets[n], f = u.offset - u.roffset;
+						if (p <= f) {
+							var c = u.buffer.subarray(u.roffset, u.offset);
+							p < f ? (c = c.subarray(0, p), u.roffset += p) : g++, d.set(c);
 							break;
 						} else {
-							var p = g.buffer.subarray(g.roffset, g.offset);
-							d.set(p), d = d.subarray(p.byteLength), u -= p.byteLength, f++;
+							var c = u.buffer.subarray(u.roffset, u.offset);
+							d.set(c), d = d.subarray(c.byteLength), p -= c.byteLength, g++;
 						}
 					}
-					return f && f == _.buckets.length && (f--, _.buckets[f].offset = 0, _.buckets[f].roffset = 0), _.buckets.splice(0, f), c;
+					return g && g == _.buckets.length && (g--, _.buckets[g].offset = 0, _.buckets[g].roffset = 0), _.buckets.splice(0, g), m;
 				},
 				write(e, t, r, a, o) {
 					var _ = e.node.pipe, s = t.subarray(r, r + a), n = s.byteLength;
@@ -13071,21 +13082,21 @@ var ht = (() => {
 					var d = PIPEFS.BUCKET_BUFFER_SIZE - l.offset;
 					if (d >= n) return l.buffer.set(s, l.offset), l.offset += n, n;
 					d > 0 && (l.buffer.set(s.subarray(0, d), l.offset), l.offset += d, s = s.subarray(d, s.byteLength));
-					for (var u = s.byteLength / PIPEFS.BUCKET_BUFFER_SIZE | 0, c = s.byteLength % PIPEFS.BUCKET_BUFFER_SIZE, f = 0; f < u; f++) {
-						var g = {
+					for (var p = s.byteLength / PIPEFS.BUCKET_BUFFER_SIZE | 0, m = s.byteLength % PIPEFS.BUCKET_BUFFER_SIZE, g = 0; g < p; g++) {
+						var u = {
 							buffer: new Uint8Array(PIPEFS.BUCKET_BUFFER_SIZE),
 							offset: PIPEFS.BUCKET_BUFFER_SIZE,
 							roffset: 0
 						};
-						_.buckets.push(g), g.buffer.set(s.subarray(0, PIPEFS.BUCKET_BUFFER_SIZE)), s = s.subarray(PIPEFS.BUCKET_BUFFER_SIZE, s.byteLength);
+						_.buckets.push(u), u.buffer.set(s.subarray(0, PIPEFS.BUCKET_BUFFER_SIZE)), s = s.subarray(PIPEFS.BUCKET_BUFFER_SIZE, s.byteLength);
 					}
-					if (c > 0) {
-						var g = {
+					if (m > 0) {
+						var u = {
 							buffer: new Uint8Array(PIPEFS.BUCKET_BUFFER_SIZE),
 							offset: s.byteLength,
 							roffset: 0
 						};
-						_.buckets.push(g), g.buffer.set(s);
+						_.buckets.push(u), u.buffer.set(s);
 					}
 					return n;
 				},
@@ -13337,9 +13348,9 @@ ${n}`), 0;
 				if (isNaN(o)) return 61;
 				var n = SYSCALLS.getStreamFromFD(a), l = FS.mmap(n, e, o, t, r), d = l.ptr;
 				return HEAP32[_ >> 2] = l.allocated, HEAPU32[s >> 2] = d, 0;
-			} catch (u) {
-				if (typeof FS > "u" || u.name !== "ErrnoError") throw u;
-				return -u.errno;
+			} catch (p) {
+				if (typeof FS > "u" || p.name !== "ErrnoError") throw p;
+				return -p.errno;
 			}
 		}
 		__mmap_js.sig = "ipiiijpp";
@@ -13392,11 +13403,11 @@ ${n}`), 0;
 		var __tzset_js = (e, t, r, a) => {
 			var o = (/* @__PURE__ */ new Date()).getFullYear(), _ = new Date(o, 0, 1), s = new Date(o, 6, 1), n = _.getTimezoneOffset(), l = s.getTimezoneOffset(), d = Math.max(n, l);
 			HEAPU32[e >> 2] = d * 60, HEAP32[t >> 2] = +(n != l);
-			var u = (g) => {
-				var m = g >= 0 ? "-" : "+", p = Math.abs(g);
-				return `UTC${m}${String(Math.floor(p / 60)).padStart(2, "0")}${String(p % 60).padStart(2, "0")}`;
-			}, c = u(n), f = u(l);
-			l < n ? (stringToUTF8(c, r, 17), stringToUTF8(f, a, 17)) : (stringToUTF8(c, a, 17), stringToUTF8(f, r, 17));
+			var p = (u) => {
+				var f = u >= 0 ? "-" : "+", c = Math.abs(u);
+				return `UTC${f}${String(Math.floor(c / 60)).padStart(2, "0")}${String(c % 60).padStart(2, "0")}`;
+			}, m = p(n), g = p(l);
+			l < n ? (stringToUTF8(m, r, 17), stringToUTF8(g, a, 17)) : (stringToUTF8(m, a, 17), stringToUTF8(g, r, 17));
 		};
 		__tzset_js.sig = "vpppp";
 		var _emscripten_date_now = () => Date.now();
@@ -13412,6 +13423,14 @@ ${n}`), 0;
 			return HEAP64[r >> 3] = BigInt(o), 0;
 		}
 		_clock_time_get.sig = "iijp";
+		var runtimeKeepalivePush = () => {
+			runtimeKeepaliveCounter += 1;
+		};
+		runtimeKeepalivePush.sig = "v";
+		var _emscripten_exit_with_live_runtime = () => {
+			throw runtimeKeepalivePush(), "unwind";
+		};
+		_emscripten_exit_with_live_runtime.sig = "v";
 		var getHeapMax = () => 2147483648, _emscripten_get_heap_max = () => getHeapMax();
 		_emscripten_get_heap_max.sig = "p";
 		var growMemory = (e) => {
@@ -13576,10 +13595,10 @@ ${n}`), 0;
 		}
 		_fd_write.sig = "iippp";
 		var _getaddrinfo = (e, t, r, a) => {
-			var o = 0, _ = 0, s = 0, n = 0, l = 0, d = 0, u;
-			function c(f, g, m, p, h, x) {
-				var b, M, y, E;
-				return M = f === 10 ? 28 : 16, h = f === 10 ? inetNtop6(h) : inetNtop4(h), b = _malloc(M), E = writeSockaddr(b, f, h, x), assert(!E), y = _malloc(32), HEAP32[y + 4 >> 2] = f, HEAP32[y + 8 >> 2] = g, HEAP32[y + 12 >> 2] = m, HEAPU32[y + 24 >> 2] = p, HEAPU32[y + 20 >> 2] = b, f === 10 ? HEAP32[y + 16 >> 2] = 28 : HEAP32[y + 16 >> 2] = 16, HEAP32[y + 28 >> 2] = 0, y;
+			var o = 0, _ = 0, s = 0, n = 0, l = 0, d = 0, p;
+			function m(g, u, f, c, w, S) {
+				var k, E, y, M;
+				return E = g === 10 ? 28 : 16, w = g === 10 ? inetNtop6(w) : inetNtop4(w), k = _malloc(E), M = writeSockaddr(k, g, w, S), assert(!M), y = _malloc(32), HEAP32[y + 4 >> 2] = g, HEAP32[y + 8 >> 2] = u, HEAP32[y + 12 >> 2] = f, HEAPU32[y + 24 >> 2] = c, HEAPU32[y + 20 >> 2] = k, g === 10 ? HEAP32[y + 16 >> 2] = 28 : HEAP32[y + 16 >> 2] = 16, HEAP32[y + 28 >> 2] = 0, y;
 			}
 			if (r && (s = HEAP32[r >> 2], n = HEAP32[r + 4 >> 2], l = HEAP32[r + 8 >> 2], d = HEAP32[r + 12 >> 2]), l && !d && (d = l === 2 ? 17 : 6), !l && d && (l = d === 17 ? 2 : 1), d === 0 && (d = 6), l === 0 && (l = 1), !e && !t) return -2;
 			if (s & -1088 || r !== 0 && HEAP32[r >> 2] & 2 && !e) return -1;
@@ -13592,7 +13611,7 @@ ${n}`), 0;
 				0,
 				0,
 				_htonl(1)
-			]), u = c(n, l, d, null, o, _), HEAPU32[a >> 2] = u, 0;
+			]), p = m(n, l, d, null, o, _), HEAPU32[a >> 2] = p, 0;
 			if (e = UTF8ToString(e), o = inetPton4(e), o !== null) if (n === 0 || n === 2) n = 2;
 			else if (n === 10 && s & 8) o = [
 				0,
@@ -13603,32 +13622,32 @@ ${n}`), 0;
 			else return -2;
 			else if (o = inetPton6(e), o !== null) if (n === 0 || n === 10) n = 10;
 			else return -2;
-			return o != null ? (u = c(n, l, d, e, o, _), HEAPU32[a >> 2] = u, 0) : s & 4 ? -2 : (e = DNS.lookup_name(e), o = inetPton4(e), n === 0 ? n = 2 : n === 10 && (o = [
+			return o != null ? (p = m(n, l, d, e, o, _), HEAPU32[a >> 2] = p, 0) : s & 4 ? -2 : (e = DNS.lookup_name(e), o = inetPton4(e), n === 0 ? n = 2 : n === 10 && (o = [
 				0,
 				0,
 				_htonl(65535),
 				o
-			]), u = c(n, l, d, null, o, _), HEAPU32[a >> 2] = u, 0);
+			]), p = m(n, l, d, null, o, _), HEAPU32[a >> 2] = p, 0);
 		};
 		_getaddrinfo.sig = "ipppp";
 		var _getnameinfo = (e, t, r, a, o, _, s) => {
 			var n = readSockaddr(e, t);
 			if (n.errno) return -6;
-			var l = n.port, d = n.addr, u = !1;
+			var l = n.port, d = n.addr, p = !1;
 			if (r && a) {
-				var c;
-				if (s & 1 || !(c = DNS.lookup_addr(d))) {
+				var m;
+				if (s & 1 || !(m = DNS.lookup_addr(d))) {
 					if (s & 8) return -2;
-				} else d = c;
-				var f = stringToUTF8(d, r, a);
-				f + 1 >= a && (u = !0);
+				} else d = m;
+				var g = stringToUTF8(d, r, a);
+				g + 1 >= a && (p = !0);
 			}
 			if (o && _) {
 				l = "" + l;
-				var f = stringToUTF8(l, o, _);
-				f + 1 >= _ && (u = !0);
+				var g = stringToUTF8(l, o, _);
+				g + 1 >= _ && (p = !0);
 			}
-			return u ? -12 : 0;
+			return p ? -12 : 0;
 		};
 		_getnameinfo.sig = "ipipipii";
 		function _random_get(e, t) {
@@ -13823,6 +13842,7 @@ ${n}`), 0;
 			_tzset_js: __tzset_js,
 			clock_time_get: _clock_time_get,
 			emscripten_date_now: _emscripten_date_now,
+			emscripten_exit_with_live_runtime: _emscripten_exit_with_live_runtime,
 			emscripten_force_exit: _emscripten_force_exit,
 			emscripten_get_heap_max: _emscripten_get_heap_max,
 			emscripten_get_now: _emscripten_get_now,
@@ -13904,7 +13924,7 @@ ${n}`), 0;
 			setTempRet0: _setTempRet0
 		}, wasmExports;
 		createWasm();
-		var ___wasm_call_ctors = () => (___wasm_call_ctors = wasmExports.__wasm_call_ctors)(), _palloc0 = Module._palloc0 = (e) => (_palloc0 = Module._palloc0 = wasmExports.palloc0)(e), _RelationGetNumberOfBlocksInFork = Module._RelationGetNumberOfBlocksInFork = (e, t) => (_RelationGetNumberOfBlocksInFork = Module._RelationGetNumberOfBlocksInFork = wasmExports.RelationGetNumberOfBlocksInFork)(e, t), _ExtendBufferedRel = Module._ExtendBufferedRel = (e, t, r, a) => (_ExtendBufferedRel = Module._ExtendBufferedRel = wasmExports.ExtendBufferedRel)(e, t, r, a), _MarkBufferDirty = Module._MarkBufferDirty = (e) => (_MarkBufferDirty = Module._MarkBufferDirty = wasmExports.MarkBufferDirty)(e), _XLogBeginInsert = Module._XLogBeginInsert = () => (_XLogBeginInsert = Module._XLogBeginInsert = wasmExports.XLogBeginInsert)(), _XLogRegisterData = Module._XLogRegisterData = (e, t) => (_XLogRegisterData = Module._XLogRegisterData = wasmExports.XLogRegisterData)(e, t), _XLogInsert = Module._XLogInsert = (e, t) => (_XLogInsert = Module._XLogInsert = wasmExports.XLogInsert)(e, t), _UnlockReleaseBuffer = Module._UnlockReleaseBuffer = (e) => (_UnlockReleaseBuffer = Module._UnlockReleaseBuffer = wasmExports.UnlockReleaseBuffer)(e), _palloc = Module._palloc = (e) => (_palloc = Module._palloc = wasmExports.palloc)(e), _brin_build_desc = Module._brin_build_desc = (e) => (_brin_build_desc = Module._brin_build_desc = wasmExports.brin_build_desc)(e), _EnterParallelMode = Module._EnterParallelMode = () => (_EnterParallelMode = Module._EnterParallelMode = wasmExports.EnterParallelMode)(), _CreateParallelContext = Module._CreateParallelContext = (e, t, r) => (_CreateParallelContext = Module._CreateParallelContext = wasmExports.CreateParallelContext)(e, t, r), _GetTransactionSnapshot = Module._GetTransactionSnapshot = () => (_GetTransactionSnapshot = Module._GetTransactionSnapshot = wasmExports.GetTransactionSnapshot)(), _RegisterSnapshot = Module._RegisterSnapshot = (e) => (_RegisterSnapshot = Module._RegisterSnapshot = wasmExports.RegisterSnapshot)(e), _table_parallelscan_estimate = Module._table_parallelscan_estimate = (e, t) => (_table_parallelscan_estimate = Module._table_parallelscan_estimate = wasmExports.table_parallelscan_estimate)(e, t), _add_size = Module._add_size = (e, t) => (_add_size = Module._add_size = wasmExports.add_size)(e, t), _tuplesort_estimate_shared = Module._tuplesort_estimate_shared = (e) => (_tuplesort_estimate_shared = Module._tuplesort_estimate_shared = wasmExports.tuplesort_estimate_shared)(e), _strlen = Module._strlen = (e) => (_strlen = Module._strlen = wasmExports.strlen)(e), _InitializeParallelDSM = Module._InitializeParallelDSM = (e) => (_InitializeParallelDSM = Module._InitializeParallelDSM = wasmExports.InitializeParallelDSM)(e), _UnregisterSnapshot = Module._UnregisterSnapshot = (e) => (_UnregisterSnapshot = Module._UnregisterSnapshot = wasmExports.UnregisterSnapshot)(e), _DestroyParallelContext = Module._DestroyParallelContext = (e) => (_DestroyParallelContext = Module._DestroyParallelContext = wasmExports.DestroyParallelContext)(e), _ExitParallelMode = Module._ExitParallelMode = () => (_ExitParallelMode = Module._ExitParallelMode = wasmExports.ExitParallelMode)(), _shm_toc_allocate = Module._shm_toc_allocate = (e, t) => (_shm_toc_allocate = Module._shm_toc_allocate = wasmExports.shm_toc_allocate)(e, t), _ConditionVariableInit = Module._ConditionVariableInit = (e) => (_ConditionVariableInit = Module._ConditionVariableInit = wasmExports.ConditionVariableInit)(e), _table_parallelscan_initialize = Module._table_parallelscan_initialize = (e, t, r) => (_table_parallelscan_initialize = Module._table_parallelscan_initialize = wasmExports.table_parallelscan_initialize)(e, t, r), _tuplesort_initialize_shared = Module._tuplesort_initialize_shared = (e, t, r) => (_tuplesort_initialize_shared = Module._tuplesort_initialize_shared = wasmExports.tuplesort_initialize_shared)(e, t, r), _shm_toc_insert = Module._shm_toc_insert = (e, t, r) => (_shm_toc_insert = Module._shm_toc_insert = wasmExports.shm_toc_insert)(e, t, r), _memcpy = Module._memcpy = (e, t, r) => (_memcpy = Module._memcpy = wasmExports.memcpy)(e, t, r), _LaunchParallelWorkers = Module._LaunchParallelWorkers = (e) => (_LaunchParallelWorkers = Module._LaunchParallelWorkers = wasmExports.LaunchParallelWorkers)(e), _WaitForParallelWorkersToAttach = Module._WaitForParallelWorkersToAttach = (e) => (_WaitForParallelWorkersToAttach = Module._WaitForParallelWorkersToAttach = wasmExports.WaitForParallelWorkersToAttach)(e), _s_lock = Module._s_lock = (e, t, r, a) => (_s_lock = Module._s_lock = wasmExports.s_lock)(e, t, r, a), _ConditionVariableSleep = Module._ConditionVariableSleep = (e, t) => (_ConditionVariableSleep = Module._ConditionVariableSleep = wasmExports.ConditionVariableSleep)(e, t), _ConditionVariableCancelSleep = Module._ConditionVariableCancelSleep = () => (_ConditionVariableCancelSleep = Module._ConditionVariableCancelSleep = wasmExports.ConditionVariableCancelSleep)(), _tuplesort_performsort = Module._tuplesort_performsort = (e) => (_tuplesort_performsort = Module._tuplesort_performsort = wasmExports.tuplesort_performsort)(e), _AllocSetContextCreateInternal = Module._AllocSetContextCreateInternal = (e, t, r, a, o) => (_AllocSetContextCreateInternal = Module._AllocSetContextCreateInternal = wasmExports.AllocSetContextCreateInternal)(e, t, r, a, o), _tuplesort_end = Module._tuplesort_end = (e) => (_tuplesort_end = Module._tuplesort_end = wasmExports.tuplesort_end)(e), _MemoryContextReset = Module._MemoryContextReset = (e) => (_MemoryContextReset = Module._MemoryContextReset = wasmExports.MemoryContextReset)(e), _brin_deform_tuple = Module._brin_deform_tuple = (e, t, r) => (_brin_deform_tuple = Module._brin_deform_tuple = wasmExports.brin_deform_tuple)(e, t, r), _pfree = Module._pfree = (e) => (_pfree = Module._pfree = wasmExports.pfree)(e), _MemoryContextDelete = Module._MemoryContextDelete = (e) => (_MemoryContextDelete = Module._MemoryContextDelete = wasmExports.MemoryContextDelete)(e), _errstart_cold = Module._errstart_cold = (e, t) => (_errstart_cold = Module._errstart_cold = wasmExports.errstart_cold)(e, t), _errmsg_internal = Module._errmsg_internal = (e, t) => (_errmsg_internal = Module._errmsg_internal = wasmExports.errmsg_internal)(e, t), _errfinish = Module._errfinish = (e, t, r) => (_errfinish = Module._errfinish = wasmExports.errfinish)(e, t, r), _log_newpage_buffer = Module._log_newpage_buffer = (e, t) => (_log_newpage_buffer = Module._log_newpage_buffer = wasmExports.log_newpage_buffer)(e, t), _ProcessInterrupts = Module._ProcessInterrupts = () => (_ProcessInterrupts = Module._ProcessInterrupts = wasmExports.ProcessInterrupts)(), _errstart = Module._errstart = (e, t) => (_errstart = Module._errstart = wasmExports.errstart)(e, t), _errcode = Module._errcode = (e) => (_errcode = Module._errcode = wasmExports.errcode)(e), _errmsg = Module._errmsg = (e, t) => (_errmsg = Module._errmsg = wasmExports.errmsg)(e, t), _LockBuffer = Module._LockBuffer = (e, t) => (_LockBuffer = Module._LockBuffer = wasmExports.LockBuffer)(e, t), _ReleaseBuffer = Module._ReleaseBuffer = (e) => (_ReleaseBuffer = Module._ReleaseBuffer = wasmExports.ReleaseBuffer)(e), _IndexGetRelation = Module._IndexGetRelation = (e, t) => (_IndexGetRelation = Module._IndexGetRelation = wasmExports.IndexGetRelation)(e, t), _table_open = Module._table_open = (e, t) => (_table_open = Module._table_open = wasmExports.table_open)(e, t), _ReadBufferExtended = Module._ReadBufferExtended = (e, t, r, a, o) => (_ReadBufferExtended = Module._ReadBufferExtended = wasmExports.ReadBufferExtended)(e, t, r, a, o), _table_close = Module._table_close = (e, t) => (_table_close = Module._table_close = wasmExports.table_close)(e, t), _build_reloptions = Module._build_reloptions = (e, t, r, a, o, _) => (_build_reloptions = Module._build_reloptions = wasmExports.build_reloptions)(e, t, r, a, o, _), _RelationGetIndexScan = Module._RelationGetIndexScan = (e, t, r) => (_RelationGetIndexScan = Module._RelationGetIndexScan = wasmExports.RelationGetIndexScan)(e, t, r), _pgstat_assoc_relation = Module._pgstat_assoc_relation = (e) => (_pgstat_assoc_relation = Module._pgstat_assoc_relation = wasmExports.pgstat_assoc_relation)(e), _memset = Module._memset = (e, t, r) => (_memset = Module._memset = wasmExports.memset)(e, t, r), _index_getprocinfo = Module._index_getprocinfo = (e, t, r) => (_index_getprocinfo = Module._index_getprocinfo = wasmExports.index_getprocinfo)(e, t, r), _fmgr_info_copy = Module._fmgr_info_copy = (e, t, r) => (_fmgr_info_copy = Module._fmgr_info_copy = wasmExports.fmgr_info_copy)(e, t, r), _FunctionCall4Coll = Module._FunctionCall4Coll = (e, t, r, a, o, _) => (_FunctionCall4Coll = Module._FunctionCall4Coll = wasmExports.FunctionCall4Coll)(e, t, r, a, o, _), _FunctionCall1Coll = Module._FunctionCall1Coll = (e, t, r) => (_FunctionCall1Coll = Module._FunctionCall1Coll = wasmExports.FunctionCall1Coll)(e, t, r), _brin_free_desc = Module._brin_free_desc = (e) => (_brin_free_desc = Module._brin_free_desc = wasmExports.brin_free_desc)(e), _WaitForParallelWorkersToFinish = Module._WaitForParallelWorkersToFinish = (e) => (_WaitForParallelWorkersToFinish = Module._WaitForParallelWorkersToFinish = wasmExports.WaitForParallelWorkersToFinish)(e), _PageGetFreeSpace = Module._PageGetFreeSpace = (e) => (_PageGetFreeSpace = Module._PageGetFreeSpace = wasmExports.PageGetFreeSpace)(e), _BufferGetBlockNumber = Module._BufferGetBlockNumber = (e) => (_BufferGetBlockNumber = Module._BufferGetBlockNumber = wasmExports.BufferGetBlockNumber)(e), _BuildIndexInfo = Module._BuildIndexInfo = (e) => (_BuildIndexInfo = Module._BuildIndexInfo = wasmExports.BuildIndexInfo)(e), _Int64GetDatum = Module._Int64GetDatum = (e) => (_Int64GetDatum = Module._Int64GetDatum = wasmExports.Int64GetDatum)(e), _DirectFunctionCall2Coll = Module._DirectFunctionCall2Coll = (e, t, r, a) => (_DirectFunctionCall2Coll = Module._DirectFunctionCall2Coll = wasmExports.DirectFunctionCall2Coll)(e, t, r, a), _RecoveryInProgress = Module._RecoveryInProgress = () => (_RecoveryInProgress = Module._RecoveryInProgress = wasmExports.RecoveryInProgress)(), _GetUserIdAndSecContext = Module._GetUserIdAndSecContext = (e, t) => (_GetUserIdAndSecContext = Module._GetUserIdAndSecContext = wasmExports.GetUserIdAndSecContext)(e, t), _SetUserIdAndSecContext = Module._SetUserIdAndSecContext = (e, t) => (_SetUserIdAndSecContext = Module._SetUserIdAndSecContext = wasmExports.SetUserIdAndSecContext)(e, t), _NewGUCNestLevel = Module._NewGUCNestLevel = () => (_NewGUCNestLevel = Module._NewGUCNestLevel = wasmExports.NewGUCNestLevel)(), _RestrictSearchPath = Module._RestrictSearchPath = () => (_RestrictSearchPath = Module._RestrictSearchPath = wasmExports.RestrictSearchPath)(), _index_open = Module._index_open = (e, t) => (_index_open = Module._index_open = wasmExports.index_open)(e, t), _object_ownercheck = Module._object_ownercheck = (e, t, r) => (_object_ownercheck = Module._object_ownercheck = wasmExports.object_ownercheck)(e, t, r), _aclcheck_error = Module._aclcheck_error = (e, t, r) => (_aclcheck_error = Module._aclcheck_error = wasmExports.aclcheck_error)(e, t, r), _AtEOXact_GUC = Module._AtEOXact_GUC = (e, t) => (_AtEOXact_GUC = Module._AtEOXact_GUC = wasmExports.AtEOXact_GUC)(e, t), _relation_close = Module._relation_close = (e, t) => (_relation_close = Module._relation_close = wasmExports.relation_close)(e, t), _errhint = Module._errhint = (e, t) => (_errhint = Module._errhint = wasmExports.errhint)(e, t), _GetUserId = Module._GetUserId = () => (_GetUserId = Module._GetUserId = wasmExports.GetUserId)(), _ReadBuffer = Module._ReadBuffer = (e, t) => (_ReadBuffer = Module._ReadBuffer = wasmExports.ReadBuffer)(e, t), _shm_toc_lookup = Module._shm_toc_lookup = (e, t, r) => (_shm_toc_lookup = Module._shm_toc_lookup = wasmExports.shm_toc_lookup)(e, t, r), _pgstat_report_activity = Module._pgstat_report_activity = (e, t) => (_pgstat_report_activity = Module._pgstat_report_activity = wasmExports.pgstat_report_activity)(e, t), _tuplesort_attach_shared = Module._tuplesort_attach_shared = (e, t) => (_tuplesort_attach_shared = Module._tuplesort_attach_shared = wasmExports.tuplesort_attach_shared)(e, t), _index_close = Module._index_close = (e, t) => (_index_close = Module._index_close = wasmExports.index_close)(e, t), _table_beginscan_parallel = Module._table_beginscan_parallel = (e, t) => (_table_beginscan_parallel = Module._table_beginscan_parallel = wasmExports.table_beginscan_parallel)(e, t), _ConditionVariableSignal = Module._ConditionVariableSignal = (e) => (_ConditionVariableSignal = Module._ConditionVariableSignal = wasmExports.ConditionVariableSignal)(e), _datumCopy = Module._datumCopy = (e, t, r) => (_datumCopy = Module._datumCopy = wasmExports.datumCopy)(e, t, r), _lookup_type_cache = Module._lookup_type_cache = (e, t) => (_lookup_type_cache = Module._lookup_type_cache = wasmExports.lookup_type_cache)(e, t), _get_fn_opclass_options = Module._get_fn_opclass_options = (e) => (_get_fn_opclass_options = Module._get_fn_opclass_options = wasmExports.get_fn_opclass_options)(e), _log = Module._log = (e) => (_log = Module._log = wasmExports.log)(e), _pg_detoast_datum = Module._pg_detoast_datum = (e) => (_pg_detoast_datum = Module._pg_detoast_datum = wasmExports.pg_detoast_datum)(e), _index_getprocid = Module._index_getprocid = (e, t, r) => (_index_getprocid = Module._index_getprocid = wasmExports.index_getprocid)(e, t, r), _errdetail_internal = Module._errdetail_internal = (e, t) => (_errdetail_internal = Module._errdetail_internal = wasmExports.errdetail_internal)(e, t), _pg_popcount_optimized = Module._pg_popcount_optimized = (e, t) => (_pg_popcount_optimized = Module._pg_popcount_optimized = wasmExports.pg_popcount_optimized)(e, t), _init_local_reloptions = Module._init_local_reloptions = (e, t) => (_init_local_reloptions = Module._init_local_reloptions = wasmExports.init_local_reloptions)(e, t), _initStringInfo = Module._initStringInfo = (e) => (_initStringInfo = Module._initStringInfo = wasmExports.initStringInfo)(e), _appendStringInfoChar = Module._appendStringInfoChar = (e, t) => (_appendStringInfoChar = Module._appendStringInfoChar = wasmExports.appendStringInfoChar)(e, t), _appendStringInfo = Module._appendStringInfo = (e, t, r) => (_appendStringInfo = Module._appendStringInfo = wasmExports.appendStringInfo)(e, t, r), _FunctionCall2Coll = Module._FunctionCall2Coll = (e, t, r, a) => (_FunctionCall2Coll = Module._FunctionCall2Coll = wasmExports.FunctionCall2Coll)(e, t, r, a), _SysCacheGetAttrNotNull = Module._SysCacheGetAttrNotNull = (e, t, r) => (_SysCacheGetAttrNotNull = Module._SysCacheGetAttrNotNull = wasmExports.SysCacheGetAttrNotNull)(e, t, r), _ReleaseSysCache = Module._ReleaseSysCache = (e) => (_ReleaseSysCache = Module._ReleaseSysCache = wasmExports.ReleaseSysCache)(e), _get_opcode = Module._get_opcode = (e) => (_get_opcode = Module._get_opcode = wasmExports.get_opcode)(e), _fmgr_info_cxt = Module._fmgr_info_cxt = (e, t, r) => (_fmgr_info_cxt = Module._fmgr_info_cxt = wasmExports.fmgr_info_cxt)(e, t, r), _Float8GetDatum = Module._Float8GetDatum = (e) => (_Float8GetDatum = Module._Float8GetDatum = wasmExports.Float8GetDatum)(e), _numeric_float8 = Module._numeric_float8 = (e) => (_numeric_float8 = Module._numeric_float8 = wasmExports.numeric_float8)(e), _numeric_sub = Module._numeric_sub = (e) => (_numeric_sub = Module._numeric_sub = wasmExports.numeric_sub)(e), _DirectFunctionCall1Coll = Module._DirectFunctionCall1Coll = (e, t, r) => (_DirectFunctionCall1Coll = Module._DirectFunctionCall1Coll = wasmExports.DirectFunctionCall1Coll)(e, t, r), _pg_detoast_datum_packed = Module._pg_detoast_datum_packed = (e) => (_pg_detoast_datum_packed = Module._pg_detoast_datum_packed = wasmExports.pg_detoast_datum_packed)(e), _pg_qsort = Module._pg_qsort = (e, t, r, a) => (_pg_qsort = Module._pg_qsort = wasmExports.pg_qsort)(e, t, r, a), _get_typbyval = Module._get_typbyval = (e) => (_get_typbyval = Module._get_typbyval = wasmExports.get_typbyval)(e), _get_typlen = Module._get_typlen = (e) => (_get_typlen = Module._get_typlen = wasmExports.get_typlen)(e), _qsort_arg = Module._qsort_arg = (e, t, r, a, o) => (_qsort_arg = Module._qsort_arg = wasmExports.qsort_arg)(e, t, r, a, o), _memmove = Module._memmove = (e, t, r) => (_memmove = Module._memmove = wasmExports.memmove)(e, t, r), _add_local_int_reloption = Module._add_local_int_reloption = (e, t, r, a, o, _, s) => (_add_local_int_reloption = Module._add_local_int_reloption = wasmExports.add_local_int_reloption)(e, t, r, a, o, _, s), _getTypeOutputInfo = Module._getTypeOutputInfo = (e, t, r) => (_getTypeOutputInfo = Module._getTypeOutputInfo = wasmExports.getTypeOutputInfo)(e, t, r), _fmgr_info = Module._fmgr_info = (e, t) => (_fmgr_info = Module._fmgr_info = wasmExports.fmgr_info)(e, t), _OutputFunctionCall = Module._OutputFunctionCall = (e, t) => (_OutputFunctionCall = Module._OutputFunctionCall = wasmExports.OutputFunctionCall)(e, t), _cstring_to_text_with_len = Module._cstring_to_text_with_len = (e, t) => (_cstring_to_text_with_len = Module._cstring_to_text_with_len = wasmExports.cstring_to_text_with_len)(e, t), _accumArrayResult = Module._accumArrayResult = (e, t, r, a, o) => (_accumArrayResult = Module._accumArrayResult = wasmExports.accumArrayResult)(e, t, r, a, o), _makeArrayResult = Module._makeArrayResult = (e, t) => (_makeArrayResult = Module._makeArrayResult = wasmExports.makeArrayResult)(e, t), _OidOutputFunctionCall = Module._OidOutputFunctionCall = (e, t) => (_OidOutputFunctionCall = Module._OidOutputFunctionCall = wasmExports.OidOutputFunctionCall)(e, t), _cstring_to_text = Module._cstring_to_text = (e) => (_cstring_to_text = Module._cstring_to_text = wasmExports.cstring_to_text)(e), _PageGetExactFreeSpace = Module._PageGetExactFreeSpace = (e) => (_PageGetExactFreeSpace = Module._PageGetExactFreeSpace = wasmExports.PageGetExactFreeSpace)(e), _PageIndexTupleOverwrite = Module._PageIndexTupleOverwrite = (e, t, r, a) => (_PageIndexTupleOverwrite = Module._PageIndexTupleOverwrite = wasmExports.PageIndexTupleOverwrite)(e, t, r, a), _PageInit = Module._PageInit = (e, t, r) => (_PageInit = Module._PageInit = wasmExports.PageInit)(e, t, r), _PageAddItemExtended = Module._PageAddItemExtended = (e, t, r, a, o) => (_PageAddItemExtended = Module._PageAddItemExtended = wasmExports.PageAddItemExtended)(e, t, r, a, o), _LockRelationForExtension = Module._LockRelationForExtension = (e, t) => (_LockRelationForExtension = Module._LockRelationForExtension = wasmExports.LockRelationForExtension)(e, t), _UnlockRelationForExtension = Module._UnlockRelationForExtension = (e, t) => (_UnlockRelationForExtension = Module._UnlockRelationForExtension = wasmExports.UnlockRelationForExtension)(e, t), _smgropen = Module._smgropen = (e, t) => (_smgropen = Module._smgropen = wasmExports.smgropen)(e, t), _smgrpin = Module._smgrpin = (e) => (_smgrpin = Module._smgrpin = wasmExports.smgrpin)(e), _ItemPointerEquals = Module._ItemPointerEquals = (e, t) => (_ItemPointerEquals = Module._ItemPointerEquals = wasmExports.ItemPointerEquals)(e, t), _detoast_external_attr = Module._detoast_external_attr = (e) => (_detoast_external_attr = Module._detoast_external_attr = wasmExports.detoast_external_attr)(e), _CreateTemplateTupleDesc = Module._CreateTemplateTupleDesc = (e) => (_CreateTemplateTupleDesc = Module._CreateTemplateTupleDesc = wasmExports.CreateTemplateTupleDesc)(e), _TupleDescInitEntry = Module._TupleDescInitEntry = (e, t, r, a, o, _) => (_TupleDescInitEntry = Module._TupleDescInitEntry = wasmExports.TupleDescInitEntry)(e, t, r, a, o, _), _repalloc = Module._repalloc = (e, t) => (_repalloc = Module._repalloc = wasmExports.repalloc)(e, t), _memcmp = Module._memcmp = (e, t, r) => (_memcmp = Module._memcmp = wasmExports.memcmp)(e, t, r), _SearchSysCache1 = Module._SearchSysCache1 = (e, t) => (_SearchSysCache1 = Module._SearchSysCache1 = wasmExports.SearchSysCache1)(e, t), _get_opfamily_name = Module._get_opfamily_name = (e, t) => (_get_opfamily_name = Module._get_opfamily_name = wasmExports.get_opfamily_name)(e, t), _SearchSysCacheList = Module._SearchSysCacheList = (e, t, r, a, o) => (_SearchSysCacheList = Module._SearchSysCacheList = wasmExports.SearchSysCacheList)(e, t, r, a, o), _check_amproc_signature = Module._check_amproc_signature = (e, t, r, a, o, _) => (_check_amproc_signature = Module._check_amproc_signature = wasmExports.check_amproc_signature)(e, t, r, a, o, _), _check_amoptsproc_signature = Module._check_amoptsproc_signature = (e) => (_check_amoptsproc_signature = Module._check_amoptsproc_signature = wasmExports.check_amoptsproc_signature)(e), _format_procedure = Module._format_procedure = (e) => (_format_procedure = Module._format_procedure = wasmExports.format_procedure)(e), _format_operator = Module._format_operator = (e) => (_format_operator = Module._format_operator = wasmExports.format_operator)(e), _check_amop_signature = Module._check_amop_signature = (e, t, r, a) => (_check_amop_signature = Module._check_amop_signature = wasmExports.check_amop_signature)(e, t, r, a), _identify_opfamily_groups = Module._identify_opfamily_groups = (e, t) => (_identify_opfamily_groups = Module._identify_opfamily_groups = wasmExports.identify_opfamily_groups)(e, t), _format_type_be = Module._format_type_be = (e) => (_format_type_be = Module._format_type_be = wasmExports.format_type_be)(e), _ReleaseCatCacheList = Module._ReleaseCatCacheList = (e) => (_ReleaseCatCacheList = Module._ReleaseCatCacheList = wasmExports.ReleaseCatCacheList)(e), _format_type_with_typemod = Module._format_type_with_typemod = (e, t) => (_format_type_with_typemod = Module._format_type_with_typemod = wasmExports.format_type_with_typemod)(e, t), _errdetail = Module._errdetail = (e, t) => (_errdetail = Module._errdetail = wasmExports.errdetail)(e, t), _strcmp = Module._strcmp = (e, t) => (_strcmp = Module._strcmp = wasmExports.strcmp)(e, t), _DatumGetEOHP = Module._DatumGetEOHP = (e) => (_DatumGetEOHP = Module._DatumGetEOHP = wasmExports.DatumGetEOHP)(e), _EOH_get_flat_size = Module._EOH_get_flat_size = (e) => (_EOH_get_flat_size = Module._EOH_get_flat_size = wasmExports.EOH_get_flat_size)(e), _EOH_flatten_into = Module._EOH_flatten_into = (e, t, r) => (_EOH_flatten_into = Module._EOH_flatten_into = wasmExports.EOH_flatten_into)(e, t, r), _toast_raw_datum_size = Module._toast_raw_datum_size = (e) => (_toast_raw_datum_size = Module._toast_raw_datum_size = wasmExports.toast_raw_datum_size)(e), _getmissingattr = Module._getmissingattr = (e, t, r) => (_getmissingattr = Module._getmissingattr = wasmExports.getmissingattr)(e, t, r), _hash_create = Module._hash_create = (e, t, r, a) => (_hash_create = Module._hash_create = wasmExports.hash_create)(e, t, r, a), _hash_search = Module._hash_search = (e, t, r, a) => (_hash_search = Module._hash_search = wasmExports.hash_search)(e, t, r, a), _nocachegetattr = Module._nocachegetattr = (e, t, r) => (_nocachegetattr = Module._nocachegetattr = wasmExports.nocachegetattr)(e, t, r), _heap_getsysattr = Module._heap_getsysattr = (e, t, r, a) => (_heap_getsysattr = Module._heap_getsysattr = wasmExports.heap_getsysattr)(e, t, r, a), _heap_form_tuple = Module._heap_form_tuple = (e, t, r) => (_heap_form_tuple = Module._heap_form_tuple = wasmExports.heap_form_tuple)(e, t, r), _heap_modify_tuple = Module._heap_modify_tuple = (e, t, r, a, o) => (_heap_modify_tuple = Module._heap_modify_tuple = wasmExports.heap_modify_tuple)(e, t, r, a, o), _heap_deform_tuple = Module._heap_deform_tuple = (e, t, r, a) => (_heap_deform_tuple = Module._heap_deform_tuple = wasmExports.heap_deform_tuple)(e, t, r, a), _heap_modify_tuple_by_cols = Module._heap_modify_tuple_by_cols = (e, t, r, a, o, _) => (_heap_modify_tuple_by_cols = Module._heap_modify_tuple_by_cols = wasmExports.heap_modify_tuple_by_cols)(e, t, r, a, o, _), _heap_freetuple = Module._heap_freetuple = (e) => (_heap_freetuple = Module._heap_freetuple = wasmExports.heap_freetuple)(e), _hash_bytes = Module._hash_bytes = (e, t) => (_hash_bytes = Module._hash_bytes = wasmExports.hash_bytes)(e, t), _index_form_tuple = Module._index_form_tuple = (e, t, r) => (_index_form_tuple = Module._index_form_tuple = wasmExports.index_form_tuple)(e, t, r), _MemoryContextAllocZero = Module._MemoryContextAllocZero = (e, t) => (_MemoryContextAllocZero = Module._MemoryContextAllocZero = wasmExports.MemoryContextAllocZero)(e, t), _nocache_index_getattr = Module._nocache_index_getattr = (e, t, r) => (_nocache_index_getattr = Module._nocache_index_getattr = wasmExports.nocache_index_getattr)(e, t, r), _index_deform_tuple = Module._index_deform_tuple = (e, t, r, a) => (_index_deform_tuple = Module._index_deform_tuple = wasmExports.index_deform_tuple)(e, t, r, a), _CopyIndexTuple = Module._CopyIndexTuple = (e) => (_CopyIndexTuple = Module._CopyIndexTuple = wasmExports.CopyIndexTuple)(e), _CreateTupleDescTruncatedCopy = Module._CreateTupleDescTruncatedCopy = (e, t) => (_CreateTupleDescTruncatedCopy = Module._CreateTupleDescTruncatedCopy = wasmExports.CreateTupleDescTruncatedCopy)(e, t), _enlargeStringInfo = Module._enlargeStringInfo = (e, t) => (_enlargeStringInfo = Module._enlargeStringInfo = wasmExports.enlargeStringInfo)(e, t), _slot_getsomeattrs_int = Module._slot_getsomeattrs_int = (e, t) => (_slot_getsomeattrs_int = Module._slot_getsomeattrs_int = wasmExports.slot_getsomeattrs_int)(e, t), _pg_lltoa = Module._pg_lltoa = (e, t) => (_pg_lltoa = Module._pg_lltoa = wasmExports.pg_lltoa)(e, t), _pg_ltoa = Module._pg_ltoa = (e, t) => (_pg_ltoa = Module._pg_ltoa = wasmExports.pg_ltoa)(e, t), _pq_sendbytes = Module._pq_sendbytes = (e, t, r) => (_pq_sendbytes = Module._pq_sendbytes = wasmExports.pq_sendbytes)(e, t, r), _pg_printf = Module._pg_printf = (e, t) => (_pg_printf = Module._pg_printf = wasmExports.pg_printf)(e, t), _relation_open = Module._relation_open = (e, t) => (_relation_open = Module._relation_open = wasmExports.relation_open)(e, t), _LockRelationOid = Module._LockRelationOid = (e, t) => (_LockRelationOid = Module._LockRelationOid = wasmExports.LockRelationOid)(e, t), _RelationIdGetRelation = Module._RelationIdGetRelation = (e) => (_RelationIdGetRelation = Module._RelationIdGetRelation = wasmExports.RelationIdGetRelation)(e), _try_relation_open = Module._try_relation_open = (e, t) => (_try_relation_open = Module._try_relation_open = wasmExports.try_relation_open)(e, t), _UnlockRelationOid = Module._UnlockRelationOid = (e, t) => (_UnlockRelationOid = Module._UnlockRelationOid = wasmExports.UnlockRelationOid)(e, t), _relation_openrv = Module._relation_openrv = (e, t) => (_relation_openrv = Module._relation_openrv = wasmExports.relation_openrv)(e, t), _AcceptInvalidationMessages = Module._AcceptInvalidationMessages = () => (_AcceptInvalidationMessages = Module._AcceptInvalidationMessages = wasmExports.AcceptInvalidationMessages)(), _RangeVarGetRelidExtended = Module._RangeVarGetRelidExtended = (e, t, r, a, o) => (_RangeVarGetRelidExtended = Module._RangeVarGetRelidExtended = wasmExports.RangeVarGetRelidExtended)(e, t, r, a, o), _RelationClose = Module._RelationClose = (e) => (_RelationClose = Module._RelationClose = wasmExports.RelationClose)(e), _add_reloption_kind = Module._add_reloption_kind = () => (_add_reloption_kind = Module._add_reloption_kind = wasmExports.add_reloption_kind)(), _register_reloptions_validator = Module._register_reloptions_validator = (e, t) => (_register_reloptions_validator = Module._register_reloptions_validator = wasmExports.register_reloptions_validator)(e, t), _lappend = Module._lappend = (e, t) => (_lappend = Module._lappend = wasmExports.lappend)(e, t), _pstrdup = Module._pstrdup = (e) => (_pstrdup = Module._pstrdup = wasmExports.pstrdup)(e), _add_int_reloption = Module._add_int_reloption = (e, t, r, a, o, _, s) => (_add_int_reloption = Module._add_int_reloption = wasmExports.add_int_reloption)(e, t, r, a, o, _, s), _add_real_reloption = Module._add_real_reloption = (e, t, r, a, o, _, s) => (_add_real_reloption = Module._add_real_reloption = wasmExports.add_real_reloption)(e, t, r, a, o, _, s), _add_string_reloption = Module._add_string_reloption = (e, t, r, a, o, _) => (_add_string_reloption = Module._add_string_reloption = wasmExports.add_string_reloption)(e, t, r, a, o, _), _strdup = Module._strdup = (e) => (_strdup = Module._strdup = wasmExports.strdup)(e), _MemoryContextStrdup = Module._MemoryContextStrdup = (e, t) => (_MemoryContextStrdup = Module._MemoryContextStrdup = wasmExports.MemoryContextStrdup)(e, t), _transformRelOptions = Module._transformRelOptions = (e, t, r, a, o, _) => (_transformRelOptions = Module._transformRelOptions = wasmExports.transformRelOptions)(e, t, r, a, o, _), _deconstruct_array_builtin = Module._deconstruct_array_builtin = (e, t, r, a, o) => (_deconstruct_array_builtin = Module._deconstruct_array_builtin = wasmExports.deconstruct_array_builtin)(e, t, r, a, o), _strncmp = Module._strncmp = (e, t, r) => (_strncmp = Module._strncmp = wasmExports.strncmp)(e, t, r), _defGetString = Module._defGetString = (e) => (_defGetString = Module._defGetString = wasmExports.defGetString)(e), _strchr = Module._strchr = (e, t) => (_strchr = Module._strchr = wasmExports.strchr)(e, t), _defGetBoolean = Module._defGetBoolean = (e) => (_defGetBoolean = Module._defGetBoolean = wasmExports.defGetBoolean)(e), _pg_sprintf = Module._pg_sprintf = (e, t, r) => (_pg_sprintf = Module._pg_sprintf = wasmExports.pg_sprintf)(e, t, r), _untransformRelOptions = Module._untransformRelOptions = (e) => (_untransformRelOptions = Module._untransformRelOptions = wasmExports.untransformRelOptions)(e), _text_to_cstring = Module._text_to_cstring = (e) => (_text_to_cstring = Module._text_to_cstring = wasmExports.text_to_cstring)(e), _makeString = Module._makeString = (e) => (_makeString = Module._makeString = wasmExports.makeString)(e), _makeDefElem = Module._makeDefElem = (e, t, r) => (_makeDefElem = Module._makeDefElem = wasmExports.makeDefElem)(e, t, r), _heap_reloptions = Module._heap_reloptions = (e, t, r) => (_heap_reloptions = Module._heap_reloptions = wasmExports.heap_reloptions)(e, t, r), _strcpy = Module._strcpy = (e, t) => (_strcpy = Module._strcpy = wasmExports.strcpy)(e, t), _MemoryContextAlloc = Module._MemoryContextAlloc = (e, t) => (_MemoryContextAlloc = Module._MemoryContextAlloc = wasmExports.MemoryContextAlloc)(e, t), _parse_bool = Module._parse_bool = (e, t) => (_parse_bool = Module._parse_bool = wasmExports.parse_bool)(e, t), _parse_int = Module._parse_int = (e, t, r, a) => (_parse_int = Module._parse_int = wasmExports.parse_int)(e, t, r, a), _parse_real = Module._parse_real = (e, t, r, a) => (_parse_real = Module._parse_real = wasmExports.parse_real)(e, t, r, a), _pg_strcasecmp = Module._pg_strcasecmp = (e, t) => (_pg_strcasecmp = Module._pg_strcasecmp = wasmExports.pg_strcasecmp)(e, t), _ScanKeyInit = Module._ScanKeyInit = (e, t, r, a, o) => (_ScanKeyInit = Module._ScanKeyInit = wasmExports.ScanKeyInit)(e, t, r, a, o), _dsm_segment_handle = Module._dsm_segment_handle = (e) => (_dsm_segment_handle = Module._dsm_segment_handle = wasmExports.dsm_segment_handle)(e), _dsm_create = Module._dsm_create = (e, t) => (_dsm_create = Module._dsm_create = wasmExports.dsm_create)(e, t), _dsm_segment_address = Module._dsm_segment_address = (e) => (_dsm_segment_address = Module._dsm_segment_address = wasmExports.dsm_segment_address)(e), _dsa_pin_mapping = Module._dsa_pin_mapping = (e) => (_dsa_pin_mapping = Module._dsa_pin_mapping = wasmExports.dsa_pin_mapping)(e), _dsm_attach = Module._dsm_attach = (e) => (_dsm_attach = Module._dsm_attach = wasmExports.dsm_attach)(e), _dsm_detach = Module._dsm_detach = (e) => (_dsm_detach = Module._dsm_detach = wasmExports.dsm_detach)(e), _dsa_detach = Module._dsa_detach = (e) => (_dsa_detach = Module._dsa_detach = wasmExports.dsa_detach)(e), _ShmemInitStruct = Module._ShmemInitStruct = (e, t, r) => (_ShmemInitStruct = Module._ShmemInitStruct = wasmExports.ShmemInitStruct)(e, t, r), _LWLockAcquire = Module._LWLockAcquire = (e, t) => (_LWLockAcquire = Module._LWLockAcquire = wasmExports.LWLockAcquire)(e, t), _LWLockRelease = Module._LWLockRelease = (e) => (_LWLockRelease = Module._LWLockRelease = wasmExports.LWLockRelease)(e), _LWLockConditionalAcquire = Module._LWLockConditionalAcquire = (e, t) => (_LWLockConditionalAcquire = Module._LWLockConditionalAcquire = wasmExports.LWLockConditionalAcquire)(e, t), _dsa_create_ext = Module._dsa_create_ext = (e, t, r) => (_dsa_create_ext = Module._dsa_create_ext = wasmExports.dsa_create_ext)(e, t, r), _dsa_allocate_extended = Module._dsa_allocate_extended = (e, t, r) => (_dsa_allocate_extended = Module._dsa_allocate_extended = wasmExports.dsa_allocate_extended)(e, t, r), _dsa_get_address = Module._dsa_get_address = (e, t) => (_dsa_get_address = Module._dsa_get_address = wasmExports.dsa_get_address)(e, t), _LWLockInitialize = Module._LWLockInitialize = (e, t) => (_LWLockInitialize = Module._LWLockInitialize = wasmExports.LWLockInitialize)(e, t), _dsa_attach = Module._dsa_attach = (e) => (_dsa_attach = Module._dsa_attach = wasmExports.dsa_attach)(e), _dsa_free = Module._dsa_free = (e, t) => (_dsa_free = Module._dsa_free = wasmExports.dsa_free)(e, t), _dsa_get_total_size = Module._dsa_get_total_size = (e) => (_dsa_get_total_size = Module._dsa_get_total_size = wasmExports.dsa_get_total_size)(e), _MemoryContextMemAllocated = Module._MemoryContextMemAllocated = (e, t) => (_MemoryContextMemAllocated = Module._MemoryContextMemAllocated = wasmExports.MemoryContextMemAllocated)(e, t), _check_stack_depth = Module._check_stack_depth = () => (_check_stack_depth = Module._check_stack_depth = wasmExports.check_stack_depth)(), _GetCurrentCommandId = Module._GetCurrentCommandId = (e) => (_GetCurrentCommandId = Module._GetCurrentCommandId = wasmExports.GetCurrentCommandId)(e), _toast_open_indexes = Module._toast_open_indexes = (e, t, r, a) => (_toast_open_indexes = Module._toast_open_indexes = wasmExports.toast_open_indexes)(e, t, r, a), _heap_insert = Module._heap_insert = (e, t, r, a, o) => (_heap_insert = Module._heap_insert = wasmExports.heap_insert)(e, t, r, a, o), _RelationGetIndexList = Module._RelationGetIndexList = (e) => (_RelationGetIndexList = Module._RelationGetIndexList = wasmExports.RelationGetIndexList)(e), _list_free = Module._list_free = (e) => (_list_free = Module._list_free = wasmExports.list_free)(e), _systable_beginscan = Module._systable_beginscan = (e, t, r, a, o, _) => (_systable_beginscan = Module._systable_beginscan = wasmExports.systable_beginscan)(e, t, r, a, o, _), _systable_getnext = Module._systable_getnext = (e) => (_systable_getnext = Module._systable_getnext = wasmExports.systable_getnext)(e), _systable_endscan = Module._systable_endscan = (e) => (_systable_endscan = Module._systable_endscan = wasmExports.systable_endscan)(e), _toast_close_indexes = Module._toast_close_indexes = (e, t, r) => (_toast_close_indexes = Module._toast_close_indexes = wasmExports.toast_close_indexes)(e, t, r), _systable_beginscan_ordered = Module._systable_beginscan_ordered = (e, t, r, a, o) => (_systable_beginscan_ordered = Module._systable_beginscan_ordered = wasmExports.systable_beginscan_ordered)(e, t, r, a, o), _systable_getnext_ordered = Module._systable_getnext_ordered = (e, t) => (_systable_getnext_ordered = Module._systable_getnext_ordered = wasmExports.systable_getnext_ordered)(e, t), _systable_endscan_ordered = Module._systable_endscan_ordered = (e) => (_systable_endscan_ordered = Module._systable_endscan_ordered = wasmExports.systable_endscan_ordered)(e), _get_toast_snapshot = Module._get_toast_snapshot = () => (_get_toast_snapshot = Module._get_toast_snapshot = wasmExports.get_toast_snapshot)(), _convert_tuples_by_position = Module._convert_tuples_by_position = (e, t, r) => (_convert_tuples_by_position = Module._convert_tuples_by_position = wasmExports.convert_tuples_by_position)(e, t, r), _execute_attr_map_tuple = Module._execute_attr_map_tuple = (e, t) => (_execute_attr_map_tuple = Module._execute_attr_map_tuple = wasmExports.execute_attr_map_tuple)(e, t), _ExecStoreVirtualTuple = Module._ExecStoreVirtualTuple = (e) => (_ExecStoreVirtualTuple = Module._ExecStoreVirtualTuple = wasmExports.ExecStoreVirtualTuple)(e), _bms_is_member = Module._bms_is_member = (e, t) => (_bms_is_member = Module._bms_is_member = wasmExports.bms_is_member)(e, t), _bms_add_member = Module._bms_add_member = (e, t) => (_bms_add_member = Module._bms_add_member = wasmExports.bms_add_member)(e, t), _CreateTupleDescCopy = Module._CreateTupleDescCopy = (e) => (_CreateTupleDescCopy = Module._CreateTupleDescCopy = wasmExports.CreateTupleDescCopy)(e), _ResourceOwnerEnlarge = Module._ResourceOwnerEnlarge = (e) => (_ResourceOwnerEnlarge = Module._ResourceOwnerEnlarge = wasmExports.ResourceOwnerEnlarge)(e), _ResourceOwnerRemember = Module._ResourceOwnerRemember = (e, t, r) => (_ResourceOwnerRemember = Module._ResourceOwnerRemember = wasmExports.ResourceOwnerRemember)(e, t, r), _DecrTupleDescRefCount = Module._DecrTupleDescRefCount = (e) => (_DecrTupleDescRefCount = Module._DecrTupleDescRefCount = wasmExports.DecrTupleDescRefCount)(e), _ResourceOwnerForget = Module._ResourceOwnerForget = (e, t, r) => (_ResourceOwnerForget = Module._ResourceOwnerForget = wasmExports.ResourceOwnerForget)(e, t, r), _datumIsEqual = Module._datumIsEqual = (e, t, r, a) => (_datumIsEqual = Module._datumIsEqual = wasmExports.datumIsEqual)(e, t, r, a), _namestrcpy = Module._namestrcpy = (e, t) => (_namestrcpy = Module._namestrcpy = wasmExports.namestrcpy)(e, t), _TupleDescInitEntryCollation = Module._TupleDescInitEntryCollation = (e, t, r) => (_TupleDescInitEntryCollation = Module._TupleDescInitEntryCollation = wasmExports.TupleDescInitEntryCollation)(e, t, r), _stringToNode = Module._stringToNode = (e) => (_stringToNode = Module._stringToNode = wasmExports.stringToNode)(e), _psprintf = Module._psprintf = (e, t) => (_psprintf = Module._psprintf = wasmExports.psprintf)(e, t), _pg_detoast_datum_copy = Module._pg_detoast_datum_copy = (e) => (_pg_detoast_datum_copy = Module._pg_detoast_datum_copy = wasmExports.pg_detoast_datum_copy)(e), _get_typlenbyvalalign = Module._get_typlenbyvalalign = (e, t, r, a) => (_get_typlenbyvalalign = Module._get_typlenbyvalalign = wasmExports.get_typlenbyvalalign)(e, t, r, a), _deconstruct_array = Module._deconstruct_array = (e, t, r, a, o, _, s, n) => (_deconstruct_array = Module._deconstruct_array = wasmExports.deconstruct_array)(e, t, r, a, o, _, s, n), _ginCompareAttEntries = Module._ginCompareAttEntries = (e, t, r, a, o, _, s) => (_ginCompareAttEntries = Module._ginCompareAttEntries = wasmExports.ginCompareAttEntries)(e, t, r, a, o, _, s), _repalloc_huge = Module._repalloc_huge = (e, t) => (_repalloc_huge = Module._repalloc_huge = wasmExports.repalloc_huge)(e, t), _GinDataLeafPageGetItems = Module._GinDataLeafPageGetItems = (e, t, r) => (_GinDataLeafPageGetItems = Module._GinDataLeafPageGetItems = wasmExports.GinDataLeafPageGetItems)(e, t, r), _tbm_add_tuples = Module._tbm_add_tuples = (e, t, r, a) => (_tbm_add_tuples = Module._tbm_add_tuples = wasmExports.tbm_add_tuples)(e, t, r, a), _ginPostingListDecode = Module._ginPostingListDecode = (e, t) => (_ginPostingListDecode = Module._ginPostingListDecode = wasmExports.ginPostingListDecode)(e, t), _ItemPointerCompare = Module._ItemPointerCompare = (e, t) => (_ItemPointerCompare = Module._ItemPointerCompare = wasmExports.ItemPointerCompare)(e, t), _gintuple_get_attrnum = Module._gintuple_get_attrnum = (e, t) => (_gintuple_get_attrnum = Module._gintuple_get_attrnum = wasmExports.gintuple_get_attrnum)(e, t), _gintuple_get_key = Module._gintuple_get_key = (e, t, r) => (_gintuple_get_key = Module._gintuple_get_key = wasmExports.gintuple_get_key)(e, t, r), _LockPage = Module._LockPage = (e, t, r) => (_LockPage = Module._LockPage = wasmExports.LockPage)(e, t, r), _UnlockPage = Module._UnlockPage = (e, t, r) => (_UnlockPage = Module._UnlockPage = wasmExports.UnlockPage)(e, t, r), _vacuum_delay_point = Module._vacuum_delay_point = (e) => (_vacuum_delay_point = Module._vacuum_delay_point = wasmExports.vacuum_delay_point)(e), _RecordFreeIndexPage = Module._RecordFreeIndexPage = (e, t) => (_RecordFreeIndexPage = Module._RecordFreeIndexPage = wasmExports.RecordFreeIndexPage)(e, t), _IndexFreeSpaceMapVacuum = Module._IndexFreeSpaceMapVacuum = (e) => (_IndexFreeSpaceMapVacuum = Module._IndexFreeSpaceMapVacuum = wasmExports.IndexFreeSpaceMapVacuum)(e), _initGinState = Module._initGinState = (e, t) => (_initGinState = Module._initGinState = wasmExports.initGinState)(e, t), _pg_prng_double = Module._pg_prng_double = (e) => (_pg_prng_double = Module._pg_prng_double = wasmExports.pg_prng_double)(e), _pgstat_progress_update_param = Module._pgstat_progress_update_param = (e, t) => (_pgstat_progress_update_param = Module._pgstat_progress_update_param = wasmExports.pgstat_progress_update_param)(e, t), _log_newpage_range = Module._log_newpage_range = (e, t, r, a, o) => (_log_newpage_range = Module._log_newpage_range = wasmExports.log_newpage_range)(e, t, r, a, o), _GetFreeIndexPage = Module._GetFreeIndexPage = (e) => (_GetFreeIndexPage = Module._GetFreeIndexPage = wasmExports.GetFreeIndexPage)(e), _ConditionalLockBuffer = Module._ConditionalLockBuffer = (e) => (_ConditionalLockBuffer = Module._ConditionalLockBuffer = wasmExports.ConditionalLockBuffer)(e), _LockBufferForCleanup = Module._LockBufferForCleanup = (e) => (_LockBufferForCleanup = Module._LockBufferForCleanup = wasmExports.LockBufferForCleanup)(e), _ReadNextFullTransactionId = Module._ReadNextFullTransactionId = () => (_ReadNextFullTransactionId = Module._ReadNextFullTransactionId = wasmExports.ReadNextFullTransactionId)(), _PageIndexMultiDelete = Module._PageIndexMultiDelete = (e, t, r) => (_PageIndexMultiDelete = Module._PageIndexMultiDelete = wasmExports.PageIndexMultiDelete)(e, t, r), _list_make1_impl = Module._list_make1_impl = (e, t) => (_list_make1_impl = Module._list_make1_impl = wasmExports.list_make1_impl)(e, t), _lcons = Module._lcons = (e, t) => (_lcons = Module._lcons = wasmExports.lcons)(e, t), _pow = Module._pow = (e, t) => (_pow = Module._pow = wasmExports.pow)(e, t), _smgrnblocks = Module._smgrnblocks = (e, t) => (_smgrnblocks = Module._smgrnblocks = wasmExports.smgrnblocks)(e, t), _list_free_deep = Module._list_free_deep = (e) => (_list_free_deep = Module._list_free_deep = wasmExports.list_free_deep)(e), _BufFileWrite = Module._BufFileWrite = (e, t, r) => (_BufFileWrite = Module._BufFileWrite = wasmExports.BufFileWrite)(e, t, r), _BufFileReadExact = Module._BufFileReadExact = (e, t, r) => (_BufFileReadExact = Module._BufFileReadExact = wasmExports.BufFileReadExact)(e, t, r), _BufFileClose = Module._BufFileClose = (e) => (_BufFileClose = Module._BufFileClose = wasmExports.BufFileClose)(e), _pairingheap_remove_first = Module._pairingheap_remove_first = (e) => (_pairingheap_remove_first = Module._pairingheap_remove_first = wasmExports.pairingheap_remove_first)(e), _pairingheap_add = Module._pairingheap_add = (e, t) => (_pairingheap_add = Module._pairingheap_add = wasmExports.pairingheap_add)(e, t), _float_overflow_error = Module._float_overflow_error = () => (_float_overflow_error = Module._float_overflow_error = wasmExports.float_overflow_error)(), _float8_cmp_internal = Module._float8_cmp_internal = (e, t) => (_float8_cmp_internal = Module._float8_cmp_internal = wasmExports.float8_cmp_internal)(e, t), _float_underflow_error = Module._float_underflow_error = () => (_float_underflow_error = Module._float_underflow_error = wasmExports.float_underflow_error)(), _DirectFunctionCall5Coll = Module._DirectFunctionCall5Coll = (e, t, r, a, o, _, s) => (_DirectFunctionCall5Coll = Module._DirectFunctionCall5Coll = wasmExports.DirectFunctionCall5Coll)(e, t, r, a, o, _, s), _pairingheap_allocate = Module._pairingheap_allocate = (e, t) => (_pairingheap_allocate = Module._pairingheap_allocate = wasmExports.pairingheap_allocate)(e, t), _GetXLogInsertRecPtr = Module._GetXLogInsertRecPtr = () => (_GetXLogInsertRecPtr = Module._GetXLogInsertRecPtr = wasmExports.GetXLogInsertRecPtr)(), _OidFunctionCall1Coll = Module._OidFunctionCall1Coll = (e, t, r) => (_OidFunctionCall1Coll = Module._OidFunctionCall1Coll = wasmExports.OidFunctionCall1Coll)(e, t, r), _GenerationContextCreate = Module._GenerationContextCreate = (e, t, r, a, o) => (_GenerationContextCreate = Module._GenerationContextCreate = wasmExports.GenerationContextCreate)(e, t, r, a, o), _block_range_read_stream_cb = Module._block_range_read_stream_cb = (e, t, r) => (_block_range_read_stream_cb = Module._block_range_read_stream_cb = wasmExports.block_range_read_stream_cb)(e, t, r), _read_stream_begin_relation = Module._read_stream_begin_relation = (e, t, r, a, o, _, s) => (_read_stream_begin_relation = Module._read_stream_begin_relation = wasmExports.read_stream_begin_relation)(e, t, r, a, o, _, s), _read_stream_next_buffer = Module._read_stream_next_buffer = (e, t) => (_read_stream_next_buffer = Module._read_stream_next_buffer = wasmExports.read_stream_next_buffer)(e, t), _read_stream_end = Module._read_stream_end = (e) => (_read_stream_end = Module._read_stream_end = wasmExports.read_stream_end)(e), __hash_getbuf = Module.__hash_getbuf = (e, t, r, a) => (__hash_getbuf = Module.__hash_getbuf = wasmExports._hash_getbuf)(e, t, r, a), __hash_relbuf = Module.__hash_relbuf = (e, t) => (__hash_relbuf = Module.__hash_relbuf = wasmExports._hash_relbuf)(e, t), __hash_get_indextuple_hashkey = Module.__hash_get_indextuple_hashkey = (e) => (__hash_get_indextuple_hashkey = Module.__hash_get_indextuple_hashkey = wasmExports._hash_get_indextuple_hashkey)(e), _hashcharextended = Module._hashcharextended = (e) => (_hashcharextended = Module._hashcharextended = wasmExports.hashcharextended)(e), _hashint8 = Module._hashint8 = (e) => (_hashint8 = Module._hashint8 = wasmExports.hashint8)(e), _hashint8extended = Module._hashint8extended = (e) => (_hashint8extended = Module._hashint8extended = wasmExports.hashint8extended)(e), _hash_bytes_extended = Module._hash_bytes_extended = (e, t, r) => (_hash_bytes_extended = Module._hash_bytes_extended = wasmExports.hash_bytes_extended)(e, t, r), _hashfloat8 = Module._hashfloat8 = (e) => (_hashfloat8 = Module._hashfloat8 = wasmExports.hashfloat8)(e), _hashfloat8extended = Module._hashfloat8extended = (e) => (_hashfloat8extended = Module._hashfloat8extended = wasmExports.hashfloat8extended)(e), _pg_newlocale_from_collation = Module._pg_newlocale_from_collation = (e) => (_pg_newlocale_from_collation = Module._pg_newlocale_from_collation = wasmExports.pg_newlocale_from_collation)(e), __hash_ovflblkno_to_bitno = Module.__hash_ovflblkno_to_bitno = (e, t) => (__hash_ovflblkno_to_bitno = Module.__hash_ovflblkno_to_bitno = wasmExports._hash_ovflblkno_to_bitno)(e, t), _hash_destroy = Module._hash_destroy = (e) => (_hash_destroy = Module._hash_destroy = wasmExports.hash_destroy)(e), _list_member_oid = Module._list_member_oid = (e, t) => (_list_member_oid = Module._list_member_oid = wasmExports.list_member_oid)(e, t), _CommandCounterIncrement = Module._CommandCounterIncrement = () => (_CommandCounterIncrement = Module._CommandCounterIncrement = wasmExports.CommandCounterIncrement)(), _list_concat_copy = Module._list_concat_copy = (e, t) => (_list_concat_copy = Module._list_concat_copy = wasmExports.list_concat_copy)(e, t), _HeapTupleSatisfiesVisibility = Module._HeapTupleSatisfiesVisibility = (e, t, r) => (_HeapTupleSatisfiesVisibility = Module._HeapTupleSatisfiesVisibility = wasmExports.HeapTupleSatisfiesVisibility)(e, t, r), _GetAccessStrategy = Module._GetAccessStrategy = (e) => (_GetAccessStrategy = Module._GetAccessStrategy = wasmExports.GetAccessStrategy)(e), _FreeAccessStrategy = Module._FreeAccessStrategy = (e) => (_FreeAccessStrategy = Module._FreeAccessStrategy = wasmExports.FreeAccessStrategy)(e), _heap_getnext = Module._heap_getnext = (e, t) => (_heap_getnext = Module._heap_getnext = wasmExports.heap_getnext)(e, t), _ExecStoreBufferHeapTuple = Module._ExecStoreBufferHeapTuple = (e, t, r) => (_ExecStoreBufferHeapTuple = Module._ExecStoreBufferHeapTuple = wasmExports.ExecStoreBufferHeapTuple)(e, t, r), _heap_fetch = Module._heap_fetch = (e, t, r, a, o) => (_heap_fetch = Module._heap_fetch = wasmExports.heap_fetch)(e, t, r, a, o), _HeapTupleSatisfiesVacuum = Module._HeapTupleSatisfiesVacuum = (e, t, r) => (_HeapTupleSatisfiesVacuum = Module._HeapTupleSatisfiesVacuum = wasmExports.HeapTupleSatisfiesVacuum)(e, t, r), _GetMultiXactIdMembers = Module._GetMultiXactIdMembers = (e, t, r, a) => (_GetMultiXactIdMembers = Module._GetMultiXactIdMembers = wasmExports.GetMultiXactIdMembers)(e, t, r, a), _TransactionIdPrecedes = Module._TransactionIdPrecedes = (e, t) => (_TransactionIdPrecedes = Module._TransactionIdPrecedes = wasmExports.TransactionIdPrecedes)(e, t), _GetBulkInsertState = Module._GetBulkInsertState = () => (_GetBulkInsertState = Module._GetBulkInsertState = wasmExports.GetBulkInsertState)(), _FreeBulkInsertState = Module._FreeBulkInsertState = (e) => (_FreeBulkInsertState = Module._FreeBulkInsertState = wasmExports.FreeBulkInsertState)(e), _visibilitymap_clear = Module._visibilitymap_clear = (e, t, r, a) => (_visibilitymap_clear = Module._visibilitymap_clear = wasmExports.visibilitymap_clear)(e, t, r, a), _pgstat_count_heap_insert = Module._pgstat_count_heap_insert = (e, t) => (_pgstat_count_heap_insert = Module._pgstat_count_heap_insert = wasmExports.pgstat_count_heap_insert)(e, t), _heap_multi_insert = Module._heap_multi_insert = (e, t, r, a, o, _) => (_heap_multi_insert = Module._heap_multi_insert = wasmExports.heap_multi_insert)(e, t, r, a, o, _), _ExecFetchSlotHeapTuple = Module._ExecFetchSlotHeapTuple = (e, t, r) => (_ExecFetchSlotHeapTuple = Module._ExecFetchSlotHeapTuple = wasmExports.ExecFetchSlotHeapTuple)(e, t, r), _heap_delete = Module._heap_delete = (e, t, r, a, o, _, s) => (_heap_delete = Module._heap_delete = wasmExports.heap_delete)(e, t, r, a, o, _, s), _visibilitymap_pin = Module._visibilitymap_pin = (e, t, r) => (_visibilitymap_pin = Module._visibilitymap_pin = wasmExports.visibilitymap_pin)(e, t, r), _HeapTupleSatisfiesUpdate = Module._HeapTupleSatisfiesUpdate = (e, t, r) => (_HeapTupleSatisfiesUpdate = Module._HeapTupleSatisfiesUpdate = wasmExports.HeapTupleSatisfiesUpdate)(e, t, r), _TransactionIdIsCurrentTransactionId = Module._TransactionIdIsCurrentTransactionId = (e) => (_TransactionIdIsCurrentTransactionId = Module._TransactionIdIsCurrentTransactionId = wasmExports.TransactionIdIsCurrentTransactionId)(e), _TransactionIdDidCommit = Module._TransactionIdDidCommit = (e) => (_TransactionIdDidCommit = Module._TransactionIdDidCommit = wasmExports.TransactionIdDidCommit)(e), _TransactionIdIsInProgress = Module._TransactionIdIsInProgress = (e) => (_TransactionIdIsInProgress = Module._TransactionIdIsInProgress = wasmExports.TransactionIdIsInProgress)(e), _bms_free = Module._bms_free = (e) => (_bms_free = Module._bms_free = wasmExports.bms_free)(e), _bms_add_members = Module._bms_add_members = (e, t) => (_bms_add_members = Module._bms_add_members = wasmExports.bms_add_members)(e, t), _bms_next_member = Module._bms_next_member = (e, t) => (_bms_next_member = Module._bms_next_member = wasmExports.bms_next_member)(e, t), _bms_overlap = Module._bms_overlap = (e, t) => (_bms_overlap = Module._bms_overlap = wasmExports.bms_overlap)(e, t), _HeapTupleGetUpdateXid = Module._HeapTupleGetUpdateXid = (e) => (_HeapTupleGetUpdateXid = Module._HeapTupleGetUpdateXid = wasmExports.HeapTupleGetUpdateXid)(e), _heap_lock_tuple = Module._heap_lock_tuple = (e, t, r, a, o, _, s, n) => (_heap_lock_tuple = Module._heap_lock_tuple = wasmExports.heap_lock_tuple)(e, t, r, a, o, _, s, n), _MultiXactIdPrecedes = Module._MultiXactIdPrecedes = (e, t) => (_MultiXactIdPrecedes = Module._MultiXactIdPrecedes = wasmExports.MultiXactIdPrecedes)(e, t), _heap_tuple_needs_eventual_freeze = Module._heap_tuple_needs_eventual_freeze = (e) => (_heap_tuple_needs_eventual_freeze = Module._heap_tuple_needs_eventual_freeze = wasmExports.heap_tuple_needs_eventual_freeze)(e), _PrefetchBuffer = Module._PrefetchBuffer = (e, t, r, a) => (_PrefetchBuffer = Module._PrefetchBuffer = wasmExports.PrefetchBuffer)(e, t, r, a), _RelationTruncate = Module._RelationTruncate = (e, t) => (_RelationTruncate = Module._RelationTruncate = wasmExports.RelationTruncate)(e, t), _FlushRelationBuffers = Module._FlushRelationBuffers = (e) => (_FlushRelationBuffers = Module._FlushRelationBuffers = wasmExports.FlushRelationBuffers)(e), _smgrexists = Module._smgrexists = (e, t) => (_smgrexists = Module._smgrexists = wasmExports.smgrexists)(e, t), _table_slot_create = Module._table_slot_create = (e, t) => (_table_slot_create = Module._table_slot_create = wasmExports.table_slot_create)(e, t), _ExecDropSingleTupleTableSlot = Module._ExecDropSingleTupleTableSlot = (e) => (_ExecDropSingleTupleTableSlot = Module._ExecDropSingleTupleTableSlot = wasmExports.ExecDropSingleTupleTableSlot)(e), _CreateExecutorState = Module._CreateExecutorState = () => (_CreateExecutorState = Module._CreateExecutorState = wasmExports.CreateExecutorState)(), _MakePerTupleExprContext = Module._MakePerTupleExprContext = (e) => (_MakePerTupleExprContext = Module._MakePerTupleExprContext = wasmExports.MakePerTupleExprContext)(e), _ExecPrepareQual = Module._ExecPrepareQual = (e, t) => (_ExecPrepareQual = Module._ExecPrepareQual = wasmExports.ExecPrepareQual)(e, t), _GetOldestNonRemovableTransactionId = Module._GetOldestNonRemovableTransactionId = (e) => (_GetOldestNonRemovableTransactionId = Module._GetOldestNonRemovableTransactionId = wasmExports.GetOldestNonRemovableTransactionId)(e), _FormIndexDatum = Module._FormIndexDatum = (e, t, r, a, o) => (_FormIndexDatum = Module._FormIndexDatum = wasmExports.FormIndexDatum)(e, t, r, a, o), _FreeExecutorState = Module._FreeExecutorState = (e) => (_FreeExecutorState = Module._FreeExecutorState = wasmExports.FreeExecutorState)(e), _MakeSingleTupleTableSlot = Module._MakeSingleTupleTableSlot = (e, t) => (_MakeSingleTupleTableSlot = Module._MakeSingleTupleTableSlot = wasmExports.MakeSingleTupleTableSlot)(e, t), _tuplesort_getdatum = Module._tuplesort_getdatum = (e, t, r, a, o, _) => (_tuplesort_getdatum = Module._tuplesort_getdatum = wasmExports.tuplesort_getdatum)(e, t, r, a, o, _), _ExecStoreHeapTuple = Module._ExecStoreHeapTuple = (e, t, r) => (_ExecStoreHeapTuple = Module._ExecStoreHeapTuple = wasmExports.ExecStoreHeapTuple)(e, t, r), _XidInMVCCSnapshot = Module._XidInMVCCSnapshot = (e, t) => (_XidInMVCCSnapshot = Module._XidInMVCCSnapshot = wasmExports.XidInMVCCSnapshot)(e, t), _bsearch = Module._bsearch = (e, t, r, a, o) => (_bsearch = Module._bsearch = wasmExports.bsearch)(e, t, r, a, o), _XLogRecGetBlockTagExtended = Module._XLogRecGetBlockTagExtended = (e, t, r, a, o, _) => (_XLogRecGetBlockTagExtended = Module._XLogRecGetBlockTagExtended = wasmExports.XLogRecGetBlockTagExtended)(e, t, r, a, o, _), _hash_seq_init = Module._hash_seq_init = (e, t) => (_hash_seq_init = Module._hash_seq_init = wasmExports.hash_seq_init)(e, t), _hash_seq_search = Module._hash_seq_search = (e) => (_hash_seq_search = Module._hash_seq_search = wasmExports.hash_seq_search)(e), _errcode_for_file_access = Module._errcode_for_file_access = () => (_errcode_for_file_access = Module._errcode_for_file_access = wasmExports.errcode_for_file_access)(), _pg_snprintf = Module._pg_snprintf = (e, t, r, a) => (_pg_snprintf = Module._pg_snprintf = wasmExports.pg_snprintf)(e, t, r, a), _OpenTransientFile = Module._OpenTransientFile = (e, t) => (_OpenTransientFile = Module._OpenTransientFile = wasmExports.OpenTransientFile)(e, t), _ftruncate = Module._ftruncate = (e, t) => (_ftruncate = Module._ftruncate = wasmExports.ftruncate)(e, t), ___errno_location = Module.___errno_location = () => (___errno_location = Module.___errno_location = wasmExports.__errno_location)(), _pwrite = Module._pwrite = (e, t, r, a) => (_pwrite = Module._pwrite = wasmExports.pwrite)(e, t, r, a), _CloseTransientFile = Module._CloseTransientFile = (e) => (_CloseTransientFile = Module._CloseTransientFile = wasmExports.CloseTransientFile)(e), _sscanf = Module._sscanf = (e, t, r) => (_sscanf = Module._sscanf = wasmExports.sscanf)(e, t, r), _unlink = Module._unlink = (e) => (_unlink = Module._unlink = wasmExports.unlink)(e), _fsync_fname = Module._fsync_fname = (e, t) => (_fsync_fname = Module._fsync_fname = wasmExports.fsync_fname)(e, t), _GetCurrentTimestamp = Module._GetCurrentTimestamp = () => (_GetCurrentTimestamp = Module._GetCurrentTimestamp = wasmExports.GetCurrentTimestamp)(), _get_namespace_name = Module._get_namespace_name = (e) => (_get_namespace_name = Module._get_namespace_name = wasmExports.get_namespace_name)(e), _pg_prng_uint32 = Module._pg_prng_uint32 = (e) => (_pg_prng_uint32 = Module._pg_prng_uint32 = wasmExports.pg_prng_uint32)(e), _GetRecordedFreeSpace = Module._GetRecordedFreeSpace = (e, t) => (_GetRecordedFreeSpace = Module._GetRecordedFreeSpace = wasmExports.GetRecordedFreeSpace)(e, t), _visibilitymap_get_status = Module._visibilitymap_get_status = (e, t, r) => (_visibilitymap_get_status = Module._visibilitymap_get_status = wasmExports.visibilitymap_get_status)(e, t, r), _vac_estimate_reltuples = Module._vac_estimate_reltuples = (e, t, r, a) => (_vac_estimate_reltuples = Module._vac_estimate_reltuples = wasmExports.vac_estimate_reltuples)(e, t, r, a), _WaitLatch = Module._WaitLatch = (e, t, r, a) => (_WaitLatch = Module._WaitLatch = wasmExports.WaitLatch)(e, t, r, a), _ResetLatch = Module._ResetLatch = (e) => (_ResetLatch = Module._ResetLatch = wasmExports.ResetLatch)(e), _clock_gettime = Module._clock_gettime = (e, t) => (_clock_gettime = Module._clock_gettime = wasmExports.clock_gettime)(e, t), _WalUsageAccumDiff = Module._WalUsageAccumDiff = (e, t, r) => (_WalUsageAccumDiff = Module._WalUsageAccumDiff = wasmExports.WalUsageAccumDiff)(e, t, r), _BufferUsageAccumDiff = Module._BufferUsageAccumDiff = (e, t, r) => (_BufferUsageAccumDiff = Module._BufferUsageAccumDiff = wasmExports.BufferUsageAccumDiff)(e, t, r), _appendStringInfoString = Module._appendStringInfoString = (e, t) => (_appendStringInfoString = Module._appendStringInfoString = wasmExports.appendStringInfoString)(e, t), _set_errcontext_domain = Module._set_errcontext_domain = (e) => (_set_errcontext_domain = Module._set_errcontext_domain = wasmExports.set_errcontext_domain)(e), _errcontext_msg = Module._errcontext_msg = (e, t) => (_errcontext_msg = Module._errcontext_msg = wasmExports.errcontext_msg)(e, t), _visibilitymap_prepare_truncate = Module._visibilitymap_prepare_truncate = (e, t) => (_visibilitymap_prepare_truncate = Module._visibilitymap_prepare_truncate = wasmExports.visibilitymap_prepare_truncate)(e, t), _check_enable_rls = Module._check_enable_rls = (e, t, r) => (_check_enable_rls = Module._check_enable_rls = wasmExports.check_enable_rls)(e, t, r), _pg_class_aclcheck = Module._pg_class_aclcheck = (e, t, r) => (_pg_class_aclcheck = Module._pg_class_aclcheck = wasmExports.pg_class_aclcheck)(e, t, r), _try_index_open = Module._try_index_open = (e, t) => (_try_index_open = Module._try_index_open = wasmExports.try_index_open)(e, t), _btboolcmp = Module._btboolcmp = (e) => (_btboolcmp = Module._btboolcmp = wasmExports.btboolcmp)(e), _btint2cmp = Module._btint2cmp = (e) => (_btint2cmp = Module._btint2cmp = wasmExports.btint2cmp)(e), _btint4cmp = Module._btint4cmp = (e) => (_btint4cmp = Module._btint4cmp = wasmExports.btint4cmp)(e), _btint8cmp = Module._btint8cmp = (e) => (_btint8cmp = Module._btint8cmp = wasmExports.btint8cmp)(e), _btoidcmp = Module._btoidcmp = (e) => (_btoidcmp = Module._btoidcmp = wasmExports.btoidcmp)(e), _btcharcmp = Module._btcharcmp = (e) => (_btcharcmp = Module._btcharcmp = wasmExports.btcharcmp)(e), __bt_form_posting = Module.__bt_form_posting = (e, t, r) => (__bt_form_posting = Module.__bt_form_posting = wasmExports._bt_form_posting)(e, t, r), __bt_mkscankey = Module.__bt_mkscankey = (e, t) => (__bt_mkscankey = Module.__bt_mkscankey = wasmExports._bt_mkscankey)(e, t), __bt_checkpage = Module.__bt_checkpage = (e, t) => (__bt_checkpage = Module.__bt_checkpage = wasmExports._bt_checkpage)(e, t), __bt_compare = Module.__bt_compare = (e, t, r, a) => (__bt_compare = Module.__bt_compare = wasmExports._bt_compare)(e, t, r, a), __bt_relbuf = Module.__bt_relbuf = (e, t) => (__bt_relbuf = Module.__bt_relbuf = wasmExports._bt_relbuf)(e, t), __bt_search = Module.__bt_search = (e, t, r, a, o) => (__bt_search = Module.__bt_search = wasmExports._bt_search)(e, t, r, a, o), __bt_binsrch_insert = Module.__bt_binsrch_insert = (e, t) => (__bt_binsrch_insert = Module.__bt_binsrch_insert = wasmExports._bt_binsrch_insert)(e, t), __bt_freestack = Module.__bt_freestack = (e) => (__bt_freestack = Module.__bt_freestack = wasmExports._bt_freestack)(e), __bt_metaversion = Module.__bt_metaversion = (e, t, r) => (__bt_metaversion = Module.__bt_metaversion = wasmExports._bt_metaversion)(e, t, r), _get_opfamily_member = Module._get_opfamily_member = (e, t, r, a) => (_get_opfamily_member = Module._get_opfamily_member = wasmExports.get_opfamily_member)(e, t, r, a), __bt_allequalimage = Module.__bt_allequalimage = (e, t) => (__bt_allequalimage = Module.__bt_allequalimage = wasmExports._bt_allequalimage)(e, t), ___wasm_setjmp_test = Module.___wasm_setjmp_test = (e, t) => (___wasm_setjmp_test = Module.___wasm_setjmp_test = wasmExports.__wasm_setjmp_test)(e, t), _before_shmem_exit = Module._before_shmem_exit = (e, t) => (_before_shmem_exit = Module._before_shmem_exit = wasmExports.before_shmem_exit)(e, t), ___wasm_setjmp = Module.___wasm_setjmp = (e, t, r) => (___wasm_setjmp = Module.___wasm_setjmp = wasmExports.__wasm_setjmp)(e, t, r), _cancel_before_shmem_exit = Module._cancel_before_shmem_exit = (e, t) => (_cancel_before_shmem_exit = Module._cancel_before_shmem_exit = wasmExports.cancel_before_shmem_exit)(e, t), _pg_re_throw = Module._pg_re_throw = () => (_pg_re_throw = Module._pg_re_throw = wasmExports.pg_re_throw)(), _emscripten_longjmp = Module._emscripten_longjmp = (e, t) => (_emscripten_longjmp = Module._emscripten_longjmp = wasmExports.emscripten_longjmp)(e, t), _ConditionVariableBroadcast = Module._ConditionVariableBroadcast = (e) => (_ConditionVariableBroadcast = Module._ConditionVariableBroadcast = wasmExports.ConditionVariableBroadcast)(e), _datum_image_eq = Module._datum_image_eq = (e, t, r, a) => (_datum_image_eq = Module._datum_image_eq = wasmExports.datum_image_eq)(e, t, r, a), _time = Module._time = (e) => (_time = Module._time = wasmExports.time)(e), __bt_check_natts = Module.__bt_check_natts = (e, t, r, a) => (__bt_check_natts = Module.__bt_check_natts = wasmExports._bt_check_natts)(e, t, r, a), _strlcpy = Module._strlcpy = (e, t, r) => (_strlcpy = Module._strlcpy = wasmExports.strlcpy)(e, t, r), _strncpy = Module._strncpy = (e, t, r) => (_strncpy = Module._strncpy = wasmExports.strncpy)(e, t, r), _timestamptz_to_str = Module._timestamptz_to_str = (e) => (_timestamptz_to_str = Module._timestamptz_to_str = wasmExports.timestamptz_to_str)(e), _XLogRecGetBlockRefInfo = Module._XLogRecGetBlockRefInfo = (e, t, r, a, o) => (_XLogRecGetBlockRefInfo = Module._XLogRecGetBlockRefInfo = wasmExports.XLogRecGetBlockRefInfo)(e, t, r, a, o), _varstr_cmp = Module._varstr_cmp = (e, t, r, a, o) => (_varstr_cmp = Module._varstr_cmp = wasmExports.varstr_cmp)(e, t, r, a, o), _getBaseType = Module._getBaseType = (e) => (_getBaseType = Module._getBaseType = wasmExports.getBaseType)(e), _exprType = Module._exprType = (e) => (_exprType = Module._exprType = wasmExports.exprType)(e), _GetActiveSnapshot = Module._GetActiveSnapshot = () => (_GetActiveSnapshot = Module._GetActiveSnapshot = wasmExports.GetActiveSnapshot)(), _errdetail_relkind_not_supported = Module._errdetail_relkind_not_supported = (e) => (_errdetail_relkind_not_supported = Module._errdetail_relkind_not_supported = wasmExports.errdetail_relkind_not_supported)(e), _table_openrv = Module._table_openrv = (e, t) => (_table_openrv = Module._table_openrv = wasmExports.table_openrv)(e, t), _table_slot_callbacks = Module._table_slot_callbacks = (e) => (_table_slot_callbacks = Module._table_slot_callbacks = wasmExports.table_slot_callbacks)(e), _clamp_row_est = Module._clamp_row_est = (e) => (_clamp_row_est = Module._clamp_row_est = wasmExports.clamp_row_est)(e), _pre_format_elog_string = Module._pre_format_elog_string = (e, t) => (_pre_format_elog_string = Module._pre_format_elog_string = wasmExports.pre_format_elog_string)(e, t), _format_elog_string = Module._format_elog_string = (e, t) => (_format_elog_string = Module._format_elog_string = wasmExports.format_elog_string)(e, t), _IsTransactionState = Module._IsTransactionState = () => (_IsTransactionState = Module._IsTransactionState = wasmExports.IsTransactionState)(), _estimate_expression_value = Module._estimate_expression_value = (e, t) => (_estimate_expression_value = Module._estimate_expression_value = wasmExports.estimate_expression_value)(e, t), _SetConfigOption = Module._SetConfigOption = (e, t, r, a) => (_SetConfigOption = Module._SetConfigOption = wasmExports.SetConfigOption)(e, t, r, a), _XLogFlush = Module._XLogFlush = (e) => (_XLogFlush = Module._XLogFlush = wasmExports.XLogFlush)(e), _get_call_result_type = Module._get_call_result_type = (e, t, r) => (_get_call_result_type = Module._get_call_result_type = wasmExports.get_call_result_type)(e, t, r), _HeapTupleHeaderGetDatum = Module._HeapTupleHeaderGetDatum = (e) => (_HeapTupleHeaderGetDatum = Module._HeapTupleHeaderGetDatum = wasmExports.HeapTupleHeaderGetDatum)(e), _GenericXLogStart = Module._GenericXLogStart = (e) => (_GenericXLogStart = Module._GenericXLogStart = wasmExports.GenericXLogStart)(e), _GenericXLogRegisterBuffer = Module._GenericXLogRegisterBuffer = (e, t, r) => (_GenericXLogRegisterBuffer = Module._GenericXLogRegisterBuffer = wasmExports.GenericXLogRegisterBuffer)(e, t, r), _GenericXLogFinish = Module._GenericXLogFinish = (e) => (_GenericXLogFinish = Module._GenericXLogFinish = wasmExports.GenericXLogFinish)(e), _GenericXLogAbort = Module._GenericXLogAbort = (e) => (_GenericXLogAbort = Module._GenericXLogAbort = wasmExports.GenericXLogAbort)(e), _errmsg_plural = Module._errmsg_plural = (e, t, r, a) => (_errmsg_plural = Module._errmsg_plural = wasmExports.errmsg_plural)(e, t, r, a), _ReadNextMultiXactId = Module._ReadNextMultiXactId = () => (_ReadNextMultiXactId = Module._ReadNextMultiXactId = wasmExports.ReadNextMultiXactId)(), _ReadMultiXactIdRange = Module._ReadMultiXactIdRange = (e, t) => (_ReadMultiXactIdRange = Module._ReadMultiXactIdRange = wasmExports.ReadMultiXactIdRange)(e, t), _MultiXactIdPrecedesOrEquals = Module._MultiXactIdPrecedesOrEquals = (e, t) => (_MultiXactIdPrecedesOrEquals = Module._MultiXactIdPrecedesOrEquals = wasmExports.MultiXactIdPrecedesOrEquals)(e, t), _init_MultiFuncCall = Module._init_MultiFuncCall = (e) => (_init_MultiFuncCall = Module._init_MultiFuncCall = wasmExports.init_MultiFuncCall)(e), _TupleDescGetAttInMetadata = Module._TupleDescGetAttInMetadata = (e) => (_TupleDescGetAttInMetadata = Module._TupleDescGetAttInMetadata = wasmExports.TupleDescGetAttInMetadata)(e), _per_MultiFuncCall = Module._per_MultiFuncCall = (e) => (_per_MultiFuncCall = Module._per_MultiFuncCall = wasmExports.per_MultiFuncCall)(e), _BuildTupleFromCStrings = Module._BuildTupleFromCStrings = (e, t) => (_BuildTupleFromCStrings = Module._BuildTupleFromCStrings = wasmExports.BuildTupleFromCStrings)(e, t), _end_MultiFuncCall = Module._end_MultiFuncCall = (e, t) => (_end_MultiFuncCall = Module._end_MultiFuncCall = wasmExports.end_MultiFuncCall)(e, t), _GetCurrentSubTransactionId = Module._GetCurrentSubTransactionId = () => (_GetCurrentSubTransactionId = Module._GetCurrentSubTransactionId = wasmExports.GetCurrentSubTransactionId)(), _WaitForBackgroundWorkerShutdown = Module._WaitForBackgroundWorkerShutdown = (e) => (_WaitForBackgroundWorkerShutdown = Module._WaitForBackgroundWorkerShutdown = wasmExports.WaitForBackgroundWorkerShutdown)(e), _RegisterDynamicBackgroundWorker = Module._RegisterDynamicBackgroundWorker = (e, t) => (_RegisterDynamicBackgroundWorker = Module._RegisterDynamicBackgroundWorker = wasmExports.RegisterDynamicBackgroundWorker)(e, t), _appendBinaryStringInfo = Module._appendBinaryStringInfo = (e, t, r) => (_appendBinaryStringInfo = Module._appendBinaryStringInfo = wasmExports.appendBinaryStringInfo)(e, t, r), _pq_getmsgbyte = Module._pq_getmsgbyte = (e) => (_pq_getmsgbyte = Module._pq_getmsgbyte = wasmExports.pq_getmsgbyte)(e), _pq_getmsgint = Module._pq_getmsgint = (e, t) => (_pq_getmsgint = Module._pq_getmsgint = wasmExports.pq_getmsgint)(e, t), _pq_getmsgint64 = Module._pq_getmsgint64 = (e) => (_pq_getmsgint64 = Module._pq_getmsgint64 = wasmExports.pq_getmsgint64)(e), _die = Module._die = (e) => (_die = Module._die = wasmExports.die)(e), _pqsignal_be = Module._pqsignal_be = (e, t) => (_pqsignal_be = Module._pqsignal_be = wasmExports.pqsignal_be)(e, t), _BackgroundWorkerUnblockSignals = Module._BackgroundWorkerUnblockSignals = () => (_BackgroundWorkerUnblockSignals = Module._BackgroundWorkerUnblockSignals = wasmExports.BackgroundWorkerUnblockSignals)(), _BackgroundWorkerInitializeConnectionByOid = Module._BackgroundWorkerInitializeConnectionByOid = (e, t, r) => (_BackgroundWorkerInitializeConnectionByOid = Module._BackgroundWorkerInitializeConnectionByOid = wasmExports.BackgroundWorkerInitializeConnectionByOid)(e, t, r), _GetDatabaseEncoding = Module._GetDatabaseEncoding = () => (_GetDatabaseEncoding = Module._GetDatabaseEncoding = wasmExports.GetDatabaseEncoding)(), _StartTransactionCommand = Module._StartTransactionCommand = () => (_StartTransactionCommand = Module._StartTransactionCommand = wasmExports.StartTransactionCommand)(), _CommitTransactionCommand = Module._CommitTransactionCommand = () => (_CommitTransactionCommand = Module._CommitTransactionCommand = wasmExports.CommitTransactionCommand)(), _PushActiveSnapshot = Module._PushActiveSnapshot = (e) => (_PushActiveSnapshot = Module._PushActiveSnapshot = wasmExports.PushActiveSnapshot)(e), _PopActiveSnapshot = Module._PopActiveSnapshot = () => (_PopActiveSnapshot = Module._PopActiveSnapshot = wasmExports.PopActiveSnapshot)(), _RmgrNotFound = Module._RmgrNotFound = (e) => (_RmgrNotFound = Module._RmgrNotFound = wasmExports.RmgrNotFound)(e), _InitMaterializedSRF = Module._InitMaterializedSRF = (e, t) => (_InitMaterializedSRF = Module._InitMaterializedSRF = wasmExports.InitMaterializedSRF)(e, t), _tuplestore_putvalues = Module._tuplestore_putvalues = (e, t, r, a) => (_tuplestore_putvalues = Module._tuplestore_putvalues = wasmExports.tuplestore_putvalues)(e, t, r, a), _pread = Module._pread = (e, t, r, a) => (_pread = Module._pread = wasmExports.pread)(e, t, r, a), _strspn = Module._strspn = (e, t) => (_strspn = Module._strspn = wasmExports.strspn)(e, t), _strtoll = Module._strtoll = (e, t, r) => (_strtoll = Module._strtoll = wasmExports.strtoll)(e, t, r), _AllocateFile = Module._AllocateFile = (e, t) => (_AllocateFile = Module._AllocateFile = wasmExports.AllocateFile)(e, t), _ferror = Module._ferror = (e) => (_ferror = Module._ferror = wasmExports.ferror)(e), _FreeFile = Module._FreeFile = (e) => (_FreeFile = Module._FreeFile = wasmExports.FreeFile)(e), _getpid = Module._getpid = () => (_getpid = Module._getpid = wasmExports.getpid)(), _read = Module._read = (e, t, r) => (_read = Module._read = wasmExports.read)(e, t, r), _write = Module._write = (e, t, r) => (_write = Module._write = wasmExports.write)(e, t, r), _durable_rename = Module._durable_rename = (e, t, r) => (_durable_rename = Module._durable_rename = wasmExports.durable_rename)(e, t, r), _BlessTupleDesc = Module._BlessTupleDesc = (e) => (_BlessTupleDesc = Module._BlessTupleDesc = wasmExports.BlessTupleDesc)(e), _fstat = Module._fstat = (e, t) => (_fstat = Module._fstat = wasmExports.fstat)(e, t), _superuser_arg = Module._superuser_arg = (e) => (_superuser_arg = Module._superuser_arg = wasmExports.superuser_arg)(e), _wal_segment_close = Module._wal_segment_close = (e) => (_wal_segment_close = Module._wal_segment_close = wasmExports.wal_segment_close)(e), _wal_segment_open = Module._wal_segment_open = (e, t, r) => (_wal_segment_open = Module._wal_segment_open = wasmExports.wal_segment_open)(e, t, r), _XLogReaderAllocate = Module._XLogReaderAllocate = (e, t, r, a) => (_XLogReaderAllocate = Module._XLogReaderAllocate = wasmExports.XLogReaderAllocate)(e, t, r, a), _XLogReadRecord = Module._XLogReadRecord = (e, t) => (_XLogReadRecord = Module._XLogReadRecord = wasmExports.XLogReadRecord)(e, t), _XLogReaderFree = Module._XLogReaderFree = (e) => (_XLogReaderFree = Module._XLogReaderFree = wasmExports.XLogReaderFree)(e), _strtoull = Module._strtoull = (e, t, r) => (_strtoull = Module._strtoull = wasmExports.strtoull)(e, t, r), _access = Module._access = (e, t) => (_access = Module._access = wasmExports.access)(e, t), _IsAbortedTransactionBlockState = Module._IsAbortedTransactionBlockState = () => (_IsAbortedTransactionBlockState = Module._IsAbortedTransactionBlockState = wasmExports.IsAbortedTransactionBlockState)(), _GetTopFullTransactionId = Module._GetTopFullTransactionId = () => (_GetTopFullTransactionId = Module._GetTopFullTransactionId = wasmExports.GetTopFullTransactionId)(), _GetCurrentTransactionNestLevel = Module._GetCurrentTransactionNestLevel = () => (_GetCurrentTransactionNestLevel = Module._GetCurrentTransactionNestLevel = wasmExports.GetCurrentTransactionNestLevel)(), _ResourceOwnerCreate = Module._ResourceOwnerCreate = (e, t) => (_ResourceOwnerCreate = Module._ResourceOwnerCreate = wasmExports.ResourceOwnerCreate)(e, t), _AbortCurrentTransaction = Module._AbortCurrentTransaction = () => (_AbortCurrentTransaction = Module._AbortCurrentTransaction = wasmExports.AbortCurrentTransaction)(), _IsTransactionBlock = Module._IsTransactionBlock = () => (_IsTransactionBlock = Module._IsTransactionBlock = wasmExports.IsTransactionBlock)(), _RegisterXactCallback = Module._RegisterXactCallback = (e, t) => (_RegisterXactCallback = Module._RegisterXactCallback = wasmExports.RegisterXactCallback)(e, t), _UnregisterXactCallback = Module._UnregisterXactCallback = (e, t) => (_UnregisterXactCallback = Module._UnregisterXactCallback = wasmExports.UnregisterXactCallback)(e, t), _RegisterSubXactCallback = Module._RegisterSubXactCallback = (e, t) => (_RegisterSubXactCallback = Module._RegisterSubXactCallback = wasmExports.RegisterSubXactCallback)(e, t), _BeginInternalSubTransaction = Module._BeginInternalSubTransaction = (e) => (_BeginInternalSubTransaction = Module._BeginInternalSubTransaction = wasmExports.BeginInternalSubTransaction)(e), _ReleaseCurrentSubTransaction = Module._ReleaseCurrentSubTransaction = () => (_ReleaseCurrentSubTransaction = Module._ReleaseCurrentSubTransaction = wasmExports.ReleaseCurrentSubTransaction)(), _ResourceOwnerDelete = Module._ResourceOwnerDelete = (e) => (_ResourceOwnerDelete = Module._ResourceOwnerDelete = wasmExports.ResourceOwnerDelete)(e), _RollbackAndReleaseCurrentSubTransaction = Module._RollbackAndReleaseCurrentSubTransaction = () => (_RollbackAndReleaseCurrentSubTransaction = Module._RollbackAndReleaseCurrentSubTransaction = wasmExports.RollbackAndReleaseCurrentSubTransaction)(), _pg_usleep = Module._pg_usleep = (e) => (_pg_usleep = Module._pg_usleep = wasmExports.pg_usleep)(e), _close = Module._close = (e) => (_close = Module._close = wasmExports.close)(e), _ReleaseExternalFD = Module._ReleaseExternalFD = () => (_ReleaseExternalFD = Module._ReleaseExternalFD = wasmExports.ReleaseExternalFD)(), _GetDefaultCharSignedness = Module._GetDefaultCharSignedness = () => (_GetDefaultCharSignedness = Module._GetDefaultCharSignedness = wasmExports.GetDefaultCharSignedness)(), _SplitIdentifierString = Module._SplitIdentifierString = (e, t, r) => (_SplitIdentifierString = Module._SplitIdentifierString = wasmExports.SplitIdentifierString)(e, t, r), _guc_malloc = Module._guc_malloc = (e, t) => (_guc_malloc = Module._guc_malloc = wasmExports.guc_malloc)(e, t), _find_option = Module._find_option = (e, t, r, a) => (_find_option = Module._find_option = wasmExports.find_option)(e, t, r, a), _gettimeofday = Module._gettimeofday = (e, t) => (_gettimeofday = Module._gettimeofday = wasmExports.gettimeofday)(e, t), _pg_strong_random = Module._pg_strong_random = (e, t) => (_pg_strong_random = Module._pg_strong_random = wasmExports.pg_strong_random)(e, t), _stat = Module._stat = (e, t) => (_stat = Module._stat = wasmExports.stat)(e, t), _GetFlushRecPtr = Module._GetFlushRecPtr = (e) => (_GetFlushRecPtr = Module._GetFlushRecPtr = wasmExports.GetFlushRecPtr)(e), _GetXLogReplayRecPtr = Module._GetXLogReplayRecPtr = (e) => (_GetXLogReplayRecPtr = Module._GetXLogReplayRecPtr = wasmExports.GetXLogReplayRecPtr)(e), _TimestampDifferenceMilliseconds = Module._TimestampDifferenceMilliseconds = (e, t) => (_TimestampDifferenceMilliseconds = Module._TimestampDifferenceMilliseconds = wasmExports.TimestampDifferenceMilliseconds)(e, t), _strtoul = Module._strtoul = (e, t, r) => (_strtoul = Module._strtoul = wasmExports.strtoul)(e, t, r), _readlink = Module._readlink = (e, t, r) => (_readlink = Module._readlink = wasmExports.readlink)(e, t, r), _pg_fprintf = Module._pg_fprintf = (e, t, r) => (_pg_fprintf = Module._pg_fprintf = wasmExports.pg_fprintf)(e, t, r), _fflush = Module._fflush = (e) => (_fflush = Module._fflush = wasmExports.fflush)(e), _pgl_system = Module._pgl_system = (e) => (_pgl_system = Module._pgl_system = wasmExports.pgl_system)(e), _wait_result_to_str = Module._wait_result_to_str = (e) => (_wait_result_to_str = Module._wait_result_to_str = wasmExports.wait_result_to_str)(e), _replace_percent_placeholders = Module._replace_percent_placeholders = (e, t, r, a) => (_replace_percent_placeholders = Module._replace_percent_placeholders = wasmExports.replace_percent_placeholders)(e, t, r, a), _makeStringInfo = Module._makeStringInfo = () => (_makeStringInfo = Module._makeStringInfo = wasmExports.makeStringInfo)(), _pg_toupper = Module._pg_toupper = (e) => (_pg_toupper = Module._pg_toupper = wasmExports.pg_toupper)(e), _numeric_in = Module._numeric_in = (e) => (_numeric_in = Module._numeric_in = wasmExports.numeric_in)(e), _DirectFunctionCall3Coll = Module._DirectFunctionCall3Coll = (e, t, r, a, o) => (_DirectFunctionCall3Coll = Module._DirectFunctionCall3Coll = wasmExports.DirectFunctionCall3Coll)(e, t, r, a, o), _palloc_extended = Module._palloc_extended = (e, t) => (_palloc_extended = Module._palloc_extended = wasmExports.palloc_extended)(e, t), _pg_vsnprintf = Module._pg_vsnprintf = (e, t, r, a) => (_pg_vsnprintf = Module._pg_vsnprintf = wasmExports.pg_vsnprintf)(e, t, r, a), _XLogFindNextRecord = Module._XLogFindNextRecord = (e, t) => (_XLogFindNextRecord = Module._XLogFindNextRecord = wasmExports.XLogFindNextRecord)(e, t), _RestoreBlockImage = Module._RestoreBlockImage = (e, t, r) => (_RestoreBlockImage = Module._RestoreBlockImage = wasmExports.RestoreBlockImage)(e, t, r), _timestamptz_in = Module._timestamptz_in = (e) => (_timestamptz_in = Module._timestamptz_in = wasmExports.timestamptz_in)(e), _fscanf = Module._fscanf = (e, t, r) => (_fscanf = Module._fscanf = wasmExports.fscanf)(e, t, r), _symlink = Module._symlink = (e, t) => (_symlink = Module._symlink = wasmExports.symlink)(e, t), _ConditionVariableTimedSleep = Module._ConditionVariableTimedSleep = (e, t, r) => (_ConditionVariableTimedSleep = Module._ConditionVariableTimedSleep = wasmExports.ConditionVariableTimedSleep)(e, t, r), _ParseDateTime = Module._ParseDateTime = (e, t, r, a, o, _, s) => (_ParseDateTime = Module._ParseDateTime = wasmExports.ParseDateTime)(e, t, r, a, o, _, s), _DecodeDateTime = Module._DecodeDateTime = (e, t, r, a, o, _, s, n) => (_DecodeDateTime = Module._DecodeDateTime = wasmExports.DecodeDateTime)(e, t, r, a, o, _, s, n), _tm2timestamp = Module._tm2timestamp = (e, t, r, a) => (_tm2timestamp = Module._tm2timestamp = wasmExports.tm2timestamp)(e, t, r, a), _XLogRecStoreStats = Module._XLogRecStoreStats = (e, t) => (_XLogRecStoreStats = Module._XLogRecStoreStats = wasmExports.XLogRecStoreStats)(e, t), _hash_get_num_entries = Module._hash_get_num_entries = (e) => (_hash_get_num_entries = Module._hash_get_num_entries = wasmExports.hash_get_num_entries)(e), _read_local_xlog_page_no_wait = Module._read_local_xlog_page_no_wait = (e, t, r, a, o) => (_read_local_xlog_page_no_wait = Module._read_local_xlog_page_no_wait = wasmExports.read_local_xlog_page_no_wait)(e, t, r, a, o), _escape_json_with_len = Module._escape_json_with_len = (e, t, r) => (_escape_json_with_len = Module._escape_json_with_len = wasmExports.escape_json_with_len)(e, t, r), _BufFileSeek = Module._BufFileSeek = (e, t, r, a) => (_BufFileSeek = Module._BufFileSeek = wasmExports.BufFileSeek)(e, t, r, a), _lstat = Module._lstat = (e, t) => (_lstat = Module._lstat = wasmExports.lstat)(e, t), _destroyStringInfo = Module._destroyStringInfo = (e) => (_destroyStringInfo = Module._destroyStringInfo = wasmExports.destroyStringInfo)(e), _list_sort = Module._list_sort = (e, t) => (_list_sort = Module._list_sort = wasmExports.list_sort)(e, t), _pgl_geteuid = Module._pgl_geteuid = () => (_pgl_geteuid = Module._pgl_geteuid = wasmExports.pgl_geteuid)(), _getegid = Module._getegid = () => (_getegid = Module._getegid = wasmExports.getegid)(), _pg_checksum_page = Module._pg_checksum_page = (e, t) => (_pg_checksum_page = Module._pg_checksum_page = wasmExports.pg_checksum_page)(e, t), _CreateDestReceiver = Module._CreateDestReceiver = (e) => (_CreateDestReceiver = Module._CreateDestReceiver = wasmExports.CreateDestReceiver)(e), _bbsink_forward_end_archive = Module._bbsink_forward_end_archive = (e) => (_bbsink_forward_end_archive = Module._bbsink_forward_end_archive = wasmExports.bbsink_forward_end_archive)(e), _bbsink_forward_begin_manifest = Module._bbsink_forward_begin_manifest = (e) => (_bbsink_forward_begin_manifest = Module._bbsink_forward_begin_manifest = wasmExports.bbsink_forward_begin_manifest)(e), _bbsink_forward_end_manifest = Module._bbsink_forward_end_manifest = (e) => (_bbsink_forward_end_manifest = Module._bbsink_forward_end_manifest = wasmExports.bbsink_forward_end_manifest)(e), _bbsink_forward_end_backup = Module._bbsink_forward_end_backup = (e, t, r) => (_bbsink_forward_end_backup = Module._bbsink_forward_end_backup = wasmExports.bbsink_forward_end_backup)(e, t, r), _bbsink_forward_cleanup = Module._bbsink_forward_cleanup = (e) => (_bbsink_forward_cleanup = Module._bbsink_forward_cleanup = wasmExports.bbsink_forward_cleanup)(e), _MemoryContextAllocExtended = Module._MemoryContextAllocExtended = (e, t, r) => (_MemoryContextAllocExtended = Module._MemoryContextAllocExtended = wasmExports.MemoryContextAllocExtended)(e, t, r), _appendStringInfoVA = Module._appendStringInfoVA = (e, t, r) => (_appendStringInfoVA = Module._appendStringInfoVA = wasmExports.appendStringInfoVA)(e, t, r), _list_concat = Module._list_concat = (e, t) => (_list_concat = Module._list_concat = wasmExports.list_concat)(e, t), _strrchr = Module._strrchr = (e, t) => (_strrchr = Module._strrchr = wasmExports.strrchr)(e, t), _bbsink_forward_begin_backup = Module._bbsink_forward_begin_backup = (e) => (_bbsink_forward_begin_backup = Module._bbsink_forward_begin_backup = wasmExports.bbsink_forward_begin_backup)(e), _bbsink_forward_archive_contents = Module._bbsink_forward_archive_contents = (e, t) => (_bbsink_forward_archive_contents = Module._bbsink_forward_archive_contents = wasmExports.bbsink_forward_archive_contents)(e, t), _bbsink_forward_begin_archive = Module._bbsink_forward_begin_archive = (e, t) => (_bbsink_forward_begin_archive = Module._bbsink_forward_begin_archive = wasmExports.bbsink_forward_begin_archive)(e, t), _bbsink_forward_manifest_contents = Module._bbsink_forward_manifest_contents = (e, t) => (_bbsink_forward_manifest_contents = Module._bbsink_forward_manifest_contents = wasmExports.bbsink_forward_manifest_contents)(e, t), _has_privs_of_role = Module._has_privs_of_role = (e, t) => (_has_privs_of_role = Module._has_privs_of_role = wasmExports.has_privs_of_role)(e, t), _BaseBackupAddTarget = Module._BaseBackupAddTarget = (e, t, r) => (_BaseBackupAddTarget = Module._BaseBackupAddTarget = wasmExports.BaseBackupAddTarget)(e, t, r), _list_copy = Module._list_copy = (e) => (_list_copy = Module._list_copy = wasmExports.list_copy)(e), _tuplestore_puttuple = Module._tuplestore_puttuple = (e, t) => (_tuplestore_puttuple = Module._tuplestore_puttuple = wasmExports.tuplestore_puttuple)(e, t), _isatty = Module._isatty = (e) => (_isatty = Module._isatty = wasmExports.isatty)(e), _makeRangeVar = Module._makeRangeVar = (e, t, r) => (_makeRangeVar = Module._makeRangeVar = wasmExports.makeRangeVar)(e, t, r), _DefineIndex = Module._DefineIndex = (e, t, r, a, o, _, s, n, l, d, u, c) => (_DefineIndex = Module._DefineIndex = wasmExports.DefineIndex)(e, t, r, a, o, _, s, n, l, d, u, c), _getc = Module._getc = (e) => (_getc = Module._getc = wasmExports.getc)(e), _fread = Module._fread = (e, t, r, a) => (_fread = Module._fread = wasmExports.fread)(e, t, r, a), _clearerr = Module._clearerr = (e) => (_clearerr = Module._clearerr = wasmExports.clearerr)(e), _copyObjectImpl = Module._copyObjectImpl = (e) => (_copyObjectImpl = Module._copyObjectImpl = wasmExports.copyObjectImpl)(e), _get_object_address = Module._get_object_address = (e, t, r, a, o, _) => (_get_object_address = Module._get_object_address = wasmExports.get_object_address)(e, t, r, a, o, _), _lappend_oid = Module._lappend_oid = (e, t) => (_lappend_oid = Module._lappend_oid = wasmExports.lappend_oid)(e, t), _makeTypeNameFromNameList = Module._makeTypeNameFromNameList = (e) => (_makeTypeNameFromNameList = Module._makeTypeNameFromNameList = wasmExports.makeTypeNameFromNameList)(e), _SearchSysCache2 = Module._SearchSysCache2 = (e, t, r) => (_SearchSysCache2 = Module._SearchSysCache2 = wasmExports.SearchSysCache2)(e, t, r), _SysCacheGetAttr = Module._SysCacheGetAttr = (e, t, r, a) => (_SysCacheGetAttr = Module._SysCacheGetAttr = wasmExports.SysCacheGetAttr)(e, t, r, a), _CatalogTupleUpdate = Module._CatalogTupleUpdate = (e, t, r) => (_CatalogTupleUpdate = Module._CatalogTupleUpdate = wasmExports.CatalogTupleUpdate)(e, t, r), _get_attnum = Module._get_attnum = (e, t) => (_get_attnum = Module._get_attnum = wasmExports.get_attnum)(e, t), _get_rel_name = Module._get_rel_name = (e) => (_get_rel_name = Module._get_rel_name = wasmExports.get_rel_name)(e), _CatalogTupleDelete = Module._CatalogTupleDelete = (e, t) => (_CatalogTupleDelete = Module._CatalogTupleDelete = wasmExports.CatalogTupleDelete)(e, t), _get_namespace_oid = Module._get_namespace_oid = (e, t) => (_get_namespace_oid = Module._get_namespace_oid = wasmExports.get_namespace_oid)(e, t), _SearchSysCache3 = Module._SearchSysCache3 = (e, t, r, a) => (_SearchSysCache3 = Module._SearchSysCache3 = wasmExports.SearchSysCache3)(e, t, r, a), _performDeletion = Module._performDeletion = (e, t, r) => (_performDeletion = Module._performDeletion = wasmExports.performDeletion)(e, t, r), _CatalogTupleInsert = Module._CatalogTupleInsert = (e, t) => (_CatalogTupleInsert = Module._CatalogTupleInsert = wasmExports.CatalogTupleInsert)(e, t), _recordDependencyOn = Module._recordDependencyOn = (e, t, r) => (_recordDependencyOn = Module._recordDependencyOn = wasmExports.recordDependencyOn)(e, t, r), _get_element_type = Module._get_element_type = (e) => (_get_element_type = Module._get_element_type = wasmExports.get_element_type)(e), _object_aclcheck = Module._object_aclcheck = (e, t, r, a) => (_object_aclcheck = Module._object_aclcheck = wasmExports.object_aclcheck)(e, t, r, a), _isTempNamespace = Module._isTempNamespace = (e) => (_isTempNamespace = Module._isTempNamespace = wasmExports.isTempNamespace)(e), _superuser = Module._superuser = () => (_superuser = Module._superuser = wasmExports.superuser)(), _SearchSysCacheAttName = Module._SearchSysCacheAttName = (e, t) => (_SearchSysCacheAttName = Module._SearchSysCacheAttName = wasmExports.SearchSysCacheAttName)(e, t), _new_object_addresses = Module._new_object_addresses = () => (_new_object_addresses = Module._new_object_addresses = wasmExports.new_object_addresses)(), _free_object_addresses = Module._free_object_addresses = (e) => (_free_object_addresses = Module._free_object_addresses = wasmExports.free_object_addresses)(e), _performMultipleDeletions = Module._performMultipleDeletions = (e, t, r) => (_performMultipleDeletions = Module._performMultipleDeletions = wasmExports.performMultipleDeletions)(e, t, r), _recordDependencyOnExpr = Module._recordDependencyOnExpr = (e, t, r, a) => (_recordDependencyOnExpr = Module._recordDependencyOnExpr = wasmExports.recordDependencyOnExpr)(e, t, r, a), _query_tree_walker_impl = Module._query_tree_walker_impl = (e, t, r, a) => (_query_tree_walker_impl = Module._query_tree_walker_impl = wasmExports.query_tree_walker_impl)(e, t, r, a), _expression_tree_walker_impl = Module._expression_tree_walker_impl = (e, t, r) => (_expression_tree_walker_impl = Module._expression_tree_walker_impl = wasmExports.expression_tree_walker_impl)(e, t, r), _add_exact_object_address = Module._add_exact_object_address = (e, t) => (_add_exact_object_address = Module._add_exact_object_address = wasmExports.add_exact_object_address)(e, t), _get_rel_relkind = Module._get_rel_relkind = (e) => (_get_rel_relkind = Module._get_rel_relkind = wasmExports.get_rel_relkind)(e), _get_typtype = Module._get_typtype = (e) => (_get_typtype = Module._get_typtype = wasmExports.get_typtype)(e), _list_delete_last = Module._list_delete_last = (e) => (_list_delete_last = Module._list_delete_last = wasmExports.list_delete_last)(e), _type_is_collatable = Module._type_is_collatable = (e) => (_type_is_collatable = Module._type_is_collatable = wasmExports.type_is_collatable)(e), _CatalogOpenIndexes = Module._CatalogOpenIndexes = (e) => (_CatalogOpenIndexes = Module._CatalogOpenIndexes = wasmExports.CatalogOpenIndexes)(e), _CatalogCloseIndexes = Module._CatalogCloseIndexes = (e) => (_CatalogCloseIndexes = Module._CatalogCloseIndexes = wasmExports.CatalogCloseIndexes)(e), _get_relname_relid = Module._get_relname_relid = (e, t) => (_get_relname_relid = Module._get_relname_relid = wasmExports.get_relname_relid)(e, t), _GetSysCacheOid = Module._GetSysCacheOid = (e, t, r, a, o, _) => (_GetSysCacheOid = Module._GetSysCacheOid = wasmExports.GetSysCacheOid)(e, t, r, a, o, _), _CheckTableNotInUse = Module._CheckTableNotInUse = (e, t) => (_CheckTableNotInUse = Module._CheckTableNotInUse = wasmExports.CheckTableNotInUse)(e, t), _construct_array = Module._construct_array = (e, t, r, a, o, _) => (_construct_array = Module._construct_array = wasmExports.construct_array)(e, t, r, a, o, _), _make_parsestate = Module._make_parsestate = (e) => (_make_parsestate = Module._make_parsestate = wasmExports.make_parsestate)(e), _addRangeTableEntryForRelation = Module._addRangeTableEntryForRelation = (e, t, r, a, o, _) => (_addRangeTableEntryForRelation = Module._addRangeTableEntryForRelation = wasmExports.addRangeTableEntryForRelation)(e, t, r, a, o, _), _addNSItemToQuery = Module._addNSItemToQuery = (e, t, r, a, o) => (_addNSItemToQuery = Module._addNSItemToQuery = wasmExports.addNSItemToQuery)(e, t, r, a, o), _transformExpr = Module._transformExpr = (e, t, r) => (_transformExpr = Module._transformExpr = wasmExports.transformExpr)(e, t, r), _coerce_to_boolean = Module._coerce_to_boolean = (e, t, r) => (_coerce_to_boolean = Module._coerce_to_boolean = wasmExports.coerce_to_boolean)(e, t, r), _assign_expr_collations = Module._assign_expr_collations = (e, t) => (_assign_expr_collations = Module._assign_expr_collations = wasmExports.assign_expr_collations)(e, t), _equal = Module._equal = (e, t) => (_equal = Module._equal = wasmExports.equal)(e, t), _pull_var_clause = Module._pull_var_clause = (e, t) => (_pull_var_clause = Module._pull_var_clause = wasmExports.pull_var_clause)(e, t), _get_attname = Module._get_attname = (e, t, r) => (_get_attname = Module._get_attname = wasmExports.get_attname)(e, t, r), _coerce_to_target_type = Module._coerce_to_target_type = (e, t, r, a, o, _, s, n) => (_coerce_to_target_type = Module._coerce_to_target_type = wasmExports.coerce_to_target_type)(e, t, r, a, o, _, s, n), _nodeToString = Module._nodeToString = (e) => (_nodeToString = Module._nodeToString = wasmExports.nodeToString)(e), _lappend_int = Module._lappend_int = (e, t) => (_lappend_int = Module._lappend_int = wasmExports.lappend_int)(e, t), _list_delete_nth_cell = Module._list_delete_nth_cell = (e, t) => (_list_delete_nth_cell = Module._list_delete_nth_cell = wasmExports.list_delete_nth_cell)(e, t), _CatalogTupleInsertWithInfo = Module._CatalogTupleInsertWithInfo = (e, t, r) => (_CatalogTupleInsertWithInfo = Module._CatalogTupleInsertWithInfo = wasmExports.CatalogTupleInsertWithInfo)(e, t, r), _buildoidvector = Module._buildoidvector = (e, t) => (_buildoidvector = Module._buildoidvector = wasmExports.buildoidvector)(e, t), _parser_errposition = Module._parser_errposition = (e, t) => (_parser_errposition = Module._parser_errposition = wasmExports.parser_errposition)(e, t), _exprLocation = Module._exprLocation = (e) => (_exprLocation = Module._exprLocation = wasmExports.exprLocation)(e), _exprTypmod = Module._exprTypmod = (e) => (_exprTypmod = Module._exprTypmod = wasmExports.exprTypmod)(e), _get_base_element_type = Module._get_base_element_type = (e) => (_get_base_element_type = Module._get_base_element_type = wasmExports.get_base_element_type)(e), _SystemFuncName = Module._SystemFuncName = (e) => (_SystemFuncName = Module._SystemFuncName = wasmExports.SystemFuncName)(e), _CreateTrigger = Module._CreateTrigger = (e, t, r, a, o, _, s, n, l, d, u, c) => (_CreateTrigger = Module._CreateTrigger = wasmExports.CreateTrigger)(e, t, r, a, o, _, s, n, l, d, u, c), _plan_create_index_workers = Module._plan_create_index_workers = (e, t) => (_plan_create_index_workers = Module._plan_create_index_workers = wasmExports.plan_create_index_workers)(e, t), _tuplesort_begin_datum = Module._tuplesort_begin_datum = (e, t, r, a, o, _, s) => (_tuplesort_begin_datum = Module._tuplesort_begin_datum = wasmExports.tuplesort_begin_datum)(e, t, r, a, o, _, s), _tuplesort_putdatum = Module._tuplesort_putdatum = (e, t, r) => (_tuplesort_putdatum = Module._tuplesort_putdatum = wasmExports.tuplesort_putdatum)(e, t, r), _get_rel_namespace = Module._get_rel_namespace = (e) => (_get_rel_namespace = Module._get_rel_namespace = wasmExports.get_rel_namespace)(e), _ExecOpenIndices = Module._ExecOpenIndices = (e, t) => (_ExecOpenIndices = Module._ExecOpenIndices = wasmExports.ExecOpenIndices)(e, t), _ExecCloseIndices = Module._ExecCloseIndices = (e) => (_ExecCloseIndices = Module._ExecCloseIndices = wasmExports.ExecCloseIndices)(e), _ConditionalLockRelationOid = Module._ConditionalLockRelationOid = (e, t) => (_ConditionalLockRelationOid = Module._ConditionalLockRelationOid = wasmExports.ConditionalLockRelationOid)(e, t), _RelnameGetRelid = Module._RelnameGetRelid = (e) => (_RelnameGetRelid = Module._RelnameGetRelid = wasmExports.RelnameGetRelid)(e), _get_relkind_objtype = Module._get_relkind_objtype = (e) => (_get_relkind_objtype = Module._get_relkind_objtype = wasmExports.get_relkind_objtype)(e), _RelationIsVisible = Module._RelationIsVisible = (e) => (_RelationIsVisible = Module._RelationIsVisible = wasmExports.RelationIsVisible)(e), _TypenameGetTypid = Module._TypenameGetTypid = (e) => (_TypenameGetTypid = Module._TypenameGetTypid = wasmExports.TypenameGetTypid)(e), _get_func_arg_info = Module._get_func_arg_info = (e, t, r, a) => (_get_func_arg_info = Module._get_func_arg_info = wasmExports.get_func_arg_info)(e, t, r, a), _NameListToString = Module._NameListToString = (e) => (_NameListToString = Module._NameListToString = wasmExports.NameListToString)(e), _OpernameGetOprid = Module._OpernameGetOprid = (e, t, r) => (_OpernameGetOprid = Module._OpernameGetOprid = wasmExports.OpernameGetOprid)(e, t, r), _get_ts_config_oid = Module._get_ts_config_oid = (e, t) => (_get_ts_config_oid = Module._get_ts_config_oid = wasmExports.get_ts_config_oid)(e, t), _makeRangeVarFromNameList = Module._makeRangeVarFromNameList = (e) => (_makeRangeVarFromNameList = Module._makeRangeVarFromNameList = wasmExports.makeRangeVarFromNameList)(e), _quote_identifier = Module._quote_identifier = (e) => (_quote_identifier = Module._quote_identifier = wasmExports.quote_identifier)(e), _atoi = Module._atoi = (e) => (_atoi = Module._atoi = wasmExports.atoi)(e), _GetSearchPathMatcher = Module._GetSearchPathMatcher = (e) => (_GetSearchPathMatcher = Module._GetSearchPathMatcher = wasmExports.GetSearchPathMatcher)(e), _SearchPathMatchesCurrentEnvironment = Module._SearchPathMatchesCurrentEnvironment = (e) => (_SearchPathMatchesCurrentEnvironment = Module._SearchPathMatchesCurrentEnvironment = wasmExports.SearchPathMatchesCurrentEnvironment)(e), _get_collation_oid = Module._get_collation_oid = (e, t) => (_get_collation_oid = Module._get_collation_oid = wasmExports.get_collation_oid)(e, t), _GetDatabaseEncodingName = Module._GetDatabaseEncodingName = () => (_GetDatabaseEncodingName = Module._GetDatabaseEncodingName = wasmExports.GetDatabaseEncodingName)(), _CacheRegisterSyscacheCallback = Module._CacheRegisterSyscacheCallback = (e, t, r) => (_CacheRegisterSyscacheCallback = Module._CacheRegisterSyscacheCallback = wasmExports.CacheRegisterSyscacheCallback)(e, t, r), _fetch_search_path = Module._fetch_search_path = (e) => (_fetch_search_path = Module._fetch_search_path = wasmExports.fetch_search_path)(e), _get_extension_oid = Module._get_extension_oid = (e, t) => (_get_extension_oid = Module._get_extension_oid = wasmExports.get_extension_oid)(e, t), _get_role_oid = Module._get_role_oid = (e, t) => (_get_role_oid = Module._get_role_oid = wasmExports.get_role_oid)(e, t), _get_am_oid = Module._get_am_oid = (e, t) => (_get_am_oid = Module._get_am_oid = wasmExports.get_am_oid)(e, t), _GetForeignServerByName = Module._GetForeignServerByName = (e, t) => (_GetForeignServerByName = Module._GetForeignServerByName = wasmExports.GetForeignServerByName)(e, t), _typeStringToTypeName = Module._typeStringToTypeName = (e, t) => (_typeStringToTypeName = Module._typeStringToTypeName = wasmExports.typeStringToTypeName)(e, t), _makeFloat = Module._makeFloat = (e) => (_makeFloat = Module._makeFloat = wasmExports.makeFloat)(e), _list_make2_impl = Module._list_make2_impl = (e, t, r) => (_list_make2_impl = Module._list_make2_impl = wasmExports.list_make2_impl)(e, t, r), _check_object_ownership = Module._check_object_ownership = (e, t, r, a, o) => (_check_object_ownership = Module._check_object_ownership = wasmExports.check_object_ownership)(e, t, r, a, o), _GetUserNameFromId = Module._GetUserNameFromId = (e, t) => (_GetUserNameFromId = Module._GetUserNameFromId = wasmExports.GetUserNameFromId)(e, t), _format_type_extended = Module._format_type_extended = (e, t, r) => (_format_type_extended = Module._format_type_extended = wasmExports.format_type_extended)(e, t, r), _quote_qualified_identifier = Module._quote_qualified_identifier = (e, t) => (_quote_qualified_identifier = Module._quote_qualified_identifier = wasmExports.quote_qualified_identifier)(e, t), _get_tablespace_name = Module._get_tablespace_name = (e) => (_get_tablespace_name = Module._get_tablespace_name = wasmExports.get_tablespace_name)(e), _GetForeignServerExtended = Module._GetForeignServerExtended = (e, t) => (_GetForeignServerExtended = Module._GetForeignServerExtended = wasmExports.GetForeignServerExtended)(e, t), _GetForeignServer = Module._GetForeignServer = (e) => (_GetForeignServer = Module._GetForeignServer = wasmExports.GetForeignServer)(e), _get_extension_name = Module._get_extension_name = (e) => (_get_extension_name = Module._get_extension_name = wasmExports.get_extension_name)(e), _construct_empty_array = Module._construct_empty_array = (e) => (_construct_empty_array = Module._construct_empty_array = wasmExports.construct_empty_array)(e), _format_type_be_qualified = Module._format_type_be_qualified = (e) => (_format_type_be_qualified = Module._format_type_be_qualified = wasmExports.format_type_be_qualified)(e), _get_namespace_name_or_temp = Module._get_namespace_name_or_temp = (e) => (_get_namespace_name_or_temp = Module._get_namespace_name_or_temp = wasmExports.get_namespace_name_or_temp)(e), _list_make3_impl = Module._list_make3_impl = (e, t, r, a) => (_list_make3_impl = Module._list_make3_impl = wasmExports.list_make3_impl)(e, t, r, a), _construct_md_array = Module._construct_md_array = (e, t, r, a, o, _, s, n, l) => (_construct_md_array = Module._construct_md_array = wasmExports.construct_md_array)(e, t, r, a, o, _, s, n, l), _pull_varattnos = Module._pull_varattnos = (e, t, r) => (_pull_varattnos = Module._pull_varattnos = wasmExports.pull_varattnos)(e, t, r), _makeBoolExpr = Module._makeBoolExpr = (e, t, r) => (_makeBoolExpr = Module._makeBoolExpr = wasmExports.makeBoolExpr)(e, t, r), _eval_const_expressions = Module._eval_const_expressions = (e, t) => (_eval_const_expressions = Module._eval_const_expressions = wasmExports.eval_const_expressions)(e, t), _get_func_name = Module._get_func_name = (e) => (_get_func_name = Module._get_func_name = wasmExports.get_func_name)(e), _construct_array_builtin = Module._construct_array_builtin = (e, t, r) => (_construct_array_builtin = Module._construct_array_builtin = wasmExports.construct_array_builtin)(e, t, r), _makeObjectName = Module._makeObjectName = (e, t, r) => (_makeObjectName = Module._makeObjectName = wasmExports.makeObjectName)(e, t, r), _get_primary_key_attnos = Module._get_primary_key_attnos = (e, t, r) => (_get_primary_key_attnos = Module._get_primary_key_attnos = wasmExports.get_primary_key_attnos)(e, t, r), _check_functional_grouping = Module._check_functional_grouping = (e, t, r, a, o) => (_check_functional_grouping = Module._check_functional_grouping = wasmExports.check_functional_grouping)(e, t, r, a, o), _bms_is_subset = Module._bms_is_subset = (e, t) => (_bms_is_subset = Module._bms_is_subset = wasmExports.bms_is_subset)(e, t), _getExtensionOfObject = Module._getExtensionOfObject = (e, t) => (_getExtensionOfObject = Module._getExtensionOfObject = wasmExports.getExtensionOfObject)(e, t), _find_inheritance_children = Module._find_inheritance_children = (e, t) => (_find_inheritance_children = Module._find_inheritance_children = wasmExports.find_inheritance_children)(e, t), _find_all_inheritors = Module._find_all_inheritors = (e, t, r) => (_find_all_inheritors = Module._find_all_inheritors = wasmExports.find_all_inheritors)(e, t, r), _has_superclass = Module._has_superclass = (e) => (_has_superclass = Module._has_superclass = wasmExports.has_superclass)(e), _strstr = Module._strstr = (e, t) => (_strstr = Module._strstr = wasmExports.strstr)(e, t), _memchr = Module._memchr = (e, t, r) => (_memchr = Module._memchr = wasmExports.memchr)(e, t, r), _CheckFunctionValidatorAccess = Module._CheckFunctionValidatorAccess = (e, t) => (_CheckFunctionValidatorAccess = Module._CheckFunctionValidatorAccess = wasmExports.CheckFunctionValidatorAccess)(e, t), _AcquireRewriteLocks = Module._AcquireRewriteLocks = (e, t, r) => (_AcquireRewriteLocks = Module._AcquireRewriteLocks = wasmExports.AcquireRewriteLocks)(e, t, r), _pg_parse_query = Module._pg_parse_query = (e) => (_pg_parse_query = Module._pg_parse_query = wasmExports.pg_parse_query)(e), _get_func_result_type = Module._get_func_result_type = (e, t, r) => (_get_func_result_type = Module._get_func_result_type = wasmExports.get_func_result_type)(e, t, r), _function_parse_error_transpose = Module._function_parse_error_transpose = (e) => (_function_parse_error_transpose = Module._function_parse_error_transpose = wasmExports.function_parse_error_transpose)(e), _geterrposition = Module._geterrposition = () => (_geterrposition = Module._geterrposition = wasmExports.geterrposition)(), _getinternalerrposition = Module._getinternalerrposition = () => (_getinternalerrposition = Module._getinternalerrposition = wasmExports.getinternalerrposition)(), _pg_mblen_cstr = Module._pg_mblen_cstr = (e) => (_pg_mblen_cstr = Module._pg_mblen_cstr = wasmExports.pg_mblen_cstr)(e), _pg_mbstrlen_with_len = Module._pg_mbstrlen_with_len = (e, t) => (_pg_mbstrlen_with_len = Module._pg_mbstrlen_with_len = wasmExports.pg_mbstrlen_with_len)(e, t), _errposition = Module._errposition = (e) => (_errposition = Module._errposition = wasmExports.errposition)(e), _internalerrposition = Module._internalerrposition = (e) => (_internalerrposition = Module._internalerrposition = wasmExports.internalerrposition)(e), _internalerrquery = Module._internalerrquery = (e) => (_internalerrquery = Module._internalerrquery = wasmExports.internalerrquery)(e), _bms_num_members = Module._bms_num_members = (e) => (_bms_num_members = Module._bms_num_members = wasmExports.bms_num_members)(e), _quote_literal_cstr = Module._quote_literal_cstr = (e) => (_quote_literal_cstr = Module._quote_literal_cstr = wasmExports.quote_literal_cstr)(e), _get_array_type = Module._get_array_type = (e) => (_get_array_type = Module._get_array_type = wasmExports.get_array_type)(e), _pnstrdup = Module._pnstrdup = (e, t) => (_pnstrdup = Module._pnstrdup = wasmExports.pnstrdup)(e, t), _smgrtruncate = Module._smgrtruncate = (e, t, r, a, o) => (_smgrtruncate = Module._smgrtruncate = wasmExports.smgrtruncate)(e, t, r, a, o), _smgrreadv = Module._smgrreadv = (e, t, r, a, o) => (_smgrreadv = Module._smgrreadv = wasmExports.smgrreadv)(e, t, r, a, o), _NewRelationCreateToastTable = Module._NewRelationCreateToastTable = (e, t) => (_NewRelationCreateToastTable = Module._NewRelationCreateToastTable = wasmExports.NewRelationCreateToastTable)(e, t), _transformStmt = Module._transformStmt = (e, t) => (_transformStmt = Module._transformStmt = wasmExports.transformStmt)(e, t), _free_parsestate = Module._free_parsestate = (e) => (_free_parsestate = Module._free_parsestate = wasmExports.free_parsestate)(e), _makeFromExpr = Module._makeFromExpr = (e, t) => (_makeFromExpr = Module._makeFromExpr = wasmExports.makeFromExpr)(e, t), _assign_query_collations = Module._assign_query_collations = (e, t) => (_assign_query_collations = Module._assign_query_collations = wasmExports.assign_query_collations)(e, t), _ParseFuncOrColumn = Module._ParseFuncOrColumn = (e, t, r, a, o, _, s) => (_ParseFuncOrColumn = Module._ParseFuncOrColumn = wasmExports.ParseFuncOrColumn)(e, t, r, a, o, _, s), _exprCollation = Module._exprCollation = (e) => (_exprCollation = Module._exprCollation = wasmExports.exprCollation)(e), _transformSortClause = Module._transformSortClause = (e, t, r, a, o) => (_transformSortClause = Module._transformSortClause = wasmExports.transformSortClause)(e, t, r, a, o), _transformDistinctClause = Module._transformDistinctClause = (e, t, r, a) => (_transformDistinctClause = Module._transformDistinctClause = wasmExports.transformDistinctClause)(e, t, r, a), _makeTargetEntry = Module._makeTargetEntry = (e, t, r, a) => (_makeTargetEntry = Module._makeTargetEntry = wasmExports.makeTargetEntry)(e, t, r, a), _select_common_type = Module._select_common_type = (e, t, r, a) => (_select_common_type = Module._select_common_type = wasmExports.select_common_type)(e, t, r, a), _coerce_to_common_type = Module._coerce_to_common_type = (e, t, r, a) => (_coerce_to_common_type = Module._coerce_to_common_type = wasmExports.coerce_to_common_type)(e, t, r, a), _select_common_collation = Module._select_common_collation = (e, t, r) => (_select_common_collation = Module._select_common_collation = wasmExports.select_common_collation)(e, t, r), _contain_vars_of_level = Module._contain_vars_of_level = (e, t) => (_contain_vars_of_level = Module._contain_vars_of_level = wasmExports.contain_vars_of_level)(e, t), _expandNSItemAttrs = Module._expandNSItemAttrs = (e, t, r, a, o) => (_expandNSItemAttrs = Module._expandNSItemAttrs = wasmExports.expandNSItemAttrs)(e, t, r, a, o), _makeAlias = Module._makeAlias = (e, t) => (_makeAlias = Module._makeAlias = wasmExports.makeAlias)(e, t), _addRangeTableEntryForSubquery = Module._addRangeTableEntryForSubquery = (e, t, r, a, o) => (_addRangeTableEntryForSubquery = Module._addRangeTableEntryForSubquery = wasmExports.addRangeTableEntryForSubquery)(e, t, r, a, o), _assign_list_collations = Module._assign_list_collations = (e, t) => (_assign_list_collations = Module._assign_list_collations = wasmExports.assign_list_collations)(e, t), _expandNSItemVars = Module._expandNSItemVars = (e, t, r, a, o) => (_expandNSItemVars = Module._expandNSItemVars = wasmExports.expandNSItemVars)(e, t, r, a, o), _markTargetListOrigins = Module._markTargetListOrigins = (e, t) => (_markTargetListOrigins = Module._markTargetListOrigins = wasmExports.markTargetListOrigins)(e, t), _addRangeTableEntryForJoin = Module._addRangeTableEntryForJoin = (e, t, r, a, o, _, s, n, l, d, u) => (_addRangeTableEntryForJoin = Module._addRangeTableEntryForJoin = wasmExports.addRangeTableEntryForJoin)(e, t, r, a, o, _, s, n, l, d, u), _list_truncate = Module._list_truncate = (e, t) => (_list_truncate = Module._list_truncate = wasmExports.list_truncate)(e, t), _makeVar = Module._makeVar = (e, t, r, a, o, _) => (_makeVar = Module._makeVar = wasmExports.makeVar)(e, t, r, a, o, _), _makeNullConst = Module._makeNullConst = (e, t, r) => (_makeNullConst = Module._makeNullConst = wasmExports.makeNullConst)(e, t, r), _get_sort_group_operators = Module._get_sort_group_operators = (e, t, r, a, o, _, s, n) => (_get_sort_group_operators = Module._get_sort_group_operators = wasmExports.get_sort_group_operators)(e, t, r, a, o, _, s, n), _refnameNamespaceItem = Module._refnameNamespaceItem = (e, t, r, a, o) => (_refnameNamespaceItem = Module._refnameNamespaceItem = wasmExports.refnameNamespaceItem)(e, t, r, a, o), _setup_parser_errposition_callback = Module._setup_parser_errposition_callback = (e, t, r) => (_setup_parser_errposition_callback = Module._setup_parser_errposition_callback = wasmExports.setup_parser_errposition_callback)(e, t, r), _cancel_parser_errposition_callback = Module._cancel_parser_errposition_callback = (e) => (_cancel_parser_errposition_callback = Module._cancel_parser_errposition_callback = wasmExports.cancel_parser_errposition_callback)(e), _locate_var_of_level = Module._locate_var_of_level = (e, t) => (_locate_var_of_level = Module._locate_var_of_level = wasmExports.locate_var_of_level)(e, t), _makeBoolean = Module._makeBoolean = (e) => (_makeBoolean = Module._makeBoolean = wasmExports.makeBoolean)(e), _makeInteger = Module._makeInteger = (e) => (_makeInteger = Module._makeInteger = wasmExports.makeInteger)(e), _makeSimpleA_Expr = Module._makeSimpleA_Expr = (e, t, r, a, o) => (_makeSimpleA_Expr = Module._makeSimpleA_Expr = wasmExports.makeSimpleA_Expr)(e, t, r, a, o), _makeTypeName = Module._makeTypeName = (e) => (_makeTypeName = Module._makeTypeName = wasmExports.makeTypeName)(e), _SystemTypeName = Module._SystemTypeName = (e) => (_SystemTypeName = Module._SystemTypeName = wasmExports.SystemTypeName)(e), _makeFuncCall = Module._makeFuncCall = (e, t, r, a) => (_makeFuncCall = Module._makeFuncCall = wasmExports.makeFuncCall)(e, t, r, a), _makeA_Expr = Module._makeA_Expr = (e, t, r, a, o) => (_makeA_Expr = Module._makeA_Expr = wasmExports.makeA_Expr)(e, t, r, a, o), _list_make4_impl = Module._list_make4_impl = (e, t, r, a, o) => (_list_make4_impl = Module._list_make4_impl = wasmExports.list_make4_impl)(e, t, r, a, o), _addTargetToSortList = Module._addTargetToSortList = (e, t, r, a, o) => (_addTargetToSortList = Module._addTargetToSortList = wasmExports.addTargetToSortList)(e, t, r, a, o), _locate_agg_of_level = Module._locate_agg_of_level = (e, t) => (_locate_agg_of_level = Module._locate_agg_of_level = wasmExports.locate_agg_of_level)(e, t), _list_intersection_int = Module._list_intersection_int = (e, t) => (_list_intersection_int = Module._list_intersection_int = wasmExports.list_intersection_int)(e, t), _get_sortgroupclause_tle = Module._get_sortgroupclause_tle = (e, t) => (_get_sortgroupclause_tle = Module._get_sortgroupclause_tle = wasmExports.get_sortgroupclause_tle)(e, t), _flatten_join_alias_vars = Module._flatten_join_alias_vars = (e, t, r) => (_flatten_join_alias_vars = Module._flatten_join_alias_vars = wasmExports.flatten_join_alias_vars)(e, t, r), _list_member_int = Module._list_member_int = (e, t) => (_list_member_int = Module._list_member_int = wasmExports.list_member_int)(e, t), _list_union_int = Module._list_union_int = (e, t) => (_list_union_int = Module._list_union_int = wasmExports.list_union_int)(e, t), _makeFuncExpr = Module._makeFuncExpr = (e, t, r, a, o, _) => (_makeFuncExpr = Module._makeFuncExpr = wasmExports.makeFuncExpr)(e, t, r, a, o, _), _get_rte_attribute_name = Module._get_rte_attribute_name = (e, t) => (_get_rte_attribute_name = Module._get_rte_attribute_name = wasmExports.get_rte_attribute_name)(e, t), _expression_tree_mutator_impl = Module._expression_tree_mutator_impl = (e, t, r) => (_expression_tree_mutator_impl = Module._expression_tree_mutator_impl = wasmExports.expression_tree_mutator_impl)(e, t, r), _checkNameSpaceConflicts = Module._checkNameSpaceConflicts = (e, t, r) => (_checkNameSpaceConflicts = Module._checkNameSpaceConflicts = wasmExports.checkNameSpaceConflicts)(e, t, r), _addRangeTableEntryForENR = Module._addRangeTableEntryForENR = (e, t, r) => (_addRangeTableEntryForENR = Module._addRangeTableEntryForENR = wasmExports.addRangeTableEntryForENR)(e, t, r), _addRangeTableEntry = Module._addRangeTableEntry = (e, t, r, a, o) => (_addRangeTableEntry = Module._addRangeTableEntry = wasmExports.addRangeTableEntry)(e, t, r, a, o), _FigureColname = Module._FigureColname = (e) => (_FigureColname = Module._FigureColname = wasmExports.FigureColname)(e), _coerce_to_specific_type = Module._coerce_to_specific_type = (e, t, r, a) => (_coerce_to_specific_type = Module._coerce_to_specific_type = wasmExports.coerce_to_specific_type)(e, t, r, a), _typenameTypeIdAndMod = Module._typenameTypeIdAndMod = (e, t, r, a) => (_typenameTypeIdAndMod = Module._typenameTypeIdAndMod = wasmExports.typenameTypeIdAndMod)(e, t, r, a), _get_typcollation = Module._get_typcollation = (e) => (_get_typcollation = Module._get_typcollation = wasmExports.get_typcollation)(e), _markNullableIfNeeded = Module._markNullableIfNeeded = (e, t) => (_markNullableIfNeeded = Module._markNullableIfNeeded = wasmExports.markNullableIfNeeded)(e, t), _markVarForSelectPriv = Module._markVarForSelectPriv = (e, t) => (_markVarForSelectPriv = Module._markVarForSelectPriv = wasmExports.markVarForSelectPriv)(e, t), _coerce_type = Module._coerce_type = (e, t, r, a, o, _, s, n) => (_coerce_type = Module._coerce_type = wasmExports.coerce_type)(e, t, r, a, o, _, s, n), _LookupFuncName = Module._LookupFuncName = (e, t, r, a) => (_LookupFuncName = Module._LookupFuncName = wasmExports.LookupFuncName)(e, t, r, a), _addRangeTableEntryForFunction = Module._addRangeTableEntryForFunction = (e, t, r, a, o, _, s) => (_addRangeTableEntryForFunction = Module._addRangeTableEntryForFunction = wasmExports.addRangeTableEntryForFunction)(e, t, r, a, o, _, s), _parserOpenTable = Module._parserOpenTable = (e, t, r) => (_parserOpenTable = Module._parserOpenTable = wasmExports.parserOpenTable)(e, t, r), _strip_implicit_coercions = Module._strip_implicit_coercions = (e) => (_strip_implicit_coercions = Module._strip_implicit_coercions = wasmExports.strip_implicit_coercions)(e), _colNameToVar = Module._colNameToVar = (e, t, r, a) => (_colNameToVar = Module._colNameToVar = wasmExports.colNameToVar)(e, t, r, a), _op_hashjoinable = Module._op_hashjoinable = (e, t) => (_op_hashjoinable = Module._op_hashjoinable = wasmExports.op_hashjoinable)(e, t), _get_commutator = Module._get_commutator = (e) => (_get_commutator = Module._get_commutator = wasmExports.get_commutator)(e), _can_coerce_type = Module._can_coerce_type = (e, t, r, a) => (_can_coerce_type = Module._can_coerce_type = wasmExports.can_coerce_type)(e, t, r, a), _get_sortgroupref_tle = Module._get_sortgroupref_tle = (e, t) => (_get_sortgroupref_tle = Module._get_sortgroupref_tle = wasmExports.get_sortgroupref_tle)(e, t), _assignSortGroupRef = Module._assignSortGroupRef = (e, t) => (_assignSortGroupRef = Module._assignSortGroupRef = wasmExports.assignSortGroupRef)(e, t), _targetIsInSortList = Module._targetIsInSortList = (e, t, r) => (_targetIsInSortList = Module._targetIsInSortList = wasmExports.targetIsInSortList)(e, t, r), _contain_aggs_of_level = Module._contain_aggs_of_level = (e, t) => (_contain_aggs_of_level = Module._contain_aggs_of_level = wasmExports.contain_aggs_of_level)(e, t), _find_coercion_pathway = Module._find_coercion_pathway = (e, t, r, a) => (_find_coercion_pathway = Module._find_coercion_pathway = wasmExports.find_coercion_pathway)(e, t, r, a), _typeidType = Module._typeidType = (e) => (_typeidType = Module._typeidType = wasmExports.typeidType)(e), _typeTypeCollation = Module._typeTypeCollation = (e) => (_typeTypeCollation = Module._typeTypeCollation = wasmExports.typeTypeCollation)(e), _typeLen = Module._typeLen = (e) => (_typeLen = Module._typeLen = wasmExports.typeLen)(e), _typeByVal = Module._typeByVal = (e) => (_typeByVal = Module._typeByVal = wasmExports.typeByVal)(e), _makeConst = Module._makeConst = (e, t, r, a, o, _, s) => (_makeConst = Module._makeConst = wasmExports.makeConst)(e, t, r, a, o, _, s), _lookup_rowtype_tupdesc = Module._lookup_rowtype_tupdesc = (e, t) => (_lookup_rowtype_tupdesc = Module._lookup_rowtype_tupdesc = wasmExports.lookup_rowtype_tupdesc)(e, t), _verify_common_type = Module._verify_common_type = (e, t) => (_verify_common_type = Module._verify_common_type = wasmExports.verify_common_type)(e, t), _bms_del_member = Module._bms_del_member = (e, t) => (_bms_del_member = Module._bms_del_member = wasmExports.bms_del_member)(e, t), _list_member = Module._list_member = (e, t) => (_list_member = Module._list_member = wasmExports.list_member)(e, t), _raw_expression_tree_walker_impl = Module._raw_expression_tree_walker_impl = (e, t, r) => (_raw_expression_tree_walker_impl = Module._raw_expression_tree_walker_impl = wasmExports.raw_expression_tree_walker_impl)(e, t, r), _type_is_rowtype = Module._type_is_rowtype = (e) => (_type_is_rowtype = Module._type_is_rowtype = wasmExports.type_is_rowtype)(e), _scanNSItemForColumn = Module._scanNSItemForColumn = (e, t, r, a, o) => (_scanNSItemForColumn = Module._scanNSItemForColumn = wasmExports.scanNSItemForColumn)(e, t, r, a, o), _make_op = Module._make_op = (e, t, r, a, o, _) => (_make_op = Module._make_op = wasmExports.make_op)(e, t, r, a, o, _), _make_scalar_array_op = Module._make_scalar_array_op = (e, t, r, a, o, _) => (_make_scalar_array_op = Module._make_scalar_array_op = wasmExports.make_scalar_array_op)(e, t, r, a, o, _), _count_nonjunk_tlist_entries = Module._count_nonjunk_tlist_entries = (e) => (_count_nonjunk_tlist_entries = Module._count_nonjunk_tlist_entries = wasmExports.count_nonjunk_tlist_entries)(e), _makeWholeRowVar = Module._makeWholeRowVar = (e, t, r, a) => (_makeWholeRowVar = Module._makeWholeRowVar = wasmExports.makeWholeRowVar)(e, t, r, a), _expandRTE = Module._expandRTE = (e, t, r, a, o, _, s, n) => (_expandRTE = Module._expandRTE = wasmExports.expandRTE)(e, t, r, a, o, _, s, n), _bms_int_members = Module._bms_int_members = (e, t) => (_bms_int_members = Module._bms_int_members = wasmExports.bms_int_members)(e, t), _contain_var_clause = Module._contain_var_clause = (e) => (_contain_var_clause = Module._contain_var_clause = wasmExports.contain_var_clause)(e), _jsonb_in = Module._jsonb_in = (e) => (_jsonb_in = Module._jsonb_in = wasmExports.jsonb_in)(e), _escape_json = Module._escape_json = (e, t) => (_escape_json = Module._escape_json = wasmExports.escape_json)(e, t), _geterrcode = Module._geterrcode = () => (_geterrcode = Module._geterrcode = wasmExports.geterrcode)(), _bit_in = Module._bit_in = (e) => (_bit_in = Module._bit_in = wasmExports.bit_in)(e), _repalloc0 = Module._repalloc0 = (e, t, r) => (_repalloc0 = Module._repalloc0 = wasmExports.repalloc0)(e, t, r), _bms_union = Module._bms_union = (e, t) => (_bms_union = Module._bms_union = wasmExports.bms_union)(e, t), _varstr_levenshtein_less_equal = Module._varstr_levenshtein_less_equal = (e, t, r, a, o, _, s, n, l) => (_varstr_levenshtein_less_equal = Module._varstr_levenshtein_less_equal = wasmExports.varstr_levenshtein_less_equal)(e, t, r, a, o, _, s, n, l), _raw_parser = Module._raw_parser = (e, t) => (_raw_parser = Module._raw_parser = wasmExports.raw_parser)(e, t), _errsave_start = Module._errsave_start = (e, t) => (_errsave_start = Module._errsave_start = wasmExports.errsave_start)(e, t), _errsave_finish = Module._errsave_finish = (e, t, r, a) => (_errsave_finish = Module._errsave_finish = wasmExports.errsave_finish)(e, t, r, a), _makeColumnDef = Module._makeColumnDef = (e, t, r, a) => (_makeColumnDef = Module._makeColumnDef = wasmExports.makeColumnDef)(e, t, r, a), _GetDefaultOpClass = Module._GetDefaultOpClass = (e, t) => (_GetDefaultOpClass = Module._GetDefaultOpClass = wasmExports.GetDefaultOpClass)(e, t), _ChooseRelationName = Module._ChooseRelationName = (e, t, r, a, o) => (_ChooseRelationName = Module._ChooseRelationName = wasmExports.ChooseRelationName)(e, t, r, a, o), _scanner_init = Module._scanner_init = (e, t, r, a) => (_scanner_init = Module._scanner_init = wasmExports.scanner_init)(e, t, r, a), _scanner_finish = Module._scanner_finish = (e) => (_scanner_finish = Module._scanner_finish = wasmExports.scanner_finish)(e), _core_yylex = Module._core_yylex = (e, t, r) => (_core_yylex = Module._core_yylex = wasmExports.core_yylex)(e, t, r), _isxdigit = Module._isxdigit = (e) => (_isxdigit = Module._isxdigit = wasmExports.isxdigit)(e), _scanner_isspace = Module._scanner_isspace = (e) => (_scanner_isspace = Module._scanner_isspace = wasmExports.scanner_isspace)(e), _truncate_identifier = Module._truncate_identifier = (e, t, r) => (_truncate_identifier = Module._truncate_identifier = wasmExports.truncate_identifier)(e, t, r), _ScanKeywordLookup = Module._ScanKeywordLookup = (e, t) => (_ScanKeywordLookup = Module._ScanKeywordLookup = wasmExports.ScanKeywordLookup)(e, t), _pg_verifymbstr = Module._pg_verifymbstr = (e, t, r) => (_pg_verifymbstr = Module._pg_verifymbstr = wasmExports.pg_verifymbstr)(e, t, r), _downcase_truncate_identifier = Module._downcase_truncate_identifier = (e, t, r) => (_downcase_truncate_identifier = Module._downcase_truncate_identifier = wasmExports.downcase_truncate_identifier)(e, t, r), _pg_database_encoding_max_length = Module._pg_database_encoding_max_length = () => (_pg_database_encoding_max_length = Module._pg_database_encoding_max_length = wasmExports.pg_database_encoding_max_length)(), _getTypeInputInfo = Module._getTypeInputInfo = (e, t, r) => (_getTypeInputInfo = Module._getTypeInputInfo = wasmExports.getTypeInputInfo)(e, t, r), _RenameSchema = Module._RenameSchema = (e, t, r) => (_RenameSchema = Module._RenameSchema = wasmExports.RenameSchema)(e, t, r), _namein = Module._namein = (e) => (_namein = Module._namein = wasmExports.namein)(e), _BlockSampler_Init = Module._BlockSampler_Init = (e, t, r, a) => (_BlockSampler_Init = Module._BlockSampler_Init = wasmExports.BlockSampler_Init)(e, t, r, a), _reservoir_init_selection_state = Module._reservoir_init_selection_state = (e, t) => (_reservoir_init_selection_state = Module._reservoir_init_selection_state = wasmExports.reservoir_init_selection_state)(e, t), _reservoir_get_next_S = Module._reservoir_get_next_S = (e, t, r) => (_reservoir_get_next_S = Module._reservoir_get_next_S = wasmExports.reservoir_get_next_S)(e, t, r), _sampler_random_fract = Module._sampler_random_fract = (e) => (_sampler_random_fract = Module._sampler_random_fract = wasmExports.sampler_random_fract)(e), _std_typanalyze = Module._std_typanalyze = (e) => (_std_typanalyze = Module._std_typanalyze = wasmExports.std_typanalyze)(e), _BlockSampler_HasMore = Module._BlockSampler_HasMore = (e) => (_BlockSampler_HasMore = Module._BlockSampler_HasMore = wasmExports.BlockSampler_HasMore)(e), _BlockSampler_Next = Module._BlockSampler_Next = (e) => (_BlockSampler_Next = Module._BlockSampler_Next = wasmExports.BlockSampler_Next)(e), _Async_Notify = Module._Async_Notify = (e, t) => (_Async_Notify = Module._Async_Notify = wasmExports.Async_Notify)(e, t), _RangeVarCallbackMaintainsTable = Module._RangeVarCallbackMaintainsTable = (e, t, r, a) => (_RangeVarCallbackMaintainsTable = Module._RangeVarCallbackMaintainsTable = wasmExports.RangeVarCallbackMaintainsTable)(e, t, r, a), _make_new_heap = Module._make_new_heap = (e, t, r, a, o) => (_make_new_heap = Module._make_new_heap = wasmExports.make_new_heap)(e, t, r, a, o), _finish_heap_swap = Module._finish_heap_swap = (e, t, r, a, o, _, s, n, l) => (_finish_heap_swap = Module._finish_heap_swap = wasmExports.finish_heap_swap)(e, t, r, a, o, _, s, n, l), _OpenPipeStream = Module._OpenPipeStream = (e, t) => (_OpenPipeStream = Module._OpenPipeStream = wasmExports.OpenPipeStream)(e, t), _pg_is_ascii = Module._pg_is_ascii = (e) => (_pg_is_ascii = Module._pg_is_ascii = wasmExports.pg_is_ascii)(e), _ClosePipeStream = Module._ClosePipeStream = (e) => (_ClosePipeStream = Module._ClosePipeStream = wasmExports.ClosePipeStream)(e), _BeginCopyFrom = Module._BeginCopyFrom = (e, t, r, a, o, _, s, n) => (_BeginCopyFrom = Module._BeginCopyFrom = wasmExports.BeginCopyFrom)(e, t, r, a, o, _, s, n), _EndCopyFrom = Module._EndCopyFrom = (e) => (_EndCopyFrom = Module._EndCopyFrom = wasmExports.EndCopyFrom)(e), _ProcessCopyOptions = Module._ProcessCopyOptions = (e, t, r, a) => (_ProcessCopyOptions = Module._ProcessCopyOptions = wasmExports.ProcessCopyOptions)(e, t, r, a), _pg_strtoint64 = Module._pg_strtoint64 = (e) => (_pg_strtoint64 = Module._pg_strtoint64 = wasmExports.pg_strtoint64)(e), _CopyFromErrorCallback = Module._CopyFromErrorCallback = (e) => (_CopyFromErrorCallback = Module._CopyFromErrorCallback = wasmExports.CopyFromErrorCallback)(e), _bms_make_singleton = Module._bms_make_singleton = (e) => (_bms_make_singleton = Module._bms_make_singleton = wasmExports.bms_make_singleton)(e), _ExecInitRangeTable = Module._ExecInitRangeTable = (e, t, r, a) => (_ExecInitRangeTable = Module._ExecInitRangeTable = wasmExports.ExecInitRangeTable)(e, t, r, a), _ExecInitResultRelation = Module._ExecInitResultRelation = (e, t, r) => (_ExecInitResultRelation = Module._ExecInitResultRelation = wasmExports.ExecInitResultRelation)(e, t, r), _ExecInitQual = Module._ExecInitQual = (e, t) => (_ExecInitQual = Module._ExecInitQual = wasmExports.ExecInitQual)(e, t), _NextCopyFrom = Module._NextCopyFrom = (e, t, r, a) => (_NextCopyFrom = Module._NextCopyFrom = wasmExports.NextCopyFrom)(e, t, r, a), _ExecCloseResultRelations = Module._ExecCloseResultRelations = (e) => (_ExecCloseResultRelations = Module._ExecCloseResultRelations = wasmExports.ExecCloseResultRelations)(e), _ExecCloseRangeTableRelations = Module._ExecCloseRangeTableRelations = (e) => (_ExecCloseRangeTableRelations = Module._ExecCloseRangeTableRelations = wasmExports.ExecCloseRangeTableRelations)(e), _ExecConstraints = Module._ExecConstraints = (e, t, r) => (_ExecConstraints = Module._ExecConstraints = wasmExports.ExecConstraints)(e, t, r), _ExecInsertIndexTuples = Module._ExecInsertIndexTuples = (e, t, r, a, o, _, s, n) => (_ExecInsertIndexTuples = Module._ExecInsertIndexTuples = wasmExports.ExecInsertIndexTuples)(e, t, r, a, o, _, s, n), _build_column_default = Module._build_column_default = (e, t) => (_build_column_default = Module._build_column_default = wasmExports.build_column_default)(e, t), _ExecInitExpr = Module._ExecInitExpr = (e, t) => (_ExecInitExpr = Module._ExecInitExpr = wasmExports.ExecInitExpr)(e, t), _fileno = Module._fileno = (e) => (_fileno = Module._fileno = wasmExports.fileno)(e), _NextCopyFromRawFields = Module._NextCopyFromRawFields = (e, t, r) => (_NextCopyFromRawFields = Module._NextCopyFromRawFields = wasmExports.NextCopyFromRawFields)(e, t, r), _resetStringInfo = Module._resetStringInfo = (e) => (_resetStringInfo = Module._resetStringInfo = wasmExports.resetStringInfo)(e), _pq_copymsgbytes = Module._pq_copymsgbytes = (e, t, r) => (_pq_copymsgbytes = Module._pq_copymsgbytes = wasmExports.pq_copymsgbytes)(e, t, r), _pg_encoding_max_length = Module._pg_encoding_max_length = (e) => (_pg_encoding_max_length = Module._pg_encoding_max_length = wasmExports.pg_encoding_max_length)(e), _tolower = Module._tolower = (e) => (_tolower = Module._tolower = wasmExports.tolower)(e), _pg_plan_query = Module._pg_plan_query = (e, t, r, a) => (_pg_plan_query = Module._pg_plan_query = wasmExports.pg_plan_query)(e, t, r, a), _PushCopiedSnapshot = Module._PushCopiedSnapshot = (e) => (_PushCopiedSnapshot = Module._PushCopiedSnapshot = wasmExports.PushCopiedSnapshot)(e), _UpdateActiveSnapshotCommandId = Module._UpdateActiveSnapshotCommandId = () => (_UpdateActiveSnapshotCommandId = Module._UpdateActiveSnapshotCommandId = wasmExports.UpdateActiveSnapshotCommandId)(), _CreateQueryDesc = Module._CreateQueryDesc = (e, t, r, a, o, _, s, n) => (_CreateQueryDesc = Module._CreateQueryDesc = wasmExports.CreateQueryDesc)(e, t, r, a, o, _, s, n), _ExecutorStart = Module._ExecutorStart = (e, t) => (_ExecutorStart = Module._ExecutorStart = wasmExports.ExecutorStart)(e, t), _ExecutorFinish = Module._ExecutorFinish = (e) => (_ExecutorFinish = Module._ExecutorFinish = wasmExports.ExecutorFinish)(e), _ExecutorEnd = Module._ExecutorEnd = (e) => (_ExecutorEnd = Module._ExecutorEnd = wasmExports.ExecutorEnd)(e), _FreeQueryDesc = Module._FreeQueryDesc = (e) => (_FreeQueryDesc = Module._FreeQueryDesc = wasmExports.FreeQueryDesc)(e), _ExecutorRun = Module._ExecutorRun = (e, t, r) => (_ExecutorRun = Module._ExecutorRun = wasmExports.ExecutorRun)(e, t, r), _pg_server_to_any = Module._pg_server_to_any = (e, t, r) => (_pg_server_to_any = Module._pg_server_to_any = wasmExports.pg_server_to_any)(e, t, r), _fwrite = Module._fwrite = (e, t, r, a) => (_fwrite = Module._fwrite = wasmExports.fwrite)(e, t, r, a), _CreateTableAsRelExists = Module._CreateTableAsRelExists = (e) => (_CreateTableAsRelExists = Module._CreateTableAsRelExists = wasmExports.CreateTableAsRelExists)(e), _QueryRewrite = Module._QueryRewrite = (e) => (_QueryRewrite = Module._QueryRewrite = wasmExports.QueryRewrite)(e), _DefineRelation = Module._DefineRelation = (e, t, r, a, o, _) => (_DefineRelation = Module._DefineRelation = wasmExports.DefineRelation)(e, t, r, a, o, _), _rmdir = Module._rmdir = (e) => (_rmdir = Module._rmdir = wasmExports.rmdir)(e), _atof = Module._atof = (e) => (_atof = Module._atof = wasmExports.atof)(e), _int8in = Module._int8in = (e) => (_int8in = Module._int8in = wasmExports.int8in)(e), _oidin = Module._oidin = (e) => (_oidin = Module._oidin = wasmExports.oidin)(e), _RemoveObjects = Module._RemoveObjects = (e) => (_RemoveObjects = Module._RemoveObjects = wasmExports.RemoveObjects)(e), _GetCommandTagName = Module._GetCommandTagName = (e) => (_GetCommandTagName = Module._GetCommandTagName = wasmExports.GetCommandTagName)(e), _NewExplainState = Module._NewExplainState = () => (_NewExplainState = Module._NewExplainState = wasmExports.NewExplainState)(), _ExplainBeginOutput = Module._ExplainBeginOutput = (e) => (_ExplainBeginOutput = Module._ExplainBeginOutput = wasmExports.ExplainBeginOutput)(e), _ExplainEndOutput = Module._ExplainEndOutput = (e) => (_ExplainEndOutput = Module._ExplainEndOutput = wasmExports.ExplainEndOutput)(e), _ExplainOpenGroup = Module._ExplainOpenGroup = (e, t, r, a) => (_ExplainOpenGroup = Module._ExplainOpenGroup = wasmExports.ExplainOpenGroup)(e, t, r, a), _ExplainPrintPlan = Module._ExplainPrintPlan = (e, t) => (_ExplainPrintPlan = Module._ExplainPrintPlan = wasmExports.ExplainPrintPlan)(e, t), _ExplainIndentText = Module._ExplainIndentText = (e) => (_ExplainIndentText = Module._ExplainIndentText = wasmExports.ExplainIndentText)(e), _ExplainPropertyInteger = Module._ExplainPropertyInteger = (e, t, r, a) => (_ExplainPropertyInteger = Module._ExplainPropertyInteger = wasmExports.ExplainPropertyInteger)(e, t, r, a), _ExplainCloseGroup = Module._ExplainCloseGroup = (e, t, r, a) => (_ExplainCloseGroup = Module._ExplainCloseGroup = wasmExports.ExplainCloseGroup)(e, t, r, a), _ExplainPropertyFloat = Module._ExplainPropertyFloat = (e, t, r, a, o) => (_ExplainPropertyFloat = Module._ExplainPropertyFloat = wasmExports.ExplainPropertyFloat)(e, t, r, a, o), _ExplainPrintTriggers = Module._ExplainPrintTriggers = (e, t) => (_ExplainPrintTriggers = Module._ExplainPrintTriggers = wasmExports.ExplainPrintTriggers)(e, t), _ExplainPropertyUInteger = Module._ExplainPropertyUInteger = (e, t, r, a) => (_ExplainPropertyUInteger = Module._ExplainPropertyUInteger = wasmExports.ExplainPropertyUInteger)(e, t, r, a), _ExplainPropertyText = Module._ExplainPropertyText = (e, t, r) => (_ExplainPropertyText = Module._ExplainPropertyText = wasmExports.ExplainPropertyText)(e, t, r), _GetConfigOptionByName = Module._GetConfigOptionByName = (e, t, r) => (_GetConfigOptionByName = Module._GetConfigOptionByName = wasmExports.GetConfigOptionByName)(e, t, r), _ExplainPrintJITSummary = Module._ExplainPrintJITSummary = (e, t) => (_ExplainPrintJITSummary = Module._ExplainPrintJITSummary = wasmExports.ExplainPrintJITSummary)(e, t), _ExplainPropertyBool = Module._ExplainPropertyBool = (e, t, r) => (_ExplainPropertyBool = Module._ExplainPropertyBool = wasmExports.ExplainPropertyBool)(e, t, r), _InstrEndLoop = Module._InstrEndLoop = (e) => (_InstrEndLoop = Module._InstrEndLoop = wasmExports.InstrEndLoop)(e), _appendStringInfoSpaces = Module._appendStringInfoSpaces = (e, t) => (_appendStringInfoSpaces = Module._appendStringInfoSpaces = wasmExports.appendStringInfoSpaces)(e, t), _ExplainQueryText = Module._ExplainQueryText = (e, t) => (_ExplainQueryText = Module._ExplainQueryText = wasmExports.ExplainQueryText)(e, t), _ExplainQueryParameters = Module._ExplainQueryParameters = (e, t, r) => (_ExplainQueryParameters = Module._ExplainQueryParameters = wasmExports.ExplainQueryParameters)(e, t, r), _get_func_namespace = Module._get_func_namespace = (e) => (_get_func_namespace = Module._get_func_namespace = wasmExports.get_func_namespace)(e), _GetExplainExtensionId = Module._GetExplainExtensionId = (e) => (_GetExplainExtensionId = Module._GetExplainExtensionId = wasmExports.GetExplainExtensionId)(e), _GetExplainExtensionState = Module._GetExplainExtensionState = (e, t) => (_GetExplainExtensionState = Module._GetExplainExtensionState = wasmExports.GetExplainExtensionState)(e, t), _SetExplainExtensionState = Module._SetExplainExtensionState = (e, t, r) => (_SetExplainExtensionState = Module._SetExplainExtensionState = wasmExports.SetExplainExtensionState)(e, t, r), _RegisterExtensionExplainOption = Module._RegisterExtensionExplainOption = (e, t) => (_RegisterExtensionExplainOption = Module._RegisterExtensionExplainOption = wasmExports.RegisterExtensionExplainOption)(e, t), _get_function_sibling_type = Module._get_function_sibling_type = (e, t) => (_get_function_sibling_type = Module._get_function_sibling_type = wasmExports.get_function_sibling_type)(e, t), _GetSysCacheHashValue = Module._GetSysCacheHashValue = (e, t, r, a, o) => (_GetSysCacheHashValue = Module._GetSysCacheHashValue = wasmExports.GetSysCacheHashValue)(e, t, r, a, o), _CreateSchemaCommand = Module._CreateSchemaCommand = (e, t, r, a) => (_CreateSchemaCommand = Module._CreateSchemaCommand = wasmExports.CreateSchemaCommand)(e, t, r, a), _get_rel_type_id = Module._get_rel_type_id = (e) => (_get_rel_type_id = Module._get_rel_type_id = wasmExports.get_rel_type_id)(e), _set_config_option = Module._set_config_option = (e, t, r, a, o, _, s, n) => (_set_config_option = Module._set_config_option = wasmExports.set_config_option)(e, t, r, a, o, _, s, n), _pg_any_to_server = Module._pg_any_to_server = (e, t, r) => (_pg_any_to_server = Module._pg_any_to_server = wasmExports.pg_any_to_server)(e, t, r), _DirectFunctionCall4Coll = Module._DirectFunctionCall4Coll = (e, t, r, a, o, _) => (_DirectFunctionCall4Coll = Module._DirectFunctionCall4Coll = wasmExports.DirectFunctionCall4Coll)(e, t, r, a, o, _), _replace_text = Module._replace_text = (e) => (_replace_text = Module._replace_text = wasmExports.replace_text)(e), _ProcessUtility = Module._ProcessUtility = (e, t, r, a, o, _, s, n) => (_ProcessUtility = Module._ProcessUtility = wasmExports.ProcessUtility)(e, t, r, a, o, _, s, n), _CleanQuerytext = Module._CleanQuerytext = (e, t, r) => (_CleanQuerytext = Module._CleanQuerytext = wasmExports.CleanQuerytext)(e, t, r), _list_delete_cell = Module._list_delete_cell = (e, t) => (_list_delete_cell = Module._list_delete_cell = wasmExports.list_delete_cell)(e, t), _GetForeignDataWrapper = Module._GetForeignDataWrapper = (e) => (_GetForeignDataWrapper = Module._GetForeignDataWrapper = wasmExports.GetForeignDataWrapper)(e), _CreateExprContext = Module._CreateExprContext = (e) => (_CreateExprContext = Module._CreateExprContext = wasmExports.CreateExprContext)(e), _EnsurePortalSnapshotExists = Module._EnsurePortalSnapshotExists = () => (_EnsurePortalSnapshotExists = Module._EnsurePortalSnapshotExists = wasmExports.EnsurePortalSnapshotExists)(), _CheckIndexCompatible = Module._CheckIndexCompatible = (e, t, r, a, o) => (_CheckIndexCompatible = Module._CheckIndexCompatible = wasmExports.CheckIndexCompatible)(e, t, r, a, o), _get_opfamily_member_for_cmptype = Module._get_opfamily_member_for_cmptype = (e, t, r, a) => (_get_opfamily_member_for_cmptype = Module._get_opfamily_member_for_cmptype = wasmExports.get_opfamily_member_for_cmptype)(e, t, r, a), _pgstat_count_truncate = Module._pgstat_count_truncate = (e) => (_pgstat_count_truncate = Module._pgstat_count_truncate = wasmExports.pgstat_count_truncate)(e), _SPI_connect = Module._SPI_connect = () => (_SPI_connect = Module._SPI_connect = wasmExports.SPI_connect)(), _SPI_exec = Module._SPI_exec = (e, t) => (_SPI_exec = Module._SPI_exec = wasmExports.SPI_exec)(e, t), _SPI_execute = Module._SPI_execute = (e, t, r) => (_SPI_execute = Module._SPI_execute = wasmExports.SPI_execute)(e, t, r), _SPI_getvalue = Module._SPI_getvalue = (e, t, r) => (_SPI_getvalue = Module._SPI_getvalue = wasmExports.SPI_getvalue)(e, t, r), _generate_operator_clause = Module._generate_operator_clause = (e, t, r, a, o, _) => (_generate_operator_clause = Module._generate_operator_clause = wasmExports.generate_operator_clause)(e, t, r, a, o, _), _SPI_finish = Module._SPI_finish = () => (_SPI_finish = Module._SPI_finish = wasmExports.SPI_finish)(), _CreateTransientRelDestReceiver = Module._CreateTransientRelDestReceiver = (e) => (_CreateTransientRelDestReceiver = Module._CreateTransientRelDestReceiver = wasmExports.CreateTransientRelDestReceiver)(e), _MemoryContextSetIdentifier = Module._MemoryContextSetIdentifier = (e, t) => (_MemoryContextSetIdentifier = Module._MemoryContextSetIdentifier = wasmExports.MemoryContextSetIdentifier)(e, t), _checkExprHasSubLink = Module._checkExprHasSubLink = (e) => (_checkExprHasSubLink = Module._checkExprHasSubLink = wasmExports.checkExprHasSubLink)(e), _MemoryContextSetParent = Module._MemoryContextSetParent = (e, t) => (_MemoryContextSetParent = Module._MemoryContextSetParent = wasmExports.MemoryContextSetParent)(e, t), _SetTuplestoreDestReceiverParams = Module._SetTuplestoreDestReceiverParams = (e, t, r, a, o, _) => (_SetTuplestoreDestReceiverParams = Module._SetTuplestoreDestReceiverParams = wasmExports.SetTuplestoreDestReceiverParams)(e, t, r, a, o, _), _tuplestore_rescan = Module._tuplestore_rescan = (e) => (_tuplestore_rescan = Module._tuplestore_rescan = wasmExports.tuplestore_rescan)(e), _MemoryContextDeleteChildren = Module._MemoryContextDeleteChildren = (e) => (_MemoryContextDeleteChildren = Module._MemoryContextDeleteChildren = wasmExports.MemoryContextDeleteChildren)(e), _makeParamList = Module._makeParamList = (e) => (_makeParamList = Module._makeParamList = wasmExports.makeParamList)(e), _ReleaseCachedPlan = Module._ReleaseCachedPlan = (e, t) => (_ReleaseCachedPlan = Module._ReleaseCachedPlan = wasmExports.ReleaseCachedPlan)(e, t), _bms_equal = Module._bms_equal = (e, t) => (_bms_equal = Module._bms_equal = wasmExports.bms_equal)(e, t), _func_volatile = Module._func_volatile = (e) => (_func_volatile = Module._func_volatile = wasmExports.func_volatile)(e), _register_label_provider = Module._register_label_provider = (e, t) => (_register_label_provider = Module._register_label_provider = wasmExports.register_label_provider)(e, t), _DefineSequence = Module._DefineSequence = (e, t, r) => (_DefineSequence = Module._DefineSequence = wasmExports.DefineSequence)(e, t, r), _AlterSequence = Module._AlterSequence = (e, t, r) => (_AlterSequence = Module._AlterSequence = wasmExports.AlterSequence)(e, t, r), _nextval = Module._nextval = (e) => (_nextval = Module._nextval = wasmExports.nextval)(e), _textToQualifiedNameList = Module._textToQualifiedNameList = (e) => (_textToQualifiedNameList = Module._textToQualifiedNameList = wasmExports.textToQualifiedNameList)(e), _nextval_internal = Module._nextval_internal = (e, t) => (_nextval_internal = Module._nextval_internal = wasmExports.nextval_internal)(e, t), _setval_oid = Module._setval_oid = (e) => (_setval_oid = Module._setval_oid = wasmExports.setval_oid)(e), _tuplestore_gettupleslot = Module._tuplestore_gettupleslot = (e, t, r, a) => (_tuplestore_gettupleslot = Module._tuplestore_gettupleslot = wasmExports.tuplestore_gettupleslot)(e, t, r, a), _list_delete = Module._list_delete = (e, t) => (_list_delete = Module._list_delete = wasmExports.list_delete)(e, t), _tuplestore_end = Module._tuplestore_end = (e) => (_tuplestore_end = Module._tuplestore_end = wasmExports.tuplestore_end)(e), _list_append_unique = Module._list_append_unique = (e, t) => (_list_append_unique = Module._list_append_unique = wasmExports.list_append_unique)(e, t), _contain_mutable_functions = Module._contain_mutable_functions = (e) => (_contain_mutable_functions = Module._contain_mutable_functions = wasmExports.contain_mutable_functions)(e), _RemoveRelations = Module._RemoveRelations = (e) => (_RemoveRelations = Module._RemoveRelations = wasmExports.RemoveRelations)(e), _ExecuteTruncateGuts = Module._ExecuteTruncateGuts = (e, t, r, a, o, _) => (_ExecuteTruncateGuts = Module._ExecuteTruncateGuts = wasmExports.ExecuteTruncateGuts)(e, t, r, a, o, _), _InitResultRelInfo = Module._InitResultRelInfo = (e, t, r, a, o) => (_InitResultRelInfo = Module._InitResultRelInfo = wasmExports.InitResultRelInfo)(e, t, r, a, o), _AlterTable = Module._AlterTable = (e, t, r) => (_AlterTable = Module._AlterTable = wasmExports.AlterTable)(e, t, r), _ExecStoreAllNullTuple = Module._ExecStoreAllNullTuple = (e) => (_ExecStoreAllNullTuple = Module._ExecStoreAllNullTuple = wasmExports.ExecStoreAllNullTuple)(e), _ChangeVarNodes = Module._ChangeVarNodes = (e, t, r, a) => (_ChangeVarNodes = Module._ChangeVarNodes = wasmExports.ChangeVarNodes)(e, t, r, a), _tuplestore_begin_heap = Module._tuplestore_begin_heap = (e, t, r) => (_tuplestore_begin_heap = Module._tuplestore_begin_heap = wasmExports.tuplestore_begin_heap)(e, t, r), _tuplestore_puttupleslot = Module._tuplestore_puttupleslot = (e, t) => (_tuplestore_puttupleslot = Module._tuplestore_puttupleslot = wasmExports.tuplestore_puttupleslot)(e, t), _ExecForceStoreHeapTuple = Module._ExecForceStoreHeapTuple = (e, t, r) => (_ExecForceStoreHeapTuple = Module._ExecForceStoreHeapTuple = wasmExports.ExecForceStoreHeapTuple)(e, t, r), _ExecUpdateLockMode = Module._ExecUpdateLockMode = (e, t) => (_ExecUpdateLockMode = Module._ExecUpdateLockMode = wasmExports.ExecUpdateLockMode)(e, t), _bms_copy = Module._bms_copy = (e) => (_bms_copy = Module._bms_copy = wasmExports.bms_copy)(e), _strtoint = Module._strtoint = (e, t, r) => (_strtoint = Module._strtoint = wasmExports.strtoint)(e, t, r), _strtod = Module._strtod = (e, t) => (_strtod = Module._strtod = wasmExports.strtod)(e, t), _plain_crypt_verify = Module._plain_crypt_verify = (e, t, r, a) => (_plain_crypt_verify = Module._plain_crypt_verify = wasmExports.plain_crypt_verify)(e, t, r, a), _ProcessConfigFile = Module._ProcessConfigFile = (e) => (_ProcessConfigFile = Module._ProcessConfigFile = wasmExports.ProcessConfigFile)(e), _pgl_exit = Module._pgl_exit = (e) => (_pgl_exit = Module._pgl_exit = wasmExports.pgl_exit)(e), _dsa_get_handle = Module._dsa_get_handle = (e) => (_dsa_get_handle = Module._dsa_get_handle = wasmExports.dsa_get_handle)(e), _pg_strncasecmp = Module._pg_strncasecmp = (e, t, r) => (_pg_strncasecmp = Module._pg_strncasecmp = wasmExports.pg_strncasecmp)(e, t, r), _ExecReScan = Module._ExecReScan = (e) => (_ExecReScan = Module._ExecReScan = wasmExports.ExecReScan)(e), _ExecAsyncResponse = Module._ExecAsyncResponse = (e) => (_ExecAsyncResponse = Module._ExecAsyncResponse = wasmExports.ExecAsyncResponse)(e), _ExecAsyncRequestDone = Module._ExecAsyncRequestDone = (e, t) => (_ExecAsyncRequestDone = Module._ExecAsyncRequestDone = wasmExports.ExecAsyncRequestDone)(e, t), _ExecAsyncRequestPending = Module._ExecAsyncRequestPending = (e) => (_ExecAsyncRequestPending = Module._ExecAsyncRequestPending = wasmExports.ExecAsyncRequestPending)(e), _ExprEvalPushStep = Module._ExprEvalPushStep = (e, t) => (_ExprEvalPushStep = Module._ExprEvalPushStep = wasmExports.ExprEvalPushStep)(e, t), _ExecInitExprWithParams = Module._ExecInitExprWithParams = (e, t) => (_ExecInitExprWithParams = Module._ExecInitExprWithParams = wasmExports.ExecInitExprWithParams)(e, t), _ExecInitExprList = Module._ExecInitExprList = (e, t) => (_ExecInitExprList = Module._ExecInitExprList = wasmExports.ExecInitExprList)(e, t), _ExecGetResultType = Module._ExecGetResultType = (e) => (_ExecGetResultType = Module._ExecGetResultType = wasmExports.ExecGetResultType)(e), _ExecInitExtraTupleSlot = Module._ExecInitExtraTupleSlot = (e, t, r) => (_ExecInitExtraTupleSlot = Module._ExecInitExtraTupleSlot = wasmExports.ExecInitExtraTupleSlot)(e, t, r), _MakeExpandedObjectReadOnlyInternal = Module._MakeExpandedObjectReadOnlyInternal = (e) => (_MakeExpandedObjectReadOnlyInternal = Module._MakeExpandedObjectReadOnlyInternal = wasmExports.MakeExpandedObjectReadOnlyInternal)(e), _tuplesort_puttupleslot = Module._tuplesort_puttupleslot = (e, t) => (_tuplesort_puttupleslot = Module._tuplesort_puttupleslot = wasmExports.tuplesort_puttupleslot)(e, t), _ArrayGetNItems = Module._ArrayGetNItems = (e, t) => (_ArrayGetNItems = Module._ArrayGetNItems = wasmExports.ArrayGetNItems)(e, t), _expanded_record_fetch_tupdesc = Module._expanded_record_fetch_tupdesc = (e) => (_expanded_record_fetch_tupdesc = Module._expanded_record_fetch_tupdesc = wasmExports.expanded_record_fetch_tupdesc)(e), _expanded_record_fetch_field = Module._expanded_record_fetch_field = (e, t, r) => (_expanded_record_fetch_field = Module._expanded_record_fetch_field = wasmExports.expanded_record_fetch_field)(e, t, r), _json_validate = Module._json_validate = (e, t, r) => (_json_validate = Module._json_validate = wasmExports.json_validate)(e, t, r), _JsonbValueToJsonb = Module._JsonbValueToJsonb = (e) => (_JsonbValueToJsonb = Module._JsonbValueToJsonb = wasmExports.JsonbValueToJsonb)(e), _numeric_out = Module._numeric_out = (e) => (_numeric_out = Module._numeric_out = wasmExports.numeric_out)(e), _boolout = Module._boolout = (e) => (_boolout = Module._boolout = wasmExports.boolout)(e), _bool_int4 = Module._bool_int4 = (e) => (_bool_int4 = Module._bool_int4 = wasmExports.bool_int4)(e), _lookup_rowtype_tupdesc_domain = Module._lookup_rowtype_tupdesc_domain = (e, t, r) => (_lookup_rowtype_tupdesc_domain = Module._lookup_rowtype_tupdesc_domain = wasmExports.lookup_rowtype_tupdesc_domain)(e, t, r), _MemoryContextGetParent = Module._MemoryContextGetParent = (e) => (_MemoryContextGetParent = Module._MemoryContextGetParent = wasmExports.MemoryContextGetParent)(e), _DeleteExpandedObject = Module._DeleteExpandedObject = (e) => (_DeleteExpandedObject = Module._DeleteExpandedObject = wasmExports.DeleteExpandedObject)(e), _ExecFindJunkAttributeInTlist = Module._ExecFindJunkAttributeInTlist = (e, t) => (_ExecFindJunkAttributeInTlist = Module._ExecFindJunkAttributeInTlist = wasmExports.ExecFindJunkAttributeInTlist)(e, t), _standard_ExecutorStart = Module._standard_ExecutorStart = (e, t) => (_standard_ExecutorStart = Module._standard_ExecutorStart = wasmExports.standard_ExecutorStart)(e, t), _ExecInitNode = Module._ExecInitNode = (e, t, r) => (_ExecInitNode = Module._ExecInitNode = wasmExports.ExecInitNode)(e, t, r), _standard_ExecutorRun = Module._standard_ExecutorRun = (e, t, r) => (_standard_ExecutorRun = Module._standard_ExecutorRun = wasmExports.standard_ExecutorRun)(e, t, r), _standard_ExecutorFinish = Module._standard_ExecutorFinish = (e) => (_standard_ExecutorFinish = Module._standard_ExecutorFinish = wasmExports.standard_ExecutorFinish)(e), _standard_ExecutorEnd = Module._standard_ExecutorEnd = (e) => (_standard_ExecutorEnd = Module._standard_ExecutorEnd = wasmExports.standard_ExecutorEnd)(e), _ExecEndNode = Module._ExecEndNode = (e) => (_ExecEndNode = Module._ExecEndNode = wasmExports.ExecEndNode)(e), _InstrAlloc = Module._InstrAlloc = (e, t, r) => (_InstrAlloc = Module._InstrAlloc = wasmExports.InstrAlloc)(e, t, r), _MakeTupleTableSlot = Module._MakeTupleTableSlot = (e, t) => (_MakeTupleTableSlot = Module._MakeTupleTableSlot = wasmExports.MakeTupleTableSlot)(e, t), _ExecWithCheckOptions = Module._ExecWithCheckOptions = (e, t, r, a) => (_ExecWithCheckOptions = Module._ExecWithCheckOptions = wasmExports.ExecWithCheckOptions)(e, t, r, a), _get_typlenbyval = Module._get_typlenbyval = (e, t, r) => (_get_typlenbyval = Module._get_typlenbyval = wasmExports.get_typlenbyval)(e, t, r), _ExecInitScanTupleSlot = Module._ExecInitScanTupleSlot = (e, t, r, a) => (_ExecInitScanTupleSlot = Module._ExecInitScanTupleSlot = wasmExports.ExecInitScanTupleSlot)(e, t, r, a), _InputFunctionCall = Module._InputFunctionCall = (e, t, r, a) => (_InputFunctionCall = Module._InputFunctionCall = wasmExports.InputFunctionCall)(e, t, r, a), _list_delete_ptr = Module._list_delete_ptr = (e, t) => (_list_delete_ptr = Module._list_delete_ptr = wasmExports.list_delete_ptr)(e, t), _FreeExprContext = Module._FreeExprContext = (e, t) => (_FreeExprContext = Module._FreeExprContext = wasmExports.FreeExprContext)(e, t), _ExecAssignExprContext = Module._ExecAssignExprContext = (e, t) => (_ExecAssignExprContext = Module._ExecAssignExprContext = wasmExports.ExecAssignExprContext)(e, t), _ExecAssignProjectionInfo = Module._ExecAssignProjectionInfo = (e, t) => (_ExecAssignProjectionInfo = Module._ExecAssignProjectionInfo = wasmExports.ExecAssignProjectionInfo)(e, t), _ExecOpenScanRelation = Module._ExecOpenScanRelation = (e, t, r) => (_ExecOpenScanRelation = Module._ExecOpenScanRelation = wasmExports.ExecOpenScanRelation)(e, t, r), _bms_intersect = Module._bms_intersect = (e, t) => (_bms_intersect = Module._bms_intersect = wasmExports.bms_intersect)(e, t), _GetAttributeByName = Module._GetAttributeByName = (e, t, r) => (_GetAttributeByName = Module._GetAttributeByName = wasmExports.GetAttributeByName)(e, t, r), _GetAttributeByNum = Module._GetAttributeByNum = (e, t, r) => (_GetAttributeByNum = Module._GetAttributeByNum = wasmExports.GetAttributeByNum)(e, t, r), _ExecGetReturningSlot = Module._ExecGetReturningSlot = (e, t) => (_ExecGetReturningSlot = Module._ExecGetReturningSlot = wasmExports.ExecGetReturningSlot)(e, t), _ExecGetResultRelCheckAsUser = Module._ExecGetResultRelCheckAsUser = (e, t) => (_ExecGetResultRelCheckAsUser = Module._ExecGetResultRelCheckAsUser = wasmExports.ExecGetResultRelCheckAsUser)(e, t), _MemoryContextRegisterResetCallback = Module._MemoryContextRegisterResetCallback = (e, t) => (_MemoryContextRegisterResetCallback = Module._MemoryContextRegisterResetCallback = wasmExports.MemoryContextRegisterResetCallback)(e, t), _cached_function_compile = Module._cached_function_compile = (e, t, r, a, o, _, s) => (_cached_function_compile = Module._cached_function_compile = wasmExports.cached_function_compile)(e, t, r, a, o, _, s), _InstrUpdateTupleCount = Module._InstrUpdateTupleCount = (e, t) => (_InstrUpdateTupleCount = Module._InstrUpdateTupleCount = wasmExports.InstrUpdateTupleCount)(e, t), _tuplesort_begin_heap = Module._tuplesort_begin_heap = (e, t, r, a, o, _, s, n, l) => (_tuplesort_begin_heap = Module._tuplesort_begin_heap = wasmExports.tuplesort_begin_heap)(e, t, r, a, o, _, s, n, l), _AggCheckCallContext = Module._AggCheckCallContext = (e, t) => (_AggCheckCallContext = Module._AggCheckCallContext = wasmExports.AggCheckCallContext)(e, t), _tuplesort_gettupleslot = Module._tuplesort_gettupleslot = (e, t, r, a, o) => (_tuplesort_gettupleslot = Module._tuplesort_gettupleslot = wasmExports.tuplesort_gettupleslot)(e, t, r, a, o), _bms_del_members = Module._bms_del_members = (e, t) => (_bms_del_members = Module._bms_del_members = wasmExports.bms_del_members)(e, t), _AddWaitEventToSet = Module._AddWaitEventToSet = (e, t, r, a, o) => (_AddWaitEventToSet = Module._AddWaitEventToSet = wasmExports.AddWaitEventToSet)(e, t, r, a, o), _GetNumRegisteredWaitEvents = Module._GetNumRegisteredWaitEvents = (e) => (_GetNumRegisteredWaitEvents = Module._GetNumRegisteredWaitEvents = wasmExports.GetNumRegisteredWaitEvents)(e), _tuplestore_clear = Module._tuplestore_clear = (e) => (_tuplestore_clear = Module._tuplestore_clear = wasmExports.tuplestore_clear)(e), _get_attstatsslot = Module._get_attstatsslot = (e, t, r, a, o) => (_get_attstatsslot = Module._get_attstatsslot = wasmExports.get_attstatsslot)(e, t, r, a, o), _free_attstatsslot = Module._free_attstatsslot = (e) => (_free_attstatsslot = Module._free_attstatsslot = wasmExports.free_attstatsslot)(e), _SharedFileSetInit = Module._SharedFileSetInit = (e, t) => (_SharedFileSetInit = Module._SharedFileSetInit = wasmExports.SharedFileSetInit)(e, t), _SharedFileSetAttach = Module._SharedFileSetAttach = (e, t) => (_SharedFileSetAttach = Module._SharedFileSetAttach = wasmExports.SharedFileSetAttach)(e, t), _tuplesort_reset = Module._tuplesort_reset = (e) => (_tuplesort_reset = Module._tuplesort_reset = wasmExports.tuplesort_reset)(e), _pairingheap_first = Module._pairingheap_first = (e) => (_pairingheap_first = Module._pairingheap_first = wasmExports.pairingheap_first)(e), _bms_nonempty_difference = Module._bms_nonempty_difference = (e, t) => (_bms_nonempty_difference = Module._bms_nonempty_difference = wasmExports.bms_nonempty_difference)(e, t), _datum_image_hash = Module._datum_image_hash = (e, t, r) => (_datum_image_hash = Module._datum_image_hash = wasmExports.datum_image_hash)(e, t, r), _tuplesort_rescan = Module._tuplesort_rescan = (e) => (_tuplesort_rescan = Module._tuplesort_rescan = wasmExports.tuplesort_rescan)(e), _WinGetPartitionLocalMemory = Module._WinGetPartitionLocalMemory = (e, t) => (_WinGetPartitionLocalMemory = Module._WinGetPartitionLocalMemory = wasmExports.WinGetPartitionLocalMemory)(e, t), _WinGetCurrentPosition = Module._WinGetCurrentPosition = (e) => (_WinGetCurrentPosition = Module._WinGetCurrentPosition = wasmExports.WinGetCurrentPosition)(e), _WinGetPartitionRowCount = Module._WinGetPartitionRowCount = (e) => (_WinGetPartitionRowCount = Module._WinGetPartitionRowCount = wasmExports.WinGetPartitionRowCount)(e), _WinGetFuncArgInPartition = Module._WinGetFuncArgInPartition = (e, t, r, a, o, _, s) => (_WinGetFuncArgInPartition = Module._WinGetFuncArgInPartition = wasmExports.WinGetFuncArgInPartition)(e, t, r, a, o, _, s), _WinGetFuncArgCurrent = Module._WinGetFuncArgCurrent = (e, t, r) => (_WinGetFuncArgCurrent = Module._WinGetFuncArgCurrent = wasmExports.WinGetFuncArgCurrent)(e, t, r), _SPI_connect_ext = Module._SPI_connect_ext = (e) => (_SPI_connect_ext = Module._SPI_connect_ext = wasmExports.SPI_connect_ext)(e), _SPI_commit = Module._SPI_commit = () => (_SPI_commit = Module._SPI_commit = wasmExports.SPI_commit)(), _CopyErrorData = Module._CopyErrorData = () => (_CopyErrorData = Module._CopyErrorData = wasmExports.CopyErrorData)(), _FlushErrorState = Module._FlushErrorState = () => (_FlushErrorState = Module._FlushErrorState = wasmExports.FlushErrorState)(), _ReThrowError = Module._ReThrowError = (e) => (_ReThrowError = Module._ReThrowError = wasmExports.ReThrowError)(e), _SPI_commit_and_chain = Module._SPI_commit_and_chain = () => (_SPI_commit_and_chain = Module._SPI_commit_and_chain = wasmExports.SPI_commit_and_chain)(), _SPI_rollback = Module._SPI_rollback = () => (_SPI_rollback = Module._SPI_rollback = wasmExports.SPI_rollback)(), _SPI_rollback_and_chain = Module._SPI_rollback_and_chain = () => (_SPI_rollback_and_chain = Module._SPI_rollback_and_chain = wasmExports.SPI_rollback_and_chain)(), _SPI_freetuptable = Module._SPI_freetuptable = (e) => (_SPI_freetuptable = Module._SPI_freetuptable = wasmExports.SPI_freetuptable)(e), _SPI_execute_extended = Module._SPI_execute_extended = (e, t) => (_SPI_execute_extended = Module._SPI_execute_extended = wasmExports.SPI_execute_extended)(e, t), _SPI_execute_plan = Module._SPI_execute_plan = (e, t, r, a, o) => (_SPI_execute_plan = Module._SPI_execute_plan = wasmExports.SPI_execute_plan)(e, t, r, a, o), _SPI_execp = Module._SPI_execp = (e, t, r, a) => (_SPI_execp = Module._SPI_execp = wasmExports.SPI_execp)(e, t, r, a), _SPI_execute_plan_extended = Module._SPI_execute_plan_extended = (e, t) => (_SPI_execute_plan_extended = Module._SPI_execute_plan_extended = wasmExports.SPI_execute_plan_extended)(e, t), _SPI_execute_plan_with_paramlist = Module._SPI_execute_plan_with_paramlist = (e, t, r, a) => (_SPI_execute_plan_with_paramlist = Module._SPI_execute_plan_with_paramlist = wasmExports.SPI_execute_plan_with_paramlist)(e, t, r, a), _SPI_execute_with_args = Module._SPI_execute_with_args = (e, t, r, a, o, _, s) => (_SPI_execute_with_args = Module._SPI_execute_with_args = wasmExports.SPI_execute_with_args)(e, t, r, a, o, _, s), _SPI_prepare = Module._SPI_prepare = (e, t, r) => (_SPI_prepare = Module._SPI_prepare = wasmExports.SPI_prepare)(e, t, r), _SPI_prepare_extended = Module._SPI_prepare_extended = (e, t) => (_SPI_prepare_extended = Module._SPI_prepare_extended = wasmExports.SPI_prepare_extended)(e, t), _SPI_keepplan = Module._SPI_keepplan = (e) => (_SPI_keepplan = Module._SPI_keepplan = wasmExports.SPI_keepplan)(e), _SPI_freeplan = Module._SPI_freeplan = (e) => (_SPI_freeplan = Module._SPI_freeplan = wasmExports.SPI_freeplan)(e), _SPI_copytuple = Module._SPI_copytuple = (e) => (_SPI_copytuple = Module._SPI_copytuple = wasmExports.SPI_copytuple)(e), _SPI_returntuple = Module._SPI_returntuple = (e, t) => (_SPI_returntuple = Module._SPI_returntuple = wasmExports.SPI_returntuple)(e, t), _SPI_modifytuple = Module._SPI_modifytuple = (e, t, r, a, o, _) => (_SPI_modifytuple = Module._SPI_modifytuple = wasmExports.SPI_modifytuple)(e, t, r, a, o, _), _SPI_fnumber = Module._SPI_fnumber = (e, t) => (_SPI_fnumber = Module._SPI_fnumber = wasmExports.SPI_fnumber)(e, t), _SPI_fname = Module._SPI_fname = (e, t) => (_SPI_fname = Module._SPI_fname = wasmExports.SPI_fname)(e, t), _SPI_getbinval = Module._SPI_getbinval = (e, t, r, a) => (_SPI_getbinval = Module._SPI_getbinval = wasmExports.SPI_getbinval)(e, t, r, a), _SPI_gettype = Module._SPI_gettype = (e, t) => (_SPI_gettype = Module._SPI_gettype = wasmExports.SPI_gettype)(e, t), _SPI_gettypeid = Module._SPI_gettypeid = (e, t) => (_SPI_gettypeid = Module._SPI_gettypeid = wasmExports.SPI_gettypeid)(e, t), _SPI_getrelname = Module._SPI_getrelname = (e) => (_SPI_getrelname = Module._SPI_getrelname = wasmExports.SPI_getrelname)(e), _SPI_palloc = Module._SPI_palloc = (e) => (_SPI_palloc = Module._SPI_palloc = wasmExports.SPI_palloc)(e), _SPI_repalloc = Module._SPI_repalloc = (e, t) => (_SPI_repalloc = Module._SPI_repalloc = wasmExports.SPI_repalloc)(e, t), _SPI_pfree = Module._SPI_pfree = (e) => (_SPI_pfree = Module._SPI_pfree = wasmExports.SPI_pfree)(e), _SPI_datumTransfer = Module._SPI_datumTransfer = (e, t, r) => (_SPI_datumTransfer = Module._SPI_datumTransfer = wasmExports.SPI_datumTransfer)(e, t, r), _datumTransfer = Module._datumTransfer = (e, t, r) => (_datumTransfer = Module._datumTransfer = wasmExports.datumTransfer)(e, t, r), _SPI_cursor_open_with_args = Module._SPI_cursor_open_with_args = (e, t, r, a, o, _, s, n) => (_SPI_cursor_open_with_args = Module._SPI_cursor_open_with_args = wasmExports.SPI_cursor_open_with_args)(e, t, r, a, o, _, s, n), _SPI_cursor_open_with_paramlist = Module._SPI_cursor_open_with_paramlist = (e, t, r, a) => (_SPI_cursor_open_with_paramlist = Module._SPI_cursor_open_with_paramlist = wasmExports.SPI_cursor_open_with_paramlist)(e, t, r, a), _SPI_cursor_parse_open = Module._SPI_cursor_parse_open = (e, t, r) => (_SPI_cursor_parse_open = Module._SPI_cursor_parse_open = wasmExports.SPI_cursor_parse_open)(e, t, r), _SPI_cursor_find = Module._SPI_cursor_find = (e) => (_SPI_cursor_find = Module._SPI_cursor_find = wasmExports.SPI_cursor_find)(e), _SPI_cursor_fetch = Module._SPI_cursor_fetch = (e, t, r) => (_SPI_cursor_fetch = Module._SPI_cursor_fetch = wasmExports.SPI_cursor_fetch)(e, t, r), _SPI_scroll_cursor_fetch = Module._SPI_scroll_cursor_fetch = (e, t, r) => (_SPI_scroll_cursor_fetch = Module._SPI_scroll_cursor_fetch = wasmExports.SPI_scroll_cursor_fetch)(e, t, r), _SPI_scroll_cursor_move = Module._SPI_scroll_cursor_move = (e, t, r) => (_SPI_scroll_cursor_move = Module._SPI_scroll_cursor_move = wasmExports.SPI_scroll_cursor_move)(e, t, r), _SPI_cursor_close = Module._SPI_cursor_close = (e) => (_SPI_cursor_close = Module._SPI_cursor_close = wasmExports.SPI_cursor_close)(e), _SPI_plan_is_valid = Module._SPI_plan_is_valid = (e) => (_SPI_plan_is_valid = Module._SPI_plan_is_valid = wasmExports.SPI_plan_is_valid)(e), _SPI_result_code_string = Module._SPI_result_code_string = (e) => (_SPI_result_code_string = Module._SPI_result_code_string = wasmExports.SPI_result_code_string)(e), _SPI_plan_get_plan_sources = Module._SPI_plan_get_plan_sources = (e) => (_SPI_plan_get_plan_sources = Module._SPI_plan_get_plan_sources = wasmExports.SPI_plan_get_plan_sources)(e), _SPI_plan_get_cached_plan = Module._SPI_plan_get_cached_plan = (e) => (_SPI_plan_get_cached_plan = Module._SPI_plan_get_cached_plan = wasmExports.SPI_plan_get_cached_plan)(e), _SPI_register_relation = Module._SPI_register_relation = (e) => (_SPI_register_relation = Module._SPI_register_relation = wasmExports.SPI_register_relation)(e), _create_queryEnv = Module._create_queryEnv = () => (_create_queryEnv = Module._create_queryEnv = wasmExports.create_queryEnv)(), _register_ENR = Module._register_ENR = (e, t) => (_register_ENR = Module._register_ENR = wasmExports.register_ENR)(e, t), _SPI_register_trigger_data = Module._SPI_register_trigger_data = (e) => (_SPI_register_trigger_data = Module._SPI_register_trigger_data = wasmExports.SPI_register_trigger_data)(e), _tuplestore_tuple_count = Module._tuplestore_tuple_count = (e) => (_tuplestore_tuple_count = Module._tuplestore_tuple_count = wasmExports.tuplestore_tuple_count)(e), _GetUserMapping = Module._GetUserMapping = (e, t) => (_GetUserMapping = Module._GetUserMapping = wasmExports.GetUserMapping)(e, t), _GetForeignTable = Module._GetForeignTable = (e) => (_GetForeignTable = Module._GetForeignTable = wasmExports.GetForeignTable)(e), _GetForeignColumnOptions = Module._GetForeignColumnOptions = (e, t) => (_GetForeignColumnOptions = Module._GetForeignColumnOptions = wasmExports.GetForeignColumnOptions)(e, t), _initClosestMatch = Module._initClosestMatch = (e, t, r) => (_initClosestMatch = Module._initClosestMatch = wasmExports.initClosestMatch)(e, t, r), _updateClosestMatch = Module._updateClosestMatch = (e, t) => (_updateClosestMatch = Module._updateClosestMatch = wasmExports.updateClosestMatch)(e, t), _getClosestMatch = Module._getClosestMatch = (e) => (_getClosestMatch = Module._getClosestMatch = wasmExports.getClosestMatch)(e), _GetExistingLocalJoinPath = Module._GetExistingLocalJoinPath = (e) => (_GetExistingLocalJoinPath = Module._GetExistingLocalJoinPath = wasmExports.GetExistingLocalJoinPath)(e), _pathkeys_contained_in = Module._pathkeys_contained_in = (e, t) => (_pathkeys_contained_in = Module._pathkeys_contained_in = wasmExports.pathkeys_contained_in)(e, t), _bloom_create = Module._bloom_create = (e, t, r) => (_bloom_create = Module._bloom_create = wasmExports.bloom_create)(e, t, r), _bloom_free = Module._bloom_free = (e) => (_bloom_free = Module._bloom_free = wasmExports.bloom_free)(e), _bloom_add_element = Module._bloom_add_element = (e, t, r) => (_bloom_add_element = Module._bloom_add_element = wasmExports.bloom_add_element)(e, t, r), _bloom_lacks_element = Module._bloom_lacks_element = (e, t, r) => (_bloom_lacks_element = Module._bloom_lacks_element = wasmExports.bloom_lacks_element)(e, t, r), _bloom_prop_bits_set = Module._bloom_prop_bits_set = (e) => (_bloom_prop_bits_set = Module._bloom_prop_bits_set = wasmExports.bloom_prop_bits_set)(e), _dshash_create = Module._dshash_create = (e, t, r) => (_dshash_create = Module._dshash_create = wasmExports.dshash_create)(e, t, r), _dshash_attach = Module._dshash_attach = (e, t, r, a) => (_dshash_attach = Module._dshash_attach = wasmExports.dshash_attach)(e, t, r, a), _dshash_detach = Module._dshash_detach = (e) => (_dshash_detach = Module._dshash_detach = wasmExports.dshash_detach)(e), _dshash_destroy = Module._dshash_destroy = (e) => (_dshash_destroy = Module._dshash_destroy = wasmExports.dshash_destroy)(e), _dshash_get_hash_table_handle = Module._dshash_get_hash_table_handle = (e) => (_dshash_get_hash_table_handle = Module._dshash_get_hash_table_handle = wasmExports.dshash_get_hash_table_handle)(e), _dshash_find = Module._dshash_find = (e, t, r) => (_dshash_find = Module._dshash_find = wasmExports.dshash_find)(e, t, r), _dshash_find_or_insert = Module._dshash_find_or_insert = (e, t, r) => (_dshash_find_or_insert = Module._dshash_find_or_insert = wasmExports.dshash_find_or_insert)(e, t, r), _dshash_delete_key = Module._dshash_delete_key = (e, t) => (_dshash_delete_key = Module._dshash_delete_key = wasmExports.dshash_delete_key)(e, t), _dshash_release_lock = Module._dshash_release_lock = (e, t) => (_dshash_release_lock = Module._dshash_release_lock = wasmExports.dshash_release_lock)(e, t), _tag_hash = Module._tag_hash = (e, t) => (_tag_hash = Module._tag_hash = wasmExports.tag_hash)(e, t), _dshash_seq_init = Module._dshash_seq_init = (e, t, r) => (_dshash_seq_init = Module._dshash_seq_init = wasmExports.dshash_seq_init)(e, t, r), _dshash_seq_next = Module._dshash_seq_next = (e) => (_dshash_seq_next = Module._dshash_seq_next = wasmExports.dshash_seq_next)(e), _dshash_seq_term = Module._dshash_seq_term = (e) => (_dshash_seq_term = Module._dshash_seq_term = wasmExports.dshash_seq_term)(e), _dshash_delete_current = Module._dshash_delete_current = (e) => (_dshash_delete_current = Module._dshash_delete_current = wasmExports.dshash_delete_current)(e), _ldexp = Module._ldexp = (e, t) => (_ldexp = Module._ldexp = wasmExports.ldexp)(e, t), _pg_b64_enc_len = Module._pg_b64_enc_len = (e) => (_pg_b64_enc_len = Module._pg_b64_enc_len = wasmExports.pg_b64_enc_len)(e), _pg_b64_encode = Module._pg_b64_encode = (e, t, r, a) => (_pg_b64_encode = Module._pg_b64_encode = wasmExports.pg_b64_encode)(e, t, r, a), _strtol = Module._strtol = (e, t, r) => (_strtol = Module._strtol = wasmExports.strtol)(e, t, r), _gai_strerror = Module._gai_strerror = (e) => (_gai_strerror = Module._gai_strerror = wasmExports.gai_strerror)(e), _socket = Module._socket = (e, t, r) => (_socket = Module._socket = wasmExports.socket)(e, t, r), _pgl_connect = Module._pgl_connect = (e, t, r) => (_pgl_connect = Module._pgl_connect = wasmExports.pgl_connect)(e, t, r), _pgl_send = Module._pgl_send = (e, t, r, a) => (_pgl_send = Module._pgl_send = wasmExports.pgl_send)(e, t, r, a), _pgl_recv = Module._pgl_recv = (e, t, r, a) => (_pgl_recv = Module._pgl_recv = wasmExports.pgl_recv)(e, t, r, a), _be_lo_unlink = Module._be_lo_unlink = (e) => (_be_lo_unlink = Module._be_lo_unlink = wasmExports.be_lo_unlink)(e), _text_to_cstring_buffer = Module._text_to_cstring_buffer = (e, t, r) => (_text_to_cstring_buffer = Module._text_to_cstring_buffer = wasmExports.text_to_cstring_buffer)(e, t, r), _pg_mb2wchar_with_len = Module._pg_mb2wchar_with_len = (e, t, r) => (_pg_mb2wchar_with_len = Module._pg_mb2wchar_with_len = wasmExports.pg_mb2wchar_with_len)(e, t, r), _pg_regcomp = Module._pg_regcomp = (e, t, r, a, o) => (_pg_regcomp = Module._pg_regcomp = wasmExports.pg_regcomp)(e, t, r, a, o), _pg_regerror = Module._pg_regerror = (e, t, r, a) => (_pg_regerror = Module._pg_regerror = wasmExports.pg_regerror)(e, t, r, a), _strcat = Module._strcat = (e, t) => (_strcat = Module._strcat = wasmExports.strcat)(e, t), _pgl_getsockname = Module._pgl_getsockname = (e, t, r) => (_pgl_getsockname = Module._pgl_getsockname = wasmExports.pgl_getsockname)(e, t, r), _pgl_setsockopt = Module._pgl_setsockopt = (e, t, r, a, o) => (_pgl_setsockopt = Module._pgl_setsockopt = wasmExports.pgl_setsockopt)(e, t, r, a, o), _pgl_fcntl = Module._pgl_fcntl = (e, t, r) => (_pgl_fcntl = Module._pgl_fcntl = wasmExports.pgl_fcntl)(e, t, r), _utime = Module._utime = (e, t) => (_utime = Module._utime = wasmExports.utime)(e, t), _pq_buffer_remaining_data = Module._pq_buffer_remaining_data = () => (_pq_buffer_remaining_data = Module._pq_buffer_remaining_data = wasmExports.pq_buffer_remaining_data)(), _pgl_getsockopt = Module._pgl_getsockopt = (e, t, r, a, o) => (_pgl_getsockopt = Module._pgl_getsockopt = wasmExports.pgl_getsockopt)(e, t, r, a, o), _pq_sendtext = Module._pq_sendtext = (e, t, r) => (_pq_sendtext = Module._pq_sendtext = wasmExports.pq_sendtext)(e, t, r), _pq_sendfloat4 = Module._pq_sendfloat4 = (e, t) => (_pq_sendfloat4 = Module._pq_sendfloat4 = wasmExports.pq_sendfloat4)(e, t), _pq_sendfloat8 = Module._pq_sendfloat8 = (e, t) => (_pq_sendfloat8 = Module._pq_sendfloat8 = wasmExports.pq_sendfloat8)(e, t), _pq_begintypsend = Module._pq_begintypsend = (e) => (_pq_begintypsend = Module._pq_begintypsend = wasmExports.pq_begintypsend)(e), _pq_endtypsend = Module._pq_endtypsend = (e) => (_pq_endtypsend = Module._pq_endtypsend = wasmExports.pq_endtypsend)(e), _pq_getmsgfloat4 = Module._pq_getmsgfloat4 = (e) => (_pq_getmsgfloat4 = Module._pq_getmsgfloat4 = wasmExports.pq_getmsgfloat4)(e), _pq_getmsgfloat8 = Module._pq_getmsgfloat8 = (e) => (_pq_getmsgfloat8 = Module._pq_getmsgfloat8 = wasmExports.pq_getmsgfloat8)(e), _pq_getmsgtext = Module._pq_getmsgtext = (e, t, r) => (_pq_getmsgtext = Module._pq_getmsgtext = wasmExports.pq_getmsgtext)(e, t, r), _pg_strtoint32 = Module._pg_strtoint32 = (e) => (_pg_strtoint32 = Module._pg_strtoint32 = wasmExports.pg_strtoint32)(e), _main = Module._main = (e, t) => (_main = Module._main = wasmExports.__main_argc_argv)(e, t), _pgl_getuid = Module._pgl_getuid = () => (_pgl_getuid = Module._pgl_getuid = wasmExports.pgl_getuid)(), _getenv = Module._getenv = (e) => (_getenv = Module._getenv = wasmExports.getenv)(e), _bms_membership = Module._bms_membership = (e) => (_bms_membership = Module._bms_membership = wasmExports.bms_membership)(e), _RegisterExtensibleNodeMethods = Module._RegisterExtensibleNodeMethods = (e) => (_RegisterExtensibleNodeMethods = Module._RegisterExtensibleNodeMethods = wasmExports.RegisterExtensibleNodeMethods)(e), _list_make5_impl = Module._list_make5_impl = (e, t, r, a, o, _) => (_list_make5_impl = Module._list_make5_impl = wasmExports.list_make5_impl)(e, t, r, a, o, _), _GetMemoryChunkContext = Module._GetMemoryChunkContext = (e) => (_GetMemoryChunkContext = Module._GetMemoryChunkContext = wasmExports.GetMemoryChunkContext)(e), _list_insert_nth = Module._list_insert_nth = (e, t, r) => (_list_insert_nth = Module._list_insert_nth = wasmExports.list_insert_nth)(e, t, r), _list_member_ptr = Module._list_member_ptr = (e, t) => (_list_member_ptr = Module._list_member_ptr = wasmExports.list_member_ptr)(e, t), _list_append_unique_ptr = Module._list_append_unique_ptr = (e, t) => (_list_append_unique_ptr = Module._list_append_unique_ptr = wasmExports.list_append_unique_ptr)(e, t), _make_opclause = Module._make_opclause = (e, t, r, a, o, _, s) => (_make_opclause = Module._make_opclause = wasmExports.make_opclause)(e, t, r, a, o, _, s), _exprIsLengthCoercion = Module._exprIsLengthCoercion = (e, t) => (_exprIsLengthCoercion = Module._exprIsLengthCoercion = wasmExports.exprIsLengthCoercion)(e, t), _fix_opfuncids = Module._fix_opfuncids = (e) => (_fix_opfuncids = Module._fix_opfuncids = wasmExports.fix_opfuncids)(e), _outToken = Module._outToken = (e, t) => (_outToken = Module._outToken = wasmExports.outToken)(e, t), _outNode = Module._outNode = (e, t) => (_outNode = Module._outNode = wasmExports.outNode)(e, t), _appendStringInfoStringQuoted = Module._appendStringInfoStringQuoted = (e, t, r) => (_appendStringInfoStringQuoted = Module._appendStringInfoStringQuoted = wasmExports.appendStringInfoStringQuoted)(e, t, r), _EnableQueryId = Module._EnableQueryId = () => (_EnableQueryId = Module._EnableQueryId = wasmExports.EnableQueryId)(), _nodeRead = Module._nodeRead = (e, t) => (_nodeRead = Module._nodeRead = wasmExports.nodeRead)(e, t), _pg_strtok = Module._pg_strtok = (e) => (_pg_strtok = Module._pg_strtok = wasmExports.pg_strtok)(e), _debackslash = Module._debackslash = (e, t) => (_debackslash = Module._debackslash = wasmExports.debackslash)(e, t), _exp2 = Module._exp2 = (e) => (_exp2 = Module._exp2 = wasmExports.exp2)(e), _find_base_rel = Module._find_base_rel = (e, t) => (_find_base_rel = Module._find_base_rel = wasmExports.find_base_rel)(e, t), _add_path = Module._add_path = (e, t) => (_add_path = Module._add_path = wasmExports.add_path)(e, t), _create_sort_path = Module._create_sort_path = (e, t, r, a, o) => (_create_sort_path = Module._create_sort_path = wasmExports.create_sort_path)(e, t, r, a, o), _set_baserel_size_estimates = Module._set_baserel_size_estimates = (e, t) => (_set_baserel_size_estimates = Module._set_baserel_size_estimates = wasmExports.set_baserel_size_estimates)(e, t), _get_func_support = Module._get_func_support = (e) => (_get_func_support = Module._get_func_support = wasmExports.get_func_support)(e), _clauselist_selectivity = Module._clauselist_selectivity = (e, t, r, a, o) => (_clauselist_selectivity = Module._clauselist_selectivity = wasmExports.clauselist_selectivity)(e, t, r, a, o), _get_tablespace_page_costs = Module._get_tablespace_page_costs = (e, t, r) => (_get_tablespace_page_costs = Module._get_tablespace_page_costs = wasmExports.get_tablespace_page_costs)(e, t, r), _cost_qual_eval = Module._cost_qual_eval = (e, t, r) => (_cost_qual_eval = Module._cost_qual_eval = wasmExports.cost_qual_eval)(e, t, r), _pull_varnos = Module._pull_varnos = (e, t) => (_pull_varnos = Module._pull_varnos = wasmExports.pull_varnos)(e, t), _estimate_num_groups = Module._estimate_num_groups = (e, t, r, a, o) => (_estimate_num_groups = Module._estimate_num_groups = wasmExports.estimate_num_groups)(e, t, r, a, o), _cost_sort = Module._cost_sort = (e, t, r, a, o, _, s, n, l, d) => (_cost_sort = Module._cost_sort = wasmExports.cost_sort)(e, t, r, a, o, _, s, n, l, d), _get_sortgrouplist_exprs = Module._get_sortgrouplist_exprs = (e, t) => (_get_sortgrouplist_exprs = Module._get_sortgrouplist_exprs = wasmExports.get_sortgrouplist_exprs)(e, t), _make_restrictinfo = Module._make_restrictinfo = (e, t, r, a, o, _, s, n, l, d) => (_make_restrictinfo = Module._make_restrictinfo = wasmExports.make_restrictinfo)(e, t, r, a, o, _, s, n, l, d), _setup_eclass_member_iterator = Module._setup_eclass_member_iterator = (e, t, r) => (_setup_eclass_member_iterator = Module._setup_eclass_member_iterator = wasmExports.setup_eclass_member_iterator)(e, t, r), _eclass_member_iterator_next = Module._eclass_member_iterator_next = (e) => (_eclass_member_iterator_next = Module._eclass_member_iterator_next = wasmExports.eclass_member_iterator_next)(e), _remove_nulling_relids = Module._remove_nulling_relids = (e, t, r) => (_remove_nulling_relids = Module._remove_nulling_relids = wasmExports.remove_nulling_relids)(e, t, r), _get_mergejoin_opfamilies = Module._get_mergejoin_opfamilies = (e) => (_get_mergejoin_opfamilies = Module._get_mergejoin_opfamilies = wasmExports.get_mergejoin_opfamilies)(e), _generate_implied_equalities_for_column = Module._generate_implied_equalities_for_column = (e, t, r, a, o) => (_generate_implied_equalities_for_column = Module._generate_implied_equalities_for_column = wasmExports.generate_implied_equalities_for_column)(e, t, r, a, o), _eclass_useful_for_merging = Module._eclass_useful_for_merging = (e, t, r) => (_eclass_useful_for_merging = Module._eclass_useful_for_merging = wasmExports.eclass_useful_for_merging)(e, t, r), _join_clause_is_movable_to = Module._join_clause_is_movable_to = (e, t) => (_join_clause_is_movable_to = Module._join_clause_is_movable_to = wasmExports.join_clause_is_movable_to)(e, t), _get_plan_rowmark = Module._get_plan_rowmark = (e, t) => (_get_plan_rowmark = Module._get_plan_rowmark = wasmExports.get_plan_rowmark)(e, t), _is_pseudo_constant_for_index = Module._is_pseudo_constant_for_index = (e, t, r) => (_is_pseudo_constant_for_index = Module._is_pseudo_constant_for_index = wasmExports.is_pseudo_constant_for_index)(e, t, r), _update_mergeclause_eclasses = Module._update_mergeclause_eclasses = (e, t) => (_update_mergeclause_eclasses = Module._update_mergeclause_eclasses = wasmExports.update_mergeclause_eclasses)(e, t), _pull_vars_of_level = Module._pull_vars_of_level = (e, t) => (_pull_vars_of_level = Module._pull_vars_of_level = wasmExports.pull_vars_of_level)(e, t), _find_join_rel = Module._find_join_rel = (e, t) => (_find_join_rel = Module._find_join_rel = wasmExports.find_join_rel)(e, t), _make_canonical_pathkey = Module._make_canonical_pathkey = (e, t, r, a, o) => (_make_canonical_pathkey = Module._make_canonical_pathkey = wasmExports.make_canonical_pathkey)(e, t, r, a, o), _get_sortgroupref_clause_noerr = Module._get_sortgroupref_clause_noerr = (e, t) => (_get_sortgroupref_clause_noerr = Module._get_sortgroupref_clause_noerr = wasmExports.get_sortgroupref_clause_noerr)(e, t), _extract_actual_clauses = Module._extract_actual_clauses = (e, t) => (_extract_actual_clauses = Module._extract_actual_clauses = wasmExports.extract_actual_clauses)(e, t), _tlist_member = Module._tlist_member = (e, t) => (_tlist_member = Module._tlist_member = wasmExports.tlist_member)(e, t), _change_plan_targetlist = Module._change_plan_targetlist = (e, t, r) => (_change_plan_targetlist = Module._change_plan_targetlist = wasmExports.change_plan_targetlist)(e, t, r), _make_foreignscan = Module._make_foreignscan = (e, t, r, a, o, _, s, n) => (_make_foreignscan = Module._make_foreignscan = wasmExports.make_foreignscan)(e, t, r, a, o, _, s, n), _IncrementVarSublevelsUp = Module._IncrementVarSublevelsUp = (e, t, r) => (_IncrementVarSublevelsUp = Module._IncrementVarSublevelsUp = wasmExports.IncrementVarSublevelsUp)(e, t, r), _op_mergejoinable = Module._op_mergejoinable = (e, t) => (_op_mergejoinable = Module._op_mergejoinable = wasmExports.op_mergejoinable)(e, t), _find_nonnullable_rels = Module._find_nonnullable_rels = (e) => (_find_nonnullable_rels = Module._find_nonnullable_rels = wasmExports.find_nonnullable_rels)(e), _standard_planner = Module._standard_planner = (e, t, r, a) => (_standard_planner = Module._standard_planner = wasmExports.standard_planner)(e, t, r, a), _get_relids_in_jointree = Module._get_relids_in_jointree = (e, t, r) => (_get_relids_in_jointree = Module._get_relids_in_jointree = wasmExports.get_relids_in_jointree)(e, t, r), _SS_process_sublinks = Module._SS_process_sublinks = (e, t, r) => (_SS_process_sublinks = Module._SS_process_sublinks = wasmExports.SS_process_sublinks)(e, t, r), _add_new_columns_to_pathtarget = Module._add_new_columns_to_pathtarget = (e, t) => (_add_new_columns_to_pathtarget = Module._add_new_columns_to_pathtarget = wasmExports.add_new_columns_to_pathtarget)(e, t), _get_agg_clause_costs = Module._get_agg_clause_costs = (e, t, r) => (_get_agg_clause_costs = Module._get_agg_clause_costs = wasmExports.get_agg_clause_costs)(e, t, r), _grouping_is_sortable = Module._grouping_is_sortable = (e) => (_grouping_is_sortable = Module._grouping_is_sortable = wasmExports.grouping_is_sortable)(e), _copy_pathtarget = Module._copy_pathtarget = (e) => (_copy_pathtarget = Module._copy_pathtarget = wasmExports.copy_pathtarget)(e), _create_projection_path = Module._create_projection_path = (e, t, r, a) => (_create_projection_path = Module._create_projection_path = wasmExports.create_projection_path)(e, t, r, a), _contain_nonstrict_functions = Module._contain_nonstrict_functions = (e) => (_contain_nonstrict_functions = Module._contain_nonstrict_functions = wasmExports.contain_nonstrict_functions)(e), _get_translated_update_targetlist = Module._get_translated_update_targetlist = (e, t, r, a) => (_get_translated_update_targetlist = Module._get_translated_update_targetlist = wasmExports.get_translated_update_targetlist)(e, t, r, a), _add_row_identity_var = Module._add_row_identity_var = (e, t, r, a) => (_add_row_identity_var = Module._add_row_identity_var = wasmExports.add_row_identity_var)(e, t, r, a), _get_rel_all_updated_cols = Module._get_rel_all_updated_cols = (e, t) => (_get_rel_all_updated_cols = Module._get_rel_all_updated_cols = wasmExports.get_rel_all_updated_cols)(e, t), _get_baserel_parampathinfo = Module._get_baserel_parampathinfo = (e, t, r) => (_get_baserel_parampathinfo = Module._get_baserel_parampathinfo = wasmExports.get_baserel_parampathinfo)(e, t, r), _create_foreignscan_path = Module._create_foreignscan_path = (e, t, r, a, o, _, s, n, l, d, u, c) => (_create_foreignscan_path = Module._create_foreignscan_path = wasmExports.create_foreignscan_path)(e, t, r, a, o, _, s, n, l, d, u, c), _create_foreign_join_path = Module._create_foreign_join_path = (e, t, r, a, o, _, s, n, l, d, u, c) => (_create_foreign_join_path = Module._create_foreign_join_path = wasmExports.create_foreign_join_path)(e, t, r, a, o, _, s, n, l, d, u, c), _create_foreign_upper_path = Module._create_foreign_upper_path = (e, t, r, a, o, _, s, n, l, d, u) => (_create_foreign_upper_path = Module._create_foreign_upper_path = wasmExports.create_foreign_upper_path)(e, t, r, a, o, _, s, n, l, d, u), _adjust_limit_rows_costs = Module._adjust_limit_rows_costs = (e, t, r, a, o) => (_adjust_limit_rows_costs = Module._adjust_limit_rows_costs = wasmExports.adjust_limit_rows_costs)(e, t, r, a, o), _add_to_flat_tlist = Module._add_to_flat_tlist = (e, t) => (_add_to_flat_tlist = Module._add_to_flat_tlist = wasmExports.add_to_flat_tlist)(e, t), _get_fn_expr_variadic = Module._get_fn_expr_variadic = (e) => (_get_fn_expr_variadic = Module._get_fn_expr_variadic = wasmExports.get_fn_expr_variadic)(e), _get_fn_expr_argtype = Module._get_fn_expr_argtype = (e, t) => (_get_fn_expr_argtype = Module._get_fn_expr_argtype = wasmExports.get_fn_expr_argtype)(e, t), _on_shmem_exit = Module._on_shmem_exit = (e, t) => (_on_shmem_exit = Module._on_shmem_exit = wasmExports.on_shmem_exit)(e, t), _pgl_shmdt = Module._pgl_shmdt = (e) => (_pgl_shmdt = Module._pgl_shmdt = wasmExports.pgl_shmdt)(e), _pgl_shmctl = Module._pgl_shmctl = (e, t, r) => (_pgl_shmctl = Module._pgl_shmctl = wasmExports.pgl_shmctl)(e, t, r), _pgl_shmat = Module._pgl_shmat = (e, t, r) => (_pgl_shmat = Module._pgl_shmat = wasmExports.pgl_shmat)(e, t, r), _mmap = Module._mmap = (e, t, r, a, o, _) => (_mmap = Module._mmap = wasmExports.mmap)(e, t, r, a, o, _), _pgl_shmget = Module._pgl_shmget = (e, t, r) => (_pgl_shmget = Module._pgl_shmget = wasmExports.pgl_shmget)(e, t, r), _pgl_munmap = Module._pgl_munmap = (e, t) => (_pgl_munmap = Module._pgl_munmap = wasmExports.pgl_munmap)(e, t), _SignalHandlerForConfigReload = Module._SignalHandlerForConfigReload = (e) => (_SignalHandlerForConfigReload = Module._SignalHandlerForConfigReload = wasmExports.SignalHandlerForConfigReload)(e), _SignalHandlerForShutdownRequest = Module._SignalHandlerForShutdownRequest = (e) => (_SignalHandlerForShutdownRequest = Module._SignalHandlerForShutdownRequest = wasmExports.SignalHandlerForShutdownRequest)(e), _procsignal_sigusr1_handler = Module._procsignal_sigusr1_handler = (e) => (_procsignal_sigusr1_handler = Module._procsignal_sigusr1_handler = wasmExports.procsignal_sigusr1_handler)(e), _RegisterBackgroundWorker = Module._RegisterBackgroundWorker = (e) => (_RegisterBackgroundWorker = Module._RegisterBackgroundWorker = wasmExports.RegisterBackgroundWorker)(e), _WaitForBackgroundWorkerStartup = Module._WaitForBackgroundWorkerStartup = (e, t) => (_WaitForBackgroundWorkerStartup = Module._WaitForBackgroundWorkerStartup = wasmExports.WaitForBackgroundWorkerStartup)(e, t), _open = Module._open = (e, t, r) => (_open = Module._open = wasmExports.open)(e, t, r), _rename = Module._rename = (e, t) => (_rename = Module._rename = wasmExports.rename)(e, t), _GetConfigOption = Module._GetConfigOption = (e, t, r) => (_GetConfigOption = Module._GetConfigOption = wasmExports.GetConfigOption)(e, t, r), _puts = Module._puts = (e) => (_puts = Module._puts = wasmExports.puts)(e), _fopen = Module._fopen = (e, t) => (_fopen = Module._fopen = wasmExports.fopen)(e, t), _fclose = Module._fclose = (e) => (_fclose = Module._fclose = wasmExports.fclose)(e), _fputc = Module._fputc = (e, t) => (_fputc = Module._fputc = wasmExports.fputc)(e, t), _ftello = Module._ftello = (e) => (_ftello = Module._ftello = wasmExports.ftello)(e), _malloc = Module._malloc = (e) => (_malloc = Module._malloc = wasmExports.malloc)(e), _free = Module._free = (e) => (_free = Module._free = wasmExports.free)(e), _realloc = Module._realloc = (e, t) => (_realloc = Module._realloc = wasmExports.realloc)(e, t), _iswprint_l = Module._iswprint_l = (e, t) => (_iswprint_l = Module._iswprint_l = wasmExports.iswprint_l)(e, t), _iswalpha_l = Module._iswalpha_l = (e, t) => (_iswalpha_l = Module._iswalpha_l = wasmExports.iswalpha_l)(e, t), _iswdigit_l = Module._iswdigit_l = (e, t) => (_iswdigit_l = Module._iswdigit_l = wasmExports.iswdigit_l)(e, t), _isdigit_l = Module._isdigit_l = (e, t) => (_isdigit_l = Module._isdigit_l = wasmExports.isdigit_l)(e, t), _iswpunct_l = Module._iswpunct_l = (e, t) => (_iswpunct_l = Module._iswpunct_l = wasmExports.iswpunct_l)(e, t), _iswspace_l = Module._iswspace_l = (e, t) => (_iswspace_l = Module._iswspace_l = wasmExports.iswspace_l)(e, t), _iswlower_l = Module._iswlower_l = (e, t) => (_iswlower_l = Module._iswlower_l = wasmExports.iswlower_l)(e, t), _iswupper_l = Module._iswupper_l = (e, t) => (_iswupper_l = Module._iswupper_l = wasmExports.iswupper_l)(e, t), _pg_ascii_tolower = Module._pg_ascii_tolower = (e) => (_pg_ascii_tolower = Module._pg_ascii_tolower = wasmExports.pg_ascii_tolower)(e), _towlower_l = Module._towlower_l = (e, t) => (_towlower_l = Module._towlower_l = wasmExports.towlower_l)(e, t), _tolower_l = Module._tolower_l = (e, t) => (_tolower_l = Module._tolower_l = wasmExports.tolower_l)(e, t), _towupper_l = Module._towupper_l = (e, t) => (_towupper_l = Module._towupper_l = wasmExports.towupper_l)(e, t), _toupper_l = Module._toupper_l = (e, t) => (_toupper_l = Module._toupper_l = wasmExports.toupper_l)(e, t), _pg_reg_getinitialstate = Module._pg_reg_getinitialstate = (e) => (_pg_reg_getinitialstate = Module._pg_reg_getinitialstate = wasmExports.pg_reg_getinitialstate)(e), _pg_reg_getfinalstate = Module._pg_reg_getfinalstate = (e) => (_pg_reg_getfinalstate = Module._pg_reg_getfinalstate = wasmExports.pg_reg_getfinalstate)(e), _pg_reg_getnumoutarcs = Module._pg_reg_getnumoutarcs = (e, t) => (_pg_reg_getnumoutarcs = Module._pg_reg_getnumoutarcs = wasmExports.pg_reg_getnumoutarcs)(e, t), _pg_reg_getoutarcs = Module._pg_reg_getoutarcs = (e, t, r, a) => (_pg_reg_getoutarcs = Module._pg_reg_getoutarcs = wasmExports.pg_reg_getoutarcs)(e, t, r, a), _pg_reg_getnumcolors = Module._pg_reg_getnumcolors = (e) => (_pg_reg_getnumcolors = Module._pg_reg_getnumcolors = wasmExports.pg_reg_getnumcolors)(e), _pg_reg_colorisbegin = Module._pg_reg_colorisbegin = (e, t) => (_pg_reg_colorisbegin = Module._pg_reg_colorisbegin = wasmExports.pg_reg_colorisbegin)(e, t), _pg_reg_colorisend = Module._pg_reg_colorisend = (e, t) => (_pg_reg_colorisend = Module._pg_reg_colorisend = wasmExports.pg_reg_colorisend)(e, t), _pg_reg_getnumcharacters = Module._pg_reg_getnumcharacters = (e, t) => (_pg_reg_getnumcharacters = Module._pg_reg_getnumcharacters = wasmExports.pg_reg_getnumcharacters)(e, t), _pg_reg_getcharacters = Module._pg_reg_getcharacters = (e, t, r, a) => (_pg_reg_getcharacters = Module._pg_reg_getcharacters = wasmExports.pg_reg_getcharacters)(e, t, r, a), _dsa_pin = Module._dsa_pin = (e) => (_dsa_pin = Module._dsa_pin = wasmExports.dsa_pin)(e), _OutputPluginPrepareWrite = Module._OutputPluginPrepareWrite = (e, t) => (_OutputPluginPrepareWrite = Module._OutputPluginPrepareWrite = wasmExports.OutputPluginPrepareWrite)(e, t), _OutputPluginWrite = Module._OutputPluginWrite = (e, t) => (_OutputPluginWrite = Module._OutputPluginWrite = wasmExports.OutputPluginWrite)(e, t), _array_contains_nulls = Module._array_contains_nulls = (e) => (_array_contains_nulls = Module._array_contains_nulls = wasmExports.array_contains_nulls)(e), _CacheRegisterRelcacheCallback = Module._CacheRegisterRelcacheCallback = (e, t) => (_CacheRegisterRelcacheCallback = Module._CacheRegisterRelcacheCallback = wasmExports.CacheRegisterRelcacheCallback)(e, t), _hash_seq_term = Module._hash_seq_term = (e) => (_hash_seq_term = Module._hash_seq_term = wasmExports.hash_seq_term)(e), _FreeErrorData = Module._FreeErrorData = (e) => (_FreeErrorData = Module._FreeErrorData = wasmExports.FreeErrorData)(e), _RelidByRelfilenumber = Module._RelidByRelfilenumber = (e, t) => (_RelidByRelfilenumber = Module._RelidByRelfilenumber = wasmExports.RelidByRelfilenumber)(e, t), _SnapBuildRestoreSnapshot = Module._SnapBuildRestoreSnapshot = (e, t, r, a) => (_SnapBuildRestoreSnapshot = Module._SnapBuildRestoreSnapshot = wasmExports.SnapBuildRestoreSnapshot)(e, t, r, a), _WaitLatchOrSocket = Module._WaitLatchOrSocket = (e, t, r, a, o) => (_WaitLatchOrSocket = Module._WaitLatchOrSocket = wasmExports.WaitLatchOrSocket)(e, t, r, a, o), _BufFileCreateFileSet = Module._BufFileCreateFileSet = (e, t) => (_BufFileCreateFileSet = Module._BufFileCreateFileSet = wasmExports.BufFileCreateFileSet)(e, t), _BufFileOpenFileSet = Module._BufFileOpenFileSet = (e, t, r, a) => (_BufFileOpenFileSet = Module._BufFileOpenFileSet = wasmExports.BufFileOpenFileSet)(e, t, r, a), _BufFileTell = Module._BufFileTell = (e, t, r) => (_BufFileTell = Module._BufFileTell = wasmExports.BufFileTell)(e, t, r), _ConditionVariablePrepareToSleep = Module._ConditionVariablePrepareToSleep = (e) => (_ConditionVariablePrepareToSleep = Module._ConditionVariablePrepareToSleep = wasmExports.ConditionVariablePrepareToSleep)(e), _get_row_security_policies = Module._get_row_security_policies = (e, t, r, a, o, _, s) => (_get_row_security_policies = Module._get_row_security_policies = wasmExports.get_row_security_policies)(e, t, r, a, o, _, s), _extract_variadic_args = Module._extract_variadic_args = (e, t, r, a, o, _) => (_extract_variadic_args = Module._extract_variadic_args = wasmExports.extract_variadic_args)(e, t, r, a, o, _), _errhidestmt = Module._errhidestmt = (e) => (_errhidestmt = Module._errhidestmt = wasmExports.errhidestmt)(e), _hash_estimate_size = Module._hash_estimate_size = (e, t) => (_hash_estimate_size = Module._hash_estimate_size = wasmExports.hash_estimate_size)(e, t), _ShmemInitHash = Module._ShmemInitHash = (e, t, r, a, o) => (_ShmemInitHash = Module._ShmemInitHash = wasmExports.ShmemInitHash)(e, t, r, a, o), _LockBufHdr = Module._LockBufHdr = (e) => (_LockBufHdr = Module._LockBufHdr = wasmExports.LockBufHdr)(e), _EvictUnpinnedBuffer = Module._EvictUnpinnedBuffer = (e, t) => (_EvictUnpinnedBuffer = Module._EvictUnpinnedBuffer = wasmExports.EvictUnpinnedBuffer)(e, t), _EvictAllUnpinnedBuffers = Module._EvictAllUnpinnedBuffers = (e, t, r) => (_EvictAllUnpinnedBuffers = Module._EvictAllUnpinnedBuffers = wasmExports.EvictAllUnpinnedBuffers)(e, t, r), _EvictRelUnpinnedBuffers = Module._EvictRelUnpinnedBuffers = (e, t, r, a) => (_EvictRelUnpinnedBuffers = Module._EvictRelUnpinnedBuffers = wasmExports.EvictRelUnpinnedBuffers)(e, t, r, a), _have_free_buffer = Module._have_free_buffer = () => (_have_free_buffer = Module._have_free_buffer = wasmExports.have_free_buffer)(), _calloc = Module._calloc = (e, t) => (_calloc = Module._calloc = wasmExports.calloc)(e, t), _BufFileExportFileSet = Module._BufFileExportFileSet = (e) => (_BufFileExportFileSet = Module._BufFileExportFileSet = wasmExports.BufFileExportFileSet)(e), _copy_file = Module._copy_file = (e, t) => (_copy_file = Module._copy_file = wasmExports.copy_file)(e, t), _fdatasync = Module._fdatasync = (e) => (_fdatasync = Module._fdatasync = wasmExports.fdatasync)(e), _truncate = Module._truncate = (e, t) => (_truncate = Module._truncate = wasmExports.truncate)(e, t), _dup = Module._dup = (e) => (_dup = Module._dup = wasmExports.dup)(e), _AcquireExternalFD = Module._AcquireExternalFD = () => (_AcquireExternalFD = Module._AcquireExternalFD = wasmExports.AcquireExternalFD)(), _mkdir = Module._mkdir = (e, t) => (_mkdir = Module._mkdir = wasmExports.mkdir)(e, t), _pgl_popen = Module._pgl_popen = (e, t) => (_pgl_popen = Module._pgl_popen = wasmExports.pgl_popen)(e, t), _pgl_pclose = Module._pgl_pclose = (e) => (_pgl_pclose = Module._pgl_pclose = wasmExports.pgl_pclose)(e), _closedir = Module._closedir = (e) => (_closedir = Module._closedir = wasmExports.closedir)(e), _opendir = Module._opendir = (e) => (_opendir = Module._opendir = wasmExports.opendir)(e), _readdir = Module._readdir = (e) => (_readdir = Module._readdir = wasmExports.readdir)(e), _GetNamedDSMSegment = Module._GetNamedDSMSegment = (e, t, r, a) => (_GetNamedDSMSegment = Module._GetNamedDSMSegment = wasmExports.GetNamedDSMSegment)(e, t, r, a), _pgl_atexit = Module._pgl_atexit = (e) => (_pgl_atexit = Module._pgl_atexit = wasmExports.pgl_atexit)(e), _RequestAddinShmemSpace = Module._RequestAddinShmemSpace = (e) => (_RequestAddinShmemSpace = Module._RequestAddinShmemSpace = wasmExports.RequestAddinShmemSpace)(e), _GetRunningTransactionData = Module._GetRunningTransactionData = () => (_GetRunningTransactionData = Module._GetRunningTransactionData = wasmExports.GetRunningTransactionData)(), _BackendXidGetPid = Module._BackendXidGetPid = (e) => (_BackendXidGetPid = Module._BackendXidGetPid = wasmExports.BackendXidGetPid)(e), _pg_numa_init = Module._pg_numa_init = () => (_pg_numa_init = Module._pg_numa_init = wasmExports.pg_numa_init)(), _sysconf = Module._sysconf = (e) => (_sysconf = Module._sysconf = wasmExports.sysconf)(e), _pg_numa_query_pages = Module._pg_numa_query_pages = (e, t, r, a) => (_pg_numa_query_pages = Module._pg_numa_query_pages = wasmExports.pg_numa_query_pages)(e, t, r, a), _pg_get_shmem_pagesize = Module._pg_get_shmem_pagesize = () => (_pg_get_shmem_pagesize = Module._pg_get_shmem_pagesize = wasmExports.pg_get_shmem_pagesize)(), _pgl_poll = Module._pgl_poll = (e, t, r) => (_pgl_poll = Module._pgl_poll = wasmExports.pgl_poll)(e, t, r), _GetLockmodeName = Module._GetLockmodeName = (e, t) => (_GetLockmodeName = Module._GetLockmodeName = wasmExports.GetLockmodeName)(e, t), _LWLockRegisterTranche = Module._LWLockRegisterTranche = (e, t) => (_LWLockRegisterTranche = Module._LWLockRegisterTranche = wasmExports.LWLockRegisterTranche)(e, t), _GetNamedLWLockTranche = Module._GetNamedLWLockTranche = (e) => (_GetNamedLWLockTranche = Module._GetNamedLWLockTranche = wasmExports.GetNamedLWLockTranche)(e), _LWLockNewTrancheId = Module._LWLockNewTrancheId = () => (_LWLockNewTrancheId = Module._LWLockNewTrancheId = wasmExports.LWLockNewTrancheId)(), _RequestNamedLWLockTranche = Module._RequestNamedLWLockTranche = (e, t) => (_RequestNamedLWLockTranche = Module._RequestNamedLWLockTranche = wasmExports.RequestNamedLWLockTranche)(e, t), _LWLockHeldByMe = Module._LWLockHeldByMe = (e) => (_LWLockHeldByMe = Module._LWLockHeldByMe = wasmExports.LWLockHeldByMe)(e), _ProcessStartupPacket = Module._ProcessStartupPacket = (e, t, r) => (_ProcessStartupPacket = Module._ProcessStartupPacket = wasmExports.ProcessStartupPacket)(e, t, r), _htons = (e) => (_htons = wasmExports.htons)(e), _htonl = (e) => (_htonl = wasmExports.htonl)(e), _pgl_startPGlite = Module._pgl_startPGlite = () => (_pgl_startPGlite = Module._pgl_startPGlite = wasmExports.pgl_startPGlite)(), _pgl_pq_flush = Module._pgl_pq_flush = () => (_pgl_pq_flush = Module._pgl_pq_flush = wasmExports.pgl_pq_flush)(), _pgl_getMyProcPort = Module._pgl_getMyProcPort = () => (_pgl_getMyProcPort = Module._pgl_getMyProcPort = wasmExports.pgl_getMyProcPort)(), _pgl_sendConnData = Module._pgl_sendConnData = () => (_pgl_sendConnData = Module._pgl_sendConnData = wasmExports.pgl_sendConnData)(), _PostgresMainLongJmp = Module._PostgresMainLongJmp = () => (_PostgresMainLongJmp = Module._PostgresMainLongJmp = wasmExports.PostgresMainLongJmp)(), _PostgresMainLoopOnce = Module._PostgresMainLoopOnce = () => (_PostgresMainLoopOnce = Module._PostgresMainLoopOnce = wasmExports.PostgresMainLoopOnce)(), _PostgresSendReadyForQueryIfNecessary = Module._PostgresSendReadyForQueryIfNecessary = () => (_PostgresSendReadyForQueryIfNecessary = Module._PostgresSendReadyForQueryIfNecessary = wasmExports.PostgresSendReadyForQueryIfNecessary)(), _standard_ProcessUtility = Module._standard_ProcessUtility = (e, t, r, a, o, _, s, n) => (_standard_ProcessUtility = Module._standard_ProcessUtility = wasmExports.standard_ProcessUtility)(e, t, r, a, o, _, s, n), _lookup_ts_dictionary_cache = Module._lookup_ts_dictionary_cache = (e) => (_lookup_ts_dictionary_cache = Module._lookup_ts_dictionary_cache = wasmExports.lookup_ts_dictionary_cache)(e), _get_tsearch_config_filename = Module._get_tsearch_config_filename = (e, t) => (_get_tsearch_config_filename = Module._get_tsearch_config_filename = wasmExports.get_tsearch_config_filename)(e, t), _str_tolower = Module._str_tolower = (e, t, r) => (_str_tolower = Module._str_tolower = wasmExports.str_tolower)(e, t, r), _readstoplist = Module._readstoplist = (e, t, r) => (_readstoplist = Module._readstoplist = wasmExports.readstoplist)(e, t, r), _searchstoplist = Module._searchstoplist = (e, t) => (_searchstoplist = Module._searchstoplist = wasmExports.searchstoplist)(e, t), _tsearch_readline_begin = Module._tsearch_readline_begin = (e, t) => (_tsearch_readline_begin = Module._tsearch_readline_begin = wasmExports.tsearch_readline_begin)(e, t), _tsearch_readline = Module._tsearch_readline = (e) => (_tsearch_readline = Module._tsearch_readline = wasmExports.tsearch_readline)(e), _tsearch_readline_end = Module._tsearch_readline_end = (e) => (_tsearch_readline_end = Module._tsearch_readline_end = wasmExports.tsearch_readline_end)(e), _stringToQualifiedNameList = Module._stringToQualifiedNameList = (e, t) => (_stringToQualifiedNameList = Module._stringToQualifiedNameList = wasmExports.stringToQualifiedNameList)(e, t), _to_tsvector_byid = Module._to_tsvector_byid = (e) => (_to_tsvector_byid = Module._to_tsvector_byid = wasmExports.to_tsvector_byid)(e), _t_isalnum_with_len = Module._t_isalnum_with_len = (e, t) => (_t_isalnum_with_len = Module._t_isalnum_with_len = wasmExports.t_isalnum_with_len)(e, t), _isalnum = Module._isalnum = (e) => (_isalnum = Module._isalnum = wasmExports.isalnum)(e), _t_isalnum_cstr = Module._t_isalnum_cstr = (e) => (_t_isalnum_cstr = Module._t_isalnum_cstr = wasmExports.t_isalnum_cstr)(e), _pg_mblen_unbounded = Module._pg_mblen_unbounded = (e) => (_pg_mblen_unbounded = Module._pg_mblen_unbounded = wasmExports.pg_mblen_unbounded)(e), _get_restriction_variable = Module._get_restriction_variable = (e, t, r, a, o, _) => (_get_restriction_variable = Module._get_restriction_variable = wasmExports.get_restriction_variable)(e, t, r, a, o, _), _pg_mblen_range = Module._pg_mblen_range = (e, t) => (_pg_mblen_range = Module._pg_mblen_range = wasmExports.pg_mblen_range)(e, t), _MemoryContextAllocHuge = Module._MemoryContextAllocHuge = (e, t) => (_MemoryContextAllocHuge = Module._MemoryContextAllocHuge = wasmExports.MemoryContextAllocHuge)(e, t), _fseek = Module._fseek = (e, t, r) => (_fseek = Module._fseek = wasmExports.fseek)(e, t, r), _WaitEventExtensionNew = Module._WaitEventExtensionNew = (e) => (_WaitEventExtensionNew = Module._WaitEventExtensionNew = wasmExports.WaitEventExtensionNew)(e), _pg_popcount64 = Module._pg_popcount64 = (e) => (_pg_popcount64 = Module._pg_popcount64 = wasmExports.pg_popcount64)(e), _expand_array = Module._expand_array = (e, t, r) => (_expand_array = Module._expand_array = wasmExports.expand_array)(e, t, r), _exp = Module._exp = (e) => (_exp = Module._exp = wasmExports.exp)(e), _arraycontsel = Module._arraycontsel = (e) => (_arraycontsel = Module._arraycontsel = wasmExports.arraycontsel)(e), _arraycontjoinsel = Module._arraycontjoinsel = (e) => (_arraycontjoinsel = Module._arraycontjoinsel = wasmExports.arraycontjoinsel)(e), _initArrayResult = Module._initArrayResult = (e, t, r) => (_initArrayResult = Module._initArrayResult = wasmExports.initArrayResult)(e, t, r), _array_create_iterator = Module._array_create_iterator = (e, t, r) => (_array_create_iterator = Module._array_create_iterator = wasmExports.array_create_iterator)(e, t, r), _array_iterate = Module._array_iterate = (e, t, r) => (_array_iterate = Module._array_iterate = wasmExports.array_iterate)(e, t, r), _array_free_iterator = Module._array_free_iterator = (e) => (_array_free_iterator = Module._array_free_iterator = wasmExports.array_free_iterator)(e), _ArrayGetIntegerTypmods = Module._ArrayGetIntegerTypmods = (e, t) => (_ArrayGetIntegerTypmods = Module._ArrayGetIntegerTypmods = wasmExports.ArrayGetIntegerTypmods)(e, t), _boolin = Module._boolin = (e) => (_boolin = Module._boolin = wasmExports.boolin)(e), ___multi3 = Module.___multi3 = (e, t, r, a, o) => (___multi3 = Module.___multi3 = wasmExports.__multi3)(e, t, r, a, o), _cash_cmp = Module._cash_cmp = (e) => (_cash_cmp = Module._cash_cmp = wasmExports.cash_cmp)(e), _int64_to_numeric = Module._int64_to_numeric = (e) => (_int64_to_numeric = Module._int64_to_numeric = wasmExports.int64_to_numeric)(e), _numeric_div = Module._numeric_div = (e) => (_numeric_div = Module._numeric_div = wasmExports.numeric_div)(e), _numeric_round = Module._numeric_round = (e) => (_numeric_round = Module._numeric_round = wasmExports.numeric_round)(e), _numeric_int8 = Module._numeric_int8 = (e) => (_numeric_int8 = Module._numeric_int8 = wasmExports.numeric_int8)(e), _numeric_mul = Module._numeric_mul = (e) => (_numeric_mul = Module._numeric_mul = wasmExports.numeric_mul)(e), _j2date = Module._j2date = (e, t, r, a) => (_j2date = Module._j2date = wasmExports.j2date)(e, t, r, a), _EncodeDateOnly = Module._EncodeDateOnly = (e, t, r) => (_EncodeDateOnly = Module._EncodeDateOnly = wasmExports.EncodeDateOnly)(e, t, r), _EncodeSpecialDate = Module._EncodeSpecialDate = (e, t) => (_EncodeSpecialDate = Module._EncodeSpecialDate = wasmExports.EncodeSpecialDate)(e, t), _date_eq = Module._date_eq = (e) => (_date_eq = Module._date_eq = wasmExports.date_eq)(e), _date_lt = Module._date_lt = (e) => (_date_lt = Module._date_lt = wasmExports.date_lt)(e), _date_le = Module._date_le = (e) => (_date_le = Module._date_le = wasmExports.date_le)(e), _date_gt = Module._date_gt = (e) => (_date_gt = Module._date_gt = wasmExports.date_gt)(e), _date_ge = Module._date_ge = (e) => (_date_ge = Module._date_ge = wasmExports.date_ge)(e), _date_cmp = Module._date_cmp = (e) => (_date_cmp = Module._date_cmp = wasmExports.date_cmp)(e), _date_mi = Module._date_mi = (e) => (_date_mi = Module._date_mi = wasmExports.date_mi)(e), _timestamp2tm = Module._timestamp2tm = (e, t, r, a, o, _) => (_timestamp2tm = Module._timestamp2tm = wasmExports.timestamp2tm)(e, t, r, a, o, _), _time2tm = Module._time2tm = (e, t, r) => (_time2tm = Module._time2tm = wasmExports.time2tm)(e, t, r), _EncodeTimeOnly = Module._EncodeTimeOnly = (e, t, r, a, o, _) => (_EncodeTimeOnly = Module._EncodeTimeOnly = wasmExports.EncodeTimeOnly)(e, t, r, a, o, _), _time_eq = Module._time_eq = (e) => (_time_eq = Module._time_eq = wasmExports.time_eq)(e), _time_lt = Module._time_lt = (e) => (_time_lt = Module._time_lt = wasmExports.time_lt)(e), _time_le = Module._time_le = (e) => (_time_le = Module._time_le = wasmExports.time_le)(e), _time_gt = Module._time_gt = (e) => (_time_gt = Module._time_gt = wasmExports.time_gt)(e), _time_ge = Module._time_ge = (e) => (_time_ge = Module._time_ge = wasmExports.time_ge)(e), _time_cmp = Module._time_cmp = (e) => (_time_cmp = Module._time_cmp = wasmExports.time_cmp)(e), _time_mi_time = Module._time_mi_time = (e) => (_time_mi_time = Module._time_mi_time = wasmExports.time_mi_time)(e), _timetz2tm = Module._timetz2tm = (e, t, r, a) => (_timetz2tm = Module._timetz2tm = wasmExports.timetz2tm)(e, t, r, a), _timetz_cmp = Module._timetz_cmp = (e) => (_timetz_cmp = Module._timetz_cmp = wasmExports.timetz_cmp)(e), _pg_tolower = Module._pg_tolower = (e) => (_pg_tolower = Module._pg_tolower = wasmExports.pg_tolower)(e), _EncodeDateTime = Module._EncodeDateTime = (e, t, r, a, o, _, s) => (_EncodeDateTime = Module._EncodeDateTime = wasmExports.EncodeDateTime)(e, t, r, a, o, _, s), _TransferExpandedObject = Module._TransferExpandedObject = (e, t) => (_TransferExpandedObject = Module._TransferExpandedObject = wasmExports.TransferExpandedObject)(e, t), _forkname_to_number = Module._forkname_to_number = (e) => (_forkname_to_number = Module._forkname_to_number = wasmExports.forkname_to_number)(e), _numeric_lt = Module._numeric_lt = (e) => (_numeric_lt = Module._numeric_lt = wasmExports.numeric_lt)(e), _numeric_abs = Module._numeric_abs = (e) => (_numeric_abs = Module._numeric_abs = wasmExports.numeric_abs)(e), _numeric_add = Module._numeric_add = (e) => (_numeric_add = Module._numeric_add = wasmExports.numeric_add)(e), _numeric_ge = Module._numeric_ge = (e) => (_numeric_ge = Module._numeric_ge = wasmExports.numeric_ge)(e), _err_generic_string = Module._err_generic_string = (e, t) => (_err_generic_string = Module._err_generic_string = wasmExports.err_generic_string)(e, t), _domain_check = Module._domain_check = (e, t, r, a, o) => (_domain_check = Module._domain_check = wasmExports.domain_check)(e, t, r, a, o), _enum_lt = Module._enum_lt = (e) => (_enum_lt = Module._enum_lt = wasmExports.enum_lt)(e), _enum_le = Module._enum_le = (e) => (_enum_le = Module._enum_le = wasmExports.enum_le)(e), _enum_ge = Module._enum_ge = (e) => (_enum_ge = Module._enum_ge = wasmExports.enum_ge)(e), _enum_gt = Module._enum_gt = (e) => (_enum_gt = Module._enum_gt = wasmExports.enum_gt)(e), _enum_cmp = Module._enum_cmp = (e) => (_enum_cmp = Module._enum_cmp = wasmExports.enum_cmp)(e), _make_expanded_record_from_typeid = Module._make_expanded_record_from_typeid = (e, t, r) => (_make_expanded_record_from_typeid = Module._make_expanded_record_from_typeid = wasmExports.make_expanded_record_from_typeid)(e, t, r), _make_expanded_record_from_tupdesc = Module._make_expanded_record_from_tupdesc = (e, t) => (_make_expanded_record_from_tupdesc = Module._make_expanded_record_from_tupdesc = wasmExports.make_expanded_record_from_tupdesc)(e, t), _make_expanded_record_from_exprecord = Module._make_expanded_record_from_exprecord = (e, t) => (_make_expanded_record_from_exprecord = Module._make_expanded_record_from_exprecord = wasmExports.make_expanded_record_from_exprecord)(e, t), _expanded_record_set_tuple = Module._expanded_record_set_tuple = (e, t, r, a) => (_expanded_record_set_tuple = Module._expanded_record_set_tuple = wasmExports.expanded_record_set_tuple)(e, t, r, a), _expanded_record_get_tuple = Module._expanded_record_get_tuple = (e) => (_expanded_record_get_tuple = Module._expanded_record_get_tuple = wasmExports.expanded_record_get_tuple)(e), _deconstruct_expanded_record = Module._deconstruct_expanded_record = (e) => (_deconstruct_expanded_record = Module._deconstruct_expanded_record = wasmExports.deconstruct_expanded_record)(e), _expanded_record_lookup_field = Module._expanded_record_lookup_field = (e, t, r) => (_expanded_record_lookup_field = Module._expanded_record_lookup_field = wasmExports.expanded_record_lookup_field)(e, t, r), _expanded_record_set_field_internal = Module._expanded_record_set_field_internal = (e, t, r, a, o, _) => (_expanded_record_set_field_internal = Module._expanded_record_set_field_internal = wasmExports.expanded_record_set_field_internal)(e, t, r, a, o, _), _expanded_record_set_fields = Module._expanded_record_set_fields = (e, t, r, a) => (_expanded_record_set_fields = Module._expanded_record_set_fields = wasmExports.expanded_record_set_fields)(e, t, r, a), _float4in_internal = Module._float4in_internal = (e, t, r, a, o) => (_float4in_internal = Module._float4in_internal = wasmExports.float4in_internal)(e, t, r, a, o), _strtof = Module._strtof = (e, t) => (_strtof = Module._strtof = wasmExports.strtof)(e, t), _float_to_shortest_decimal_buf = Module._float_to_shortest_decimal_buf = (e, t) => (_float_to_shortest_decimal_buf = Module._float_to_shortest_decimal_buf = wasmExports.float_to_shortest_decimal_buf)(e, t), _float8in = Module._float8in = (e) => (_float8in = Module._float8in = wasmExports.float8in)(e), _float8in_internal = Module._float8in_internal = (e, t, r, a, o) => (_float8in_internal = Module._float8in_internal = wasmExports.float8in_internal)(e, t, r, a, o), _float8out = Module._float8out = (e) => (_float8out = Module._float8out = wasmExports.float8out)(e), _float8out_internal = Module._float8out_internal = (e) => (_float8out_internal = Module._float8out_internal = wasmExports.float8out_internal)(e), _float8pl = Module._float8pl = (e) => (_float8pl = Module._float8pl = wasmExports.float8pl)(e), _float4_cmp_internal = Module._float4_cmp_internal = (e, t) => (_float4_cmp_internal = Module._float4_cmp_internal = wasmExports.float4_cmp_internal)(e, t), _btfloat4cmp = Module._btfloat4cmp = (e) => (_btfloat4cmp = Module._btfloat4cmp = wasmExports.btfloat4cmp)(e), _btfloat8cmp = Module._btfloat8cmp = (e) => (_btfloat8cmp = Module._btfloat8cmp = wasmExports.btfloat8cmp)(e), _dtoi4 = Module._dtoi4 = (e) => (_dtoi4 = Module._dtoi4 = wasmExports.dtoi4)(e), _dtoi2 = Module._dtoi2 = (e) => (_dtoi2 = Module._dtoi2 = wasmExports.dtoi2)(e), _cbrt = Module._cbrt = (e) => (_cbrt = Module._cbrt = wasmExports.cbrt)(e), _dexp = Module._dexp = (e) => (_dexp = Module._dexp = wasmExports.dexp)(e), _log10 = Module._log10 = (e) => (_log10 = Module._log10 = wasmExports.log10)(e), _dacos = Module._dacos = (e) => (_dacos = Module._dacos = wasmExports.dacos)(e), _acos = Module._acos = (e) => (_acos = Module._acos = wasmExports.acos)(e), _dasin = Module._dasin = (e) => (_dasin = Module._dasin = wasmExports.dasin)(e), _asin = Module._asin = (e) => (_asin = Module._asin = wasmExports.asin)(e), _datan = Module._datan = (e) => (_datan = Module._datan = wasmExports.datan)(e), _atan = Module._atan = (e) => (_atan = Module._atan = wasmExports.atan)(e), _datan2 = Module._datan2 = (e) => (_datan2 = Module._datan2 = wasmExports.datan2)(e), _atan2 = Module._atan2 = (e, t) => (_atan2 = Module._atan2 = wasmExports.atan2)(e, t), _dcos = Module._dcos = (e) => (_dcos = Module._dcos = wasmExports.dcos)(e), _cos = Module._cos = (e) => (_cos = Module._cos = wasmExports.cos)(e), _dcot = Module._dcot = (e) => (_dcot = Module._dcot = wasmExports.dcot)(e), _tan = Module._tan = (e) => (_tan = Module._tan = wasmExports.tan)(e), _dsin = Module._dsin = (e) => (_dsin = Module._dsin = wasmExports.dsin)(e), _sin = Module._sin = (e) => (_sin = Module._sin = wasmExports.sin)(e), _dtan = Module._dtan = (e) => (_dtan = Module._dtan = wasmExports.dtan)(e), _fmod = Module._fmod = (e, t) => (_fmod = Module._fmod = wasmExports.fmod)(e, t), _degrees = Module._degrees = (e) => (_degrees = Module._degrees = wasmExports.degrees)(e), _dpi = Module._dpi = (e) => (_dpi = Module._dpi = wasmExports.dpi)(e), _radians = Module._radians = (e) => (_radians = Module._radians = wasmExports.radians)(e), _sinh = Module._sinh = (e) => (_sinh = Module._sinh = wasmExports.sinh)(e), _cosh = Module._cosh = (e) => (_cosh = Module._cosh = wasmExports.cosh)(e), _tanh = Module._tanh = (e) => (_tanh = Module._tanh = wasmExports.tanh)(e), _asinh = Module._asinh = (e) => (_asinh = Module._asinh = wasmExports.asinh)(e), _acosh = Module._acosh = (e) => (_acosh = Module._acosh = wasmExports.acosh)(e), _atanh = Module._atanh = (e) => (_atanh = Module._atanh = wasmExports.atanh)(e), _float8_accum = Module._float8_accum = (e) => (_float8_accum = Module._float8_accum = wasmExports.float8_accum)(e), _float8_stddev_pop = Module._float8_stddev_pop = (e) => (_float8_stddev_pop = Module._float8_stddev_pop = wasmExports.float8_stddev_pop)(e), _float8_stddev_samp = Module._float8_stddev_samp = (e) => (_float8_stddev_samp = Module._float8_stddev_samp = wasmExports.float8_stddev_samp)(e), _asc_tolower = Module._asc_tolower = (e, t) => (_asc_tolower = Module._asc_tolower = wasmExports.asc_tolower)(e, t), _pg_strfold = Module._pg_strfold = (e, t, r, a, o) => (_pg_strfold = Module._pg_strfold = wasmExports.pg_strfold)(e, t, r, a, o), _numeric_power = Module._numeric_power = (e) => (_numeric_power = Module._numeric_power = wasmExports.numeric_power)(e), _dtoi8 = Module._dtoi8 = (e) => (_dtoi8 = Module._dtoi8 = wasmExports.dtoi8)(e), _int8out = Module._int8out = (e) => (_int8out = Module._int8out = wasmExports.int8out)(e), _fseeko = Module._fseeko = (e, t, r) => (_fseeko = Module._fseeko = wasmExports.fseeko)(e, t, r), _int4in = Module._int4in = (e) => (_int4in = Module._int4in = wasmExports.int4in)(e), _int4_bool = Module._int4_bool = (e) => (_int4_bool = Module._int4_bool = wasmExports.int4_bool)(e), _int8pl = Module._int8pl = (e) => (_int8pl = Module._int8pl = wasmExports.int8pl)(e), _int84 = Module._int84 = (e) => (_int84 = Module._int84 = wasmExports.int84)(e), _int82 = Module._int82 = (e) => (_int82 = Module._int82 = wasmExports.int82)(e), _json_in = Module._json_in = (e) => (_json_in = Module._json_in = wasmExports.json_in)(e), _EncodeSpecialTimestamp = Module._EncodeSpecialTimestamp = (e, t) => (_EncodeSpecialTimestamp = Module._EncodeSpecialTimestamp = wasmExports.EncodeSpecialTimestamp)(e, t), _pushJsonbValue = Module._pushJsonbValue = (e, t, r) => (_pushJsonbValue = Module._pushJsonbValue = wasmExports.pushJsonbValue)(e, t, r), _numeric_int2 = Module._numeric_int2 = (e) => (_numeric_int2 = Module._numeric_int2 = wasmExports.numeric_int2)(e), _numeric_int4 = Module._numeric_int4 = (e) => (_numeric_int4 = Module._numeric_int4 = wasmExports.numeric_int4)(e), _numeric_float4 = Module._numeric_float4 = (e) => (_numeric_float4 = Module._numeric_float4 = wasmExports.numeric_float4)(e), _numeric_normalize = Module._numeric_normalize = (e) => (_numeric_normalize = Module._numeric_normalize = wasmExports.numeric_normalize)(e), _numeric_cmp = Module._numeric_cmp = (e) => (_numeric_cmp = Module._numeric_cmp = wasmExports.numeric_cmp)(e), _numeric_eq = Module._numeric_eq = (e) => (_numeric_eq = Module._numeric_eq = wasmExports.numeric_eq)(e), _hash_numeric = Module._hash_numeric = (e) => (_hash_numeric = Module._hash_numeric = wasmExports.hash_numeric)(e), _hash_numeric_extended = Module._hash_numeric_extended = (e) => (_hash_numeric_extended = Module._hash_numeric_extended = wasmExports.hash_numeric_extended)(e), _int2_numeric = Module._int2_numeric = (e) => (_int2_numeric = Module._int2_numeric = wasmExports.int2_numeric)(e), _int4_numeric = Module._int4_numeric = (e) => (_int4_numeric = Module._int4_numeric = wasmExports.int4_numeric)(e), _int8_numeric = Module._int8_numeric = (e) => (_int8_numeric = Module._int8_numeric = wasmExports.int8_numeric)(e), _float4_numeric = Module._float4_numeric = (e) => (_float4_numeric = Module._float4_numeric = wasmExports.float4_numeric)(e), _float8_numeric = Module._float8_numeric = (e) => (_float8_numeric = Module._float8_numeric = wasmExports.float8_numeric)(e), _numeric_uminus = Module._numeric_uminus = (e) => (_numeric_uminus = Module._numeric_uminus = wasmExports.numeric_uminus)(e), _numeric_is_nan = Module._numeric_is_nan = (e) => (_numeric_is_nan = Module._numeric_is_nan = wasmExports.numeric_is_nan)(e), _numeric_ceil = Module._numeric_ceil = (e) => (_numeric_ceil = Module._numeric_ceil = wasmExports.numeric_ceil)(e), _numeric_floor = Module._numeric_floor = (e) => (_numeric_floor = Module._numeric_floor = wasmExports.numeric_floor)(e), _timestamp_cmp = Module._timestamp_cmp = (e) => (_timestamp_cmp = Module._timestamp_cmp = wasmExports.timestamp_cmp)(e), _macaddr_cmp = Module._macaddr_cmp = (e) => (_macaddr_cmp = Module._macaddr_cmp = wasmExports.macaddr_cmp)(e), _macaddr_lt = Module._macaddr_lt = (e) => (_macaddr_lt = Module._macaddr_lt = wasmExports.macaddr_lt)(e), _macaddr_le = Module._macaddr_le = (e) => (_macaddr_le = Module._macaddr_le = wasmExports.macaddr_le)(e), _macaddr_eq = Module._macaddr_eq = (e) => (_macaddr_eq = Module._macaddr_eq = wasmExports.macaddr_eq)(e), _macaddr_ge = Module._macaddr_ge = (e) => (_macaddr_ge = Module._macaddr_ge = wasmExports.macaddr_ge)(e), _macaddr_gt = Module._macaddr_gt = (e) => (_macaddr_gt = Module._macaddr_gt = wasmExports.macaddr_gt)(e), _macaddr8_cmp = Module._macaddr8_cmp = (e) => (_macaddr8_cmp = Module._macaddr8_cmp = wasmExports.macaddr8_cmp)(e), _macaddr8_lt = Module._macaddr8_lt = (e) => (_macaddr8_lt = Module._macaddr8_lt = wasmExports.macaddr8_lt)(e), _macaddr8_le = Module._macaddr8_le = (e) => (_macaddr8_le = Module._macaddr8_le = wasmExports.macaddr8_le)(e), _macaddr8_eq = Module._macaddr8_eq = (e) => (_macaddr8_eq = Module._macaddr8_eq = wasmExports.macaddr8_eq)(e), _macaddr8_ge = Module._macaddr8_ge = (e) => (_macaddr8_ge = Module._macaddr8_ge = wasmExports.macaddr8_ge)(e), _macaddr8_gt = Module._macaddr8_gt = (e) => (_macaddr8_gt = Module._macaddr8_gt = wasmExports.macaddr8_gt)(e), _current_query = Module._current_query = (e) => (_current_query = Module._current_query = wasmExports.current_query)(e), _get_fn_expr_arg_stable = Module._get_fn_expr_arg_stable = (e, t) => (_get_fn_expr_arg_stable = Module._get_fn_expr_arg_stable = wasmExports.get_fn_expr_arg_stable)(e, t), _unpack_sql_state = Module._unpack_sql_state = (e) => (_unpack_sql_state = Module._unpack_sql_state = wasmExports.unpack_sql_state)(e), _get_fn_expr_rettype = Module._get_fn_expr_rettype = (e) => (_get_fn_expr_rettype = Module._get_fn_expr_rettype = wasmExports.get_fn_expr_rettype)(e), _btnamecmp = Module._btnamecmp = (e) => (_btnamecmp = Module._btnamecmp = wasmExports.btnamecmp)(e), _inet_in = Module._inet_in = (e) => (_inet_in = Module._inet_in = wasmExports.inet_in)(e), _network_cmp = Module._network_cmp = (e) => (_network_cmp = Module._network_cmp = wasmExports.network_cmp)(e), _convert_network_to_scalar = Module._convert_network_to_scalar = (e, t, r) => (_convert_network_to_scalar = Module._convert_network_to_scalar = wasmExports.convert_network_to_scalar)(e, t, r), _numeric_sign = Module._numeric_sign = (e) => (_numeric_sign = Module._numeric_sign = wasmExports.numeric_sign)(e), _numeric_gt = Module._numeric_gt = (e) => (_numeric_gt = Module._numeric_gt = wasmExports.numeric_gt)(e), _numeric_le = Module._numeric_le = (e) => (_numeric_le = Module._numeric_le = wasmExports.numeric_le)(e), _numeric_mod = Module._numeric_mod = (e) => (_numeric_mod = Module._numeric_mod = wasmExports.numeric_mod)(e), _numeric_sqrt = Module._numeric_sqrt = (e) => (_numeric_sqrt = Module._numeric_sqrt = wasmExports.numeric_sqrt)(e), ___divti3 = Module.___divti3 = (e, t, r, a, o) => (___divti3 = Module.___divti3 = wasmExports.__divti3)(e, t, r, a, o), _numeric_exp = Module._numeric_exp = (e) => (_numeric_exp = Module._numeric_exp = wasmExports.numeric_exp)(e), _numeric_ln = Module._numeric_ln = (e) => (_numeric_ln = Module._numeric_ln = wasmExports.numeric_ln)(e), _numeric_log = Module._numeric_log = (e) => (_numeric_log = Module._numeric_log = wasmExports.numeric_log)(e), _numeric_float8_no_overflow = Module._numeric_float8_no_overflow = (e) => (_numeric_float8_no_overflow = Module._numeric_float8_no_overflow = wasmExports.numeric_float8_no_overflow)(e), _oidout = Module._oidout = (e) => (_oidout = Module._oidout = wasmExports.oidout)(e), _btrim1 = Module._btrim1 = (e) => (_btrim1 = Module._btrim1 = wasmExports.btrim1)(e), _ltrim1 = Module._ltrim1 = (e) => (_ltrim1 = Module._ltrim1 = wasmExports.ltrim1)(e), _rtrim1 = Module._rtrim1 = (e) => (_rtrim1 = Module._rtrim1 = wasmExports.rtrim1)(e), _tuplesort_skiptuples = Module._tuplesort_skiptuples = (e, t, r) => (_tuplesort_skiptuples = Module._tuplesort_skiptuples = wasmExports.tuplesort_skiptuples)(e, t, r), _interval_mi = Module._interval_mi = (e) => (_interval_mi = Module._interval_mi = wasmExports.interval_mi)(e), _setlocale = Module._setlocale = (e, t) => (_setlocale = Module._setlocale = wasmExports.setlocale)(e, t), _newlocale = Module._newlocale = (e, t, r) => (_newlocale = Module._newlocale = wasmExports.newlocale)(e, t, r), _strftime_l = Module._strftime_l = (e, t, r, a, o) => (_strftime_l = Module._strftime_l = wasmExports.strftime_l)(e, t, r, a, o), _freelocale = Module._freelocale = (e) => (_freelocale = Module._freelocale = wasmExports.freelocale)(e), _uselocale = Module._uselocale = (e) => (_uselocale = Module._uselocale = wasmExports.uselocale)(e), _strcoll_l = Module._strcoll_l = (e, t, r) => (_strcoll_l = Module._strcoll_l = wasmExports.strcoll_l)(e, t, r), _strxfrm_l = Module._strxfrm_l = (e, t, r, a) => (_strxfrm_l = Module._strxfrm_l = wasmExports.strxfrm_l)(e, t, r, a), _drandom = Module._drandom = (e) => (_drandom = Module._drandom = wasmExports.drandom)(e), _quote_ident = Module._quote_ident = (e) => (_quote_ident = Module._quote_ident = wasmExports.quote_ident)(e), _textregexeq = Module._textregexeq = (e) => (_textregexeq = Module._textregexeq = wasmExports.textregexeq)(e), _text_substr = Module._text_substr = (e) => (_text_substr = Module._text_substr = wasmExports.text_substr)(e), _pg_wchar2mb_with_len = Module._pg_wchar2mb_with_len = (e, t, r) => (_pg_wchar2mb_with_len = Module._pg_wchar2mb_with_len = wasmExports.pg_wchar2mb_with_len)(e, t, r), _regexp_split_to_array = Module._regexp_split_to_array = (e) => (_regexp_split_to_array = Module._regexp_split_to_array = wasmExports.regexp_split_to_array)(e), _regclassin = Module._regclassin = (e) => (_regclassin = Module._regclassin = wasmExports.regclassin)(e), _regtypeout = Module._regtypeout = (e) => (_regtypeout = Module._regtypeout = wasmExports.regtypeout)(e), _pg_get_indexdef_columns_extended = Module._pg_get_indexdef_columns_extended = (e, t) => (_pg_get_indexdef_columns_extended = Module._pg_get_indexdef_columns_extended = wasmExports.pg_get_indexdef_columns_extended)(e, t), _pg_get_querydef = Module._pg_get_querydef = (e, t) => (_pg_get_querydef = Module._pg_get_querydef = wasmExports.pg_get_querydef)(e, t), _strcspn = Module._strcspn = (e, t) => (_strcspn = Module._strcspn = wasmExports.strcspn)(e, t), _generic_restriction_selectivity = Module._generic_restriction_selectivity = (e, t, r, a, o, _) => (_generic_restriction_selectivity = Module._generic_restriction_selectivity = wasmExports.generic_restriction_selectivity)(e, t, r, a, o, _), _genericcostestimate = Module._genericcostestimate = (e, t, r, a) => (_genericcostestimate = Module._genericcostestimate = wasmExports.genericcostestimate)(e, t, r, a), _tidin = Module._tidin = (e) => (_tidin = Module._tidin = wasmExports.tidin)(e), _tidout = Module._tidout = (e) => (_tidout = Module._tidout = wasmExports.tidout)(e), _timestamp_in = Module._timestamp_in = (e) => (_timestamp_in = Module._timestamp_in = wasmExports.timestamp_in)(e), _timestamp_eq = Module._timestamp_eq = (e) => (_timestamp_eq = Module._timestamp_eq = wasmExports.timestamp_eq)(e), _timestamp_lt = Module._timestamp_lt = (e) => (_timestamp_lt = Module._timestamp_lt = wasmExports.timestamp_lt)(e), _timestamp_gt = Module._timestamp_gt = (e) => (_timestamp_gt = Module._timestamp_gt = wasmExports.timestamp_gt)(e), _timestamp_le = Module._timestamp_le = (e) => (_timestamp_le = Module._timestamp_le = wasmExports.timestamp_le)(e), _timestamp_ge = Module._timestamp_ge = (e) => (_timestamp_ge = Module._timestamp_ge = wasmExports.timestamp_ge)(e), _interval_eq = Module._interval_eq = (e) => (_interval_eq = Module._interval_eq = wasmExports.interval_eq)(e), _interval_lt = Module._interval_lt = (e) => (_interval_lt = Module._interval_lt = wasmExports.interval_lt)(e), _interval_gt = Module._interval_gt = (e) => (_interval_gt = Module._interval_gt = wasmExports.interval_gt)(e), _interval_le = Module._interval_le = (e) => (_interval_le = Module._interval_le = wasmExports.interval_le)(e), _interval_ge = Module._interval_ge = (e) => (_interval_ge = Module._interval_ge = wasmExports.interval_ge)(e), _interval_cmp = Module._interval_cmp = (e) => (_interval_cmp = Module._interval_cmp = wasmExports.interval_cmp)(e), _timestamp_mi = Module._timestamp_mi = (e) => (_timestamp_mi = Module._timestamp_mi = wasmExports.timestamp_mi)(e), _interval_um = Module._interval_um = (e) => (_interval_um = Module._interval_um = wasmExports.interval_um)(e), _has_fn_opclass_options = Module._has_fn_opclass_options = (e) => (_has_fn_opclass_options = Module._has_fn_opclass_options = wasmExports.has_fn_opclass_options)(e), _uuid_in = Module._uuid_in = (e) => (_uuid_in = Module._uuid_in = wasmExports.uuid_in)(e), _uuid_out = Module._uuid_out = (e) => (_uuid_out = Module._uuid_out = wasmExports.uuid_out)(e), _uuid_cmp = Module._uuid_cmp = (e) => (_uuid_cmp = Module._uuid_cmp = wasmExports.uuid_cmp)(e), _gen_random_uuid = Module._gen_random_uuid = (e) => (_gen_random_uuid = Module._gen_random_uuid = wasmExports.gen_random_uuid)(e), _varbit_in = Module._varbit_in = (e) => (_varbit_in = Module._varbit_in = wasmExports.varbit_in)(e), _biteq = Module._biteq = (e) => (_biteq = Module._biteq = wasmExports.biteq)(e), _bitlt = Module._bitlt = (e) => (_bitlt = Module._bitlt = wasmExports.bitlt)(e), _bitle = Module._bitle = (e) => (_bitle = Module._bitle = wasmExports.bitle)(e), _bitgt = Module._bitgt = (e) => (_bitgt = Module._bitgt = wasmExports.bitgt)(e), _bitge = Module._bitge = (e) => (_bitge = Module._bitge = wasmExports.bitge)(e), _bitcmp = Module._bitcmp = (e) => (_bitcmp = Module._bitcmp = wasmExports.bitcmp)(e), _bpchareq = Module._bpchareq = (e) => (_bpchareq = Module._bpchareq = wasmExports.bpchareq)(e), _bpcharlt = Module._bpcharlt = (e) => (_bpcharlt = Module._bpcharlt = wasmExports.bpcharlt)(e), _bpcharle = Module._bpcharle = (e) => (_bpcharle = Module._bpcharle = wasmExports.bpcharle)(e), _bpchargt = Module._bpchargt = (e) => (_bpchargt = Module._bpchargt = wasmExports.bpchargt)(e), _bpcharge = Module._bpcharge = (e) => (_bpcharge = Module._bpcharge = wasmExports.bpcharge)(e), _bpcharcmp = Module._bpcharcmp = (e) => (_bpcharcmp = Module._bpcharcmp = wasmExports.bpcharcmp)(e), _pg_detoast_datum_slice = Module._pg_detoast_datum_slice = (e, t, r) => (_pg_detoast_datum_slice = Module._pg_detoast_datum_slice = wasmExports.pg_detoast_datum_slice)(e, t, r), _text_substr_no_len = Module._text_substr_no_len = (e) => (_text_substr_no_len = Module._text_substr_no_len = wasmExports.text_substr_no_len)(e), _texteq = Module._texteq = (e) => (_texteq = Module._texteq = wasmExports.texteq)(e), _text_lt = Module._text_lt = (e) => (_text_lt = Module._text_lt = wasmExports.text_lt)(e), _text_le = Module._text_le = (e) => (_text_le = Module._text_le = wasmExports.text_le)(e), _text_gt = Module._text_gt = (e) => (_text_gt = Module._text_gt = wasmExports.text_gt)(e), _text_ge = Module._text_ge = (e) => (_text_ge = Module._text_ge = wasmExports.text_ge)(e), _bttextcmp = Module._bttextcmp = (e) => (_bttextcmp = Module._bttextcmp = wasmExports.bttextcmp)(e), _byteaeq = Module._byteaeq = (e) => (_byteaeq = Module._byteaeq = wasmExports.byteaeq)(e), _bytealt = Module._bytealt = (e) => (_bytealt = Module._bytealt = wasmExports.bytealt)(e), _byteale = Module._byteale = (e) => (_byteale = Module._byteale = wasmExports.byteale)(e), _byteagt = Module._byteagt = (e) => (_byteagt = Module._byteagt = wasmExports.byteagt)(e), _byteage = Module._byteage = (e) => (_byteage = Module._byteage = wasmExports.byteage)(e), _byteacmp = Module._byteacmp = (e) => (_byteacmp = Module._byteacmp = wasmExports.byteacmp)(e), _to_hex32 = Module._to_hex32 = (e) => (_to_hex32 = Module._to_hex32 = wasmExports.to_hex32)(e), _text_left = Module._text_left = (e) => (_text_left = Module._text_left = wasmExports.text_left)(e), _text_right = Module._text_right = (e) => (_text_right = Module._text_right = wasmExports.text_right)(e), _text_reverse = Module._text_reverse = (e) => (_text_reverse = Module._text_reverse = wasmExports.text_reverse)(e), _varstr_levenshtein = Module._varstr_levenshtein = (e, t, r, a, o, _, s, n) => (_varstr_levenshtein = Module._varstr_levenshtein = wasmExports.varstr_levenshtein)(e, t, r, a, o, _, s, n), _pg_utf_mblen_private = Module._pg_utf_mblen_private = (e) => (_pg_utf_mblen_private = Module._pg_utf_mblen_private = wasmExports.pg_utf_mblen_private)(e), _pg_xml_init = Module._pg_xml_init = (e) => (_pg_xml_init = Module._pg_xml_init = wasmExports.pg_xml_init)(e), _xml_ereport = Module._xml_ereport = (e, t, r, a) => (_xml_ereport = Module._xml_ereport = wasmExports.xml_ereport)(e, t, r, a), _pg_xml_done = Module._pg_xml_done = (e, t) => (_pg_xml_done = Module._pg_xml_done = wasmExports.pg_xml_done)(e, t), _pg_do_encoding_conversion = Module._pg_do_encoding_conversion = (e, t, r, a) => (_pg_do_encoding_conversion = Module._pg_do_encoding_conversion = wasmExports.pg_do_encoding_conversion)(e, t, r, a), _CreateCacheMemoryContext = Module._CreateCacheMemoryContext = () => (_CreateCacheMemoryContext = Module._CreateCacheMemoryContext = wasmExports.CreateCacheMemoryContext)(), _cfunc_resolve_polymorphic_argtypes = Module._cfunc_resolve_polymorphic_argtypes = (e, t, r, a, o, _) => (_cfunc_resolve_polymorphic_argtypes = Module._cfunc_resolve_polymorphic_argtypes = wasmExports.cfunc_resolve_polymorphic_argtypes)(e, t, r, a, o, _), _get_typsubscript = Module._get_typsubscript = (e, t) => (_get_typsubscript = Module._get_typsubscript = wasmExports.get_typsubscript)(e, t), _CachedPlanAllowsSimpleValidityCheck = Module._CachedPlanAllowsSimpleValidityCheck = (e, t, r) => (_CachedPlanAllowsSimpleValidityCheck = Module._CachedPlanAllowsSimpleValidityCheck = wasmExports.CachedPlanAllowsSimpleValidityCheck)(e, t, r), _CachedPlanIsSimplyValid = Module._CachedPlanIsSimplyValid = (e, t, r) => (_CachedPlanIsSimplyValid = Module._CachedPlanIsSimplyValid = wasmExports.CachedPlanIsSimplyValid)(e, t, r), _GetCachedExpression = Module._GetCachedExpression = (e) => (_GetCachedExpression = Module._GetCachedExpression = wasmExports.GetCachedExpression)(e), _FreeCachedExpression = Module._FreeCachedExpression = (e) => (_FreeCachedExpression = Module._FreeCachedExpression = wasmExports.FreeCachedExpression)(e), _ReleaseAllPlanCacheRefsInOwner = Module._ReleaseAllPlanCacheRefsInOwner = (e) => (_ReleaseAllPlanCacheRefsInOwner = Module._ReleaseAllPlanCacheRefsInOwner = wasmExports.ReleaseAllPlanCacheRefsInOwner)(e), _abort = Module._abort = () => (_abort = Module._abort = wasmExports.abort)(), _in_error_recursion_trouble = Module._in_error_recursion_trouble = () => (_in_error_recursion_trouble = Module._in_error_recursion_trouble = wasmExports.in_error_recursion_trouble)(), _pg_vfprintf = Module._pg_vfprintf = (e, t, r) => (_pg_vfprintf = Module._pg_vfprintf = wasmExports.pg_vfprintf)(e, t, r), _pgl_longjmp = Module._pgl_longjmp = (e, t) => (_pgl_longjmp = Module._pgl_longjmp = wasmExports.pgl_longjmp)(e, t), _GetErrorContextStack = Module._GetErrorContextStack = () => (_GetErrorContextStack = Module._GetErrorContextStack = wasmExports.GetErrorContextStack)(), _dlsym = Module._dlsym = (e, t) => (_dlsym = Module._dlsym = wasmExports.dlsym)(e, t), _dlopen = Module._dlopen = (e, t) => (_dlopen = Module._dlopen = wasmExports.dlopen)(e, t), _dlerror = Module._dlerror = () => (_dlerror = Module._dlerror = wasmExports.dlerror)(), _dlclose = Module._dlclose = (e) => (_dlclose = Module._dlclose = wasmExports.dlclose)(e), _find_rendezvous_variable = Module._find_rendezvous_variable = (e) => (_find_rendezvous_variable = Module._find_rendezvous_variable = wasmExports.find_rendezvous_variable)(e), _CallerFInfoFunctionCall1 = Module._CallerFInfoFunctionCall1 = (e, t, r, a) => (_CallerFInfoFunctionCall1 = Module._CallerFInfoFunctionCall1 = wasmExports.CallerFInfoFunctionCall1)(e, t, r, a), _CallerFInfoFunctionCall2 = Module._CallerFInfoFunctionCall2 = (e, t, r, a, o) => (_CallerFInfoFunctionCall2 = Module._CallerFInfoFunctionCall2 = wasmExports.CallerFInfoFunctionCall2)(e, t, r, a, o), _FunctionCall0Coll = Module._FunctionCall0Coll = (e, t) => (_FunctionCall0Coll = Module._FunctionCall0Coll = wasmExports.FunctionCall0Coll)(e, t), _RelationNameGetTupleDesc = Module._RelationNameGetTupleDesc = (e) => (_RelationNameGetTupleDesc = Module._RelationNameGetTupleDesc = wasmExports.RelationNameGetTupleDesc)(e), _hash_freeze = Module._hash_freeze = (e) => (_hash_freeze = Module._hash_freeze = wasmExports.hash_freeze)(e), _chdir = Module._chdir = (e) => (_chdir = Module._chdir = wasmExports.chdir)(e), _pg_bindtextdomain = Module._pg_bindtextdomain = (e) => (_pg_bindtextdomain = Module._pg_bindtextdomain = wasmExports.pg_bindtextdomain)(e), _pg_mblen = Module._pg_mblen = (e) => (_pg_mblen = Module._pg_mblen = wasmExports.pg_mblen)(e), _DefineCustomBoolVariable = Module._DefineCustomBoolVariable = (e, t, r, a, o, _, s, n, l, d) => (_DefineCustomBoolVariable = Module._DefineCustomBoolVariable = wasmExports.DefineCustomBoolVariable)(e, t, r, a, o, _, s, n, l, d), _DefineCustomIntVariable = Module._DefineCustomIntVariable = (e, t, r, a, o, _, s, n, l, d, u, c) => (_DefineCustomIntVariable = Module._DefineCustomIntVariable = wasmExports.DefineCustomIntVariable)(e, t, r, a, o, _, s, n, l, d, u, c), _DefineCustomRealVariable = Module._DefineCustomRealVariable = (e, t, r, a, o, _, s, n, l, d, u, c) => (_DefineCustomRealVariable = Module._DefineCustomRealVariable = wasmExports.DefineCustomRealVariable)(e, t, r, a, o, _, s, n, l, d, u, c), _DefineCustomStringVariable = Module._DefineCustomStringVariable = (e, t, r, a, o, _, s, n, l, d) => (_DefineCustomStringVariable = Module._DefineCustomStringVariable = wasmExports.DefineCustomStringVariable)(e, t, r, a, o, _, s, n, l, d), _DefineCustomEnumVariable = Module._DefineCustomEnumVariable = (e, t, r, a, o, _, s, n, l, d, u) => (_DefineCustomEnumVariable = Module._DefineCustomEnumVariable = wasmExports.DefineCustomEnumVariable)(e, t, r, a, o, _, s, n, l, d, u), _MarkGUCPrefixReserved = Module._MarkGUCPrefixReserved = (e) => (_MarkGUCPrefixReserved = Module._MarkGUCPrefixReserved = wasmExports.MarkGUCPrefixReserved)(e), _sampler_random_init_state = Module._sampler_random_init_state = (e, t) => (_sampler_random_init_state = Module._sampler_random_init_state = wasmExports.sampler_random_init_state)(e, t), _dsa_trim = Module._dsa_trim = (e) => (_dsa_trim = Module._dsa_trim = wasmExports.dsa_trim)(e), _pchomp = Module._pchomp = (e) => (_pchomp = Module._pchomp = wasmExports.pchomp)(e), _PinPortal = Module._PinPortal = (e) => (_PinPortal = Module._PinPortal = wasmExports.PinPortal)(e), _UnpinPortal = Module._UnpinPortal = (e) => (_UnpinPortal = Module._UnpinPortal = wasmExports.UnpinPortal)(e), ___lshrti3 = Module.___lshrti3 = (e, t, r, a) => (___lshrti3 = Module.___lshrti3 = wasmExports.__lshrti3)(e, t, r, a), _realpath = Module._realpath = (e, t) => (_realpath = Module._realpath = wasmExports.realpath)(e, t), _float_to_shortest_decimal_bufn = Module._float_to_shortest_decimal_bufn = (e, t) => (_float_to_shortest_decimal_bufn = Module._float_to_shortest_decimal_bufn = wasmExports.float_to_shortest_decimal_bufn)(e, t), _IsValidJsonNumber = Module._IsValidJsonNumber = (e, t) => (_IsValidJsonNumber = Module._IsValidJsonNumber = wasmExports.IsValidJsonNumber)(e, t), _pg_prng_uint64 = Module._pg_prng_uint64 = (e) => (_pg_prng_uint64 = Module._pg_prng_uint64 = wasmExports.pg_prng_uint64)(e), _makeStringInfoExt = Module._makeStringInfoExt = (e) => (_makeStringInfoExt = Module._makeStringInfoExt = wasmExports.makeStringInfoExt)(e), _pgl_getpwuid = Module._pgl_getpwuid = (e) => (_pgl_getpwuid = Module._pgl_getpwuid = wasmExports.pgl_getpwuid)(e), _getcwd = Module._getcwd = (e, t) => (_getcwd = Module._getcwd = wasmExports.getcwd)(e, t), _pthread_mutex_lock = Module._pthread_mutex_lock = (e) => (_pthread_mutex_lock = Module._pthread_mutex_lock = wasmExports.pthread_mutex_lock)(e), _localeconv = Module._localeconv = () => (_localeconv = Module._localeconv = wasmExports.localeconv)(), _pthread_mutex_unlock = Module._pthread_mutex_unlock = (e) => (_pthread_mutex_unlock = Module._pthread_mutex_unlock = wasmExports.pthread_mutex_unlock)(e), _nanosleep = Module._nanosleep = (e, t) => (_nanosleep = Module._nanosleep = wasmExports.nanosleep)(e, t), _strchrnul = Module._strchrnul = (e, t) => (_strchrnul = Module._strchrnul = wasmExports.strchrnul)(e, t), _snprintf = Module._snprintf = (e, t, r, a) => (_snprintf = Module._snprintf = wasmExports.snprintf)(e, t, r, a), _strerror = Module._strerror = (e) => (_strerror = Module._strerror = wasmExports.strerror)(e), _clear_setitimer = Module._clear_setitimer = () => (_clear_setitimer = Module._clear_setitimer = wasmExports.clear_setitimer)(), _pgl_setPGliteActive = Module._pgl_setPGliteActive = (e) => (_pgl_setPGliteActive = Module._pgl_setPGliteActive = wasmExports.pgl_setPGliteActive)(e), _pgl_siglongjmp = Module._pgl_siglongjmp = (e, t) => (_pgl_siglongjmp = Module._pgl_siglongjmp = wasmExports.pgl_siglongjmp)(e, t), _pgl_set_system_fn = Module._pgl_set_system_fn = (e) => (_pgl_set_system_fn = Module._pgl_set_system_fn = wasmExports.pgl_set_system_fn)(e), _pgl_set_popen_fn = Module._pgl_set_popen_fn = (e) => (_pgl_set_popen_fn = Module._pgl_set_popen_fn = wasmExports.pgl_set_popen_fn)(e), _pgl_set_pclose_fn = Module._pgl_set_pclose_fn = (e) => (_pgl_set_pclose_fn = Module._pgl_set_pclose_fn = wasmExports.pgl_set_pclose_fn)(e), _pgl_run_atexit_funcs = Module._pgl_run_atexit_funcs = () => (_pgl_run_atexit_funcs = Module._pgl_run_atexit_funcs = wasmExports.pgl_run_atexit_funcs)(), _pgl_freopen = Module._pgl_freopen = (e, t, r) => (_pgl_freopen = Module._pgl_freopen = wasmExports.pgl_freopen)(e, t, r), _fiprintf = Module._fiprintf = (e, t, r) => (_fiprintf = Module._fiprintf = wasmExports.fiprintf)(e, t, r), _pgl_set_rw_cbs = Module._pgl_set_rw_cbs = (e, t) => (_pgl_set_rw_cbs = Module._pgl_set_rw_cbs = wasmExports.pgl_set_rw_cbs)(e, t), _vfprintf = Module._vfprintf = (e, t, r) => (_vfprintf = Module._vfprintf = wasmExports.vfprintf)(e, t, r), _pthread_key_create = Module._pthread_key_create = (e, t) => (_pthread_key_create = Module._pthread_key_create = wasmExports.pthread_key_create)(e, t), _pthread_getspecific = Module._pthread_getspecific = (e) => (_pthread_getspecific = Module._pthread_getspecific = wasmExports.pthread_getspecific)(e), _pthread_key_delete = Module._pthread_key_delete = (e) => (_pthread_key_delete = Module._pthread_key_delete = wasmExports.pthread_key_delete)(e), _pthread_setspecific = Module._pthread_setspecific = (e, t) => (_pthread_setspecific = Module._pthread_setspecific = wasmExports.pthread_setspecific)(e, t), _toupper = Module._toupper = (e) => (_toupper = Module._toupper = wasmExports.toupper)(e), _iconv_open = Module._iconv_open = (e, t) => (_iconv_open = Module._iconv_open = wasmExports.iconv_open)(e, t), _iconv_close = Module._iconv_close = (e) => (_iconv_close = Module._iconv_close = wasmExports.iconv_close)(e), _iconv = Module._iconv = (e, t, r, a, o) => (_iconv = Module._iconv = wasmExports.iconv)(e, t, r, a, o), _pthread_mutex_init = Module._pthread_mutex_init = (e, t) => (_pthread_mutex_init = Module._pthread_mutex_init = wasmExports.pthread_mutex_init)(e, t), _pthread_mutex_destroy = Module._pthread_mutex_destroy = (e) => (_pthread_mutex_destroy = Module._pthread_mutex_destroy = wasmExports.pthread_mutex_destroy)(e), _pthread_cond_init = Module._pthread_cond_init = (e, t) => (_pthread_cond_init = Module._pthread_cond_init = wasmExports.pthread_cond_init)(e, t), _pthread_cond_destroy = Module._pthread_cond_destroy = (e) => (_pthread_cond_destroy = Module._pthread_cond_destroy = wasmExports.pthread_cond_destroy)(e), _pthread_self = Module._pthread_self = () => (_pthread_self = Module._pthread_self = wasmExports.pthread_self)(), _pthread_cond_wait = Module._pthread_cond_wait = (e, t) => (_pthread_cond_wait = Module._pthread_cond_wait = wasmExports.pthread_cond_wait)(e, t), _pthread_cond_signal = Module._pthread_cond_signal = (e) => (_pthread_cond_signal = Module._pthread_cond_signal = wasmExports.pthread_cond_signal)(e), _pthread_once = Module._pthread_once = (e, t) => (_pthread_once = Module._pthread_once = wasmExports.pthread_once)(e, t), ___cxa_atexit = Module.___cxa_atexit = (e, t, r) => (___cxa_atexit = Module.___cxa_atexit = wasmExports.__cxa_atexit)(e, t, r), _fputs = Module._fputs = (e, t) => (_fputs = Module._fputs = wasmExports.fputs)(e, t), _vsnprintf = Module._vsnprintf = (e, t, r, a) => (_vsnprintf = Module._vsnprintf = wasmExports.vsnprintf)(e, t, r, a), ___small_fprintf = Module.___small_fprintf = (e, t, r) => (___small_fprintf = Module.___small_fprintf = wasmExports.__small_fprintf)(e, t, r), ___dynamic_cast = Module.___dynamic_cast = (e, t, r, a) => (___dynamic_cast = Module.___dynamic_cast = wasmExports.__dynamic_cast)(e, t, r, a), ___cxa_pure_virtual = Module.___cxa_pure_virtual = () => (___cxa_pure_virtual = Module.___cxa_pure_virtual = wasmExports.__cxa_pure_virtual)(), _modf = Module._modf = (e, t) => (_modf = Module._modf = wasmExports.modf)(e, t), _localtime_r = Module._localtime_r = (e, t) => (_localtime_r = Module._localtime_r = wasmExports.localtime_r)(e, t), _strncat = Module._strncat = (e, t, r) => (_strncat = Module._strncat = wasmExports.strncat)(e, t, r), _munmap = Module._munmap = (e, t) => (_munmap = Module._munmap = wasmExports.munmap)(e, t), __ZdlPvm = Module.__ZdlPvm = (e, t) => (__ZdlPvm = Module.__ZdlPvm = wasmExports._ZdlPvm)(e, t), ___ctype_get_mb_cur_max = Module.___ctype_get_mb_cur_max = () => (___ctype_get_mb_cur_max = Module.___ctype_get_mb_cur_max = wasmExports.__ctype_get_mb_cur_max)(), ___ctype_tolower_loc = Module.___ctype_tolower_loc = () => (___ctype_tolower_loc = Module.___ctype_tolower_loc = wasmExports.__ctype_tolower_loc)(), ___ctype_toupper_loc = Module.___ctype_toupper_loc = () => (___ctype_toupper_loc = Module.___ctype_toupper_loc = wasmExports.__ctype_toupper_loc)(), _fdopen = Module._fdopen = (e, t) => (_fdopen = Module._fdopen = wasmExports.fdopen)(e, t), _sqrt = Module._sqrt = (e) => (_sqrt = Module._sqrt = wasmExports.sqrt)(e), _acosl = Module._acosl = (e, t, r) => (_acosl = Module._acosl = wasmExports.acosl)(e, t, r), _aligned_alloc = Module._aligned_alloc = (e, t) => (_aligned_alloc = Module._aligned_alloc = wasmExports.aligned_alloc)(e, t), _atan2l = Module._atan2l = (e, t, r, a, o) => (_atan2l = Module._atan2l = wasmExports.atan2l)(e, t, r, a, o), ___funcs_on_exit = () => (___funcs_on_exit = wasmExports.__funcs_on_exit)(), _atexit = Module._atexit = (e) => (_atexit = Module._atexit = wasmExports.atexit)(e), ___cxa_finalize = Module.___cxa_finalize = (e) => (___cxa_finalize = Module.___cxa_finalize = wasmExports.__cxa_finalize)(e), _btowc = Module._btowc = (e) => (_btowc = Module._btowc = wasmExports.btowc)(e), _clock = Module._clock = () => (_clock = Module._clock = wasmExports.clock)(), _scalbn = Module._scalbn = (e, t) => (_scalbn = Module._scalbn = wasmExports.scalbn)(e, t), _cosl = Module._cosl = (e, t, r) => (_cosl = Module._cosl = wasmExports.cosl)(e, t, r), _dladdr = Module._dladdr = (e, t) => (_dladdr = Module._dladdr = wasmExports.dladdr)(e, t), ___dl_seterr = (e, t) => (___dl_seterr = wasmExports.__dl_seterr)(e, t), _duplocale = Module._duplocale = (e) => (_duplocale = Module._duplocale = wasmExports.duplocale)(e), _fchmod = Module._fchmod = (e, t) => (_fchmod = Module._fchmod = wasmExports.fchmod)(e, t), _fchmodat = Module._fchmodat = (e, t, r, a) => (_fchmodat = Module._fchmodat = wasmExports.fchmodat)(e, t, r, a), _fchown = Module._fchown = (e, t, r) => (_fchown = Module._fchown = wasmExports.fchown)(e, t, r), _fcntl = Module._fcntl = (e, t, r) => (_fcntl = Module._fcntl = wasmExports.fcntl)(e, t, r), _fdopendir = Module._fdopendir = (e) => (_fdopendir = Module._fdopendir = wasmExports.fdopendir)(e), _fmax = Module._fmax = (e, t) => (_fmax = Module._fmax = wasmExports.fmax)(e, t), _fmin = Module._fmin = (e, t) => (_fmin = Module._fmin = wasmExports.fmin)(e, t), _fputwc = Module._fputwc = (e, t) => (_fputwc = Module._fputwc = wasmExports.fputwc)(e, t), _frexp = Module._frexp = (e, t) => (_frexp = Module._frexp = wasmExports.frexp)(e, t), _ftell = Module._ftell = (e) => (_ftell = Module._ftell = wasmExports.ftell)(e), _getentropy = Module._getentropy = (e, t) => (_getentropy = Module._getentropy = wasmExports.getentropy)(e, t), _geteuid = Module._geteuid = () => (_geteuid = Module._geteuid = wasmExports.geteuid)(), _getgid = Module._getgid = () => (_getgid = Module._getgid = wasmExports.getgid)(), _mbtowc = Module._mbtowc = (e, t, r) => (_mbtowc = Module._mbtowc = wasmExports.mbtowc)(e, t, r), _getuid = Module._getuid = () => (_getuid = Module._getuid = wasmExports.getuid)(), _getwc = Module._getwc = (e) => (_getwc = Module._getwc = wasmExports.getwc)(e), _gmtime = Module._gmtime = (e) => (_gmtime = Module._gmtime = wasmExports.gmtime)(e), _hypot = Module._hypot = (e, t) => (_hypot = Module._hypot = wasmExports.hypot)(e, t), _mbrtowc = Module._mbrtowc = (e, t, r, a) => (_mbrtowc = Module._mbrtowc = wasmExports.mbrtowc)(e, t, r, a), _ioctl = Module._ioctl = (e, t, r) => (_ioctl = Module._ioctl = wasmExports.ioctl)(e, t, r), _isalpha = Module._isalpha = (e) => (_isalpha = Module._isalpha = wasmExports.isalpha)(e), _isgraph = Module._isgraph = (e) => (_isgraph = Module._isgraph = wasmExports.isgraph)(e), _isspace = Module._isspace = (e) => (_isspace = Module._isspace = wasmExports.isspace)(e), _iswblank_l = Module._iswblank_l = (e, t) => (_iswblank_l = Module._iswblank_l = wasmExports.iswblank_l)(e, t), _iswcntrl_l = Module._iswcntrl_l = (e, t) => (_iswcntrl_l = Module._iswcntrl_l = wasmExports.iswcntrl_l)(e, t), _iswxdigit_l = Module._iswxdigit_l = (e, t) => (_iswxdigit_l = Module._iswxdigit_l = wasmExports.iswxdigit_l)(e, t), _isxdigit_l = Module._isxdigit_l = (e, t) => (_isxdigit_l = Module._isxdigit_l = wasmExports.isxdigit_l)(e, t), _pthread_cond_broadcast = Module._pthread_cond_broadcast = (e) => (_pthread_cond_broadcast = Module._pthread_cond_broadcast = wasmExports.pthread_cond_broadcast)(e), _pthread_atfork = Module._pthread_atfork = (e, t, r) => (_pthread_atfork = Module._pthread_atfork = wasmExports.pthread_atfork)(e, t, r), _pthread_mutexattr_init = Module._pthread_mutexattr_init = (e) => (_pthread_mutexattr_init = Module._pthread_mutexattr_init = wasmExports.pthread_mutexattr_init)(e), _pthread_mutexattr_setprotocol = Module._pthread_mutexattr_setprotocol = (e, t) => (_pthread_mutexattr_setprotocol = Module._pthread_mutexattr_setprotocol = wasmExports.pthread_mutexattr_setprotocol)(e, t), _pthread_mutexattr_settype = Module._pthread_mutexattr_settype = (e, t) => (_pthread_mutexattr_settype = Module._pthread_mutexattr_settype = wasmExports.pthread_mutexattr_settype)(e, t), _pthread_mutexattr_destroy = Module._pthread_mutexattr_destroy = (e) => (_pthread_mutexattr_destroy = Module._pthread_mutexattr_destroy = wasmExports.pthread_mutexattr_destroy)(e), _pthread_mutexattr_setpshared = Module._pthread_mutexattr_setpshared = (e, t) => (_pthread_mutexattr_setpshared = Module._pthread_mutexattr_setpshared = wasmExports.pthread_mutexattr_setpshared)(e, t), _pthread_mutex_trylock = Module._pthread_mutex_trylock = (e) => (_pthread_mutex_trylock = Module._pthread_mutex_trylock = wasmExports.pthread_mutex_trylock)(e), _pthread_create = Module._pthread_create = (e, t, r, a) => (_pthread_create = Module._pthread_create = wasmExports.pthread_create)(e, t, r, a), _pthread_join = Module._pthread_join = (e, t) => (_pthread_join = Module._pthread_join = wasmExports.pthread_join)(e, t), _pthread_cond_timedwait = Module._pthread_cond_timedwait = (e, t, r) => (_pthread_cond_timedwait = Module._pthread_cond_timedwait = wasmExports.pthread_cond_timedwait)(e, t, r), _pthread_detach = Module._pthread_detach = (e) => (_pthread_detach = Module._pthread_detach = wasmExports.pthread_detach)(e), _link = Module._link = (e, t) => (_link = Module._link = wasmExports.link)(e, t), _llround = Module._llround = (e) => (_llround = Module._llround = wasmExports.llround)(e), _localtime = Module._localtime = (e) => (_localtime = Module._localtime = wasmExports.localtime)(e), _log2 = Module._log2 = (e) => (_log2 = Module._log2 = wasmExports.log2)(e), _logb = Module._logb = (e) => (_logb = Module._logb = wasmExports.logb)(e), _lround = Module._lround = (e) => (_lround = Module._lround = wasmExports.lround)(e), _mbrlen = Module._mbrlen = (e, t, r) => (_mbrlen = Module._mbrlen = wasmExports.mbrlen)(e, t, r), _mbsnrtowcs = Module._mbsnrtowcs = (e, t, r, a, o) => (_mbsnrtowcs = Module._mbsnrtowcs = wasmExports.mbsnrtowcs)(e, t, r, a, o), _mbsrtowcs = Module._mbsrtowcs = (e, t, r, a) => (_mbsrtowcs = Module._mbsrtowcs = wasmExports.mbsrtowcs)(e, t, r, a), _memrchr = Module._memrchr = (e, t, r) => (_memrchr = Module._memrchr = wasmExports.memrchr)(e, t, r), _emscripten_builtin_memalign = (e, t) => (_emscripten_builtin_memalign = wasmExports.emscripten_builtin_memalign)(e, t), _nextafter = Module._nextafter = (e, t) => (_nextafter = Module._nextafter = wasmExports.nextafter)(e, t), _nextafterf = Module._nextafterf = (e, t) => (_nextafterf = Module._nextafterf = wasmExports.nextafterf)(e, t), _ntohs = (e) => (_ntohs = wasmExports.ntohs)(e), _openat = Module._openat = (e, t, r, a) => (_openat = Module._openat = wasmExports.openat)(e, t, r, a), _pathconf = Module._pathconf = (e, t) => (_pathconf = Module._pathconf = wasmExports.pathconf)(e, t), _perror = Module._perror = (e) => (_perror = Module._perror = wasmExports.perror)(e), _iprintf = Module._iprintf = (e, t) => (_iprintf = Module._iprintf = wasmExports.iprintf)(e, t), ___small_printf = Module.___small_printf = (e, t) => (___small_printf = Module.___small_printf = wasmExports.__small_printf)(e, t), _pthread_mutexattr_getprotocol = Module._pthread_mutexattr_getprotocol = (e, t) => (_pthread_mutexattr_getprotocol = Module._pthread_mutexattr_getprotocol = wasmExports.pthread_mutexattr_getprotocol)(e, t), _pthread_mutexattr_getpshared = Module._pthread_mutexattr_getpshared = (e, t) => (_pthread_mutexattr_getpshared = Module._pthread_mutexattr_getpshared = wasmExports.pthread_mutexattr_getpshared)(e, t), _pthread_mutexattr_getrobust = Module._pthread_mutexattr_getrobust = (e, t) => (_pthread_mutexattr_getrobust = Module._pthread_mutexattr_getrobust = wasmExports.pthread_mutexattr_getrobust)(e, t), _pthread_mutexattr_gettype = Module._pthread_mutexattr_gettype = (e, t) => (_pthread_mutexattr_gettype = Module._pthread_mutexattr_gettype = wasmExports.pthread_mutexattr_gettype)(e, t), _putchar = Module._putchar = (e) => (_putchar = Module._putchar = wasmExports.putchar)(e), _qsort = Module._qsort = (e, t, r, a) => (_qsort = Module._qsort = wasmExports.qsort)(e, t, r, a), _srand = Module._srand = (e) => (_srand = Module._srand = wasmExports.srand)(e), _rand = Module._rand = () => (_rand = Module._rand = wasmExports.rand)(), _remainder = Module._remainder = (e, t) => (_remainder = Module._remainder = wasmExports.remainder)(e, t), _remove = Module._remove = (e) => (_remove = Module._remove = wasmExports.remove)(e), _remquo = Module._remquo = (e, t, r) => (_remquo = Module._remquo = wasmExports.remquo)(e, t, r), _round = Module._round = (e) => (_round = Module._round = wasmExports.round)(e), _roundf = Module._roundf = (e) => (_roundf = Module._roundf = wasmExports.roundf)(e), __emscripten_timeout = (e, t) => (__emscripten_timeout = wasmExports._emscripten_timeout)(e, t), _sinl = Module._sinl = (e, t, r) => (_sinl = Module._sinl = wasmExports.sinl)(e, t, r), _siprintf = Module._siprintf = (e, t, r) => (_siprintf = Module._siprintf = wasmExports.siprintf)(e, t, r), _sqrtl = Module._sqrtl = (e, t, r) => (_sqrtl = Module._sqrtl = wasmExports.sqrtl)(e, t, r), _vsscanf = Module._vsscanf = (e, t, r) => (_vsscanf = Module._vsscanf = wasmExports.vsscanf)(e, t, r), _statvfs = Module._statvfs = (e, t) => (_statvfs = Module._statvfs = wasmExports.statvfs)(e, t), _strcasecmp = Module._strcasecmp = (e, t) => (_strcasecmp = Module._strcasecmp = wasmExports.strcasecmp)(e, t), _strerror_r = Module._strerror_r = (e, t, r) => (_strerror_r = Module._strerror_r = wasmExports.strerror_r)(e, t, r), _strftime = Module._strftime = (e, t, r, a) => (_strftime = Module._strftime = wasmExports.strftime)(e, t, r, a), _strncasecmp = Module._strncasecmp = (e, t, r) => (_strncasecmp = Module._strncasecmp = wasmExports.strncasecmp)(e, t, r), ___multf3 = Module.___multf3 = (e, t, r, a, o) => (___multf3 = Module.___multf3 = wasmExports.__multf3)(e, t, r, a, o), ___addtf3 = Module.___addtf3 = (e, t, r, a, o) => (___addtf3 = Module.___addtf3 = wasmExports.__addtf3)(e, t, r, a, o), ___extenddftf2 = Module.___extenddftf2 = (e, t) => (___extenddftf2 = Module.___extenddftf2 = wasmExports.__extenddftf2)(e, t), ___subtf3 = Module.___subtf3 = (e, t, r, a, o) => (___subtf3 = Module.___subtf3 = wasmExports.__subtf3)(e, t, r, a, o), ___divtf3 = Module.___divtf3 = (e, t, r, a, o) => (___divtf3 = Module.___divtf3 = wasmExports.__divtf3)(e, t, r, a, o), ___eqtf2 = Module.___eqtf2 = (e, t, r, a) => (___eqtf2 = Module.___eqtf2 = wasmExports.__eqtf2)(e, t, r, a), ___trunctfdf2 = Module.___trunctfdf2 = (e, t) => (___trunctfdf2 = Module.___trunctfdf2 = wasmExports.__trunctfdf2)(e, t), _strtold = Module._strtold = (e, t, r) => (_strtold = Module._strtold = wasmExports.strtold)(e, t, r), _strtof_l = Module._strtof_l = (e, t, r) => (_strtof_l = Module._strtof_l = wasmExports.strtof_l)(e, t, r), _strtod_l = Module._strtod_l = (e, t, r) => (_strtod_l = Module._strtod_l = wasmExports.strtod_l)(e, t, r), _strtold_l = Module._strtold_l = (e, t, r, a) => (_strtold_l = Module._strtold_l = wasmExports.strtold_l)(e, t, r, a), _strtok = Module._strtok = (e, t) => (_strtok = Module._strtok = wasmExports.strtok)(e, t), _strtoull_l = Module._strtoull_l = (e, t, r, a) => (_strtoull_l = Module._strtoull_l = wasmExports.strtoull_l)(e, t, r, a), _strtoll_l = Module._strtoll_l = (e, t, r, a) => (_strtoll_l = Module._strtoll_l = wasmExports.strtoll_l)(e, t, r, a), _swprintf = Module._swprintf = (e, t, r, a) => (_swprintf = Module._swprintf = wasmExports.swprintf)(e, t, r, a), _trunc = Module._trunc = (e) => (_trunc = Module._trunc = wasmExports.trunc)(e), _ungetc = Module._ungetc = (e, t) => (_ungetc = Module._ungetc = wasmExports.ungetc)(e, t), _ungetwc = Module._ungetwc = (e, t) => (_ungetwc = Module._ungetwc = wasmExports.ungetwc)(e, t), _unlinkat = Module._unlinkat = (e, t, r) => (_unlinkat = Module._unlinkat = wasmExports.unlinkat)(e, t, r), _usleep = Module._usleep = (e) => (_usleep = Module._usleep = wasmExports.usleep)(e), _utimensat = Module._utimensat = (e, t, r, a) => (_utimensat = Module._utimensat = wasmExports.utimensat)(e, t, r, a), _vasprintf = Module._vasprintf = (e, t, r) => (_vasprintf = Module._vasprintf = wasmExports.vasprintf)(e, t, r), _wcrtomb = Module._wcrtomb = (e, t, r) => (_wcrtomb = Module._wcrtomb = wasmExports.wcrtomb)(e, t, r), _wcslen = Module._wcslen = (e) => (_wcslen = Module._wcslen = wasmExports.wcslen)(e), _wcscoll_l = Module._wcscoll_l = (e, t, r) => (_wcscoll_l = Module._wcscoll_l = wasmExports.wcscoll_l)(e, t, r), _wcsnrtombs = Module._wcsnrtombs = (e, t, r, a, o) => (_wcsnrtombs = Module._wcsnrtombs = wasmExports.wcsnrtombs)(e, t, r, a, o), _wcstof = Module._wcstof = (e, t) => (_wcstof = Module._wcstof = wasmExports.wcstof)(e, t), _wcstod = Module._wcstod = (e, t) => (_wcstod = Module._wcstod = wasmExports.wcstod)(e, t), _wcstold = Module._wcstold = (e, t, r) => (_wcstold = Module._wcstold = wasmExports.wcstold)(e, t, r), _wcstoull = Module._wcstoull = (e, t, r) => (_wcstoull = Module._wcstoull = wasmExports.wcstoull)(e, t, r), _wcstoll = Module._wcstoll = (e, t, r) => (_wcstoll = Module._wcstoll = wasmExports.wcstoll)(e, t, r), _wcstoul = Module._wcstoul = (e, t, r) => (_wcstoul = Module._wcstoul = wasmExports.wcstoul)(e, t, r), _wcstol = Module._wcstol = (e, t, r) => (_wcstol = Module._wcstol = wasmExports.wcstol)(e, t, r), _wcsxfrm_l = Module._wcsxfrm_l = (e, t, r, a) => (_wcsxfrm_l = Module._wcsxfrm_l = wasmExports.wcsxfrm_l)(e, t, r, a), _wctob = Module._wctob = (e) => (_wctob = Module._wctob = wasmExports.wctob)(e), _wmemchr = Module._wmemchr = (e, t, r) => (_wmemchr = Module._wmemchr = wasmExports.wmemchr)(e, t, r), _wmemcmp = Module._wmemcmp = (e, t, r) => (_wmemcmp = Module._wmemcmp = wasmExports.wmemcmp)(e, t, r), ___lttf2 = Module.___lttf2 = (e, t, r, a) => (___lttf2 = Module.___lttf2 = wasmExports.__lttf2)(e, t, r, a), _setThrew = (e, t) => (_setThrew = wasmExports.setThrew)(e, t), __emscripten_tempret_set = (e) => (__emscripten_tempret_set = wasmExports._emscripten_tempret_set)(e), __emscripten_tempret_get = () => (__emscripten_tempret_get = wasmExports._emscripten_tempret_get)(), __emscripten_stack_restore = (e) => (__emscripten_stack_restore = wasmExports._emscripten_stack_restore)(e), __emscripten_stack_alloc = (e) => (__emscripten_stack_alloc = wasmExports._emscripten_stack_alloc)(e), _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports.emscripten_stack_get_current)(), __Znwm = Module.__Znwm = (e) => (__Znwm = Module.__Znwm = wasmExports._Znwm)(e), __ZNSt3__210__stdinbufIcEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__210__stdinbufIcEC2EP8_IO_FILEP11__mbstate_t = (e, t, r) => (__ZNSt3__210__stdinbufIcEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__210__stdinbufIcEC2EP8_IO_FILEP11__mbstate_t = wasmExports._ZNSt3__210__stdinbufIcEC2EP8_IO_FILEP11__mbstate_t)(e, t, r), __ZNSt3__211__stdoutbufIcEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__211__stdoutbufIcEC2EP8_IO_FILEP11__mbstate_t = (e, t, r) => (__ZNSt3__211__stdoutbufIcEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__211__stdoutbufIcEC2EP8_IO_FILEP11__mbstate_t = wasmExports._ZNSt3__211__stdoutbufIcEC2EP8_IO_FILEP11__mbstate_t)(e, t, r), __ZNSt3__210__stdinbufIwEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__210__stdinbufIwEC2EP8_IO_FILEP11__mbstate_t = (e, t, r) => (__ZNSt3__210__stdinbufIwEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__210__stdinbufIwEC2EP8_IO_FILEP11__mbstate_t = wasmExports._ZNSt3__210__stdinbufIwEC2EP8_IO_FILEP11__mbstate_t)(e, t, r), __ZNSt3__211__stdoutbufIwEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__211__stdoutbufIwEC2EP8_IO_FILEP11__mbstate_t = (e, t, r) => (__ZNSt3__211__stdoutbufIwEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__211__stdoutbufIwEC2EP8_IO_FILEP11__mbstate_t = wasmExports._ZNSt3__211__stdoutbufIwEC2EP8_IO_FILEP11__mbstate_t)(e, t, r), __ZSt15get_new_handlerv = Module.__ZSt15get_new_handlerv = () => (__ZSt15get_new_handlerv = Module.__ZSt15get_new_handlerv = wasmExports._ZSt15get_new_handlerv)(), __ZdlPv = Module.__ZdlPv = (e) => (__ZdlPv = Module.__ZdlPv = wasmExports._ZdlPv)(e), __ZNSt13runtime_errorD2Ev = Module.__ZNSt13runtime_errorD2Ev = (e) => (__ZNSt13runtime_errorD2Ev = Module.__ZNSt13runtime_errorD2Ev = wasmExports._ZNSt13runtime_errorD2Ev)(e), __ZNKSt13runtime_error4whatEv = Module.__ZNKSt13runtime_error4whatEv = (e) => (__ZNKSt13runtime_error4whatEv = Module.__ZNKSt13runtime_error4whatEv = wasmExports._ZNKSt13runtime_error4whatEv)(e), __ZSt9terminatev = Module.__ZSt9terminatev = () => (__ZSt9terminatev = Module.__ZSt9terminatev = wasmExports._ZSt9terminatev)(), __ZNSt11logic_errorD2Ev = Module.__ZNSt11logic_errorD2Ev = (e) => (__ZNSt11logic_errorD2Ev = Module.__ZNSt11logic_errorD2Ev = wasmExports._ZNSt11logic_errorD2Ev)(e), ___cxa_decrement_exception_refcount = Module.___cxa_decrement_exception_refcount = (e) => (___cxa_decrement_exception_refcount = Module.___cxa_decrement_exception_refcount = wasmExports.__cxa_decrement_exception_refcount)(e), ___cxa_increment_exception_refcount = Module.___cxa_increment_exception_refcount = (e) => (___cxa_increment_exception_refcount = Module.___cxa_increment_exception_refcount = wasmExports.__cxa_increment_exception_refcount)(e), __ZNSt9exceptionD2Ev = Module.__ZNSt9exceptionD2Ev = (e) => (__ZNSt9exceptionD2Ev = Module.__ZNSt9exceptionD2Ev = wasmExports._ZNSt9exceptionD2Ev)(e), __ZNKSt11logic_error4whatEv = Module.__ZNKSt11logic_error4whatEv = (e) => (__ZNKSt11logic_error4whatEv = Module.__ZNKSt11logic_error4whatEv = wasmExports._ZNKSt11logic_error4whatEv)(e), ___cxa_bad_cast = Module.___cxa_bad_cast = () => (___cxa_bad_cast = Module.___cxa_bad_cast = wasmExports.__cxa_bad_cast)(), ___cxa_bad_typeid = Module.___cxa_bad_typeid = () => (___cxa_bad_typeid = Module.___cxa_bad_typeid = wasmExports.__cxa_bad_typeid)(), ___cxa_allocate_exception = Module.___cxa_allocate_exception = (e) => (___cxa_allocate_exception = Module.___cxa_allocate_exception = wasmExports.__cxa_allocate_exception)(e), ___cxa_free_exception = Module.___cxa_free_exception = (e) => (___cxa_free_exception = Module.___cxa_free_exception = wasmExports.__cxa_free_exception)(e), ___cxa_init_primary_exception = Module.___cxa_init_primary_exception = (e, t, r) => (___cxa_init_primary_exception = Module.___cxa_init_primary_exception = wasmExports.__cxa_init_primary_exception)(e, t, r), __ZNSt9type_infoD2Ev = Module.__ZNSt9type_infoD2Ev = (e) => (__ZNSt9type_infoD2Ev = Module.__ZNSt9type_infoD2Ev = wasmExports._ZNSt9type_infoD2Ev)(e), ___cxa_can_catch = (e, t, r) => (___cxa_can_catch = wasmExports.__cxa_can_catch)(e, t, r), ___cxa_get_exception_ptr = Module.___cxa_get_exception_ptr = (e) => (___cxa_get_exception_ptr = Module.___cxa_get_exception_ptr = wasmExports.__cxa_get_exception_ptr)(e), __ZNSt9exceptionD0Ev = Module.__ZNSt9exceptionD0Ev = (e) => (__ZNSt9exceptionD0Ev = Module.__ZNSt9exceptionD0Ev = wasmExports._ZNSt9exceptionD0Ev)(e), __ZNSt9exceptionD1Ev = Module.__ZNSt9exceptionD1Ev = (e) => (__ZNSt9exceptionD1Ev = Module.__ZNSt9exceptionD1Ev = wasmExports._ZNSt9exceptionD1Ev)(e), __ZNKSt9exception4whatEv = Module.__ZNKSt9exception4whatEv = (e) => (__ZNKSt9exception4whatEv = Module.__ZNKSt9exception4whatEv = wasmExports._ZNKSt9exception4whatEv)(e), __ZNSt13bad_exceptionD0Ev = Module.__ZNSt13bad_exceptionD0Ev = (e) => (__ZNSt13bad_exceptionD0Ev = Module.__ZNSt13bad_exceptionD0Ev = wasmExports._ZNSt13bad_exceptionD0Ev)(e), __ZNSt13bad_exceptionD1Ev = Module.__ZNSt13bad_exceptionD1Ev = (e) => (__ZNSt13bad_exceptionD1Ev = Module.__ZNSt13bad_exceptionD1Ev = wasmExports._ZNSt13bad_exceptionD1Ev)(e), __ZNKSt13bad_exception4whatEv = Module.__ZNKSt13bad_exception4whatEv = (e) => (__ZNKSt13bad_exception4whatEv = Module.__ZNKSt13bad_exception4whatEv = wasmExports._ZNKSt13bad_exception4whatEv)(e), __ZNSt9bad_allocC2Ev = Module.__ZNSt9bad_allocC2Ev = (e) => (__ZNSt9bad_allocC2Ev = Module.__ZNSt9bad_allocC2Ev = wasmExports._ZNSt9bad_allocC2Ev)(e), __ZNSt9bad_allocD0Ev = Module.__ZNSt9bad_allocD0Ev = (e) => (__ZNSt9bad_allocD0Ev = Module.__ZNSt9bad_allocD0Ev = wasmExports._ZNSt9bad_allocD0Ev)(e), __ZNSt9bad_allocD1Ev = Module.__ZNSt9bad_allocD1Ev = (e) => (__ZNSt9bad_allocD1Ev = Module.__ZNSt9bad_allocD1Ev = wasmExports._ZNSt9bad_allocD1Ev)(e), __ZNKSt9bad_alloc4whatEv = Module.__ZNKSt9bad_alloc4whatEv = (e) => (__ZNKSt9bad_alloc4whatEv = Module.__ZNKSt9bad_alloc4whatEv = wasmExports._ZNKSt9bad_alloc4whatEv)(e), __ZNSt20bad_array_new_lengthC2Ev = Module.__ZNSt20bad_array_new_lengthC2Ev = (e) => (__ZNSt20bad_array_new_lengthC2Ev = Module.__ZNSt20bad_array_new_lengthC2Ev = wasmExports._ZNSt20bad_array_new_lengthC2Ev)(e), __ZNSt20bad_array_new_lengthD0Ev = Module.__ZNSt20bad_array_new_lengthD0Ev = (e) => (__ZNSt20bad_array_new_lengthD0Ev = Module.__ZNSt20bad_array_new_lengthD0Ev = wasmExports._ZNSt20bad_array_new_lengthD0Ev)(e), __ZNSt20bad_array_new_lengthD1Ev = Module.__ZNSt20bad_array_new_lengthD1Ev = (e) => (__ZNSt20bad_array_new_lengthD1Ev = Module.__ZNSt20bad_array_new_lengthD1Ev = wasmExports._ZNSt20bad_array_new_lengthD1Ev)(e), __ZNKSt20bad_array_new_length4whatEv = Module.__ZNKSt20bad_array_new_length4whatEv = (e) => (__ZNKSt20bad_array_new_length4whatEv = Module.__ZNKSt20bad_array_new_length4whatEv = wasmExports._ZNKSt20bad_array_new_length4whatEv)(e), __ZNSt13bad_exceptionD2Ev = Module.__ZNSt13bad_exceptionD2Ev = (e) => (__ZNSt13bad_exceptionD2Ev = Module.__ZNSt13bad_exceptionD2Ev = wasmExports._ZNSt13bad_exceptionD2Ev)(e), __ZNSt9bad_allocC1Ev = Module.__ZNSt9bad_allocC1Ev = (e) => (__ZNSt9bad_allocC1Ev = Module.__ZNSt9bad_allocC1Ev = wasmExports._ZNSt9bad_allocC1Ev)(e), __ZNSt9bad_allocD2Ev = Module.__ZNSt9bad_allocD2Ev = (e) => (__ZNSt9bad_allocD2Ev = Module.__ZNSt9bad_allocD2Ev = wasmExports._ZNSt9bad_allocD2Ev)(e), __ZNSt20bad_array_new_lengthC1Ev = Module.__ZNSt20bad_array_new_lengthC1Ev = (e) => (__ZNSt20bad_array_new_lengthC1Ev = Module.__ZNSt20bad_array_new_lengthC1Ev = wasmExports._ZNSt20bad_array_new_lengthC1Ev)(e), __ZNSt20bad_array_new_lengthD2Ev = Module.__ZNSt20bad_array_new_lengthD2Ev = (e) => (__ZNSt20bad_array_new_lengthD2Ev = Module.__ZNSt20bad_array_new_lengthD2Ev = wasmExports._ZNSt20bad_array_new_lengthD2Ev)(e), __ZNSt11logic_errorD0Ev = Module.__ZNSt11logic_errorD0Ev = (e) => (__ZNSt11logic_errorD0Ev = Module.__ZNSt11logic_errorD0Ev = wasmExports._ZNSt11logic_errorD0Ev)(e), __ZNSt11logic_errorD1Ev = Module.__ZNSt11logic_errorD1Ev = (e) => (__ZNSt11logic_errorD1Ev = Module.__ZNSt11logic_errorD1Ev = wasmExports._ZNSt11logic_errorD1Ev)(e), __ZNSt13runtime_errorD0Ev = Module.__ZNSt13runtime_errorD0Ev = (e) => (__ZNSt13runtime_errorD0Ev = Module.__ZNSt13runtime_errorD0Ev = wasmExports._ZNSt13runtime_errorD0Ev)(e), __ZNSt13runtime_errorD1Ev = Module.__ZNSt13runtime_errorD1Ev = (e) => (__ZNSt13runtime_errorD1Ev = Module.__ZNSt13runtime_errorD1Ev = wasmExports._ZNSt13runtime_errorD1Ev)(e), __ZNSt12domain_errorD0Ev = Module.__ZNSt12domain_errorD0Ev = (e) => (__ZNSt12domain_errorD0Ev = Module.__ZNSt12domain_errorD0Ev = wasmExports._ZNSt12domain_errorD0Ev)(e), __ZNSt12domain_errorD1Ev = Module.__ZNSt12domain_errorD1Ev = (e) => (__ZNSt12domain_errorD1Ev = Module.__ZNSt12domain_errorD1Ev = wasmExports._ZNSt12domain_errorD1Ev)(e), __ZNSt16invalid_argumentD0Ev = Module.__ZNSt16invalid_argumentD0Ev = (e) => (__ZNSt16invalid_argumentD0Ev = Module.__ZNSt16invalid_argumentD0Ev = wasmExports._ZNSt16invalid_argumentD0Ev)(e), __ZNSt16invalid_argumentD1Ev = Module.__ZNSt16invalid_argumentD1Ev = (e) => (__ZNSt16invalid_argumentD1Ev = Module.__ZNSt16invalid_argumentD1Ev = wasmExports._ZNSt16invalid_argumentD1Ev)(e), __ZNSt12length_errorD0Ev = Module.__ZNSt12length_errorD0Ev = (e) => (__ZNSt12length_errorD0Ev = Module.__ZNSt12length_errorD0Ev = wasmExports._ZNSt12length_errorD0Ev)(e), __ZNSt12length_errorD1Ev = Module.__ZNSt12length_errorD1Ev = (e) => (__ZNSt12length_errorD1Ev = Module.__ZNSt12length_errorD1Ev = wasmExports._ZNSt12length_errorD1Ev)(e), __ZNSt12out_of_rangeD0Ev = Module.__ZNSt12out_of_rangeD0Ev = (e) => (__ZNSt12out_of_rangeD0Ev = Module.__ZNSt12out_of_rangeD0Ev = wasmExports._ZNSt12out_of_rangeD0Ev)(e), __ZNSt12out_of_rangeD1Ev = Module.__ZNSt12out_of_rangeD1Ev = (e) => (__ZNSt12out_of_rangeD1Ev = Module.__ZNSt12out_of_rangeD1Ev = wasmExports._ZNSt12out_of_rangeD1Ev)(e), __ZNSt11range_errorD0Ev = Module.__ZNSt11range_errorD0Ev = (e) => (__ZNSt11range_errorD0Ev = Module.__ZNSt11range_errorD0Ev = wasmExports._ZNSt11range_errorD0Ev)(e), __ZNSt11range_errorD1Ev = Module.__ZNSt11range_errorD1Ev = (e) => (__ZNSt11range_errorD1Ev = Module.__ZNSt11range_errorD1Ev = wasmExports._ZNSt11range_errorD1Ev)(e), __ZNSt14overflow_errorD0Ev = Module.__ZNSt14overflow_errorD0Ev = (e) => (__ZNSt14overflow_errorD0Ev = Module.__ZNSt14overflow_errorD0Ev = wasmExports._ZNSt14overflow_errorD0Ev)(e), __ZNSt14overflow_errorD1Ev = Module.__ZNSt14overflow_errorD1Ev = (e) => (__ZNSt14overflow_errorD1Ev = Module.__ZNSt14overflow_errorD1Ev = wasmExports._ZNSt14overflow_errorD1Ev)(e), __ZNSt15underflow_errorD0Ev = Module.__ZNSt15underflow_errorD0Ev = (e) => (__ZNSt15underflow_errorD0Ev = Module.__ZNSt15underflow_errorD0Ev = wasmExports._ZNSt15underflow_errorD0Ev)(e), __ZNSt15underflow_errorD1Ev = Module.__ZNSt15underflow_errorD1Ev = (e) => (__ZNSt15underflow_errorD1Ev = Module.__ZNSt15underflow_errorD1Ev = wasmExports._ZNSt15underflow_errorD1Ev)(e), __ZNSt12domain_errorD2Ev = Module.__ZNSt12domain_errorD2Ev = (e) => (__ZNSt12domain_errorD2Ev = Module.__ZNSt12domain_errorD2Ev = wasmExports._ZNSt12domain_errorD2Ev)(e), __ZNSt16invalid_argumentD2Ev = Module.__ZNSt16invalid_argumentD2Ev = (e) => (__ZNSt16invalid_argumentD2Ev = Module.__ZNSt16invalid_argumentD2Ev = wasmExports._ZNSt16invalid_argumentD2Ev)(e), __ZNSt12length_errorD2Ev = Module.__ZNSt12length_errorD2Ev = (e) => (__ZNSt12length_errorD2Ev = Module.__ZNSt12length_errorD2Ev = wasmExports._ZNSt12length_errorD2Ev)(e), __ZNSt12out_of_rangeD2Ev = Module.__ZNSt12out_of_rangeD2Ev = (e) => (__ZNSt12out_of_rangeD2Ev = Module.__ZNSt12out_of_rangeD2Ev = wasmExports._ZNSt12out_of_rangeD2Ev)(e), __ZNSt11range_errorD2Ev = Module.__ZNSt11range_errorD2Ev = (e) => (__ZNSt11range_errorD2Ev = Module.__ZNSt11range_errorD2Ev = wasmExports._ZNSt11range_errorD2Ev)(e), __ZNSt14overflow_errorD2Ev = Module.__ZNSt14overflow_errorD2Ev = (e) => (__ZNSt14overflow_errorD2Ev = Module.__ZNSt14overflow_errorD2Ev = wasmExports._ZNSt14overflow_errorD2Ev)(e), __ZNSt15underflow_errorD2Ev = Module.__ZNSt15underflow_errorD2Ev = (e) => (__ZNSt15underflow_errorD2Ev = Module.__ZNSt15underflow_errorD2Ev = wasmExports._ZNSt15underflow_errorD2Ev)(e), __ZNSt9type_infoD0Ev = Module.__ZNSt9type_infoD0Ev = (e) => (__ZNSt9type_infoD0Ev = Module.__ZNSt9type_infoD0Ev = wasmExports._ZNSt9type_infoD0Ev)(e), __ZNSt9type_infoD1Ev = Module.__ZNSt9type_infoD1Ev = (e) => (__ZNSt9type_infoD1Ev = Module.__ZNSt9type_infoD1Ev = wasmExports._ZNSt9type_infoD1Ev)(e), __ZNSt8bad_castC2Ev = Module.__ZNSt8bad_castC2Ev = (e) => (__ZNSt8bad_castC2Ev = Module.__ZNSt8bad_castC2Ev = wasmExports._ZNSt8bad_castC2Ev)(e), __ZNSt8bad_castD2Ev = Module.__ZNSt8bad_castD2Ev = (e) => (__ZNSt8bad_castD2Ev = Module.__ZNSt8bad_castD2Ev = wasmExports._ZNSt8bad_castD2Ev)(e), __ZNSt8bad_castD0Ev = Module.__ZNSt8bad_castD0Ev = (e) => (__ZNSt8bad_castD0Ev = Module.__ZNSt8bad_castD0Ev = wasmExports._ZNSt8bad_castD0Ev)(e), __ZNSt8bad_castD1Ev = Module.__ZNSt8bad_castD1Ev = (e) => (__ZNSt8bad_castD1Ev = Module.__ZNSt8bad_castD1Ev = wasmExports._ZNSt8bad_castD1Ev)(e), __ZNKSt8bad_cast4whatEv = Module.__ZNKSt8bad_cast4whatEv = (e) => (__ZNKSt8bad_cast4whatEv = Module.__ZNKSt8bad_cast4whatEv = wasmExports._ZNKSt8bad_cast4whatEv)(e), __ZNSt10bad_typeidC2Ev = Module.__ZNSt10bad_typeidC2Ev = (e) => (__ZNSt10bad_typeidC2Ev = Module.__ZNSt10bad_typeidC2Ev = wasmExports._ZNSt10bad_typeidC2Ev)(e), __ZNSt10bad_typeidD2Ev = Module.__ZNSt10bad_typeidD2Ev = (e) => (__ZNSt10bad_typeidD2Ev = Module.__ZNSt10bad_typeidD2Ev = wasmExports._ZNSt10bad_typeidD2Ev)(e), __ZNSt10bad_typeidD0Ev = Module.__ZNSt10bad_typeidD0Ev = (e) => (__ZNSt10bad_typeidD0Ev = Module.__ZNSt10bad_typeidD0Ev = wasmExports._ZNSt10bad_typeidD0Ev)(e), __ZNSt10bad_typeidD1Ev = Module.__ZNSt10bad_typeidD1Ev = (e) => (__ZNSt10bad_typeidD1Ev = Module.__ZNSt10bad_typeidD1Ev = wasmExports._ZNSt10bad_typeidD1Ev)(e), __ZNKSt10bad_typeid4whatEv = Module.__ZNKSt10bad_typeid4whatEv = (e) => (__ZNKSt10bad_typeid4whatEv = Module.__ZNKSt10bad_typeid4whatEv = wasmExports._ZNKSt10bad_typeid4whatEv)(e), __ZNSt8bad_castC1Ev = Module.__ZNSt8bad_castC1Ev = (e) => (__ZNSt8bad_castC1Ev = Module.__ZNSt8bad_castC1Ev = wasmExports._ZNSt8bad_castC1Ev)(e), __ZNSt10bad_typeidC1Ev = Module.__ZNSt10bad_typeidC1Ev = (e) => (__ZNSt10bad_typeidC1Ev = Module.__ZNSt10bad_typeidC1Ev = wasmExports._ZNSt10bad_typeidC1Ev)(e), ___wasm_apply_data_relocs = () => (___wasm_apply_data_relocs = wasmExports.__wasm_apply_data_relocs)(), _LocalBufferBlockPointers = Module._LocalBufferBlockPointers = 2796604, _BufferBlocks = Module._BufferBlocks = 2791308, _wal_level = Module._wal_level = 2582944, _CurrentMemoryContext = Module._CurrentMemoryContext = 2880704, _SnapshotAnyData = Module._SnapshotAnyData = 2674208, _debug_query_string = Module._debug_query_string = 2804316, _maintenance_work_mem = Module._maintenance_work_mem = 2618976, _CritSectionCount = Module._CritSectionCount = 2875364, _InterruptPending = Module._InterruptPending = 2875312, _ParallelWorkerNumber = Module._ParallelWorkerNumber = 2574456, _pg_number_of_ones = Module._pg_number_of_ones = 2034800, _TopMemoryContext = Module._TopMemoryContext = 2880708, _IsUnderPostmaster = Module._IsUnderPostmaster = 2875397, _MainLWLockArray = Module._MainLWLockArray = 2802324, _CurrentResourceOwner = Module._CurrentResourceOwner = 2880756, _work_mem = Module._work_mem = 2618964, _pg_global_prng_state = Module._pg_global_prng_state = 2964208, _NBuffers = Module._NBuffers = 2618984, _XactIsoLevel = Module._XactIsoLevel = 2582808, _bsysscan = Module._bsysscan = 2775716, _CheckXidAlive = Module._CheckXidAlive = 2775712, _MyProc = Module._MyProc = 2804140, _MyDatabaseId = Module._MyDatabaseId = 2875376, _TTSOpsBufferHeapTuple = Module._TTSOpsBufferHeapTuple = 2586992, _RecentXmin = Module._RecentXmin = 2674356, _TTSOpsHeapTuple = Module._TTSOpsHeapTuple = 2586888, _pgWalUsage = Module._pgWalUsage = 2779064, _pgBufferUsage = Module._pgBufferUsage = 2778936, _error_context_stack = Module._error_context_stack = 2873608, _MyLatch = Module._MyLatch = 2875524, ___THREW__ = Module.___THREW__ = 2981972, ___threwValue = Module.___threwValue = 2981976, _PG_exception_stack = Module._PG_exception_stack = 2873612, _TTSOpsVirtual = Module._TTSOpsVirtual = 2586836, _GUC_check_errdetail_string = Module._GUC_check_errdetail_string = 2879292, _TransamVariables = Module._TransamVariables = 2775704, _TopTransactionContext = Module._TopTransactionContext = 2880728, _MyProcPid = Module._MyProcPid = 2875448, _RmgrTable = Module._RmgrTable = 2574528, _process_shared_preload_libraries_in_progress = Module._process_shared_preload_libraries_in_progress = 2878688, _wal_segment_size = Module._wal_segment_size = 2582964, _TopTransactionResourceOwner = Module._TopTransactionResourceOwner = 2880764, _arch_module_check_errdetail_string = Module._arch_module_check_errdetail_string = 2788776, _stdout = Module._stdout = 2770224, _stdin = Module._stdin = 2770072, _object_access_hook = Module._object_access_hook = 2777456, _InvalidObjectAddress = Module._InvalidObjectAddress = 736344, _check_function_bodies = Module._check_function_bodies = 2619166, _post_parse_analyze_hook = Module._post_parse_analyze_hook = 2777496, _ScanKeywordTokens = Module._ScanKeywordTokens = 1285648, _ScanKeywords = Module._ScanKeywords = 2726024, _None_Receiver = Module._None_Receiver = 2592780, _explain_per_plan_hook = Module._explain_per_plan_hook = 2777640, _explain_per_node_hook = Module._explain_per_node_hook = 2777644, _CacheMemoryContext = Module._CacheMemoryContext = 2880720, _SPI_processed = Module._SPI_processed = 2779256, _SPI_tuptable = Module._SPI_tuptable = 2779264, _TTSOpsMinimalTuple = Module._TTSOpsMinimalTuple = 2586940, _check_password_hook = Module._check_password_hook = 2777804, _ConfigReloadPending = Module._ConfigReloadPending = 2788748, _max_parallel_maintenance_workers = Module._max_parallel_maintenance_workers = 2618980, _DateStyle = Module._DateStyle = 2618952, _ExecutorStart_hook = Module._ExecutorStart_hook = 2778912, _ExecutorRun_hook = Module._ExecutorRun_hook = 2778916, _ExecutorFinish_hook = Module._ExecutorFinish_hook = 2778920, _ExecutorEnd_hook = Module._ExecutorEnd_hook = 2778924, _SPI_result = Module._SPI_result = 2779268, _stderr = Module._stderr = 2769920, _MyProcPort = Module._MyProcPort = 2875476, _ClientAuthentication_hook = Module._ClientAuthentication_hook = 2779472, _set_rel_pathlist_hook = Module._set_rel_pathlist_hook = 2788336, _cpu_tuple_cost = Module._cpu_tuple_cost = 2587464, _cpu_operator_cost = Module._cpu_operator_cost = 2587480, _seq_page_cost = Module._seq_page_cost = 2587448, _planner_hook = Module._planner_hook = 2788380, _QueryCancelPending = Module._QueryCancelPending = 2875316, _ShutdownRequestPending = Module._ShutdownRequestPending = 2788752, _MyStartTime = Module._MyStartTime = 2875456, _cluster_name = Module._cluster_name = 2619216, _ProcDiePending = Module._ProcDiePending = 2875320, _application_name = Module._application_name = 2879500, _row_security_policy_hook_restrictive = Module._row_security_policy_hook_restrictive = 2791276, _row_security_policy_hook_permissive = Module._row_security_policy_hook_permissive = 2791272, _BufferDescriptors = Module._BufferDescriptors = 2791304, _shmem_startup_hook = Module._shmem_startup_hook = 2797300, _ProcessUtility_hook = Module._ProcessUtility_hook = 2804520, _IntervalStyle = Module._IntervalStyle = 2875400, _extra_float_digits = Module._extra_float_digits = 2609272, _pg_crc32_table = Module._pg_crc32_table = 1698672, _shmem_request_hook = Module._shmem_request_hook = 2878692, __ZTVN10__cxxabiv120__si_class_type_infoE = Module.__ZTVN10__cxxabiv120__si_class_type_infoE = 2770852, __ZTVN10__cxxabiv117__class_type_infoE = Module.__ZTVN10__cxxabiv117__class_type_infoE = 2770812, __ZTVN10__cxxabiv121__vmi_class_type_infoE = Module.__ZTVN10__cxxabiv121__vmi_class_type_infoE = 2770904, __ZTVSt11logic_error = Module.__ZTVSt11logic_error = 2771164, __ZTVSt9exception = Module.__ZTVSt9exception = 2771080, __ZTVSt13runtime_error = Module.__ZTVSt13runtime_error = 2771184, __ZTISt13runtime_error = Module.__ZTISt13runtime_error = 2771376, __ZTISt9exception = Module.__ZTISt9exception = 2771100, __ZTISt11logic_error = Module.__ZTISt11logic_error = 2771236, __ZTISt9type_info = Module.__ZTISt9type_info = 2771508, __ZTVN10__cxxabiv116__shim_type_infoE = Module.__ZTVN10__cxxabiv116__shim_type_infoE = 2770500, __ZTVN10__cxxabiv123__fundamental_type_infoE = Module.__ZTVN10__cxxabiv123__fundamental_type_infoE = 2770528, __ZTVN10__cxxabiv119__pointer_type_infoE = Module.__ZTVN10__cxxabiv119__pointer_type_infoE = 2770984, __ZTIb = Module.__ZTIb = 2770584, __ZTIPKc = Module.__ZTIPKc = 2770600, __ZTIh = Module.__ZTIh = 2770616, __ZTIa = Module.__ZTIa = 2770624, __ZTIs = Module.__ZTIs = 2770632, __ZTIt = Module.__ZTIt = 2770640, __ZTIi = Module.__ZTIi = 2770648, __ZTIj = Module.__ZTIj = 2770656, __ZTIl = Module.__ZTIl = 2770664, __ZTIm = Module.__ZTIm = 2770672, __ZTIx = Module.__ZTIx = 2770680, __ZTIf = Module.__ZTIf = 2770688, __ZTId = Module.__ZTId = 2770696, __ZTVN10__cxxabiv117__array_type_infoE = Module.__ZTVN10__cxxabiv117__array_type_infoE = 2770704, __ZTVN10__cxxabiv120__function_type_infoE = Module.__ZTVN10__cxxabiv120__function_type_infoE = 2770744, __ZTVN10__cxxabiv116__enum_type_infoE = Module.__ZTVN10__cxxabiv116__enum_type_infoE = 2770772, __ZTVN10__cxxabiv117__pbase_type_infoE = Module.__ZTVN10__cxxabiv117__pbase_type_infoE = 2770956, __ZTVN10__cxxabiv129__pointer_to_member_type_infoE = Module.__ZTVN10__cxxabiv129__pointer_to_member_type_infoE = 2771012, __ZTVSt9bad_alloc = Module.__ZTVSt9bad_alloc = 2771040, __ZTVSt20bad_array_new_length = Module.__ZTVSt20bad_array_new_length = 2771060, __ZTISt9bad_alloc = Module.__ZTISt9bad_alloc = 2771140, __ZTISt20bad_array_new_length = Module.__ZTISt20bad_array_new_length = 2771152, __ZTSSt9exception = Module.__ZTSSt9exception = 2559709, __ZTVSt13bad_exception = Module.__ZTVSt13bad_exception = 2771108, __ZTISt13bad_exception = Module.__ZTISt13bad_exception = 2771128, __ZTSSt13bad_exception = Module.__ZTSSt13bad_exception = 2559722, __ZTSSt9bad_alloc = Module.__ZTSSt9bad_alloc = 2559740, __ZTSSt20bad_array_new_length = Module.__ZTSSt20bad_array_new_length = 2559753, __ZTVSt12domain_error = Module.__ZTVSt12domain_error = 2771204, __ZTISt12domain_error = Module.__ZTISt12domain_error = 2771224, __ZTSSt12domain_error = Module.__ZTSSt12domain_error = 2559778, __ZTSSt11logic_error = Module.__ZTSSt11logic_error = 2559795, __ZTVSt16invalid_argument = Module.__ZTVSt16invalid_argument = 2771248, __ZTISt16invalid_argument = Module.__ZTISt16invalid_argument = 2771268, __ZTSSt16invalid_argument = Module.__ZTSSt16invalid_argument = 2559811, __ZTVSt12length_error = Module.__ZTVSt12length_error = 2771280, __ZTISt12length_error = Module.__ZTISt12length_error = 2771300, __ZTSSt12length_error = Module.__ZTSSt12length_error = 2559832, __ZTVSt12out_of_range = Module.__ZTVSt12out_of_range = 2771312, __ZTISt12out_of_range = Module.__ZTISt12out_of_range = 2771332, __ZTSSt12out_of_range = Module.__ZTSSt12out_of_range = 2559849, __ZTVSt11range_error = Module.__ZTVSt11range_error = 2771344, __ZTISt11range_error = Module.__ZTISt11range_error = 2771364, __ZTSSt11range_error = Module.__ZTSSt11range_error = 2559866, __ZTSSt13runtime_error = Module.__ZTSSt13runtime_error = 2559882, __ZTVSt14overflow_error = Module.__ZTVSt14overflow_error = 2771388, __ZTISt14overflow_error = Module.__ZTISt14overflow_error = 2771408, __ZTSSt14overflow_error = Module.__ZTSSt14overflow_error = 2559900, __ZTVSt15underflow_error = Module.__ZTVSt15underflow_error = 2771420, __ZTISt15underflow_error = Module.__ZTISt15underflow_error = 2771440, __ZTSSt15underflow_error = Module.__ZTSSt15underflow_error = 2559919, __ZTVSt8bad_cast = Module.__ZTVSt8bad_cast = 2771452, __ZTVSt10bad_typeid = Module.__ZTVSt10bad_typeid = 2771472, __ZTISt8bad_cast = Module.__ZTISt8bad_cast = 2771516, __ZTISt10bad_typeid = Module.__ZTISt10bad_typeid = 2771528, __ZTVSt9type_info = Module.__ZTVSt9type_info = 2771492, __ZTSSt9type_info = Module.__ZTSSt9type_info = 2559939, __ZTSSt8bad_cast = Module.__ZTSSt8bad_cast = 2559952, __ZTSSt10bad_typeid = Module.__ZTSSt10bad_typeid = 2559964;
+		var ___wasm_call_ctors = () => (___wasm_call_ctors = wasmExports.__wasm_call_ctors)(), _palloc0 = Module._palloc0 = (e) => (_palloc0 = Module._palloc0 = wasmExports.palloc0)(e), _RelationGetNumberOfBlocksInFork = Module._RelationGetNumberOfBlocksInFork = (e, t) => (_RelationGetNumberOfBlocksInFork = Module._RelationGetNumberOfBlocksInFork = wasmExports.RelationGetNumberOfBlocksInFork)(e, t), _ExtendBufferedRel = Module._ExtendBufferedRel = (e, t, r, a) => (_ExtendBufferedRel = Module._ExtendBufferedRel = wasmExports.ExtendBufferedRel)(e, t, r, a), _MarkBufferDirty = Module._MarkBufferDirty = (e) => (_MarkBufferDirty = Module._MarkBufferDirty = wasmExports.MarkBufferDirty)(e), _XLogBeginInsert = Module._XLogBeginInsert = () => (_XLogBeginInsert = Module._XLogBeginInsert = wasmExports.XLogBeginInsert)(), _XLogRegisterData = Module._XLogRegisterData = (e, t) => (_XLogRegisterData = Module._XLogRegisterData = wasmExports.XLogRegisterData)(e, t), _XLogInsert = Module._XLogInsert = (e, t) => (_XLogInsert = Module._XLogInsert = wasmExports.XLogInsert)(e, t), _UnlockReleaseBuffer = Module._UnlockReleaseBuffer = (e) => (_UnlockReleaseBuffer = Module._UnlockReleaseBuffer = wasmExports.UnlockReleaseBuffer)(e), _palloc = Module._palloc = (e) => (_palloc = Module._palloc = wasmExports.palloc)(e), _brin_build_desc = Module._brin_build_desc = (e) => (_brin_build_desc = Module._brin_build_desc = wasmExports.brin_build_desc)(e), _EnterParallelMode = Module._EnterParallelMode = () => (_EnterParallelMode = Module._EnterParallelMode = wasmExports.EnterParallelMode)(), _CreateParallelContext = Module._CreateParallelContext = (e, t, r) => (_CreateParallelContext = Module._CreateParallelContext = wasmExports.CreateParallelContext)(e, t, r), _GetTransactionSnapshot = Module._GetTransactionSnapshot = () => (_GetTransactionSnapshot = Module._GetTransactionSnapshot = wasmExports.GetTransactionSnapshot)(), _RegisterSnapshot = Module._RegisterSnapshot = (e) => (_RegisterSnapshot = Module._RegisterSnapshot = wasmExports.RegisterSnapshot)(e), _table_parallelscan_estimate = Module._table_parallelscan_estimate = (e, t) => (_table_parallelscan_estimate = Module._table_parallelscan_estimate = wasmExports.table_parallelscan_estimate)(e, t), _add_size = Module._add_size = (e, t) => (_add_size = Module._add_size = wasmExports.add_size)(e, t), _tuplesort_estimate_shared = Module._tuplesort_estimate_shared = (e) => (_tuplesort_estimate_shared = Module._tuplesort_estimate_shared = wasmExports.tuplesort_estimate_shared)(e), _strlen = Module._strlen = (e) => (_strlen = Module._strlen = wasmExports.strlen)(e), _InitializeParallelDSM = Module._InitializeParallelDSM = (e) => (_InitializeParallelDSM = Module._InitializeParallelDSM = wasmExports.InitializeParallelDSM)(e), _UnregisterSnapshot = Module._UnregisterSnapshot = (e) => (_UnregisterSnapshot = Module._UnregisterSnapshot = wasmExports.UnregisterSnapshot)(e), _DestroyParallelContext = Module._DestroyParallelContext = (e) => (_DestroyParallelContext = Module._DestroyParallelContext = wasmExports.DestroyParallelContext)(e), _ExitParallelMode = Module._ExitParallelMode = () => (_ExitParallelMode = Module._ExitParallelMode = wasmExports.ExitParallelMode)(), _shm_toc_allocate = Module._shm_toc_allocate = (e, t) => (_shm_toc_allocate = Module._shm_toc_allocate = wasmExports.shm_toc_allocate)(e, t), _ConditionVariableInit = Module._ConditionVariableInit = (e) => (_ConditionVariableInit = Module._ConditionVariableInit = wasmExports.ConditionVariableInit)(e), _table_parallelscan_initialize = Module._table_parallelscan_initialize = (e, t, r) => (_table_parallelscan_initialize = Module._table_parallelscan_initialize = wasmExports.table_parallelscan_initialize)(e, t, r), _tuplesort_initialize_shared = Module._tuplesort_initialize_shared = (e, t, r) => (_tuplesort_initialize_shared = Module._tuplesort_initialize_shared = wasmExports.tuplesort_initialize_shared)(e, t, r), _shm_toc_insert = Module._shm_toc_insert = (e, t, r) => (_shm_toc_insert = Module._shm_toc_insert = wasmExports.shm_toc_insert)(e, t, r), _memcpy = Module._memcpy = (e, t, r) => (_memcpy = Module._memcpy = wasmExports.memcpy)(e, t, r), _LaunchParallelWorkers = Module._LaunchParallelWorkers = (e) => (_LaunchParallelWorkers = Module._LaunchParallelWorkers = wasmExports.LaunchParallelWorkers)(e), _WaitForParallelWorkersToAttach = Module._WaitForParallelWorkersToAttach = (e) => (_WaitForParallelWorkersToAttach = Module._WaitForParallelWorkersToAttach = wasmExports.WaitForParallelWorkersToAttach)(e), _s_lock = Module._s_lock = (e, t, r, a) => (_s_lock = Module._s_lock = wasmExports.s_lock)(e, t, r, a), _ConditionVariableSleep = Module._ConditionVariableSleep = (e, t) => (_ConditionVariableSleep = Module._ConditionVariableSleep = wasmExports.ConditionVariableSleep)(e, t), _ConditionVariableCancelSleep = Module._ConditionVariableCancelSleep = () => (_ConditionVariableCancelSleep = Module._ConditionVariableCancelSleep = wasmExports.ConditionVariableCancelSleep)(), _tuplesort_performsort = Module._tuplesort_performsort = (e) => (_tuplesort_performsort = Module._tuplesort_performsort = wasmExports.tuplesort_performsort)(e), _AllocSetContextCreateInternal = Module._AllocSetContextCreateInternal = (e, t, r, a, o) => (_AllocSetContextCreateInternal = Module._AllocSetContextCreateInternal = wasmExports.AllocSetContextCreateInternal)(e, t, r, a, o), _tuplesort_end = Module._tuplesort_end = (e) => (_tuplesort_end = Module._tuplesort_end = wasmExports.tuplesort_end)(e), _MemoryContextReset = Module._MemoryContextReset = (e) => (_MemoryContextReset = Module._MemoryContextReset = wasmExports.MemoryContextReset)(e), _brin_deform_tuple = Module._brin_deform_tuple = (e, t, r) => (_brin_deform_tuple = Module._brin_deform_tuple = wasmExports.brin_deform_tuple)(e, t, r), _pfree = Module._pfree = (e) => (_pfree = Module._pfree = wasmExports.pfree)(e), _MemoryContextDelete = Module._MemoryContextDelete = (e) => (_MemoryContextDelete = Module._MemoryContextDelete = wasmExports.MemoryContextDelete)(e), _errstart_cold = Module._errstart_cold = (e, t) => (_errstart_cold = Module._errstart_cold = wasmExports.errstart_cold)(e, t), _errmsg_internal = Module._errmsg_internal = (e, t) => (_errmsg_internal = Module._errmsg_internal = wasmExports.errmsg_internal)(e, t), _errfinish = Module._errfinish = (e, t, r) => (_errfinish = Module._errfinish = wasmExports.errfinish)(e, t, r), _log_newpage_buffer = Module._log_newpage_buffer = (e, t) => (_log_newpage_buffer = Module._log_newpage_buffer = wasmExports.log_newpage_buffer)(e, t), _ProcessInterrupts = Module._ProcessInterrupts = () => (_ProcessInterrupts = Module._ProcessInterrupts = wasmExports.ProcessInterrupts)(), _errstart = Module._errstart = (e, t) => (_errstart = Module._errstart = wasmExports.errstart)(e, t), _errcode = Module._errcode = (e) => (_errcode = Module._errcode = wasmExports.errcode)(e), _errmsg = Module._errmsg = (e, t) => (_errmsg = Module._errmsg = wasmExports.errmsg)(e, t), _LockBuffer = Module._LockBuffer = (e, t) => (_LockBuffer = Module._LockBuffer = wasmExports.LockBuffer)(e, t), _ReleaseBuffer = Module._ReleaseBuffer = (e) => (_ReleaseBuffer = Module._ReleaseBuffer = wasmExports.ReleaseBuffer)(e), _IndexGetRelation = Module._IndexGetRelation = (e, t) => (_IndexGetRelation = Module._IndexGetRelation = wasmExports.IndexGetRelation)(e, t), _table_open = Module._table_open = (e, t) => (_table_open = Module._table_open = wasmExports.table_open)(e, t), _ReadBufferExtended = Module._ReadBufferExtended = (e, t, r, a, o) => (_ReadBufferExtended = Module._ReadBufferExtended = wasmExports.ReadBufferExtended)(e, t, r, a, o), _table_close = Module._table_close = (e, t) => (_table_close = Module._table_close = wasmExports.table_close)(e, t), _build_reloptions = Module._build_reloptions = (e, t, r, a, o, _) => (_build_reloptions = Module._build_reloptions = wasmExports.build_reloptions)(e, t, r, a, o, _), _RelationGetIndexScan = Module._RelationGetIndexScan = (e, t, r) => (_RelationGetIndexScan = Module._RelationGetIndexScan = wasmExports.RelationGetIndexScan)(e, t, r), _pgstat_assoc_relation = Module._pgstat_assoc_relation = (e) => (_pgstat_assoc_relation = Module._pgstat_assoc_relation = wasmExports.pgstat_assoc_relation)(e), _memset = Module._memset = (e, t, r) => (_memset = Module._memset = wasmExports.memset)(e, t, r), _index_getprocinfo = Module._index_getprocinfo = (e, t, r) => (_index_getprocinfo = Module._index_getprocinfo = wasmExports.index_getprocinfo)(e, t, r), _fmgr_info_copy = Module._fmgr_info_copy = (e, t, r) => (_fmgr_info_copy = Module._fmgr_info_copy = wasmExports.fmgr_info_copy)(e, t, r), _FunctionCall4Coll = Module._FunctionCall4Coll = (e, t, r, a, o, _) => (_FunctionCall4Coll = Module._FunctionCall4Coll = wasmExports.FunctionCall4Coll)(e, t, r, a, o, _), _FunctionCall1Coll = Module._FunctionCall1Coll = (e, t, r) => (_FunctionCall1Coll = Module._FunctionCall1Coll = wasmExports.FunctionCall1Coll)(e, t, r), _brin_free_desc = Module._brin_free_desc = (e) => (_brin_free_desc = Module._brin_free_desc = wasmExports.brin_free_desc)(e), _WaitForParallelWorkersToFinish = Module._WaitForParallelWorkersToFinish = (e) => (_WaitForParallelWorkersToFinish = Module._WaitForParallelWorkersToFinish = wasmExports.WaitForParallelWorkersToFinish)(e), _PageGetFreeSpace = Module._PageGetFreeSpace = (e) => (_PageGetFreeSpace = Module._PageGetFreeSpace = wasmExports.PageGetFreeSpace)(e), _BufferGetBlockNumber = Module._BufferGetBlockNumber = (e) => (_BufferGetBlockNumber = Module._BufferGetBlockNumber = wasmExports.BufferGetBlockNumber)(e), _BuildIndexInfo = Module._BuildIndexInfo = (e) => (_BuildIndexInfo = Module._BuildIndexInfo = wasmExports.BuildIndexInfo)(e), _Int64GetDatum = Module._Int64GetDatum = (e) => (_Int64GetDatum = Module._Int64GetDatum = wasmExports.Int64GetDatum)(e), _DirectFunctionCall2Coll = Module._DirectFunctionCall2Coll = (e, t, r, a) => (_DirectFunctionCall2Coll = Module._DirectFunctionCall2Coll = wasmExports.DirectFunctionCall2Coll)(e, t, r, a), _RecoveryInProgress = Module._RecoveryInProgress = () => (_RecoveryInProgress = Module._RecoveryInProgress = wasmExports.RecoveryInProgress)(), _GetUserIdAndSecContext = Module._GetUserIdAndSecContext = (e, t) => (_GetUserIdAndSecContext = Module._GetUserIdAndSecContext = wasmExports.GetUserIdAndSecContext)(e, t), _SetUserIdAndSecContext = Module._SetUserIdAndSecContext = (e, t) => (_SetUserIdAndSecContext = Module._SetUserIdAndSecContext = wasmExports.SetUserIdAndSecContext)(e, t), _NewGUCNestLevel = Module._NewGUCNestLevel = () => (_NewGUCNestLevel = Module._NewGUCNestLevel = wasmExports.NewGUCNestLevel)(), _RestrictSearchPath = Module._RestrictSearchPath = () => (_RestrictSearchPath = Module._RestrictSearchPath = wasmExports.RestrictSearchPath)(), _index_open = Module._index_open = (e, t) => (_index_open = Module._index_open = wasmExports.index_open)(e, t), _object_ownercheck = Module._object_ownercheck = (e, t, r) => (_object_ownercheck = Module._object_ownercheck = wasmExports.object_ownercheck)(e, t, r), _aclcheck_error = Module._aclcheck_error = (e, t, r) => (_aclcheck_error = Module._aclcheck_error = wasmExports.aclcheck_error)(e, t, r), _AtEOXact_GUC = Module._AtEOXact_GUC = (e, t) => (_AtEOXact_GUC = Module._AtEOXact_GUC = wasmExports.AtEOXact_GUC)(e, t), _relation_close = Module._relation_close = (e, t) => (_relation_close = Module._relation_close = wasmExports.relation_close)(e, t), _errhint = Module._errhint = (e, t) => (_errhint = Module._errhint = wasmExports.errhint)(e, t), _GetUserId = Module._GetUserId = () => (_GetUserId = Module._GetUserId = wasmExports.GetUserId)(), _ReadBuffer = Module._ReadBuffer = (e, t) => (_ReadBuffer = Module._ReadBuffer = wasmExports.ReadBuffer)(e, t), _shm_toc_lookup = Module._shm_toc_lookup = (e, t, r) => (_shm_toc_lookup = Module._shm_toc_lookup = wasmExports.shm_toc_lookup)(e, t, r), _pgstat_report_activity = Module._pgstat_report_activity = (e, t) => (_pgstat_report_activity = Module._pgstat_report_activity = wasmExports.pgstat_report_activity)(e, t), _tuplesort_attach_shared = Module._tuplesort_attach_shared = (e, t) => (_tuplesort_attach_shared = Module._tuplesort_attach_shared = wasmExports.tuplesort_attach_shared)(e, t), _index_close = Module._index_close = (e, t) => (_index_close = Module._index_close = wasmExports.index_close)(e, t), _table_beginscan_parallel = Module._table_beginscan_parallel = (e, t) => (_table_beginscan_parallel = Module._table_beginscan_parallel = wasmExports.table_beginscan_parallel)(e, t), _ConditionVariableSignal = Module._ConditionVariableSignal = (e) => (_ConditionVariableSignal = Module._ConditionVariableSignal = wasmExports.ConditionVariableSignal)(e), _datumCopy = Module._datumCopy = (e, t, r) => (_datumCopy = Module._datumCopy = wasmExports.datumCopy)(e, t, r), _lookup_type_cache = Module._lookup_type_cache = (e, t) => (_lookup_type_cache = Module._lookup_type_cache = wasmExports.lookup_type_cache)(e, t), _get_fn_opclass_options = Module._get_fn_opclass_options = (e) => (_get_fn_opclass_options = Module._get_fn_opclass_options = wasmExports.get_fn_opclass_options)(e), _log = Module._log = (e) => (_log = Module._log = wasmExports.log)(e), _pg_detoast_datum = Module._pg_detoast_datum = (e) => (_pg_detoast_datum = Module._pg_detoast_datum = wasmExports.pg_detoast_datum)(e), _index_getprocid = Module._index_getprocid = (e, t, r) => (_index_getprocid = Module._index_getprocid = wasmExports.index_getprocid)(e, t, r), _errdetail_internal = Module._errdetail_internal = (e, t) => (_errdetail_internal = Module._errdetail_internal = wasmExports.errdetail_internal)(e, t), _pg_popcount_optimized = Module._pg_popcount_optimized = (e, t) => (_pg_popcount_optimized = Module._pg_popcount_optimized = wasmExports.pg_popcount_optimized)(e, t), _init_local_reloptions = Module._init_local_reloptions = (e, t) => (_init_local_reloptions = Module._init_local_reloptions = wasmExports.init_local_reloptions)(e, t), _initStringInfo = Module._initStringInfo = (e) => (_initStringInfo = Module._initStringInfo = wasmExports.initStringInfo)(e), _appendStringInfoChar = Module._appendStringInfoChar = (e, t) => (_appendStringInfoChar = Module._appendStringInfoChar = wasmExports.appendStringInfoChar)(e, t), _appendStringInfo = Module._appendStringInfo = (e, t, r) => (_appendStringInfo = Module._appendStringInfo = wasmExports.appendStringInfo)(e, t, r), _FunctionCall2Coll = Module._FunctionCall2Coll = (e, t, r, a) => (_FunctionCall2Coll = Module._FunctionCall2Coll = wasmExports.FunctionCall2Coll)(e, t, r, a), _SysCacheGetAttrNotNull = Module._SysCacheGetAttrNotNull = (e, t, r) => (_SysCacheGetAttrNotNull = Module._SysCacheGetAttrNotNull = wasmExports.SysCacheGetAttrNotNull)(e, t, r), _ReleaseSysCache = Module._ReleaseSysCache = (e) => (_ReleaseSysCache = Module._ReleaseSysCache = wasmExports.ReleaseSysCache)(e), _get_opcode = Module._get_opcode = (e) => (_get_opcode = Module._get_opcode = wasmExports.get_opcode)(e), _fmgr_info_cxt = Module._fmgr_info_cxt = (e, t, r) => (_fmgr_info_cxt = Module._fmgr_info_cxt = wasmExports.fmgr_info_cxt)(e, t, r), _Float8GetDatum = Module._Float8GetDatum = (e) => (_Float8GetDatum = Module._Float8GetDatum = wasmExports.Float8GetDatum)(e), _numeric_float8 = Module._numeric_float8 = (e) => (_numeric_float8 = Module._numeric_float8 = wasmExports.numeric_float8)(e), _numeric_sub = Module._numeric_sub = (e) => (_numeric_sub = Module._numeric_sub = wasmExports.numeric_sub)(e), _DirectFunctionCall1Coll = Module._DirectFunctionCall1Coll = (e, t, r) => (_DirectFunctionCall1Coll = Module._DirectFunctionCall1Coll = wasmExports.DirectFunctionCall1Coll)(e, t, r), _pg_detoast_datum_packed = Module._pg_detoast_datum_packed = (e) => (_pg_detoast_datum_packed = Module._pg_detoast_datum_packed = wasmExports.pg_detoast_datum_packed)(e), _pg_qsort = Module._pg_qsort = (e, t, r, a) => (_pg_qsort = Module._pg_qsort = wasmExports.pg_qsort)(e, t, r, a), _get_typbyval = Module._get_typbyval = (e) => (_get_typbyval = Module._get_typbyval = wasmExports.get_typbyval)(e), _get_typlen = Module._get_typlen = (e) => (_get_typlen = Module._get_typlen = wasmExports.get_typlen)(e), _qsort_arg = Module._qsort_arg = (e, t, r, a, o) => (_qsort_arg = Module._qsort_arg = wasmExports.qsort_arg)(e, t, r, a, o), _memmove = Module._memmove = (e, t, r) => (_memmove = Module._memmove = wasmExports.memmove)(e, t, r), _add_local_int_reloption = Module._add_local_int_reloption = (e, t, r, a, o, _, s) => (_add_local_int_reloption = Module._add_local_int_reloption = wasmExports.add_local_int_reloption)(e, t, r, a, o, _, s), _getTypeOutputInfo = Module._getTypeOutputInfo = (e, t, r) => (_getTypeOutputInfo = Module._getTypeOutputInfo = wasmExports.getTypeOutputInfo)(e, t, r), _fmgr_info = Module._fmgr_info = (e, t) => (_fmgr_info = Module._fmgr_info = wasmExports.fmgr_info)(e, t), _OutputFunctionCall = Module._OutputFunctionCall = (e, t) => (_OutputFunctionCall = Module._OutputFunctionCall = wasmExports.OutputFunctionCall)(e, t), _cstring_to_text_with_len = Module._cstring_to_text_with_len = (e, t) => (_cstring_to_text_with_len = Module._cstring_to_text_with_len = wasmExports.cstring_to_text_with_len)(e, t), _accumArrayResult = Module._accumArrayResult = (e, t, r, a, o) => (_accumArrayResult = Module._accumArrayResult = wasmExports.accumArrayResult)(e, t, r, a, o), _makeArrayResult = Module._makeArrayResult = (e, t) => (_makeArrayResult = Module._makeArrayResult = wasmExports.makeArrayResult)(e, t), _OidOutputFunctionCall = Module._OidOutputFunctionCall = (e, t) => (_OidOutputFunctionCall = Module._OidOutputFunctionCall = wasmExports.OidOutputFunctionCall)(e, t), _cstring_to_text = Module._cstring_to_text = (e) => (_cstring_to_text = Module._cstring_to_text = wasmExports.cstring_to_text)(e), _PageGetExactFreeSpace = Module._PageGetExactFreeSpace = (e) => (_PageGetExactFreeSpace = Module._PageGetExactFreeSpace = wasmExports.PageGetExactFreeSpace)(e), _PageIndexTupleOverwrite = Module._PageIndexTupleOverwrite = (e, t, r, a) => (_PageIndexTupleOverwrite = Module._PageIndexTupleOverwrite = wasmExports.PageIndexTupleOverwrite)(e, t, r, a), _PageInit = Module._PageInit = (e, t, r) => (_PageInit = Module._PageInit = wasmExports.PageInit)(e, t, r), _PageAddItemExtended = Module._PageAddItemExtended = (e, t, r, a, o) => (_PageAddItemExtended = Module._PageAddItemExtended = wasmExports.PageAddItemExtended)(e, t, r, a, o), _LockRelationForExtension = Module._LockRelationForExtension = (e, t) => (_LockRelationForExtension = Module._LockRelationForExtension = wasmExports.LockRelationForExtension)(e, t), _UnlockRelationForExtension = Module._UnlockRelationForExtension = (e, t) => (_UnlockRelationForExtension = Module._UnlockRelationForExtension = wasmExports.UnlockRelationForExtension)(e, t), _smgropen = Module._smgropen = (e, t) => (_smgropen = Module._smgropen = wasmExports.smgropen)(e, t), _smgrpin = Module._smgrpin = (e) => (_smgrpin = Module._smgrpin = wasmExports.smgrpin)(e), _ItemPointerEquals = Module._ItemPointerEquals = (e, t) => (_ItemPointerEquals = Module._ItemPointerEquals = wasmExports.ItemPointerEquals)(e, t), _detoast_external_attr = Module._detoast_external_attr = (e) => (_detoast_external_attr = Module._detoast_external_attr = wasmExports.detoast_external_attr)(e), _CreateTemplateTupleDesc = Module._CreateTemplateTupleDesc = (e) => (_CreateTemplateTupleDesc = Module._CreateTemplateTupleDesc = wasmExports.CreateTemplateTupleDesc)(e), _TupleDescInitEntry = Module._TupleDescInitEntry = (e, t, r, a, o, _) => (_TupleDescInitEntry = Module._TupleDescInitEntry = wasmExports.TupleDescInitEntry)(e, t, r, a, o, _), _repalloc = Module._repalloc = (e, t) => (_repalloc = Module._repalloc = wasmExports.repalloc)(e, t), _memcmp = Module._memcmp = (e, t, r) => (_memcmp = Module._memcmp = wasmExports.memcmp)(e, t, r), _SearchSysCache1 = Module._SearchSysCache1 = (e, t) => (_SearchSysCache1 = Module._SearchSysCache1 = wasmExports.SearchSysCache1)(e, t), _get_opfamily_name = Module._get_opfamily_name = (e, t) => (_get_opfamily_name = Module._get_opfamily_name = wasmExports.get_opfamily_name)(e, t), _SearchSysCacheList = Module._SearchSysCacheList = (e, t, r, a, o) => (_SearchSysCacheList = Module._SearchSysCacheList = wasmExports.SearchSysCacheList)(e, t, r, a, o), _check_amproc_signature = Module._check_amproc_signature = (e, t, r, a, o, _) => (_check_amproc_signature = Module._check_amproc_signature = wasmExports.check_amproc_signature)(e, t, r, a, o, _), _check_amoptsproc_signature = Module._check_amoptsproc_signature = (e) => (_check_amoptsproc_signature = Module._check_amoptsproc_signature = wasmExports.check_amoptsproc_signature)(e), _format_procedure = Module._format_procedure = (e) => (_format_procedure = Module._format_procedure = wasmExports.format_procedure)(e), _format_operator = Module._format_operator = (e) => (_format_operator = Module._format_operator = wasmExports.format_operator)(e), _check_amop_signature = Module._check_amop_signature = (e, t, r, a) => (_check_amop_signature = Module._check_amop_signature = wasmExports.check_amop_signature)(e, t, r, a), _identify_opfamily_groups = Module._identify_opfamily_groups = (e, t) => (_identify_opfamily_groups = Module._identify_opfamily_groups = wasmExports.identify_opfamily_groups)(e, t), _format_type_be = Module._format_type_be = (e) => (_format_type_be = Module._format_type_be = wasmExports.format_type_be)(e), _ReleaseCatCacheList = Module._ReleaseCatCacheList = (e) => (_ReleaseCatCacheList = Module._ReleaseCatCacheList = wasmExports.ReleaseCatCacheList)(e), _format_type_with_typemod = Module._format_type_with_typemod = (e, t) => (_format_type_with_typemod = Module._format_type_with_typemod = wasmExports.format_type_with_typemod)(e, t), _errdetail = Module._errdetail = (e, t) => (_errdetail = Module._errdetail = wasmExports.errdetail)(e, t), _strcmp = Module._strcmp = (e, t) => (_strcmp = Module._strcmp = wasmExports.strcmp)(e, t), _DatumGetEOHP = Module._DatumGetEOHP = (e) => (_DatumGetEOHP = Module._DatumGetEOHP = wasmExports.DatumGetEOHP)(e), _EOH_get_flat_size = Module._EOH_get_flat_size = (e) => (_EOH_get_flat_size = Module._EOH_get_flat_size = wasmExports.EOH_get_flat_size)(e), _EOH_flatten_into = Module._EOH_flatten_into = (e, t, r) => (_EOH_flatten_into = Module._EOH_flatten_into = wasmExports.EOH_flatten_into)(e, t, r), _toast_raw_datum_size = Module._toast_raw_datum_size = (e) => (_toast_raw_datum_size = Module._toast_raw_datum_size = wasmExports.toast_raw_datum_size)(e), _getmissingattr = Module._getmissingattr = (e, t, r) => (_getmissingattr = Module._getmissingattr = wasmExports.getmissingattr)(e, t, r), _hash_create = Module._hash_create = (e, t, r, a) => (_hash_create = Module._hash_create = wasmExports.hash_create)(e, t, r, a), _hash_search = Module._hash_search = (e, t, r, a) => (_hash_search = Module._hash_search = wasmExports.hash_search)(e, t, r, a), _nocachegetattr = Module._nocachegetattr = (e, t, r) => (_nocachegetattr = Module._nocachegetattr = wasmExports.nocachegetattr)(e, t, r), _heap_getsysattr = Module._heap_getsysattr = (e, t, r, a) => (_heap_getsysattr = Module._heap_getsysattr = wasmExports.heap_getsysattr)(e, t, r, a), _heap_form_tuple = Module._heap_form_tuple = (e, t, r) => (_heap_form_tuple = Module._heap_form_tuple = wasmExports.heap_form_tuple)(e, t, r), _heap_modify_tuple = Module._heap_modify_tuple = (e, t, r, a, o) => (_heap_modify_tuple = Module._heap_modify_tuple = wasmExports.heap_modify_tuple)(e, t, r, a, o), _heap_deform_tuple = Module._heap_deform_tuple = (e, t, r, a) => (_heap_deform_tuple = Module._heap_deform_tuple = wasmExports.heap_deform_tuple)(e, t, r, a), _heap_modify_tuple_by_cols = Module._heap_modify_tuple_by_cols = (e, t, r, a, o, _) => (_heap_modify_tuple_by_cols = Module._heap_modify_tuple_by_cols = wasmExports.heap_modify_tuple_by_cols)(e, t, r, a, o, _), _heap_freetuple = Module._heap_freetuple = (e) => (_heap_freetuple = Module._heap_freetuple = wasmExports.heap_freetuple)(e), _hash_bytes = Module._hash_bytes = (e, t) => (_hash_bytes = Module._hash_bytes = wasmExports.hash_bytes)(e, t), _index_form_tuple = Module._index_form_tuple = (e, t, r) => (_index_form_tuple = Module._index_form_tuple = wasmExports.index_form_tuple)(e, t, r), _MemoryContextAllocZero = Module._MemoryContextAllocZero = (e, t) => (_MemoryContextAllocZero = Module._MemoryContextAllocZero = wasmExports.MemoryContextAllocZero)(e, t), _nocache_index_getattr = Module._nocache_index_getattr = (e, t, r) => (_nocache_index_getattr = Module._nocache_index_getattr = wasmExports.nocache_index_getattr)(e, t, r), _index_deform_tuple = Module._index_deform_tuple = (e, t, r, a) => (_index_deform_tuple = Module._index_deform_tuple = wasmExports.index_deform_tuple)(e, t, r, a), _CopyIndexTuple = Module._CopyIndexTuple = (e) => (_CopyIndexTuple = Module._CopyIndexTuple = wasmExports.CopyIndexTuple)(e), _CreateTupleDescTruncatedCopy = Module._CreateTupleDescTruncatedCopy = (e, t) => (_CreateTupleDescTruncatedCopy = Module._CreateTupleDescTruncatedCopy = wasmExports.CreateTupleDescTruncatedCopy)(e, t), _enlargeStringInfo = Module._enlargeStringInfo = (e, t) => (_enlargeStringInfo = Module._enlargeStringInfo = wasmExports.enlargeStringInfo)(e, t), _slot_getsomeattrs_int = Module._slot_getsomeattrs_int = (e, t) => (_slot_getsomeattrs_int = Module._slot_getsomeattrs_int = wasmExports.slot_getsomeattrs_int)(e, t), _pg_lltoa = Module._pg_lltoa = (e, t) => (_pg_lltoa = Module._pg_lltoa = wasmExports.pg_lltoa)(e, t), _pg_ltoa = Module._pg_ltoa = (e, t) => (_pg_ltoa = Module._pg_ltoa = wasmExports.pg_ltoa)(e, t), _pq_sendbytes = Module._pq_sendbytes = (e, t, r) => (_pq_sendbytes = Module._pq_sendbytes = wasmExports.pq_sendbytes)(e, t, r), _pg_printf = Module._pg_printf = (e, t) => (_pg_printf = Module._pg_printf = wasmExports.pg_printf)(e, t), _relation_open = Module._relation_open = (e, t) => (_relation_open = Module._relation_open = wasmExports.relation_open)(e, t), _LockRelationOid = Module._LockRelationOid = (e, t) => (_LockRelationOid = Module._LockRelationOid = wasmExports.LockRelationOid)(e, t), _RelationIdGetRelation = Module._RelationIdGetRelation = (e) => (_RelationIdGetRelation = Module._RelationIdGetRelation = wasmExports.RelationIdGetRelation)(e), _try_relation_open = Module._try_relation_open = (e, t) => (_try_relation_open = Module._try_relation_open = wasmExports.try_relation_open)(e, t), _UnlockRelationOid = Module._UnlockRelationOid = (e, t) => (_UnlockRelationOid = Module._UnlockRelationOid = wasmExports.UnlockRelationOid)(e, t), _relation_openrv = Module._relation_openrv = (e, t) => (_relation_openrv = Module._relation_openrv = wasmExports.relation_openrv)(e, t), _AcceptInvalidationMessages = Module._AcceptInvalidationMessages = () => (_AcceptInvalidationMessages = Module._AcceptInvalidationMessages = wasmExports.AcceptInvalidationMessages)(), _RangeVarGetRelidExtended = Module._RangeVarGetRelidExtended = (e, t, r, a, o) => (_RangeVarGetRelidExtended = Module._RangeVarGetRelidExtended = wasmExports.RangeVarGetRelidExtended)(e, t, r, a, o), _RelationClose = Module._RelationClose = (e) => (_RelationClose = Module._RelationClose = wasmExports.RelationClose)(e), _add_reloption_kind = Module._add_reloption_kind = () => (_add_reloption_kind = Module._add_reloption_kind = wasmExports.add_reloption_kind)(), _register_reloptions_validator = Module._register_reloptions_validator = (e, t) => (_register_reloptions_validator = Module._register_reloptions_validator = wasmExports.register_reloptions_validator)(e, t), _lappend = Module._lappend = (e, t) => (_lappend = Module._lappend = wasmExports.lappend)(e, t), _pstrdup = Module._pstrdup = (e) => (_pstrdup = Module._pstrdup = wasmExports.pstrdup)(e), _add_int_reloption = Module._add_int_reloption = (e, t, r, a, o, _, s) => (_add_int_reloption = Module._add_int_reloption = wasmExports.add_int_reloption)(e, t, r, a, o, _, s), _add_real_reloption = Module._add_real_reloption = (e, t, r, a, o, _, s) => (_add_real_reloption = Module._add_real_reloption = wasmExports.add_real_reloption)(e, t, r, a, o, _, s), _add_string_reloption = Module._add_string_reloption = (e, t, r, a, o, _) => (_add_string_reloption = Module._add_string_reloption = wasmExports.add_string_reloption)(e, t, r, a, o, _), _strdup = Module._strdup = (e) => (_strdup = Module._strdup = wasmExports.strdup)(e), _MemoryContextStrdup = Module._MemoryContextStrdup = (e, t) => (_MemoryContextStrdup = Module._MemoryContextStrdup = wasmExports.MemoryContextStrdup)(e, t), _transformRelOptions = Module._transformRelOptions = (e, t, r, a, o, _) => (_transformRelOptions = Module._transformRelOptions = wasmExports.transformRelOptions)(e, t, r, a, o, _), _deconstruct_array_builtin = Module._deconstruct_array_builtin = (e, t, r, a, o) => (_deconstruct_array_builtin = Module._deconstruct_array_builtin = wasmExports.deconstruct_array_builtin)(e, t, r, a, o), _strncmp = Module._strncmp = (e, t, r) => (_strncmp = Module._strncmp = wasmExports.strncmp)(e, t, r), _defGetString = Module._defGetString = (e) => (_defGetString = Module._defGetString = wasmExports.defGetString)(e), _strchr = Module._strchr = (e, t) => (_strchr = Module._strchr = wasmExports.strchr)(e, t), _defGetBoolean = Module._defGetBoolean = (e) => (_defGetBoolean = Module._defGetBoolean = wasmExports.defGetBoolean)(e), _pg_sprintf = Module._pg_sprintf = (e, t, r) => (_pg_sprintf = Module._pg_sprintf = wasmExports.pg_sprintf)(e, t, r), _untransformRelOptions = Module._untransformRelOptions = (e) => (_untransformRelOptions = Module._untransformRelOptions = wasmExports.untransformRelOptions)(e), _text_to_cstring = Module._text_to_cstring = (e) => (_text_to_cstring = Module._text_to_cstring = wasmExports.text_to_cstring)(e), _makeString = Module._makeString = (e) => (_makeString = Module._makeString = wasmExports.makeString)(e), _makeDefElem = Module._makeDefElem = (e, t, r) => (_makeDefElem = Module._makeDefElem = wasmExports.makeDefElem)(e, t, r), _heap_reloptions = Module._heap_reloptions = (e, t, r) => (_heap_reloptions = Module._heap_reloptions = wasmExports.heap_reloptions)(e, t, r), _strcpy = Module._strcpy = (e, t) => (_strcpy = Module._strcpy = wasmExports.strcpy)(e, t), _MemoryContextAlloc = Module._MemoryContextAlloc = (e, t) => (_MemoryContextAlloc = Module._MemoryContextAlloc = wasmExports.MemoryContextAlloc)(e, t), _parse_bool = Module._parse_bool = (e, t) => (_parse_bool = Module._parse_bool = wasmExports.parse_bool)(e, t), _parse_int = Module._parse_int = (e, t, r, a) => (_parse_int = Module._parse_int = wasmExports.parse_int)(e, t, r, a), _parse_real = Module._parse_real = (e, t, r, a) => (_parse_real = Module._parse_real = wasmExports.parse_real)(e, t, r, a), _pg_strcasecmp = Module._pg_strcasecmp = (e, t) => (_pg_strcasecmp = Module._pg_strcasecmp = wasmExports.pg_strcasecmp)(e, t), _ScanKeyInit = Module._ScanKeyInit = (e, t, r, a, o) => (_ScanKeyInit = Module._ScanKeyInit = wasmExports.ScanKeyInit)(e, t, r, a, o), _dsm_segment_handle = Module._dsm_segment_handle = (e) => (_dsm_segment_handle = Module._dsm_segment_handle = wasmExports.dsm_segment_handle)(e), _dsm_create = Module._dsm_create = (e, t) => (_dsm_create = Module._dsm_create = wasmExports.dsm_create)(e, t), _dsm_segment_address = Module._dsm_segment_address = (e) => (_dsm_segment_address = Module._dsm_segment_address = wasmExports.dsm_segment_address)(e), _dsa_pin_mapping = Module._dsa_pin_mapping = (e) => (_dsa_pin_mapping = Module._dsa_pin_mapping = wasmExports.dsa_pin_mapping)(e), _dsm_attach = Module._dsm_attach = (e) => (_dsm_attach = Module._dsm_attach = wasmExports.dsm_attach)(e), _dsm_detach = Module._dsm_detach = (e) => (_dsm_detach = Module._dsm_detach = wasmExports.dsm_detach)(e), _dsa_detach = Module._dsa_detach = (e) => (_dsa_detach = Module._dsa_detach = wasmExports.dsa_detach)(e), _ShmemInitStruct = Module._ShmemInitStruct = (e, t, r) => (_ShmemInitStruct = Module._ShmemInitStruct = wasmExports.ShmemInitStruct)(e, t, r), _LWLockAcquire = Module._LWLockAcquire = (e, t) => (_LWLockAcquire = Module._LWLockAcquire = wasmExports.LWLockAcquire)(e, t), _LWLockRelease = Module._LWLockRelease = (e) => (_LWLockRelease = Module._LWLockRelease = wasmExports.LWLockRelease)(e), _LWLockConditionalAcquire = Module._LWLockConditionalAcquire = (e, t) => (_LWLockConditionalAcquire = Module._LWLockConditionalAcquire = wasmExports.LWLockConditionalAcquire)(e, t), _dsa_create_ext = Module._dsa_create_ext = (e, t, r) => (_dsa_create_ext = Module._dsa_create_ext = wasmExports.dsa_create_ext)(e, t, r), _dsa_allocate_extended = Module._dsa_allocate_extended = (e, t, r) => (_dsa_allocate_extended = Module._dsa_allocate_extended = wasmExports.dsa_allocate_extended)(e, t, r), _dsa_get_address = Module._dsa_get_address = (e, t) => (_dsa_get_address = Module._dsa_get_address = wasmExports.dsa_get_address)(e, t), _LWLockInitialize = Module._LWLockInitialize = (e, t) => (_LWLockInitialize = Module._LWLockInitialize = wasmExports.LWLockInitialize)(e, t), _dsa_attach = Module._dsa_attach = (e) => (_dsa_attach = Module._dsa_attach = wasmExports.dsa_attach)(e), _dsa_free = Module._dsa_free = (e, t) => (_dsa_free = Module._dsa_free = wasmExports.dsa_free)(e, t), _dsa_get_total_size = Module._dsa_get_total_size = (e) => (_dsa_get_total_size = Module._dsa_get_total_size = wasmExports.dsa_get_total_size)(e), _MemoryContextMemAllocated = Module._MemoryContextMemAllocated = (e, t) => (_MemoryContextMemAllocated = Module._MemoryContextMemAllocated = wasmExports.MemoryContextMemAllocated)(e, t), _check_stack_depth = Module._check_stack_depth = () => (_check_stack_depth = Module._check_stack_depth = wasmExports.check_stack_depth)(), _GetCurrentCommandId = Module._GetCurrentCommandId = (e) => (_GetCurrentCommandId = Module._GetCurrentCommandId = wasmExports.GetCurrentCommandId)(e), _toast_open_indexes = Module._toast_open_indexes = (e, t, r, a) => (_toast_open_indexes = Module._toast_open_indexes = wasmExports.toast_open_indexes)(e, t, r, a), _heap_insert = Module._heap_insert = (e, t, r, a, o) => (_heap_insert = Module._heap_insert = wasmExports.heap_insert)(e, t, r, a, o), _RelationGetIndexList = Module._RelationGetIndexList = (e) => (_RelationGetIndexList = Module._RelationGetIndexList = wasmExports.RelationGetIndexList)(e), _list_free = Module._list_free = (e) => (_list_free = Module._list_free = wasmExports.list_free)(e), _systable_beginscan = Module._systable_beginscan = (e, t, r, a, o, _) => (_systable_beginscan = Module._systable_beginscan = wasmExports.systable_beginscan)(e, t, r, a, o, _), _systable_getnext = Module._systable_getnext = (e) => (_systable_getnext = Module._systable_getnext = wasmExports.systable_getnext)(e), _systable_endscan = Module._systable_endscan = (e) => (_systable_endscan = Module._systable_endscan = wasmExports.systable_endscan)(e), _toast_close_indexes = Module._toast_close_indexes = (e, t, r) => (_toast_close_indexes = Module._toast_close_indexes = wasmExports.toast_close_indexes)(e, t, r), _systable_beginscan_ordered = Module._systable_beginscan_ordered = (e, t, r, a, o) => (_systable_beginscan_ordered = Module._systable_beginscan_ordered = wasmExports.systable_beginscan_ordered)(e, t, r, a, o), _systable_getnext_ordered = Module._systable_getnext_ordered = (e, t) => (_systable_getnext_ordered = Module._systable_getnext_ordered = wasmExports.systable_getnext_ordered)(e, t), _systable_endscan_ordered = Module._systable_endscan_ordered = (e) => (_systable_endscan_ordered = Module._systable_endscan_ordered = wasmExports.systable_endscan_ordered)(e), _get_toast_snapshot = Module._get_toast_snapshot = () => (_get_toast_snapshot = Module._get_toast_snapshot = wasmExports.get_toast_snapshot)(), _convert_tuples_by_position = Module._convert_tuples_by_position = (e, t, r) => (_convert_tuples_by_position = Module._convert_tuples_by_position = wasmExports.convert_tuples_by_position)(e, t, r), _execute_attr_map_tuple = Module._execute_attr_map_tuple = (e, t) => (_execute_attr_map_tuple = Module._execute_attr_map_tuple = wasmExports.execute_attr_map_tuple)(e, t), _ExecStoreVirtualTuple = Module._ExecStoreVirtualTuple = (e) => (_ExecStoreVirtualTuple = Module._ExecStoreVirtualTuple = wasmExports.ExecStoreVirtualTuple)(e), _bms_is_member = Module._bms_is_member = (e, t) => (_bms_is_member = Module._bms_is_member = wasmExports.bms_is_member)(e, t), _bms_add_member = Module._bms_add_member = (e, t) => (_bms_add_member = Module._bms_add_member = wasmExports.bms_add_member)(e, t), _CreateTupleDescCopy = Module._CreateTupleDescCopy = (e) => (_CreateTupleDescCopy = Module._CreateTupleDescCopy = wasmExports.CreateTupleDescCopy)(e), _ResourceOwnerEnlarge = Module._ResourceOwnerEnlarge = (e) => (_ResourceOwnerEnlarge = Module._ResourceOwnerEnlarge = wasmExports.ResourceOwnerEnlarge)(e), _ResourceOwnerRemember = Module._ResourceOwnerRemember = (e, t, r) => (_ResourceOwnerRemember = Module._ResourceOwnerRemember = wasmExports.ResourceOwnerRemember)(e, t, r), _DecrTupleDescRefCount = Module._DecrTupleDescRefCount = (e) => (_DecrTupleDescRefCount = Module._DecrTupleDescRefCount = wasmExports.DecrTupleDescRefCount)(e), _ResourceOwnerForget = Module._ResourceOwnerForget = (e, t, r) => (_ResourceOwnerForget = Module._ResourceOwnerForget = wasmExports.ResourceOwnerForget)(e, t, r), _datumIsEqual = Module._datumIsEqual = (e, t, r, a) => (_datumIsEqual = Module._datumIsEqual = wasmExports.datumIsEqual)(e, t, r, a), _namestrcpy = Module._namestrcpy = (e, t) => (_namestrcpy = Module._namestrcpy = wasmExports.namestrcpy)(e, t), _TupleDescInitEntryCollation = Module._TupleDescInitEntryCollation = (e, t, r) => (_TupleDescInitEntryCollation = Module._TupleDescInitEntryCollation = wasmExports.TupleDescInitEntryCollation)(e, t, r), _stringToNode = Module._stringToNode = (e) => (_stringToNode = Module._stringToNode = wasmExports.stringToNode)(e), _psprintf = Module._psprintf = (e, t) => (_psprintf = Module._psprintf = wasmExports.psprintf)(e, t), _pg_detoast_datum_copy = Module._pg_detoast_datum_copy = (e) => (_pg_detoast_datum_copy = Module._pg_detoast_datum_copy = wasmExports.pg_detoast_datum_copy)(e), _get_typlenbyvalalign = Module._get_typlenbyvalalign = (e, t, r, a) => (_get_typlenbyvalalign = Module._get_typlenbyvalalign = wasmExports.get_typlenbyvalalign)(e, t, r, a), _deconstruct_array = Module._deconstruct_array = (e, t, r, a, o, _, s, n) => (_deconstruct_array = Module._deconstruct_array = wasmExports.deconstruct_array)(e, t, r, a, o, _, s, n), _ginCompareAttEntries = Module._ginCompareAttEntries = (e, t, r, a, o, _, s) => (_ginCompareAttEntries = Module._ginCompareAttEntries = wasmExports.ginCompareAttEntries)(e, t, r, a, o, _, s), _repalloc_huge = Module._repalloc_huge = (e, t) => (_repalloc_huge = Module._repalloc_huge = wasmExports.repalloc_huge)(e, t), _GinDataLeafPageGetItems = Module._GinDataLeafPageGetItems = (e, t, r) => (_GinDataLeafPageGetItems = Module._GinDataLeafPageGetItems = wasmExports.GinDataLeafPageGetItems)(e, t, r), _tbm_add_tuples = Module._tbm_add_tuples = (e, t, r, a) => (_tbm_add_tuples = Module._tbm_add_tuples = wasmExports.tbm_add_tuples)(e, t, r, a), _ginPostingListDecode = Module._ginPostingListDecode = (e, t) => (_ginPostingListDecode = Module._ginPostingListDecode = wasmExports.ginPostingListDecode)(e, t), _ItemPointerCompare = Module._ItemPointerCompare = (e, t) => (_ItemPointerCompare = Module._ItemPointerCompare = wasmExports.ItemPointerCompare)(e, t), _gintuple_get_attrnum = Module._gintuple_get_attrnum = (e, t) => (_gintuple_get_attrnum = Module._gintuple_get_attrnum = wasmExports.gintuple_get_attrnum)(e, t), _gintuple_get_key = Module._gintuple_get_key = (e, t, r) => (_gintuple_get_key = Module._gintuple_get_key = wasmExports.gintuple_get_key)(e, t, r), _LockPage = Module._LockPage = (e, t, r) => (_LockPage = Module._LockPage = wasmExports.LockPage)(e, t, r), _UnlockPage = Module._UnlockPage = (e, t, r) => (_UnlockPage = Module._UnlockPage = wasmExports.UnlockPage)(e, t, r), _vacuum_delay_point = Module._vacuum_delay_point = (e) => (_vacuum_delay_point = Module._vacuum_delay_point = wasmExports.vacuum_delay_point)(e), _RecordFreeIndexPage = Module._RecordFreeIndexPage = (e, t) => (_RecordFreeIndexPage = Module._RecordFreeIndexPage = wasmExports.RecordFreeIndexPage)(e, t), _IndexFreeSpaceMapVacuum = Module._IndexFreeSpaceMapVacuum = (e) => (_IndexFreeSpaceMapVacuum = Module._IndexFreeSpaceMapVacuum = wasmExports.IndexFreeSpaceMapVacuum)(e), _initGinState = Module._initGinState = (e, t) => (_initGinState = Module._initGinState = wasmExports.initGinState)(e, t), _pg_prng_double = Module._pg_prng_double = (e) => (_pg_prng_double = Module._pg_prng_double = wasmExports.pg_prng_double)(e), _pgstat_progress_update_param = Module._pgstat_progress_update_param = (e, t) => (_pgstat_progress_update_param = Module._pgstat_progress_update_param = wasmExports.pgstat_progress_update_param)(e, t), _log_newpage_range = Module._log_newpage_range = (e, t, r, a, o) => (_log_newpage_range = Module._log_newpage_range = wasmExports.log_newpage_range)(e, t, r, a, o), _GetFreeIndexPage = Module._GetFreeIndexPage = (e) => (_GetFreeIndexPage = Module._GetFreeIndexPage = wasmExports.GetFreeIndexPage)(e), _ConditionalLockBuffer = Module._ConditionalLockBuffer = (e) => (_ConditionalLockBuffer = Module._ConditionalLockBuffer = wasmExports.ConditionalLockBuffer)(e), _LockBufferForCleanup = Module._LockBufferForCleanup = (e) => (_LockBufferForCleanup = Module._LockBufferForCleanup = wasmExports.LockBufferForCleanup)(e), _ReadNextFullTransactionId = Module._ReadNextFullTransactionId = () => (_ReadNextFullTransactionId = Module._ReadNextFullTransactionId = wasmExports.ReadNextFullTransactionId)(), _PageIndexMultiDelete = Module._PageIndexMultiDelete = (e, t, r) => (_PageIndexMultiDelete = Module._PageIndexMultiDelete = wasmExports.PageIndexMultiDelete)(e, t, r), _list_make1_impl = Module._list_make1_impl = (e, t) => (_list_make1_impl = Module._list_make1_impl = wasmExports.list_make1_impl)(e, t), _lcons = Module._lcons = (e, t) => (_lcons = Module._lcons = wasmExports.lcons)(e, t), _pow = Module._pow = (e, t) => (_pow = Module._pow = wasmExports.pow)(e, t), _smgrnblocks = Module._smgrnblocks = (e, t) => (_smgrnblocks = Module._smgrnblocks = wasmExports.smgrnblocks)(e, t), _list_free_deep = Module._list_free_deep = (e) => (_list_free_deep = Module._list_free_deep = wasmExports.list_free_deep)(e), _BufFileWrite = Module._BufFileWrite = (e, t, r) => (_BufFileWrite = Module._BufFileWrite = wasmExports.BufFileWrite)(e, t, r), _BufFileReadExact = Module._BufFileReadExact = (e, t, r) => (_BufFileReadExact = Module._BufFileReadExact = wasmExports.BufFileReadExact)(e, t, r), _BufFileClose = Module._BufFileClose = (e) => (_BufFileClose = Module._BufFileClose = wasmExports.BufFileClose)(e), _pairingheap_remove_first = Module._pairingheap_remove_first = (e) => (_pairingheap_remove_first = Module._pairingheap_remove_first = wasmExports.pairingheap_remove_first)(e), _pairingheap_add = Module._pairingheap_add = (e, t) => (_pairingheap_add = Module._pairingheap_add = wasmExports.pairingheap_add)(e, t), _float_overflow_error = Module._float_overflow_error = () => (_float_overflow_error = Module._float_overflow_error = wasmExports.float_overflow_error)(), _float8_cmp_internal = Module._float8_cmp_internal = (e, t) => (_float8_cmp_internal = Module._float8_cmp_internal = wasmExports.float8_cmp_internal)(e, t), _float_underflow_error = Module._float_underflow_error = () => (_float_underflow_error = Module._float_underflow_error = wasmExports.float_underflow_error)(), _DirectFunctionCall5Coll = Module._DirectFunctionCall5Coll = (e, t, r, a, o, _, s) => (_DirectFunctionCall5Coll = Module._DirectFunctionCall5Coll = wasmExports.DirectFunctionCall5Coll)(e, t, r, a, o, _, s), _pairingheap_allocate = Module._pairingheap_allocate = (e, t) => (_pairingheap_allocate = Module._pairingheap_allocate = wasmExports.pairingheap_allocate)(e, t), _GetXLogInsertRecPtr = Module._GetXLogInsertRecPtr = () => (_GetXLogInsertRecPtr = Module._GetXLogInsertRecPtr = wasmExports.GetXLogInsertRecPtr)(), _OidFunctionCall1Coll = Module._OidFunctionCall1Coll = (e, t, r) => (_OidFunctionCall1Coll = Module._OidFunctionCall1Coll = wasmExports.OidFunctionCall1Coll)(e, t, r), _GenerationContextCreate = Module._GenerationContextCreate = (e, t, r, a, o) => (_GenerationContextCreate = Module._GenerationContextCreate = wasmExports.GenerationContextCreate)(e, t, r, a, o), _block_range_read_stream_cb = Module._block_range_read_stream_cb = (e, t, r) => (_block_range_read_stream_cb = Module._block_range_read_stream_cb = wasmExports.block_range_read_stream_cb)(e, t, r), _read_stream_begin_relation = Module._read_stream_begin_relation = (e, t, r, a, o, _, s) => (_read_stream_begin_relation = Module._read_stream_begin_relation = wasmExports.read_stream_begin_relation)(e, t, r, a, o, _, s), _read_stream_next_buffer = Module._read_stream_next_buffer = (e, t) => (_read_stream_next_buffer = Module._read_stream_next_buffer = wasmExports.read_stream_next_buffer)(e, t), _read_stream_end = Module._read_stream_end = (e) => (_read_stream_end = Module._read_stream_end = wasmExports.read_stream_end)(e), __hash_getbuf = Module.__hash_getbuf = (e, t, r, a) => (__hash_getbuf = Module.__hash_getbuf = wasmExports._hash_getbuf)(e, t, r, a), __hash_relbuf = Module.__hash_relbuf = (e, t) => (__hash_relbuf = Module.__hash_relbuf = wasmExports._hash_relbuf)(e, t), __hash_get_indextuple_hashkey = Module.__hash_get_indextuple_hashkey = (e) => (__hash_get_indextuple_hashkey = Module.__hash_get_indextuple_hashkey = wasmExports._hash_get_indextuple_hashkey)(e), _hashcharextended = Module._hashcharextended = (e) => (_hashcharextended = Module._hashcharextended = wasmExports.hashcharextended)(e), _hashint8 = Module._hashint8 = (e) => (_hashint8 = Module._hashint8 = wasmExports.hashint8)(e), _hashint8extended = Module._hashint8extended = (e) => (_hashint8extended = Module._hashint8extended = wasmExports.hashint8extended)(e), _hash_bytes_extended = Module._hash_bytes_extended = (e, t, r) => (_hash_bytes_extended = Module._hash_bytes_extended = wasmExports.hash_bytes_extended)(e, t, r), _hashfloat8 = Module._hashfloat8 = (e) => (_hashfloat8 = Module._hashfloat8 = wasmExports.hashfloat8)(e), _hashfloat8extended = Module._hashfloat8extended = (e) => (_hashfloat8extended = Module._hashfloat8extended = wasmExports.hashfloat8extended)(e), _pg_newlocale_from_collation = Module._pg_newlocale_from_collation = (e) => (_pg_newlocale_from_collation = Module._pg_newlocale_from_collation = wasmExports.pg_newlocale_from_collation)(e), __hash_ovflblkno_to_bitno = Module.__hash_ovflblkno_to_bitno = (e, t) => (__hash_ovflblkno_to_bitno = Module.__hash_ovflblkno_to_bitno = wasmExports._hash_ovflblkno_to_bitno)(e, t), _hash_destroy = Module._hash_destroy = (e) => (_hash_destroy = Module._hash_destroy = wasmExports.hash_destroy)(e), _list_member_oid = Module._list_member_oid = (e, t) => (_list_member_oid = Module._list_member_oid = wasmExports.list_member_oid)(e, t), _CommandCounterIncrement = Module._CommandCounterIncrement = () => (_CommandCounterIncrement = Module._CommandCounterIncrement = wasmExports.CommandCounterIncrement)(), _list_concat_copy = Module._list_concat_copy = (e, t) => (_list_concat_copy = Module._list_concat_copy = wasmExports.list_concat_copy)(e, t), _HeapTupleSatisfiesVisibility = Module._HeapTupleSatisfiesVisibility = (e, t, r) => (_HeapTupleSatisfiesVisibility = Module._HeapTupleSatisfiesVisibility = wasmExports.HeapTupleSatisfiesVisibility)(e, t, r), _GetAccessStrategy = Module._GetAccessStrategy = (e) => (_GetAccessStrategy = Module._GetAccessStrategy = wasmExports.GetAccessStrategy)(e), _FreeAccessStrategy = Module._FreeAccessStrategy = (e) => (_FreeAccessStrategy = Module._FreeAccessStrategy = wasmExports.FreeAccessStrategy)(e), _heap_getnext = Module._heap_getnext = (e, t) => (_heap_getnext = Module._heap_getnext = wasmExports.heap_getnext)(e, t), _ExecStoreBufferHeapTuple = Module._ExecStoreBufferHeapTuple = (e, t, r) => (_ExecStoreBufferHeapTuple = Module._ExecStoreBufferHeapTuple = wasmExports.ExecStoreBufferHeapTuple)(e, t, r), _heap_fetch = Module._heap_fetch = (e, t, r, a, o) => (_heap_fetch = Module._heap_fetch = wasmExports.heap_fetch)(e, t, r, a, o), _HeapTupleSatisfiesVacuum = Module._HeapTupleSatisfiesVacuum = (e, t, r) => (_HeapTupleSatisfiesVacuum = Module._HeapTupleSatisfiesVacuum = wasmExports.HeapTupleSatisfiesVacuum)(e, t, r), _GetMultiXactIdMembers = Module._GetMultiXactIdMembers = (e, t, r, a) => (_GetMultiXactIdMembers = Module._GetMultiXactIdMembers = wasmExports.GetMultiXactIdMembers)(e, t, r, a), _TransactionIdPrecedes = Module._TransactionIdPrecedes = (e, t) => (_TransactionIdPrecedes = Module._TransactionIdPrecedes = wasmExports.TransactionIdPrecedes)(e, t), _GetBulkInsertState = Module._GetBulkInsertState = () => (_GetBulkInsertState = Module._GetBulkInsertState = wasmExports.GetBulkInsertState)(), _FreeBulkInsertState = Module._FreeBulkInsertState = (e) => (_FreeBulkInsertState = Module._FreeBulkInsertState = wasmExports.FreeBulkInsertState)(e), _visibilitymap_clear = Module._visibilitymap_clear = (e, t, r, a) => (_visibilitymap_clear = Module._visibilitymap_clear = wasmExports.visibilitymap_clear)(e, t, r, a), _pgstat_count_heap_insert = Module._pgstat_count_heap_insert = (e, t) => (_pgstat_count_heap_insert = Module._pgstat_count_heap_insert = wasmExports.pgstat_count_heap_insert)(e, t), _heap_multi_insert = Module._heap_multi_insert = (e, t, r, a, o, _) => (_heap_multi_insert = Module._heap_multi_insert = wasmExports.heap_multi_insert)(e, t, r, a, o, _), _ExecFetchSlotHeapTuple = Module._ExecFetchSlotHeapTuple = (e, t, r) => (_ExecFetchSlotHeapTuple = Module._ExecFetchSlotHeapTuple = wasmExports.ExecFetchSlotHeapTuple)(e, t, r), _heap_delete = Module._heap_delete = (e, t, r, a, o, _, s) => (_heap_delete = Module._heap_delete = wasmExports.heap_delete)(e, t, r, a, o, _, s), _visibilitymap_pin = Module._visibilitymap_pin = (e, t, r) => (_visibilitymap_pin = Module._visibilitymap_pin = wasmExports.visibilitymap_pin)(e, t, r), _HeapTupleSatisfiesUpdate = Module._HeapTupleSatisfiesUpdate = (e, t, r) => (_HeapTupleSatisfiesUpdate = Module._HeapTupleSatisfiesUpdate = wasmExports.HeapTupleSatisfiesUpdate)(e, t, r), _TransactionIdIsCurrentTransactionId = Module._TransactionIdIsCurrentTransactionId = (e) => (_TransactionIdIsCurrentTransactionId = Module._TransactionIdIsCurrentTransactionId = wasmExports.TransactionIdIsCurrentTransactionId)(e), _TransactionIdDidCommit = Module._TransactionIdDidCommit = (e) => (_TransactionIdDidCommit = Module._TransactionIdDidCommit = wasmExports.TransactionIdDidCommit)(e), _TransactionIdIsInProgress = Module._TransactionIdIsInProgress = (e) => (_TransactionIdIsInProgress = Module._TransactionIdIsInProgress = wasmExports.TransactionIdIsInProgress)(e), _bms_free = Module._bms_free = (e) => (_bms_free = Module._bms_free = wasmExports.bms_free)(e), _bms_add_members = Module._bms_add_members = (e, t) => (_bms_add_members = Module._bms_add_members = wasmExports.bms_add_members)(e, t), _bms_next_member = Module._bms_next_member = (e, t) => (_bms_next_member = Module._bms_next_member = wasmExports.bms_next_member)(e, t), _bms_overlap = Module._bms_overlap = (e, t) => (_bms_overlap = Module._bms_overlap = wasmExports.bms_overlap)(e, t), _HeapTupleGetUpdateXid = Module._HeapTupleGetUpdateXid = (e) => (_HeapTupleGetUpdateXid = Module._HeapTupleGetUpdateXid = wasmExports.HeapTupleGetUpdateXid)(e), _heap_lock_tuple = Module._heap_lock_tuple = (e, t, r, a, o, _, s, n) => (_heap_lock_tuple = Module._heap_lock_tuple = wasmExports.heap_lock_tuple)(e, t, r, a, o, _, s, n), _MultiXactIdPrecedes = Module._MultiXactIdPrecedes = (e, t) => (_MultiXactIdPrecedes = Module._MultiXactIdPrecedes = wasmExports.MultiXactIdPrecedes)(e, t), _heap_tuple_needs_eventual_freeze = Module._heap_tuple_needs_eventual_freeze = (e) => (_heap_tuple_needs_eventual_freeze = Module._heap_tuple_needs_eventual_freeze = wasmExports.heap_tuple_needs_eventual_freeze)(e), _PrefetchBuffer = Module._PrefetchBuffer = (e, t, r, a) => (_PrefetchBuffer = Module._PrefetchBuffer = wasmExports.PrefetchBuffer)(e, t, r, a), _RelationTruncate = Module._RelationTruncate = (e, t) => (_RelationTruncate = Module._RelationTruncate = wasmExports.RelationTruncate)(e, t), _FlushRelationBuffers = Module._FlushRelationBuffers = (e) => (_FlushRelationBuffers = Module._FlushRelationBuffers = wasmExports.FlushRelationBuffers)(e), _smgrexists = Module._smgrexists = (e, t) => (_smgrexists = Module._smgrexists = wasmExports.smgrexists)(e, t), _table_slot_create = Module._table_slot_create = (e, t) => (_table_slot_create = Module._table_slot_create = wasmExports.table_slot_create)(e, t), _ExecDropSingleTupleTableSlot = Module._ExecDropSingleTupleTableSlot = (e) => (_ExecDropSingleTupleTableSlot = Module._ExecDropSingleTupleTableSlot = wasmExports.ExecDropSingleTupleTableSlot)(e), _CreateExecutorState = Module._CreateExecutorState = () => (_CreateExecutorState = Module._CreateExecutorState = wasmExports.CreateExecutorState)(), _MakePerTupleExprContext = Module._MakePerTupleExprContext = (e) => (_MakePerTupleExprContext = Module._MakePerTupleExprContext = wasmExports.MakePerTupleExprContext)(e), _ExecPrepareQual = Module._ExecPrepareQual = (e, t) => (_ExecPrepareQual = Module._ExecPrepareQual = wasmExports.ExecPrepareQual)(e, t), _GetOldestNonRemovableTransactionId = Module._GetOldestNonRemovableTransactionId = (e) => (_GetOldestNonRemovableTransactionId = Module._GetOldestNonRemovableTransactionId = wasmExports.GetOldestNonRemovableTransactionId)(e), _FormIndexDatum = Module._FormIndexDatum = (e, t, r, a, o) => (_FormIndexDatum = Module._FormIndexDatum = wasmExports.FormIndexDatum)(e, t, r, a, o), _FreeExecutorState = Module._FreeExecutorState = (e) => (_FreeExecutorState = Module._FreeExecutorState = wasmExports.FreeExecutorState)(e), _MakeSingleTupleTableSlot = Module._MakeSingleTupleTableSlot = (e, t) => (_MakeSingleTupleTableSlot = Module._MakeSingleTupleTableSlot = wasmExports.MakeSingleTupleTableSlot)(e, t), _tuplesort_getdatum = Module._tuplesort_getdatum = (e, t, r, a, o, _) => (_tuplesort_getdatum = Module._tuplesort_getdatum = wasmExports.tuplesort_getdatum)(e, t, r, a, o, _), _ExecStoreHeapTuple = Module._ExecStoreHeapTuple = (e, t, r) => (_ExecStoreHeapTuple = Module._ExecStoreHeapTuple = wasmExports.ExecStoreHeapTuple)(e, t, r), _XidInMVCCSnapshot = Module._XidInMVCCSnapshot = (e, t) => (_XidInMVCCSnapshot = Module._XidInMVCCSnapshot = wasmExports.XidInMVCCSnapshot)(e, t), _bsearch = Module._bsearch = (e, t, r, a, o) => (_bsearch = Module._bsearch = wasmExports.bsearch)(e, t, r, a, o), _XLogRecGetBlockTagExtended = Module._XLogRecGetBlockTagExtended = (e, t, r, a, o, _) => (_XLogRecGetBlockTagExtended = Module._XLogRecGetBlockTagExtended = wasmExports.XLogRecGetBlockTagExtended)(e, t, r, a, o, _), _hash_seq_init = Module._hash_seq_init = (e, t) => (_hash_seq_init = Module._hash_seq_init = wasmExports.hash_seq_init)(e, t), _hash_seq_search = Module._hash_seq_search = (e) => (_hash_seq_search = Module._hash_seq_search = wasmExports.hash_seq_search)(e), _errcode_for_file_access = Module._errcode_for_file_access = () => (_errcode_for_file_access = Module._errcode_for_file_access = wasmExports.errcode_for_file_access)(), _pg_snprintf = Module._pg_snprintf = (e, t, r, a) => (_pg_snprintf = Module._pg_snprintf = wasmExports.pg_snprintf)(e, t, r, a), _OpenTransientFile = Module._OpenTransientFile = (e, t) => (_OpenTransientFile = Module._OpenTransientFile = wasmExports.OpenTransientFile)(e, t), _ftruncate = Module._ftruncate = (e, t) => (_ftruncate = Module._ftruncate = wasmExports.ftruncate)(e, t), ___errno_location = Module.___errno_location = () => (___errno_location = Module.___errno_location = wasmExports.__errno_location)(), _pwrite = Module._pwrite = (e, t, r, a) => (_pwrite = Module._pwrite = wasmExports.pwrite)(e, t, r, a), _CloseTransientFile = Module._CloseTransientFile = (e) => (_CloseTransientFile = Module._CloseTransientFile = wasmExports.CloseTransientFile)(e), _sscanf = Module._sscanf = (e, t, r) => (_sscanf = Module._sscanf = wasmExports.sscanf)(e, t, r), _unlink = Module._unlink = (e) => (_unlink = Module._unlink = wasmExports.unlink)(e), _fsync_fname = Module._fsync_fname = (e, t) => (_fsync_fname = Module._fsync_fname = wasmExports.fsync_fname)(e, t), _GetCurrentTimestamp = Module._GetCurrentTimestamp = () => (_GetCurrentTimestamp = Module._GetCurrentTimestamp = wasmExports.GetCurrentTimestamp)(), _get_namespace_name = Module._get_namespace_name = (e) => (_get_namespace_name = Module._get_namespace_name = wasmExports.get_namespace_name)(e), _pg_prng_uint32 = Module._pg_prng_uint32 = (e) => (_pg_prng_uint32 = Module._pg_prng_uint32 = wasmExports.pg_prng_uint32)(e), _GetRecordedFreeSpace = Module._GetRecordedFreeSpace = (e, t) => (_GetRecordedFreeSpace = Module._GetRecordedFreeSpace = wasmExports.GetRecordedFreeSpace)(e, t), _visibilitymap_get_status = Module._visibilitymap_get_status = (e, t, r) => (_visibilitymap_get_status = Module._visibilitymap_get_status = wasmExports.visibilitymap_get_status)(e, t, r), _vac_estimate_reltuples = Module._vac_estimate_reltuples = (e, t, r, a) => (_vac_estimate_reltuples = Module._vac_estimate_reltuples = wasmExports.vac_estimate_reltuples)(e, t, r, a), _WaitLatch = Module._WaitLatch = (e, t, r, a) => (_WaitLatch = Module._WaitLatch = wasmExports.WaitLatch)(e, t, r, a), _ResetLatch = Module._ResetLatch = (e) => (_ResetLatch = Module._ResetLatch = wasmExports.ResetLatch)(e), _clock_gettime = Module._clock_gettime = (e, t) => (_clock_gettime = Module._clock_gettime = wasmExports.clock_gettime)(e, t), _WalUsageAccumDiff = Module._WalUsageAccumDiff = (e, t, r) => (_WalUsageAccumDiff = Module._WalUsageAccumDiff = wasmExports.WalUsageAccumDiff)(e, t, r), _BufferUsageAccumDiff = Module._BufferUsageAccumDiff = (e, t, r) => (_BufferUsageAccumDiff = Module._BufferUsageAccumDiff = wasmExports.BufferUsageAccumDiff)(e, t, r), _appendStringInfoString = Module._appendStringInfoString = (e, t) => (_appendStringInfoString = Module._appendStringInfoString = wasmExports.appendStringInfoString)(e, t), _set_errcontext_domain = Module._set_errcontext_domain = (e) => (_set_errcontext_domain = Module._set_errcontext_domain = wasmExports.set_errcontext_domain)(e), _errcontext_msg = Module._errcontext_msg = (e, t) => (_errcontext_msg = Module._errcontext_msg = wasmExports.errcontext_msg)(e, t), _visibilitymap_prepare_truncate = Module._visibilitymap_prepare_truncate = (e, t) => (_visibilitymap_prepare_truncate = Module._visibilitymap_prepare_truncate = wasmExports.visibilitymap_prepare_truncate)(e, t), _check_enable_rls = Module._check_enable_rls = (e, t, r) => (_check_enable_rls = Module._check_enable_rls = wasmExports.check_enable_rls)(e, t, r), _pg_class_aclcheck = Module._pg_class_aclcheck = (e, t, r) => (_pg_class_aclcheck = Module._pg_class_aclcheck = wasmExports.pg_class_aclcheck)(e, t, r), _try_index_open = Module._try_index_open = (e, t) => (_try_index_open = Module._try_index_open = wasmExports.try_index_open)(e, t), _btboolcmp = Module._btboolcmp = (e) => (_btboolcmp = Module._btboolcmp = wasmExports.btboolcmp)(e), _btint2cmp = Module._btint2cmp = (e) => (_btint2cmp = Module._btint2cmp = wasmExports.btint2cmp)(e), _btint4cmp = Module._btint4cmp = (e) => (_btint4cmp = Module._btint4cmp = wasmExports.btint4cmp)(e), _btint8cmp = Module._btint8cmp = (e) => (_btint8cmp = Module._btint8cmp = wasmExports.btint8cmp)(e), _btoidcmp = Module._btoidcmp = (e) => (_btoidcmp = Module._btoidcmp = wasmExports.btoidcmp)(e), _btcharcmp = Module._btcharcmp = (e) => (_btcharcmp = Module._btcharcmp = wasmExports.btcharcmp)(e), __bt_form_posting = Module.__bt_form_posting = (e, t, r) => (__bt_form_posting = Module.__bt_form_posting = wasmExports._bt_form_posting)(e, t, r), __bt_mkscankey = Module.__bt_mkscankey = (e, t) => (__bt_mkscankey = Module.__bt_mkscankey = wasmExports._bt_mkscankey)(e, t), __bt_checkpage = Module.__bt_checkpage = (e, t) => (__bt_checkpage = Module.__bt_checkpage = wasmExports._bt_checkpage)(e, t), __bt_compare = Module.__bt_compare = (e, t, r, a) => (__bt_compare = Module.__bt_compare = wasmExports._bt_compare)(e, t, r, a), __bt_relbuf = Module.__bt_relbuf = (e, t) => (__bt_relbuf = Module.__bt_relbuf = wasmExports._bt_relbuf)(e, t), __bt_search = Module.__bt_search = (e, t, r, a, o) => (__bt_search = Module.__bt_search = wasmExports._bt_search)(e, t, r, a, o), __bt_binsrch_insert = Module.__bt_binsrch_insert = (e, t) => (__bt_binsrch_insert = Module.__bt_binsrch_insert = wasmExports._bt_binsrch_insert)(e, t), __bt_freestack = Module.__bt_freestack = (e) => (__bt_freestack = Module.__bt_freestack = wasmExports._bt_freestack)(e), __bt_metaversion = Module.__bt_metaversion = (e, t, r) => (__bt_metaversion = Module.__bt_metaversion = wasmExports._bt_metaversion)(e, t, r), _get_opfamily_member = Module._get_opfamily_member = (e, t, r, a) => (_get_opfamily_member = Module._get_opfamily_member = wasmExports.get_opfamily_member)(e, t, r, a), __bt_allequalimage = Module.__bt_allequalimage = (e, t) => (__bt_allequalimage = Module.__bt_allequalimage = wasmExports._bt_allequalimage)(e, t), ___wasm_setjmp_test = Module.___wasm_setjmp_test = (e, t) => (___wasm_setjmp_test = Module.___wasm_setjmp_test = wasmExports.__wasm_setjmp_test)(e, t), _before_shmem_exit = Module._before_shmem_exit = (e, t) => (_before_shmem_exit = Module._before_shmem_exit = wasmExports.before_shmem_exit)(e, t), ___wasm_setjmp = Module.___wasm_setjmp = (e, t, r) => (___wasm_setjmp = Module.___wasm_setjmp = wasmExports.__wasm_setjmp)(e, t, r), _cancel_before_shmem_exit = Module._cancel_before_shmem_exit = (e, t) => (_cancel_before_shmem_exit = Module._cancel_before_shmem_exit = wasmExports.cancel_before_shmem_exit)(e, t), _pg_re_throw = Module._pg_re_throw = () => (_pg_re_throw = Module._pg_re_throw = wasmExports.pg_re_throw)(), _emscripten_longjmp = Module._emscripten_longjmp = (e, t) => (_emscripten_longjmp = Module._emscripten_longjmp = wasmExports.emscripten_longjmp)(e, t), _ConditionVariableBroadcast = Module._ConditionVariableBroadcast = (e) => (_ConditionVariableBroadcast = Module._ConditionVariableBroadcast = wasmExports.ConditionVariableBroadcast)(e), _datum_image_eq = Module._datum_image_eq = (e, t, r, a) => (_datum_image_eq = Module._datum_image_eq = wasmExports.datum_image_eq)(e, t, r, a), _time = Module._time = (e) => (_time = Module._time = wasmExports.time)(e), __bt_check_natts = Module.__bt_check_natts = (e, t, r, a) => (__bt_check_natts = Module.__bt_check_natts = wasmExports._bt_check_natts)(e, t, r, a), _strlcpy = Module._strlcpy = (e, t, r) => (_strlcpy = Module._strlcpy = wasmExports.strlcpy)(e, t, r), _strncpy = Module._strncpy = (e, t, r) => (_strncpy = Module._strncpy = wasmExports.strncpy)(e, t, r), _timestamptz_to_str = Module._timestamptz_to_str = (e) => (_timestamptz_to_str = Module._timestamptz_to_str = wasmExports.timestamptz_to_str)(e), _XLogRecGetBlockRefInfo = Module._XLogRecGetBlockRefInfo = (e, t, r, a, o) => (_XLogRecGetBlockRefInfo = Module._XLogRecGetBlockRefInfo = wasmExports.XLogRecGetBlockRefInfo)(e, t, r, a, o), _varstr_cmp = Module._varstr_cmp = (e, t, r, a, o) => (_varstr_cmp = Module._varstr_cmp = wasmExports.varstr_cmp)(e, t, r, a, o), _getBaseType = Module._getBaseType = (e) => (_getBaseType = Module._getBaseType = wasmExports.getBaseType)(e), _exprType = Module._exprType = (e) => (_exprType = Module._exprType = wasmExports.exprType)(e), _GetActiveSnapshot = Module._GetActiveSnapshot = () => (_GetActiveSnapshot = Module._GetActiveSnapshot = wasmExports.GetActiveSnapshot)(), _errdetail_relkind_not_supported = Module._errdetail_relkind_not_supported = (e) => (_errdetail_relkind_not_supported = Module._errdetail_relkind_not_supported = wasmExports.errdetail_relkind_not_supported)(e), _table_openrv = Module._table_openrv = (e, t) => (_table_openrv = Module._table_openrv = wasmExports.table_openrv)(e, t), _table_slot_callbacks = Module._table_slot_callbacks = (e) => (_table_slot_callbacks = Module._table_slot_callbacks = wasmExports.table_slot_callbacks)(e), _clamp_row_est = Module._clamp_row_est = (e) => (_clamp_row_est = Module._clamp_row_est = wasmExports.clamp_row_est)(e), _pre_format_elog_string = Module._pre_format_elog_string = (e, t) => (_pre_format_elog_string = Module._pre_format_elog_string = wasmExports.pre_format_elog_string)(e, t), _format_elog_string = Module._format_elog_string = (e, t) => (_format_elog_string = Module._format_elog_string = wasmExports.format_elog_string)(e, t), _IsTransactionState = Module._IsTransactionState = () => (_IsTransactionState = Module._IsTransactionState = wasmExports.IsTransactionState)(), _estimate_expression_value = Module._estimate_expression_value = (e, t) => (_estimate_expression_value = Module._estimate_expression_value = wasmExports.estimate_expression_value)(e, t), _SetConfigOption = Module._SetConfigOption = (e, t, r, a) => (_SetConfigOption = Module._SetConfigOption = wasmExports.SetConfigOption)(e, t, r, a), _XLogFlush = Module._XLogFlush = (e) => (_XLogFlush = Module._XLogFlush = wasmExports.XLogFlush)(e), _get_call_result_type = Module._get_call_result_type = (e, t, r) => (_get_call_result_type = Module._get_call_result_type = wasmExports.get_call_result_type)(e, t, r), _HeapTupleHeaderGetDatum = Module._HeapTupleHeaderGetDatum = (e) => (_HeapTupleHeaderGetDatum = Module._HeapTupleHeaderGetDatum = wasmExports.HeapTupleHeaderGetDatum)(e), _GenericXLogStart = Module._GenericXLogStart = (e) => (_GenericXLogStart = Module._GenericXLogStart = wasmExports.GenericXLogStart)(e), _GenericXLogRegisterBuffer = Module._GenericXLogRegisterBuffer = (e, t, r) => (_GenericXLogRegisterBuffer = Module._GenericXLogRegisterBuffer = wasmExports.GenericXLogRegisterBuffer)(e, t, r), _GenericXLogFinish = Module._GenericXLogFinish = (e) => (_GenericXLogFinish = Module._GenericXLogFinish = wasmExports.GenericXLogFinish)(e), _GenericXLogAbort = Module._GenericXLogAbort = (e) => (_GenericXLogAbort = Module._GenericXLogAbort = wasmExports.GenericXLogAbort)(e), _errmsg_plural = Module._errmsg_plural = (e, t, r, a) => (_errmsg_plural = Module._errmsg_plural = wasmExports.errmsg_plural)(e, t, r, a), _ReadNextMultiXactId = Module._ReadNextMultiXactId = () => (_ReadNextMultiXactId = Module._ReadNextMultiXactId = wasmExports.ReadNextMultiXactId)(), _ReadMultiXactIdRange = Module._ReadMultiXactIdRange = (e, t) => (_ReadMultiXactIdRange = Module._ReadMultiXactIdRange = wasmExports.ReadMultiXactIdRange)(e, t), _MultiXactIdPrecedesOrEquals = Module._MultiXactIdPrecedesOrEquals = (e, t) => (_MultiXactIdPrecedesOrEquals = Module._MultiXactIdPrecedesOrEquals = wasmExports.MultiXactIdPrecedesOrEquals)(e, t), _init_MultiFuncCall = Module._init_MultiFuncCall = (e) => (_init_MultiFuncCall = Module._init_MultiFuncCall = wasmExports.init_MultiFuncCall)(e), _TupleDescGetAttInMetadata = Module._TupleDescGetAttInMetadata = (e) => (_TupleDescGetAttInMetadata = Module._TupleDescGetAttInMetadata = wasmExports.TupleDescGetAttInMetadata)(e), _per_MultiFuncCall = Module._per_MultiFuncCall = (e) => (_per_MultiFuncCall = Module._per_MultiFuncCall = wasmExports.per_MultiFuncCall)(e), _BuildTupleFromCStrings = Module._BuildTupleFromCStrings = (e, t) => (_BuildTupleFromCStrings = Module._BuildTupleFromCStrings = wasmExports.BuildTupleFromCStrings)(e, t), _end_MultiFuncCall = Module._end_MultiFuncCall = (e, t) => (_end_MultiFuncCall = Module._end_MultiFuncCall = wasmExports.end_MultiFuncCall)(e, t), _GetCurrentSubTransactionId = Module._GetCurrentSubTransactionId = () => (_GetCurrentSubTransactionId = Module._GetCurrentSubTransactionId = wasmExports.GetCurrentSubTransactionId)(), _WaitForBackgroundWorkerShutdown = Module._WaitForBackgroundWorkerShutdown = (e) => (_WaitForBackgroundWorkerShutdown = Module._WaitForBackgroundWorkerShutdown = wasmExports.WaitForBackgroundWorkerShutdown)(e), _RegisterDynamicBackgroundWorker = Module._RegisterDynamicBackgroundWorker = (e, t) => (_RegisterDynamicBackgroundWorker = Module._RegisterDynamicBackgroundWorker = wasmExports.RegisterDynamicBackgroundWorker)(e, t), _appendBinaryStringInfo = Module._appendBinaryStringInfo = (e, t, r) => (_appendBinaryStringInfo = Module._appendBinaryStringInfo = wasmExports.appendBinaryStringInfo)(e, t, r), _pq_getmsgbyte = Module._pq_getmsgbyte = (e) => (_pq_getmsgbyte = Module._pq_getmsgbyte = wasmExports.pq_getmsgbyte)(e), _pq_getmsgint = Module._pq_getmsgint = (e, t) => (_pq_getmsgint = Module._pq_getmsgint = wasmExports.pq_getmsgint)(e, t), _pq_getmsgint64 = Module._pq_getmsgint64 = (e) => (_pq_getmsgint64 = Module._pq_getmsgint64 = wasmExports.pq_getmsgint64)(e), _die = Module._die = (e) => (_die = Module._die = wasmExports.die)(e), _pqsignal_be = Module._pqsignal_be = (e, t) => (_pqsignal_be = Module._pqsignal_be = wasmExports.pqsignal_be)(e, t), _BackgroundWorkerUnblockSignals = Module._BackgroundWorkerUnblockSignals = () => (_BackgroundWorkerUnblockSignals = Module._BackgroundWorkerUnblockSignals = wasmExports.BackgroundWorkerUnblockSignals)(), _BackgroundWorkerInitializeConnectionByOid = Module._BackgroundWorkerInitializeConnectionByOid = (e, t, r) => (_BackgroundWorkerInitializeConnectionByOid = Module._BackgroundWorkerInitializeConnectionByOid = wasmExports.BackgroundWorkerInitializeConnectionByOid)(e, t, r), _GetDatabaseEncoding = Module._GetDatabaseEncoding = () => (_GetDatabaseEncoding = Module._GetDatabaseEncoding = wasmExports.GetDatabaseEncoding)(), _StartTransactionCommand = Module._StartTransactionCommand = () => (_StartTransactionCommand = Module._StartTransactionCommand = wasmExports.StartTransactionCommand)(), _CommitTransactionCommand = Module._CommitTransactionCommand = () => (_CommitTransactionCommand = Module._CommitTransactionCommand = wasmExports.CommitTransactionCommand)(), _PushActiveSnapshot = Module._PushActiveSnapshot = (e) => (_PushActiveSnapshot = Module._PushActiveSnapshot = wasmExports.PushActiveSnapshot)(e), _PopActiveSnapshot = Module._PopActiveSnapshot = () => (_PopActiveSnapshot = Module._PopActiveSnapshot = wasmExports.PopActiveSnapshot)(), _RmgrNotFound = Module._RmgrNotFound = (e) => (_RmgrNotFound = Module._RmgrNotFound = wasmExports.RmgrNotFound)(e), _InitMaterializedSRF = Module._InitMaterializedSRF = (e, t) => (_InitMaterializedSRF = Module._InitMaterializedSRF = wasmExports.InitMaterializedSRF)(e, t), _tuplestore_putvalues = Module._tuplestore_putvalues = (e, t, r, a) => (_tuplestore_putvalues = Module._tuplestore_putvalues = wasmExports.tuplestore_putvalues)(e, t, r, a), _pread = Module._pread = (e, t, r, a) => (_pread = Module._pread = wasmExports.pread)(e, t, r, a), _strspn = Module._strspn = (e, t) => (_strspn = Module._strspn = wasmExports.strspn)(e, t), _strtoll = Module._strtoll = (e, t, r) => (_strtoll = Module._strtoll = wasmExports.strtoll)(e, t, r), _AllocateFile = Module._AllocateFile = (e, t) => (_AllocateFile = Module._AllocateFile = wasmExports.AllocateFile)(e, t), _ferror = Module._ferror = (e) => (_ferror = Module._ferror = wasmExports.ferror)(e), _FreeFile = Module._FreeFile = (e) => (_FreeFile = Module._FreeFile = wasmExports.FreeFile)(e), _getpid = Module._getpid = () => (_getpid = Module._getpid = wasmExports.getpid)(), _read = Module._read = (e, t, r) => (_read = Module._read = wasmExports.read)(e, t, r), _write = Module._write = (e, t, r) => (_write = Module._write = wasmExports.write)(e, t, r), _durable_rename = Module._durable_rename = (e, t, r) => (_durable_rename = Module._durable_rename = wasmExports.durable_rename)(e, t, r), _BlessTupleDesc = Module._BlessTupleDesc = (e) => (_BlessTupleDesc = Module._BlessTupleDesc = wasmExports.BlessTupleDesc)(e), _fstat = Module._fstat = (e, t) => (_fstat = Module._fstat = wasmExports.fstat)(e, t), _superuser_arg = Module._superuser_arg = (e) => (_superuser_arg = Module._superuser_arg = wasmExports.superuser_arg)(e), _wal_segment_close = Module._wal_segment_close = (e) => (_wal_segment_close = Module._wal_segment_close = wasmExports.wal_segment_close)(e), _wal_segment_open = Module._wal_segment_open = (e, t, r) => (_wal_segment_open = Module._wal_segment_open = wasmExports.wal_segment_open)(e, t, r), _XLogReaderAllocate = Module._XLogReaderAllocate = (e, t, r, a) => (_XLogReaderAllocate = Module._XLogReaderAllocate = wasmExports.XLogReaderAllocate)(e, t, r, a), _XLogReadRecord = Module._XLogReadRecord = (e, t) => (_XLogReadRecord = Module._XLogReadRecord = wasmExports.XLogReadRecord)(e, t), _XLogReaderFree = Module._XLogReaderFree = (e) => (_XLogReaderFree = Module._XLogReaderFree = wasmExports.XLogReaderFree)(e), _strtoull = Module._strtoull = (e, t, r) => (_strtoull = Module._strtoull = wasmExports.strtoull)(e, t, r), _access = Module._access = (e, t) => (_access = Module._access = wasmExports.access)(e, t), _IsAbortedTransactionBlockState = Module._IsAbortedTransactionBlockState = () => (_IsAbortedTransactionBlockState = Module._IsAbortedTransactionBlockState = wasmExports.IsAbortedTransactionBlockState)(), _GetTopFullTransactionId = Module._GetTopFullTransactionId = () => (_GetTopFullTransactionId = Module._GetTopFullTransactionId = wasmExports.GetTopFullTransactionId)(), _GetCurrentTransactionNestLevel = Module._GetCurrentTransactionNestLevel = () => (_GetCurrentTransactionNestLevel = Module._GetCurrentTransactionNestLevel = wasmExports.GetCurrentTransactionNestLevel)(), _ResourceOwnerCreate = Module._ResourceOwnerCreate = (e, t) => (_ResourceOwnerCreate = Module._ResourceOwnerCreate = wasmExports.ResourceOwnerCreate)(e, t), _AbortCurrentTransaction = Module._AbortCurrentTransaction = () => (_AbortCurrentTransaction = Module._AbortCurrentTransaction = wasmExports.AbortCurrentTransaction)(), _IsTransactionBlock = Module._IsTransactionBlock = () => (_IsTransactionBlock = Module._IsTransactionBlock = wasmExports.IsTransactionBlock)(), _RegisterXactCallback = Module._RegisterXactCallback = (e, t) => (_RegisterXactCallback = Module._RegisterXactCallback = wasmExports.RegisterXactCallback)(e, t), _UnregisterXactCallback = Module._UnregisterXactCallback = (e, t) => (_UnregisterXactCallback = Module._UnregisterXactCallback = wasmExports.UnregisterXactCallback)(e, t), _RegisterSubXactCallback = Module._RegisterSubXactCallback = (e, t) => (_RegisterSubXactCallback = Module._RegisterSubXactCallback = wasmExports.RegisterSubXactCallback)(e, t), _BeginInternalSubTransaction = Module._BeginInternalSubTransaction = (e) => (_BeginInternalSubTransaction = Module._BeginInternalSubTransaction = wasmExports.BeginInternalSubTransaction)(e), _ReleaseCurrentSubTransaction = Module._ReleaseCurrentSubTransaction = () => (_ReleaseCurrentSubTransaction = Module._ReleaseCurrentSubTransaction = wasmExports.ReleaseCurrentSubTransaction)(), _ResourceOwnerDelete = Module._ResourceOwnerDelete = (e) => (_ResourceOwnerDelete = Module._ResourceOwnerDelete = wasmExports.ResourceOwnerDelete)(e), _RollbackAndReleaseCurrentSubTransaction = Module._RollbackAndReleaseCurrentSubTransaction = () => (_RollbackAndReleaseCurrentSubTransaction = Module._RollbackAndReleaseCurrentSubTransaction = wasmExports.RollbackAndReleaseCurrentSubTransaction)(), _pg_usleep = Module._pg_usleep = (e) => (_pg_usleep = Module._pg_usleep = wasmExports.pg_usleep)(e), _close = Module._close = (e) => (_close = Module._close = wasmExports.close)(e), _ReleaseExternalFD = Module._ReleaseExternalFD = () => (_ReleaseExternalFD = Module._ReleaseExternalFD = wasmExports.ReleaseExternalFD)(), _GetDefaultCharSignedness = Module._GetDefaultCharSignedness = () => (_GetDefaultCharSignedness = Module._GetDefaultCharSignedness = wasmExports.GetDefaultCharSignedness)(), _SplitIdentifierString = Module._SplitIdentifierString = (e, t, r) => (_SplitIdentifierString = Module._SplitIdentifierString = wasmExports.SplitIdentifierString)(e, t, r), _guc_malloc = Module._guc_malloc = (e, t) => (_guc_malloc = Module._guc_malloc = wasmExports.guc_malloc)(e, t), _find_option = Module._find_option = (e, t, r, a) => (_find_option = Module._find_option = wasmExports.find_option)(e, t, r, a), _gettimeofday = Module._gettimeofday = (e, t) => (_gettimeofday = Module._gettimeofday = wasmExports.gettimeofday)(e, t), _pg_strong_random = Module._pg_strong_random = (e, t) => (_pg_strong_random = Module._pg_strong_random = wasmExports.pg_strong_random)(e, t), _stat = Module._stat = (e, t) => (_stat = Module._stat = wasmExports.stat)(e, t), _GetFlushRecPtr = Module._GetFlushRecPtr = (e) => (_GetFlushRecPtr = Module._GetFlushRecPtr = wasmExports.GetFlushRecPtr)(e), _GetXLogReplayRecPtr = Module._GetXLogReplayRecPtr = (e) => (_GetXLogReplayRecPtr = Module._GetXLogReplayRecPtr = wasmExports.GetXLogReplayRecPtr)(e), _TimestampDifferenceMilliseconds = Module._TimestampDifferenceMilliseconds = (e, t) => (_TimestampDifferenceMilliseconds = Module._TimestampDifferenceMilliseconds = wasmExports.TimestampDifferenceMilliseconds)(e, t), _strtoul = Module._strtoul = (e, t, r) => (_strtoul = Module._strtoul = wasmExports.strtoul)(e, t, r), _readlink = Module._readlink = (e, t, r) => (_readlink = Module._readlink = wasmExports.readlink)(e, t, r), _pg_fprintf = Module._pg_fprintf = (e, t, r) => (_pg_fprintf = Module._pg_fprintf = wasmExports.pg_fprintf)(e, t, r), _fflush = Module._fflush = (e) => (_fflush = Module._fflush = wasmExports.fflush)(e), _pgl_system = Module._pgl_system = (e) => (_pgl_system = Module._pgl_system = wasmExports.pgl_system)(e), _wait_result_to_str = Module._wait_result_to_str = (e) => (_wait_result_to_str = Module._wait_result_to_str = wasmExports.wait_result_to_str)(e), _replace_percent_placeholders = Module._replace_percent_placeholders = (e, t, r, a) => (_replace_percent_placeholders = Module._replace_percent_placeholders = wasmExports.replace_percent_placeholders)(e, t, r, a), _makeStringInfo = Module._makeStringInfo = () => (_makeStringInfo = Module._makeStringInfo = wasmExports.makeStringInfo)(), _pg_toupper = Module._pg_toupper = (e) => (_pg_toupper = Module._pg_toupper = wasmExports.pg_toupper)(e), _numeric_in = Module._numeric_in = (e) => (_numeric_in = Module._numeric_in = wasmExports.numeric_in)(e), _DirectFunctionCall3Coll = Module._DirectFunctionCall3Coll = (e, t, r, a, o) => (_DirectFunctionCall3Coll = Module._DirectFunctionCall3Coll = wasmExports.DirectFunctionCall3Coll)(e, t, r, a, o), _palloc_extended = Module._palloc_extended = (e, t) => (_palloc_extended = Module._palloc_extended = wasmExports.palloc_extended)(e, t), _pg_vsnprintf = Module._pg_vsnprintf = (e, t, r, a) => (_pg_vsnprintf = Module._pg_vsnprintf = wasmExports.pg_vsnprintf)(e, t, r, a), _XLogFindNextRecord = Module._XLogFindNextRecord = (e, t) => (_XLogFindNextRecord = Module._XLogFindNextRecord = wasmExports.XLogFindNextRecord)(e, t), _RestoreBlockImage = Module._RestoreBlockImage = (e, t, r) => (_RestoreBlockImage = Module._RestoreBlockImage = wasmExports.RestoreBlockImage)(e, t, r), _timestamptz_in = Module._timestamptz_in = (e) => (_timestamptz_in = Module._timestamptz_in = wasmExports.timestamptz_in)(e), _fscanf = Module._fscanf = (e, t, r) => (_fscanf = Module._fscanf = wasmExports.fscanf)(e, t, r), _symlink = Module._symlink = (e, t) => (_symlink = Module._symlink = wasmExports.symlink)(e, t), _ConditionVariableTimedSleep = Module._ConditionVariableTimedSleep = (e, t, r) => (_ConditionVariableTimedSleep = Module._ConditionVariableTimedSleep = wasmExports.ConditionVariableTimedSleep)(e, t, r), _ParseDateTime = Module._ParseDateTime = (e, t, r, a, o, _, s) => (_ParseDateTime = Module._ParseDateTime = wasmExports.ParseDateTime)(e, t, r, a, o, _, s), _DecodeDateTime = Module._DecodeDateTime = (e, t, r, a, o, _, s, n) => (_DecodeDateTime = Module._DecodeDateTime = wasmExports.DecodeDateTime)(e, t, r, a, o, _, s, n), _tm2timestamp = Module._tm2timestamp = (e, t, r, a) => (_tm2timestamp = Module._tm2timestamp = wasmExports.tm2timestamp)(e, t, r, a), _XLogRecStoreStats = Module._XLogRecStoreStats = (e, t) => (_XLogRecStoreStats = Module._XLogRecStoreStats = wasmExports.XLogRecStoreStats)(e, t), _hash_get_num_entries = Module._hash_get_num_entries = (e) => (_hash_get_num_entries = Module._hash_get_num_entries = wasmExports.hash_get_num_entries)(e), _read_local_xlog_page_no_wait = Module._read_local_xlog_page_no_wait = (e, t, r, a, o) => (_read_local_xlog_page_no_wait = Module._read_local_xlog_page_no_wait = wasmExports.read_local_xlog_page_no_wait)(e, t, r, a, o), _escape_json_with_len = Module._escape_json_with_len = (e, t, r) => (_escape_json_with_len = Module._escape_json_with_len = wasmExports.escape_json_with_len)(e, t, r), _BufFileSeek = Module._BufFileSeek = (e, t, r, a) => (_BufFileSeek = Module._BufFileSeek = wasmExports.BufFileSeek)(e, t, r, a), _lstat = Module._lstat = (e, t) => (_lstat = Module._lstat = wasmExports.lstat)(e, t), _destroyStringInfo = Module._destroyStringInfo = (e) => (_destroyStringInfo = Module._destroyStringInfo = wasmExports.destroyStringInfo)(e), _list_sort = Module._list_sort = (e, t) => (_list_sort = Module._list_sort = wasmExports.list_sort)(e, t), _pgl_geteuid = Module._pgl_geteuid = () => (_pgl_geteuid = Module._pgl_geteuid = wasmExports.pgl_geteuid)(), _getegid = Module._getegid = () => (_getegid = Module._getegid = wasmExports.getegid)(), _pg_checksum_page = Module._pg_checksum_page = (e, t) => (_pg_checksum_page = Module._pg_checksum_page = wasmExports.pg_checksum_page)(e, t), _CreateDestReceiver = Module._CreateDestReceiver = (e) => (_CreateDestReceiver = Module._CreateDestReceiver = wasmExports.CreateDestReceiver)(e), _bbsink_forward_end_archive = Module._bbsink_forward_end_archive = (e) => (_bbsink_forward_end_archive = Module._bbsink_forward_end_archive = wasmExports.bbsink_forward_end_archive)(e), _bbsink_forward_begin_manifest = Module._bbsink_forward_begin_manifest = (e) => (_bbsink_forward_begin_manifest = Module._bbsink_forward_begin_manifest = wasmExports.bbsink_forward_begin_manifest)(e), _bbsink_forward_end_manifest = Module._bbsink_forward_end_manifest = (e) => (_bbsink_forward_end_manifest = Module._bbsink_forward_end_manifest = wasmExports.bbsink_forward_end_manifest)(e), _bbsink_forward_end_backup = Module._bbsink_forward_end_backup = (e, t, r) => (_bbsink_forward_end_backup = Module._bbsink_forward_end_backup = wasmExports.bbsink_forward_end_backup)(e, t, r), _bbsink_forward_cleanup = Module._bbsink_forward_cleanup = (e) => (_bbsink_forward_cleanup = Module._bbsink_forward_cleanup = wasmExports.bbsink_forward_cleanup)(e), _MemoryContextAllocExtended = Module._MemoryContextAllocExtended = (e, t, r) => (_MemoryContextAllocExtended = Module._MemoryContextAllocExtended = wasmExports.MemoryContextAllocExtended)(e, t, r), _appendStringInfoVA = Module._appendStringInfoVA = (e, t, r) => (_appendStringInfoVA = Module._appendStringInfoVA = wasmExports.appendStringInfoVA)(e, t, r), _list_concat = Module._list_concat = (e, t) => (_list_concat = Module._list_concat = wasmExports.list_concat)(e, t), _strrchr = Module._strrchr = (e, t) => (_strrchr = Module._strrchr = wasmExports.strrchr)(e, t), _bbsink_forward_begin_backup = Module._bbsink_forward_begin_backup = (e) => (_bbsink_forward_begin_backup = Module._bbsink_forward_begin_backup = wasmExports.bbsink_forward_begin_backup)(e), _bbsink_forward_archive_contents = Module._bbsink_forward_archive_contents = (e, t) => (_bbsink_forward_archive_contents = Module._bbsink_forward_archive_contents = wasmExports.bbsink_forward_archive_contents)(e, t), _bbsink_forward_begin_archive = Module._bbsink_forward_begin_archive = (e, t) => (_bbsink_forward_begin_archive = Module._bbsink_forward_begin_archive = wasmExports.bbsink_forward_begin_archive)(e, t), _bbsink_forward_manifest_contents = Module._bbsink_forward_manifest_contents = (e, t) => (_bbsink_forward_manifest_contents = Module._bbsink_forward_manifest_contents = wasmExports.bbsink_forward_manifest_contents)(e, t), _has_privs_of_role = Module._has_privs_of_role = (e, t) => (_has_privs_of_role = Module._has_privs_of_role = wasmExports.has_privs_of_role)(e, t), _BaseBackupAddTarget = Module._BaseBackupAddTarget = (e, t, r) => (_BaseBackupAddTarget = Module._BaseBackupAddTarget = wasmExports.BaseBackupAddTarget)(e, t, r), _list_copy = Module._list_copy = (e) => (_list_copy = Module._list_copy = wasmExports.list_copy)(e), _tuplestore_puttuple = Module._tuplestore_puttuple = (e, t) => (_tuplestore_puttuple = Module._tuplestore_puttuple = wasmExports.tuplestore_puttuple)(e, t), _isatty = Module._isatty = (e) => (_isatty = Module._isatty = wasmExports.isatty)(e), _makeRangeVar = Module._makeRangeVar = (e, t, r) => (_makeRangeVar = Module._makeRangeVar = wasmExports.makeRangeVar)(e, t, r), _DefineIndex = Module._DefineIndex = (e, t, r, a, o, _, s, n, l, d, p, m) => (_DefineIndex = Module._DefineIndex = wasmExports.DefineIndex)(e, t, r, a, o, _, s, n, l, d, p, m), _getc = Module._getc = (e) => (_getc = Module._getc = wasmExports.getc)(e), _fread = Module._fread = (e, t, r, a) => (_fread = Module._fread = wasmExports.fread)(e, t, r, a), _clearerr = Module._clearerr = (e) => (_clearerr = Module._clearerr = wasmExports.clearerr)(e), _copyObjectImpl = Module._copyObjectImpl = (e) => (_copyObjectImpl = Module._copyObjectImpl = wasmExports.copyObjectImpl)(e), _get_object_address = Module._get_object_address = (e, t, r, a, o, _) => (_get_object_address = Module._get_object_address = wasmExports.get_object_address)(e, t, r, a, o, _), _lappend_oid = Module._lappend_oid = (e, t) => (_lappend_oid = Module._lappend_oid = wasmExports.lappend_oid)(e, t), _makeTypeNameFromNameList = Module._makeTypeNameFromNameList = (e) => (_makeTypeNameFromNameList = Module._makeTypeNameFromNameList = wasmExports.makeTypeNameFromNameList)(e), _SearchSysCache2 = Module._SearchSysCache2 = (e, t, r) => (_SearchSysCache2 = Module._SearchSysCache2 = wasmExports.SearchSysCache2)(e, t, r), _SysCacheGetAttr = Module._SysCacheGetAttr = (e, t, r, a) => (_SysCacheGetAttr = Module._SysCacheGetAttr = wasmExports.SysCacheGetAttr)(e, t, r, a), _CatalogTupleUpdate = Module._CatalogTupleUpdate = (e, t, r) => (_CatalogTupleUpdate = Module._CatalogTupleUpdate = wasmExports.CatalogTupleUpdate)(e, t, r), _get_attnum = Module._get_attnum = (e, t) => (_get_attnum = Module._get_attnum = wasmExports.get_attnum)(e, t), _get_rel_name = Module._get_rel_name = (e) => (_get_rel_name = Module._get_rel_name = wasmExports.get_rel_name)(e), _CatalogTupleDelete = Module._CatalogTupleDelete = (e, t) => (_CatalogTupleDelete = Module._CatalogTupleDelete = wasmExports.CatalogTupleDelete)(e, t), _get_namespace_oid = Module._get_namespace_oid = (e, t) => (_get_namespace_oid = Module._get_namespace_oid = wasmExports.get_namespace_oid)(e, t), _SearchSysCache3 = Module._SearchSysCache3 = (e, t, r, a) => (_SearchSysCache3 = Module._SearchSysCache3 = wasmExports.SearchSysCache3)(e, t, r, a), _performDeletion = Module._performDeletion = (e, t, r) => (_performDeletion = Module._performDeletion = wasmExports.performDeletion)(e, t, r), _CatalogTupleInsert = Module._CatalogTupleInsert = (e, t) => (_CatalogTupleInsert = Module._CatalogTupleInsert = wasmExports.CatalogTupleInsert)(e, t), _recordDependencyOn = Module._recordDependencyOn = (e, t, r) => (_recordDependencyOn = Module._recordDependencyOn = wasmExports.recordDependencyOn)(e, t, r), _get_element_type = Module._get_element_type = (e) => (_get_element_type = Module._get_element_type = wasmExports.get_element_type)(e), _object_aclcheck = Module._object_aclcheck = (e, t, r, a) => (_object_aclcheck = Module._object_aclcheck = wasmExports.object_aclcheck)(e, t, r, a), _isTempNamespace = Module._isTempNamespace = (e) => (_isTempNamespace = Module._isTempNamespace = wasmExports.isTempNamespace)(e), _superuser = Module._superuser = () => (_superuser = Module._superuser = wasmExports.superuser)(), _SearchSysCacheAttName = Module._SearchSysCacheAttName = (e, t) => (_SearchSysCacheAttName = Module._SearchSysCacheAttName = wasmExports.SearchSysCacheAttName)(e, t), _new_object_addresses = Module._new_object_addresses = () => (_new_object_addresses = Module._new_object_addresses = wasmExports.new_object_addresses)(), _free_object_addresses = Module._free_object_addresses = (e) => (_free_object_addresses = Module._free_object_addresses = wasmExports.free_object_addresses)(e), _performMultipleDeletions = Module._performMultipleDeletions = (e, t, r) => (_performMultipleDeletions = Module._performMultipleDeletions = wasmExports.performMultipleDeletions)(e, t, r), _recordDependencyOnExpr = Module._recordDependencyOnExpr = (e, t, r, a) => (_recordDependencyOnExpr = Module._recordDependencyOnExpr = wasmExports.recordDependencyOnExpr)(e, t, r, a), _query_tree_walker_impl = Module._query_tree_walker_impl = (e, t, r, a) => (_query_tree_walker_impl = Module._query_tree_walker_impl = wasmExports.query_tree_walker_impl)(e, t, r, a), _expression_tree_walker_impl = Module._expression_tree_walker_impl = (e, t, r) => (_expression_tree_walker_impl = Module._expression_tree_walker_impl = wasmExports.expression_tree_walker_impl)(e, t, r), _add_exact_object_address = Module._add_exact_object_address = (e, t) => (_add_exact_object_address = Module._add_exact_object_address = wasmExports.add_exact_object_address)(e, t), _get_rel_relkind = Module._get_rel_relkind = (e) => (_get_rel_relkind = Module._get_rel_relkind = wasmExports.get_rel_relkind)(e), _get_typtype = Module._get_typtype = (e) => (_get_typtype = Module._get_typtype = wasmExports.get_typtype)(e), _list_delete_last = Module._list_delete_last = (e) => (_list_delete_last = Module._list_delete_last = wasmExports.list_delete_last)(e), _type_is_collatable = Module._type_is_collatable = (e) => (_type_is_collatable = Module._type_is_collatable = wasmExports.type_is_collatable)(e), _CatalogOpenIndexes = Module._CatalogOpenIndexes = (e) => (_CatalogOpenIndexes = Module._CatalogOpenIndexes = wasmExports.CatalogOpenIndexes)(e), _CatalogCloseIndexes = Module._CatalogCloseIndexes = (e) => (_CatalogCloseIndexes = Module._CatalogCloseIndexes = wasmExports.CatalogCloseIndexes)(e), _get_relname_relid = Module._get_relname_relid = (e, t) => (_get_relname_relid = Module._get_relname_relid = wasmExports.get_relname_relid)(e, t), _GetSysCacheOid = Module._GetSysCacheOid = (e, t, r, a, o, _) => (_GetSysCacheOid = Module._GetSysCacheOid = wasmExports.GetSysCacheOid)(e, t, r, a, o, _), _CheckTableNotInUse = Module._CheckTableNotInUse = (e, t) => (_CheckTableNotInUse = Module._CheckTableNotInUse = wasmExports.CheckTableNotInUse)(e, t), _construct_array = Module._construct_array = (e, t, r, a, o, _) => (_construct_array = Module._construct_array = wasmExports.construct_array)(e, t, r, a, o, _), _make_parsestate = Module._make_parsestate = (e) => (_make_parsestate = Module._make_parsestate = wasmExports.make_parsestate)(e), _addRangeTableEntryForRelation = Module._addRangeTableEntryForRelation = (e, t, r, a, o, _) => (_addRangeTableEntryForRelation = Module._addRangeTableEntryForRelation = wasmExports.addRangeTableEntryForRelation)(e, t, r, a, o, _), _addNSItemToQuery = Module._addNSItemToQuery = (e, t, r, a, o) => (_addNSItemToQuery = Module._addNSItemToQuery = wasmExports.addNSItemToQuery)(e, t, r, a, o), _transformExpr = Module._transformExpr = (e, t, r) => (_transformExpr = Module._transformExpr = wasmExports.transformExpr)(e, t, r), _coerce_to_boolean = Module._coerce_to_boolean = (e, t, r) => (_coerce_to_boolean = Module._coerce_to_boolean = wasmExports.coerce_to_boolean)(e, t, r), _assign_expr_collations = Module._assign_expr_collations = (e, t) => (_assign_expr_collations = Module._assign_expr_collations = wasmExports.assign_expr_collations)(e, t), _equal = Module._equal = (e, t) => (_equal = Module._equal = wasmExports.equal)(e, t), _pull_var_clause = Module._pull_var_clause = (e, t) => (_pull_var_clause = Module._pull_var_clause = wasmExports.pull_var_clause)(e, t), _get_attname = Module._get_attname = (e, t, r) => (_get_attname = Module._get_attname = wasmExports.get_attname)(e, t, r), _coerce_to_target_type = Module._coerce_to_target_type = (e, t, r, a, o, _, s, n) => (_coerce_to_target_type = Module._coerce_to_target_type = wasmExports.coerce_to_target_type)(e, t, r, a, o, _, s, n), _nodeToString = Module._nodeToString = (e) => (_nodeToString = Module._nodeToString = wasmExports.nodeToString)(e), _lappend_int = Module._lappend_int = (e, t) => (_lappend_int = Module._lappend_int = wasmExports.lappend_int)(e, t), _list_delete_nth_cell = Module._list_delete_nth_cell = (e, t) => (_list_delete_nth_cell = Module._list_delete_nth_cell = wasmExports.list_delete_nth_cell)(e, t), _CatalogTupleInsertWithInfo = Module._CatalogTupleInsertWithInfo = (e, t, r) => (_CatalogTupleInsertWithInfo = Module._CatalogTupleInsertWithInfo = wasmExports.CatalogTupleInsertWithInfo)(e, t, r), _buildoidvector = Module._buildoidvector = (e, t) => (_buildoidvector = Module._buildoidvector = wasmExports.buildoidvector)(e, t), _parser_errposition = Module._parser_errposition = (e, t) => (_parser_errposition = Module._parser_errposition = wasmExports.parser_errposition)(e, t), _exprLocation = Module._exprLocation = (e) => (_exprLocation = Module._exprLocation = wasmExports.exprLocation)(e), _exprTypmod = Module._exprTypmod = (e) => (_exprTypmod = Module._exprTypmod = wasmExports.exprTypmod)(e), _get_base_element_type = Module._get_base_element_type = (e) => (_get_base_element_type = Module._get_base_element_type = wasmExports.get_base_element_type)(e), _SystemFuncName = Module._SystemFuncName = (e) => (_SystemFuncName = Module._SystemFuncName = wasmExports.SystemFuncName)(e), _CreateTrigger = Module._CreateTrigger = (e, t, r, a, o, _, s, n, l, d, p, m) => (_CreateTrigger = Module._CreateTrigger = wasmExports.CreateTrigger)(e, t, r, a, o, _, s, n, l, d, p, m), _plan_create_index_workers = Module._plan_create_index_workers = (e, t) => (_plan_create_index_workers = Module._plan_create_index_workers = wasmExports.plan_create_index_workers)(e, t), _tuplesort_begin_datum = Module._tuplesort_begin_datum = (e, t, r, a, o, _, s) => (_tuplesort_begin_datum = Module._tuplesort_begin_datum = wasmExports.tuplesort_begin_datum)(e, t, r, a, o, _, s), _tuplesort_putdatum = Module._tuplesort_putdatum = (e, t, r) => (_tuplesort_putdatum = Module._tuplesort_putdatum = wasmExports.tuplesort_putdatum)(e, t, r), _get_rel_namespace = Module._get_rel_namespace = (e) => (_get_rel_namespace = Module._get_rel_namespace = wasmExports.get_rel_namespace)(e), _ExecOpenIndices = Module._ExecOpenIndices = (e, t) => (_ExecOpenIndices = Module._ExecOpenIndices = wasmExports.ExecOpenIndices)(e, t), _ExecCloseIndices = Module._ExecCloseIndices = (e) => (_ExecCloseIndices = Module._ExecCloseIndices = wasmExports.ExecCloseIndices)(e), _ConditionalLockRelationOid = Module._ConditionalLockRelationOid = (e, t) => (_ConditionalLockRelationOid = Module._ConditionalLockRelationOid = wasmExports.ConditionalLockRelationOid)(e, t), _RelnameGetRelid = Module._RelnameGetRelid = (e) => (_RelnameGetRelid = Module._RelnameGetRelid = wasmExports.RelnameGetRelid)(e), _get_relkind_objtype = Module._get_relkind_objtype = (e) => (_get_relkind_objtype = Module._get_relkind_objtype = wasmExports.get_relkind_objtype)(e), _RelationIsVisible = Module._RelationIsVisible = (e) => (_RelationIsVisible = Module._RelationIsVisible = wasmExports.RelationIsVisible)(e), _TypenameGetTypid = Module._TypenameGetTypid = (e) => (_TypenameGetTypid = Module._TypenameGetTypid = wasmExports.TypenameGetTypid)(e), _get_func_arg_info = Module._get_func_arg_info = (e, t, r, a) => (_get_func_arg_info = Module._get_func_arg_info = wasmExports.get_func_arg_info)(e, t, r, a), _NameListToString = Module._NameListToString = (e) => (_NameListToString = Module._NameListToString = wasmExports.NameListToString)(e), _OpernameGetOprid = Module._OpernameGetOprid = (e, t, r) => (_OpernameGetOprid = Module._OpernameGetOprid = wasmExports.OpernameGetOprid)(e, t, r), _get_ts_config_oid = Module._get_ts_config_oid = (e, t) => (_get_ts_config_oid = Module._get_ts_config_oid = wasmExports.get_ts_config_oid)(e, t), _makeRangeVarFromNameList = Module._makeRangeVarFromNameList = (e) => (_makeRangeVarFromNameList = Module._makeRangeVarFromNameList = wasmExports.makeRangeVarFromNameList)(e), _quote_identifier = Module._quote_identifier = (e) => (_quote_identifier = Module._quote_identifier = wasmExports.quote_identifier)(e), _atoi = Module._atoi = (e) => (_atoi = Module._atoi = wasmExports.atoi)(e), _GetSearchPathMatcher = Module._GetSearchPathMatcher = (e) => (_GetSearchPathMatcher = Module._GetSearchPathMatcher = wasmExports.GetSearchPathMatcher)(e), _SearchPathMatchesCurrentEnvironment = Module._SearchPathMatchesCurrentEnvironment = (e) => (_SearchPathMatchesCurrentEnvironment = Module._SearchPathMatchesCurrentEnvironment = wasmExports.SearchPathMatchesCurrentEnvironment)(e), _get_collation_oid = Module._get_collation_oid = (e, t) => (_get_collation_oid = Module._get_collation_oid = wasmExports.get_collation_oid)(e, t), _GetDatabaseEncodingName = Module._GetDatabaseEncodingName = () => (_GetDatabaseEncodingName = Module._GetDatabaseEncodingName = wasmExports.GetDatabaseEncodingName)(), _CacheRegisterSyscacheCallback = Module._CacheRegisterSyscacheCallback = (e, t, r) => (_CacheRegisterSyscacheCallback = Module._CacheRegisterSyscacheCallback = wasmExports.CacheRegisterSyscacheCallback)(e, t, r), _fetch_search_path = Module._fetch_search_path = (e) => (_fetch_search_path = Module._fetch_search_path = wasmExports.fetch_search_path)(e), _get_extension_oid = Module._get_extension_oid = (e, t) => (_get_extension_oid = Module._get_extension_oid = wasmExports.get_extension_oid)(e, t), _get_role_oid = Module._get_role_oid = (e, t) => (_get_role_oid = Module._get_role_oid = wasmExports.get_role_oid)(e, t), _get_am_oid = Module._get_am_oid = (e, t) => (_get_am_oid = Module._get_am_oid = wasmExports.get_am_oid)(e, t), _GetForeignServerByName = Module._GetForeignServerByName = (e, t) => (_GetForeignServerByName = Module._GetForeignServerByName = wasmExports.GetForeignServerByName)(e, t), _typeStringToTypeName = Module._typeStringToTypeName = (e, t) => (_typeStringToTypeName = Module._typeStringToTypeName = wasmExports.typeStringToTypeName)(e, t), _makeFloat = Module._makeFloat = (e) => (_makeFloat = Module._makeFloat = wasmExports.makeFloat)(e), _list_make2_impl = Module._list_make2_impl = (e, t, r) => (_list_make2_impl = Module._list_make2_impl = wasmExports.list_make2_impl)(e, t, r), _check_object_ownership = Module._check_object_ownership = (e, t, r, a, o) => (_check_object_ownership = Module._check_object_ownership = wasmExports.check_object_ownership)(e, t, r, a, o), _GetUserNameFromId = Module._GetUserNameFromId = (e, t) => (_GetUserNameFromId = Module._GetUserNameFromId = wasmExports.GetUserNameFromId)(e, t), _format_type_extended = Module._format_type_extended = (e, t, r) => (_format_type_extended = Module._format_type_extended = wasmExports.format_type_extended)(e, t, r), _quote_qualified_identifier = Module._quote_qualified_identifier = (e, t) => (_quote_qualified_identifier = Module._quote_qualified_identifier = wasmExports.quote_qualified_identifier)(e, t), _get_tablespace_name = Module._get_tablespace_name = (e) => (_get_tablespace_name = Module._get_tablespace_name = wasmExports.get_tablespace_name)(e), _GetForeignServerExtended = Module._GetForeignServerExtended = (e, t) => (_GetForeignServerExtended = Module._GetForeignServerExtended = wasmExports.GetForeignServerExtended)(e, t), _GetForeignServer = Module._GetForeignServer = (e) => (_GetForeignServer = Module._GetForeignServer = wasmExports.GetForeignServer)(e), _get_extension_name = Module._get_extension_name = (e) => (_get_extension_name = Module._get_extension_name = wasmExports.get_extension_name)(e), _construct_empty_array = Module._construct_empty_array = (e) => (_construct_empty_array = Module._construct_empty_array = wasmExports.construct_empty_array)(e), _format_type_be_qualified = Module._format_type_be_qualified = (e) => (_format_type_be_qualified = Module._format_type_be_qualified = wasmExports.format_type_be_qualified)(e), _get_namespace_name_or_temp = Module._get_namespace_name_or_temp = (e) => (_get_namespace_name_or_temp = Module._get_namespace_name_or_temp = wasmExports.get_namespace_name_or_temp)(e), _list_make3_impl = Module._list_make3_impl = (e, t, r, a) => (_list_make3_impl = Module._list_make3_impl = wasmExports.list_make3_impl)(e, t, r, a), _construct_md_array = Module._construct_md_array = (e, t, r, a, o, _, s, n, l) => (_construct_md_array = Module._construct_md_array = wasmExports.construct_md_array)(e, t, r, a, o, _, s, n, l), _pull_varattnos = Module._pull_varattnos = (e, t, r) => (_pull_varattnos = Module._pull_varattnos = wasmExports.pull_varattnos)(e, t, r), _makeBoolExpr = Module._makeBoolExpr = (e, t, r) => (_makeBoolExpr = Module._makeBoolExpr = wasmExports.makeBoolExpr)(e, t, r), _eval_const_expressions = Module._eval_const_expressions = (e, t) => (_eval_const_expressions = Module._eval_const_expressions = wasmExports.eval_const_expressions)(e, t), _get_func_name = Module._get_func_name = (e) => (_get_func_name = Module._get_func_name = wasmExports.get_func_name)(e), _construct_array_builtin = Module._construct_array_builtin = (e, t, r) => (_construct_array_builtin = Module._construct_array_builtin = wasmExports.construct_array_builtin)(e, t, r), _makeObjectName = Module._makeObjectName = (e, t, r) => (_makeObjectName = Module._makeObjectName = wasmExports.makeObjectName)(e, t, r), _get_primary_key_attnos = Module._get_primary_key_attnos = (e, t, r) => (_get_primary_key_attnos = Module._get_primary_key_attnos = wasmExports.get_primary_key_attnos)(e, t, r), _check_functional_grouping = Module._check_functional_grouping = (e, t, r, a, o) => (_check_functional_grouping = Module._check_functional_grouping = wasmExports.check_functional_grouping)(e, t, r, a, o), _bms_is_subset = Module._bms_is_subset = (e, t) => (_bms_is_subset = Module._bms_is_subset = wasmExports.bms_is_subset)(e, t), _getExtensionOfObject = Module._getExtensionOfObject = (e, t) => (_getExtensionOfObject = Module._getExtensionOfObject = wasmExports.getExtensionOfObject)(e, t), _find_inheritance_children = Module._find_inheritance_children = (e, t) => (_find_inheritance_children = Module._find_inheritance_children = wasmExports.find_inheritance_children)(e, t), _find_all_inheritors = Module._find_all_inheritors = (e, t, r) => (_find_all_inheritors = Module._find_all_inheritors = wasmExports.find_all_inheritors)(e, t, r), _has_superclass = Module._has_superclass = (e) => (_has_superclass = Module._has_superclass = wasmExports.has_superclass)(e), _strstr = Module._strstr = (e, t) => (_strstr = Module._strstr = wasmExports.strstr)(e, t), _memchr = Module._memchr = (e, t, r) => (_memchr = Module._memchr = wasmExports.memchr)(e, t, r), _CheckFunctionValidatorAccess = Module._CheckFunctionValidatorAccess = (e, t) => (_CheckFunctionValidatorAccess = Module._CheckFunctionValidatorAccess = wasmExports.CheckFunctionValidatorAccess)(e, t), _AcquireRewriteLocks = Module._AcquireRewriteLocks = (e, t, r) => (_AcquireRewriteLocks = Module._AcquireRewriteLocks = wasmExports.AcquireRewriteLocks)(e, t, r), _pg_parse_query = Module._pg_parse_query = (e) => (_pg_parse_query = Module._pg_parse_query = wasmExports.pg_parse_query)(e), _get_func_result_type = Module._get_func_result_type = (e, t, r) => (_get_func_result_type = Module._get_func_result_type = wasmExports.get_func_result_type)(e, t, r), _function_parse_error_transpose = Module._function_parse_error_transpose = (e) => (_function_parse_error_transpose = Module._function_parse_error_transpose = wasmExports.function_parse_error_transpose)(e), _geterrposition = Module._geterrposition = () => (_geterrposition = Module._geterrposition = wasmExports.geterrposition)(), _getinternalerrposition = Module._getinternalerrposition = () => (_getinternalerrposition = Module._getinternalerrposition = wasmExports.getinternalerrposition)(), _pg_mblen_cstr = Module._pg_mblen_cstr = (e) => (_pg_mblen_cstr = Module._pg_mblen_cstr = wasmExports.pg_mblen_cstr)(e), _pg_mbstrlen_with_len = Module._pg_mbstrlen_with_len = (e, t) => (_pg_mbstrlen_with_len = Module._pg_mbstrlen_with_len = wasmExports.pg_mbstrlen_with_len)(e, t), _errposition = Module._errposition = (e) => (_errposition = Module._errposition = wasmExports.errposition)(e), _internalerrposition = Module._internalerrposition = (e) => (_internalerrposition = Module._internalerrposition = wasmExports.internalerrposition)(e), _internalerrquery = Module._internalerrquery = (e) => (_internalerrquery = Module._internalerrquery = wasmExports.internalerrquery)(e), _bms_num_members = Module._bms_num_members = (e) => (_bms_num_members = Module._bms_num_members = wasmExports.bms_num_members)(e), _quote_literal_cstr = Module._quote_literal_cstr = (e) => (_quote_literal_cstr = Module._quote_literal_cstr = wasmExports.quote_literal_cstr)(e), _get_array_type = Module._get_array_type = (e) => (_get_array_type = Module._get_array_type = wasmExports.get_array_type)(e), _pnstrdup = Module._pnstrdup = (e, t) => (_pnstrdup = Module._pnstrdup = wasmExports.pnstrdup)(e, t), _smgrtruncate = Module._smgrtruncate = (e, t, r, a, o) => (_smgrtruncate = Module._smgrtruncate = wasmExports.smgrtruncate)(e, t, r, a, o), _smgrreadv = Module._smgrreadv = (e, t, r, a, o) => (_smgrreadv = Module._smgrreadv = wasmExports.smgrreadv)(e, t, r, a, o), _NewRelationCreateToastTable = Module._NewRelationCreateToastTable = (e, t) => (_NewRelationCreateToastTable = Module._NewRelationCreateToastTable = wasmExports.NewRelationCreateToastTable)(e, t), _transformStmt = Module._transformStmt = (e, t) => (_transformStmt = Module._transformStmt = wasmExports.transformStmt)(e, t), _free_parsestate = Module._free_parsestate = (e) => (_free_parsestate = Module._free_parsestate = wasmExports.free_parsestate)(e), _makeFromExpr = Module._makeFromExpr = (e, t) => (_makeFromExpr = Module._makeFromExpr = wasmExports.makeFromExpr)(e, t), _assign_query_collations = Module._assign_query_collations = (e, t) => (_assign_query_collations = Module._assign_query_collations = wasmExports.assign_query_collations)(e, t), _ParseFuncOrColumn = Module._ParseFuncOrColumn = (e, t, r, a, o, _, s) => (_ParseFuncOrColumn = Module._ParseFuncOrColumn = wasmExports.ParseFuncOrColumn)(e, t, r, a, o, _, s), _exprCollation = Module._exprCollation = (e) => (_exprCollation = Module._exprCollation = wasmExports.exprCollation)(e), _transformSortClause = Module._transformSortClause = (e, t, r, a, o) => (_transformSortClause = Module._transformSortClause = wasmExports.transformSortClause)(e, t, r, a, o), _transformDistinctClause = Module._transformDistinctClause = (e, t, r, a) => (_transformDistinctClause = Module._transformDistinctClause = wasmExports.transformDistinctClause)(e, t, r, a), _makeTargetEntry = Module._makeTargetEntry = (e, t, r, a) => (_makeTargetEntry = Module._makeTargetEntry = wasmExports.makeTargetEntry)(e, t, r, a), _select_common_type = Module._select_common_type = (e, t, r, a) => (_select_common_type = Module._select_common_type = wasmExports.select_common_type)(e, t, r, a), _coerce_to_common_type = Module._coerce_to_common_type = (e, t, r, a) => (_coerce_to_common_type = Module._coerce_to_common_type = wasmExports.coerce_to_common_type)(e, t, r, a), _select_common_collation = Module._select_common_collation = (e, t, r) => (_select_common_collation = Module._select_common_collation = wasmExports.select_common_collation)(e, t, r), _contain_vars_of_level = Module._contain_vars_of_level = (e, t) => (_contain_vars_of_level = Module._contain_vars_of_level = wasmExports.contain_vars_of_level)(e, t), _expandNSItemAttrs = Module._expandNSItemAttrs = (e, t, r, a, o) => (_expandNSItemAttrs = Module._expandNSItemAttrs = wasmExports.expandNSItemAttrs)(e, t, r, a, o), _makeAlias = Module._makeAlias = (e, t) => (_makeAlias = Module._makeAlias = wasmExports.makeAlias)(e, t), _addRangeTableEntryForSubquery = Module._addRangeTableEntryForSubquery = (e, t, r, a, o) => (_addRangeTableEntryForSubquery = Module._addRangeTableEntryForSubquery = wasmExports.addRangeTableEntryForSubquery)(e, t, r, a, o), _assign_list_collations = Module._assign_list_collations = (e, t) => (_assign_list_collations = Module._assign_list_collations = wasmExports.assign_list_collations)(e, t), _expandNSItemVars = Module._expandNSItemVars = (e, t, r, a, o) => (_expandNSItemVars = Module._expandNSItemVars = wasmExports.expandNSItemVars)(e, t, r, a, o), _markTargetListOrigins = Module._markTargetListOrigins = (e, t) => (_markTargetListOrigins = Module._markTargetListOrigins = wasmExports.markTargetListOrigins)(e, t), _addRangeTableEntryForJoin = Module._addRangeTableEntryForJoin = (e, t, r, a, o, _, s, n, l, d, p) => (_addRangeTableEntryForJoin = Module._addRangeTableEntryForJoin = wasmExports.addRangeTableEntryForJoin)(e, t, r, a, o, _, s, n, l, d, p), _list_truncate = Module._list_truncate = (e, t) => (_list_truncate = Module._list_truncate = wasmExports.list_truncate)(e, t), _makeVar = Module._makeVar = (e, t, r, a, o, _) => (_makeVar = Module._makeVar = wasmExports.makeVar)(e, t, r, a, o, _), _makeNullConst = Module._makeNullConst = (e, t, r) => (_makeNullConst = Module._makeNullConst = wasmExports.makeNullConst)(e, t, r), _get_sort_group_operators = Module._get_sort_group_operators = (e, t, r, a, o, _, s, n) => (_get_sort_group_operators = Module._get_sort_group_operators = wasmExports.get_sort_group_operators)(e, t, r, a, o, _, s, n), _refnameNamespaceItem = Module._refnameNamespaceItem = (e, t, r, a, o) => (_refnameNamespaceItem = Module._refnameNamespaceItem = wasmExports.refnameNamespaceItem)(e, t, r, a, o), _setup_parser_errposition_callback = Module._setup_parser_errposition_callback = (e, t, r) => (_setup_parser_errposition_callback = Module._setup_parser_errposition_callback = wasmExports.setup_parser_errposition_callback)(e, t, r), _cancel_parser_errposition_callback = Module._cancel_parser_errposition_callback = (e) => (_cancel_parser_errposition_callback = Module._cancel_parser_errposition_callback = wasmExports.cancel_parser_errposition_callback)(e), _locate_var_of_level = Module._locate_var_of_level = (e, t) => (_locate_var_of_level = Module._locate_var_of_level = wasmExports.locate_var_of_level)(e, t), _makeBoolean = Module._makeBoolean = (e) => (_makeBoolean = Module._makeBoolean = wasmExports.makeBoolean)(e), _makeInteger = Module._makeInteger = (e) => (_makeInteger = Module._makeInteger = wasmExports.makeInteger)(e), _makeSimpleA_Expr = Module._makeSimpleA_Expr = (e, t, r, a, o) => (_makeSimpleA_Expr = Module._makeSimpleA_Expr = wasmExports.makeSimpleA_Expr)(e, t, r, a, o), _makeTypeName = Module._makeTypeName = (e) => (_makeTypeName = Module._makeTypeName = wasmExports.makeTypeName)(e), _SystemTypeName = Module._SystemTypeName = (e) => (_SystemTypeName = Module._SystemTypeName = wasmExports.SystemTypeName)(e), _makeFuncCall = Module._makeFuncCall = (e, t, r, a) => (_makeFuncCall = Module._makeFuncCall = wasmExports.makeFuncCall)(e, t, r, a), _makeA_Expr = Module._makeA_Expr = (e, t, r, a, o) => (_makeA_Expr = Module._makeA_Expr = wasmExports.makeA_Expr)(e, t, r, a, o), _list_make4_impl = Module._list_make4_impl = (e, t, r, a, o) => (_list_make4_impl = Module._list_make4_impl = wasmExports.list_make4_impl)(e, t, r, a, o), _addTargetToSortList = Module._addTargetToSortList = (e, t, r, a, o) => (_addTargetToSortList = Module._addTargetToSortList = wasmExports.addTargetToSortList)(e, t, r, a, o), _locate_agg_of_level = Module._locate_agg_of_level = (e, t) => (_locate_agg_of_level = Module._locate_agg_of_level = wasmExports.locate_agg_of_level)(e, t), _list_intersection_int = Module._list_intersection_int = (e, t) => (_list_intersection_int = Module._list_intersection_int = wasmExports.list_intersection_int)(e, t), _get_sortgroupclause_tle = Module._get_sortgroupclause_tle = (e, t) => (_get_sortgroupclause_tle = Module._get_sortgroupclause_tle = wasmExports.get_sortgroupclause_tle)(e, t), _flatten_join_alias_vars = Module._flatten_join_alias_vars = (e, t, r) => (_flatten_join_alias_vars = Module._flatten_join_alias_vars = wasmExports.flatten_join_alias_vars)(e, t, r), _list_member_int = Module._list_member_int = (e, t) => (_list_member_int = Module._list_member_int = wasmExports.list_member_int)(e, t), _list_union_int = Module._list_union_int = (e, t) => (_list_union_int = Module._list_union_int = wasmExports.list_union_int)(e, t), _makeFuncExpr = Module._makeFuncExpr = (e, t, r, a, o, _) => (_makeFuncExpr = Module._makeFuncExpr = wasmExports.makeFuncExpr)(e, t, r, a, o, _), _get_rte_attribute_name = Module._get_rte_attribute_name = (e, t) => (_get_rte_attribute_name = Module._get_rte_attribute_name = wasmExports.get_rte_attribute_name)(e, t), _expression_tree_mutator_impl = Module._expression_tree_mutator_impl = (e, t, r) => (_expression_tree_mutator_impl = Module._expression_tree_mutator_impl = wasmExports.expression_tree_mutator_impl)(e, t, r), _checkNameSpaceConflicts = Module._checkNameSpaceConflicts = (e, t, r) => (_checkNameSpaceConflicts = Module._checkNameSpaceConflicts = wasmExports.checkNameSpaceConflicts)(e, t, r), _addRangeTableEntryForENR = Module._addRangeTableEntryForENR = (e, t, r) => (_addRangeTableEntryForENR = Module._addRangeTableEntryForENR = wasmExports.addRangeTableEntryForENR)(e, t, r), _addRangeTableEntry = Module._addRangeTableEntry = (e, t, r, a, o) => (_addRangeTableEntry = Module._addRangeTableEntry = wasmExports.addRangeTableEntry)(e, t, r, a, o), _FigureColname = Module._FigureColname = (e) => (_FigureColname = Module._FigureColname = wasmExports.FigureColname)(e), _coerce_to_specific_type = Module._coerce_to_specific_type = (e, t, r, a) => (_coerce_to_specific_type = Module._coerce_to_specific_type = wasmExports.coerce_to_specific_type)(e, t, r, a), _typenameTypeIdAndMod = Module._typenameTypeIdAndMod = (e, t, r, a) => (_typenameTypeIdAndMod = Module._typenameTypeIdAndMod = wasmExports.typenameTypeIdAndMod)(e, t, r, a), _get_typcollation = Module._get_typcollation = (e) => (_get_typcollation = Module._get_typcollation = wasmExports.get_typcollation)(e), _markNullableIfNeeded = Module._markNullableIfNeeded = (e, t) => (_markNullableIfNeeded = Module._markNullableIfNeeded = wasmExports.markNullableIfNeeded)(e, t), _markVarForSelectPriv = Module._markVarForSelectPriv = (e, t) => (_markVarForSelectPriv = Module._markVarForSelectPriv = wasmExports.markVarForSelectPriv)(e, t), _coerce_type = Module._coerce_type = (e, t, r, a, o, _, s, n) => (_coerce_type = Module._coerce_type = wasmExports.coerce_type)(e, t, r, a, o, _, s, n), _LookupFuncName = Module._LookupFuncName = (e, t, r, a) => (_LookupFuncName = Module._LookupFuncName = wasmExports.LookupFuncName)(e, t, r, a), _addRangeTableEntryForFunction = Module._addRangeTableEntryForFunction = (e, t, r, a, o, _, s) => (_addRangeTableEntryForFunction = Module._addRangeTableEntryForFunction = wasmExports.addRangeTableEntryForFunction)(e, t, r, a, o, _, s), _parserOpenTable = Module._parserOpenTable = (e, t, r) => (_parserOpenTable = Module._parserOpenTable = wasmExports.parserOpenTable)(e, t, r), _strip_implicit_coercions = Module._strip_implicit_coercions = (e) => (_strip_implicit_coercions = Module._strip_implicit_coercions = wasmExports.strip_implicit_coercions)(e), _colNameToVar = Module._colNameToVar = (e, t, r, a) => (_colNameToVar = Module._colNameToVar = wasmExports.colNameToVar)(e, t, r, a), _op_hashjoinable = Module._op_hashjoinable = (e, t) => (_op_hashjoinable = Module._op_hashjoinable = wasmExports.op_hashjoinable)(e, t), _get_commutator = Module._get_commutator = (e) => (_get_commutator = Module._get_commutator = wasmExports.get_commutator)(e), _can_coerce_type = Module._can_coerce_type = (e, t, r, a) => (_can_coerce_type = Module._can_coerce_type = wasmExports.can_coerce_type)(e, t, r, a), _get_sortgroupref_tle = Module._get_sortgroupref_tle = (e, t) => (_get_sortgroupref_tle = Module._get_sortgroupref_tle = wasmExports.get_sortgroupref_tle)(e, t), _assignSortGroupRef = Module._assignSortGroupRef = (e, t) => (_assignSortGroupRef = Module._assignSortGroupRef = wasmExports.assignSortGroupRef)(e, t), _targetIsInSortList = Module._targetIsInSortList = (e, t, r) => (_targetIsInSortList = Module._targetIsInSortList = wasmExports.targetIsInSortList)(e, t, r), _contain_aggs_of_level = Module._contain_aggs_of_level = (e, t) => (_contain_aggs_of_level = Module._contain_aggs_of_level = wasmExports.contain_aggs_of_level)(e, t), _find_coercion_pathway = Module._find_coercion_pathway = (e, t, r, a) => (_find_coercion_pathway = Module._find_coercion_pathway = wasmExports.find_coercion_pathway)(e, t, r, a), _typeidType = Module._typeidType = (e) => (_typeidType = Module._typeidType = wasmExports.typeidType)(e), _typeTypeCollation = Module._typeTypeCollation = (e) => (_typeTypeCollation = Module._typeTypeCollation = wasmExports.typeTypeCollation)(e), _typeLen = Module._typeLen = (e) => (_typeLen = Module._typeLen = wasmExports.typeLen)(e), _typeByVal = Module._typeByVal = (e) => (_typeByVal = Module._typeByVal = wasmExports.typeByVal)(e), _makeConst = Module._makeConst = (e, t, r, a, o, _, s) => (_makeConst = Module._makeConst = wasmExports.makeConst)(e, t, r, a, o, _, s), _lookup_rowtype_tupdesc = Module._lookup_rowtype_tupdesc = (e, t) => (_lookup_rowtype_tupdesc = Module._lookup_rowtype_tupdesc = wasmExports.lookup_rowtype_tupdesc)(e, t), _verify_common_type = Module._verify_common_type = (e, t) => (_verify_common_type = Module._verify_common_type = wasmExports.verify_common_type)(e, t), _bms_del_member = Module._bms_del_member = (e, t) => (_bms_del_member = Module._bms_del_member = wasmExports.bms_del_member)(e, t), _list_member = Module._list_member = (e, t) => (_list_member = Module._list_member = wasmExports.list_member)(e, t), _raw_expression_tree_walker_impl = Module._raw_expression_tree_walker_impl = (e, t, r) => (_raw_expression_tree_walker_impl = Module._raw_expression_tree_walker_impl = wasmExports.raw_expression_tree_walker_impl)(e, t, r), _type_is_rowtype = Module._type_is_rowtype = (e) => (_type_is_rowtype = Module._type_is_rowtype = wasmExports.type_is_rowtype)(e), _scanNSItemForColumn = Module._scanNSItemForColumn = (e, t, r, a, o) => (_scanNSItemForColumn = Module._scanNSItemForColumn = wasmExports.scanNSItemForColumn)(e, t, r, a, o), _make_op = Module._make_op = (e, t, r, a, o, _) => (_make_op = Module._make_op = wasmExports.make_op)(e, t, r, a, o, _), _make_scalar_array_op = Module._make_scalar_array_op = (e, t, r, a, o, _) => (_make_scalar_array_op = Module._make_scalar_array_op = wasmExports.make_scalar_array_op)(e, t, r, a, o, _), _count_nonjunk_tlist_entries = Module._count_nonjunk_tlist_entries = (e) => (_count_nonjunk_tlist_entries = Module._count_nonjunk_tlist_entries = wasmExports.count_nonjunk_tlist_entries)(e), _makeWholeRowVar = Module._makeWholeRowVar = (e, t, r, a) => (_makeWholeRowVar = Module._makeWholeRowVar = wasmExports.makeWholeRowVar)(e, t, r, a), _expandRTE = Module._expandRTE = (e, t, r, a, o, _, s, n) => (_expandRTE = Module._expandRTE = wasmExports.expandRTE)(e, t, r, a, o, _, s, n), _bms_int_members = Module._bms_int_members = (e, t) => (_bms_int_members = Module._bms_int_members = wasmExports.bms_int_members)(e, t), _contain_var_clause = Module._contain_var_clause = (e) => (_contain_var_clause = Module._contain_var_clause = wasmExports.contain_var_clause)(e), _jsonb_in = Module._jsonb_in = (e) => (_jsonb_in = Module._jsonb_in = wasmExports.jsonb_in)(e), _escape_json = Module._escape_json = (e, t) => (_escape_json = Module._escape_json = wasmExports.escape_json)(e, t), _geterrcode = Module._geterrcode = () => (_geterrcode = Module._geterrcode = wasmExports.geterrcode)(), _bit_in = Module._bit_in = (e) => (_bit_in = Module._bit_in = wasmExports.bit_in)(e), _repalloc0 = Module._repalloc0 = (e, t, r) => (_repalloc0 = Module._repalloc0 = wasmExports.repalloc0)(e, t, r), _bms_union = Module._bms_union = (e, t) => (_bms_union = Module._bms_union = wasmExports.bms_union)(e, t), _varstr_levenshtein_less_equal = Module._varstr_levenshtein_less_equal = (e, t, r, a, o, _, s, n, l) => (_varstr_levenshtein_less_equal = Module._varstr_levenshtein_less_equal = wasmExports.varstr_levenshtein_less_equal)(e, t, r, a, o, _, s, n, l), _raw_parser = Module._raw_parser = (e, t) => (_raw_parser = Module._raw_parser = wasmExports.raw_parser)(e, t), _errsave_start = Module._errsave_start = (e, t) => (_errsave_start = Module._errsave_start = wasmExports.errsave_start)(e, t), _errsave_finish = Module._errsave_finish = (e, t, r, a) => (_errsave_finish = Module._errsave_finish = wasmExports.errsave_finish)(e, t, r, a), _makeColumnDef = Module._makeColumnDef = (e, t, r, a) => (_makeColumnDef = Module._makeColumnDef = wasmExports.makeColumnDef)(e, t, r, a), _GetDefaultOpClass = Module._GetDefaultOpClass = (e, t) => (_GetDefaultOpClass = Module._GetDefaultOpClass = wasmExports.GetDefaultOpClass)(e, t), _ChooseRelationName = Module._ChooseRelationName = (e, t, r, a, o) => (_ChooseRelationName = Module._ChooseRelationName = wasmExports.ChooseRelationName)(e, t, r, a, o), _scanner_init = Module._scanner_init = (e, t, r, a) => (_scanner_init = Module._scanner_init = wasmExports.scanner_init)(e, t, r, a), _scanner_finish = Module._scanner_finish = (e) => (_scanner_finish = Module._scanner_finish = wasmExports.scanner_finish)(e), _core_yylex = Module._core_yylex = (e, t, r) => (_core_yylex = Module._core_yylex = wasmExports.core_yylex)(e, t, r), _isxdigit = Module._isxdigit = (e) => (_isxdigit = Module._isxdigit = wasmExports.isxdigit)(e), _scanner_isspace = Module._scanner_isspace = (e) => (_scanner_isspace = Module._scanner_isspace = wasmExports.scanner_isspace)(e), _truncate_identifier = Module._truncate_identifier = (e, t, r) => (_truncate_identifier = Module._truncate_identifier = wasmExports.truncate_identifier)(e, t, r), _ScanKeywordLookup = Module._ScanKeywordLookup = (e, t) => (_ScanKeywordLookup = Module._ScanKeywordLookup = wasmExports.ScanKeywordLookup)(e, t), _pg_verifymbstr = Module._pg_verifymbstr = (e, t, r) => (_pg_verifymbstr = Module._pg_verifymbstr = wasmExports.pg_verifymbstr)(e, t, r), _downcase_truncate_identifier = Module._downcase_truncate_identifier = (e, t, r) => (_downcase_truncate_identifier = Module._downcase_truncate_identifier = wasmExports.downcase_truncate_identifier)(e, t, r), _pg_database_encoding_max_length = Module._pg_database_encoding_max_length = () => (_pg_database_encoding_max_length = Module._pg_database_encoding_max_length = wasmExports.pg_database_encoding_max_length)(), _getTypeInputInfo = Module._getTypeInputInfo = (e, t, r) => (_getTypeInputInfo = Module._getTypeInputInfo = wasmExports.getTypeInputInfo)(e, t, r), _RenameSchema = Module._RenameSchema = (e, t, r) => (_RenameSchema = Module._RenameSchema = wasmExports.RenameSchema)(e, t, r), _namein = Module._namein = (e) => (_namein = Module._namein = wasmExports.namein)(e), _BlockSampler_Init = Module._BlockSampler_Init = (e, t, r, a) => (_BlockSampler_Init = Module._BlockSampler_Init = wasmExports.BlockSampler_Init)(e, t, r, a), _reservoir_init_selection_state = Module._reservoir_init_selection_state = (e, t) => (_reservoir_init_selection_state = Module._reservoir_init_selection_state = wasmExports.reservoir_init_selection_state)(e, t), _reservoir_get_next_S = Module._reservoir_get_next_S = (e, t, r) => (_reservoir_get_next_S = Module._reservoir_get_next_S = wasmExports.reservoir_get_next_S)(e, t, r), _sampler_random_fract = Module._sampler_random_fract = (e) => (_sampler_random_fract = Module._sampler_random_fract = wasmExports.sampler_random_fract)(e), _std_typanalyze = Module._std_typanalyze = (e) => (_std_typanalyze = Module._std_typanalyze = wasmExports.std_typanalyze)(e), _BlockSampler_HasMore = Module._BlockSampler_HasMore = (e) => (_BlockSampler_HasMore = Module._BlockSampler_HasMore = wasmExports.BlockSampler_HasMore)(e), _BlockSampler_Next = Module._BlockSampler_Next = (e) => (_BlockSampler_Next = Module._BlockSampler_Next = wasmExports.BlockSampler_Next)(e), _Async_Notify = Module._Async_Notify = (e, t) => (_Async_Notify = Module._Async_Notify = wasmExports.Async_Notify)(e, t), _RangeVarCallbackMaintainsTable = Module._RangeVarCallbackMaintainsTable = (e, t, r, a) => (_RangeVarCallbackMaintainsTable = Module._RangeVarCallbackMaintainsTable = wasmExports.RangeVarCallbackMaintainsTable)(e, t, r, a), _make_new_heap = Module._make_new_heap = (e, t, r, a, o) => (_make_new_heap = Module._make_new_heap = wasmExports.make_new_heap)(e, t, r, a, o), _finish_heap_swap = Module._finish_heap_swap = (e, t, r, a, o, _, s, n, l) => (_finish_heap_swap = Module._finish_heap_swap = wasmExports.finish_heap_swap)(e, t, r, a, o, _, s, n, l), _OpenPipeStream = Module._OpenPipeStream = (e, t) => (_OpenPipeStream = Module._OpenPipeStream = wasmExports.OpenPipeStream)(e, t), _pg_is_ascii = Module._pg_is_ascii = (e) => (_pg_is_ascii = Module._pg_is_ascii = wasmExports.pg_is_ascii)(e), _ClosePipeStream = Module._ClosePipeStream = (e) => (_ClosePipeStream = Module._ClosePipeStream = wasmExports.ClosePipeStream)(e), _BeginCopyFrom = Module._BeginCopyFrom = (e, t, r, a, o, _, s, n) => (_BeginCopyFrom = Module._BeginCopyFrom = wasmExports.BeginCopyFrom)(e, t, r, a, o, _, s, n), _EndCopyFrom = Module._EndCopyFrom = (e) => (_EndCopyFrom = Module._EndCopyFrom = wasmExports.EndCopyFrom)(e), _ProcessCopyOptions = Module._ProcessCopyOptions = (e, t, r, a) => (_ProcessCopyOptions = Module._ProcessCopyOptions = wasmExports.ProcessCopyOptions)(e, t, r, a), _pg_strtoint64 = Module._pg_strtoint64 = (e) => (_pg_strtoint64 = Module._pg_strtoint64 = wasmExports.pg_strtoint64)(e), _CopyFromErrorCallback = Module._CopyFromErrorCallback = (e) => (_CopyFromErrorCallback = Module._CopyFromErrorCallback = wasmExports.CopyFromErrorCallback)(e), _bms_make_singleton = Module._bms_make_singleton = (e) => (_bms_make_singleton = Module._bms_make_singleton = wasmExports.bms_make_singleton)(e), _ExecInitRangeTable = Module._ExecInitRangeTable = (e, t, r, a) => (_ExecInitRangeTable = Module._ExecInitRangeTable = wasmExports.ExecInitRangeTable)(e, t, r, a), _ExecInitResultRelation = Module._ExecInitResultRelation = (e, t, r) => (_ExecInitResultRelation = Module._ExecInitResultRelation = wasmExports.ExecInitResultRelation)(e, t, r), _ExecInitQual = Module._ExecInitQual = (e, t) => (_ExecInitQual = Module._ExecInitQual = wasmExports.ExecInitQual)(e, t), _NextCopyFrom = Module._NextCopyFrom = (e, t, r, a) => (_NextCopyFrom = Module._NextCopyFrom = wasmExports.NextCopyFrom)(e, t, r, a), _ExecCloseResultRelations = Module._ExecCloseResultRelations = (e) => (_ExecCloseResultRelations = Module._ExecCloseResultRelations = wasmExports.ExecCloseResultRelations)(e), _ExecCloseRangeTableRelations = Module._ExecCloseRangeTableRelations = (e) => (_ExecCloseRangeTableRelations = Module._ExecCloseRangeTableRelations = wasmExports.ExecCloseRangeTableRelations)(e), _ExecConstraints = Module._ExecConstraints = (e, t, r) => (_ExecConstraints = Module._ExecConstraints = wasmExports.ExecConstraints)(e, t, r), _ExecInsertIndexTuples = Module._ExecInsertIndexTuples = (e, t, r, a, o, _, s, n) => (_ExecInsertIndexTuples = Module._ExecInsertIndexTuples = wasmExports.ExecInsertIndexTuples)(e, t, r, a, o, _, s, n), _build_column_default = Module._build_column_default = (e, t) => (_build_column_default = Module._build_column_default = wasmExports.build_column_default)(e, t), _ExecInitExpr = Module._ExecInitExpr = (e, t) => (_ExecInitExpr = Module._ExecInitExpr = wasmExports.ExecInitExpr)(e, t), _fileno = Module._fileno = (e) => (_fileno = Module._fileno = wasmExports.fileno)(e), _NextCopyFromRawFields = Module._NextCopyFromRawFields = (e, t, r) => (_NextCopyFromRawFields = Module._NextCopyFromRawFields = wasmExports.NextCopyFromRawFields)(e, t, r), _resetStringInfo = Module._resetStringInfo = (e) => (_resetStringInfo = Module._resetStringInfo = wasmExports.resetStringInfo)(e), _pq_copymsgbytes = Module._pq_copymsgbytes = (e, t, r) => (_pq_copymsgbytes = Module._pq_copymsgbytes = wasmExports.pq_copymsgbytes)(e, t, r), _pg_encoding_max_length = Module._pg_encoding_max_length = (e) => (_pg_encoding_max_length = Module._pg_encoding_max_length = wasmExports.pg_encoding_max_length)(e), _tolower = Module._tolower = (e) => (_tolower = Module._tolower = wasmExports.tolower)(e), _pg_plan_query = Module._pg_plan_query = (e, t, r, a) => (_pg_plan_query = Module._pg_plan_query = wasmExports.pg_plan_query)(e, t, r, a), _PushCopiedSnapshot = Module._PushCopiedSnapshot = (e) => (_PushCopiedSnapshot = Module._PushCopiedSnapshot = wasmExports.PushCopiedSnapshot)(e), _UpdateActiveSnapshotCommandId = Module._UpdateActiveSnapshotCommandId = () => (_UpdateActiveSnapshotCommandId = Module._UpdateActiveSnapshotCommandId = wasmExports.UpdateActiveSnapshotCommandId)(), _CreateQueryDesc = Module._CreateQueryDesc = (e, t, r, a, o, _, s, n) => (_CreateQueryDesc = Module._CreateQueryDesc = wasmExports.CreateQueryDesc)(e, t, r, a, o, _, s, n), _ExecutorStart = Module._ExecutorStart = (e, t) => (_ExecutorStart = Module._ExecutorStart = wasmExports.ExecutorStart)(e, t), _ExecutorFinish = Module._ExecutorFinish = (e) => (_ExecutorFinish = Module._ExecutorFinish = wasmExports.ExecutorFinish)(e), _ExecutorEnd = Module._ExecutorEnd = (e) => (_ExecutorEnd = Module._ExecutorEnd = wasmExports.ExecutorEnd)(e), _FreeQueryDesc = Module._FreeQueryDesc = (e) => (_FreeQueryDesc = Module._FreeQueryDesc = wasmExports.FreeQueryDesc)(e), _ExecutorRun = Module._ExecutorRun = (e, t, r) => (_ExecutorRun = Module._ExecutorRun = wasmExports.ExecutorRun)(e, t, r), _pg_server_to_any = Module._pg_server_to_any = (e, t, r) => (_pg_server_to_any = Module._pg_server_to_any = wasmExports.pg_server_to_any)(e, t, r), _fwrite = Module._fwrite = (e, t, r, a) => (_fwrite = Module._fwrite = wasmExports.fwrite)(e, t, r, a), _CreateTableAsRelExists = Module._CreateTableAsRelExists = (e) => (_CreateTableAsRelExists = Module._CreateTableAsRelExists = wasmExports.CreateTableAsRelExists)(e), _QueryRewrite = Module._QueryRewrite = (e) => (_QueryRewrite = Module._QueryRewrite = wasmExports.QueryRewrite)(e), _DefineRelation = Module._DefineRelation = (e, t, r, a, o, _) => (_DefineRelation = Module._DefineRelation = wasmExports.DefineRelation)(e, t, r, a, o, _), _rmdir = Module._rmdir = (e) => (_rmdir = Module._rmdir = wasmExports.rmdir)(e), _atof = Module._atof = (e) => (_atof = Module._atof = wasmExports.atof)(e), _int8in = Module._int8in = (e) => (_int8in = Module._int8in = wasmExports.int8in)(e), _oidin = Module._oidin = (e) => (_oidin = Module._oidin = wasmExports.oidin)(e), _RemoveObjects = Module._RemoveObjects = (e) => (_RemoveObjects = Module._RemoveObjects = wasmExports.RemoveObjects)(e), _GetCommandTagName = Module._GetCommandTagName = (e) => (_GetCommandTagName = Module._GetCommandTagName = wasmExports.GetCommandTagName)(e), _NewExplainState = Module._NewExplainState = () => (_NewExplainState = Module._NewExplainState = wasmExports.NewExplainState)(), _ExplainBeginOutput = Module._ExplainBeginOutput = (e) => (_ExplainBeginOutput = Module._ExplainBeginOutput = wasmExports.ExplainBeginOutput)(e), _ExplainEndOutput = Module._ExplainEndOutput = (e) => (_ExplainEndOutput = Module._ExplainEndOutput = wasmExports.ExplainEndOutput)(e), _ExplainOpenGroup = Module._ExplainOpenGroup = (e, t, r, a) => (_ExplainOpenGroup = Module._ExplainOpenGroup = wasmExports.ExplainOpenGroup)(e, t, r, a), _ExplainPrintPlan = Module._ExplainPrintPlan = (e, t) => (_ExplainPrintPlan = Module._ExplainPrintPlan = wasmExports.ExplainPrintPlan)(e, t), _ExplainIndentText = Module._ExplainIndentText = (e) => (_ExplainIndentText = Module._ExplainIndentText = wasmExports.ExplainIndentText)(e), _ExplainPropertyInteger = Module._ExplainPropertyInteger = (e, t, r, a) => (_ExplainPropertyInteger = Module._ExplainPropertyInteger = wasmExports.ExplainPropertyInteger)(e, t, r, a), _ExplainCloseGroup = Module._ExplainCloseGroup = (e, t, r, a) => (_ExplainCloseGroup = Module._ExplainCloseGroup = wasmExports.ExplainCloseGroup)(e, t, r, a), _ExplainPropertyFloat = Module._ExplainPropertyFloat = (e, t, r, a, o) => (_ExplainPropertyFloat = Module._ExplainPropertyFloat = wasmExports.ExplainPropertyFloat)(e, t, r, a, o), _ExplainPrintTriggers = Module._ExplainPrintTriggers = (e, t) => (_ExplainPrintTriggers = Module._ExplainPrintTriggers = wasmExports.ExplainPrintTriggers)(e, t), _ExplainPropertyUInteger = Module._ExplainPropertyUInteger = (e, t, r, a) => (_ExplainPropertyUInteger = Module._ExplainPropertyUInteger = wasmExports.ExplainPropertyUInteger)(e, t, r, a), _ExplainPropertyText = Module._ExplainPropertyText = (e, t, r) => (_ExplainPropertyText = Module._ExplainPropertyText = wasmExports.ExplainPropertyText)(e, t, r), _GetConfigOptionByName = Module._GetConfigOptionByName = (e, t, r) => (_GetConfigOptionByName = Module._GetConfigOptionByName = wasmExports.GetConfigOptionByName)(e, t, r), _ExplainPrintJITSummary = Module._ExplainPrintJITSummary = (e, t) => (_ExplainPrintJITSummary = Module._ExplainPrintJITSummary = wasmExports.ExplainPrintJITSummary)(e, t), _ExplainPropertyBool = Module._ExplainPropertyBool = (e, t, r) => (_ExplainPropertyBool = Module._ExplainPropertyBool = wasmExports.ExplainPropertyBool)(e, t, r), _InstrEndLoop = Module._InstrEndLoop = (e) => (_InstrEndLoop = Module._InstrEndLoop = wasmExports.InstrEndLoop)(e), _appendStringInfoSpaces = Module._appendStringInfoSpaces = (e, t) => (_appendStringInfoSpaces = Module._appendStringInfoSpaces = wasmExports.appendStringInfoSpaces)(e, t), _ExplainQueryText = Module._ExplainQueryText = (e, t) => (_ExplainQueryText = Module._ExplainQueryText = wasmExports.ExplainQueryText)(e, t), _ExplainQueryParameters = Module._ExplainQueryParameters = (e, t, r) => (_ExplainQueryParameters = Module._ExplainQueryParameters = wasmExports.ExplainQueryParameters)(e, t, r), _get_func_namespace = Module._get_func_namespace = (e) => (_get_func_namespace = Module._get_func_namespace = wasmExports.get_func_namespace)(e), _GetExplainExtensionId = Module._GetExplainExtensionId = (e) => (_GetExplainExtensionId = Module._GetExplainExtensionId = wasmExports.GetExplainExtensionId)(e), _GetExplainExtensionState = Module._GetExplainExtensionState = (e, t) => (_GetExplainExtensionState = Module._GetExplainExtensionState = wasmExports.GetExplainExtensionState)(e, t), _SetExplainExtensionState = Module._SetExplainExtensionState = (e, t, r) => (_SetExplainExtensionState = Module._SetExplainExtensionState = wasmExports.SetExplainExtensionState)(e, t, r), _RegisterExtensionExplainOption = Module._RegisterExtensionExplainOption = (e, t) => (_RegisterExtensionExplainOption = Module._RegisterExtensionExplainOption = wasmExports.RegisterExtensionExplainOption)(e, t), _get_function_sibling_type = Module._get_function_sibling_type = (e, t) => (_get_function_sibling_type = Module._get_function_sibling_type = wasmExports.get_function_sibling_type)(e, t), _GetSysCacheHashValue = Module._GetSysCacheHashValue = (e, t, r, a, o) => (_GetSysCacheHashValue = Module._GetSysCacheHashValue = wasmExports.GetSysCacheHashValue)(e, t, r, a, o), _CreateSchemaCommand = Module._CreateSchemaCommand = (e, t, r, a) => (_CreateSchemaCommand = Module._CreateSchemaCommand = wasmExports.CreateSchemaCommand)(e, t, r, a), _get_rel_type_id = Module._get_rel_type_id = (e) => (_get_rel_type_id = Module._get_rel_type_id = wasmExports.get_rel_type_id)(e), _set_config_option = Module._set_config_option = (e, t, r, a, o, _, s, n) => (_set_config_option = Module._set_config_option = wasmExports.set_config_option)(e, t, r, a, o, _, s, n), _pg_any_to_server = Module._pg_any_to_server = (e, t, r) => (_pg_any_to_server = Module._pg_any_to_server = wasmExports.pg_any_to_server)(e, t, r), _DirectFunctionCall4Coll = Module._DirectFunctionCall4Coll = (e, t, r, a, o, _) => (_DirectFunctionCall4Coll = Module._DirectFunctionCall4Coll = wasmExports.DirectFunctionCall4Coll)(e, t, r, a, o, _), _replace_text = Module._replace_text = (e) => (_replace_text = Module._replace_text = wasmExports.replace_text)(e), _ProcessUtility = Module._ProcessUtility = (e, t, r, a, o, _, s, n) => (_ProcessUtility = Module._ProcessUtility = wasmExports.ProcessUtility)(e, t, r, a, o, _, s, n), _CleanQuerytext = Module._CleanQuerytext = (e, t, r) => (_CleanQuerytext = Module._CleanQuerytext = wasmExports.CleanQuerytext)(e, t, r), _list_delete_cell = Module._list_delete_cell = (e, t) => (_list_delete_cell = Module._list_delete_cell = wasmExports.list_delete_cell)(e, t), _GetForeignDataWrapper = Module._GetForeignDataWrapper = (e) => (_GetForeignDataWrapper = Module._GetForeignDataWrapper = wasmExports.GetForeignDataWrapper)(e), _CreateExprContext = Module._CreateExprContext = (e) => (_CreateExprContext = Module._CreateExprContext = wasmExports.CreateExprContext)(e), _EnsurePortalSnapshotExists = Module._EnsurePortalSnapshotExists = () => (_EnsurePortalSnapshotExists = Module._EnsurePortalSnapshotExists = wasmExports.EnsurePortalSnapshotExists)(), _CheckIndexCompatible = Module._CheckIndexCompatible = (e, t, r, a, o) => (_CheckIndexCompatible = Module._CheckIndexCompatible = wasmExports.CheckIndexCompatible)(e, t, r, a, o), _get_opfamily_member_for_cmptype = Module._get_opfamily_member_for_cmptype = (e, t, r, a) => (_get_opfamily_member_for_cmptype = Module._get_opfamily_member_for_cmptype = wasmExports.get_opfamily_member_for_cmptype)(e, t, r, a), _pgstat_count_truncate = Module._pgstat_count_truncate = (e) => (_pgstat_count_truncate = Module._pgstat_count_truncate = wasmExports.pgstat_count_truncate)(e), _SPI_connect = Module._SPI_connect = () => (_SPI_connect = Module._SPI_connect = wasmExports.SPI_connect)(), _SPI_exec = Module._SPI_exec = (e, t) => (_SPI_exec = Module._SPI_exec = wasmExports.SPI_exec)(e, t), _SPI_execute = Module._SPI_execute = (e, t, r) => (_SPI_execute = Module._SPI_execute = wasmExports.SPI_execute)(e, t, r), _SPI_getvalue = Module._SPI_getvalue = (e, t, r) => (_SPI_getvalue = Module._SPI_getvalue = wasmExports.SPI_getvalue)(e, t, r), _generate_operator_clause = Module._generate_operator_clause = (e, t, r, a, o, _) => (_generate_operator_clause = Module._generate_operator_clause = wasmExports.generate_operator_clause)(e, t, r, a, o, _), _SPI_finish = Module._SPI_finish = () => (_SPI_finish = Module._SPI_finish = wasmExports.SPI_finish)(), _CreateTransientRelDestReceiver = Module._CreateTransientRelDestReceiver = (e) => (_CreateTransientRelDestReceiver = Module._CreateTransientRelDestReceiver = wasmExports.CreateTransientRelDestReceiver)(e), _MemoryContextSetIdentifier = Module._MemoryContextSetIdentifier = (e, t) => (_MemoryContextSetIdentifier = Module._MemoryContextSetIdentifier = wasmExports.MemoryContextSetIdentifier)(e, t), _checkExprHasSubLink = Module._checkExprHasSubLink = (e) => (_checkExprHasSubLink = Module._checkExprHasSubLink = wasmExports.checkExprHasSubLink)(e), _MemoryContextSetParent = Module._MemoryContextSetParent = (e, t) => (_MemoryContextSetParent = Module._MemoryContextSetParent = wasmExports.MemoryContextSetParent)(e, t), _SetTuplestoreDestReceiverParams = Module._SetTuplestoreDestReceiverParams = (e, t, r, a, o, _) => (_SetTuplestoreDestReceiverParams = Module._SetTuplestoreDestReceiverParams = wasmExports.SetTuplestoreDestReceiverParams)(e, t, r, a, o, _), _tuplestore_rescan = Module._tuplestore_rescan = (e) => (_tuplestore_rescan = Module._tuplestore_rescan = wasmExports.tuplestore_rescan)(e), _MemoryContextDeleteChildren = Module._MemoryContextDeleteChildren = (e) => (_MemoryContextDeleteChildren = Module._MemoryContextDeleteChildren = wasmExports.MemoryContextDeleteChildren)(e), _makeParamList = Module._makeParamList = (e) => (_makeParamList = Module._makeParamList = wasmExports.makeParamList)(e), _ReleaseCachedPlan = Module._ReleaseCachedPlan = (e, t) => (_ReleaseCachedPlan = Module._ReleaseCachedPlan = wasmExports.ReleaseCachedPlan)(e, t), _bms_equal = Module._bms_equal = (e, t) => (_bms_equal = Module._bms_equal = wasmExports.bms_equal)(e, t), _func_volatile = Module._func_volatile = (e) => (_func_volatile = Module._func_volatile = wasmExports.func_volatile)(e), _register_label_provider = Module._register_label_provider = (e, t) => (_register_label_provider = Module._register_label_provider = wasmExports.register_label_provider)(e, t), _DefineSequence = Module._DefineSequence = (e, t, r) => (_DefineSequence = Module._DefineSequence = wasmExports.DefineSequence)(e, t, r), _AlterSequence = Module._AlterSequence = (e, t, r) => (_AlterSequence = Module._AlterSequence = wasmExports.AlterSequence)(e, t, r), _nextval = Module._nextval = (e) => (_nextval = Module._nextval = wasmExports.nextval)(e), _textToQualifiedNameList = Module._textToQualifiedNameList = (e) => (_textToQualifiedNameList = Module._textToQualifiedNameList = wasmExports.textToQualifiedNameList)(e), _nextval_internal = Module._nextval_internal = (e, t) => (_nextval_internal = Module._nextval_internal = wasmExports.nextval_internal)(e, t), _setval_oid = Module._setval_oid = (e) => (_setval_oid = Module._setval_oid = wasmExports.setval_oid)(e), _tuplestore_gettupleslot = Module._tuplestore_gettupleslot = (e, t, r, a) => (_tuplestore_gettupleslot = Module._tuplestore_gettupleslot = wasmExports.tuplestore_gettupleslot)(e, t, r, a), _list_delete = Module._list_delete = (e, t) => (_list_delete = Module._list_delete = wasmExports.list_delete)(e, t), _tuplestore_end = Module._tuplestore_end = (e) => (_tuplestore_end = Module._tuplestore_end = wasmExports.tuplestore_end)(e), _list_append_unique = Module._list_append_unique = (e, t) => (_list_append_unique = Module._list_append_unique = wasmExports.list_append_unique)(e, t), _contain_mutable_functions = Module._contain_mutable_functions = (e) => (_contain_mutable_functions = Module._contain_mutable_functions = wasmExports.contain_mutable_functions)(e), _RemoveRelations = Module._RemoveRelations = (e) => (_RemoveRelations = Module._RemoveRelations = wasmExports.RemoveRelations)(e), _ExecuteTruncateGuts = Module._ExecuteTruncateGuts = (e, t, r, a, o, _) => (_ExecuteTruncateGuts = Module._ExecuteTruncateGuts = wasmExports.ExecuteTruncateGuts)(e, t, r, a, o, _), _InitResultRelInfo = Module._InitResultRelInfo = (e, t, r, a, o) => (_InitResultRelInfo = Module._InitResultRelInfo = wasmExports.InitResultRelInfo)(e, t, r, a, o), _AlterTable = Module._AlterTable = (e, t, r) => (_AlterTable = Module._AlterTable = wasmExports.AlterTable)(e, t, r), _ExecStoreAllNullTuple = Module._ExecStoreAllNullTuple = (e) => (_ExecStoreAllNullTuple = Module._ExecStoreAllNullTuple = wasmExports.ExecStoreAllNullTuple)(e), _ChangeVarNodes = Module._ChangeVarNodes = (e, t, r, a) => (_ChangeVarNodes = Module._ChangeVarNodes = wasmExports.ChangeVarNodes)(e, t, r, a), _tuplestore_begin_heap = Module._tuplestore_begin_heap = (e, t, r) => (_tuplestore_begin_heap = Module._tuplestore_begin_heap = wasmExports.tuplestore_begin_heap)(e, t, r), _tuplestore_puttupleslot = Module._tuplestore_puttupleslot = (e, t) => (_tuplestore_puttupleslot = Module._tuplestore_puttupleslot = wasmExports.tuplestore_puttupleslot)(e, t), _ExecForceStoreHeapTuple = Module._ExecForceStoreHeapTuple = (e, t, r) => (_ExecForceStoreHeapTuple = Module._ExecForceStoreHeapTuple = wasmExports.ExecForceStoreHeapTuple)(e, t, r), _ExecUpdateLockMode = Module._ExecUpdateLockMode = (e, t) => (_ExecUpdateLockMode = Module._ExecUpdateLockMode = wasmExports.ExecUpdateLockMode)(e, t), _bms_copy = Module._bms_copy = (e) => (_bms_copy = Module._bms_copy = wasmExports.bms_copy)(e), _strtoint = Module._strtoint = (e, t, r) => (_strtoint = Module._strtoint = wasmExports.strtoint)(e, t, r), _strtod = Module._strtod = (e, t) => (_strtod = Module._strtod = wasmExports.strtod)(e, t), _plain_crypt_verify = Module._plain_crypt_verify = (e, t, r, a) => (_plain_crypt_verify = Module._plain_crypt_verify = wasmExports.plain_crypt_verify)(e, t, r, a), _ProcessConfigFile = Module._ProcessConfigFile = (e) => (_ProcessConfigFile = Module._ProcessConfigFile = wasmExports.ProcessConfigFile)(e), _pgl_exit = Module._pgl_exit = (e) => (_pgl_exit = Module._pgl_exit = wasmExports.pgl_exit)(e), _dsa_get_handle = Module._dsa_get_handle = (e) => (_dsa_get_handle = Module._dsa_get_handle = wasmExports.dsa_get_handle)(e), _pg_strncasecmp = Module._pg_strncasecmp = (e, t, r) => (_pg_strncasecmp = Module._pg_strncasecmp = wasmExports.pg_strncasecmp)(e, t, r), _ExecReScan = Module._ExecReScan = (e) => (_ExecReScan = Module._ExecReScan = wasmExports.ExecReScan)(e), _ExecAsyncResponse = Module._ExecAsyncResponse = (e) => (_ExecAsyncResponse = Module._ExecAsyncResponse = wasmExports.ExecAsyncResponse)(e), _ExecAsyncRequestDone = Module._ExecAsyncRequestDone = (e, t) => (_ExecAsyncRequestDone = Module._ExecAsyncRequestDone = wasmExports.ExecAsyncRequestDone)(e, t), _ExecAsyncRequestPending = Module._ExecAsyncRequestPending = (e) => (_ExecAsyncRequestPending = Module._ExecAsyncRequestPending = wasmExports.ExecAsyncRequestPending)(e), _ExprEvalPushStep = Module._ExprEvalPushStep = (e, t) => (_ExprEvalPushStep = Module._ExprEvalPushStep = wasmExports.ExprEvalPushStep)(e, t), _ExecInitExprWithParams = Module._ExecInitExprWithParams = (e, t) => (_ExecInitExprWithParams = Module._ExecInitExprWithParams = wasmExports.ExecInitExprWithParams)(e, t), _ExecInitExprList = Module._ExecInitExprList = (e, t) => (_ExecInitExprList = Module._ExecInitExprList = wasmExports.ExecInitExprList)(e, t), _ExecGetResultType = Module._ExecGetResultType = (e) => (_ExecGetResultType = Module._ExecGetResultType = wasmExports.ExecGetResultType)(e), _ExecInitExtraTupleSlot = Module._ExecInitExtraTupleSlot = (e, t, r) => (_ExecInitExtraTupleSlot = Module._ExecInitExtraTupleSlot = wasmExports.ExecInitExtraTupleSlot)(e, t, r), _MakeExpandedObjectReadOnlyInternal = Module._MakeExpandedObjectReadOnlyInternal = (e) => (_MakeExpandedObjectReadOnlyInternal = Module._MakeExpandedObjectReadOnlyInternal = wasmExports.MakeExpandedObjectReadOnlyInternal)(e), _tuplesort_puttupleslot = Module._tuplesort_puttupleslot = (e, t) => (_tuplesort_puttupleslot = Module._tuplesort_puttupleslot = wasmExports.tuplesort_puttupleslot)(e, t), _ArrayGetNItems = Module._ArrayGetNItems = (e, t) => (_ArrayGetNItems = Module._ArrayGetNItems = wasmExports.ArrayGetNItems)(e, t), _expanded_record_fetch_tupdesc = Module._expanded_record_fetch_tupdesc = (e) => (_expanded_record_fetch_tupdesc = Module._expanded_record_fetch_tupdesc = wasmExports.expanded_record_fetch_tupdesc)(e), _expanded_record_fetch_field = Module._expanded_record_fetch_field = (e, t, r) => (_expanded_record_fetch_field = Module._expanded_record_fetch_field = wasmExports.expanded_record_fetch_field)(e, t, r), _json_validate = Module._json_validate = (e, t, r) => (_json_validate = Module._json_validate = wasmExports.json_validate)(e, t, r), _JsonbValueToJsonb = Module._JsonbValueToJsonb = (e) => (_JsonbValueToJsonb = Module._JsonbValueToJsonb = wasmExports.JsonbValueToJsonb)(e), _numeric_out = Module._numeric_out = (e) => (_numeric_out = Module._numeric_out = wasmExports.numeric_out)(e), _boolout = Module._boolout = (e) => (_boolout = Module._boolout = wasmExports.boolout)(e), _bool_int4 = Module._bool_int4 = (e) => (_bool_int4 = Module._bool_int4 = wasmExports.bool_int4)(e), _lookup_rowtype_tupdesc_domain = Module._lookup_rowtype_tupdesc_domain = (e, t, r) => (_lookup_rowtype_tupdesc_domain = Module._lookup_rowtype_tupdesc_domain = wasmExports.lookup_rowtype_tupdesc_domain)(e, t, r), _MemoryContextGetParent = Module._MemoryContextGetParent = (e) => (_MemoryContextGetParent = Module._MemoryContextGetParent = wasmExports.MemoryContextGetParent)(e), _DeleteExpandedObject = Module._DeleteExpandedObject = (e) => (_DeleteExpandedObject = Module._DeleteExpandedObject = wasmExports.DeleteExpandedObject)(e), _ExecFindJunkAttributeInTlist = Module._ExecFindJunkAttributeInTlist = (e, t) => (_ExecFindJunkAttributeInTlist = Module._ExecFindJunkAttributeInTlist = wasmExports.ExecFindJunkAttributeInTlist)(e, t), _standard_ExecutorStart = Module._standard_ExecutorStart = (e, t) => (_standard_ExecutorStart = Module._standard_ExecutorStart = wasmExports.standard_ExecutorStart)(e, t), _ExecInitNode = Module._ExecInitNode = (e, t, r) => (_ExecInitNode = Module._ExecInitNode = wasmExports.ExecInitNode)(e, t, r), _standard_ExecutorRun = Module._standard_ExecutorRun = (e, t, r) => (_standard_ExecutorRun = Module._standard_ExecutorRun = wasmExports.standard_ExecutorRun)(e, t, r), _standard_ExecutorFinish = Module._standard_ExecutorFinish = (e) => (_standard_ExecutorFinish = Module._standard_ExecutorFinish = wasmExports.standard_ExecutorFinish)(e), _standard_ExecutorEnd = Module._standard_ExecutorEnd = (e) => (_standard_ExecutorEnd = Module._standard_ExecutorEnd = wasmExports.standard_ExecutorEnd)(e), _ExecEndNode = Module._ExecEndNode = (e) => (_ExecEndNode = Module._ExecEndNode = wasmExports.ExecEndNode)(e), _InstrAlloc = Module._InstrAlloc = (e, t, r) => (_InstrAlloc = Module._InstrAlloc = wasmExports.InstrAlloc)(e, t, r), _MakeTupleTableSlot = Module._MakeTupleTableSlot = (e, t) => (_MakeTupleTableSlot = Module._MakeTupleTableSlot = wasmExports.MakeTupleTableSlot)(e, t), _ExecWithCheckOptions = Module._ExecWithCheckOptions = (e, t, r, a) => (_ExecWithCheckOptions = Module._ExecWithCheckOptions = wasmExports.ExecWithCheckOptions)(e, t, r, a), _get_typlenbyval = Module._get_typlenbyval = (e, t, r) => (_get_typlenbyval = Module._get_typlenbyval = wasmExports.get_typlenbyval)(e, t, r), _ExecInitScanTupleSlot = Module._ExecInitScanTupleSlot = (e, t, r, a) => (_ExecInitScanTupleSlot = Module._ExecInitScanTupleSlot = wasmExports.ExecInitScanTupleSlot)(e, t, r, a), _InputFunctionCall = Module._InputFunctionCall = (e, t, r, a) => (_InputFunctionCall = Module._InputFunctionCall = wasmExports.InputFunctionCall)(e, t, r, a), _list_delete_ptr = Module._list_delete_ptr = (e, t) => (_list_delete_ptr = Module._list_delete_ptr = wasmExports.list_delete_ptr)(e, t), _FreeExprContext = Module._FreeExprContext = (e, t) => (_FreeExprContext = Module._FreeExprContext = wasmExports.FreeExprContext)(e, t), _ExecAssignExprContext = Module._ExecAssignExprContext = (e, t) => (_ExecAssignExprContext = Module._ExecAssignExprContext = wasmExports.ExecAssignExprContext)(e, t), _ExecAssignProjectionInfo = Module._ExecAssignProjectionInfo = (e, t) => (_ExecAssignProjectionInfo = Module._ExecAssignProjectionInfo = wasmExports.ExecAssignProjectionInfo)(e, t), _ExecOpenScanRelation = Module._ExecOpenScanRelation = (e, t, r) => (_ExecOpenScanRelation = Module._ExecOpenScanRelation = wasmExports.ExecOpenScanRelation)(e, t, r), _bms_intersect = Module._bms_intersect = (e, t) => (_bms_intersect = Module._bms_intersect = wasmExports.bms_intersect)(e, t), _GetAttributeByName = Module._GetAttributeByName = (e, t, r) => (_GetAttributeByName = Module._GetAttributeByName = wasmExports.GetAttributeByName)(e, t, r), _GetAttributeByNum = Module._GetAttributeByNum = (e, t, r) => (_GetAttributeByNum = Module._GetAttributeByNum = wasmExports.GetAttributeByNum)(e, t, r), _ExecGetReturningSlot = Module._ExecGetReturningSlot = (e, t) => (_ExecGetReturningSlot = Module._ExecGetReturningSlot = wasmExports.ExecGetReturningSlot)(e, t), _ExecGetResultRelCheckAsUser = Module._ExecGetResultRelCheckAsUser = (e, t) => (_ExecGetResultRelCheckAsUser = Module._ExecGetResultRelCheckAsUser = wasmExports.ExecGetResultRelCheckAsUser)(e, t), _MemoryContextRegisterResetCallback = Module._MemoryContextRegisterResetCallback = (e, t) => (_MemoryContextRegisterResetCallback = Module._MemoryContextRegisterResetCallback = wasmExports.MemoryContextRegisterResetCallback)(e, t), _cached_function_compile = Module._cached_function_compile = (e, t, r, a, o, _, s) => (_cached_function_compile = Module._cached_function_compile = wasmExports.cached_function_compile)(e, t, r, a, o, _, s), _InstrUpdateTupleCount = Module._InstrUpdateTupleCount = (e, t) => (_InstrUpdateTupleCount = Module._InstrUpdateTupleCount = wasmExports.InstrUpdateTupleCount)(e, t), _tuplesort_begin_heap = Module._tuplesort_begin_heap = (e, t, r, a, o, _, s, n, l) => (_tuplesort_begin_heap = Module._tuplesort_begin_heap = wasmExports.tuplesort_begin_heap)(e, t, r, a, o, _, s, n, l), _AggCheckCallContext = Module._AggCheckCallContext = (e, t) => (_AggCheckCallContext = Module._AggCheckCallContext = wasmExports.AggCheckCallContext)(e, t), _tuplesort_gettupleslot = Module._tuplesort_gettupleslot = (e, t, r, a, o) => (_tuplesort_gettupleslot = Module._tuplesort_gettupleslot = wasmExports.tuplesort_gettupleslot)(e, t, r, a, o), _bms_del_members = Module._bms_del_members = (e, t) => (_bms_del_members = Module._bms_del_members = wasmExports.bms_del_members)(e, t), _AddWaitEventToSet = Module._AddWaitEventToSet = (e, t, r, a, o) => (_AddWaitEventToSet = Module._AddWaitEventToSet = wasmExports.AddWaitEventToSet)(e, t, r, a, o), _GetNumRegisteredWaitEvents = Module._GetNumRegisteredWaitEvents = (e) => (_GetNumRegisteredWaitEvents = Module._GetNumRegisteredWaitEvents = wasmExports.GetNumRegisteredWaitEvents)(e), _tuplestore_clear = Module._tuplestore_clear = (e) => (_tuplestore_clear = Module._tuplestore_clear = wasmExports.tuplestore_clear)(e), _get_attstatsslot = Module._get_attstatsslot = (e, t, r, a, o) => (_get_attstatsslot = Module._get_attstatsslot = wasmExports.get_attstatsslot)(e, t, r, a, o), _free_attstatsslot = Module._free_attstatsslot = (e) => (_free_attstatsslot = Module._free_attstatsslot = wasmExports.free_attstatsslot)(e), _SharedFileSetInit = Module._SharedFileSetInit = (e, t) => (_SharedFileSetInit = Module._SharedFileSetInit = wasmExports.SharedFileSetInit)(e, t), _SharedFileSetAttach = Module._SharedFileSetAttach = (e, t) => (_SharedFileSetAttach = Module._SharedFileSetAttach = wasmExports.SharedFileSetAttach)(e, t), _tuplesort_reset = Module._tuplesort_reset = (e) => (_tuplesort_reset = Module._tuplesort_reset = wasmExports.tuplesort_reset)(e), _pairingheap_first = Module._pairingheap_first = (e) => (_pairingheap_first = Module._pairingheap_first = wasmExports.pairingheap_first)(e), _bms_nonempty_difference = Module._bms_nonempty_difference = (e, t) => (_bms_nonempty_difference = Module._bms_nonempty_difference = wasmExports.bms_nonempty_difference)(e, t), _datum_image_hash = Module._datum_image_hash = (e, t, r) => (_datum_image_hash = Module._datum_image_hash = wasmExports.datum_image_hash)(e, t, r), _tuplesort_rescan = Module._tuplesort_rescan = (e) => (_tuplesort_rescan = Module._tuplesort_rescan = wasmExports.tuplesort_rescan)(e), _WinGetPartitionLocalMemory = Module._WinGetPartitionLocalMemory = (e, t) => (_WinGetPartitionLocalMemory = Module._WinGetPartitionLocalMemory = wasmExports.WinGetPartitionLocalMemory)(e, t), _WinGetCurrentPosition = Module._WinGetCurrentPosition = (e) => (_WinGetCurrentPosition = Module._WinGetCurrentPosition = wasmExports.WinGetCurrentPosition)(e), _WinGetPartitionRowCount = Module._WinGetPartitionRowCount = (e) => (_WinGetPartitionRowCount = Module._WinGetPartitionRowCount = wasmExports.WinGetPartitionRowCount)(e), _WinGetFuncArgInPartition = Module._WinGetFuncArgInPartition = (e, t, r, a, o, _, s) => (_WinGetFuncArgInPartition = Module._WinGetFuncArgInPartition = wasmExports.WinGetFuncArgInPartition)(e, t, r, a, o, _, s), _WinGetFuncArgCurrent = Module._WinGetFuncArgCurrent = (e, t, r) => (_WinGetFuncArgCurrent = Module._WinGetFuncArgCurrent = wasmExports.WinGetFuncArgCurrent)(e, t, r), _SPI_connect_ext = Module._SPI_connect_ext = (e) => (_SPI_connect_ext = Module._SPI_connect_ext = wasmExports.SPI_connect_ext)(e), _SPI_commit = Module._SPI_commit = () => (_SPI_commit = Module._SPI_commit = wasmExports.SPI_commit)(), _CopyErrorData = Module._CopyErrorData = () => (_CopyErrorData = Module._CopyErrorData = wasmExports.CopyErrorData)(), _FlushErrorState = Module._FlushErrorState = () => (_FlushErrorState = Module._FlushErrorState = wasmExports.FlushErrorState)(), _ReThrowError = Module._ReThrowError = (e) => (_ReThrowError = Module._ReThrowError = wasmExports.ReThrowError)(e), _SPI_commit_and_chain = Module._SPI_commit_and_chain = () => (_SPI_commit_and_chain = Module._SPI_commit_and_chain = wasmExports.SPI_commit_and_chain)(), _SPI_rollback = Module._SPI_rollback = () => (_SPI_rollback = Module._SPI_rollback = wasmExports.SPI_rollback)(), _SPI_rollback_and_chain = Module._SPI_rollback_and_chain = () => (_SPI_rollback_and_chain = Module._SPI_rollback_and_chain = wasmExports.SPI_rollback_and_chain)(), _SPI_freetuptable = Module._SPI_freetuptable = (e) => (_SPI_freetuptable = Module._SPI_freetuptable = wasmExports.SPI_freetuptable)(e), _SPI_execute_extended = Module._SPI_execute_extended = (e, t) => (_SPI_execute_extended = Module._SPI_execute_extended = wasmExports.SPI_execute_extended)(e, t), _SPI_execute_plan = Module._SPI_execute_plan = (e, t, r, a, o) => (_SPI_execute_plan = Module._SPI_execute_plan = wasmExports.SPI_execute_plan)(e, t, r, a, o), _SPI_execp = Module._SPI_execp = (e, t, r, a) => (_SPI_execp = Module._SPI_execp = wasmExports.SPI_execp)(e, t, r, a), _SPI_execute_plan_extended = Module._SPI_execute_plan_extended = (e, t) => (_SPI_execute_plan_extended = Module._SPI_execute_plan_extended = wasmExports.SPI_execute_plan_extended)(e, t), _SPI_execute_plan_with_paramlist = Module._SPI_execute_plan_with_paramlist = (e, t, r, a) => (_SPI_execute_plan_with_paramlist = Module._SPI_execute_plan_with_paramlist = wasmExports.SPI_execute_plan_with_paramlist)(e, t, r, a), _SPI_execute_with_args = Module._SPI_execute_with_args = (e, t, r, a, o, _, s) => (_SPI_execute_with_args = Module._SPI_execute_with_args = wasmExports.SPI_execute_with_args)(e, t, r, a, o, _, s), _SPI_prepare = Module._SPI_prepare = (e, t, r) => (_SPI_prepare = Module._SPI_prepare = wasmExports.SPI_prepare)(e, t, r), _SPI_prepare_extended = Module._SPI_prepare_extended = (e, t) => (_SPI_prepare_extended = Module._SPI_prepare_extended = wasmExports.SPI_prepare_extended)(e, t), _SPI_keepplan = Module._SPI_keepplan = (e) => (_SPI_keepplan = Module._SPI_keepplan = wasmExports.SPI_keepplan)(e), _SPI_freeplan = Module._SPI_freeplan = (e) => (_SPI_freeplan = Module._SPI_freeplan = wasmExports.SPI_freeplan)(e), _SPI_copytuple = Module._SPI_copytuple = (e) => (_SPI_copytuple = Module._SPI_copytuple = wasmExports.SPI_copytuple)(e), _SPI_returntuple = Module._SPI_returntuple = (e, t) => (_SPI_returntuple = Module._SPI_returntuple = wasmExports.SPI_returntuple)(e, t), _SPI_modifytuple = Module._SPI_modifytuple = (e, t, r, a, o, _) => (_SPI_modifytuple = Module._SPI_modifytuple = wasmExports.SPI_modifytuple)(e, t, r, a, o, _), _SPI_fnumber = Module._SPI_fnumber = (e, t) => (_SPI_fnumber = Module._SPI_fnumber = wasmExports.SPI_fnumber)(e, t), _SPI_fname = Module._SPI_fname = (e, t) => (_SPI_fname = Module._SPI_fname = wasmExports.SPI_fname)(e, t), _SPI_getbinval = Module._SPI_getbinval = (e, t, r, a) => (_SPI_getbinval = Module._SPI_getbinval = wasmExports.SPI_getbinval)(e, t, r, a), _SPI_gettype = Module._SPI_gettype = (e, t) => (_SPI_gettype = Module._SPI_gettype = wasmExports.SPI_gettype)(e, t), _SPI_gettypeid = Module._SPI_gettypeid = (e, t) => (_SPI_gettypeid = Module._SPI_gettypeid = wasmExports.SPI_gettypeid)(e, t), _SPI_getrelname = Module._SPI_getrelname = (e) => (_SPI_getrelname = Module._SPI_getrelname = wasmExports.SPI_getrelname)(e), _SPI_palloc = Module._SPI_palloc = (e) => (_SPI_palloc = Module._SPI_palloc = wasmExports.SPI_palloc)(e), _SPI_repalloc = Module._SPI_repalloc = (e, t) => (_SPI_repalloc = Module._SPI_repalloc = wasmExports.SPI_repalloc)(e, t), _SPI_pfree = Module._SPI_pfree = (e) => (_SPI_pfree = Module._SPI_pfree = wasmExports.SPI_pfree)(e), _SPI_datumTransfer = Module._SPI_datumTransfer = (e, t, r) => (_SPI_datumTransfer = Module._SPI_datumTransfer = wasmExports.SPI_datumTransfer)(e, t, r), _datumTransfer = Module._datumTransfer = (e, t, r) => (_datumTransfer = Module._datumTransfer = wasmExports.datumTransfer)(e, t, r), _SPI_cursor_open_with_args = Module._SPI_cursor_open_with_args = (e, t, r, a, o, _, s, n) => (_SPI_cursor_open_with_args = Module._SPI_cursor_open_with_args = wasmExports.SPI_cursor_open_with_args)(e, t, r, a, o, _, s, n), _SPI_cursor_open_with_paramlist = Module._SPI_cursor_open_with_paramlist = (e, t, r, a) => (_SPI_cursor_open_with_paramlist = Module._SPI_cursor_open_with_paramlist = wasmExports.SPI_cursor_open_with_paramlist)(e, t, r, a), _SPI_cursor_parse_open = Module._SPI_cursor_parse_open = (e, t, r) => (_SPI_cursor_parse_open = Module._SPI_cursor_parse_open = wasmExports.SPI_cursor_parse_open)(e, t, r), _SPI_cursor_find = Module._SPI_cursor_find = (e) => (_SPI_cursor_find = Module._SPI_cursor_find = wasmExports.SPI_cursor_find)(e), _SPI_cursor_fetch = Module._SPI_cursor_fetch = (e, t, r) => (_SPI_cursor_fetch = Module._SPI_cursor_fetch = wasmExports.SPI_cursor_fetch)(e, t, r), _SPI_scroll_cursor_fetch = Module._SPI_scroll_cursor_fetch = (e, t, r) => (_SPI_scroll_cursor_fetch = Module._SPI_scroll_cursor_fetch = wasmExports.SPI_scroll_cursor_fetch)(e, t, r), _SPI_scroll_cursor_move = Module._SPI_scroll_cursor_move = (e, t, r) => (_SPI_scroll_cursor_move = Module._SPI_scroll_cursor_move = wasmExports.SPI_scroll_cursor_move)(e, t, r), _SPI_cursor_close = Module._SPI_cursor_close = (e) => (_SPI_cursor_close = Module._SPI_cursor_close = wasmExports.SPI_cursor_close)(e), _SPI_plan_is_valid = Module._SPI_plan_is_valid = (e) => (_SPI_plan_is_valid = Module._SPI_plan_is_valid = wasmExports.SPI_plan_is_valid)(e), _SPI_result_code_string = Module._SPI_result_code_string = (e) => (_SPI_result_code_string = Module._SPI_result_code_string = wasmExports.SPI_result_code_string)(e), _SPI_plan_get_plan_sources = Module._SPI_plan_get_plan_sources = (e) => (_SPI_plan_get_plan_sources = Module._SPI_plan_get_plan_sources = wasmExports.SPI_plan_get_plan_sources)(e), _SPI_plan_get_cached_plan = Module._SPI_plan_get_cached_plan = (e) => (_SPI_plan_get_cached_plan = Module._SPI_plan_get_cached_plan = wasmExports.SPI_plan_get_cached_plan)(e), _SPI_register_relation = Module._SPI_register_relation = (e) => (_SPI_register_relation = Module._SPI_register_relation = wasmExports.SPI_register_relation)(e), _create_queryEnv = Module._create_queryEnv = () => (_create_queryEnv = Module._create_queryEnv = wasmExports.create_queryEnv)(), _register_ENR = Module._register_ENR = (e, t) => (_register_ENR = Module._register_ENR = wasmExports.register_ENR)(e, t), _SPI_register_trigger_data = Module._SPI_register_trigger_data = (e) => (_SPI_register_trigger_data = Module._SPI_register_trigger_data = wasmExports.SPI_register_trigger_data)(e), _tuplestore_tuple_count = Module._tuplestore_tuple_count = (e) => (_tuplestore_tuple_count = Module._tuplestore_tuple_count = wasmExports.tuplestore_tuple_count)(e), _GetUserMapping = Module._GetUserMapping = (e, t) => (_GetUserMapping = Module._GetUserMapping = wasmExports.GetUserMapping)(e, t), _GetForeignTable = Module._GetForeignTable = (e) => (_GetForeignTable = Module._GetForeignTable = wasmExports.GetForeignTable)(e), _GetForeignColumnOptions = Module._GetForeignColumnOptions = (e, t) => (_GetForeignColumnOptions = Module._GetForeignColumnOptions = wasmExports.GetForeignColumnOptions)(e, t), _initClosestMatch = Module._initClosestMatch = (e, t, r) => (_initClosestMatch = Module._initClosestMatch = wasmExports.initClosestMatch)(e, t, r), _updateClosestMatch = Module._updateClosestMatch = (e, t) => (_updateClosestMatch = Module._updateClosestMatch = wasmExports.updateClosestMatch)(e, t), _getClosestMatch = Module._getClosestMatch = (e) => (_getClosestMatch = Module._getClosestMatch = wasmExports.getClosestMatch)(e), _GetExistingLocalJoinPath = Module._GetExistingLocalJoinPath = (e) => (_GetExistingLocalJoinPath = Module._GetExistingLocalJoinPath = wasmExports.GetExistingLocalJoinPath)(e), _pathkeys_contained_in = Module._pathkeys_contained_in = (e, t) => (_pathkeys_contained_in = Module._pathkeys_contained_in = wasmExports.pathkeys_contained_in)(e, t), _bloom_create = Module._bloom_create = (e, t, r) => (_bloom_create = Module._bloom_create = wasmExports.bloom_create)(e, t, r), _bloom_free = Module._bloom_free = (e) => (_bloom_free = Module._bloom_free = wasmExports.bloom_free)(e), _bloom_add_element = Module._bloom_add_element = (e, t, r) => (_bloom_add_element = Module._bloom_add_element = wasmExports.bloom_add_element)(e, t, r), _bloom_lacks_element = Module._bloom_lacks_element = (e, t, r) => (_bloom_lacks_element = Module._bloom_lacks_element = wasmExports.bloom_lacks_element)(e, t, r), _bloom_prop_bits_set = Module._bloom_prop_bits_set = (e) => (_bloom_prop_bits_set = Module._bloom_prop_bits_set = wasmExports.bloom_prop_bits_set)(e), _dshash_create = Module._dshash_create = (e, t, r) => (_dshash_create = Module._dshash_create = wasmExports.dshash_create)(e, t, r), _dshash_attach = Module._dshash_attach = (e, t, r, a) => (_dshash_attach = Module._dshash_attach = wasmExports.dshash_attach)(e, t, r, a), _dshash_detach = Module._dshash_detach = (e) => (_dshash_detach = Module._dshash_detach = wasmExports.dshash_detach)(e), _dshash_destroy = Module._dshash_destroy = (e) => (_dshash_destroy = Module._dshash_destroy = wasmExports.dshash_destroy)(e), _dshash_get_hash_table_handle = Module._dshash_get_hash_table_handle = (e) => (_dshash_get_hash_table_handle = Module._dshash_get_hash_table_handle = wasmExports.dshash_get_hash_table_handle)(e), _dshash_find = Module._dshash_find = (e, t, r) => (_dshash_find = Module._dshash_find = wasmExports.dshash_find)(e, t, r), _dshash_find_or_insert = Module._dshash_find_or_insert = (e, t, r) => (_dshash_find_or_insert = Module._dshash_find_or_insert = wasmExports.dshash_find_or_insert)(e, t, r), _dshash_delete_key = Module._dshash_delete_key = (e, t) => (_dshash_delete_key = Module._dshash_delete_key = wasmExports.dshash_delete_key)(e, t), _dshash_release_lock = Module._dshash_release_lock = (e, t) => (_dshash_release_lock = Module._dshash_release_lock = wasmExports.dshash_release_lock)(e, t), _tag_hash = Module._tag_hash = (e, t) => (_tag_hash = Module._tag_hash = wasmExports.tag_hash)(e, t), _dshash_seq_init = Module._dshash_seq_init = (e, t, r) => (_dshash_seq_init = Module._dshash_seq_init = wasmExports.dshash_seq_init)(e, t, r), _dshash_seq_next = Module._dshash_seq_next = (e) => (_dshash_seq_next = Module._dshash_seq_next = wasmExports.dshash_seq_next)(e), _dshash_seq_term = Module._dshash_seq_term = (e) => (_dshash_seq_term = Module._dshash_seq_term = wasmExports.dshash_seq_term)(e), _dshash_delete_current = Module._dshash_delete_current = (e) => (_dshash_delete_current = Module._dshash_delete_current = wasmExports.dshash_delete_current)(e), _ldexp = Module._ldexp = (e, t) => (_ldexp = Module._ldexp = wasmExports.ldexp)(e, t), _pg_b64_enc_len = Module._pg_b64_enc_len = (e) => (_pg_b64_enc_len = Module._pg_b64_enc_len = wasmExports.pg_b64_enc_len)(e), _pg_b64_encode = Module._pg_b64_encode = (e, t, r, a) => (_pg_b64_encode = Module._pg_b64_encode = wasmExports.pg_b64_encode)(e, t, r, a), _strtol = Module._strtol = (e, t, r) => (_strtol = Module._strtol = wasmExports.strtol)(e, t, r), _gai_strerror = Module._gai_strerror = (e) => (_gai_strerror = Module._gai_strerror = wasmExports.gai_strerror)(e), _socket = Module._socket = (e, t, r) => (_socket = Module._socket = wasmExports.socket)(e, t, r), _pgl_connect = Module._pgl_connect = (e, t, r) => (_pgl_connect = Module._pgl_connect = wasmExports.pgl_connect)(e, t, r), _pgl_send = Module._pgl_send = (e, t, r, a) => (_pgl_send = Module._pgl_send = wasmExports.pgl_send)(e, t, r, a), _pgl_recv = Module._pgl_recv = (e, t, r, a) => (_pgl_recv = Module._pgl_recv = wasmExports.pgl_recv)(e, t, r, a), _be_lo_unlink = Module._be_lo_unlink = (e) => (_be_lo_unlink = Module._be_lo_unlink = wasmExports.be_lo_unlink)(e), _text_to_cstring_buffer = Module._text_to_cstring_buffer = (e, t, r) => (_text_to_cstring_buffer = Module._text_to_cstring_buffer = wasmExports.text_to_cstring_buffer)(e, t, r), _pg_mb2wchar_with_len = Module._pg_mb2wchar_with_len = (e, t, r) => (_pg_mb2wchar_with_len = Module._pg_mb2wchar_with_len = wasmExports.pg_mb2wchar_with_len)(e, t, r), _pg_regcomp = Module._pg_regcomp = (e, t, r, a, o) => (_pg_regcomp = Module._pg_regcomp = wasmExports.pg_regcomp)(e, t, r, a, o), _pg_regerror = Module._pg_regerror = (e, t, r, a) => (_pg_regerror = Module._pg_regerror = wasmExports.pg_regerror)(e, t, r, a), _strcat = Module._strcat = (e, t) => (_strcat = Module._strcat = wasmExports.strcat)(e, t), _pgl_getsockname = Module._pgl_getsockname = (e, t, r) => (_pgl_getsockname = Module._pgl_getsockname = wasmExports.pgl_getsockname)(e, t, r), _pgl_setsockopt = Module._pgl_setsockopt = (e, t, r, a, o) => (_pgl_setsockopt = Module._pgl_setsockopt = wasmExports.pgl_setsockopt)(e, t, r, a, o), _pgl_fcntl = Module._pgl_fcntl = (e, t, r) => (_pgl_fcntl = Module._pgl_fcntl = wasmExports.pgl_fcntl)(e, t, r), _utime = Module._utime = (e, t) => (_utime = Module._utime = wasmExports.utime)(e, t), _pq_buffer_remaining_data = Module._pq_buffer_remaining_data = () => (_pq_buffer_remaining_data = Module._pq_buffer_remaining_data = wasmExports.pq_buffer_remaining_data)(), _pgl_getsockopt = Module._pgl_getsockopt = (e, t, r, a, o) => (_pgl_getsockopt = Module._pgl_getsockopt = wasmExports.pgl_getsockopt)(e, t, r, a, o), _pq_sendtext = Module._pq_sendtext = (e, t, r) => (_pq_sendtext = Module._pq_sendtext = wasmExports.pq_sendtext)(e, t, r), _pq_sendfloat4 = Module._pq_sendfloat4 = (e, t) => (_pq_sendfloat4 = Module._pq_sendfloat4 = wasmExports.pq_sendfloat4)(e, t), _pq_sendfloat8 = Module._pq_sendfloat8 = (e, t) => (_pq_sendfloat8 = Module._pq_sendfloat8 = wasmExports.pq_sendfloat8)(e, t), _pq_begintypsend = Module._pq_begintypsend = (e) => (_pq_begintypsend = Module._pq_begintypsend = wasmExports.pq_begintypsend)(e), _pq_endtypsend = Module._pq_endtypsend = (e) => (_pq_endtypsend = Module._pq_endtypsend = wasmExports.pq_endtypsend)(e), _pq_getmsgfloat4 = Module._pq_getmsgfloat4 = (e) => (_pq_getmsgfloat4 = Module._pq_getmsgfloat4 = wasmExports.pq_getmsgfloat4)(e), _pq_getmsgfloat8 = Module._pq_getmsgfloat8 = (e) => (_pq_getmsgfloat8 = Module._pq_getmsgfloat8 = wasmExports.pq_getmsgfloat8)(e), _pq_getmsgtext = Module._pq_getmsgtext = (e, t, r) => (_pq_getmsgtext = Module._pq_getmsgtext = wasmExports.pq_getmsgtext)(e, t, r), _pg_strtoint32 = Module._pg_strtoint32 = (e) => (_pg_strtoint32 = Module._pg_strtoint32 = wasmExports.pg_strtoint32)(e), _main = Module._main = (e, t) => (_main = Module._main = wasmExports.__main_argc_argv)(e, t), _pgl_getuid = Module._pgl_getuid = () => (_pgl_getuid = Module._pgl_getuid = wasmExports.pgl_getuid)(), _getenv = Module._getenv = (e) => (_getenv = Module._getenv = wasmExports.getenv)(e), _bms_membership = Module._bms_membership = (e) => (_bms_membership = Module._bms_membership = wasmExports.bms_membership)(e), _RegisterExtensibleNodeMethods = Module._RegisterExtensibleNodeMethods = (e) => (_RegisterExtensibleNodeMethods = Module._RegisterExtensibleNodeMethods = wasmExports.RegisterExtensibleNodeMethods)(e), _list_make5_impl = Module._list_make5_impl = (e, t, r, a, o, _) => (_list_make5_impl = Module._list_make5_impl = wasmExports.list_make5_impl)(e, t, r, a, o, _), _GetMemoryChunkContext = Module._GetMemoryChunkContext = (e) => (_GetMemoryChunkContext = Module._GetMemoryChunkContext = wasmExports.GetMemoryChunkContext)(e), _list_insert_nth = Module._list_insert_nth = (e, t, r) => (_list_insert_nth = Module._list_insert_nth = wasmExports.list_insert_nth)(e, t, r), _list_member_ptr = Module._list_member_ptr = (e, t) => (_list_member_ptr = Module._list_member_ptr = wasmExports.list_member_ptr)(e, t), _list_append_unique_ptr = Module._list_append_unique_ptr = (e, t) => (_list_append_unique_ptr = Module._list_append_unique_ptr = wasmExports.list_append_unique_ptr)(e, t), _make_opclause = Module._make_opclause = (e, t, r, a, o, _, s) => (_make_opclause = Module._make_opclause = wasmExports.make_opclause)(e, t, r, a, o, _, s), _exprIsLengthCoercion = Module._exprIsLengthCoercion = (e, t) => (_exprIsLengthCoercion = Module._exprIsLengthCoercion = wasmExports.exprIsLengthCoercion)(e, t), _fix_opfuncids = Module._fix_opfuncids = (e) => (_fix_opfuncids = Module._fix_opfuncids = wasmExports.fix_opfuncids)(e), _outToken = Module._outToken = (e, t) => (_outToken = Module._outToken = wasmExports.outToken)(e, t), _outNode = Module._outNode = (e, t) => (_outNode = Module._outNode = wasmExports.outNode)(e, t), _appendStringInfoStringQuoted = Module._appendStringInfoStringQuoted = (e, t, r) => (_appendStringInfoStringQuoted = Module._appendStringInfoStringQuoted = wasmExports.appendStringInfoStringQuoted)(e, t, r), _EnableQueryId = Module._EnableQueryId = () => (_EnableQueryId = Module._EnableQueryId = wasmExports.EnableQueryId)(), _nodeRead = Module._nodeRead = (e, t) => (_nodeRead = Module._nodeRead = wasmExports.nodeRead)(e, t), _pg_strtok = Module._pg_strtok = (e) => (_pg_strtok = Module._pg_strtok = wasmExports.pg_strtok)(e), _debackslash = Module._debackslash = (e, t) => (_debackslash = Module._debackslash = wasmExports.debackslash)(e, t), _exp2 = Module._exp2 = (e) => (_exp2 = Module._exp2 = wasmExports.exp2)(e), _find_base_rel = Module._find_base_rel = (e, t) => (_find_base_rel = Module._find_base_rel = wasmExports.find_base_rel)(e, t), _add_path = Module._add_path = (e, t) => (_add_path = Module._add_path = wasmExports.add_path)(e, t), _create_sort_path = Module._create_sort_path = (e, t, r, a, o) => (_create_sort_path = Module._create_sort_path = wasmExports.create_sort_path)(e, t, r, a, o), _set_baserel_size_estimates = Module._set_baserel_size_estimates = (e, t) => (_set_baserel_size_estimates = Module._set_baserel_size_estimates = wasmExports.set_baserel_size_estimates)(e, t), _get_func_support = Module._get_func_support = (e) => (_get_func_support = Module._get_func_support = wasmExports.get_func_support)(e), _clauselist_selectivity = Module._clauselist_selectivity = (e, t, r, a, o) => (_clauselist_selectivity = Module._clauselist_selectivity = wasmExports.clauselist_selectivity)(e, t, r, a, o), _get_tablespace_page_costs = Module._get_tablespace_page_costs = (e, t, r) => (_get_tablespace_page_costs = Module._get_tablespace_page_costs = wasmExports.get_tablespace_page_costs)(e, t, r), _cost_qual_eval = Module._cost_qual_eval = (e, t, r) => (_cost_qual_eval = Module._cost_qual_eval = wasmExports.cost_qual_eval)(e, t, r), _pull_varnos = Module._pull_varnos = (e, t) => (_pull_varnos = Module._pull_varnos = wasmExports.pull_varnos)(e, t), _estimate_num_groups = Module._estimate_num_groups = (e, t, r, a, o) => (_estimate_num_groups = Module._estimate_num_groups = wasmExports.estimate_num_groups)(e, t, r, a, o), _cost_sort = Module._cost_sort = (e, t, r, a, o, _, s, n, l, d) => (_cost_sort = Module._cost_sort = wasmExports.cost_sort)(e, t, r, a, o, _, s, n, l, d), _get_sortgrouplist_exprs = Module._get_sortgrouplist_exprs = (e, t) => (_get_sortgrouplist_exprs = Module._get_sortgrouplist_exprs = wasmExports.get_sortgrouplist_exprs)(e, t), _make_restrictinfo = Module._make_restrictinfo = (e, t, r, a, o, _, s, n, l, d) => (_make_restrictinfo = Module._make_restrictinfo = wasmExports.make_restrictinfo)(e, t, r, a, o, _, s, n, l, d), _setup_eclass_member_iterator = Module._setup_eclass_member_iterator = (e, t, r) => (_setup_eclass_member_iterator = Module._setup_eclass_member_iterator = wasmExports.setup_eclass_member_iterator)(e, t, r), _eclass_member_iterator_next = Module._eclass_member_iterator_next = (e) => (_eclass_member_iterator_next = Module._eclass_member_iterator_next = wasmExports.eclass_member_iterator_next)(e), _remove_nulling_relids = Module._remove_nulling_relids = (e, t, r) => (_remove_nulling_relids = Module._remove_nulling_relids = wasmExports.remove_nulling_relids)(e, t, r), _get_mergejoin_opfamilies = Module._get_mergejoin_opfamilies = (e) => (_get_mergejoin_opfamilies = Module._get_mergejoin_opfamilies = wasmExports.get_mergejoin_opfamilies)(e), _generate_implied_equalities_for_column = Module._generate_implied_equalities_for_column = (e, t, r, a, o) => (_generate_implied_equalities_for_column = Module._generate_implied_equalities_for_column = wasmExports.generate_implied_equalities_for_column)(e, t, r, a, o), _eclass_useful_for_merging = Module._eclass_useful_for_merging = (e, t, r) => (_eclass_useful_for_merging = Module._eclass_useful_for_merging = wasmExports.eclass_useful_for_merging)(e, t, r), _join_clause_is_movable_to = Module._join_clause_is_movable_to = (e, t) => (_join_clause_is_movable_to = Module._join_clause_is_movable_to = wasmExports.join_clause_is_movable_to)(e, t), _get_plan_rowmark = Module._get_plan_rowmark = (e, t) => (_get_plan_rowmark = Module._get_plan_rowmark = wasmExports.get_plan_rowmark)(e, t), _is_pseudo_constant_for_index = Module._is_pseudo_constant_for_index = (e, t, r) => (_is_pseudo_constant_for_index = Module._is_pseudo_constant_for_index = wasmExports.is_pseudo_constant_for_index)(e, t, r), _update_mergeclause_eclasses = Module._update_mergeclause_eclasses = (e, t) => (_update_mergeclause_eclasses = Module._update_mergeclause_eclasses = wasmExports.update_mergeclause_eclasses)(e, t), _pull_vars_of_level = Module._pull_vars_of_level = (e, t) => (_pull_vars_of_level = Module._pull_vars_of_level = wasmExports.pull_vars_of_level)(e, t), _find_join_rel = Module._find_join_rel = (e, t) => (_find_join_rel = Module._find_join_rel = wasmExports.find_join_rel)(e, t), _make_canonical_pathkey = Module._make_canonical_pathkey = (e, t, r, a, o) => (_make_canonical_pathkey = Module._make_canonical_pathkey = wasmExports.make_canonical_pathkey)(e, t, r, a, o), _get_sortgroupref_clause_noerr = Module._get_sortgroupref_clause_noerr = (e, t) => (_get_sortgroupref_clause_noerr = Module._get_sortgroupref_clause_noerr = wasmExports.get_sortgroupref_clause_noerr)(e, t), _extract_actual_clauses = Module._extract_actual_clauses = (e, t) => (_extract_actual_clauses = Module._extract_actual_clauses = wasmExports.extract_actual_clauses)(e, t), _tlist_member = Module._tlist_member = (e, t) => (_tlist_member = Module._tlist_member = wasmExports.tlist_member)(e, t), _change_plan_targetlist = Module._change_plan_targetlist = (e, t, r) => (_change_plan_targetlist = Module._change_plan_targetlist = wasmExports.change_plan_targetlist)(e, t, r), _make_foreignscan = Module._make_foreignscan = (e, t, r, a, o, _, s, n) => (_make_foreignscan = Module._make_foreignscan = wasmExports.make_foreignscan)(e, t, r, a, o, _, s, n), _IncrementVarSublevelsUp = Module._IncrementVarSublevelsUp = (e, t, r) => (_IncrementVarSublevelsUp = Module._IncrementVarSublevelsUp = wasmExports.IncrementVarSublevelsUp)(e, t, r), _op_mergejoinable = Module._op_mergejoinable = (e, t) => (_op_mergejoinable = Module._op_mergejoinable = wasmExports.op_mergejoinable)(e, t), _find_nonnullable_rels = Module._find_nonnullable_rels = (e) => (_find_nonnullable_rels = Module._find_nonnullable_rels = wasmExports.find_nonnullable_rels)(e), _standard_planner = Module._standard_planner = (e, t, r, a) => (_standard_planner = Module._standard_planner = wasmExports.standard_planner)(e, t, r, a), _get_relids_in_jointree = Module._get_relids_in_jointree = (e, t, r) => (_get_relids_in_jointree = Module._get_relids_in_jointree = wasmExports.get_relids_in_jointree)(e, t, r), _SS_process_sublinks = Module._SS_process_sublinks = (e, t, r) => (_SS_process_sublinks = Module._SS_process_sublinks = wasmExports.SS_process_sublinks)(e, t, r), _add_new_columns_to_pathtarget = Module._add_new_columns_to_pathtarget = (e, t) => (_add_new_columns_to_pathtarget = Module._add_new_columns_to_pathtarget = wasmExports.add_new_columns_to_pathtarget)(e, t), _get_agg_clause_costs = Module._get_agg_clause_costs = (e, t, r) => (_get_agg_clause_costs = Module._get_agg_clause_costs = wasmExports.get_agg_clause_costs)(e, t, r), _grouping_is_sortable = Module._grouping_is_sortable = (e) => (_grouping_is_sortable = Module._grouping_is_sortable = wasmExports.grouping_is_sortable)(e), _copy_pathtarget = Module._copy_pathtarget = (e) => (_copy_pathtarget = Module._copy_pathtarget = wasmExports.copy_pathtarget)(e), _create_projection_path = Module._create_projection_path = (e, t, r, a) => (_create_projection_path = Module._create_projection_path = wasmExports.create_projection_path)(e, t, r, a), _contain_nonstrict_functions = Module._contain_nonstrict_functions = (e) => (_contain_nonstrict_functions = Module._contain_nonstrict_functions = wasmExports.contain_nonstrict_functions)(e), _get_translated_update_targetlist = Module._get_translated_update_targetlist = (e, t, r, a) => (_get_translated_update_targetlist = Module._get_translated_update_targetlist = wasmExports.get_translated_update_targetlist)(e, t, r, a), _add_row_identity_var = Module._add_row_identity_var = (e, t, r, a) => (_add_row_identity_var = Module._add_row_identity_var = wasmExports.add_row_identity_var)(e, t, r, a), _get_rel_all_updated_cols = Module._get_rel_all_updated_cols = (e, t) => (_get_rel_all_updated_cols = Module._get_rel_all_updated_cols = wasmExports.get_rel_all_updated_cols)(e, t), _get_baserel_parampathinfo = Module._get_baserel_parampathinfo = (e, t, r) => (_get_baserel_parampathinfo = Module._get_baserel_parampathinfo = wasmExports.get_baserel_parampathinfo)(e, t, r), _create_foreignscan_path = Module._create_foreignscan_path = (e, t, r, a, o, _, s, n, l, d, p, m) => (_create_foreignscan_path = Module._create_foreignscan_path = wasmExports.create_foreignscan_path)(e, t, r, a, o, _, s, n, l, d, p, m), _create_foreign_join_path = Module._create_foreign_join_path = (e, t, r, a, o, _, s, n, l, d, p, m) => (_create_foreign_join_path = Module._create_foreign_join_path = wasmExports.create_foreign_join_path)(e, t, r, a, o, _, s, n, l, d, p, m), _create_foreign_upper_path = Module._create_foreign_upper_path = (e, t, r, a, o, _, s, n, l, d, p) => (_create_foreign_upper_path = Module._create_foreign_upper_path = wasmExports.create_foreign_upper_path)(e, t, r, a, o, _, s, n, l, d, p), _adjust_limit_rows_costs = Module._adjust_limit_rows_costs = (e, t, r, a, o) => (_adjust_limit_rows_costs = Module._adjust_limit_rows_costs = wasmExports.adjust_limit_rows_costs)(e, t, r, a, o), _add_to_flat_tlist = Module._add_to_flat_tlist = (e, t) => (_add_to_flat_tlist = Module._add_to_flat_tlist = wasmExports.add_to_flat_tlist)(e, t), _get_fn_expr_variadic = Module._get_fn_expr_variadic = (e) => (_get_fn_expr_variadic = Module._get_fn_expr_variadic = wasmExports.get_fn_expr_variadic)(e), _get_fn_expr_argtype = Module._get_fn_expr_argtype = (e, t) => (_get_fn_expr_argtype = Module._get_fn_expr_argtype = wasmExports.get_fn_expr_argtype)(e, t), _on_shmem_exit = Module._on_shmem_exit = (e, t) => (_on_shmem_exit = Module._on_shmem_exit = wasmExports.on_shmem_exit)(e, t), _pgl_shmdt = Module._pgl_shmdt = (e) => (_pgl_shmdt = Module._pgl_shmdt = wasmExports.pgl_shmdt)(e), _pgl_shmctl = Module._pgl_shmctl = (e, t, r) => (_pgl_shmctl = Module._pgl_shmctl = wasmExports.pgl_shmctl)(e, t, r), _pgl_shmat = Module._pgl_shmat = (e, t, r) => (_pgl_shmat = Module._pgl_shmat = wasmExports.pgl_shmat)(e, t, r), _mmap = Module._mmap = (e, t, r, a, o, _) => (_mmap = Module._mmap = wasmExports.mmap)(e, t, r, a, o, _), _pgl_shmget = Module._pgl_shmget = (e, t, r) => (_pgl_shmget = Module._pgl_shmget = wasmExports.pgl_shmget)(e, t, r), _pgl_munmap = Module._pgl_munmap = (e, t) => (_pgl_munmap = Module._pgl_munmap = wasmExports.pgl_munmap)(e, t), _SignalHandlerForConfigReload = Module._SignalHandlerForConfigReload = (e) => (_SignalHandlerForConfigReload = Module._SignalHandlerForConfigReload = wasmExports.SignalHandlerForConfigReload)(e), _SignalHandlerForShutdownRequest = Module._SignalHandlerForShutdownRequest = (e) => (_SignalHandlerForShutdownRequest = Module._SignalHandlerForShutdownRequest = wasmExports.SignalHandlerForShutdownRequest)(e), _procsignal_sigusr1_handler = Module._procsignal_sigusr1_handler = (e) => (_procsignal_sigusr1_handler = Module._procsignal_sigusr1_handler = wasmExports.procsignal_sigusr1_handler)(e), _RegisterBackgroundWorker = Module._RegisterBackgroundWorker = (e) => (_RegisterBackgroundWorker = Module._RegisterBackgroundWorker = wasmExports.RegisterBackgroundWorker)(e), _WaitForBackgroundWorkerStartup = Module._WaitForBackgroundWorkerStartup = (e, t) => (_WaitForBackgroundWorkerStartup = Module._WaitForBackgroundWorkerStartup = wasmExports.WaitForBackgroundWorkerStartup)(e, t), _open = Module._open = (e, t, r) => (_open = Module._open = wasmExports.open)(e, t, r), _rename = Module._rename = (e, t) => (_rename = Module._rename = wasmExports.rename)(e, t), _GetConfigOption = Module._GetConfigOption = (e, t, r) => (_GetConfigOption = Module._GetConfigOption = wasmExports.GetConfigOption)(e, t, r), _puts = Module._puts = (e) => (_puts = Module._puts = wasmExports.puts)(e), _fopen = Module._fopen = (e, t) => (_fopen = Module._fopen = wasmExports.fopen)(e, t), _fclose = Module._fclose = (e) => (_fclose = Module._fclose = wasmExports.fclose)(e), _fputc = Module._fputc = (e, t) => (_fputc = Module._fputc = wasmExports.fputc)(e, t), _ftello = Module._ftello = (e) => (_ftello = Module._ftello = wasmExports.ftello)(e), _malloc = Module._malloc = (e) => (_malloc = Module._malloc = wasmExports.malloc)(e), _free = Module._free = (e) => (_free = Module._free = wasmExports.free)(e), _realloc = Module._realloc = (e, t) => (_realloc = Module._realloc = wasmExports.realloc)(e, t), _iswprint_l = Module._iswprint_l = (e, t) => (_iswprint_l = Module._iswprint_l = wasmExports.iswprint_l)(e, t), _iswalpha_l = Module._iswalpha_l = (e, t) => (_iswalpha_l = Module._iswalpha_l = wasmExports.iswalpha_l)(e, t), _iswdigit_l = Module._iswdigit_l = (e, t) => (_iswdigit_l = Module._iswdigit_l = wasmExports.iswdigit_l)(e, t), _isdigit_l = Module._isdigit_l = (e, t) => (_isdigit_l = Module._isdigit_l = wasmExports.isdigit_l)(e, t), _iswpunct_l = Module._iswpunct_l = (e, t) => (_iswpunct_l = Module._iswpunct_l = wasmExports.iswpunct_l)(e, t), _iswspace_l = Module._iswspace_l = (e, t) => (_iswspace_l = Module._iswspace_l = wasmExports.iswspace_l)(e, t), _iswlower_l = Module._iswlower_l = (e, t) => (_iswlower_l = Module._iswlower_l = wasmExports.iswlower_l)(e, t), _iswupper_l = Module._iswupper_l = (e, t) => (_iswupper_l = Module._iswupper_l = wasmExports.iswupper_l)(e, t), _pg_ascii_tolower = Module._pg_ascii_tolower = (e) => (_pg_ascii_tolower = Module._pg_ascii_tolower = wasmExports.pg_ascii_tolower)(e), _towlower_l = Module._towlower_l = (e, t) => (_towlower_l = Module._towlower_l = wasmExports.towlower_l)(e, t), _tolower_l = Module._tolower_l = (e, t) => (_tolower_l = Module._tolower_l = wasmExports.tolower_l)(e, t), _towupper_l = Module._towupper_l = (e, t) => (_towupper_l = Module._towupper_l = wasmExports.towupper_l)(e, t), _toupper_l = Module._toupper_l = (e, t) => (_toupper_l = Module._toupper_l = wasmExports.toupper_l)(e, t), _pg_reg_getinitialstate = Module._pg_reg_getinitialstate = (e) => (_pg_reg_getinitialstate = Module._pg_reg_getinitialstate = wasmExports.pg_reg_getinitialstate)(e), _pg_reg_getfinalstate = Module._pg_reg_getfinalstate = (e) => (_pg_reg_getfinalstate = Module._pg_reg_getfinalstate = wasmExports.pg_reg_getfinalstate)(e), _pg_reg_getnumoutarcs = Module._pg_reg_getnumoutarcs = (e, t) => (_pg_reg_getnumoutarcs = Module._pg_reg_getnumoutarcs = wasmExports.pg_reg_getnumoutarcs)(e, t), _pg_reg_getoutarcs = Module._pg_reg_getoutarcs = (e, t, r, a) => (_pg_reg_getoutarcs = Module._pg_reg_getoutarcs = wasmExports.pg_reg_getoutarcs)(e, t, r, a), _pg_reg_getnumcolors = Module._pg_reg_getnumcolors = (e) => (_pg_reg_getnumcolors = Module._pg_reg_getnumcolors = wasmExports.pg_reg_getnumcolors)(e), _pg_reg_colorisbegin = Module._pg_reg_colorisbegin = (e, t) => (_pg_reg_colorisbegin = Module._pg_reg_colorisbegin = wasmExports.pg_reg_colorisbegin)(e, t), _pg_reg_colorisend = Module._pg_reg_colorisend = (e, t) => (_pg_reg_colorisend = Module._pg_reg_colorisend = wasmExports.pg_reg_colorisend)(e, t), _pg_reg_getnumcharacters = Module._pg_reg_getnumcharacters = (e, t) => (_pg_reg_getnumcharacters = Module._pg_reg_getnumcharacters = wasmExports.pg_reg_getnumcharacters)(e, t), _pg_reg_getcharacters = Module._pg_reg_getcharacters = (e, t, r, a) => (_pg_reg_getcharacters = Module._pg_reg_getcharacters = wasmExports.pg_reg_getcharacters)(e, t, r, a), _dsa_pin = Module._dsa_pin = (e) => (_dsa_pin = Module._dsa_pin = wasmExports.dsa_pin)(e), _OutputPluginPrepareWrite = Module._OutputPluginPrepareWrite = (e, t) => (_OutputPluginPrepareWrite = Module._OutputPluginPrepareWrite = wasmExports.OutputPluginPrepareWrite)(e, t), _OutputPluginWrite = Module._OutputPluginWrite = (e, t) => (_OutputPluginWrite = Module._OutputPluginWrite = wasmExports.OutputPluginWrite)(e, t), _array_contains_nulls = Module._array_contains_nulls = (e) => (_array_contains_nulls = Module._array_contains_nulls = wasmExports.array_contains_nulls)(e), _CacheRegisterRelcacheCallback = Module._CacheRegisterRelcacheCallback = (e, t) => (_CacheRegisterRelcacheCallback = Module._CacheRegisterRelcacheCallback = wasmExports.CacheRegisterRelcacheCallback)(e, t), _hash_seq_term = Module._hash_seq_term = (e) => (_hash_seq_term = Module._hash_seq_term = wasmExports.hash_seq_term)(e), _FreeErrorData = Module._FreeErrorData = (e) => (_FreeErrorData = Module._FreeErrorData = wasmExports.FreeErrorData)(e), _RelidByRelfilenumber = Module._RelidByRelfilenumber = (e, t) => (_RelidByRelfilenumber = Module._RelidByRelfilenumber = wasmExports.RelidByRelfilenumber)(e, t), _SnapBuildRestoreSnapshot = Module._SnapBuildRestoreSnapshot = (e, t, r, a) => (_SnapBuildRestoreSnapshot = Module._SnapBuildRestoreSnapshot = wasmExports.SnapBuildRestoreSnapshot)(e, t, r, a), _WaitLatchOrSocket = Module._WaitLatchOrSocket = (e, t, r, a, o) => (_WaitLatchOrSocket = Module._WaitLatchOrSocket = wasmExports.WaitLatchOrSocket)(e, t, r, a, o), _BufFileCreateFileSet = Module._BufFileCreateFileSet = (e, t) => (_BufFileCreateFileSet = Module._BufFileCreateFileSet = wasmExports.BufFileCreateFileSet)(e, t), _BufFileOpenFileSet = Module._BufFileOpenFileSet = (e, t, r, a) => (_BufFileOpenFileSet = Module._BufFileOpenFileSet = wasmExports.BufFileOpenFileSet)(e, t, r, a), _BufFileTell = Module._BufFileTell = (e, t, r) => (_BufFileTell = Module._BufFileTell = wasmExports.BufFileTell)(e, t, r), _ConditionVariablePrepareToSleep = Module._ConditionVariablePrepareToSleep = (e) => (_ConditionVariablePrepareToSleep = Module._ConditionVariablePrepareToSleep = wasmExports.ConditionVariablePrepareToSleep)(e), _get_row_security_policies = Module._get_row_security_policies = (e, t, r, a, o, _, s) => (_get_row_security_policies = Module._get_row_security_policies = wasmExports.get_row_security_policies)(e, t, r, a, o, _, s), _extract_variadic_args = Module._extract_variadic_args = (e, t, r, a, o, _) => (_extract_variadic_args = Module._extract_variadic_args = wasmExports.extract_variadic_args)(e, t, r, a, o, _), _errhidestmt = Module._errhidestmt = (e) => (_errhidestmt = Module._errhidestmt = wasmExports.errhidestmt)(e), _hash_estimate_size = Module._hash_estimate_size = (e, t) => (_hash_estimate_size = Module._hash_estimate_size = wasmExports.hash_estimate_size)(e, t), _ShmemInitHash = Module._ShmemInitHash = (e, t, r, a, o) => (_ShmemInitHash = Module._ShmemInitHash = wasmExports.ShmemInitHash)(e, t, r, a, o), _LockBufHdr = Module._LockBufHdr = (e) => (_LockBufHdr = Module._LockBufHdr = wasmExports.LockBufHdr)(e), _EvictUnpinnedBuffer = Module._EvictUnpinnedBuffer = (e, t) => (_EvictUnpinnedBuffer = Module._EvictUnpinnedBuffer = wasmExports.EvictUnpinnedBuffer)(e, t), _EvictAllUnpinnedBuffers = Module._EvictAllUnpinnedBuffers = (e, t, r) => (_EvictAllUnpinnedBuffers = Module._EvictAllUnpinnedBuffers = wasmExports.EvictAllUnpinnedBuffers)(e, t, r), _EvictRelUnpinnedBuffers = Module._EvictRelUnpinnedBuffers = (e, t, r, a) => (_EvictRelUnpinnedBuffers = Module._EvictRelUnpinnedBuffers = wasmExports.EvictRelUnpinnedBuffers)(e, t, r, a), _have_free_buffer = Module._have_free_buffer = () => (_have_free_buffer = Module._have_free_buffer = wasmExports.have_free_buffer)(), _calloc = Module._calloc = (e, t) => (_calloc = Module._calloc = wasmExports.calloc)(e, t), _BufFileExportFileSet = Module._BufFileExportFileSet = (e) => (_BufFileExportFileSet = Module._BufFileExportFileSet = wasmExports.BufFileExportFileSet)(e), _copy_file = Module._copy_file = (e, t) => (_copy_file = Module._copy_file = wasmExports.copy_file)(e, t), _fdatasync = Module._fdatasync = (e) => (_fdatasync = Module._fdatasync = wasmExports.fdatasync)(e), _truncate = Module._truncate = (e, t) => (_truncate = Module._truncate = wasmExports.truncate)(e, t), _dup = Module._dup = (e) => (_dup = Module._dup = wasmExports.dup)(e), _AcquireExternalFD = Module._AcquireExternalFD = () => (_AcquireExternalFD = Module._AcquireExternalFD = wasmExports.AcquireExternalFD)(), _mkdir = Module._mkdir = (e, t) => (_mkdir = Module._mkdir = wasmExports.mkdir)(e, t), _pgl_popen = Module._pgl_popen = (e, t) => (_pgl_popen = Module._pgl_popen = wasmExports.pgl_popen)(e, t), _pgl_pclose = Module._pgl_pclose = (e) => (_pgl_pclose = Module._pgl_pclose = wasmExports.pgl_pclose)(e), _closedir = Module._closedir = (e) => (_closedir = Module._closedir = wasmExports.closedir)(e), _opendir = Module._opendir = (e) => (_opendir = Module._opendir = wasmExports.opendir)(e), _readdir = Module._readdir = (e) => (_readdir = Module._readdir = wasmExports.readdir)(e), _GetNamedDSMSegment = Module._GetNamedDSMSegment = (e, t, r, a) => (_GetNamedDSMSegment = Module._GetNamedDSMSegment = wasmExports.GetNamedDSMSegment)(e, t, r, a), _pgl_atexit = Module._pgl_atexit = (e) => (_pgl_atexit = Module._pgl_atexit = wasmExports.pgl_atexit)(e), _RequestAddinShmemSpace = Module._RequestAddinShmemSpace = (e) => (_RequestAddinShmemSpace = Module._RequestAddinShmemSpace = wasmExports.RequestAddinShmemSpace)(e), _GetRunningTransactionData = Module._GetRunningTransactionData = () => (_GetRunningTransactionData = Module._GetRunningTransactionData = wasmExports.GetRunningTransactionData)(), _BackendXidGetPid = Module._BackendXidGetPid = (e) => (_BackendXidGetPid = Module._BackendXidGetPid = wasmExports.BackendXidGetPid)(e), _pg_numa_init = Module._pg_numa_init = () => (_pg_numa_init = Module._pg_numa_init = wasmExports.pg_numa_init)(), _sysconf = Module._sysconf = (e) => (_sysconf = Module._sysconf = wasmExports.sysconf)(e), _pg_numa_query_pages = Module._pg_numa_query_pages = (e, t, r, a) => (_pg_numa_query_pages = Module._pg_numa_query_pages = wasmExports.pg_numa_query_pages)(e, t, r, a), _pg_get_shmem_pagesize = Module._pg_get_shmem_pagesize = () => (_pg_get_shmem_pagesize = Module._pg_get_shmem_pagesize = wasmExports.pg_get_shmem_pagesize)(), _pgl_poll = Module._pgl_poll = (e, t, r) => (_pgl_poll = Module._pgl_poll = wasmExports.pgl_poll)(e, t, r), _GetLockmodeName = Module._GetLockmodeName = (e, t) => (_GetLockmodeName = Module._GetLockmodeName = wasmExports.GetLockmodeName)(e, t), _LWLockRegisterTranche = Module._LWLockRegisterTranche = (e, t) => (_LWLockRegisterTranche = Module._LWLockRegisterTranche = wasmExports.LWLockRegisterTranche)(e, t), _GetNamedLWLockTranche = Module._GetNamedLWLockTranche = (e) => (_GetNamedLWLockTranche = Module._GetNamedLWLockTranche = wasmExports.GetNamedLWLockTranche)(e), _LWLockNewTrancheId = Module._LWLockNewTrancheId = () => (_LWLockNewTrancheId = Module._LWLockNewTrancheId = wasmExports.LWLockNewTrancheId)(), _RequestNamedLWLockTranche = Module._RequestNamedLWLockTranche = (e, t) => (_RequestNamedLWLockTranche = Module._RequestNamedLWLockTranche = wasmExports.RequestNamedLWLockTranche)(e, t), _LWLockHeldByMe = Module._LWLockHeldByMe = (e) => (_LWLockHeldByMe = Module._LWLockHeldByMe = wasmExports.LWLockHeldByMe)(e), _ProcessStartupPacket = Module._ProcessStartupPacket = (e, t, r) => (_ProcessStartupPacket = Module._ProcessStartupPacket = wasmExports.ProcessStartupPacket)(e, t, r), _htons = (e) => (_htons = wasmExports.htons)(e), _htonl = (e) => (_htonl = wasmExports.htonl)(e), _pgl_startPGlite = Module._pgl_startPGlite = () => (_pgl_startPGlite = Module._pgl_startPGlite = wasmExports.pgl_startPGlite)(), _pgl_pq_flush = Module._pgl_pq_flush = () => (_pgl_pq_flush = Module._pgl_pq_flush = wasmExports.pgl_pq_flush)(), _pgl_getMyProcPort = Module._pgl_getMyProcPort = () => (_pgl_getMyProcPort = Module._pgl_getMyProcPort = wasmExports.pgl_getMyProcPort)(), _pgl_sendConnData = Module._pgl_sendConnData = () => (_pgl_sendConnData = Module._pgl_sendConnData = wasmExports.pgl_sendConnData)(), _PostgresMainLongJmp = Module._PostgresMainLongJmp = () => (_PostgresMainLongJmp = Module._PostgresMainLongJmp = wasmExports.PostgresMainLongJmp)(), _PostgresMainLoopOnce = Module._PostgresMainLoopOnce = () => (_PostgresMainLoopOnce = Module._PostgresMainLoopOnce = wasmExports.PostgresMainLoopOnce)(), _PostgresSendReadyForQueryIfNecessary = Module._PostgresSendReadyForQueryIfNecessary = () => (_PostgresSendReadyForQueryIfNecessary = Module._PostgresSendReadyForQueryIfNecessary = wasmExports.PostgresSendReadyForQueryIfNecessary)(), _pgl_setPGliteExitStatus = Module._pgl_setPGliteExitStatus = (e) => (_pgl_setPGliteExitStatus = Module._pgl_setPGliteExitStatus = wasmExports.pgl_setPGliteExitStatus)(e), _standard_ProcessUtility = Module._standard_ProcessUtility = (e, t, r, a, o, _, s, n) => (_standard_ProcessUtility = Module._standard_ProcessUtility = wasmExports.standard_ProcessUtility)(e, t, r, a, o, _, s, n), _lookup_ts_dictionary_cache = Module._lookup_ts_dictionary_cache = (e) => (_lookup_ts_dictionary_cache = Module._lookup_ts_dictionary_cache = wasmExports.lookup_ts_dictionary_cache)(e), _get_tsearch_config_filename = Module._get_tsearch_config_filename = (e, t) => (_get_tsearch_config_filename = Module._get_tsearch_config_filename = wasmExports.get_tsearch_config_filename)(e, t), _str_tolower = Module._str_tolower = (e, t, r) => (_str_tolower = Module._str_tolower = wasmExports.str_tolower)(e, t, r), _readstoplist = Module._readstoplist = (e, t, r) => (_readstoplist = Module._readstoplist = wasmExports.readstoplist)(e, t, r), _searchstoplist = Module._searchstoplist = (e, t) => (_searchstoplist = Module._searchstoplist = wasmExports.searchstoplist)(e, t), _tsearch_readline_begin = Module._tsearch_readline_begin = (e, t) => (_tsearch_readline_begin = Module._tsearch_readline_begin = wasmExports.tsearch_readline_begin)(e, t), _tsearch_readline = Module._tsearch_readline = (e) => (_tsearch_readline = Module._tsearch_readline = wasmExports.tsearch_readline)(e), _tsearch_readline_end = Module._tsearch_readline_end = (e) => (_tsearch_readline_end = Module._tsearch_readline_end = wasmExports.tsearch_readline_end)(e), _stringToQualifiedNameList = Module._stringToQualifiedNameList = (e, t) => (_stringToQualifiedNameList = Module._stringToQualifiedNameList = wasmExports.stringToQualifiedNameList)(e, t), _to_tsvector_byid = Module._to_tsvector_byid = (e) => (_to_tsvector_byid = Module._to_tsvector_byid = wasmExports.to_tsvector_byid)(e), _t_isalnum_with_len = Module._t_isalnum_with_len = (e, t) => (_t_isalnum_with_len = Module._t_isalnum_with_len = wasmExports.t_isalnum_with_len)(e, t), _isalnum = Module._isalnum = (e) => (_isalnum = Module._isalnum = wasmExports.isalnum)(e), _t_isalnum_cstr = Module._t_isalnum_cstr = (e) => (_t_isalnum_cstr = Module._t_isalnum_cstr = wasmExports.t_isalnum_cstr)(e), _pg_mblen_unbounded = Module._pg_mblen_unbounded = (e) => (_pg_mblen_unbounded = Module._pg_mblen_unbounded = wasmExports.pg_mblen_unbounded)(e), _get_restriction_variable = Module._get_restriction_variable = (e, t, r, a, o, _) => (_get_restriction_variable = Module._get_restriction_variable = wasmExports.get_restriction_variable)(e, t, r, a, o, _), _pg_mblen_range = Module._pg_mblen_range = (e, t) => (_pg_mblen_range = Module._pg_mblen_range = wasmExports.pg_mblen_range)(e, t), _MemoryContextAllocHuge = Module._MemoryContextAllocHuge = (e, t) => (_MemoryContextAllocHuge = Module._MemoryContextAllocHuge = wasmExports.MemoryContextAllocHuge)(e, t), _fseek = Module._fseek = (e, t, r) => (_fseek = Module._fseek = wasmExports.fseek)(e, t, r), _WaitEventExtensionNew = Module._WaitEventExtensionNew = (e) => (_WaitEventExtensionNew = Module._WaitEventExtensionNew = wasmExports.WaitEventExtensionNew)(e), _pg_popcount64 = Module._pg_popcount64 = (e) => (_pg_popcount64 = Module._pg_popcount64 = wasmExports.pg_popcount64)(e), _expand_array = Module._expand_array = (e, t, r) => (_expand_array = Module._expand_array = wasmExports.expand_array)(e, t, r), _exp = Module._exp = (e) => (_exp = Module._exp = wasmExports.exp)(e), _arraycontsel = Module._arraycontsel = (e) => (_arraycontsel = Module._arraycontsel = wasmExports.arraycontsel)(e), _arraycontjoinsel = Module._arraycontjoinsel = (e) => (_arraycontjoinsel = Module._arraycontjoinsel = wasmExports.arraycontjoinsel)(e), _initArrayResult = Module._initArrayResult = (e, t, r) => (_initArrayResult = Module._initArrayResult = wasmExports.initArrayResult)(e, t, r), _array_create_iterator = Module._array_create_iterator = (e, t, r) => (_array_create_iterator = Module._array_create_iterator = wasmExports.array_create_iterator)(e, t, r), _array_iterate = Module._array_iterate = (e, t, r) => (_array_iterate = Module._array_iterate = wasmExports.array_iterate)(e, t, r), _array_free_iterator = Module._array_free_iterator = (e) => (_array_free_iterator = Module._array_free_iterator = wasmExports.array_free_iterator)(e), _ArrayGetIntegerTypmods = Module._ArrayGetIntegerTypmods = (e, t) => (_ArrayGetIntegerTypmods = Module._ArrayGetIntegerTypmods = wasmExports.ArrayGetIntegerTypmods)(e, t), _boolin = Module._boolin = (e) => (_boolin = Module._boolin = wasmExports.boolin)(e), ___multi3 = Module.___multi3 = (e, t, r, a, o) => (___multi3 = Module.___multi3 = wasmExports.__multi3)(e, t, r, a, o), _cash_cmp = Module._cash_cmp = (e) => (_cash_cmp = Module._cash_cmp = wasmExports.cash_cmp)(e), _int64_to_numeric = Module._int64_to_numeric = (e) => (_int64_to_numeric = Module._int64_to_numeric = wasmExports.int64_to_numeric)(e), _numeric_div = Module._numeric_div = (e) => (_numeric_div = Module._numeric_div = wasmExports.numeric_div)(e), _numeric_round = Module._numeric_round = (e) => (_numeric_round = Module._numeric_round = wasmExports.numeric_round)(e), _numeric_int8 = Module._numeric_int8 = (e) => (_numeric_int8 = Module._numeric_int8 = wasmExports.numeric_int8)(e), _numeric_mul = Module._numeric_mul = (e) => (_numeric_mul = Module._numeric_mul = wasmExports.numeric_mul)(e), _j2date = Module._j2date = (e, t, r, a) => (_j2date = Module._j2date = wasmExports.j2date)(e, t, r, a), _EncodeDateOnly = Module._EncodeDateOnly = (e, t, r) => (_EncodeDateOnly = Module._EncodeDateOnly = wasmExports.EncodeDateOnly)(e, t, r), _EncodeSpecialDate = Module._EncodeSpecialDate = (e, t) => (_EncodeSpecialDate = Module._EncodeSpecialDate = wasmExports.EncodeSpecialDate)(e, t), _date_eq = Module._date_eq = (e) => (_date_eq = Module._date_eq = wasmExports.date_eq)(e), _date_lt = Module._date_lt = (e) => (_date_lt = Module._date_lt = wasmExports.date_lt)(e), _date_le = Module._date_le = (e) => (_date_le = Module._date_le = wasmExports.date_le)(e), _date_gt = Module._date_gt = (e) => (_date_gt = Module._date_gt = wasmExports.date_gt)(e), _date_ge = Module._date_ge = (e) => (_date_ge = Module._date_ge = wasmExports.date_ge)(e), _date_cmp = Module._date_cmp = (e) => (_date_cmp = Module._date_cmp = wasmExports.date_cmp)(e), _date_mi = Module._date_mi = (e) => (_date_mi = Module._date_mi = wasmExports.date_mi)(e), _timestamp2tm = Module._timestamp2tm = (e, t, r, a, o, _) => (_timestamp2tm = Module._timestamp2tm = wasmExports.timestamp2tm)(e, t, r, a, o, _), _time2tm = Module._time2tm = (e, t, r) => (_time2tm = Module._time2tm = wasmExports.time2tm)(e, t, r), _EncodeTimeOnly = Module._EncodeTimeOnly = (e, t, r, a, o, _) => (_EncodeTimeOnly = Module._EncodeTimeOnly = wasmExports.EncodeTimeOnly)(e, t, r, a, o, _), _time_eq = Module._time_eq = (e) => (_time_eq = Module._time_eq = wasmExports.time_eq)(e), _time_lt = Module._time_lt = (e) => (_time_lt = Module._time_lt = wasmExports.time_lt)(e), _time_le = Module._time_le = (e) => (_time_le = Module._time_le = wasmExports.time_le)(e), _time_gt = Module._time_gt = (e) => (_time_gt = Module._time_gt = wasmExports.time_gt)(e), _time_ge = Module._time_ge = (e) => (_time_ge = Module._time_ge = wasmExports.time_ge)(e), _time_cmp = Module._time_cmp = (e) => (_time_cmp = Module._time_cmp = wasmExports.time_cmp)(e), _time_mi_time = Module._time_mi_time = (e) => (_time_mi_time = Module._time_mi_time = wasmExports.time_mi_time)(e), _timetz2tm = Module._timetz2tm = (e, t, r, a) => (_timetz2tm = Module._timetz2tm = wasmExports.timetz2tm)(e, t, r, a), _timetz_cmp = Module._timetz_cmp = (e) => (_timetz_cmp = Module._timetz_cmp = wasmExports.timetz_cmp)(e), _pg_tolower = Module._pg_tolower = (e) => (_pg_tolower = Module._pg_tolower = wasmExports.pg_tolower)(e), _EncodeDateTime = Module._EncodeDateTime = (e, t, r, a, o, _, s) => (_EncodeDateTime = Module._EncodeDateTime = wasmExports.EncodeDateTime)(e, t, r, a, o, _, s), _TransferExpandedObject = Module._TransferExpandedObject = (e, t) => (_TransferExpandedObject = Module._TransferExpandedObject = wasmExports.TransferExpandedObject)(e, t), _forkname_to_number = Module._forkname_to_number = (e) => (_forkname_to_number = Module._forkname_to_number = wasmExports.forkname_to_number)(e), _numeric_lt = Module._numeric_lt = (e) => (_numeric_lt = Module._numeric_lt = wasmExports.numeric_lt)(e), _numeric_abs = Module._numeric_abs = (e) => (_numeric_abs = Module._numeric_abs = wasmExports.numeric_abs)(e), _numeric_add = Module._numeric_add = (e) => (_numeric_add = Module._numeric_add = wasmExports.numeric_add)(e), _numeric_ge = Module._numeric_ge = (e) => (_numeric_ge = Module._numeric_ge = wasmExports.numeric_ge)(e), _err_generic_string = Module._err_generic_string = (e, t) => (_err_generic_string = Module._err_generic_string = wasmExports.err_generic_string)(e, t), _domain_check = Module._domain_check = (e, t, r, a, o) => (_domain_check = Module._domain_check = wasmExports.domain_check)(e, t, r, a, o), _enum_lt = Module._enum_lt = (e) => (_enum_lt = Module._enum_lt = wasmExports.enum_lt)(e), _enum_le = Module._enum_le = (e) => (_enum_le = Module._enum_le = wasmExports.enum_le)(e), _enum_ge = Module._enum_ge = (e) => (_enum_ge = Module._enum_ge = wasmExports.enum_ge)(e), _enum_gt = Module._enum_gt = (e) => (_enum_gt = Module._enum_gt = wasmExports.enum_gt)(e), _enum_cmp = Module._enum_cmp = (e) => (_enum_cmp = Module._enum_cmp = wasmExports.enum_cmp)(e), _make_expanded_record_from_typeid = Module._make_expanded_record_from_typeid = (e, t, r) => (_make_expanded_record_from_typeid = Module._make_expanded_record_from_typeid = wasmExports.make_expanded_record_from_typeid)(e, t, r), _make_expanded_record_from_tupdesc = Module._make_expanded_record_from_tupdesc = (e, t) => (_make_expanded_record_from_tupdesc = Module._make_expanded_record_from_tupdesc = wasmExports.make_expanded_record_from_tupdesc)(e, t), _make_expanded_record_from_exprecord = Module._make_expanded_record_from_exprecord = (e, t) => (_make_expanded_record_from_exprecord = Module._make_expanded_record_from_exprecord = wasmExports.make_expanded_record_from_exprecord)(e, t), _expanded_record_set_tuple = Module._expanded_record_set_tuple = (e, t, r, a) => (_expanded_record_set_tuple = Module._expanded_record_set_tuple = wasmExports.expanded_record_set_tuple)(e, t, r, a), _expanded_record_get_tuple = Module._expanded_record_get_tuple = (e) => (_expanded_record_get_tuple = Module._expanded_record_get_tuple = wasmExports.expanded_record_get_tuple)(e), _deconstruct_expanded_record = Module._deconstruct_expanded_record = (e) => (_deconstruct_expanded_record = Module._deconstruct_expanded_record = wasmExports.deconstruct_expanded_record)(e), _expanded_record_lookup_field = Module._expanded_record_lookup_field = (e, t, r) => (_expanded_record_lookup_field = Module._expanded_record_lookup_field = wasmExports.expanded_record_lookup_field)(e, t, r), _expanded_record_set_field_internal = Module._expanded_record_set_field_internal = (e, t, r, a, o, _) => (_expanded_record_set_field_internal = Module._expanded_record_set_field_internal = wasmExports.expanded_record_set_field_internal)(e, t, r, a, o, _), _expanded_record_set_fields = Module._expanded_record_set_fields = (e, t, r, a) => (_expanded_record_set_fields = Module._expanded_record_set_fields = wasmExports.expanded_record_set_fields)(e, t, r, a), _float4in_internal = Module._float4in_internal = (e, t, r, a, o) => (_float4in_internal = Module._float4in_internal = wasmExports.float4in_internal)(e, t, r, a, o), _strtof = Module._strtof = (e, t) => (_strtof = Module._strtof = wasmExports.strtof)(e, t), _float_to_shortest_decimal_buf = Module._float_to_shortest_decimal_buf = (e, t) => (_float_to_shortest_decimal_buf = Module._float_to_shortest_decimal_buf = wasmExports.float_to_shortest_decimal_buf)(e, t), _float8in = Module._float8in = (e) => (_float8in = Module._float8in = wasmExports.float8in)(e), _float8in_internal = Module._float8in_internal = (e, t, r, a, o) => (_float8in_internal = Module._float8in_internal = wasmExports.float8in_internal)(e, t, r, a, o), _float8out = Module._float8out = (e) => (_float8out = Module._float8out = wasmExports.float8out)(e), _float8out_internal = Module._float8out_internal = (e) => (_float8out_internal = Module._float8out_internal = wasmExports.float8out_internal)(e), _float8pl = Module._float8pl = (e) => (_float8pl = Module._float8pl = wasmExports.float8pl)(e), _float4_cmp_internal = Module._float4_cmp_internal = (e, t) => (_float4_cmp_internal = Module._float4_cmp_internal = wasmExports.float4_cmp_internal)(e, t), _btfloat4cmp = Module._btfloat4cmp = (e) => (_btfloat4cmp = Module._btfloat4cmp = wasmExports.btfloat4cmp)(e), _btfloat8cmp = Module._btfloat8cmp = (e) => (_btfloat8cmp = Module._btfloat8cmp = wasmExports.btfloat8cmp)(e), _dtoi4 = Module._dtoi4 = (e) => (_dtoi4 = Module._dtoi4 = wasmExports.dtoi4)(e), _dtoi2 = Module._dtoi2 = (e) => (_dtoi2 = Module._dtoi2 = wasmExports.dtoi2)(e), _cbrt = Module._cbrt = (e) => (_cbrt = Module._cbrt = wasmExports.cbrt)(e), _dexp = Module._dexp = (e) => (_dexp = Module._dexp = wasmExports.dexp)(e), _log10 = Module._log10 = (e) => (_log10 = Module._log10 = wasmExports.log10)(e), _dacos = Module._dacos = (e) => (_dacos = Module._dacos = wasmExports.dacos)(e), _acos = Module._acos = (e) => (_acos = Module._acos = wasmExports.acos)(e), _dasin = Module._dasin = (e) => (_dasin = Module._dasin = wasmExports.dasin)(e), _asin = Module._asin = (e) => (_asin = Module._asin = wasmExports.asin)(e), _datan = Module._datan = (e) => (_datan = Module._datan = wasmExports.datan)(e), _atan = Module._atan = (e) => (_atan = Module._atan = wasmExports.atan)(e), _datan2 = Module._datan2 = (e) => (_datan2 = Module._datan2 = wasmExports.datan2)(e), _atan2 = Module._atan2 = (e, t) => (_atan2 = Module._atan2 = wasmExports.atan2)(e, t), _dcos = Module._dcos = (e) => (_dcos = Module._dcos = wasmExports.dcos)(e), _cos = Module._cos = (e) => (_cos = Module._cos = wasmExports.cos)(e), _dcot = Module._dcot = (e) => (_dcot = Module._dcot = wasmExports.dcot)(e), _tan = Module._tan = (e) => (_tan = Module._tan = wasmExports.tan)(e), _dsin = Module._dsin = (e) => (_dsin = Module._dsin = wasmExports.dsin)(e), _sin = Module._sin = (e) => (_sin = Module._sin = wasmExports.sin)(e), _dtan = Module._dtan = (e) => (_dtan = Module._dtan = wasmExports.dtan)(e), _fmod = Module._fmod = (e, t) => (_fmod = Module._fmod = wasmExports.fmod)(e, t), _degrees = Module._degrees = (e) => (_degrees = Module._degrees = wasmExports.degrees)(e), _dpi = Module._dpi = (e) => (_dpi = Module._dpi = wasmExports.dpi)(e), _radians = Module._radians = (e) => (_radians = Module._radians = wasmExports.radians)(e), _sinh = Module._sinh = (e) => (_sinh = Module._sinh = wasmExports.sinh)(e), _cosh = Module._cosh = (e) => (_cosh = Module._cosh = wasmExports.cosh)(e), _tanh = Module._tanh = (e) => (_tanh = Module._tanh = wasmExports.tanh)(e), _asinh = Module._asinh = (e) => (_asinh = Module._asinh = wasmExports.asinh)(e), _acosh = Module._acosh = (e) => (_acosh = Module._acosh = wasmExports.acosh)(e), _atanh = Module._atanh = (e) => (_atanh = Module._atanh = wasmExports.atanh)(e), _float8_accum = Module._float8_accum = (e) => (_float8_accum = Module._float8_accum = wasmExports.float8_accum)(e), _float8_stddev_pop = Module._float8_stddev_pop = (e) => (_float8_stddev_pop = Module._float8_stddev_pop = wasmExports.float8_stddev_pop)(e), _float8_stddev_samp = Module._float8_stddev_samp = (e) => (_float8_stddev_samp = Module._float8_stddev_samp = wasmExports.float8_stddev_samp)(e), _asc_tolower = Module._asc_tolower = (e, t) => (_asc_tolower = Module._asc_tolower = wasmExports.asc_tolower)(e, t), _pg_strfold = Module._pg_strfold = (e, t, r, a, o) => (_pg_strfold = Module._pg_strfold = wasmExports.pg_strfold)(e, t, r, a, o), _numeric_power = Module._numeric_power = (e) => (_numeric_power = Module._numeric_power = wasmExports.numeric_power)(e), _dtoi8 = Module._dtoi8 = (e) => (_dtoi8 = Module._dtoi8 = wasmExports.dtoi8)(e), _int8out = Module._int8out = (e) => (_int8out = Module._int8out = wasmExports.int8out)(e), _fseeko = Module._fseeko = (e, t, r) => (_fseeko = Module._fseeko = wasmExports.fseeko)(e, t, r), _int4in = Module._int4in = (e) => (_int4in = Module._int4in = wasmExports.int4in)(e), _int4_bool = Module._int4_bool = (e) => (_int4_bool = Module._int4_bool = wasmExports.int4_bool)(e), _int8pl = Module._int8pl = (e) => (_int8pl = Module._int8pl = wasmExports.int8pl)(e), _int84 = Module._int84 = (e) => (_int84 = Module._int84 = wasmExports.int84)(e), _int82 = Module._int82 = (e) => (_int82 = Module._int82 = wasmExports.int82)(e), _json_in = Module._json_in = (e) => (_json_in = Module._json_in = wasmExports.json_in)(e), _EncodeSpecialTimestamp = Module._EncodeSpecialTimestamp = (e, t) => (_EncodeSpecialTimestamp = Module._EncodeSpecialTimestamp = wasmExports.EncodeSpecialTimestamp)(e, t), _pushJsonbValue = Module._pushJsonbValue = (e, t, r) => (_pushJsonbValue = Module._pushJsonbValue = wasmExports.pushJsonbValue)(e, t, r), _numeric_int2 = Module._numeric_int2 = (e) => (_numeric_int2 = Module._numeric_int2 = wasmExports.numeric_int2)(e), _numeric_int4 = Module._numeric_int4 = (e) => (_numeric_int4 = Module._numeric_int4 = wasmExports.numeric_int4)(e), _numeric_float4 = Module._numeric_float4 = (e) => (_numeric_float4 = Module._numeric_float4 = wasmExports.numeric_float4)(e), _numeric_normalize = Module._numeric_normalize = (e) => (_numeric_normalize = Module._numeric_normalize = wasmExports.numeric_normalize)(e), _numeric_cmp = Module._numeric_cmp = (e) => (_numeric_cmp = Module._numeric_cmp = wasmExports.numeric_cmp)(e), _numeric_eq = Module._numeric_eq = (e) => (_numeric_eq = Module._numeric_eq = wasmExports.numeric_eq)(e), _hash_numeric = Module._hash_numeric = (e) => (_hash_numeric = Module._hash_numeric = wasmExports.hash_numeric)(e), _hash_numeric_extended = Module._hash_numeric_extended = (e) => (_hash_numeric_extended = Module._hash_numeric_extended = wasmExports.hash_numeric_extended)(e), _int2_numeric = Module._int2_numeric = (e) => (_int2_numeric = Module._int2_numeric = wasmExports.int2_numeric)(e), _int4_numeric = Module._int4_numeric = (e) => (_int4_numeric = Module._int4_numeric = wasmExports.int4_numeric)(e), _int8_numeric = Module._int8_numeric = (e) => (_int8_numeric = Module._int8_numeric = wasmExports.int8_numeric)(e), _float4_numeric = Module._float4_numeric = (e) => (_float4_numeric = Module._float4_numeric = wasmExports.float4_numeric)(e), _float8_numeric = Module._float8_numeric = (e) => (_float8_numeric = Module._float8_numeric = wasmExports.float8_numeric)(e), _numeric_uminus = Module._numeric_uminus = (e) => (_numeric_uminus = Module._numeric_uminus = wasmExports.numeric_uminus)(e), _numeric_is_nan = Module._numeric_is_nan = (e) => (_numeric_is_nan = Module._numeric_is_nan = wasmExports.numeric_is_nan)(e), _numeric_ceil = Module._numeric_ceil = (e) => (_numeric_ceil = Module._numeric_ceil = wasmExports.numeric_ceil)(e), _numeric_floor = Module._numeric_floor = (e) => (_numeric_floor = Module._numeric_floor = wasmExports.numeric_floor)(e), _timestamp_cmp = Module._timestamp_cmp = (e) => (_timestamp_cmp = Module._timestamp_cmp = wasmExports.timestamp_cmp)(e), _macaddr_cmp = Module._macaddr_cmp = (e) => (_macaddr_cmp = Module._macaddr_cmp = wasmExports.macaddr_cmp)(e), _macaddr_lt = Module._macaddr_lt = (e) => (_macaddr_lt = Module._macaddr_lt = wasmExports.macaddr_lt)(e), _macaddr_le = Module._macaddr_le = (e) => (_macaddr_le = Module._macaddr_le = wasmExports.macaddr_le)(e), _macaddr_eq = Module._macaddr_eq = (e) => (_macaddr_eq = Module._macaddr_eq = wasmExports.macaddr_eq)(e), _macaddr_ge = Module._macaddr_ge = (e) => (_macaddr_ge = Module._macaddr_ge = wasmExports.macaddr_ge)(e), _macaddr_gt = Module._macaddr_gt = (e) => (_macaddr_gt = Module._macaddr_gt = wasmExports.macaddr_gt)(e), _macaddr8_cmp = Module._macaddr8_cmp = (e) => (_macaddr8_cmp = Module._macaddr8_cmp = wasmExports.macaddr8_cmp)(e), _macaddr8_lt = Module._macaddr8_lt = (e) => (_macaddr8_lt = Module._macaddr8_lt = wasmExports.macaddr8_lt)(e), _macaddr8_le = Module._macaddr8_le = (e) => (_macaddr8_le = Module._macaddr8_le = wasmExports.macaddr8_le)(e), _macaddr8_eq = Module._macaddr8_eq = (e) => (_macaddr8_eq = Module._macaddr8_eq = wasmExports.macaddr8_eq)(e), _macaddr8_ge = Module._macaddr8_ge = (e) => (_macaddr8_ge = Module._macaddr8_ge = wasmExports.macaddr8_ge)(e), _macaddr8_gt = Module._macaddr8_gt = (e) => (_macaddr8_gt = Module._macaddr8_gt = wasmExports.macaddr8_gt)(e), _current_query = Module._current_query = (e) => (_current_query = Module._current_query = wasmExports.current_query)(e), _get_fn_expr_arg_stable = Module._get_fn_expr_arg_stable = (e, t) => (_get_fn_expr_arg_stable = Module._get_fn_expr_arg_stable = wasmExports.get_fn_expr_arg_stable)(e, t), _unpack_sql_state = Module._unpack_sql_state = (e) => (_unpack_sql_state = Module._unpack_sql_state = wasmExports.unpack_sql_state)(e), _get_fn_expr_rettype = Module._get_fn_expr_rettype = (e) => (_get_fn_expr_rettype = Module._get_fn_expr_rettype = wasmExports.get_fn_expr_rettype)(e), _btnamecmp = Module._btnamecmp = (e) => (_btnamecmp = Module._btnamecmp = wasmExports.btnamecmp)(e), _inet_in = Module._inet_in = (e) => (_inet_in = Module._inet_in = wasmExports.inet_in)(e), _network_cmp = Module._network_cmp = (e) => (_network_cmp = Module._network_cmp = wasmExports.network_cmp)(e), _convert_network_to_scalar = Module._convert_network_to_scalar = (e, t, r) => (_convert_network_to_scalar = Module._convert_network_to_scalar = wasmExports.convert_network_to_scalar)(e, t, r), _numeric_sign = Module._numeric_sign = (e) => (_numeric_sign = Module._numeric_sign = wasmExports.numeric_sign)(e), _numeric_gt = Module._numeric_gt = (e) => (_numeric_gt = Module._numeric_gt = wasmExports.numeric_gt)(e), _numeric_le = Module._numeric_le = (e) => (_numeric_le = Module._numeric_le = wasmExports.numeric_le)(e), _numeric_mod = Module._numeric_mod = (e) => (_numeric_mod = Module._numeric_mod = wasmExports.numeric_mod)(e), _numeric_sqrt = Module._numeric_sqrt = (e) => (_numeric_sqrt = Module._numeric_sqrt = wasmExports.numeric_sqrt)(e), ___divti3 = Module.___divti3 = (e, t, r, a, o) => (___divti3 = Module.___divti3 = wasmExports.__divti3)(e, t, r, a, o), _numeric_exp = Module._numeric_exp = (e) => (_numeric_exp = Module._numeric_exp = wasmExports.numeric_exp)(e), _numeric_ln = Module._numeric_ln = (e) => (_numeric_ln = Module._numeric_ln = wasmExports.numeric_ln)(e), _numeric_log = Module._numeric_log = (e) => (_numeric_log = Module._numeric_log = wasmExports.numeric_log)(e), _numeric_float8_no_overflow = Module._numeric_float8_no_overflow = (e) => (_numeric_float8_no_overflow = Module._numeric_float8_no_overflow = wasmExports.numeric_float8_no_overflow)(e), _oidout = Module._oidout = (e) => (_oidout = Module._oidout = wasmExports.oidout)(e), _btrim1 = Module._btrim1 = (e) => (_btrim1 = Module._btrim1 = wasmExports.btrim1)(e), _ltrim1 = Module._ltrim1 = (e) => (_ltrim1 = Module._ltrim1 = wasmExports.ltrim1)(e), _rtrim1 = Module._rtrim1 = (e) => (_rtrim1 = Module._rtrim1 = wasmExports.rtrim1)(e), _tuplesort_skiptuples = Module._tuplesort_skiptuples = (e, t, r) => (_tuplesort_skiptuples = Module._tuplesort_skiptuples = wasmExports.tuplesort_skiptuples)(e, t, r), _interval_mi = Module._interval_mi = (e) => (_interval_mi = Module._interval_mi = wasmExports.interval_mi)(e), _setlocale = Module._setlocale = (e, t) => (_setlocale = Module._setlocale = wasmExports.setlocale)(e, t), _newlocale = Module._newlocale = (e, t, r) => (_newlocale = Module._newlocale = wasmExports.newlocale)(e, t, r), _strftime_l = Module._strftime_l = (e, t, r, a, o) => (_strftime_l = Module._strftime_l = wasmExports.strftime_l)(e, t, r, a, o), _freelocale = Module._freelocale = (e) => (_freelocale = Module._freelocale = wasmExports.freelocale)(e), _uselocale = Module._uselocale = (e) => (_uselocale = Module._uselocale = wasmExports.uselocale)(e), _strcoll_l = Module._strcoll_l = (e, t, r) => (_strcoll_l = Module._strcoll_l = wasmExports.strcoll_l)(e, t, r), _strxfrm_l = Module._strxfrm_l = (e, t, r, a) => (_strxfrm_l = Module._strxfrm_l = wasmExports.strxfrm_l)(e, t, r, a), _drandom = Module._drandom = (e) => (_drandom = Module._drandom = wasmExports.drandom)(e), _quote_ident = Module._quote_ident = (e) => (_quote_ident = Module._quote_ident = wasmExports.quote_ident)(e), _textregexeq = Module._textregexeq = (e) => (_textregexeq = Module._textregexeq = wasmExports.textregexeq)(e), _text_substr = Module._text_substr = (e) => (_text_substr = Module._text_substr = wasmExports.text_substr)(e), _pg_wchar2mb_with_len = Module._pg_wchar2mb_with_len = (e, t, r) => (_pg_wchar2mb_with_len = Module._pg_wchar2mb_with_len = wasmExports.pg_wchar2mb_with_len)(e, t, r), _regexp_split_to_array = Module._regexp_split_to_array = (e) => (_regexp_split_to_array = Module._regexp_split_to_array = wasmExports.regexp_split_to_array)(e), _regclassin = Module._regclassin = (e) => (_regclassin = Module._regclassin = wasmExports.regclassin)(e), _regtypeout = Module._regtypeout = (e) => (_regtypeout = Module._regtypeout = wasmExports.regtypeout)(e), _pg_get_indexdef_columns_extended = Module._pg_get_indexdef_columns_extended = (e, t) => (_pg_get_indexdef_columns_extended = Module._pg_get_indexdef_columns_extended = wasmExports.pg_get_indexdef_columns_extended)(e, t), _pg_get_querydef = Module._pg_get_querydef = (e, t) => (_pg_get_querydef = Module._pg_get_querydef = wasmExports.pg_get_querydef)(e, t), _strcspn = Module._strcspn = (e, t) => (_strcspn = Module._strcspn = wasmExports.strcspn)(e, t), _generic_restriction_selectivity = Module._generic_restriction_selectivity = (e, t, r, a, o, _) => (_generic_restriction_selectivity = Module._generic_restriction_selectivity = wasmExports.generic_restriction_selectivity)(e, t, r, a, o, _), _genericcostestimate = Module._genericcostestimate = (e, t, r, a) => (_genericcostestimate = Module._genericcostestimate = wasmExports.genericcostestimate)(e, t, r, a), _tidin = Module._tidin = (e) => (_tidin = Module._tidin = wasmExports.tidin)(e), _tidout = Module._tidout = (e) => (_tidout = Module._tidout = wasmExports.tidout)(e), _timestamp_in = Module._timestamp_in = (e) => (_timestamp_in = Module._timestamp_in = wasmExports.timestamp_in)(e), _timestamp_eq = Module._timestamp_eq = (e) => (_timestamp_eq = Module._timestamp_eq = wasmExports.timestamp_eq)(e), _timestamp_lt = Module._timestamp_lt = (e) => (_timestamp_lt = Module._timestamp_lt = wasmExports.timestamp_lt)(e), _timestamp_gt = Module._timestamp_gt = (e) => (_timestamp_gt = Module._timestamp_gt = wasmExports.timestamp_gt)(e), _timestamp_le = Module._timestamp_le = (e) => (_timestamp_le = Module._timestamp_le = wasmExports.timestamp_le)(e), _timestamp_ge = Module._timestamp_ge = (e) => (_timestamp_ge = Module._timestamp_ge = wasmExports.timestamp_ge)(e), _interval_eq = Module._interval_eq = (e) => (_interval_eq = Module._interval_eq = wasmExports.interval_eq)(e), _interval_lt = Module._interval_lt = (e) => (_interval_lt = Module._interval_lt = wasmExports.interval_lt)(e), _interval_gt = Module._interval_gt = (e) => (_interval_gt = Module._interval_gt = wasmExports.interval_gt)(e), _interval_le = Module._interval_le = (e) => (_interval_le = Module._interval_le = wasmExports.interval_le)(e), _interval_ge = Module._interval_ge = (e) => (_interval_ge = Module._interval_ge = wasmExports.interval_ge)(e), _interval_cmp = Module._interval_cmp = (e) => (_interval_cmp = Module._interval_cmp = wasmExports.interval_cmp)(e), _timestamp_mi = Module._timestamp_mi = (e) => (_timestamp_mi = Module._timestamp_mi = wasmExports.timestamp_mi)(e), _interval_um = Module._interval_um = (e) => (_interval_um = Module._interval_um = wasmExports.interval_um)(e), _has_fn_opclass_options = Module._has_fn_opclass_options = (e) => (_has_fn_opclass_options = Module._has_fn_opclass_options = wasmExports.has_fn_opclass_options)(e), _uuid_in = Module._uuid_in = (e) => (_uuid_in = Module._uuid_in = wasmExports.uuid_in)(e), _uuid_out = Module._uuid_out = (e) => (_uuid_out = Module._uuid_out = wasmExports.uuid_out)(e), _uuid_cmp = Module._uuid_cmp = (e) => (_uuid_cmp = Module._uuid_cmp = wasmExports.uuid_cmp)(e), _gen_random_uuid = Module._gen_random_uuid = (e) => (_gen_random_uuid = Module._gen_random_uuid = wasmExports.gen_random_uuid)(e), _varbit_in = Module._varbit_in = (e) => (_varbit_in = Module._varbit_in = wasmExports.varbit_in)(e), _biteq = Module._biteq = (e) => (_biteq = Module._biteq = wasmExports.biteq)(e), _bitlt = Module._bitlt = (e) => (_bitlt = Module._bitlt = wasmExports.bitlt)(e), _bitle = Module._bitle = (e) => (_bitle = Module._bitle = wasmExports.bitle)(e), _bitgt = Module._bitgt = (e) => (_bitgt = Module._bitgt = wasmExports.bitgt)(e), _bitge = Module._bitge = (e) => (_bitge = Module._bitge = wasmExports.bitge)(e), _bitcmp = Module._bitcmp = (e) => (_bitcmp = Module._bitcmp = wasmExports.bitcmp)(e), _bpchareq = Module._bpchareq = (e) => (_bpchareq = Module._bpchareq = wasmExports.bpchareq)(e), _bpcharlt = Module._bpcharlt = (e) => (_bpcharlt = Module._bpcharlt = wasmExports.bpcharlt)(e), _bpcharle = Module._bpcharle = (e) => (_bpcharle = Module._bpcharle = wasmExports.bpcharle)(e), _bpchargt = Module._bpchargt = (e) => (_bpchargt = Module._bpchargt = wasmExports.bpchargt)(e), _bpcharge = Module._bpcharge = (e) => (_bpcharge = Module._bpcharge = wasmExports.bpcharge)(e), _bpcharcmp = Module._bpcharcmp = (e) => (_bpcharcmp = Module._bpcharcmp = wasmExports.bpcharcmp)(e), _pg_detoast_datum_slice = Module._pg_detoast_datum_slice = (e, t, r) => (_pg_detoast_datum_slice = Module._pg_detoast_datum_slice = wasmExports.pg_detoast_datum_slice)(e, t, r), _text_substr_no_len = Module._text_substr_no_len = (e) => (_text_substr_no_len = Module._text_substr_no_len = wasmExports.text_substr_no_len)(e), _texteq = Module._texteq = (e) => (_texteq = Module._texteq = wasmExports.texteq)(e), _text_lt = Module._text_lt = (e) => (_text_lt = Module._text_lt = wasmExports.text_lt)(e), _text_le = Module._text_le = (e) => (_text_le = Module._text_le = wasmExports.text_le)(e), _text_gt = Module._text_gt = (e) => (_text_gt = Module._text_gt = wasmExports.text_gt)(e), _text_ge = Module._text_ge = (e) => (_text_ge = Module._text_ge = wasmExports.text_ge)(e), _bttextcmp = Module._bttextcmp = (e) => (_bttextcmp = Module._bttextcmp = wasmExports.bttextcmp)(e), _byteaeq = Module._byteaeq = (e) => (_byteaeq = Module._byteaeq = wasmExports.byteaeq)(e), _bytealt = Module._bytealt = (e) => (_bytealt = Module._bytealt = wasmExports.bytealt)(e), _byteale = Module._byteale = (e) => (_byteale = Module._byteale = wasmExports.byteale)(e), _byteagt = Module._byteagt = (e) => (_byteagt = Module._byteagt = wasmExports.byteagt)(e), _byteage = Module._byteage = (e) => (_byteage = Module._byteage = wasmExports.byteage)(e), _byteacmp = Module._byteacmp = (e) => (_byteacmp = Module._byteacmp = wasmExports.byteacmp)(e), _to_hex32 = Module._to_hex32 = (e) => (_to_hex32 = Module._to_hex32 = wasmExports.to_hex32)(e), _text_left = Module._text_left = (e) => (_text_left = Module._text_left = wasmExports.text_left)(e), _text_right = Module._text_right = (e) => (_text_right = Module._text_right = wasmExports.text_right)(e), _text_reverse = Module._text_reverse = (e) => (_text_reverse = Module._text_reverse = wasmExports.text_reverse)(e), _varstr_levenshtein = Module._varstr_levenshtein = (e, t, r, a, o, _, s, n) => (_varstr_levenshtein = Module._varstr_levenshtein = wasmExports.varstr_levenshtein)(e, t, r, a, o, _, s, n), _pg_utf_mblen_private = Module._pg_utf_mblen_private = (e) => (_pg_utf_mblen_private = Module._pg_utf_mblen_private = wasmExports.pg_utf_mblen_private)(e), _pg_xml_init = Module._pg_xml_init = (e) => (_pg_xml_init = Module._pg_xml_init = wasmExports.pg_xml_init)(e), _xml_ereport = Module._xml_ereport = (e, t, r, a) => (_xml_ereport = Module._xml_ereport = wasmExports.xml_ereport)(e, t, r, a), _pg_xml_done = Module._pg_xml_done = (e, t) => (_pg_xml_done = Module._pg_xml_done = wasmExports.pg_xml_done)(e, t), _pg_do_encoding_conversion = Module._pg_do_encoding_conversion = (e, t, r, a) => (_pg_do_encoding_conversion = Module._pg_do_encoding_conversion = wasmExports.pg_do_encoding_conversion)(e, t, r, a), _CreateCacheMemoryContext = Module._CreateCacheMemoryContext = () => (_CreateCacheMemoryContext = Module._CreateCacheMemoryContext = wasmExports.CreateCacheMemoryContext)(), _cfunc_resolve_polymorphic_argtypes = Module._cfunc_resolve_polymorphic_argtypes = (e, t, r, a, o, _) => (_cfunc_resolve_polymorphic_argtypes = Module._cfunc_resolve_polymorphic_argtypes = wasmExports.cfunc_resolve_polymorphic_argtypes)(e, t, r, a, o, _), _get_typsubscript = Module._get_typsubscript = (e, t) => (_get_typsubscript = Module._get_typsubscript = wasmExports.get_typsubscript)(e, t), _CachedPlanAllowsSimpleValidityCheck = Module._CachedPlanAllowsSimpleValidityCheck = (e, t, r) => (_CachedPlanAllowsSimpleValidityCheck = Module._CachedPlanAllowsSimpleValidityCheck = wasmExports.CachedPlanAllowsSimpleValidityCheck)(e, t, r), _CachedPlanIsSimplyValid = Module._CachedPlanIsSimplyValid = (e, t, r) => (_CachedPlanIsSimplyValid = Module._CachedPlanIsSimplyValid = wasmExports.CachedPlanIsSimplyValid)(e, t, r), _GetCachedExpression = Module._GetCachedExpression = (e) => (_GetCachedExpression = Module._GetCachedExpression = wasmExports.GetCachedExpression)(e), _FreeCachedExpression = Module._FreeCachedExpression = (e) => (_FreeCachedExpression = Module._FreeCachedExpression = wasmExports.FreeCachedExpression)(e), _ReleaseAllPlanCacheRefsInOwner = Module._ReleaseAllPlanCacheRefsInOwner = (e) => (_ReleaseAllPlanCacheRefsInOwner = Module._ReleaseAllPlanCacheRefsInOwner = wasmExports.ReleaseAllPlanCacheRefsInOwner)(e), _abort = Module._abort = () => (_abort = Module._abort = wasmExports.abort)(), _in_error_recursion_trouble = Module._in_error_recursion_trouble = () => (_in_error_recursion_trouble = Module._in_error_recursion_trouble = wasmExports.in_error_recursion_trouble)(), _pg_vfprintf = Module._pg_vfprintf = (e, t, r) => (_pg_vfprintf = Module._pg_vfprintf = wasmExports.pg_vfprintf)(e, t, r), _pgl_longjmp = Module._pgl_longjmp = (e, t) => (_pgl_longjmp = Module._pgl_longjmp = wasmExports.pgl_longjmp)(e, t), _GetErrorContextStack = Module._GetErrorContextStack = () => (_GetErrorContextStack = Module._GetErrorContextStack = wasmExports.GetErrorContextStack)(), _dlsym = Module._dlsym = (e, t) => (_dlsym = Module._dlsym = wasmExports.dlsym)(e, t), _dlopen = Module._dlopen = (e, t) => (_dlopen = Module._dlopen = wasmExports.dlopen)(e, t), _dlerror = Module._dlerror = () => (_dlerror = Module._dlerror = wasmExports.dlerror)(), _dlclose = Module._dlclose = (e) => (_dlclose = Module._dlclose = wasmExports.dlclose)(e), _find_rendezvous_variable = Module._find_rendezvous_variable = (e) => (_find_rendezvous_variable = Module._find_rendezvous_variable = wasmExports.find_rendezvous_variable)(e), _CallerFInfoFunctionCall1 = Module._CallerFInfoFunctionCall1 = (e, t, r, a) => (_CallerFInfoFunctionCall1 = Module._CallerFInfoFunctionCall1 = wasmExports.CallerFInfoFunctionCall1)(e, t, r, a), _CallerFInfoFunctionCall2 = Module._CallerFInfoFunctionCall2 = (e, t, r, a, o) => (_CallerFInfoFunctionCall2 = Module._CallerFInfoFunctionCall2 = wasmExports.CallerFInfoFunctionCall2)(e, t, r, a, o), _FunctionCall0Coll = Module._FunctionCall0Coll = (e, t) => (_FunctionCall0Coll = Module._FunctionCall0Coll = wasmExports.FunctionCall0Coll)(e, t), _RelationNameGetTupleDesc = Module._RelationNameGetTupleDesc = (e) => (_RelationNameGetTupleDesc = Module._RelationNameGetTupleDesc = wasmExports.RelationNameGetTupleDesc)(e), _hash_freeze = Module._hash_freeze = (e) => (_hash_freeze = Module._hash_freeze = wasmExports.hash_freeze)(e), _chdir = Module._chdir = (e) => (_chdir = Module._chdir = wasmExports.chdir)(e), _pg_bindtextdomain = Module._pg_bindtextdomain = (e) => (_pg_bindtextdomain = Module._pg_bindtextdomain = wasmExports.pg_bindtextdomain)(e), _pg_mblen = Module._pg_mblen = (e) => (_pg_mblen = Module._pg_mblen = wasmExports.pg_mblen)(e), _check_encoding_conversion_args = Module._check_encoding_conversion_args = (e, t, r, a, o) => (_check_encoding_conversion_args = Module._check_encoding_conversion_args = wasmExports.check_encoding_conversion_args)(e, t, r, a, o), _DefineCustomBoolVariable = Module._DefineCustomBoolVariable = (e, t, r, a, o, _, s, n, l, d) => (_DefineCustomBoolVariable = Module._DefineCustomBoolVariable = wasmExports.DefineCustomBoolVariable)(e, t, r, a, o, _, s, n, l, d), _DefineCustomIntVariable = Module._DefineCustomIntVariable = (e, t, r, a, o, _, s, n, l, d, p, m) => (_DefineCustomIntVariable = Module._DefineCustomIntVariable = wasmExports.DefineCustomIntVariable)(e, t, r, a, o, _, s, n, l, d, p, m), _DefineCustomRealVariable = Module._DefineCustomRealVariable = (e, t, r, a, o, _, s, n, l, d, p, m) => (_DefineCustomRealVariable = Module._DefineCustomRealVariable = wasmExports.DefineCustomRealVariable)(e, t, r, a, o, _, s, n, l, d, p, m), _DefineCustomStringVariable = Module._DefineCustomStringVariable = (e, t, r, a, o, _, s, n, l, d) => (_DefineCustomStringVariable = Module._DefineCustomStringVariable = wasmExports.DefineCustomStringVariable)(e, t, r, a, o, _, s, n, l, d), _DefineCustomEnumVariable = Module._DefineCustomEnumVariable = (e, t, r, a, o, _, s, n, l, d, p) => (_DefineCustomEnumVariable = Module._DefineCustomEnumVariable = wasmExports.DefineCustomEnumVariable)(e, t, r, a, o, _, s, n, l, d, p), _MarkGUCPrefixReserved = Module._MarkGUCPrefixReserved = (e) => (_MarkGUCPrefixReserved = Module._MarkGUCPrefixReserved = wasmExports.MarkGUCPrefixReserved)(e), _sampler_random_init_state = Module._sampler_random_init_state = (e, t) => (_sampler_random_init_state = Module._sampler_random_init_state = wasmExports.sampler_random_init_state)(e, t), _dsa_trim = Module._dsa_trim = (e) => (_dsa_trim = Module._dsa_trim = wasmExports.dsa_trim)(e), _pchomp = Module._pchomp = (e) => (_pchomp = Module._pchomp = wasmExports.pchomp)(e), _PinPortal = Module._PinPortal = (e) => (_PinPortal = Module._PinPortal = wasmExports.PinPortal)(e), _UnpinPortal = Module._UnpinPortal = (e) => (_UnpinPortal = Module._UnpinPortal = wasmExports.UnpinPortal)(e), ___lshrti3 = Module.___lshrti3 = (e, t, r, a) => (___lshrti3 = Module.___lshrti3 = wasmExports.__lshrti3)(e, t, r, a), _realpath = Module._realpath = (e, t) => (_realpath = Module._realpath = wasmExports.realpath)(e, t), _float_to_shortest_decimal_bufn = Module._float_to_shortest_decimal_bufn = (e, t) => (_float_to_shortest_decimal_bufn = Module._float_to_shortest_decimal_bufn = wasmExports.float_to_shortest_decimal_bufn)(e, t), _IsValidJsonNumber = Module._IsValidJsonNumber = (e, t) => (_IsValidJsonNumber = Module._IsValidJsonNumber = wasmExports.IsValidJsonNumber)(e, t), _pg_prng_uint64 = Module._pg_prng_uint64 = (e) => (_pg_prng_uint64 = Module._pg_prng_uint64 = wasmExports.pg_prng_uint64)(e), _makeStringInfoExt = Module._makeStringInfoExt = (e) => (_makeStringInfoExt = Module._makeStringInfoExt = wasmExports.makeStringInfoExt)(e), _pgl_getpwuid = Module._pgl_getpwuid = (e) => (_pgl_getpwuid = Module._pgl_getpwuid = wasmExports.pgl_getpwuid)(e), _getcwd = Module._getcwd = (e, t) => (_getcwd = Module._getcwd = wasmExports.getcwd)(e, t), _pthread_mutex_lock = Module._pthread_mutex_lock = (e) => (_pthread_mutex_lock = Module._pthread_mutex_lock = wasmExports.pthread_mutex_lock)(e), _localeconv = Module._localeconv = () => (_localeconv = Module._localeconv = wasmExports.localeconv)(), _pthread_mutex_unlock = Module._pthread_mutex_unlock = (e) => (_pthread_mutex_unlock = Module._pthread_mutex_unlock = wasmExports.pthread_mutex_unlock)(e), _nanosleep = Module._nanosleep = (e, t) => (_nanosleep = Module._nanosleep = wasmExports.nanosleep)(e, t), _strchrnul = Module._strchrnul = (e, t) => (_strchrnul = Module._strchrnul = wasmExports.strchrnul)(e, t), _snprintf = Module._snprintf = (e, t, r, a) => (_snprintf = Module._snprintf = wasmExports.snprintf)(e, t, r, a), _strerror = Module._strerror = (e) => (_strerror = Module._strerror = wasmExports.strerror)(e), _clear_setitimer = Module._clear_setitimer = () => (_clear_setitimer = Module._clear_setitimer = wasmExports.clear_setitimer)(), _pgl_setPGliteActive = Module._pgl_setPGliteActive = (e) => (_pgl_setPGliteActive = Module._pgl_setPGliteActive = wasmExports.pgl_setPGliteActive)(e), _pgl_getPGliteExitStatus = Module._pgl_getPGliteExitStatus = () => (_pgl_getPGliteExitStatus = Module._pgl_getPGliteExitStatus = wasmExports.pgl_getPGliteExitStatus)(), _pgl_siglongjmp = Module._pgl_siglongjmp = (e, t) => (_pgl_siglongjmp = Module._pgl_siglongjmp = wasmExports.pgl_siglongjmp)(e, t), _pgl_set_system_fn = Module._pgl_set_system_fn = (e) => (_pgl_set_system_fn = Module._pgl_set_system_fn = wasmExports.pgl_set_system_fn)(e), _pgl_set_popen_fn = Module._pgl_set_popen_fn = (e) => (_pgl_set_popen_fn = Module._pgl_set_popen_fn = wasmExports.pgl_set_popen_fn)(e), _pgl_set_pclose_fn = Module._pgl_set_pclose_fn = (e) => (_pgl_set_pclose_fn = Module._pgl_set_pclose_fn = wasmExports.pgl_set_pclose_fn)(e), _pgl_run_atexit_funcs = Module._pgl_run_atexit_funcs = () => (_pgl_run_atexit_funcs = Module._pgl_run_atexit_funcs = wasmExports.pgl_run_atexit_funcs)(), _pgl_freopen = Module._pgl_freopen = (e, t, r) => (_pgl_freopen = Module._pgl_freopen = wasmExports.pgl_freopen)(e, t, r), _fiprintf = Module._fiprintf = (e, t, r) => (_fiprintf = Module._fiprintf = wasmExports.fiprintf)(e, t, r), _pgl_set_rw_cbs = Module._pgl_set_rw_cbs = (e, t) => (_pgl_set_rw_cbs = Module._pgl_set_rw_cbs = wasmExports.pgl_set_rw_cbs)(e, t), _vfprintf = Module._vfprintf = (e, t, r) => (_vfprintf = Module._vfprintf = wasmExports.vfprintf)(e, t, r), _pthread_key_create = Module._pthread_key_create = (e, t) => (_pthread_key_create = Module._pthread_key_create = wasmExports.pthread_key_create)(e, t), _pthread_getspecific = Module._pthread_getspecific = (e) => (_pthread_getspecific = Module._pthread_getspecific = wasmExports.pthread_getspecific)(e), _pthread_key_delete = Module._pthread_key_delete = (e) => (_pthread_key_delete = Module._pthread_key_delete = wasmExports.pthread_key_delete)(e), _pthread_setspecific = Module._pthread_setspecific = (e, t) => (_pthread_setspecific = Module._pthread_setspecific = wasmExports.pthread_setspecific)(e, t), _toupper = Module._toupper = (e) => (_toupper = Module._toupper = wasmExports.toupper)(e), _iconv_open = Module._iconv_open = (e, t) => (_iconv_open = Module._iconv_open = wasmExports.iconv_open)(e, t), _iconv_close = Module._iconv_close = (e) => (_iconv_close = Module._iconv_close = wasmExports.iconv_close)(e), _iconv = Module._iconv = (e, t, r, a, o) => (_iconv = Module._iconv = wasmExports.iconv)(e, t, r, a, o), _pthread_mutex_init = Module._pthread_mutex_init = (e, t) => (_pthread_mutex_init = Module._pthread_mutex_init = wasmExports.pthread_mutex_init)(e, t), _pthread_mutex_destroy = Module._pthread_mutex_destroy = (e) => (_pthread_mutex_destroy = Module._pthread_mutex_destroy = wasmExports.pthread_mutex_destroy)(e), _pthread_cond_init = Module._pthread_cond_init = (e, t) => (_pthread_cond_init = Module._pthread_cond_init = wasmExports.pthread_cond_init)(e, t), _pthread_cond_destroy = Module._pthread_cond_destroy = (e) => (_pthread_cond_destroy = Module._pthread_cond_destroy = wasmExports.pthread_cond_destroy)(e), _pthread_self = Module._pthread_self = () => (_pthread_self = Module._pthread_self = wasmExports.pthread_self)(), _pthread_cond_wait = Module._pthread_cond_wait = (e, t) => (_pthread_cond_wait = Module._pthread_cond_wait = wasmExports.pthread_cond_wait)(e, t), _pthread_cond_signal = Module._pthread_cond_signal = (e) => (_pthread_cond_signal = Module._pthread_cond_signal = wasmExports.pthread_cond_signal)(e), _pthread_once = Module._pthread_once = (e, t) => (_pthread_once = Module._pthread_once = wasmExports.pthread_once)(e, t), ___cxa_atexit = Module.___cxa_atexit = (e, t, r) => (___cxa_atexit = Module.___cxa_atexit = wasmExports.__cxa_atexit)(e, t, r), _fputs = Module._fputs = (e, t) => (_fputs = Module._fputs = wasmExports.fputs)(e, t), _vsnprintf = Module._vsnprintf = (e, t, r, a) => (_vsnprintf = Module._vsnprintf = wasmExports.vsnprintf)(e, t, r, a), ___small_fprintf = Module.___small_fprintf = (e, t, r) => (___small_fprintf = Module.___small_fprintf = wasmExports.__small_fprintf)(e, t, r), ___dynamic_cast = Module.___dynamic_cast = (e, t, r, a) => (___dynamic_cast = Module.___dynamic_cast = wasmExports.__dynamic_cast)(e, t, r, a), ___cxa_pure_virtual = Module.___cxa_pure_virtual = () => (___cxa_pure_virtual = Module.___cxa_pure_virtual = wasmExports.__cxa_pure_virtual)(), _modf = Module._modf = (e, t) => (_modf = Module._modf = wasmExports.modf)(e, t), _localtime_r = Module._localtime_r = (e, t) => (_localtime_r = Module._localtime_r = wasmExports.localtime_r)(e, t), _strncat = Module._strncat = (e, t, r) => (_strncat = Module._strncat = wasmExports.strncat)(e, t, r), _munmap = Module._munmap = (e, t) => (_munmap = Module._munmap = wasmExports.munmap)(e, t), __ZdlPvm = Module.__ZdlPvm = (e, t) => (__ZdlPvm = Module.__ZdlPvm = wasmExports._ZdlPvm)(e, t), ___ctype_get_mb_cur_max = Module.___ctype_get_mb_cur_max = () => (___ctype_get_mb_cur_max = Module.___ctype_get_mb_cur_max = wasmExports.__ctype_get_mb_cur_max)(), ___ctype_tolower_loc = Module.___ctype_tolower_loc = () => (___ctype_tolower_loc = Module.___ctype_tolower_loc = wasmExports.__ctype_tolower_loc)(), ___ctype_toupper_loc = Module.___ctype_toupper_loc = () => (___ctype_toupper_loc = Module.___ctype_toupper_loc = wasmExports.__ctype_toupper_loc)(), _fdopen = Module._fdopen = (e, t) => (_fdopen = Module._fdopen = wasmExports.fdopen)(e, t), _sqrt = Module._sqrt = (e) => (_sqrt = Module._sqrt = wasmExports.sqrt)(e), _acosl = Module._acosl = (e, t, r) => (_acosl = Module._acosl = wasmExports.acosl)(e, t, r), _aligned_alloc = Module._aligned_alloc = (e, t) => (_aligned_alloc = Module._aligned_alloc = wasmExports.aligned_alloc)(e, t), _atan2l = Module._atan2l = (e, t, r, a, o) => (_atan2l = Module._atan2l = wasmExports.atan2l)(e, t, r, a, o), ___funcs_on_exit = () => (___funcs_on_exit = wasmExports.__funcs_on_exit)(), _atexit = Module._atexit = (e) => (_atexit = Module._atexit = wasmExports.atexit)(e), ___cxa_finalize = Module.___cxa_finalize = (e) => (___cxa_finalize = Module.___cxa_finalize = wasmExports.__cxa_finalize)(e), _btowc = Module._btowc = (e) => (_btowc = Module._btowc = wasmExports.btowc)(e), _clock = Module._clock = () => (_clock = Module._clock = wasmExports.clock)(), _scalbn = Module._scalbn = (e, t) => (_scalbn = Module._scalbn = wasmExports.scalbn)(e, t), _cosl = Module._cosl = (e, t, r) => (_cosl = Module._cosl = wasmExports.cosl)(e, t, r), _dladdr = Module._dladdr = (e, t) => (_dladdr = Module._dladdr = wasmExports.dladdr)(e, t), ___dl_seterr = (e, t) => (___dl_seterr = wasmExports.__dl_seterr)(e, t), _duplocale = Module._duplocale = (e) => (_duplocale = Module._duplocale = wasmExports.duplocale)(e), _fchmod = Module._fchmod = (e, t) => (_fchmod = Module._fchmod = wasmExports.fchmod)(e, t), _fchmodat = Module._fchmodat = (e, t, r, a) => (_fchmodat = Module._fchmodat = wasmExports.fchmodat)(e, t, r, a), _fchown = Module._fchown = (e, t, r) => (_fchown = Module._fchown = wasmExports.fchown)(e, t, r), _fcntl = Module._fcntl = (e, t, r) => (_fcntl = Module._fcntl = wasmExports.fcntl)(e, t, r), _fdopendir = Module._fdopendir = (e) => (_fdopendir = Module._fdopendir = wasmExports.fdopendir)(e), _fmax = Module._fmax = (e, t) => (_fmax = Module._fmax = wasmExports.fmax)(e, t), _fmin = Module._fmin = (e, t) => (_fmin = Module._fmin = wasmExports.fmin)(e, t), _fputwc = Module._fputwc = (e, t) => (_fputwc = Module._fputwc = wasmExports.fputwc)(e, t), _frexp = Module._frexp = (e, t) => (_frexp = Module._frexp = wasmExports.frexp)(e, t), _ftell = Module._ftell = (e) => (_ftell = Module._ftell = wasmExports.ftell)(e), _getentropy = Module._getentropy = (e, t) => (_getentropy = Module._getentropy = wasmExports.getentropy)(e, t), _geteuid = Module._geteuid = () => (_geteuid = Module._geteuid = wasmExports.geteuid)(), _getgid = Module._getgid = () => (_getgid = Module._getgid = wasmExports.getgid)(), _mbtowc = Module._mbtowc = (e, t, r) => (_mbtowc = Module._mbtowc = wasmExports.mbtowc)(e, t, r), _getuid = Module._getuid = () => (_getuid = Module._getuid = wasmExports.getuid)(), _getwc = Module._getwc = (e) => (_getwc = Module._getwc = wasmExports.getwc)(e), _gmtime = Module._gmtime = (e) => (_gmtime = Module._gmtime = wasmExports.gmtime)(e), _hypot = Module._hypot = (e, t) => (_hypot = Module._hypot = wasmExports.hypot)(e, t), _mbrtowc = Module._mbrtowc = (e, t, r, a) => (_mbrtowc = Module._mbrtowc = wasmExports.mbrtowc)(e, t, r, a), _ioctl = Module._ioctl = (e, t, r) => (_ioctl = Module._ioctl = wasmExports.ioctl)(e, t, r), _isalpha = Module._isalpha = (e) => (_isalpha = Module._isalpha = wasmExports.isalpha)(e), _isgraph = Module._isgraph = (e) => (_isgraph = Module._isgraph = wasmExports.isgraph)(e), _isspace = Module._isspace = (e) => (_isspace = Module._isspace = wasmExports.isspace)(e), _iswblank_l = Module._iswblank_l = (e, t) => (_iswblank_l = Module._iswblank_l = wasmExports.iswblank_l)(e, t), _iswcntrl_l = Module._iswcntrl_l = (e, t) => (_iswcntrl_l = Module._iswcntrl_l = wasmExports.iswcntrl_l)(e, t), _iswxdigit_l = Module._iswxdigit_l = (e, t) => (_iswxdigit_l = Module._iswxdigit_l = wasmExports.iswxdigit_l)(e, t), _isxdigit_l = Module._isxdigit_l = (e, t) => (_isxdigit_l = Module._isxdigit_l = wasmExports.isxdigit_l)(e, t), _pthread_cond_broadcast = Module._pthread_cond_broadcast = (e) => (_pthread_cond_broadcast = Module._pthread_cond_broadcast = wasmExports.pthread_cond_broadcast)(e), _pthread_atfork = Module._pthread_atfork = (e, t, r) => (_pthread_atfork = Module._pthread_atfork = wasmExports.pthread_atfork)(e, t, r), _pthread_mutexattr_init = Module._pthread_mutexattr_init = (e) => (_pthread_mutexattr_init = Module._pthread_mutexattr_init = wasmExports.pthread_mutexattr_init)(e), _pthread_mutexattr_setprotocol = Module._pthread_mutexattr_setprotocol = (e, t) => (_pthread_mutexattr_setprotocol = Module._pthread_mutexattr_setprotocol = wasmExports.pthread_mutexattr_setprotocol)(e, t), _pthread_mutexattr_settype = Module._pthread_mutexattr_settype = (e, t) => (_pthread_mutexattr_settype = Module._pthread_mutexattr_settype = wasmExports.pthread_mutexattr_settype)(e, t), _pthread_mutexattr_destroy = Module._pthread_mutexattr_destroy = (e) => (_pthread_mutexattr_destroy = Module._pthread_mutexattr_destroy = wasmExports.pthread_mutexattr_destroy)(e), _pthread_mutexattr_setpshared = Module._pthread_mutexattr_setpshared = (e, t) => (_pthread_mutexattr_setpshared = Module._pthread_mutexattr_setpshared = wasmExports.pthread_mutexattr_setpshared)(e, t), _pthread_mutex_trylock = Module._pthread_mutex_trylock = (e) => (_pthread_mutex_trylock = Module._pthread_mutex_trylock = wasmExports.pthread_mutex_trylock)(e), _pthread_create = Module._pthread_create = (e, t, r, a) => (_pthread_create = Module._pthread_create = wasmExports.pthread_create)(e, t, r, a), _pthread_join = Module._pthread_join = (e, t) => (_pthread_join = Module._pthread_join = wasmExports.pthread_join)(e, t), _pthread_cond_timedwait = Module._pthread_cond_timedwait = (e, t, r) => (_pthread_cond_timedwait = Module._pthread_cond_timedwait = wasmExports.pthread_cond_timedwait)(e, t, r), _pthread_detach = Module._pthread_detach = (e) => (_pthread_detach = Module._pthread_detach = wasmExports.pthread_detach)(e), _link = Module._link = (e, t) => (_link = Module._link = wasmExports.link)(e, t), _llround = Module._llround = (e) => (_llround = Module._llround = wasmExports.llround)(e), _localtime = Module._localtime = (e) => (_localtime = Module._localtime = wasmExports.localtime)(e), _log2 = Module._log2 = (e) => (_log2 = Module._log2 = wasmExports.log2)(e), _logb = Module._logb = (e) => (_logb = Module._logb = wasmExports.logb)(e), _lround = Module._lround = (e) => (_lround = Module._lround = wasmExports.lround)(e), _mbrlen = Module._mbrlen = (e, t, r) => (_mbrlen = Module._mbrlen = wasmExports.mbrlen)(e, t, r), _mbsnrtowcs = Module._mbsnrtowcs = (e, t, r, a, o) => (_mbsnrtowcs = Module._mbsnrtowcs = wasmExports.mbsnrtowcs)(e, t, r, a, o), _mbsrtowcs = Module._mbsrtowcs = (e, t, r, a) => (_mbsrtowcs = Module._mbsrtowcs = wasmExports.mbsrtowcs)(e, t, r, a), _memrchr = Module._memrchr = (e, t, r) => (_memrchr = Module._memrchr = wasmExports.memrchr)(e, t, r), _emscripten_builtin_memalign = (e, t) => (_emscripten_builtin_memalign = wasmExports.emscripten_builtin_memalign)(e, t), _nextafter = Module._nextafter = (e, t) => (_nextafter = Module._nextafter = wasmExports.nextafter)(e, t), _nextafterf = Module._nextafterf = (e, t) => (_nextafterf = Module._nextafterf = wasmExports.nextafterf)(e, t), _ntohs = (e) => (_ntohs = wasmExports.ntohs)(e), _openat = Module._openat = (e, t, r, a) => (_openat = Module._openat = wasmExports.openat)(e, t, r, a), _pathconf = Module._pathconf = (e, t) => (_pathconf = Module._pathconf = wasmExports.pathconf)(e, t), _perror = Module._perror = (e) => (_perror = Module._perror = wasmExports.perror)(e), _iprintf = Module._iprintf = (e, t) => (_iprintf = Module._iprintf = wasmExports.iprintf)(e, t), ___small_printf = Module.___small_printf = (e, t) => (___small_printf = Module.___small_printf = wasmExports.__small_printf)(e, t), _pthread_mutexattr_getprotocol = Module._pthread_mutexattr_getprotocol = (e, t) => (_pthread_mutexattr_getprotocol = Module._pthread_mutexattr_getprotocol = wasmExports.pthread_mutexattr_getprotocol)(e, t), _pthread_mutexattr_getpshared = Module._pthread_mutexattr_getpshared = (e, t) => (_pthread_mutexattr_getpshared = Module._pthread_mutexattr_getpshared = wasmExports.pthread_mutexattr_getpshared)(e, t), _pthread_mutexattr_getrobust = Module._pthread_mutexattr_getrobust = (e, t) => (_pthread_mutexattr_getrobust = Module._pthread_mutexattr_getrobust = wasmExports.pthread_mutexattr_getrobust)(e, t), _pthread_mutexattr_gettype = Module._pthread_mutexattr_gettype = (e, t) => (_pthread_mutexattr_gettype = Module._pthread_mutexattr_gettype = wasmExports.pthread_mutexattr_gettype)(e, t), _putchar = Module._putchar = (e) => (_putchar = Module._putchar = wasmExports.putchar)(e), _qsort = Module._qsort = (e, t, r, a) => (_qsort = Module._qsort = wasmExports.qsort)(e, t, r, a), _srand = Module._srand = (e) => (_srand = Module._srand = wasmExports.srand)(e), _rand = Module._rand = () => (_rand = Module._rand = wasmExports.rand)(), _remainder = Module._remainder = (e, t) => (_remainder = Module._remainder = wasmExports.remainder)(e, t), _remove = Module._remove = (e) => (_remove = Module._remove = wasmExports.remove)(e), _remquo = Module._remquo = (e, t, r) => (_remquo = Module._remquo = wasmExports.remquo)(e, t, r), _round = Module._round = (e) => (_round = Module._round = wasmExports.round)(e), _roundf = Module._roundf = (e) => (_roundf = Module._roundf = wasmExports.roundf)(e), __emscripten_timeout = (e, t) => (__emscripten_timeout = wasmExports._emscripten_timeout)(e, t), _sinl = Module._sinl = (e, t, r) => (_sinl = Module._sinl = wasmExports.sinl)(e, t, r), _siprintf = Module._siprintf = (e, t, r) => (_siprintf = Module._siprintf = wasmExports.siprintf)(e, t, r), _sqrtl = Module._sqrtl = (e, t, r) => (_sqrtl = Module._sqrtl = wasmExports.sqrtl)(e, t, r), _vsscanf = Module._vsscanf = (e, t, r) => (_vsscanf = Module._vsscanf = wasmExports.vsscanf)(e, t, r), _statvfs = Module._statvfs = (e, t) => (_statvfs = Module._statvfs = wasmExports.statvfs)(e, t), _strcasecmp = Module._strcasecmp = (e, t) => (_strcasecmp = Module._strcasecmp = wasmExports.strcasecmp)(e, t), _strerror_r = Module._strerror_r = (e, t, r) => (_strerror_r = Module._strerror_r = wasmExports.strerror_r)(e, t, r), _strftime = Module._strftime = (e, t, r, a) => (_strftime = Module._strftime = wasmExports.strftime)(e, t, r, a), _strncasecmp = Module._strncasecmp = (e, t, r) => (_strncasecmp = Module._strncasecmp = wasmExports.strncasecmp)(e, t, r), ___multf3 = Module.___multf3 = (e, t, r, a, o) => (___multf3 = Module.___multf3 = wasmExports.__multf3)(e, t, r, a, o), ___addtf3 = Module.___addtf3 = (e, t, r, a, o) => (___addtf3 = Module.___addtf3 = wasmExports.__addtf3)(e, t, r, a, o), ___extenddftf2 = Module.___extenddftf2 = (e, t) => (___extenddftf2 = Module.___extenddftf2 = wasmExports.__extenddftf2)(e, t), ___subtf3 = Module.___subtf3 = (e, t, r, a, o) => (___subtf3 = Module.___subtf3 = wasmExports.__subtf3)(e, t, r, a, o), ___divtf3 = Module.___divtf3 = (e, t, r, a, o) => (___divtf3 = Module.___divtf3 = wasmExports.__divtf3)(e, t, r, a, o), ___eqtf2 = Module.___eqtf2 = (e, t, r, a) => (___eqtf2 = Module.___eqtf2 = wasmExports.__eqtf2)(e, t, r, a), ___trunctfdf2 = Module.___trunctfdf2 = (e, t) => (___trunctfdf2 = Module.___trunctfdf2 = wasmExports.__trunctfdf2)(e, t), _strtold = Module._strtold = (e, t, r) => (_strtold = Module._strtold = wasmExports.strtold)(e, t, r), _strtof_l = Module._strtof_l = (e, t, r) => (_strtof_l = Module._strtof_l = wasmExports.strtof_l)(e, t, r), _strtod_l = Module._strtod_l = (e, t, r) => (_strtod_l = Module._strtod_l = wasmExports.strtod_l)(e, t, r), _strtold_l = Module._strtold_l = (e, t, r, a) => (_strtold_l = Module._strtold_l = wasmExports.strtold_l)(e, t, r, a), _strtok = Module._strtok = (e, t) => (_strtok = Module._strtok = wasmExports.strtok)(e, t), _strtoull_l = Module._strtoull_l = (e, t, r, a) => (_strtoull_l = Module._strtoull_l = wasmExports.strtoull_l)(e, t, r, a), _strtoll_l = Module._strtoll_l = (e, t, r, a) => (_strtoll_l = Module._strtoll_l = wasmExports.strtoll_l)(e, t, r, a), _swprintf = Module._swprintf = (e, t, r, a) => (_swprintf = Module._swprintf = wasmExports.swprintf)(e, t, r, a), _trunc = Module._trunc = (e) => (_trunc = Module._trunc = wasmExports.trunc)(e), _ungetc = Module._ungetc = (e, t) => (_ungetc = Module._ungetc = wasmExports.ungetc)(e, t), _ungetwc = Module._ungetwc = (e, t) => (_ungetwc = Module._ungetwc = wasmExports.ungetwc)(e, t), _unlinkat = Module._unlinkat = (e, t, r) => (_unlinkat = Module._unlinkat = wasmExports.unlinkat)(e, t, r), _usleep = Module._usleep = (e) => (_usleep = Module._usleep = wasmExports.usleep)(e), _utimensat = Module._utimensat = (e, t, r, a) => (_utimensat = Module._utimensat = wasmExports.utimensat)(e, t, r, a), _vasprintf = Module._vasprintf = (e, t, r) => (_vasprintf = Module._vasprintf = wasmExports.vasprintf)(e, t, r), _wcrtomb = Module._wcrtomb = (e, t, r) => (_wcrtomb = Module._wcrtomb = wasmExports.wcrtomb)(e, t, r), _wcslen = Module._wcslen = (e) => (_wcslen = Module._wcslen = wasmExports.wcslen)(e), _wcscoll_l = Module._wcscoll_l = (e, t, r) => (_wcscoll_l = Module._wcscoll_l = wasmExports.wcscoll_l)(e, t, r), _wcsnrtombs = Module._wcsnrtombs = (e, t, r, a, o) => (_wcsnrtombs = Module._wcsnrtombs = wasmExports.wcsnrtombs)(e, t, r, a, o), _wcstof = Module._wcstof = (e, t) => (_wcstof = Module._wcstof = wasmExports.wcstof)(e, t), _wcstod = Module._wcstod = (e, t) => (_wcstod = Module._wcstod = wasmExports.wcstod)(e, t), _wcstold = Module._wcstold = (e, t, r) => (_wcstold = Module._wcstold = wasmExports.wcstold)(e, t, r), _wcstoull = Module._wcstoull = (e, t, r) => (_wcstoull = Module._wcstoull = wasmExports.wcstoull)(e, t, r), _wcstoll = Module._wcstoll = (e, t, r) => (_wcstoll = Module._wcstoll = wasmExports.wcstoll)(e, t, r), _wcstoul = Module._wcstoul = (e, t, r) => (_wcstoul = Module._wcstoul = wasmExports.wcstoul)(e, t, r), _wcstol = Module._wcstol = (e, t, r) => (_wcstol = Module._wcstol = wasmExports.wcstol)(e, t, r), _wcsxfrm_l = Module._wcsxfrm_l = (e, t, r, a) => (_wcsxfrm_l = Module._wcsxfrm_l = wasmExports.wcsxfrm_l)(e, t, r, a), _wctob = Module._wctob = (e) => (_wctob = Module._wctob = wasmExports.wctob)(e), _wmemchr = Module._wmemchr = (e, t, r) => (_wmemchr = Module._wmemchr = wasmExports.wmemchr)(e, t, r), _wmemcmp = Module._wmemcmp = (e, t, r) => (_wmemcmp = Module._wmemcmp = wasmExports.wmemcmp)(e, t, r), ___lttf2 = Module.___lttf2 = (e, t, r, a) => (___lttf2 = Module.___lttf2 = wasmExports.__lttf2)(e, t, r, a), _setThrew = (e, t) => (_setThrew = wasmExports.setThrew)(e, t), __emscripten_tempret_set = (e) => (__emscripten_tempret_set = wasmExports._emscripten_tempret_set)(e), __emscripten_tempret_get = () => (__emscripten_tempret_get = wasmExports._emscripten_tempret_get)(), __emscripten_stack_restore = (e) => (__emscripten_stack_restore = wasmExports._emscripten_stack_restore)(e), __emscripten_stack_alloc = (e) => (__emscripten_stack_alloc = wasmExports._emscripten_stack_alloc)(e), _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports.emscripten_stack_get_current)(), __Znwm = Module.__Znwm = (e) => (__Znwm = Module.__Znwm = wasmExports._Znwm)(e), __ZNSt3__210__stdinbufIcEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__210__stdinbufIcEC2EP8_IO_FILEP11__mbstate_t = (e, t, r) => (__ZNSt3__210__stdinbufIcEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__210__stdinbufIcEC2EP8_IO_FILEP11__mbstate_t = wasmExports._ZNSt3__210__stdinbufIcEC2EP8_IO_FILEP11__mbstate_t)(e, t, r), __ZNSt3__211__stdoutbufIcEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__211__stdoutbufIcEC2EP8_IO_FILEP11__mbstate_t = (e, t, r) => (__ZNSt3__211__stdoutbufIcEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__211__stdoutbufIcEC2EP8_IO_FILEP11__mbstate_t = wasmExports._ZNSt3__211__stdoutbufIcEC2EP8_IO_FILEP11__mbstate_t)(e, t, r), __ZNSt3__210__stdinbufIwEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__210__stdinbufIwEC2EP8_IO_FILEP11__mbstate_t = (e, t, r) => (__ZNSt3__210__stdinbufIwEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__210__stdinbufIwEC2EP8_IO_FILEP11__mbstate_t = wasmExports._ZNSt3__210__stdinbufIwEC2EP8_IO_FILEP11__mbstate_t)(e, t, r), __ZNSt3__211__stdoutbufIwEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__211__stdoutbufIwEC2EP8_IO_FILEP11__mbstate_t = (e, t, r) => (__ZNSt3__211__stdoutbufIwEC2EP8_IO_FILEP11__mbstate_t = Module.__ZNSt3__211__stdoutbufIwEC2EP8_IO_FILEP11__mbstate_t = wasmExports._ZNSt3__211__stdoutbufIwEC2EP8_IO_FILEP11__mbstate_t)(e, t, r), __ZSt15get_new_handlerv = Module.__ZSt15get_new_handlerv = () => (__ZSt15get_new_handlerv = Module.__ZSt15get_new_handlerv = wasmExports._ZSt15get_new_handlerv)(), __ZdlPv = Module.__ZdlPv = (e) => (__ZdlPv = Module.__ZdlPv = wasmExports._ZdlPv)(e), __ZNSt13runtime_errorD2Ev = Module.__ZNSt13runtime_errorD2Ev = (e) => (__ZNSt13runtime_errorD2Ev = Module.__ZNSt13runtime_errorD2Ev = wasmExports._ZNSt13runtime_errorD2Ev)(e), __ZNKSt13runtime_error4whatEv = Module.__ZNKSt13runtime_error4whatEv = (e) => (__ZNKSt13runtime_error4whatEv = Module.__ZNKSt13runtime_error4whatEv = wasmExports._ZNKSt13runtime_error4whatEv)(e), __ZSt9terminatev = Module.__ZSt9terminatev = () => (__ZSt9terminatev = Module.__ZSt9terminatev = wasmExports._ZSt9terminatev)(), __ZNSt11logic_errorD2Ev = Module.__ZNSt11logic_errorD2Ev = (e) => (__ZNSt11logic_errorD2Ev = Module.__ZNSt11logic_errorD2Ev = wasmExports._ZNSt11logic_errorD2Ev)(e), ___cxa_decrement_exception_refcount = Module.___cxa_decrement_exception_refcount = (e) => (___cxa_decrement_exception_refcount = Module.___cxa_decrement_exception_refcount = wasmExports.__cxa_decrement_exception_refcount)(e), ___cxa_increment_exception_refcount = Module.___cxa_increment_exception_refcount = (e) => (___cxa_increment_exception_refcount = Module.___cxa_increment_exception_refcount = wasmExports.__cxa_increment_exception_refcount)(e), __ZNSt9exceptionD2Ev = Module.__ZNSt9exceptionD2Ev = (e) => (__ZNSt9exceptionD2Ev = Module.__ZNSt9exceptionD2Ev = wasmExports._ZNSt9exceptionD2Ev)(e), __ZNKSt11logic_error4whatEv = Module.__ZNKSt11logic_error4whatEv = (e) => (__ZNKSt11logic_error4whatEv = Module.__ZNKSt11logic_error4whatEv = wasmExports._ZNKSt11logic_error4whatEv)(e), ___cxa_bad_cast = Module.___cxa_bad_cast = () => (___cxa_bad_cast = Module.___cxa_bad_cast = wasmExports.__cxa_bad_cast)(), ___cxa_bad_typeid = Module.___cxa_bad_typeid = () => (___cxa_bad_typeid = Module.___cxa_bad_typeid = wasmExports.__cxa_bad_typeid)(), ___cxa_allocate_exception = Module.___cxa_allocate_exception = (e) => (___cxa_allocate_exception = Module.___cxa_allocate_exception = wasmExports.__cxa_allocate_exception)(e), ___cxa_free_exception = Module.___cxa_free_exception = (e) => (___cxa_free_exception = Module.___cxa_free_exception = wasmExports.__cxa_free_exception)(e), ___cxa_init_primary_exception = Module.___cxa_init_primary_exception = (e, t, r) => (___cxa_init_primary_exception = Module.___cxa_init_primary_exception = wasmExports.__cxa_init_primary_exception)(e, t, r), __ZNSt9type_infoD2Ev = Module.__ZNSt9type_infoD2Ev = (e) => (__ZNSt9type_infoD2Ev = Module.__ZNSt9type_infoD2Ev = wasmExports._ZNSt9type_infoD2Ev)(e), ___cxa_can_catch = (e, t, r) => (___cxa_can_catch = wasmExports.__cxa_can_catch)(e, t, r), ___cxa_get_exception_ptr = Module.___cxa_get_exception_ptr = (e) => (___cxa_get_exception_ptr = Module.___cxa_get_exception_ptr = wasmExports.__cxa_get_exception_ptr)(e), __ZNSt9exceptionD0Ev = Module.__ZNSt9exceptionD0Ev = (e) => (__ZNSt9exceptionD0Ev = Module.__ZNSt9exceptionD0Ev = wasmExports._ZNSt9exceptionD0Ev)(e), __ZNSt9exceptionD1Ev = Module.__ZNSt9exceptionD1Ev = (e) => (__ZNSt9exceptionD1Ev = Module.__ZNSt9exceptionD1Ev = wasmExports._ZNSt9exceptionD1Ev)(e), __ZNKSt9exception4whatEv = Module.__ZNKSt9exception4whatEv = (e) => (__ZNKSt9exception4whatEv = Module.__ZNKSt9exception4whatEv = wasmExports._ZNKSt9exception4whatEv)(e), __ZNSt13bad_exceptionD0Ev = Module.__ZNSt13bad_exceptionD0Ev = (e) => (__ZNSt13bad_exceptionD0Ev = Module.__ZNSt13bad_exceptionD0Ev = wasmExports._ZNSt13bad_exceptionD0Ev)(e), __ZNSt13bad_exceptionD1Ev = Module.__ZNSt13bad_exceptionD1Ev = (e) => (__ZNSt13bad_exceptionD1Ev = Module.__ZNSt13bad_exceptionD1Ev = wasmExports._ZNSt13bad_exceptionD1Ev)(e), __ZNKSt13bad_exception4whatEv = Module.__ZNKSt13bad_exception4whatEv = (e) => (__ZNKSt13bad_exception4whatEv = Module.__ZNKSt13bad_exception4whatEv = wasmExports._ZNKSt13bad_exception4whatEv)(e), __ZNSt9bad_allocC2Ev = Module.__ZNSt9bad_allocC2Ev = (e) => (__ZNSt9bad_allocC2Ev = Module.__ZNSt9bad_allocC2Ev = wasmExports._ZNSt9bad_allocC2Ev)(e), __ZNSt9bad_allocD0Ev = Module.__ZNSt9bad_allocD0Ev = (e) => (__ZNSt9bad_allocD0Ev = Module.__ZNSt9bad_allocD0Ev = wasmExports._ZNSt9bad_allocD0Ev)(e), __ZNSt9bad_allocD1Ev = Module.__ZNSt9bad_allocD1Ev = (e) => (__ZNSt9bad_allocD1Ev = Module.__ZNSt9bad_allocD1Ev = wasmExports._ZNSt9bad_allocD1Ev)(e), __ZNKSt9bad_alloc4whatEv = Module.__ZNKSt9bad_alloc4whatEv = (e) => (__ZNKSt9bad_alloc4whatEv = Module.__ZNKSt9bad_alloc4whatEv = wasmExports._ZNKSt9bad_alloc4whatEv)(e), __ZNSt20bad_array_new_lengthC2Ev = Module.__ZNSt20bad_array_new_lengthC2Ev = (e) => (__ZNSt20bad_array_new_lengthC2Ev = Module.__ZNSt20bad_array_new_lengthC2Ev = wasmExports._ZNSt20bad_array_new_lengthC2Ev)(e), __ZNSt20bad_array_new_lengthD0Ev = Module.__ZNSt20bad_array_new_lengthD0Ev = (e) => (__ZNSt20bad_array_new_lengthD0Ev = Module.__ZNSt20bad_array_new_lengthD0Ev = wasmExports._ZNSt20bad_array_new_lengthD0Ev)(e), __ZNSt20bad_array_new_lengthD1Ev = Module.__ZNSt20bad_array_new_lengthD1Ev = (e) => (__ZNSt20bad_array_new_lengthD1Ev = Module.__ZNSt20bad_array_new_lengthD1Ev = wasmExports._ZNSt20bad_array_new_lengthD1Ev)(e), __ZNKSt20bad_array_new_length4whatEv = Module.__ZNKSt20bad_array_new_length4whatEv = (e) => (__ZNKSt20bad_array_new_length4whatEv = Module.__ZNKSt20bad_array_new_length4whatEv = wasmExports._ZNKSt20bad_array_new_length4whatEv)(e), __ZNSt13bad_exceptionD2Ev = Module.__ZNSt13bad_exceptionD2Ev = (e) => (__ZNSt13bad_exceptionD2Ev = Module.__ZNSt13bad_exceptionD2Ev = wasmExports._ZNSt13bad_exceptionD2Ev)(e), __ZNSt9bad_allocC1Ev = Module.__ZNSt9bad_allocC1Ev = (e) => (__ZNSt9bad_allocC1Ev = Module.__ZNSt9bad_allocC1Ev = wasmExports._ZNSt9bad_allocC1Ev)(e), __ZNSt9bad_allocD2Ev = Module.__ZNSt9bad_allocD2Ev = (e) => (__ZNSt9bad_allocD2Ev = Module.__ZNSt9bad_allocD2Ev = wasmExports._ZNSt9bad_allocD2Ev)(e), __ZNSt20bad_array_new_lengthC1Ev = Module.__ZNSt20bad_array_new_lengthC1Ev = (e) => (__ZNSt20bad_array_new_lengthC1Ev = Module.__ZNSt20bad_array_new_lengthC1Ev = wasmExports._ZNSt20bad_array_new_lengthC1Ev)(e), __ZNSt20bad_array_new_lengthD2Ev = Module.__ZNSt20bad_array_new_lengthD2Ev = (e) => (__ZNSt20bad_array_new_lengthD2Ev = Module.__ZNSt20bad_array_new_lengthD2Ev = wasmExports._ZNSt20bad_array_new_lengthD2Ev)(e), __ZNSt11logic_errorD0Ev = Module.__ZNSt11logic_errorD0Ev = (e) => (__ZNSt11logic_errorD0Ev = Module.__ZNSt11logic_errorD0Ev = wasmExports._ZNSt11logic_errorD0Ev)(e), __ZNSt11logic_errorD1Ev = Module.__ZNSt11logic_errorD1Ev = (e) => (__ZNSt11logic_errorD1Ev = Module.__ZNSt11logic_errorD1Ev = wasmExports._ZNSt11logic_errorD1Ev)(e), __ZNSt13runtime_errorD0Ev = Module.__ZNSt13runtime_errorD0Ev = (e) => (__ZNSt13runtime_errorD0Ev = Module.__ZNSt13runtime_errorD0Ev = wasmExports._ZNSt13runtime_errorD0Ev)(e), __ZNSt13runtime_errorD1Ev = Module.__ZNSt13runtime_errorD1Ev = (e) => (__ZNSt13runtime_errorD1Ev = Module.__ZNSt13runtime_errorD1Ev = wasmExports._ZNSt13runtime_errorD1Ev)(e), __ZNSt12domain_errorD0Ev = Module.__ZNSt12domain_errorD0Ev = (e) => (__ZNSt12domain_errorD0Ev = Module.__ZNSt12domain_errorD0Ev = wasmExports._ZNSt12domain_errorD0Ev)(e), __ZNSt12domain_errorD1Ev = Module.__ZNSt12domain_errorD1Ev = (e) => (__ZNSt12domain_errorD1Ev = Module.__ZNSt12domain_errorD1Ev = wasmExports._ZNSt12domain_errorD1Ev)(e), __ZNSt16invalid_argumentD0Ev = Module.__ZNSt16invalid_argumentD0Ev = (e) => (__ZNSt16invalid_argumentD0Ev = Module.__ZNSt16invalid_argumentD0Ev = wasmExports._ZNSt16invalid_argumentD0Ev)(e), __ZNSt16invalid_argumentD1Ev = Module.__ZNSt16invalid_argumentD1Ev = (e) => (__ZNSt16invalid_argumentD1Ev = Module.__ZNSt16invalid_argumentD1Ev = wasmExports._ZNSt16invalid_argumentD1Ev)(e), __ZNSt12length_errorD0Ev = Module.__ZNSt12length_errorD0Ev = (e) => (__ZNSt12length_errorD0Ev = Module.__ZNSt12length_errorD0Ev = wasmExports._ZNSt12length_errorD0Ev)(e), __ZNSt12length_errorD1Ev = Module.__ZNSt12length_errorD1Ev = (e) => (__ZNSt12length_errorD1Ev = Module.__ZNSt12length_errorD1Ev = wasmExports._ZNSt12length_errorD1Ev)(e), __ZNSt12out_of_rangeD0Ev = Module.__ZNSt12out_of_rangeD0Ev = (e) => (__ZNSt12out_of_rangeD0Ev = Module.__ZNSt12out_of_rangeD0Ev = wasmExports._ZNSt12out_of_rangeD0Ev)(e), __ZNSt12out_of_rangeD1Ev = Module.__ZNSt12out_of_rangeD1Ev = (e) => (__ZNSt12out_of_rangeD1Ev = Module.__ZNSt12out_of_rangeD1Ev = wasmExports._ZNSt12out_of_rangeD1Ev)(e), __ZNSt11range_errorD0Ev = Module.__ZNSt11range_errorD0Ev = (e) => (__ZNSt11range_errorD0Ev = Module.__ZNSt11range_errorD0Ev = wasmExports._ZNSt11range_errorD0Ev)(e), __ZNSt11range_errorD1Ev = Module.__ZNSt11range_errorD1Ev = (e) => (__ZNSt11range_errorD1Ev = Module.__ZNSt11range_errorD1Ev = wasmExports._ZNSt11range_errorD1Ev)(e), __ZNSt14overflow_errorD0Ev = Module.__ZNSt14overflow_errorD0Ev = (e) => (__ZNSt14overflow_errorD0Ev = Module.__ZNSt14overflow_errorD0Ev = wasmExports._ZNSt14overflow_errorD0Ev)(e), __ZNSt14overflow_errorD1Ev = Module.__ZNSt14overflow_errorD1Ev = (e) => (__ZNSt14overflow_errorD1Ev = Module.__ZNSt14overflow_errorD1Ev = wasmExports._ZNSt14overflow_errorD1Ev)(e), __ZNSt15underflow_errorD0Ev = Module.__ZNSt15underflow_errorD0Ev = (e) => (__ZNSt15underflow_errorD0Ev = Module.__ZNSt15underflow_errorD0Ev = wasmExports._ZNSt15underflow_errorD0Ev)(e), __ZNSt15underflow_errorD1Ev = Module.__ZNSt15underflow_errorD1Ev = (e) => (__ZNSt15underflow_errorD1Ev = Module.__ZNSt15underflow_errorD1Ev = wasmExports._ZNSt15underflow_errorD1Ev)(e), __ZNSt12domain_errorD2Ev = Module.__ZNSt12domain_errorD2Ev = (e) => (__ZNSt12domain_errorD2Ev = Module.__ZNSt12domain_errorD2Ev = wasmExports._ZNSt12domain_errorD2Ev)(e), __ZNSt16invalid_argumentD2Ev = Module.__ZNSt16invalid_argumentD2Ev = (e) => (__ZNSt16invalid_argumentD2Ev = Module.__ZNSt16invalid_argumentD2Ev = wasmExports._ZNSt16invalid_argumentD2Ev)(e), __ZNSt12length_errorD2Ev = Module.__ZNSt12length_errorD2Ev = (e) => (__ZNSt12length_errorD2Ev = Module.__ZNSt12length_errorD2Ev = wasmExports._ZNSt12length_errorD2Ev)(e), __ZNSt12out_of_rangeD2Ev = Module.__ZNSt12out_of_rangeD2Ev = (e) => (__ZNSt12out_of_rangeD2Ev = Module.__ZNSt12out_of_rangeD2Ev = wasmExports._ZNSt12out_of_rangeD2Ev)(e), __ZNSt11range_errorD2Ev = Module.__ZNSt11range_errorD2Ev = (e) => (__ZNSt11range_errorD2Ev = Module.__ZNSt11range_errorD2Ev = wasmExports._ZNSt11range_errorD2Ev)(e), __ZNSt14overflow_errorD2Ev = Module.__ZNSt14overflow_errorD2Ev = (e) => (__ZNSt14overflow_errorD2Ev = Module.__ZNSt14overflow_errorD2Ev = wasmExports._ZNSt14overflow_errorD2Ev)(e), __ZNSt15underflow_errorD2Ev = Module.__ZNSt15underflow_errorD2Ev = (e) => (__ZNSt15underflow_errorD2Ev = Module.__ZNSt15underflow_errorD2Ev = wasmExports._ZNSt15underflow_errorD2Ev)(e), __ZNSt9type_infoD0Ev = Module.__ZNSt9type_infoD0Ev = (e) => (__ZNSt9type_infoD0Ev = Module.__ZNSt9type_infoD0Ev = wasmExports._ZNSt9type_infoD0Ev)(e), __ZNSt9type_infoD1Ev = Module.__ZNSt9type_infoD1Ev = (e) => (__ZNSt9type_infoD1Ev = Module.__ZNSt9type_infoD1Ev = wasmExports._ZNSt9type_infoD1Ev)(e), __ZNSt8bad_castC2Ev = Module.__ZNSt8bad_castC2Ev = (e) => (__ZNSt8bad_castC2Ev = Module.__ZNSt8bad_castC2Ev = wasmExports._ZNSt8bad_castC2Ev)(e), __ZNSt8bad_castD2Ev = Module.__ZNSt8bad_castD2Ev = (e) => (__ZNSt8bad_castD2Ev = Module.__ZNSt8bad_castD2Ev = wasmExports._ZNSt8bad_castD2Ev)(e), __ZNSt8bad_castD0Ev = Module.__ZNSt8bad_castD0Ev = (e) => (__ZNSt8bad_castD0Ev = Module.__ZNSt8bad_castD0Ev = wasmExports._ZNSt8bad_castD0Ev)(e), __ZNSt8bad_castD1Ev = Module.__ZNSt8bad_castD1Ev = (e) => (__ZNSt8bad_castD1Ev = Module.__ZNSt8bad_castD1Ev = wasmExports._ZNSt8bad_castD1Ev)(e), __ZNKSt8bad_cast4whatEv = Module.__ZNKSt8bad_cast4whatEv = (e) => (__ZNKSt8bad_cast4whatEv = Module.__ZNKSt8bad_cast4whatEv = wasmExports._ZNKSt8bad_cast4whatEv)(e), __ZNSt10bad_typeidC2Ev = Module.__ZNSt10bad_typeidC2Ev = (e) => (__ZNSt10bad_typeidC2Ev = Module.__ZNSt10bad_typeidC2Ev = wasmExports._ZNSt10bad_typeidC2Ev)(e), __ZNSt10bad_typeidD2Ev = Module.__ZNSt10bad_typeidD2Ev = (e) => (__ZNSt10bad_typeidD2Ev = Module.__ZNSt10bad_typeidD2Ev = wasmExports._ZNSt10bad_typeidD2Ev)(e), __ZNSt10bad_typeidD0Ev = Module.__ZNSt10bad_typeidD0Ev = (e) => (__ZNSt10bad_typeidD0Ev = Module.__ZNSt10bad_typeidD0Ev = wasmExports._ZNSt10bad_typeidD0Ev)(e), __ZNSt10bad_typeidD1Ev = Module.__ZNSt10bad_typeidD1Ev = (e) => (__ZNSt10bad_typeidD1Ev = Module.__ZNSt10bad_typeidD1Ev = wasmExports._ZNSt10bad_typeidD1Ev)(e), __ZNKSt10bad_typeid4whatEv = Module.__ZNKSt10bad_typeid4whatEv = (e) => (__ZNKSt10bad_typeid4whatEv = Module.__ZNKSt10bad_typeid4whatEv = wasmExports._ZNKSt10bad_typeid4whatEv)(e), __ZNSt8bad_castC1Ev = Module.__ZNSt8bad_castC1Ev = (e) => (__ZNSt8bad_castC1Ev = Module.__ZNSt8bad_castC1Ev = wasmExports._ZNSt8bad_castC1Ev)(e), __ZNSt10bad_typeidC1Ev = Module.__ZNSt10bad_typeidC1Ev = (e) => (__ZNSt10bad_typeidC1Ev = Module.__ZNSt10bad_typeidC1Ev = wasmExports._ZNSt10bad_typeidC1Ev)(e), ___wasm_apply_data_relocs = () => (___wasm_apply_data_relocs = wasmExports.__wasm_apply_data_relocs)(), _LocalBufferBlockPointers = Module._LocalBufferBlockPointers = 2796604, _BufferBlocks = Module._BufferBlocks = 2791308, _wal_level = Module._wal_level = 2582944, _CurrentMemoryContext = Module._CurrentMemoryContext = 2880704, _SnapshotAnyData = Module._SnapshotAnyData = 2674208, _debug_query_string = Module._debug_query_string = 2804316, _maintenance_work_mem = Module._maintenance_work_mem = 2618976, _CritSectionCount = Module._CritSectionCount = 2875364, _InterruptPending = Module._InterruptPending = 2875312, _ParallelWorkerNumber = Module._ParallelWorkerNumber = 2574456, _pg_number_of_ones = Module._pg_number_of_ones = 2034800, _TopMemoryContext = Module._TopMemoryContext = 2880708, _IsUnderPostmaster = Module._IsUnderPostmaster = 2875397, _MainLWLockArray = Module._MainLWLockArray = 2802324, _CurrentResourceOwner = Module._CurrentResourceOwner = 2880756, _work_mem = Module._work_mem = 2618964, _pg_global_prng_state = Module._pg_global_prng_state = 2964208, _NBuffers = Module._NBuffers = 2618984, _XactIsoLevel = Module._XactIsoLevel = 2582808, _bsysscan = Module._bsysscan = 2775716, _CheckXidAlive = Module._CheckXidAlive = 2775712, _MyProc = Module._MyProc = 2804140, _MyDatabaseId = Module._MyDatabaseId = 2875376, _TTSOpsBufferHeapTuple = Module._TTSOpsBufferHeapTuple = 2586992, _RecentXmin = Module._RecentXmin = 2674356, _TTSOpsHeapTuple = Module._TTSOpsHeapTuple = 2586888, _pgWalUsage = Module._pgWalUsage = 2779064, _pgBufferUsage = Module._pgBufferUsage = 2778936, _error_context_stack = Module._error_context_stack = 2873608, _MyLatch = Module._MyLatch = 2875524, ___THREW__ = Module.___THREW__ = 2981972, ___threwValue = Module.___threwValue = 2981976, _PG_exception_stack = Module._PG_exception_stack = 2873612, _TTSOpsVirtual = Module._TTSOpsVirtual = 2586836, _GUC_check_errdetail_string = Module._GUC_check_errdetail_string = 2879292, _TransamVariables = Module._TransamVariables = 2775704, _TopTransactionContext = Module._TopTransactionContext = 2880728, _MyProcPid = Module._MyProcPid = 2875448, _RmgrTable = Module._RmgrTable = 2574528, _process_shared_preload_libraries_in_progress = Module._process_shared_preload_libraries_in_progress = 2878688, _wal_segment_size = Module._wal_segment_size = 2582964, _TopTransactionResourceOwner = Module._TopTransactionResourceOwner = 2880764, _arch_module_check_errdetail_string = Module._arch_module_check_errdetail_string = 2788776, _stdout = Module._stdout = 2770224, _stdin = Module._stdin = 2770072, _object_access_hook = Module._object_access_hook = 2777456, _InvalidObjectAddress = Module._InvalidObjectAddress = 736776, _check_function_bodies = Module._check_function_bodies = 2619166, _post_parse_analyze_hook = Module._post_parse_analyze_hook = 2777496, _ScanKeywordTokens = Module._ScanKeywordTokens = 1286080, _ScanKeywords = Module._ScanKeywords = 2726024, _None_Receiver = Module._None_Receiver = 2592780, _explain_per_plan_hook = Module._explain_per_plan_hook = 2777640, _explain_per_node_hook = Module._explain_per_node_hook = 2777644, _CacheMemoryContext = Module._CacheMemoryContext = 2880720, _SPI_processed = Module._SPI_processed = 2779256, _SPI_tuptable = Module._SPI_tuptable = 2779264, _TTSOpsMinimalTuple = Module._TTSOpsMinimalTuple = 2586940, _check_password_hook = Module._check_password_hook = 2777804, _ConfigReloadPending = Module._ConfigReloadPending = 2788748, _max_parallel_maintenance_workers = Module._max_parallel_maintenance_workers = 2618980, _DateStyle = Module._DateStyle = 2618952, _ExecutorStart_hook = Module._ExecutorStart_hook = 2778912, _ExecutorRun_hook = Module._ExecutorRun_hook = 2778916, _ExecutorFinish_hook = Module._ExecutorFinish_hook = 2778920, _ExecutorEnd_hook = Module._ExecutorEnd_hook = 2778924, _SPI_result = Module._SPI_result = 2779268, _stderr = Module._stderr = 2769920, _MyProcPort = Module._MyProcPort = 2875476, _ClientAuthentication_hook = Module._ClientAuthentication_hook = 2779472, _set_rel_pathlist_hook = Module._set_rel_pathlist_hook = 2788336, _cpu_tuple_cost = Module._cpu_tuple_cost = 2587464, _cpu_operator_cost = Module._cpu_operator_cost = 2587480, _seq_page_cost = Module._seq_page_cost = 2587448, _planner_hook = Module._planner_hook = 2788380, _QueryCancelPending = Module._QueryCancelPending = 2875316, _ShutdownRequestPending = Module._ShutdownRequestPending = 2788752, _MyStartTime = Module._MyStartTime = 2875456, _cluster_name = Module._cluster_name = 2619216, _ProcDiePending = Module._ProcDiePending = 2875320, _application_name = Module._application_name = 2879500, _row_security_policy_hook_restrictive = Module._row_security_policy_hook_restrictive = 2791276, _row_security_policy_hook_permissive = Module._row_security_policy_hook_permissive = 2791272, _BufferDescriptors = Module._BufferDescriptors = 2791304, _shmem_startup_hook = Module._shmem_startup_hook = 2797300, _ProcessUtility_hook = Module._ProcessUtility_hook = 2804520, _IntervalStyle = Module._IntervalStyle = 2875400, _extra_float_digits = Module._extra_float_digits = 2609272, _pg_crc32_table = Module._pg_crc32_table = 1698672, _shmem_request_hook = Module._shmem_request_hook = 2878692, __ZTVN10__cxxabiv120__si_class_type_infoE = Module.__ZTVN10__cxxabiv120__si_class_type_infoE = 2770852, __ZTVN10__cxxabiv117__class_type_infoE = Module.__ZTVN10__cxxabiv117__class_type_infoE = 2770812, __ZTVN10__cxxabiv121__vmi_class_type_infoE = Module.__ZTVN10__cxxabiv121__vmi_class_type_infoE = 2770904, __ZTVSt11logic_error = Module.__ZTVSt11logic_error = 2771164, __ZTVSt9exception = Module.__ZTVSt9exception = 2771080, __ZTVSt13runtime_error = Module.__ZTVSt13runtime_error = 2771184, __ZTISt13runtime_error = Module.__ZTISt13runtime_error = 2771376, __ZTISt9exception = Module.__ZTISt9exception = 2771100, __ZTISt11logic_error = Module.__ZTISt11logic_error = 2771236, __ZTISt9type_info = Module.__ZTISt9type_info = 2771508, __ZTVN10__cxxabiv116__shim_type_infoE = Module.__ZTVN10__cxxabiv116__shim_type_infoE = 2770500, __ZTVN10__cxxabiv123__fundamental_type_infoE = Module.__ZTVN10__cxxabiv123__fundamental_type_infoE = 2770528, __ZTVN10__cxxabiv119__pointer_type_infoE = Module.__ZTVN10__cxxabiv119__pointer_type_infoE = 2770984, __ZTIb = Module.__ZTIb = 2770584, __ZTIPKc = Module.__ZTIPKc = 2770600, __ZTIh = Module.__ZTIh = 2770616, __ZTIa = Module.__ZTIa = 2770624, __ZTIs = Module.__ZTIs = 2770632, __ZTIt = Module.__ZTIt = 2770640, __ZTIi = Module.__ZTIi = 2770648, __ZTIj = Module.__ZTIj = 2770656, __ZTIl = Module.__ZTIl = 2770664, __ZTIm = Module.__ZTIm = 2770672, __ZTIx = Module.__ZTIx = 2770680, __ZTIf = Module.__ZTIf = 2770688, __ZTId = Module.__ZTId = 2770696, __ZTVN10__cxxabiv117__array_type_infoE = Module.__ZTVN10__cxxabiv117__array_type_infoE = 2770704, __ZTVN10__cxxabiv120__function_type_infoE = Module.__ZTVN10__cxxabiv120__function_type_infoE = 2770744, __ZTVN10__cxxabiv116__enum_type_infoE = Module.__ZTVN10__cxxabiv116__enum_type_infoE = 2770772, __ZTVN10__cxxabiv117__pbase_type_infoE = Module.__ZTVN10__cxxabiv117__pbase_type_infoE = 2770956, __ZTVN10__cxxabiv129__pointer_to_member_type_infoE = Module.__ZTVN10__cxxabiv129__pointer_to_member_type_infoE = 2771012, __ZTVSt9bad_alloc = Module.__ZTVSt9bad_alloc = 2771040, __ZTVSt20bad_array_new_length = Module.__ZTVSt20bad_array_new_length = 2771060, __ZTISt9bad_alloc = Module.__ZTISt9bad_alloc = 2771140, __ZTISt20bad_array_new_length = Module.__ZTISt20bad_array_new_length = 2771152, __ZTSSt9exception = Module.__ZTSSt9exception = 2559709, __ZTVSt13bad_exception = Module.__ZTVSt13bad_exception = 2771108, __ZTISt13bad_exception = Module.__ZTISt13bad_exception = 2771128, __ZTSSt13bad_exception = Module.__ZTSSt13bad_exception = 2559722, __ZTSSt9bad_alloc = Module.__ZTSSt9bad_alloc = 2559740, __ZTSSt20bad_array_new_length = Module.__ZTSSt20bad_array_new_length = 2559753, __ZTVSt12domain_error = Module.__ZTVSt12domain_error = 2771204, __ZTISt12domain_error = Module.__ZTISt12domain_error = 2771224, __ZTSSt12domain_error = Module.__ZTSSt12domain_error = 2559778, __ZTSSt11logic_error = Module.__ZTSSt11logic_error = 2559795, __ZTVSt16invalid_argument = Module.__ZTVSt16invalid_argument = 2771248, __ZTISt16invalid_argument = Module.__ZTISt16invalid_argument = 2771268, __ZTSSt16invalid_argument = Module.__ZTSSt16invalid_argument = 2559811, __ZTVSt12length_error = Module.__ZTVSt12length_error = 2771280, __ZTISt12length_error = Module.__ZTISt12length_error = 2771300, __ZTSSt12length_error = Module.__ZTSSt12length_error = 2559832, __ZTVSt12out_of_range = Module.__ZTVSt12out_of_range = 2771312, __ZTISt12out_of_range = Module.__ZTISt12out_of_range = 2771332, __ZTSSt12out_of_range = Module.__ZTSSt12out_of_range = 2559849, __ZTVSt11range_error = Module.__ZTVSt11range_error = 2771344, __ZTISt11range_error = Module.__ZTISt11range_error = 2771364, __ZTSSt11range_error = Module.__ZTSSt11range_error = 2559866, __ZTSSt13runtime_error = Module.__ZTSSt13runtime_error = 2559882, __ZTVSt14overflow_error = Module.__ZTVSt14overflow_error = 2771388, __ZTISt14overflow_error = Module.__ZTISt14overflow_error = 2771408, __ZTSSt14overflow_error = Module.__ZTSSt14overflow_error = 2559900, __ZTVSt15underflow_error = Module.__ZTVSt15underflow_error = 2771420, __ZTISt15underflow_error = Module.__ZTISt15underflow_error = 2771440, __ZTSSt15underflow_error = Module.__ZTSSt15underflow_error = 2559919, __ZTVSt8bad_cast = Module.__ZTVSt8bad_cast = 2771452, __ZTVSt10bad_typeid = Module.__ZTVSt10bad_typeid = 2771472, __ZTISt8bad_cast = Module.__ZTISt8bad_cast = 2771516, __ZTISt10bad_typeid = Module.__ZTISt10bad_typeid = 2771528, __ZTVSt9type_info = Module.__ZTVSt9type_info = 2771492, __ZTSSt9type_info = Module.__ZTSSt9type_info = 2559939, __ZTSSt8bad_cast = Module.__ZTSSt8bad_cast = 2559952, __ZTSSt10bad_typeid = Module.__ZTSSt10bad_typeid = 2559964;
 		function invoke_ii(e, t) {
 			var r = stackSave();
 			try {
@@ -14014,11 +14034,11 @@ ${n}`), 0;
 			}
 		}
 		function invoke_jiiiiiiiii(e, t, r, a, o, _, s, n, l, d) {
-			var u = stackSave();
+			var p = stackSave();
 			try {
 				return getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d);
-			} catch (c) {
-				if (stackRestore(u), c !== c + 0) throw c;
+			} catch (m) {
+				if (stackRestore(p), m !== m + 0) throw m;
 				return _setThrew(1, 0), 0n;
 			}
 		}
@@ -14040,12 +14060,12 @@ ${n}`), 0;
 				_setThrew(1, 0);
 			}
 		}
-		function invoke_iiiiiiiiiiiiii(e, t, r, a, o, _, s, n, l, d, u, c, f, g) {
-			var m = stackSave();
+		function invoke_iiiiiiiiiiiiii(e, t, r, a, o, _, s, n, l, d, p, m, g, u) {
+			var f = stackSave();
 			try {
-				return getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d, u, c, f, g);
-			} catch (p) {
-				if (stackRestore(m), p !== p + 0) throw p;
+				return getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d, p, m, g, u);
+			} catch (c) {
+				if (stackRestore(f), c !== c + 0) throw c;
 				_setThrew(1, 0);
 			}
 		}
@@ -14107,17 +14127,17 @@ ${n}`), 0;
 			var d = stackSave();
 			try {
 				return getWasmTableEntry(e)(t, r, a, o, _, s, n, l);
-			} catch (u) {
-				if (stackRestore(d), u !== u + 0) throw u;
+			} catch (p) {
+				if (stackRestore(d), p !== p + 0) throw p;
 				_setThrew(1, 0);
 			}
 		}
-		function invoke_iiiiiiiiiiiiiiiiii(e, t, r, a, o, _, s, n, l, d, u, c, f, g, m, p, h, x) {
-			var b = stackSave();
+		function invoke_iiiiiiiiiiiiiiiiii(e, t, r, a, o, _, s, n, l, d, p, m, g, u, f, c, w, S) {
+			var k = stackSave();
 			try {
-				return getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d, u, c, f, g, m, p, h, x);
-			} catch (M) {
-				if (stackRestore(b), M !== M + 0) throw M;
+				return getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d, p, m, g, u, f, c, w, S);
+			} catch (E) {
+				if (stackRestore(k), E !== E + 0) throw E;
 				_setThrew(1, 0);
 			}
 		}
@@ -14140,11 +14160,11 @@ ${n}`), 0;
 			}
 		}
 		function invoke_iiiiiiiiii(e, t, r, a, o, _, s, n, l, d) {
-			var u = stackSave();
+			var p = stackSave();
 			try {
 				return getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d);
-			} catch (c) {
-				if (stackRestore(u), c !== c + 0) throw c;
+			} catch (m) {
+				if (stackRestore(p), m !== m + 0) throw m;
 				_setThrew(1, 0);
 			}
 		}
@@ -14161,17 +14181,17 @@ ${n}`), 0;
 			var d = stackSave();
 			try {
 				getWasmTableEntry(e)(t, r, a, o, _, s, n, l);
-			} catch (u) {
-				if (stackRestore(d), u !== u + 0) throw u;
+			} catch (p) {
+				if (stackRestore(d), p !== p + 0) throw p;
 				_setThrew(1, 0);
 			}
 		}
 		function invoke_viiiiiiiii(e, t, r, a, o, _, s, n, l, d) {
-			var u = stackSave();
+			var p = stackSave();
 			try {
 				getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d);
-			} catch (c) {
-				if (stackRestore(u), c !== c + 0) throw c;
+			} catch (m) {
+				if (stackRestore(p), m !== m + 0) throw m;
 				_setThrew(1, 0);
 			}
 		}
@@ -14364,12 +14384,12 @@ ${n}`), 0;
 				return _setThrew(1, 0), 0n;
 			}
 		}
-		function invoke_viiiiiiiiiiii(e, t, r, a, o, _, s, n, l, d, u, c, f) {
-			var g = stackSave();
+		function invoke_viiiiiiiiiiii(e, t, r, a, o, _, s, n, l, d, p, m, g) {
+			var u = stackSave();
 			try {
-				getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d, u, c, f);
-			} catch (m) {
-				if (stackRestore(g), m !== m + 0) throw m;
+				getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d, p, m, g);
+			} catch (f) {
+				if (stackRestore(u), f !== f + 0) throw f;
 				_setThrew(1, 0);
 			}
 		}
@@ -14400,12 +14420,12 @@ ${n}`), 0;
 				_setThrew(1, 0);
 			}
 		}
-		function invoke_iiiiiiiiiii(e, t, r, a, o, _, s, n, l, d, u) {
-			var c = stackSave();
+		function invoke_iiiiiiiiiii(e, t, r, a, o, _, s, n, l, d, p) {
+			var m = stackSave();
 			try {
-				return getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d, u);
-			} catch (f) {
-				if (stackRestore(c), f !== f + 0) throw f;
+				return getWasmTableEntry(e)(t, r, a, o, _, s, n, l, d, p);
+			} catch (g) {
+				if (stackRestore(m), g !== g + 0) throw g;
 				_setThrew(1, 0);
 			}
 		}
@@ -14441,7 +14461,9 @@ ${n}`), 0;
 		}
 		if (Module.preInit) for (typeof Module.preInit == "function" && (Module.preInit = [Module.preInit]); Module.preInit.length > 0;) Module.preInit.pop()();
 		var shouldRunNow = !1;
-		return Module.noInitialRun && (shouldRunNow = !1), run(), moduleRtn = readyPromise, moduleRtn;
+		return Module.noInitialRun && (shouldRunNow = !1), run(), quit_ = (e, t) => {
+			throw t;
+		}, moduleRtn = readyPromise, moduleRtn;
 	};
 })();
 var He = ht;
@@ -14459,12 +14481,12 @@ var ae = class {
 		this.results = t.results || [], this.throwOnError = t.throwOnError || !1, this.onNotice = t.onNotice, this.databaseError = t.databaseError === void 0 ? null : t.databaseError;
 	}
 };
-var W;
+var H;
 var oe;
 var _e;
 var se;
 var ie;
-var ke;
+var Fe;
 var Te;
 var Pe;
 var Ce;
@@ -14474,20 +14496,20 @@ var Me;
 var pe;
 var ne;
 var ee;
-var z;
+var D;
 var le;
 var ce;
 var I;
 var me;
 var $;
-var V;
-var L;
-var B;
+var W;
+var O;
+var z;
 var he;
 var xe;
 var we;
 var ge;
-var S;
+var x;
 var Xe;
 var Ke;
 var Ye;
@@ -14497,23 +14519,24 @@ var Je;
 var et;
 var qe;
 var tt;
-var U;
+var G;
 var rt;
 var at;
 var ot;
 var _t;
 var st;
-var O = class O extends z$1 {
+var N = class N extends z$1 {
 	constructor(r = {}, a = {}) {
 		super();
-		R$1(this, S);
+		R$1(this, x);
 		this.POSTGRES_MAIN_LONGJMP = 100;
-		R$1(this, W);
+		this.PGLITE_EXIT_ALIVE = 99;
+		R$1(this, H);
 		R$1(this, oe, !1);
 		R$1(this, _e, !1);
 		R$1(this, se, !1);
 		R$1(this, ie, !1);
-		R$1(this, ke, new J());
+		R$1(this, Fe, new J());
 		R$1(this, Te, new J());
 		R$1(this, Pe, new J());
 		R$1(this, Ce, new J());
@@ -14524,15 +14547,15 @@ var O = class O extends z$1 {
 		R$1(this, pe, new pe$1());
 		R$1(this, ne);
 		R$1(this, ee);
-		R$1(this, z, /* @__PURE__ */ new Map());
+		R$1(this, D, /* @__PURE__ */ new Map());
 		R$1(this, le, /* @__PURE__ */ new Set());
 		R$1(this, ce, -1);
 		R$1(this, I, new ae());
 		R$1(this, me, -1);
 		R$1(this, $, []);
-		R$1(this, V, 0);
-		R$1(this, L, /* @__PURE__ */ new Uint8Array(0));
-		R$1(this, B, 0);
+		R$1(this, W, 0);
+		R$1(this, O, /* @__PURE__ */ new Uint8Array(0));
+		R$1(this, z, 0);
 		R$1(this, he, -1);
 		R$1(this, xe, -1);
 		R$1(this, we, -1);
@@ -14547,7 +14570,7 @@ var O = class O extends z$1 {
 		}), a.serializers !== void 0 && (this.serializers = {
 			...this.serializers,
 			...a.serializers
-		}), a?.debug !== void 0 && (this.debug = a.debug), a?.relaxedDurability !== void 0 && x$2(this, ie, a.relaxedDurability), x$2(this, ue, a.extensions ?? {}), this.waitReady = T$2(this, S, Ye).call(this, a ?? {});
+		}), a?.debug !== void 0 && (this.debug = a.debug), a?.relaxedDurability !== void 0 && x$3(this, ie, a.relaxedDurability), x$3(this, ue, a.extensions ?? {}), this.waitReady = T$2(this, x, Ye).call(this, a ?? {});
 	}
 	get ENV() {
 		return this.mod?.ENV;
@@ -14556,7 +14579,7 @@ var O = class O extends z$1 {
 		let o = typeof r == "string" ? {
 			dataDir: r,
 			...a ?? {}
-		} : r ?? {}, _ = new O(o);
+		} : r ?? a ?? {}, _ = new N(o);
 		return await _.waitReady, _;
 	}
 	handleExternalCmd(r, a) {
@@ -14576,39 +14599,38 @@ var O = class O extends z$1 {
 		return h$1(this, se);
 	}
 	async close() {
-		await this._checkReady(), x$2(this, _e, !0);
-		for (let a of h$1(this, Me)) await a();
+		await this._checkReady(), x$3(this, _e, !0);
+		for (let r of h$1(this, Me)) await r();
 		try {
 			this.mod._pgl_setPGliteActive(0), await this.execProtocol($e$1.end()), this.mod._pgl_run_atexit_funcs();
-		} catch (a) {
-			let o = a;
-			o.name === "ExitStatus" && o.status === 0 || T$2(this, S, U).call(this, "An error occured while closing the db", a.toString());
+		} catch (r) {
+			let a = r;
+			a.name === "ExitStatus" && a.status === 0 || T$2(this, x, G).call(this, "An error occured while closing the db", r.toString());
 		} finally {
 			this.mod.removeFunction(h$1(this, me)), this.mod.removeFunction(h$1(this, ce));
 		}
-		await this.fs.closeFs(), x$2(this, se, !0), x$2(this, _e, !1), x$2(this, oe, !1), x$2(this, ge, !1);
-		let r = p$2.pgliteProc.exitCode;
+		await this.fs.closeFs(), x$3(this, se, !0), x$3(this, _e, !1), x$3(this, oe, !1), x$3(this, ge, !1);
 		try {
 			this.mod._emscripten_force_exit(0);
-		} catch (a) {
-			T$2(this, S, U).call(this, a), a.status !== 0 && T$2(this, S, U).call(this, "Error when exiting", a.toString());
+		} catch (r) {
+			T$2(this, x, G).call(this, r), r.status !== 0 && T$2(this, x, G).call(this, "Error when exiting", r.toString());
 		} finally {
-			p$2.pgliteProc.exitCode = r;
+			this.mod = void 0;
 		}
 	}
 	async [Symbol.asyncDispose]() {
 		await this.close();
 	}
 	async _handleBlob(r) {
-		x$2(this, ne, r ? await r.arrayBuffer() : void 0);
+		x$3(this, ne, r ? await r.arrayBuffer() : void 0);
 	}
 	async _cleanupBlob() {
-		x$2(this, ne, void 0);
+		x$3(this, ne, void 0);
 	}
 	async _getWrittenBlob() {
 		if (!h$1(this, ee)) return;
 		let r = new Blob(h$1(this, ee));
-		return x$2(this, ee, void 0), r;
+		return x$3(this, ee, void 0), r;
 	}
 	async _checkReady() {
 		if (h$1(this, _e)) throw new Error("PGlite is closing");
@@ -14617,29 +14639,28 @@ var O = class O extends z$1 {
 	}
 	execProtocolRawSync(r) {
 		let a = this.mod;
-		if (x$2(this, V, 0), x$2(this, B, 0), x$2(this, $, r), h$1(this, W) || x$2(this, W, T$2(this, S, et)), h$1(this, L).length !== O.DEFAULT_RECV_BUF_SIZE && x$2(this, L, new Uint8Array(O.DEFAULT_RECV_BUF_SIZE)), r[0] === 88) return /* @__PURE__ */ new Uint8Array(0);
-		if (r[0] === 0) return T$2(this, S, st).call(this, r);
-		let o = p$2.pgliteProc.exitCode;
+		if (x$3(this, W, 0), x$3(this, z, 0), x$3(this, $, r), h$1(this, H) || x$3(this, H, T$2(this, x, et)), h$1(this, O).length !== N.DEFAULT_RECV_BUF_SIZE && x$3(this, O, new Uint8Array(N.DEFAULT_RECV_BUF_SIZE)), r[0] === 88) return /* @__PURE__ */ new Uint8Array(0);
+		if (r[0] === 0) return T$2(this, x, st).call(this, r);
 		try {
-			for (; h$1(this, V) < r.length || a._pq_buffer_remaining_data() > 0;) try {
+			for (; h$1(this, W) < r.length || a._pq_buffer_remaining_data() > 0;) try {
 				a._PostgresMainLoopOnce();
-			} catch (_) {
-				_.status === this.POSTGRES_MAIN_LONGJMP && a._PostgresMainLongJmp();
+			} catch {
+				this.mod._pgl_setPGliteExitStatus(-2) === this.POSTGRES_MAIN_LONGJMP && a._PostgresMainLongJmp();
 			}
 		} finally {
-			a._PostgresSendReadyForQueryIfNecessary(), a._pgl_pq_flush(), p$2.pgliteProc.exitCode = o;
+			a._PostgresSendReadyForQueryIfNecessary(), a._pgl_pq_flush();
 		}
-		return x$2(this, $, []), h$1(this, B) ? new Uint8Array(h$1(this, L).subarray(0, h$1(this, B))) : /* @__PURE__ */ new Uint8Array(0);
+		return x$3(this, $, []), h$1(this, z) ? new Uint8Array(h$1(this, O).subarray(0, h$1(this, z))) : /* @__PURE__ */ new Uint8Array(0);
 	}
 	async execProtocolRaw(r, { syncToFs: a = !0 } = {}) {
 		let o = this.execProtocolRawSync(r);
 		return a && await this.syncToFs(), o;
 	}
 	async execProtocolRawStream(r, { syncToFs: a = !0, onRawData: o }) {
-		x$2(this, W, (_) => (o(_), _.length)), this.execProtocolRawSync(r), a && await this.syncToFs();
+		x$3(this, H, (_) => (o(_), _.length)), this.execProtocolRawSync(r), a && await this.syncToFs();
 	}
 	async execProtocol(r, { syncToFs: a = !0, throwOnError: o = !0, onNotice: _ } = {}) {
-		x$2(this, I, new ae({
+		x$3(this, I, new ae({
 			throwOnError: o,
 			onNotice: _
 		}));
@@ -14647,16 +14668,16 @@ var O = class O extends z$1 {
 			messages: h$1(this, I).results,
 			data: s
 		};
-		if (x$2(this, I, new ae()), x$2(this, W, void 0), o && n) throw x$2(this, pe, new pe$1()), n;
+		if (x$3(this, I, new ae()), x$3(this, H, void 0), o && n) throw x$3(this, pe, new pe$1()), n;
 		return l;
 	}
 	async execProtocolStream(r, { syncToFs: a, throwOnError: o = !0, onNotice: _ } = {}) {
-		x$2(this, I, new ae({
+		x$3(this, I, new ae({
 			throwOnError: o,
 			onNotice: _
-		})), x$2(this, W, T$2(this, S, qe)), await this.execProtocolRaw(r, { syncToFs: a });
+		})), x$3(this, H, T$2(this, x, qe)), await this.execProtocolRaw(r, { syncToFs: a });
 		let s = h$1(this, I).databaseError, n = h$1(this, I).results;
-		if (x$2(this, I, new ae()), x$2(this, W, void 0), o && s) throw x$2(this, pe, new pe$1()), s;
+		if (x$3(this, I, new ae()), x$3(this, H, void 0), o && s) throw x$3(this, pe, new pe$1()), s;
 		return n;
 	}
 	isInTransaction() {
@@ -14664,19 +14685,19 @@ var O = class O extends z$1 {
 	}
 	async syncToFs() {
 		if (h$1(this, de)) return;
-		x$2(this, de, !0);
+		x$3(this, de, !0);
 		let r = async () => {
 			await h$1(this, Ce).runExclusive(async () => {
-				x$2(this, de, !1), await this.fs.syncToFs(h$1(this, ie));
+				x$3(this, de, !1), await this.fs.syncToFs(h$1(this, ie));
 			});
 		};
 		h$1(this, ie) ? r() : await r();
 	}
 	async listen(r, a, o) {
-		return this._runExclusiveListen(() => T$2(this, S, rt).call(this, r, a, o));
+		return this._runExclusiveListen(() => T$2(this, x, rt).call(this, r, a, o));
 	}
 	async unlisten(r, a, o) {
-		return this._runExclusiveListen(() => T$2(this, S, at).call(this, r, a, o));
+		return this._runExclusiveListen(() => T$2(this, x, at).call(this, r, a, o));
 	}
 	onNotification(r) {
 		return h$1(this, le).add(r), () => {
@@ -14692,14 +14713,14 @@ var O = class O extends z$1 {
 		return this.fs.dumpTar(a, r);
 	}
 	_runExclusiveQuery(r) {
-		return h$1(this, ke).runExclusive(r);
+		return h$1(this, Fe).runExclusive(r);
 	}
 	_runExclusiveTransaction(r) {
 		return h$1(this, Te).runExclusive(r);
 	}
 	async clone() {
 		let r = await this.dumpDataDir("none");
-		return O.create({
+		return N.create({
 			loadDataDir: r,
 			extensions: h$1(this, ue)
 		});
@@ -14714,128 +14735,126 @@ var O = class O extends z$1 {
 		fe(this.mod.FS, r, a, o);
 	}
 };
-W = /* @__PURE__ */ new WeakMap(), oe = /* @__PURE__ */ new WeakMap(), _e = /* @__PURE__ */ new WeakMap(), se = /* @__PURE__ */ new WeakMap(), ie = /* @__PURE__ */ new WeakMap(), ke = /* @__PURE__ */ new WeakMap(), Te = /* @__PURE__ */ new WeakMap(), Pe = /* @__PURE__ */ new WeakMap(), Ce = /* @__PURE__ */ new WeakMap(), de = /* @__PURE__ */ new WeakMap(), ue = /* @__PURE__ */ new WeakMap(), Me = /* @__PURE__ */ new WeakMap(), pe = /* @__PURE__ */ new WeakMap(), ne = /* @__PURE__ */ new WeakMap(), ee = /* @__PURE__ */ new WeakMap(), z = /* @__PURE__ */ new WeakMap(), le = /* @__PURE__ */ new WeakMap(), ce = /* @__PURE__ */ new WeakMap(), I = /* @__PURE__ */ new WeakMap(), me = /* @__PURE__ */ new WeakMap(), $ = /* @__PURE__ */ new WeakMap(), V = /* @__PURE__ */ new WeakMap(), L = /* @__PURE__ */ new WeakMap(), B = /* @__PURE__ */ new WeakMap(), he = /* @__PURE__ */ new WeakMap(), xe = /* @__PURE__ */ new WeakMap(), we = /* @__PURE__ */ new WeakMap(), ge = /* @__PURE__ */ new WeakMap(), S = /* @__PURE__ */ new WeakSet(), Xe = function(r) {
+H = /* @__PURE__ */ new WeakMap(), oe = /* @__PURE__ */ new WeakMap(), _e = /* @__PURE__ */ new WeakMap(), se = /* @__PURE__ */ new WeakMap(), ie = /* @__PURE__ */ new WeakMap(), Fe = /* @__PURE__ */ new WeakMap(), Te = /* @__PURE__ */ new WeakMap(), Pe = /* @__PURE__ */ new WeakMap(), Ce = /* @__PURE__ */ new WeakMap(), de = /* @__PURE__ */ new WeakMap(), ue = /* @__PURE__ */ new WeakMap(), Me = /* @__PURE__ */ new WeakMap(), pe = /* @__PURE__ */ new WeakMap(), ne = /* @__PURE__ */ new WeakMap(), ee = /* @__PURE__ */ new WeakMap(), D = /* @__PURE__ */ new WeakMap(), le = /* @__PURE__ */ new WeakMap(), ce = /* @__PURE__ */ new WeakMap(), I = /* @__PURE__ */ new WeakMap(), me = /* @__PURE__ */ new WeakMap(), $ = /* @__PURE__ */ new WeakMap(), W = /* @__PURE__ */ new WeakMap(), O = /* @__PURE__ */ new WeakMap(), z = /* @__PURE__ */ new WeakMap(), he = /* @__PURE__ */ new WeakMap(), xe = /* @__PURE__ */ new WeakMap(), we = /* @__PURE__ */ new WeakMap(), ge = /* @__PURE__ */ new WeakMap(), x = /* @__PURE__ */ new WeakSet(), Xe = function(r) {
 	this.debug && console.debug(r);
 }, Ke = function(r) {
 	this.debug && console.error(r);
 }, Ye = async function(r) {
-	let a = p$2.pgliteProc.exitCode;
 	if (r.fs) this.fs = r.fs;
 	else {
-		let { dataDir: m, fsType: p } = Ze(r.dataDir);
-		this.fs = await je(m, p);
+		let { dataDir: u, fsType: f } = Ze(r.dataDir);
+		this.fs = await je(u, f);
 	}
-	let o = {}, _ = [], s = [...this.debug ? ["-d", this.debug.toString()] : []];
+	let a = {}, o = [], _ = [...this.debug ? ["-d", this.debug.toString()] : []];
 	r.pgliteWasmModule || p$2.startArtifactDownload(new URL("./pglite.wasm", import.meta.url)), r.initdbWasmModule || p$2.startArtifactDownload(new URL("./initdb.wasm", import.meta.url));
-	let n = new URL("./pglite.data", import.meta.url), l = r.fsBundle ? r.fsBundle.arrayBuffer() : p$2.getFsBundle(n), d;
-	l.then((m) => {
-		d = m;
+	let s = new URL("./pglite.data", import.meta.url), n = r.fsBundle ? r.fsBundle.arrayBuffer() : p$2.getFsBundle(s), l;
+	n.then((u) => {
+		l = u;
 	});
-	let u = new WebAssembly.Memory({
+	let d = new WebAssembly.Memory({
 		initial: r.initialMemory ? r.initialMemory / 65536 : 2048,
 		maximum: 32768
-	}), c = {
+	}), p = {
 		thisProgram: wt$2,
 		PGLITE_ENV: {},
 		WASM_PREFIX: p$2.WASM_PREFIX,
-		arguments: s,
+		arguments: _,
 		noExitRuntime: !0,
-		wasmMemory: u,
+		wasmMemory: d,
 		stdin: () => null,
-		print: (m) => {
-			T$2(this, S, Xe).call(this, m);
+		print: (u) => {
+			T$2(this, x, Xe).call(this, u);
 		},
-		printErr: (m) => {
-			T$2(this, S, Ke).call(this, m);
+		printErr: (u) => {
+			T$2(this, x, Ke).call(this, u);
 		},
-		instantiateWasm: (m, p) => {
-			let h = new URL("./pglite.wasm", import.meta.url);
-			return p$2.instantiateWasm(m, h, r.pgliteWasmModule).then(({ instance: x, module: b }) => {
-				p(x, b);
+		instantiateWasm: (u, f) => {
+			let c = new URL("./pglite.wasm", import.meta.url);
+			return p$2.instantiateWasm(u, c, r.pgliteWasmModule).then(({ instance: w, module: S }) => {
+				f(w, S);
 			}), {};
 		},
-		getPreloadedPackage: (m, p) => {
-			if (m === "pglite.data") {
-				if (d.byteLength !== p) throw new Error(`Invalid FS bundle size: ${d.byteLength} !== ${p}`);
-				return d;
+		getPreloadedPackage: (u, f) => {
+			if (u === "pglite.data") {
+				if (l.byteLength !== f) throw new Error(`Invalid FS bundle size: ${l.byteLength} !== ${f}`);
+				return l;
 			}
-			throw new Error(`Unknown package: ${m}`);
+			throw new Error(`Unknown package: ${u}`);
 		},
 		preRun: [
-			(m) => {
-				m.onRuntimeInitialized = () => {
-					T$2(this, S, Je).call(this, m);
+			(u) => {
+				u.onRuntimeInitialized = () => {
+					T$2(this, x, Je).call(this, u);
 				};
 			},
-			(m) => {
-				let p = m.FS.makedev(64, 0);
-				m.FS.registerDevice(p, {
-					open: (x) => {},
-					close: (x) => {},
-					read: (x, b, M, y, E) => {
-						let F = h$1(this, ne);
-						if (!F) throw new Error("No /dev/blob File or Blob provided to read from");
-						let k = new Uint8Array(F);
-						if (E >= k.length) return 0;
-						let q = Math.min(k.length - E, y);
-						for (let D = 0; D < q; D++) b[M + D] = k[E + D];
-						return q;
+			(u) => {
+				let f = u.FS.makedev(64, 0);
+				u.FS.registerDevice(f, {
+					open: (w) => {},
+					close: (w) => {},
+					read: (w, S, k, E, y) => {
+						let M = h$1(this, ne);
+						if (!M) throw new Error("No /dev/blob File or Blob provided to read from");
+						let b = new Uint8Array(M);
+						if (y >= b.length) return 0;
+						let F = Math.min(b.length - y, E);
+						for (let A = 0; A < F; A++) S[k + A] = b[y + A];
+						return F;
 					},
-					write: (x, b, M, y, E) => (h$1(this, ee) ?? x$2(this, ee, []), h$1(this, ee).push(b.slice(M, M + y)), y),
-					llseek: (x, b, M) => {
-						let y = h$1(this, ne);
-						if (!y) throw new Error("No /dev/blob File or Blob provided to llseek");
-						let E = b;
-						if (M === 1 ? E += x.position : M === 2 && (E = new Uint8Array(y).length), E < 0) throw new m.FS.ErrnoError(28);
-						return E;
+					write: (w, S, k, E, y) => (h$1(this, ee) ?? x$3(this, ee, []), h$1(this, ee).push(S.slice(k, k + E)), E),
+					llseek: (w, S, k) => {
+						let E = h$1(this, ne);
+						if (!E) throw new Error("No /dev/blob File or Blob provided to llseek");
+						let y = S;
+						if (k === 1 ? y += w.position : k === 2 && (y = new Uint8Array(E).length), y < 0) throw new u.FS.ErrnoError(28);
+						return y;
 					}
-				}), m.FS.mkdev("/dev/blob", p);
+				}), u.FS.mkdev("/dev/blob", f);
 			},
-			(m) => {
-				m.ENV.HOME = "/home/postgres", m.ENV.USER = "postgres", m.ENV.LOGNAME = "postgres", m.ENV.PGDATA = B$2, m.ENV.PGUSER = r.username ?? "postgres", m.ENV.PGDATABASE = r.database ?? "postgres", m.ENV.LANG = m.ENV.LC_COLLATE = m.ENV.LC_CTYPE = "en_US.UTF-8", m.ENV.TZ = "UTC", m.ENV.PGTZ = "UTC", m.ENV.PGCLIENTENCODING = "UTF8", m.ENV.ICU_DATA = jr, m.PGLITE_ENV && Object.assign(m.ENV, m.PGLITE_ENV);
+			(u) => {
+				u.ENV.HOME = "/home/postgres", u.ENV.USER = "postgres", u.ENV.LOGNAME = "postgres", u.ENV.PGDATA = B$1, u.ENV.PGUSER = r.username ?? "postgres", u.ENV.PGDATABASE = r.database ?? "postgres", u.ENV.LANG = u.ENV.LC_COLLATE = u.ENV.LC_CTYPE = "en_US.UTF-8", u.ENV.TZ = "UTC", u.ENV.PGTZ = "UTC", u.ENV.PGCLIENTENCODING = "UTF8", u.ENV.ICU_DATA = jr, u.PGLITE_ENV && Object.assign(u.ENV, u.PGLITE_ENV);
 			},
-			(m) => {
-				m.FS.chmod("/home/postgres/.pgpass", 384), m.FS.chmod(Yr, 365), m.FS.chmod(wt$2, 365);
+			(u) => {
+				u.FS.chmod("/home/postgres/.pgpass", 384), u.FS.chmod(Gr, 365), u.FS.chmod(wt$2, 365);
 			}
 		]
-	}, { emscriptenOpts: f } = await this.fs.init(this, c);
-	c = f;
+	}, { emscriptenOpts: m } = await this.fs.init(this, p);
+	p = m;
 	let g = [];
-	for (let [m, p] of Object.entries(h$1(this, ue))) if (p instanceof URL) o[m] = Re(p);
+	for (let [u, f] of Object.entries(h$1(this, ue))) if (f instanceof URL) a[u] = Re(f);
 	else {
-		let h = await p.setup(this, c);
-		if (h.emscriptenOpts && (c = h.emscriptenOpts), h.namespaceObj) {
-			let x = this;
-			x[m] = h.namespaceObj;
+		let c = await f.setup(this, p);
+		if (c.emscriptenOpts && (p = c.emscriptenOpts), c.namespaceObj) {
+			let w = this;
+			w[u] = c.namespaceObj;
 		}
-		h.bundlePath && (o[m] = Re(h.bundlePath)), h.init && _.push(h.init), h.close && h$1(this, Me).push(h.close), g.push(...h.sharedPreloadLibraries ?? []);
+		c.bundlePath && (a[u] = Re(c.bundlePath)), c.init && o.push(c.init), c.close && h$1(this, Me).push(c.close), g.push(...c.sharedPreloadLibraries ?? []);
 	}
-	if (c.pg_extensions = o, await l, this.mod = await We(c), await this.fs.initialSyncFs(), r.icuDataDir && await T$2(this, S, $e).call(this, r.icuDataDir), !r.noInitDb) {
+	if (p.pg_extensions = a, await n, this.mod = await We(p), await this.fs.initialSyncFs(), r.icuDataDir && await T$2(this, x, $e).call(this, r.icuDataDir), !r.noInitDb) {
 		if (r.loadDataDir) {
 			if (this.mod.FS.analyzePath("/pglite/data/PG_VERSION").exists) throw new Error("Database already exists, cannot load from tarball");
-			T$2(this, S, U).call(this, "pglite: loading data from tarball"), await at$2(this.mod.FS, r.loadDataDir, B$2);
-		} else if (this.mod.FS.analyzePath("/pglite/data/PG_VERSION").exists) T$2(this, S, U).call(this, "pglite: found DB, resuming");
+			T$2(this, x, G).call(this, "pglite: loading data from tarball"), await at$2(this.mod.FS, r.loadDataDir, B$1);
+		} else if (this.mod.FS.analyzePath("/pglite/data/PG_VERSION").exists) T$2(this, x, G).call(this, "pglite: found DB, resuming");
 		else {
-			T$2(this, S, U).call(this, "pglite: no db in filesystem, running initdb");
-			let m = { ...r };
-			m.noInitDb = !0, m.dataDir = void 0, m.extensions = void 0, m.loadDataDir = void 0, m.fs = void 0;
-			let p = await O.create(m), h = await At$1({
-				pg: p,
+			T$2(this, x, G).call(this, "pglite: no db in filesystem, running initdb");
+			let u = { ...r };
+			u.noInitDb = !0, u.dataDir = void 0, u.extensions = void 0, u.loadDataDir = void 0, u.fs = void 0;
+			let f = await N.create(u), c = await At$1({
+				pg: f,
 				debug: r.debug,
 				wasmModule: r.initdbWasmModule,
 				args: r.initDbStartParams
 			});
-			if (h.exitCode !== 0 && !h.stderr.includes("exists but is not empty")) throw new Error("INITDB failed to initialize: " + h.stderr);
-			let x = await p.dumpDataDir("none");
-			p.close(), await at$2(this.mod.FS, x, B$2), await this.syncToFs();
+			if (c.exitCode !== 0 && !c.stderr.includes("exists but is not empty")) throw new Error("INITDB failed to initialize: " + c.stderr);
+			let w = await f.dumpDataDir("none");
+			f.close(), await at$2(this.mod.FS, w, B$1), await this.syncToFs();
 		}
-		await Ue(this.mod, (...m) => T$2(this, S, U).call(this, ...m)), T$2(this, S, Qe).call(this, g, r), this.mod._pgl_setPGliteActive(1), T$2(this, S, _t).call(this, {
-			pgDataFolder: B$2,
-			startParams: [...r.startParams || O.defaultStartParams, ...this.debug ? ["-d", this.debug.toString()] : []]
-		}), T$2(this, S, ot).call(this), x$2(this, oe, !0), r.username && await this.exec(`SET ROLE ${r.username};`), await this._initArrayTypes();
-		for (let m of _) await m();
+		await Ue(this.mod, (...u) => T$2(this, x, G).call(this, ...u)), T$2(this, x, Qe).call(this, g, r), this.mod._pgl_setPGliteActive(1), T$2(this, x, _t).call(this, {
+			pgDataFolder: B$1,
+			startParams: [...r.startParams || N.defaultStartParams, ...this.debug ? ["-d", this.debug.toString()] : []]
+		}), T$2(this, x, ot).call(this), x$3(this, oe, !0), r.username && await this.exec(`SET ROLE ${r.username};`), await this._initArrayTypes();
+		for (let u of o) await u();
 	}
-	p$2.pgliteProc.exitCode = a;
 }, Qe = function(r, a) {
 	if (r.length && !a.postgresqlconf && (a.postgresqlconf = new Array()), a.postgresqlconf) {
 		let o = typeof a.postgresqlconf == "string" ? a.postgresqlconf : a.postgresqlconf.join(`
@@ -14848,50 +14867,50 @@ W = /* @__PURE__ */ new WeakMap(), oe = /* @__PURE__ */ new WeakMap(), _e = /* @
 			} else o += `
 shared_preload_libraries=${r.join(",")}`;
 		}
-		fe(this.mod.FS, `${B$2}/postgresql.conf`, new TextEncoder().encode(o));
+		fe(this.mod.FS, `${B$1}/postgresql.conf`, new TextEncoder().encode(o));
 	}
 }, $e = async function(r) {
-	T$2(this, S, U).call(this, `pglite: icuDataDir specified, removing default icu data dir at ${jr}`), p$2.rmdirRecursive(this.mod.FS, jr), T$2(this, S, U).call(this, `pglite: loading icu data from tarball ${r}`), this.mod.FS.mkdirTree(jr), await at$2(this.mod.FS, r, jr);
+	T$2(this, x, G).call(this, `pglite: icuDataDir specified, removing default icu data dir at ${jr}`), p$2.rmdirRecursive(this.mod.FS, jr), T$2(this, x, G).call(this, `pglite: loading icu data from tarball ${r}`), this.mod.FS.mkdirTree(jr), await at$2(this.mod.FS, r, jr);
 }, Je = function(r) {
-	x$2(this, he, r.addFunction((a) => (T$2(this, S, U).call(this, `Postgres tried to execute ${r.UTF8ToString(a)}, returning 1.`), 1), "pi")), r._pgl_set_system_fn(h$1(this, he)), x$2(this, xe, r.addFunction((a, o) => {
+	x$3(this, he, r.addFunction((a) => (T$2(this, x, G).call(this, `Postgres tried to execute ${r.UTF8ToString(a)}, returning 1.`), 1), "pi")), r._pgl_set_system_fn(h$1(this, he)), x$3(this, xe, r.addFunction((a, o) => {
 		let _ = r.UTF8ToString(o), s = r.UTF8ToString(a);
 		return this.externalCommandStreamFd = this.handleExternalCmd(s, _), this.externalCommandStreamFd;
-	}, "ppp")), r._pgl_set_popen_fn(h$1(this, xe)), x$2(this, we, r.addFunction((a) => {
+	}, "ppp")), r._pgl_set_popen_fn(h$1(this, xe)), x$3(this, we, r.addFunction((a) => {
 		if (a === this.externalCommandStreamFd) this.mod._fclose(this.externalCommandStreamFd), this.externalCommandStreamFd = null;
 		else throw `Unhandled pclose ${a}`;
-		T$2(this, S, U).call(this, "pclose_fn", a);
-	}, "pi")), r._pgl_set_pclose_fn(h$1(this, we)), x$2(this, ce, r.addFunction((a, o) => {
+		T$2(this, x, G).call(this, "pclose_fn", a);
+	}, "pi")), r._pgl_set_pclose_fn(h$1(this, we)), x$3(this, ce, r.addFunction((a, o) => {
 		let _;
 		try {
 			_ = this.mod.HEAPU8.subarray(a, a + o);
 		} catch (s) {
 			throw console.error("error", s), s;
 		}
-		return h$1(this, W).call(this, _);
-	}, "iii")), x$2(this, me, r.addFunction((a, o) => {
-		let _ = h$1(this, $).length - h$1(this, V);
-		return _ > o && (_ = o), this.mod.HEAP8.set(h$1(this, $).subarray(h$1(this, V), h$1(this, V) + _), a), x$2(this, V, h$1(this, V) + _), _;
+		return h$1(this, H).call(this, _);
+	}, "iii")), x$3(this, me, r.addFunction((a, o) => {
+		let _ = h$1(this, $).length - h$1(this, W);
+		return _ > o && (_ = o), this.mod.HEAP8.set(h$1(this, $).subarray(h$1(this, W), h$1(this, W) + _), a), x$3(this, W, h$1(this, W) + _), _;
 	}, "iii")), r._pgl_set_rw_cbs(h$1(this, me), h$1(this, ce));
 }, et = function(r) {
-	let a = r.slice(), o = h$1(this, B) + a.length;
-	if (o > h$1(this, L).length) {
-		let _ = h$1(this, L).length + (h$1(this, L).length >> 1) + o;
-		o > O.MAX_BUFFER_SIZE && (o = O.MAX_BUFFER_SIZE);
+	let a = r.slice(), o = h$1(this, z) + a.length;
+	if (o > h$1(this, O).length) {
+		let _ = h$1(this, O).length + (h$1(this, O).length >> 1) + o;
+		o > N.MAX_BUFFER_SIZE && (o = N.MAX_BUFFER_SIZE);
 		let s = new Uint8Array(_);
-		s.set(h$1(this, L).subarray(0, h$1(this, B))), x$2(this, L, s);
+		s.set(h$1(this, O).subarray(0, h$1(this, z))), x$3(this, O, s);
 	}
-	return h$1(this, L).set(a, h$1(this, B)), x$2(this, B, h$1(this, B) + a.length), T$2(this, S, qe).call(this, a);
+	return h$1(this, O).set(a, h$1(this, z)), x$3(this, z, h$1(this, z) + a.length), T$2(this, x, qe).call(this, a);
 }, qe = function(r) {
 	return h$1(this, pe).parse(r, (a) => {
-		let o = T$2(this, S, tt).call(this, a);
+		let o = T$2(this, x, tt).call(this, a);
 		o && h$1(this, I).results.push(o);
 	}), r.length;
 }, tt = function(r) {
 	if (!h$1(this, I).databaseError) {
-		if (r instanceof N) h$1(this, I).throwOnError && (h$1(this, I).databaseError = r);
+		if (r instanceof N$1) h$1(this, I).throwOnError && (h$1(this, I).databaseError = r);
 		else if (r instanceof ee$1) this.debug > 0 && console.warn(r), h$1(this, I).onNotice && h$1(this, I).onNotice(r);
 		else if (r instanceof J$1) {
-			let a = h$1(this, z).get(r.channel);
+			let a = h$1(this, D).get(r.channel);
 			a && a.forEach((o) => {
 				queueMicrotask(() => o(r.payload));
 			}), h$1(this, le).forEach((o) => {
@@ -14901,27 +14920,27 @@ shared_preload_libraries=${r.join(",")}`;
 		return r;
 	}
 	return null;
-}, U = function(...r) {
+}, G = function(...r) {
 	this.debug > 0 && console.log(...r);
 }, rt = async function(r, a, o) {
 	let _ = p$2.toPostgresName(r), s = o ?? this;
-	h$1(this, z).has(_) || h$1(this, z).set(_, /* @__PURE__ */ new Set()), h$1(this, z).get(_).add(a);
+	h$1(this, D).has(_) || h$1(this, D).set(_, /* @__PURE__ */ new Set()), h$1(this, D).get(_).add(a);
 	try {
 		await s.exec(`LISTEN ${r}`);
 	} catch (n) {
-		throw h$1(this, z).get(_).delete(a), h$1(this, z).get(_)?.size === 0 && h$1(this, z).delete(_), n;
+		throw h$1(this, D).get(_).delete(a), h$1(this, D).get(_)?.size === 0 && h$1(this, D).delete(_), n;
 	}
 	return async (n) => {
 		await this.unlisten(_, a, n);
 	};
 }, at = async function(r, a, o) {
 	let _ = p$2.toPostgresName(r), s = o ?? this, n = async () => {
-		await s.exec(`UNLISTEN ${r}`), h$1(this, z).get(_)?.size === 0 && h$1(this, z).delete(_);
+		await s.exec(`UNLISTEN ${r}`), h$1(this, D).get(_)?.size === 0 && h$1(this, D).delete(_);
 	};
-	a ? (h$1(this, z).get(_)?.delete(a), h$1(this, z).get(_)?.size === 0 && await n()) : await n();
+	a ? (h$1(this, D).get(_)?.delete(a), h$1(this, D).get(_)?.size === 0 && await n()) : await n();
 }, ot = function() {
 	if (h$1(this, ge)) throw new Error("PGlite single mode already running");
-	this.mod._pgl_startPGlite(), x$2(this, ge, !0);
+	this.mod._pgl_startPGlite(), x$3(this, ge, !0);
 }, _t = function(r) {
 	let a = [
 		...r.startParams,
@@ -14929,19 +14948,19 @@ shared_preload_libraries=${r.join(",")}`;
 		r.pgDataFolder,
 		this.mod.ENV.PGDATABASE
 	];
-	if (this.mod.callMain(a) !== 99) throw new Error("PGlite failed to initialize properly");
+	if (this.mod.callMain(a), this.mod._pgl_setPGliteExitStatus(-3) !== this.PGLITE_EXIT_ALIVE) throw new Error("PGlite failed to initialize properly");
 }, st = function(r) {
-	x$2(this, V, 0), x$2(this, B, 0), x$2(this, $, r);
+	x$3(this, W, 0), x$3(this, z, 0), x$3(this, $, r);
 	let a = this.mod._pgl_getMyProcPort();
 	if (this.mod._ProcessStartupPacket(a, !0, !0) !== 0) throw new Error(`Cannot process startup packet + ${r.toString()}`);
-	return this.mod._pgl_sendConnData(), this.mod._pgl_pq_flush(), x$2(this, $, []), h$1(this, B) ? h$1(this, L).subarray(0, h$1(this, B)) : /* @__PURE__ */ new Uint8Array(0);
-}, O.paths = {
+	return this.mod._pgl_sendConnData(), this.mod._pgl_pq_flush(), x$3(this, $, []), h$1(this, z) ? h$1(this, O).subarray(0, h$1(this, z)) : /* @__PURE__ */ new Uint8Array(0);
+}, N.paths = {
 	PG_ROOT: I$2,
-	PGDATA: B$2,
+	PGDATA: B$1,
 	ICU_DATA_PATH: jr,
-	INITDB_EXE_PATH: Yr,
+	INITDB_EXE_PATH: Gr,
 	POSTGRES_EXE_PATH: wt$2
-}, O.DEFAULT_RECV_BUF_SIZE = 1048576, O.MAX_BUFFER_SIZE = Math.pow(2, 30), O.defaultStartParams = [
+}, N.DEFAULT_RECV_BUF_SIZE = 1048576, N.MAX_BUFFER_SIZE = Math.pow(2, 30), N.defaultStartParams = [
 	"--single",
 	"-F",
 	"-O",
@@ -14963,7 +14982,7 @@ shared_preload_libraries=${r.join(",")}`;
 	"-c",
 	"max_parallel_maintenance_workers=0"
 ];
-var Ve = O;
+var Ve = N;
 u$1();
 //#endregion
 export { dist_exports as t };

@@ -45,41 +45,51 @@ export async function loadAll(): Promise<{
   ledger: LedgerEntry[];
   houseBots: boolean;
 }> {
-  const sql = await getSql();
-  await ensureMeta(sql);
-  const walletRows = await sql<WalletRow>`
-    select id, name, balance, created_at from wallets order by name
-  `;
-  const matchRows = await sql<MatchRow>`
-    select id, payload from matches order by created_at desc limit 80
-  `;
-  const ledgerRows = await sql<LedgerRow>`
-    select id, ts, from_id, to_id, amount, kind, match_id, note from ledger order by ts desc limit 400
-  `;
-  const metaRows = await sql<{ value: string }>`
-    select value from meta where key = 'house_bots'
-  `;
-  const raw = metaRows[0]?.value;
-  return {
-    wallets: walletRows.map((r) => ({
-      id: r.id,
-      name: r.name,
-      balance: safeBalance(r.balance),
-      createdAt: Number(r.created_at),
-    })),
-    matches: matchRows.map((r) => asMatch(r.payload)),
-    ledger: ledgerRows.map((r) => ({
-      id: r.id,
-      ts: Number(r.ts),
-      from: r.from_id,
-      to: r.to_id,
-      amount: Number(r.amount),
-      kind: r.kind,
-      matchId: r.match_id ?? undefined,
-      note: r.note,
-    })),
-    houseBots: raw == null ? true : raw !== "0" && raw !== "false",
-  };
+  try {
+    const sql = await getSql();
+    await ensureMeta(sql);
+    const walletRows = await sql<WalletRow>`
+      select id, name, balance, created_at from wallets order by name
+    `;
+    const matchRows = await sql<MatchRow>`
+      select id, payload from matches order by created_at desc limit 80
+    `;
+    const ledgerRows = await sql<LedgerRow>`
+      select id, ts, from_id, to_id, amount, kind, match_id, note from ledger order by ts desc limit 400
+    `;
+    const metaRows = await sql<{ value: string }>`
+      select value from meta where key = 'house_bots'
+    `;
+    const raw = metaRows[0]?.value;
+    return {
+      wallets: (walletRows || []).map((r) => ({
+        id: r.id,
+        name: r.name,
+        balance: safeBalance(r.balance),
+        createdAt: Number(r.created_at),
+      })),
+      matches: (matchRows || []).map((r) => asMatch(r.payload)),
+      ledger: (ledgerRows || []).map((r) => ({
+        id: r.id,
+        ts: Number(r.ts),
+        from: r.from_id,
+        to: r.to_id,
+        amount: Number(r.amount),
+        kind: r.kind,
+        matchId: r.match_id ?? undefined,
+        note: r.note,
+      })),
+      houseBots: raw == null ? true : raw !== "0" && raw !== "false",
+    };
+  } catch (err) {
+    console.warn("[persist] loadAll failed, using empty world fallback:", err);
+    return {
+      wallets: [],
+      matches: [],
+      ledger: [],
+      houseBots: true,
+    };
+  }
 }
 
 export async function loadMatch(id: string): Promise<Match | undefined> {

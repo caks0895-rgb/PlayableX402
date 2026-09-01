@@ -1,9 +1,8 @@
 import { r as __exportAll } from "../_runtime.mjs";
-import { n as require_react } from "../_libs/@radix-ui/react-compose-refs+[...].mjs";
-import { A as invariant, D as resolveManifestCssLink, E as resolveManifestAssetLink, F as isResolvedRedirect, I as parseRedirect, L as rootRouteId, O as _getRenderedMatches, P as isRedirect, R as isNotFound, T as getStylesheetHref, a as isSsrResponse, c as stripSsrResponseBody, d as RouterProvider, i as disposeSsrResponseDetached, k as executeRewriteInput, n as bindSsrResponseToRequest, o as normalizeSsrResponse, r as defineHandlerCallback, s as replaceSsrResponse, t as renderRouterToStream, w as getScriptPreloadAttrs, y as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
+import { B as require_react, D as resolveManifestCssLink, E as resolveManifestAssetLink, F as isResolvedRedirect, I as parseRedirect, O as _getRenderedMatches, P as isRedirect, R as rootRouteId, T as getStylesheetHref, a as isSsrResponse, c as stripSsrResponseBody, d as RouterProvider, i as disposeSsrResponseDetached, k as executeRewriteInput, n as bindSsrResponseToRequest, o as normalizeSsrResponse, r as defineHandlerCallback, s as replaceSsrResponse, t as renderRouterToStream, w as getScriptPreloadAttrs, y as require_jsx_runtime, z as isNotFound } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as createMemoryHistory } from "../_libs/tanstack__history.mjs";
 import { a as getOrigin, c as createSerializationAdapter, d as toCrossJSONAsync, f as toCrossJSONStream, i as getNormalizedURL, l as makeSerovalPlugin, n as mergeHeaders, o as defaultSerovalPlugins, r as attachRouterServerSsrUtils, s as createRawStreamRPCPlugin, t as waitForRequest, u as fromJSON } from "../_libs/@tanstack/router-core+[...].mjs";
-import { n as toResponse, t as H3Event } from "../_libs/h3-v2+rou3.mjs";
+import { n as toResponse, t as H3Event } from "../_libs/h3-v2.mjs";
 import { AsyncLocalStorage } from "node:async_hooks";
 //#region node_modules/.nitro/vite/services/ssr/index.js
 var ssr_exports = /* @__PURE__ */ __exportAll({
@@ -88,7 +87,7 @@ var HEADERS = { TSS_SHELL: "X-TSS_SHELL" };
 * the dev styles URL for route-scoped CSS collection.
 */
 async function getStartManifest(matchedRoutes) {
-	const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-_cGEOT_t.mjs");
+	const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-ClIlAmXS.mjs");
 	const startManifest = tsrStartManifest();
 	let routes = startManifest.routes;
 	routes[rootRouteId];
@@ -110,63 +109,71 @@ async function getStartManifest(matchedRoutes) {
 var manifest = {
 	"0e84655ebcf6689b412e96f191f7921420830efb4d551d6b41a48fe3b4fbdf86": {
 		functionName: "addBotsFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"2038fd7f9fb67b161a85e54e291bfa4bed23a2c28efe8133d30cf0608592a85b": {
 		functionName: "createChallengeFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"2e76225859200c4fa11f8e415a3b6eb63d19ac1b50b6ea06e01547a2a25d5a05": {
 		functionName: "createWalletFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"385a48debc614140844a001a725a98529d499d0316f8ccfd05448f7a53e1f3bb": {
 		functionName: "submitActionFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"3d4f2f1f7b1be14a31fae4c1f1024b9e0d6fbc07ad59304a056fc00cdb8c104f": {
 		functionName: "listMatchesFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
+	},
+	"6aab53cc9642904e17816eed7d3be30abeea5cd8045f3d1f665f815ae1399111": {
+		functionName: "listReputationsFn_createServerFn_handler",
+		importer: () => import("./functions-ZBFUVB6p.mjs")
+	},
+	"71159462ad180b8a4b32da220c4dc23d02e80e8b0e091c4f3af26220904f5763": {
+		functionName: "getAgentReputationFn_createServerFn_handler",
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"7db1e2e0321452800e3ad50ccd12bc7f37e6a4ad5b4d67934e288814d44a23f3": {
 		functionName: "getCatalogFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"7e62bb7e60b8b04912325ad724f5c455bdffaaf567ad3217be2508f45e648a95": {
 		functionName: "setHouseBotsFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"83d969aa2cca2b2fb289a4b7dd35e0ef29bb5f02674fbd0a7c17ad1248aaac37": {
 		functionName: "listChallengesFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"8a56fa9c3fe6405506fd7856a81623569ba4a2c38de214c02f433713ad66276f": {
 		functionName: "joinMatchFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"8c20703b98b79424f4888350ce093ba04e5195c153d10f2e8f2a5c468cad9c40": {
 		functionName: "createMatchFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"9a99b2bdd2cf82014802f65c41c06bae2e465815b9d2bcb35c5cc9740bc59075": {
 		functionName: "getHouseBotsFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"9fccfa64ea97798038002e7b67faf1409a917547275d2e85ced97c1d91574aa1": {
 		functionName: "listWalletsFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"c63d50882d5c14bcf4293177566b0719b5000b06a46aebb1d3248788e57212da": {
 		functionName: "startChallengeFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"dc78b970d796056847a2e946134342110168fcb2e76717c78888d688a62bb2b0": {
 		functionName: "getMatchFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	},
 	"f45f7363946a7217acfbd598a9563de0a6c000bfa1fd0b7b60d886b43cbfc9f5": {
 		functionName: "sweepDemoFn_createServerFn_handler",
-		importer: () => import("./functions-C4ilKhDW.mjs")
+		importer: () => import("./functions-ZBFUVB6p.mjs")
 	}
 };
 async function getServerFnById(id, access) {
@@ -459,13 +466,16 @@ var createMiddleware = (options, __opts) => {
 		}
 	};
 };
+var csrfSymbol = Symbol.for("tanstack-start:csrf-middleware");
 var innerCreateCsrfMiddleware = (opts = {}) => {
-	return createMiddleware().server(async (ctx) => {
+	const middleware = createMiddleware().server(async (ctx) => {
 		const csrfCtx = ctx;
 		if (opts.filter && !await opts.filter(csrfCtx)) return ctx.next();
 		if (await isCsrfRequestAllowed(opts, csrfCtx)) return ctx.next();
 		return getFailureResponse(opts, csrfCtx);
 	});
+	Object.defineProperty(middleware, csrfSymbol, { value: true });
+	return middleware;
 };
 var createCsrfMiddleware = innerCreateCsrfMiddleware;
 async function isCsrfRequestAllowed(opts, ctx) {
@@ -696,7 +706,7 @@ var handleServerAction = async ({ request, context, serverFnId }) => {
 		try {
 			let res = await (async () => {
 				if (FORM_DATA_CONTENT_TYPES.some((type) => contentType && contentType.includes(type))) {
-					if (methodUpper === "GET") invariant();
+					if (methodUpper === "GET") throw new Error("Invariant failed: GET requests with FormData payloads are not supported");
 					const formData = await request.formData();
 					const serializedContext = formData.get(TSS_FORMDATA_CONTEXT);
 					formData.delete(TSS_FORMDATA_CONTEXT);
@@ -708,7 +718,9 @@ var handleServerAction = async ({ request, context, serverFnId }) => {
 					if (typeof serializedContext === "string") try {
 						const deserializedContext = fromJSON(JSON.parse(serializedContext), { plugins: serovalPlugins });
 						if (typeof deserializedContext === "object" && deserializedContext) params.context = safeObjectMerge(deserializedContext, context);
-					} catch (e) {}
+					} catch (e) {
+						console.warn("Failed to parse FormData context:", e);
+					}
 					return await action(params);
 				}
 				if (methodUpper === "GET") {
@@ -1429,6 +1441,7 @@ function getStartResponseHeaders(opts) {
 	}));
 }
 var entriesPromise;
+var hasWarnedMissingCsrfMiddleware = false;
 var defaultCsrfMiddleware = createCsrfMiddleware({ filter: (ctx) => ctx.handlerType === "serverFn" });
 var getCachedBaseManifest = createCachedBaseManifestLoader(() => getStartManifest());
 var getProdBaseManifest = () => getCachedBaseManifest();
@@ -1436,7 +1449,7 @@ var getBaseManifest = getProdBaseManifest;
 var createEarlyHintsForRequest = createEarlyHintsCollector;
 async function loadEntries() {
 	const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-		import("./router-Dm11Mey3.mjs").then((n) => n.t),
+		import("./router-5T9u12T6.mjs").then((n) => n.t),
 		import("./start-5Z2QO8AU.mjs"),
 		import("./empty-plugin-adapters-D9UWiqvJ.mjs")
 	]);
@@ -1450,11 +1463,39 @@ function getEntries() {
 	if (!entriesPromise) entriesPromise = loadEntries();
 	return entriesPromise;
 }
+function hasCsrfMiddleware(middlewares) {
+	return middlewares.some((middleware) => csrfSymbol in middleware);
+}
+function warnMissingCsrfMiddlewareOnce() {
+	if (hasWarnedMissingCsrfMiddleware) return;
+	hasWarnedMissingCsrfMiddleware = true;
+	console.warn(`TanStack Start server functions are not protected by the CSRF middleware.
+
+Server functions are same-origin RPC endpoints and should be protected from cross-site requests.
+
+Add the CSRF middleware in src/start.ts:
+
+  const csrfMiddleware = createCsrfMiddleware({
+    filter: (ctx) => ctx.handlerType === 'serverFn',
+  })
+
+  export const startInstance = createStart(() => ({
+    requestMiddleware: [csrfMiddleware],
+  }))
+
+If you intentionally handle CSRF another way, disable this warning:
+
+  tanstackStart({
+    serverFns: {
+      disableCsrfMiddlewareWarning: true,
+    },
+  })`);
+}
 var ROUTER_BASEPATH = "/";
 var SERVER_FN_BASE = "/_serverFn/";
 var IS_PRERENDERING = process.env.TSS_PRERENDERING === "true";
 var IS_SHELL_ENV = process.env.TSS_SHELL === "true";
-var IS_DEV = false;
+var IS_DEV = true;
 var ERR_NO_RESPONSE = IS_DEV ? `It looks like you forgot to return a response from your server route handler. If you want to defer to the app router, make sure to have a component set in this route.` : "Internal Server Error";
 var ERR_NO_DEFER = IS_DEV ? `You cannot defer to the app router if there is no component defined on this route.` : "Internal Server Error";
 function throwRouteHandlerError() {
@@ -1691,6 +1732,7 @@ function createStartHandler(cbOrOptions) {
 				return router;
 			};
 			if (SERVER_FN_BASE && url.pathname.startsWith(SERVER_FN_BASE)) {
+				if (!hasCsrfMiddleware(flattenedRequestMiddlewares)) warnMissingCsrfMiddlewareOnce();
 				const serverFnId = url.pathname.slice(SERVER_FN_BASE.length).split("/")[0];
 				if (!serverFnId) throw new Error("Invalid server action param for serverFnId");
 				const serverFnHandler = async ({ context }) => {
