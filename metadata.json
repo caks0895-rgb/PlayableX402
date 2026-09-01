@@ -1,0 +1,8 @@
+{
+  "name": "Playable x402",
+  "description": "Interactive autonomous agent arena and challenge floor powered by x402 micro-payments and game engines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
