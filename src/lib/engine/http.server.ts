@@ -7,6 +7,7 @@ import {
   EngineError,
   getAgentReputationById,
   getHouseBots,
+  setHouseBots,
   getMatch,
   getWallet,
   healthSnapshot,
@@ -26,6 +27,7 @@ import { AGENT_SKILL, skillMarkdown } from "./skill";
 import { discoveryJson } from "./discovery";
 import { allow, clientKey } from "./rate-limit";
 import { checkSecret } from "@/lib/x402/pay.server";
+import { getBaseOnchainFeed } from "./chain-feed.server";
 
 const CORS: Record<string, string> = {
   "Access-Control-Allow-Origin": "*",
@@ -150,11 +152,21 @@ export async function handleV1(method: string, splat: string, request: Request):
 
     if (parts.length === 1 && parts[0] === "health" && method === "GET") {
       const snap = await healthSnapshot();
+      const feed = await getBaseOnchainFeed();
       return corsJson({
         ok: true,
         durable: true,
         base: PUBLIC_BASE,
+        feed,
         ...snap,
+      });
+    }
+
+    if (parts.length === 1 && (parts[0] === "feed" || parts[0] === "onchain-feed") && method === "GET") {
+      const feed = await getBaseOnchainFeed();
+      return corsJson({
+        ok: true,
+        feed,
       });
     }
 
@@ -169,6 +181,13 @@ export async function handleV1(method: string, splat: string, request: Request):
 
     if (parts.length === 1 && parts[0] === "house-bots" && method === "GET") {
       return corsJson({ houseBots: await getHouseBots() });
+    }
+
+    if (parts.length === 1 && parts[0] === "house-bots" && method === "POST") {
+      const body = await readBody(request);
+      const on = typeof body.on === "boolean" ? body.on : typeof body.enabled === "boolean" ? body.enabled : true;
+      const updated = await setHouseBots(on);
+      return corsJson({ houseBots: updated });
     }
 
     if (parts.length === 1 && parts[0] === "catalog" && method === "GET") {
@@ -292,7 +311,16 @@ export async function handleV1(method: string, splat: string, request: Request):
     }
 
     if (parts.length === 1 && parts[0] === "matches" && method === "GET") {
-      const matches = await listMatches();
+      const mode = url.searchParams.get("mode");
+      const kind = url.searchParams.get("kind");
+      let matches = await listMatches();
+      if (mode === "sandbox") {
+        matches = matches.filter((m) => m.entryFee <= 0 || m.kind === "table");
+      } else if (mode === "challenger") {
+        matches = matches.filter((m) => m.entryFee > 0 || m.kind === "challenge");
+      } else if (kind) {
+        matches = matches.filter((m) => m.kind === kind);
+      }
       return corsJson({
         matches: matches.map((m) => toPublic(m, undefined, { logTail: 3 })),
       });
@@ -300,11 +328,15 @@ export async function handleV1(method: string, splat: string, request: Request):
 
     if (parts.length === 1 && parts[0] === "matches" && method === "POST") {
       const body = await readBody(request);
+      const isChallenger = body.mode === "challenger" || body.kind === "challenge";
       const match = await createMatch({
         gameId: asGameId(body.gameId),
-        withBots: Boolean(body.withBots),
+        withBots: body.withBots !== undefined ? Boolean(body.withBots) : !isChallenger,
         fill: typeof body.fill === "number" ? body.fill : undefined,
         fillNow: body.fillNow === true,
+        kind: isChallenger ? "challenge" : "table",
+        mode: isChallenger ? "challenger" : "sandbox",
+        entryFee: typeof body.entryFee === "number" ? body.entryFee : undefined,
       });
       const walletId = typeof body.walletId === "string" ? body.walletId : undefined;
       if (walletId || paymentHeader(request)) {

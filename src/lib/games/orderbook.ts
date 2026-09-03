@@ -127,7 +127,7 @@ export function createOrderBookState(players: Player[], seed: number = Date.now(
     currentTick: 0,
     totalTicks: RAIDER_TOTAL_TICKS,
     tickIntervalMs: RAIDER_TICK_MS,
-    windowEndsAt: Date.now() + RAIDER_TOTAL_TICKS * RAIDER_TICK_MS,
+    windowEndsAt: Date.now() + RAIDER_TICK_MS,
     baseAsset: "FLX",
     quoteAsset: "USDC",
     midPrice: +baseMid.toFixed(2),
@@ -285,9 +285,10 @@ export function applyOrderBookAction(
   return { logText, scoreDelta };
 }
 
-export function stepOrderBook(state: OrderBookState): boolean {
+export function stepOrderBook(state: OrderBookState, now = Date.now()): boolean {
   if (state.resolved) return true;
   state.currentTick += 1;
+  state.windowEndsAt = now + state.tickIntervalMs;
 
   // Simulate market drift and order book dynamics
   const volatility = state.marketRegime === "HIGH_VOLATILITY_EXPANSION" ? 0.018 : 0.009;

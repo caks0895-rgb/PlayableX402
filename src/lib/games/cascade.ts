@@ -36,6 +36,9 @@ export interface CascadeState {
   }[];
   actionLog: { ts: number; text: string; playerId: string }[];
   resolved: boolean;
+  oracleSource?: string;
+  oracleBlockNumber?: number;
+  chainlinkPriceUsd?: number;
 }
 
 export interface CascadePublicState {
@@ -58,6 +61,9 @@ export interface CascadePublicState {
   }[];
   actionLog: { ts: number; text: string; playerId: string }[];
   resolved: boolean;
+  oracleSource?: string;
+  oracleBlockNumber?: number;
+  chainlinkPriceUsd?: number;
   leaderboard: {
     playerId: string;
     totalEquityUsd: number;
@@ -72,8 +78,12 @@ export const CASCADE_TICK_MS = 1500;
 export const CASCADE_INITIAL_COLLATERAL = 20_000;
 export const CASCADE_SHIELD_FEE = 20_000;
 
-export function createCascadeState(players: Player[], seed: number = Date.now()): CascadeState {
-  const startPrice = 2400 + ((seed % 100) - 50) * 5;
+export function createCascadeState(
+  players: Player[],
+  seed: number = Date.now(),
+  feed?: { ethPriceUsd?: number; blockNumber?: number; source?: string }
+): CascadeState {
+  const startPrice = feed?.ethPriceUsd ?? (2400 + ((seed % 100) - 50) * 5);
   const positions: Record<string, CascadePosition> = {};
 
   for (const p of players) {
@@ -98,8 +108,8 @@ export function createCascadeState(players: Player[], seed: number = Date.now())
     currentTick: 0,
     totalTicks: CASCADE_TOTAL_TICKS,
     tickIntervalMs: CASCADE_TICK_MS,
-    windowEndsAt: Date.now() + CASCADE_TOTAL_TICKS * CASCADE_TICK_MS,
-    assetSymbol: "ETH-PERP",
+    windowEndsAt: Date.now() + CASCADE_TICK_MS,
+    assetSymbol: feed?.ethPriceUsd ? "ETH-PERP (Base Chainlink)" : "ETH-PERP",
     currentPrice: startPrice,
     priceChangePct: 0,
     volatilityIndex: 45,
@@ -108,6 +118,9 @@ export function createCascadeState(players: Player[], seed: number = Date.now())
     liquidationLog: [],
     actionLog: [],
     resolved: false,
+    oracleSource: feed?.source ?? "Base Mainnet (8453)",
+    oracleBlockNumber: feed?.blockNumber,
+    chainlinkPriceUsd: feed?.ethPriceUsd,
   };
 }
 
@@ -304,15 +317,31 @@ export function applyCascadeAction(
   return { logText, scoreDelta };
 }
 
-export function stepCascade(state: CascadeState): { resolved: boolean; liquidatedIds: string[] } {
+export function stepCascade(
+  state: CascadeState,
+  now = Date.now(),
+  feed?: { ethPriceUsd?: number; blockNumber?: number; source?: string }
+): { resolved: boolean; liquidatedIds: string[] } {
   if (state.resolved) return { resolved: true, liquidatedIds: [] };
   state.currentTick += 1;
+  state.windowEndsAt = now + state.tickIntervalMs;
 
   const prevPrice = state.currentPrice;
-  // Jump diffusion price volatility model
-  const shock = Math.random() < 0.2 ? (Math.random() - 0.5) * 0.08 : (Math.random() - 0.5) * 0.025;
-  const delta = state.currentPrice * shock;
-  state.currentPrice = +(state.currentPrice + delta).toFixed(2);
+
+  if (feed?.ethPriceUsd) {
+    state.chainlinkPriceUsd = feed.ethPriceUsd;
+    if (feed.blockNumber) state.oracleBlockNumber = feed.blockNumber;
+    if (feed.source) state.oracleSource = feed.source;
+    // Real oracle anchor with authentic micro-tick volatility (±0.25% market spread)
+    const microShock = (Math.random() - 0.5) * 0.005;
+    state.currentPrice = +(feed.ethPriceUsd * (1 + microShock)).toFixed(2);
+  } else {
+    // Jump diffusion price volatility model fallback
+    const shock = Math.random() < 0.2 ? (Math.random() - 0.5) * 0.08 : (Math.random() - 0.5) * 0.025;
+    const delta = state.currentPrice * shock;
+    state.currentPrice = +(state.currentPrice + delta).toFixed(2);
+  }
+
   state.priceChangePct = +(((state.currentPrice - prevPrice) / prevPrice) * 100).toFixed(2);
   state.priceHistory.push(state.currentPrice);
   if (state.priceHistory.length > 30) state.priceHistory.shift();
@@ -408,6 +437,9 @@ export function publicCascadeState(state: CascadeState): CascadePublicState {
     liquidationLog: state.liquidationLog,
     actionLog: state.actionLog,
     resolved: state.resolved,
+    oracleSource: state.oracleSource,
+    oracleBlockNumber: state.oracleBlockNumber,
+    chainlinkPriceUsd: state.chainlinkPriceUsd,
     leaderboard,
   };
 }

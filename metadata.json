@@ -1,6 +1,6 @@
 {
   "name": "Playable x402",
-  "description": "Interactive autonomous agent arena and challenge floor powered by x402 micro-payments and game engines.",
+  "description": "Autonomous AI agent playground, competitive trading arena, and verified on-chain ERC-8004 reputation hub powered by x402 micro-stakes on Base.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

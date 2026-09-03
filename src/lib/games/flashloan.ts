@@ -78,7 +78,11 @@ export const FLASH_TICK_MS = 1500;
 export const FLASH_INITIAL_CASH = 15_000;
 export const FLASH_BRIBE_FEE = 15_000;
 
-export function createFlashLoanState(players: Player[], seed: number = Date.now()): FlashLoanState {
+export function createFlashLoanState(
+  players: Player[],
+  seed: number = Date.now(),
+  feed?: { blockNumber?: number; gasPriceGwei?: number; ethPriceUsd?: number }
+): FlashLoanState {
   const raiders: Record<string, MEVRaider> = {};
   for (const p of players) {
     raiders[p.id] = {
@@ -88,20 +92,23 @@ export function createFlashLoanState(players: Player[], seed: number = Date.now(
       bundlesLanded: 0,
       totalProfitUsd: 0,
       score: 1000,
-      lastBidGwei: 25,
+      lastBidGwei: feed?.gasPriceGwei ? Math.max(1, Math.round(feed.gasPriceGwei * 100)) : 25,
       briberTier: 1,
     };
   }
+
+  const blockNumber = feed?.blockNumber ?? (50797800 + (seed % 10000));
+  const gasPriceGwei = feed?.gasPriceGwei ?? 0.008;
 
   return {
     currentTick: 0,
     totalTicks: FLASH_TOTAL_TICKS,
     tickIntervalMs: FLASH_TICK_MS,
-    windowEndsAt: Date.now() + FLASH_TOTAL_TICKS * FLASH_TICK_MS,
-    baseAsset: "WETH-USDC",
-    blockNumber: 19842000 + (seed % 10000),
-    gasPriceGwei: 28,
-    activeOpportunities: generateOpportunities(1, seed),
+    windowEndsAt: Date.now() + FLASH_TICK_MS,
+    baseAsset: "WETH-USDC (Base L2)",
+    blockNumber,
+    gasPriceGwei,
+    activeOpportunities: generateOpportunities(1, seed, feed?.ethPriceUsd),
     raiders,
     blockHistory: [],
     actionLog: [],
@@ -109,23 +116,26 @@ export function createFlashLoanState(players: Player[], seed: number = Date.now(
   };
 }
 
-function generateOpportunities(tick: number, seed: number): FlashOpportunity[] {
+function generateOpportunities(tick: number, seed: number, ethPriceUsd = 2390): FlashOpportunity[] {
   const pairs = [
-    { dex: "Uniswap v3 ↔ Curve TriCrypto", spread: 48, profit: 3200, loan: 150000 },
-    { dex: "Balancer v2 ↔ SushiSwap", spread: 82, profit: 5400, loan: 250000 },
-    { dex: "Camelot ↔ TraderJoe L2", spread: 35, profit: 2100, loan: 90000 },
+    { dex: "Aerodrome ↔ Uniswap v3 (Base)", spread: 48, profitMult: 1.35, loan: 150000 },
+    { dex: "Curve TriCrypto ↔ Aerodrome SlipStream", spread: 82, profitMult: 2.1, loan: 250000 },
+    { dex: "Moonwell ↔ Morpho Blue (Base)", spread: 35, profitMult: 0.95, loan: 90000 },
   ];
 
-  return pairs.map((p, idx) => ({
-    id: `opp-t${tick}-${idx}`,
-    dexPair: p.dex,
-    route: `BORROW -> SWAP POOL A -> ARB POOL B -> REPAY`,
-    spreadBps: p.spread + ((seed + idx * 7) % 20),
-    availableProfitUsd: p.profit + ((seed + idx * 13) % 800),
-    minLoanSizeUsd: p.loan,
-    baseGasUnits: 280_000 + idx * 40_000,
-    expiresTick: tick + 2,
-  }));
+  return pairs.map((p, idx) => {
+    const profitBase = (ethPriceUsd * p.profitMult * 0.9) + ((seed + idx * 13) % 400);
+    return {
+      id: `opp-t${tick}-${idx}`,
+      dexPair: p.dex,
+      route: `BORROW -> SWAP POOL A -> ARB POOL B -> REPAY`,
+      spreadBps: p.spread + ((seed + idx * 7) % 18),
+      availableProfitUsd: +profitBase.toFixed(2),
+      minLoanSizeUsd: p.loan,
+      baseGasUnits: 210_000 + idx * 30_000,
+      expiresTick: tick + 2,
+    };
+  });
 }
 
 export function flashLoanLegal(match: Match, playerId: string): LegalAction[] {
@@ -284,13 +294,18 @@ export function applyFlashLoanAction(
   return { logText, scoreDelta };
 }
 
-export function stepFlashLoan(state: FlashLoanState): boolean {
+export function stepFlashLoan(
+  state: FlashLoanState,
+  now = Date.now(),
+  feed?: { blockNumber?: number; gasPriceGwei?: number; ethPriceUsd?: number }
+): boolean {
   if (state.resolved) return true;
   state.currentTick += 1;
-  state.blockNumber += 1;
-  state.gasPriceGwei = Math.floor(25 + Math.random() * 60);
+  state.windowEndsAt = now + state.tickIntervalMs;
+  state.blockNumber = feed?.blockNumber ?? (state.blockNumber + 1);
+  state.gasPriceGwei = feed?.gasPriceGwei ?? +(state.gasPriceGwei + (Math.random() - 0.5) * 0.002).toFixed(4);
 
-  state.activeOpportunities = generateOpportunities(state.currentTick, Date.now());
+  state.activeOpportunities = generateOpportunities(state.currentTick, Date.now(), feed?.ethPriceUsd);
 
   if (state.currentTick >= state.totalTicks) {
     state.resolved = true;

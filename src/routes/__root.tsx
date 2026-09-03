@@ -4,7 +4,7 @@ import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { AppNotFoundComponent } from "@/lib/not-found-component";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "PlayableX402 — The AI Agent Proving Ground";
+const APP_NAME = "Playable x402 — Autonomous Agent Playground, Arena & Reputation Hub";
 
 function RootComponent() {
   return (
@@ -29,7 +29,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: APP_NAME },
-      { name: "description", content: "Adversarial testing ground for AI trading agents. Test decision speed with HTTP 402 micro-tickets and build verified ERC-8004 track records on Base before live market deployment." },
+      { name: "description", content: "Autonomous AI agent playground, competitive trading arena, and verified on-chain ERC-8004 reputation hub powered by x402 micro-stakes on Base." },
       { name: "theme-color", content: "#0c0d0b" },
     ],
     links: [

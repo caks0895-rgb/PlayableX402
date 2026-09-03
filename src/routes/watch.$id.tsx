@@ -36,7 +36,7 @@ export const Route = createFileRoute("/watch/$id")({
         getMatchFn({ data: { id: params.id } }),
         getCatalogFn(),
       ]);
-      return { match: got.match, games };
+      return { match: (got as { match?: PublicMatch })?.match ?? null, games };
     } catch (err) {
       console.error("Loader fetch failed for match watch page:", err);
       return {
@@ -70,9 +70,9 @@ function WatchPage() {
     let alive = true;
     const poll = async () => {
       try {
-        const res = await getMatchFn({
+        const res = (await getMatchFn({
           data: { id },
-        });
+        })) as { match?: PublicMatch };
         if (alive && res.match) setMatch(res.match);
       } catch {
         /* ignore polling errors */
@@ -110,7 +110,7 @@ function WatchPage() {
             <Button onClick={() => window.location.reload()}>
               Retry Connection
             </Button>
-            <Button asChild variant="outline">
+            <Button asChild variant="secondary">
               <Link to="/floor">Back to the floor</Link>
             </Button>
           </div>
@@ -142,7 +142,12 @@ function WatchPage() {
         </div>
         <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
           <span>
-            Pot <span className="font-mono tabular-nums text-pool">{formatUsdc(match.prizePool)}</span>
+            Total Pot <span className="font-mono tabular-nums text-pool">{formatUsdc(match.prizePool)}</span>
+          </span>
+          <span className="inline-flex items-center gap-1 rounded bg-surface px-1.5 py-0.5 text-xs font-mono text-muted border border-border">
+            <span className="text-live font-medium">95% Winner</span>
+            <span className="text-faint">/</span>
+            <span className="text-pool font-medium">5% Treasury</span>
           </span>
           <span>
             Entry <span className="font-mono tabular-nums">{formatUsdc(match.entryFee)}</span>
@@ -198,6 +203,46 @@ function WatchPage() {
                 )}
               </div>
             )}
+
+            {match.status === "finished" && match.settlement && (
+              <div className="mt-4 rounded-[20px] border border-live/30 bg-surface/90 p-5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-xs uppercase tracking-wider text-live">Round Settled</span>
+                    <Badge tone="live">Final Payout</Badge>
+                  </div>
+                  <span className="font-mono text-xs text-faint">ERC-8004 Rating Updated</span>
+                </div>
+                
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-xl border border-border/80 bg-bg/50 p-3">
+                    <div className="text-[11px] font-mono uppercase text-muted">95% Winner Payout</div>
+                    <div className="mt-0.5 font-mono text-xl font-semibold text-live">
+                      {formatUsdc(match.settlement.winnerPot ?? Math.floor(match.prizePool * 0.95))}
+                    </div>
+                    <div className="mt-1 text-xs text-muted">
+                      {match.settlement.winners.length > 0 ? (
+                        <span>
+                          Awarded to: {match.settlement.winners.map((w) => `${w.name} (${formatUsdc(w.amount)})`).join(", ")}
+                        </span>
+                      ) : (
+                        "No winners declared."
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl border border-border/80 bg-bg/50 p-3">
+                    <div className="text-[11px] font-mono uppercase text-muted">5% Protocol Treasury Rake</div>
+                    <div className="mt-0.5 font-mono text-xl font-semibold text-pool">
+                      {formatUsdc(match.settlement.protocolRake ?? (match.prizePool - Math.floor(match.prizePool * 0.95)))}
+                    </div>
+                    <div className="mt-1 text-xs text-muted">
+                      Retained for house bot liquidity & arena maintenance.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           <aside className="flex min-w-0 flex-col gap-4">
@@ -231,7 +276,7 @@ function WatchPage() {
                 This room is run autonomously by AI agents. As a spectator, you observe real-time state changes, orderbook updates, and financial telemetry.
               </p>
               <div className="mt-4 flex flex-col gap-2">
-                <Button asChild size="sm" variant="outline" className="w-full text-xs">
+                <Button asChild size="sm" variant="secondary" className="w-full text-xs">
                   <Link to="/docs">Agent API Docs</Link>
                 </Button>
                 <Button asChild size="sm" variant="ghost" className="w-full text-xs text-muted">

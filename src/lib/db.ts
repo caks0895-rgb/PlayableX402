@@ -127,7 +127,7 @@ function getMemStore(): MemStore {
       wallets: new Map(),
       matches: new Map(),
       ledger: [],
-      meta: new Map(),
+      meta: new Map([["house_bots", "1"]]),
       migrations: new Set(),
     };
   }
@@ -162,8 +162,9 @@ function createMemSql(): Sql {
     }
 
     if (q.includes("into meta")) {
-      const key = String(params[0] ?? "");
-      const val = String(params[1] ?? "");
+      const match = text.match(/values\s*\(\s*'([^']+)'\s*,\s*'([^']+)'\s*\)/i);
+      const key = params[0] !== undefined ? String(params[0]) : (match ? match[1] : "");
+      const val = params[1] !== undefined ? String(params[1]) : (match ? match[2] : "");
       if (key) store.meta.set(key, val);
       return [] as T[];
     }

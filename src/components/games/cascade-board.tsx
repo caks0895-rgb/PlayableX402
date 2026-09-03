@@ -21,6 +21,9 @@ export function CascadeBoard({
     priceHistory = [],
     positions = {},
     resolved = false,
+    oracleSource,
+    oracleBlockNumber,
+    chainlinkPriceUsd,
   } = state;
 
   const initialPrice = priceHistory[0] ?? currentPrice;
@@ -48,6 +51,9 @@ export function CascadeBoard({
               <span className="font-semibold text-foreground tracking-tight">
                 {assetSymbol}
               </span>
+              <Badge variant="outline" className="text-[11px] uppercase tracking-wider font-mono bg-emerald-500/10 text-emerald-400 border-emerald-500/30">
+                {oracleSource ?? "Chainlink Base L2 (ETH/USD)"}
+              </Badge>
               <Badge variant="outline" className="text-[11px] uppercase tracking-wider font-mono bg-muted/40">
                 High-Leverage Squeeze
               </Badge>
@@ -60,6 +66,18 @@ export function CascadeBoard({
               </span>
               <span>•</span>
               <span>Initial: <strong className="text-muted-foreground font-mono">${initialPrice.toFixed(2)}</strong></span>
+              {chainlinkPriceUsd ? (
+                <>
+                  <span>•</span>
+                  <span>Oracle Ref: <strong className="text-emerald-400 font-mono">${chainlinkPriceUsd.toFixed(2)}</strong></span>
+                </>
+              ) : null}
+              {oracleBlockNumber ? (
+                <>
+                  <span>•</span>
+                  <span className="text-[11px] text-muted-foreground font-mono">Block #{oracleBlockNumber}</span>
+                </>
+              ) : null}
             </div>
           </div>
         </div>

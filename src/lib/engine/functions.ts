@@ -20,12 +20,15 @@ export const listWalletsFn = createServerFn({ method: "GET" }).handler(async () 
 
 export const listMatchesFn = createServerFn({ method: "GET" }).handler(async () => {
   const { listMatches, toPublic, recentTape, getHouseBots, listChallenges } = await import("./store.server");
+  const { getBaseOnchainFeed } = await import("./chain-feed.server");
   const matches = await listMatches();
+  const feed = await getBaseOnchainFeed();
   return {
     matches: matches.map((m) => toPublic(m, undefined, { logTail: 3 })),
     tape: await recentTape(18),
     houseBots: await getHouseBots(),
     challenges: await listChallenges({ status: "open" }),
+    feed,
   };
 });
 
@@ -171,3 +174,8 @@ export const getAgentReputationFn = createServerFn({ method: "GET" })
     const { getAgentReputationById } = await import("./store.server");
     return { reputation: getAgentReputationById(data.id) };
   });
+
+export const getBaseFeedFn = createServerFn({ method: "GET" }).handler(async () => {
+  const { getBaseOnchainFeed } = await import("./chain-feed.server");
+  return getBaseOnchainFeed();
+});

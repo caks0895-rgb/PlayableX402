@@ -94,12 +94,15 @@ export function FlashLoanBoard({
               <span className="font-semibold text-foreground tracking-tight">
                 Block #{blockNumber}
               </span>
+              <Badge variant="outline" className="text-[11px] uppercase tracking-wider font-mono bg-blue-500/10 text-blue-400 border-blue-500/30">
+                Base Mainnet (8453)
+              </Badge>
               <Badge variant="outline" className="text-[11px] uppercase tracking-wider font-mono bg-muted/40">
                 Flash Loan Arb
               </Badge>
             </div>
             <div className="flex items-center gap-3 text-xs text-muted-foreground mt-0.5">
-              <span>Base Gas: <strong className="text-purple-400 font-mono">{gasPriceGwei} Gwei</strong></span>
+              <span>Base L2 Gas: <strong className="text-blue-400 font-mono">{gasPriceGwei} Gwei</strong></span>
               <span>•</span>
               <span>Active Pools: <strong className="text-foreground font-mono">{poolList.length}</strong></span>
               <span>•</span>

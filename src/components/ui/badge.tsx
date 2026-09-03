@@ -4,10 +4,12 @@ import { cn } from "@/lib/utils";
 export function Badge({
   children,
   tone = "muted",
+  variant,
   className,
 }: {
   children: ReactNode;
   tone?: "muted" | "live" | "warn" | "danger" | "pool" | "fg";
+  variant?: string;
   className?: string;
 }) {
   const tones: Record<string, string> = {
@@ -18,11 +20,12 @@ export function Badge({
     pool: "text-pool border-pool/30",
     fg: "text-fg border-border-strong",
   };
+  const effectiveTone = tone !== "muted" ? tone : (variant && variant in tones ? variant as any : "muted");
   return (
     <span
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium tracking-wide",
-        tones[tone],
+        tones[effectiveTone] || tones.muted,
         className,
       )}
     >

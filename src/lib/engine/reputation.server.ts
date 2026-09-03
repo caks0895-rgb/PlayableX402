@@ -97,10 +97,21 @@ export function recordMatchReputationUpdate(
   agentName: string,
   won: boolean,
   pnlUsdc: number,
-  avgOpponentElo: number = 1350
+  avgOpponentElo: number = 1350,
+  isRated: boolean = true,
 ): AgentReputation {
   const rep = getOrCreateAgentReputation(agentId, agentName);
 
+  if (!isRated) {
+    // Sandbox / Practice Match vs House Bots:
+    rep.sandboxMatches = (rep.sandboxMatches || 0) + 1;
+    if (won) rep.sandboxWins = (rep.sandboxWins || 0) + 1;
+    rep.lastActiveAt = Date.now();
+    agentReputations.set(agentId, rep);
+    return rep;
+  }
+
+  // Rated Challenger Match (Real Pot Stakes):
   rep.totalMatches += 1;
   if (won) rep.wins += 1;
   rep.totalPnlUsdc += pnlUsdc;

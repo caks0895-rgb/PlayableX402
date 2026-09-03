@@ -70,10 +70,10 @@ function ReputationRegistryView() {
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
                 On-Chain Reputation Registry
               </span>
-              <Badge variant="outline" className="font-mono text-[10px] text-pool">
+              <Badge tone="pool" className="font-mono text-[10px]">
                 ERC-8004
               </Badge>
-              <Badge variant="outline" className="font-mono text-[10px] text-faint">
+              <Badge tone="muted" className="font-mono text-[10px]">
                 ERC-5192 Soulbound
               </Badge>
             </div>
@@ -163,7 +163,7 @@ function ReputationRegistryView() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button asChild variant="outline" size="sm" className="font-mono text-xs">
+            <Button asChild variant="secondary" size="sm" className="font-mono text-xs">
               <Link to="/docs">Query Registry API</Link>
             </Button>
           </div>
@@ -302,9 +302,15 @@ function ReputationRegistryView() {
                   <span className="mt-1 text-sm font-medium text-pool">{selectedAgent.eloScore}</span>
                 </div>
                 <div className="rounded-[12px] border border-border bg-raised p-3">
-                  <span className="text-faint block">Win Rate</span>
+                  <span className="text-faint block">Rated Win Rate</span>
                   <span className="mt-1 text-sm font-medium text-fg">
-                    {selectedAgent.winRatePct}% ({selectedAgent.wins} / {selectedAgent.totalMatches})
+                    {selectedAgent.winRatePct}% ({selectedAgent.wins}W / {selectedAgent.totalMatches}M)
+                  </span>
+                </div>
+                <div className="rounded-[12px] border border-border bg-raised p-3">
+                  <span className="text-faint block">Sandbox Practice</span>
+                  <span className="mt-1 text-sm font-medium text-emerald-400">
+                    {selectedAgent.sandboxMatches ?? 0} matches ({selectedAgent.sandboxWins ?? 0} wins)
                   </span>
                 </div>
                 <div className="rounded-[12px] border border-border bg-raised p-3">
@@ -340,7 +346,7 @@ function ReputationRegistryView() {
 
               <div className="mt-6 flex justify-end gap-2">
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   size="sm"
                   onClick={() => setSelectedAgent(null)}
                   className="font-mono text-xs"

@@ -129,6 +129,7 @@ import {
 import { credit, debit, initWalletSeed, parsePaymentHeader, paymentAccept, walletSecret } from "@/lib/x402/pay.server";
 import { formatUsdc } from "@/lib/utils";
 import { deleteMatch, deleteWallet, loadAll, loadMatch, loadMatches, loadWallet, loadWallets, saveHouseBots, saveLedger, saveMatch, saveWallet } from "./persist.server";
+import { getCachedBaseFeed } from "./chain-feed.server";
 
 const TINTS: PlayerTint[] = ["p1", "p2", "p3", "p4", "p5", "p6"];
 const STARTING_BALANCE = 5_000_000;
@@ -174,6 +175,8 @@ const BOT_FILL: Record<string, number> = {
   dilemma: 2,
   target: 4,
   marketblitz: 3,
+  snakes: 2,
+  rps: 2,
 };
 
 function botFillTarget(gameId: GameId, maxPlayers: number, fill?: number) {
@@ -476,7 +479,7 @@ async function ensureHouseTable() {
   const world = getWorld();
   if (!world.houseBots) return;
   const liveMatches = [...world.matches.values()].filter((m) => m.status !== "finished");
-  if (liveMatches.length >= 3) return;
+  if (liveMatches.length >= 5) return;
 
   const playableGames: GameId[] = [
     "orderbook",
@@ -487,6 +490,8 @@ async function ensureHouseTable() {
     "dilemma",
     "target",
     "debate",
+    "snakes",
+    "rps",
   ];
   const activeGameIds = new Set(liveMatches.map((m) => m.gameId));
   const candidateGames = playableGames.filter((g) => !activeGameIds.has(g));
@@ -684,6 +689,9 @@ export function toPublic(match: Match, agentId?: string, opts?: { logTail?: numb
             closed: true,
             rematch: false,
             cancelled: match.cancelled,
+            totalPot: match.prizePool,
+            winnerPot: Math.floor(match.prizePool * 0.95),
+            protocolRake: match.prizePool - Math.floor(match.prizePool * 0.95),
             winners: match.winners.map((id) => ({
               id,
               name: playerName(match, id),
@@ -692,6 +700,8 @@ export function toPublic(match: Match, agentId?: string, opts?: { logTail?: numb
           }
         : undefined,
     kind: match.kind,
+    mode: match.kind === "challenge" ? "challenger" : "sandbox",
+    isFree: match.entryFee <= 0 || match.kind === "table",
     creatorId: match.creatorId,
     minToStart: match.minToStart,
     lobbyTimeoutMs: match.lobbyTimeoutMs,
@@ -729,18 +739,20 @@ async function createMatchInternal(opts: {
   creatorId?: string;
 }): Promise<Match> {
   assertFloorRoom();
-  const allowBots = Boolean(opts.withBots) && opts.kind !== "challenge";
+  const kind = opts.kind ?? "table";
+  const isSandbox = kind === "table";
+  const allowBots = isSandbox ? true : (Boolean(opts.withBots) && opts.kind !== "challenge");
   const spec = catalogById(opts.gameId);
   const minPlayers = clampInt(opts.minPlayers ?? spec.minPlayers, spec.minPlayers, spec.maxPlayers);
   const maxPlayers = clampInt(opts.maxPlayers ?? spec.maxPlayers, minPlayers, spec.maxPlayers);
   const minToStart = clampInt(opts.minToStart ?? minPlayers, minPlayers, maxPlayers);
   const lobbyTimeoutMs =
-    opts.kind === "challenge"
+    kind === "challenge"
       ? clampInt(opts.lobbyTimeoutMs ?? CHALLENGE_LOBBY_MS, 30_000, 15 * 60_000)
       : EMPTY_LOBBY_MS;
-  const entryFee = opts.entryFee ?? spec.entryFee;
+  const entryFee = opts.entryFee !== undefined ? opts.entryFee : (isSandbox ? 0 : spec.entryFee);
   const match: Match = {
-    id: shortId(opts.kind === "challenge" ? "ch" : (GAME_PREFIX[opts.gameId] ?? "gm")),
+    id: shortId(kind === "challenge" ? "ch" : (GAME_PREFIX[opts.gameId] ?? "gm")),
     gameId: opts.gameId,
     status: "lobby",
     players: [],
@@ -754,7 +766,9 @@ async function createMatchInternal(opts: {
     logs: [],
     winners: [],
     payouts: [],
-    kind: opts.kind ?? "table",
+    kind,
+    mode: isSandbox ? "sandbox" : "challenger",
+    isFree: entryFee <= 0,
     creatorId: opts.creatorId,
     minToStart,
     lobbyTimeoutMs,
@@ -766,8 +780,8 @@ async function createMatchInternal(opts: {
     match,
     "system",
     match.kind === "challenge"
-      ? `Challenge ${match.id} opened for ${spec.name}. Entry ${formatUsdc(entryFee)}. Starts at ${minToStart}, caps at ${maxPlayers}. Lobby ${Math.round(lobbyTimeoutMs / 1000)}s.`
-      : `Table ${match.id} opened for ${spec.name}. Entry ${formatUsdc(entryFee)}. Need ${minPlayers}–${maxPlayers} agents.`,
+      ? `Challenger Room ${match.id} opened for ${spec.name}. Real Stakes Entry ${formatUsdc(entryFee)}. Starts at ${minToStart}, caps at ${maxPlayers}. Rated match.`
+      : `Free Sandbox Table ${match.id} opened for ${spec.name} (House Bots). Entry: FREE (0 USDC). Practice & benchmark mode.`,
   );
 
   // House exhibition only: sit bots and start. Agent-created withBots tables
@@ -803,9 +817,16 @@ export async function createMatch(opts: {
   withBots?: boolean;
   fill?: number;
   fillNow?: boolean;
+  kind?: "table" | "challenge";
+  mode?: "sandbox" | "challenger";
+  entryFee?: number;
 }): Promise<Match> {
   await ready();
-  const match = await createMatchInternal(opts);
+  const kind = opts.mode === "challenger" ? "challenge" : (opts.kind ?? "table");
+  const match = await createMatchInternal({
+    ...opts,
+    kind,
+  });
   await flush();
   return match;
 }
@@ -890,7 +911,7 @@ export async function listChallenges(filter: {
     .filter((m) => filter.maxFee == null || m.entryFee <= filter.maxFee)
     .filter((m) => {
       if (!keyword) return true;
-      const topic = String(m.customConfig?.topic ?? m.state?.topic ?? "").toLowerCase();
+      const topic = String(m.customConfig?.topic ?? (m.state as any)?.topic ?? "").toLowerCase();
       return topic.includes(keyword) || m.id.toLowerCase().includes(keyword);
     })
     .map(toChallenge);
@@ -993,7 +1014,12 @@ function unusedBot(match: Match): Wallet | undefined {
   const shuffled = [...BOT_NAMES].sort(() => Math.random() - 0.5);
   for (const name of shuffled) {
     const w = world.wallets.get(name.toLowerCase());
-    if (w && !taken.has(w.id) && w.balance >= match.entryFee) return w;
+    if (!w) continue;
+    if (w.balance < match.entryFee) {
+      w.balance = Math.max(w.balance, agentStartingBalance(name));
+      touchWallet(w);
+    }
+    if (!taken.has(w.id) && w.balance >= match.entryFee) return w;
   }
   return undefined;
 }
@@ -1037,17 +1063,19 @@ function seatPlayer(match: Match, wallet: Wallet, controller: Controller): Playe
   if (match.players.some((p) => p.walletId === wallet.id)) {
     throw new Error("Already seated");
   }
-  debit(wallet, match.entryFee);
-  touchWallet(wallet);
-  match.prizePool += match.entryFee;
-  recordLedger({
-    from: wallet.id,
-    to: "treasury",
-    amount: match.entryFee,
-    kind: "entry",
-    matchId: match.id,
-    note: `Entry ${match.gameId} ${match.id}`,
-  });
+  if (match.entryFee > 0) {
+    debit(wallet, match.entryFee);
+    touchWallet(wallet);
+    match.prizePool += match.entryFee;
+    recordLedger({
+      from: wallet.id,
+      to: "treasury",
+      amount: match.entryFee,
+      kind: "entry",
+      matchId: match.id,
+      note: `Entry ${match.gameId} ${match.id}`,
+    });
+  }
   const player: Player = {
     id: wallet.id,
     name: wallet.name,
@@ -1058,13 +1086,22 @@ function seatPlayer(match: Match, wallet: Wallet, controller: Controller): Playe
     connected: true,
   };
   match.players.push(player);
-  log(
-    match,
-    "join",
-    `${player.name} paid ${formatUsdc(match.entryFee)} entry and sat down. Pot ${formatUsdc(match.prizePool)}.`,
-    player.id,
-  );
-  log(match, "pay", `${player.name} → treasury ${formatUsdc(match.entryFee)} (entry).`, player.id);
+  if (match.entryFee > 0) {
+    log(
+      match,
+      "join",
+      `${player.name} paid ${formatUsdc(match.entryFee)} entry and sat down. Pot ${formatUsdc(match.prizePool)}.`,
+      player.id,
+    );
+    log(match, "pay", `${player.name} → treasury ${formatUsdc(match.entryFee)} (entry).`, player.id);
+  } else {
+    log(
+      match,
+      "join",
+      `${player.name} sat down (Free Sandbox Mode vs House Bots · 0 USDC).`,
+      player.id,
+    );
+  }
   return player;
 }
 
@@ -1081,21 +1118,37 @@ export async function joinMatch(opts: {
   if (match.status !== "lobby") {
     return { ok: false, error: "Table is not in lobby" };
   }
-  const parsed = parsePaymentHeader(opts.paymentHeader ?? null, opts.walletId, opts.secret);
+  let parsed = parsePaymentHeader(opts.paymentHeader ?? null, opts.walletId, opts.secret);
+
+  // If this is a free sandbox match, allow seating with walletId directly
+  if (!parsed && match.entryFee <= 0 && opts.walletId) {
+    await pullWallet(opts.walletId);
+    const guestWallet = getWorld().wallets.get(opts.walletId);
+    if (guestWallet) {
+      parsed = { walletId: guestWallet.id, secret: "" };
+    }
+  }
+
   if (!parsed) {
+    if (match.entryFee > 0) {
+      return {
+        ok: false,
+        paymentRequired: {
+          x402Version: 1,
+          accepts: [
+            paymentAccept({
+              amount: match.entryFee,
+              resource: `/api/v1/matches/${match.id}/join`,
+              description: `Entry fee for ${match.id}`,
+              kind: "entry",
+            }),
+          ],
+        },
+      };
+    }
     return {
       ok: false,
-      paymentRequired: {
-        x402Version: 1,
-        accepts: [
-          paymentAccept({
-            amount: match.entryFee,
-            resource: `/api/v1/matches/${match.id}/join`,
-            description: `Entry fee for ${match.id}`,
-            kind: "entry",
-          }),
-        ],
-      },
+      error: "walletId is required to join a sandbox table. Use POST /wallets to obtain one.",
     };
   }
   try {
@@ -1171,24 +1224,26 @@ async function startMatch(match: Match) {
       break;
     }
     case "cascade": {
-      const state = createCascadeState(match.players, Date.now());
+      const feed = getCachedBaseFeed();
+      const state = createCascadeState(match.players, Date.now(), feed);
       match.state = state;
       match.turnDeadline = state.windowEndsAt;
       log(
         match,
         "system",
-        `Liquidation Cascade live on ${state.assetSymbol}. Index price: $${state.currentPrice.toFixed(2)}. Leverage 15x. Avoid margin call or hunt over-leveraged competitors!`,
+        `Liquidation Cascade live on ${state.assetSymbol}. Index price: $${state.currentPrice.toFixed(2)} (Base Chainlink). Leverage 15x. Avoid margin call or hunt over-leveraged competitors!`,
       );
       break;
     }
     case "flashloan": {
-      const state = createFlashLoanState(match.players, Date.now());
+      const feed = getCachedBaseFeed();
+      const state = createFlashLoanState(match.players, Date.now(), feed);
       match.state = state;
       match.turnDeadline = state.windowEndsAt;
       log(
         match,
         "system",
-        `MEV Flash Sniper live at block #${state.blockNumber}. Base gas: ${state.gasPriceGwei} Gwei. Cross-DEX spreads active. Bid gas and land flash loan arbitrage bundles!`,
+        `MEV Flash Sniper live on Base L2 at block #${state.blockNumber}. Gas: ${state.gasPriceGwei} Gwei. Cross-DEX spreads active. Bid gas and land flash loan arbitrage bundles!`,
       );
       break;
     }
@@ -1278,6 +1333,32 @@ function finishMatch(match: Match, winnerIds: string[]) {
   match.turnDeadline = undefined;
   match.winners = winnerIds;
 
+  const isFree = match.entryFee <= 0 || match.kind === "table";
+
+  if (isFree) {
+    const names =
+      winnerIds.length > 0
+        ? winnerIds.map((id) => playerName(match, id)).join(", ")
+        : "nobody";
+    log(
+      match,
+      "win",
+      `Sandbox training round finished! Winner: ${names} (Free Sandbox Mode — No USDC pot deducted).`,
+    );
+    log(
+      match,
+      "system",
+      "Sandbox practice table closed. Unranked stats logged for agent benchmarking.",
+    );
+    // Record sandbox practice updates (unrated, does not affect official high-stakes Elo or PnL)
+    for (const player of match.players) {
+      const isWinner = winnerIds.includes(player.id);
+      recordMatchReputationUpdate(player.id, player.name, isWinner, 0, 1350, false);
+    }
+    match.prizePool = 0;
+    return;
+  }
+
   if (winnerIds.length === 0 || match.prizePool <= 0) {
     if (match.prizePool > 0) {
       log(match, "win", "No winner. Pot stays in the treasury.");
@@ -1290,8 +1371,30 @@ function finishMatch(match: Match, winnerIds: string[]) {
     );
     return;
   }
-  const share = Math.floor(match.prizePool / winnerIds.length);
-  const remainder = match.prizePool - share * winnerIds.length;
+
+  // 95% of round pot goes to match winners, 5% protocol rake retained by app Treasury
+  const totalPot = match.prizePool;
+  const winnerPot = Math.floor(totalPot * 0.95);
+  const protocolRake = totalPot - winnerPot;
+
+  if (protocolRake > 0) {
+    recordLedger({
+      from: "arena",
+      to: "treasury",
+      amount: protocolRake,
+      kind: "payout",
+      matchId: match.id,
+      note: `Protocol Treasury 5% Rake (${match.id})`,
+    });
+    log(
+      match,
+      "pay",
+      `Protocol Treasury retained 5% rake (${formatUsdc(protocolRake)}). Winner pot: ${formatUsdc(winnerPot)}.`,
+    );
+  }
+
+  const share = Math.floor(winnerPot / winnerIds.length);
+  const remainder = winnerPot - share * winnerIds.length;
   for (let i = 0; i < winnerIds.length; i++) {
     const id = winnerIds[i]!;
     const amount = share + (i === 0 ? remainder : 0);
@@ -1311,7 +1414,7 @@ function finishMatch(match: Match, winnerIds: string[]) {
       log(
         match,
         "win",
-        `${wallet.name} is paid ${formatUsdc(amount)} from the pot.`,
+        `${wallet.name} is paid ${formatUsdc(amount)} from the 95% winner pot.`,
         id,
       );
     }
@@ -1322,18 +1425,18 @@ function finishMatch(match: Match, winnerIds: string[]) {
       ? winnerIds.map((id) => playerName(match, id)).join(", ")
       : "nobody";
 
-  // Update on-chain ERC-8004 Agent Reputations for all match participants
+  // Update on-chain ERC-8004 Agent Reputations for all match participants (Rated Challenger Match)
   for (const player of match.players) {
     const isWinner = winnerIds.includes(player.id);
     const payout = match.payouts.find((p) => p.playerId === player.id)?.amount ?? 0;
     const netPnl = payout - match.entryFee;
-    recordMatchReputationUpdate(player.id, player.name, isWinner, netPnl);
+    recordMatchReputationUpdate(player.id, player.name, isWinner, netPnl, 1350, true);
   }
 
   log(
     match,
     "system",
-    `Table closed. Pot paid to ${names}. On-chain ERC-8004 reputation updated for all agents.`,
+    `Challenger room closed. Pot paid to ${names}. On-chain ERC-8004 rated reputation updated.`,
   );
 }
 
@@ -2595,8 +2698,8 @@ async function tickMatch(match: Match) {
       }
     }
 
-    if (now >= state.windowEndsAt || state.currentTick < state.totalTicks) {
-      const done = stepOrderBook(state);
+    if (now >= state.windowEndsAt) {
+      const done = stepOrderBook(state, now);
       match.turnDeadline = state.windowEndsAt;
 
       log(
@@ -2638,14 +2741,15 @@ async function tickMatch(match: Match) {
       }
     }
 
-    if (now >= state.windowEndsAt || state.currentTick < state.totalTicks) {
-      const stepResult = stepCascade(state);
+    if (now >= state.windowEndsAt) {
+      const feed = getCachedBaseFeed();
+      const stepResult = stepCascade(state, now, feed);
       match.turnDeadline = state.windowEndsAt;
 
       log(
         match,
         "system",
-        `Tick ${state.currentTick}/${state.totalTicks}: ${state.assetSymbol} $${state.currentPrice.toFixed(2)} (${state.priceChangePct >= 0 ? "+" : ""}${state.priceChangePct.toFixed(2)}%)`,
+        `Tick ${state.currentTick}/${state.totalTicks}: ${state.assetSymbol} $${state.currentPrice.toFixed(2)} (${state.priceChangePct >= 0 ? "+" : ""}${state.priceChangePct.toFixed(2)}%) · Oracle: ${feed.source} (block #${feed.blockNumber})`,
       );
 
       for (const liqId of stepResult.liquidatedIds) {
@@ -2689,14 +2793,15 @@ async function tickMatch(match: Match) {
       }
     }
 
-    if (now >= state.windowEndsAt || state.currentTick < state.totalTicks) {
-      const done = stepFlashLoan(state);
+    if (now >= state.windowEndsAt) {
+      const feed = getCachedBaseFeed();
+      const done = stepFlashLoan(state, now, feed);
       match.turnDeadline = state.windowEndsAt;
 
       log(
         match,
         "system",
-        `Block #${state.blockNumber} (Tick ${state.currentTick}/${state.totalTicks}) | Base Gas ${state.gasPriceGwei} Gwei | Opportunity $${state.activeOpportunities[0]?.availableProfitUsd.toFixed(2) ?? "1200.00"} (${state.activeOpportunities[0]?.dexPair ?? "Cross-DEX"})`,
+        `Block #${state.blockNumber} (Tick ${state.currentTick}/${state.totalTicks}) | Base L2 Gas ${state.gasPriceGwei} Gwei | Opportunity $${state.activeOpportunities[0]?.availableProfitUsd.toFixed(2) ?? "1200.00"} (${state.activeOpportunities[0]?.dexPair ?? "Aerodrome/Uniswap"})`,
       );
 
       if (done) {

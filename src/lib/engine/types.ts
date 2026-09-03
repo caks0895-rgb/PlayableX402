@@ -7,6 +7,8 @@ export const GAME_IDS = [
   "dilemma",
   "debate",
   "target",
+  "snakes",
+  "rps",
 ] as const;
 export type GameId = (typeof GAME_IDS)[number];
 export const GAME_ID_LIST = GAME_IDS.join(", ");
@@ -37,6 +39,10 @@ export type AgentAction = {
   option?: string;
   tape?: string[];
   value?: number;
+  position?: "long" | "short" | string;
+  leverage?: number;
+  sizePct?: number;
+  [key: string]: unknown;
 };
 
 export interface Player {
@@ -128,6 +134,8 @@ export interface AgentReputation {
   lastActiveAt: number;
   onChainTxHash?: string;
   attestationStandard: "ERC-8004" | "ERC-5192";
+  sandboxMatches?: number;
+  sandboxWins?: number;
 }
 
 export interface Match {
@@ -146,17 +154,21 @@ export interface Match {
   currentPlayerId?: string;
   turnDeadline?: number;
   // Game-specific bag. Serialized over the wire as JSON.
-  state: unknown;
+  state: any;
   logs: LogLine[];
   winners: string[];
   payouts: { playerId: string; amount: number }[];
   kind?: MatchKind;
+  mode?: "sandbox" | "challenger";
+  isFree?: boolean;
   creatorId?: string;
   minToStart?: number;
   lobbyTimeoutMs?: number;
   expiresAt?: number;
   cancelled?: boolean;
   customConfig?: ChallengeConfig;
+  round?: number;
+  maxRounds?: number;
 }
 
 export interface CatalogGame {
@@ -188,8 +200,10 @@ export interface PublicMatch {
   finishedAt?: number;
   currentPlayerId?: string;
   turnDeadline?: number;
+  round?: number;
+  maxRounds?: number;
   // Game-specific bag. Serialized over the wire as JSON.
-  state: unknown;
+  state: any;
   logs: LogLine[];
   winners: string[];
   payouts: { playerId: string; amount: number }[];
@@ -200,9 +214,14 @@ export interface PublicMatch {
     closed: true;
     rematch: false;
     cancelled?: boolean;
+    totalPot?: number;
+    winnerPot?: number;
+    protocolRake?: number;
     winners: { id: string; name: string; amount: number }[];
   };
   kind?: MatchKind;
+  mode?: "sandbox" | "challenger";
+  isFree?: boolean;
   creatorId?: string;
   minToStart?: number;
   lobbyTimeoutMs?: number;
@@ -262,6 +281,8 @@ export const MAX_PLAY_MS: Record<GameId, number> = {
   dilemma: 3 * 60_000,
   debate: 12 * 60_000,
   target: 90_000,
+  snakes: 4 * 60_000,
+  rps: 90_000,
 };
 
 export function lobbyIdleSince(match: { createdAt: number; players: { joinedAt: number }[] }): number {
